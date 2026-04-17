@@ -9,8 +9,8 @@ export const GET: APIRoute = async ({ url }) => {
     return new Response('Code manquant', { status: 400 });
   }
 
-  const clientId = import.meta.env.OAUTH_CLIENT_ID;
-  const clientSecret = import.meta.env.OAUTH_CLIENT_SECRET;
+  const clientId = process.env.OAUTH_CLIENT_ID;
+  const clientSecret = process.env.OAUTH_CLIENT_SECRET;
 
   const response = await fetch('https://github.com/login/oauth/access_token', {
     method: 'POST',
