@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'SUD RAMONAGE — Ramonage Professionnel',
+  description = 'Expert en ramonage certifié. Intervention rapide, travail soigné. Prenez rendez-vous en ligne.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white text-[#111111] font-sans antialiased">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#111111]/10">
+      <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a
+          href="/"
+          class="text-sm font-semibold tracking-[0.25em] uppercase text-[#111111] hover:opacity-60 transition-opacity duration-200"
+        >
+          SUD RAMONAGE
+        </a>
+        <nav class="hidden md:flex items-center gap-10">
+          <a href="/#services" class="text-xs tracking-[0.15em] uppercase text-[#111111]/70 hover:text-[#111111] transition-colors duration-200">Services</a>
+          <a href="/#contact" class="text-xs tracking-[0.15em] uppercase text-[#111111]/70 hover:text-[#111111] transition-colors duration-200">Contact</a>
+          <a
+            href="/#rdv"
+            class="text-xs tracking-[0.15em] uppercase bg-[#111111] text-white px-5 py-2.5 rounded-sm hover:bg-[#333333] transition-colors duration-200"
+          >
+            Prendre RDV
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="border-t border-[#111111]/10 mt-32">
+      <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <span class="text-xs tracking-[0.2em] uppercase text-[#111111]/50">SUD RAMONAGE</span>
+        <span class="text-xs text-[#111111]/40">&copy; {new Date().getFullYear()} — Tous droits réservés</span>
+      </div>
+    </footer>
+  </body>
+</html>

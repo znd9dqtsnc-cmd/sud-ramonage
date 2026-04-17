@@ -1,17 +1,99 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="SUD RAMONAGE — La Précision du Ramonage" description="Expert en ramonage certifié. Intervention rapide, travail soigné. Prenez rendez-vous en ligne.">
+
+  <!-- Hero -->
+  <section class="min-h-screen flex flex-col justify-center pt-24 pb-16 px-6 relative">
+    <div class="max-w-7xl mx-auto w-full">
+      <div class="max-w-4xl">
+        <p class="text-xs tracking-[0.3em] uppercase text-[#111111]/50 mb-8">
+          Ramonage Certifié — Intervention Rapide
+        </p>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] text-[#111111] mb-10">
+          LA PRÉCISION<br />DU RAMONAGE.
+        </h1>
+        <p class="text-base md:text-lg text-[#111111]/60 font-light max-w-lg leading-relaxed mb-12">
+          Expertise technique, rigueur professionnelle. Chaque intervention est réalisée avec soin et certifiée conforme aux normes en vigueur.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="#contact"
+            id="rdv"
+            class="inline-flex items-center justify-center gap-3 bg-[#111111] text-white text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-[3px] hover:bg-[#333333] transition-colors duration-200 group"
+          >
+            Prendre RDV
+            <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a
+            href="#services"
+            class="inline-flex items-center justify-center gap-3 border border-[#111111]/20 text-[#111111] text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-[3px] hover:border-[#111111] transition-colors duration-200"
+          >
+            Nos services
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 opacity-30">
+      <div class="w-px h-12 bg-[#111111] animate-pulse"></div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-32 px-6 bg-[#F8F8F8]">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-xs tracking-[0.3em] uppercase text-[#111111]/50 mb-4">Ce que nous faisons</p>
+      <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#111111] mb-20">NOS SERVICES.</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#111111]/10">
+        <div class="bg-white p-10 hover:bg-[#F8F8F8] transition-colors duration-200">
+          <span class="text-xs tracking-[0.2em] text-[#111111]/30 mb-6 block">01</span>
+          <h3 class="text-lg font-semibold tracking-tight text-[#111111] mb-4">Ramonage de Cheminée</h3>
+          <p class="text-sm text-[#111111]/60 leading-relaxed font-light">Nettoyage complet du conduit, certificat de ramonage fourni. Conforme aux exigences des assurances.</p>
+        </div>
+        <div class="bg-white p-10 hover:bg-[#F8F8F8] transition-colors duration-200">
+          <span class="text-xs tracking-[0.2em] text-[#111111]/30 mb-6 block">02</span>
+          <h3 class="text-lg font-semibold tracking-tight text-[#111111] mb-4">Ramonage de Poêle</h3>
+          <p class="text-sm text-[#111111]/60 leading-relaxed font-light">Poêle à bois, granulés ou insert — entretien annuel obligatoire réalisé par un professionnel certifié.</p>
+        </div>
+        <div class="bg-white p-10 hover:bg-[#F8F8F8] transition-colors duration-200">
+          <span class="text-xs tracking-[0.2em] text-[#111111]/30 mb-6 block">03</span>
+          <h3 class="text-lg font-semibold tracking-tight text-[#111111] mb-4">Diagnostic & Conseil</h3>
+          <p class="text-sm text-[#111111]/60 leading-relaxed font-light">Inspection vidéo du conduit, détection d'anomalies, recommandations techniques personnalisées.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / RDV -->
+  <section id="contact" class="py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl">
+        <p class="text-xs tracking-[0.3em] uppercase text-[#111111]/50 mb-4">Contact</p>
+        <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#111111] mb-8">PARLONS DE<br />VOTRE PROJET.</h2>
+        <p class="text-sm text-[#111111]/60 leading-relaxed mb-10 font-light">
+          Disponible du lundi au samedi. Devis gratuit sous 24h. Intervention possible en urgence.
+        </p>
+        <div class="flex flex-col gap-4">
+          <a
+            href="tel:+33600000000"
+            class="inline-flex items-center gap-3 text-sm text-[#111111] hover:opacity-60 transition-opacity duration-200"
+          >
+            <span class="w-8 h-px bg-[#111111]"></span>
+            06 00 00 00 00
+          </a>
+          <a
+            href="mailto:contact@sud-ramonage.fr"
+            class="inline-flex items-center gap-3 text-sm text-[#111111] hover:opacity-60 transition-opacity duration-200"
+          >
+            <span class="w-8 h-px bg-[#111111]"></span>
+            contact@sud-ramonage.fr
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
