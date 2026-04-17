@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: znd9dqtsnc-cmd/sud-ramonage
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Articles de Blog"
+    folder: "src/content/blog"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description SEO", name: "description", widget: "text" }
+      - { label: "Image de couverture", name: "cover", widget: "image", required: false }
+      - { label: "Corps de l'article", name: "body", widget: "markdown" }
+
+  - name: "villes"
+    label: "Pages Villes"
+    folder: "src/content/villes"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Ville", name: "title", widget: "string" }
+      - { label: "Slug URL", name: "slug", widget: "string", hint: "Ex: martigues, istres, fos-sur-mer" }
+      - { label: "Description SEO", name: "description", widget: "text" }
+      - { label: "Département", name: "departement", widget: "string", default: "Bouches-du-Rhône" }
+      - { label: "Contenu de la page", name: "body", widget: "markdown" }
