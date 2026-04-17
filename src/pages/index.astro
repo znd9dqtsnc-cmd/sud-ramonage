@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactButton from '../components/ContactButton.astro';
 ---
 
 <Layout title="SUD RAMONAGE — La Précision du Ramonage" description="Expert en ramonage certifié. Intervention rapide, travail soigné. Prenez rendez-vous en ligne.">
@@ -76,21 +77,9 @@ import Layout from '../layouts/Layout.astro';
         <p class="text-sm text-[#111111]/60 leading-relaxed mb-10 font-light">
           Disponible du lundi au samedi. Devis gratuit sous 24h. Intervention possible en urgence.
         </p>
-        <div class="flex flex-col gap-4">
-          <a
-            href="tel:+33600000000"
-            class="inline-flex items-center gap-3 text-sm text-[#111111] hover:opacity-60 transition-opacity duration-200"
-          >
-            <span class="w-8 h-px bg-[#111111]"></span>
-            06 00 00 00 00
-          </a>
-          <a
-            href="mailto:contact@sud-ramonage.fr"
-            class="inline-flex items-center gap-3 text-sm text-[#111111] hover:opacity-60 transition-opacity duration-200"
-          >
-            <span class="w-8 h-px bg-[#111111]"></span>
-            contact@sud-ramonage.fr
-          </a>
+        <div class="flex flex-col gap-6">
+          <ContactButton variant="phone" />
+          <ContactButton variant="email" />
           <span class="inline-flex items-center gap-3 text-sm text-[#111111]/60">
             <span class="w-8 h-px bg-[#111111]/30"></span>
             31 chemin des tamaris, 13500 Martigues

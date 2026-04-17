@@ -1,0 +1,40 @@
+---
+export interface Props {
+  variant?: 'phone' | 'email';
+  class?: string;
+}
+const { variant = 'phone', class: className = '' } = Astro.props;
+---
+
+{variant === 'phone' && (
+  <a
+    href="tel:+33664729600"
+    class={`inline-flex items-center justify-center gap-3 bg-[#111111] text-white text-xs tracking-[0.2em] uppercase px-6 py-3 rounded-[3px] hover:bg-[#333333] transition-colors duration-200 ${className}`}
+  >
+    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+    </svg>
+    06 64 72 96 00
+  </a>
+)}
+
+{variant === 'email' && (
+  <a
+    href="#"
+    data-email="true"
+    class={`inline-flex items-center gap-3 text-sm text-[#111111] hover:opacity-60 transition-opacity duration-200 ${className}`}
+  >
+    <span class="w-8 h-px bg-[#111111]"></span>
+    <span data-obf></span>
+  </a>
+)}
+
+<script>
+  document.querySelectorAll('[data-obf]').forEach((el) => {
+    const u = ['m','a','j','e','o'];
+    const d = ['i','k','.','m','e'];
+    (el as HTMLElement).textContent = u.join('') + '@' + d.join('');
+    const link = el.closest('[data-email]') as HTMLAnchorElement;
+    if (link) link.href = 'mailto:' + u.join('') + '@' + d.join('');
+  });
+</script>
