@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import ContactButton from '../components/ContactButton.astro';
+import { villes } from '../data/villes';
 
 export interface Props {
   title?: string;
@@ -26,10 +27,16 @@ const jsonLd = {
     "postalCode": "13500",
     "addressCountry": "FR"
   },
-  "areaServed": ["Martigues", "Istres", "Fos-sur-Mer", "Bouches-du-Rhône"],
+  "areaServed": villes.map(v => v.nom),
   "url": "https://sud-ramonage.vercel.app",
   "openingHours": "Mo-Sa 08:00-18:00"
 };
+
+const services = [
+  { href: '/ramonage',        label: 'Ramonage Certifié' },
+  { href: '/debistrage',      label: 'Débistrage'         },
+  { href: '/entretien-poele', label: 'Entretien Poêle'   },
+];
 ---
 
 <!doctype html>
@@ -49,12 +56,12 @@ const jsonLd = {
   </head>
   <body class="bg-white text-[#1A1A1A] font-sans antialiased">
 
-    <!-- Header -->
+    <!-- ═══ HEADER ═══ -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-[0_1px_0_0_#EEEEEE]">
       <div class="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
 
-        <a href="/" class="flex items-center gap-2.5 group">
-          <!-- Icône flamme -->
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2.5 group shrink-0">
           <span class="w-7 h-7 rounded-md bg-[#E65100] flex items-center justify-center shrink-0">
             <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C9.5 6 7 8 7 12a5 5 0 0010 0c0-4-2.5-6-5-10zm0 18a3 3 0 01-3-3c0-2 1.5-3.5 3-5 1.5 1.5 3 3 3 5a3 3 0 01-3 3z"/>
@@ -65,14 +72,39 @@ const jsonLd = {
           </span>
         </a>
 
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="/#services" class="text-xs font-medium text-[#1A1A1A]/50 hover:text-[#1A1A1A] transition-colors duration-200">Services</a>
-          <a href="/#engagement" class="text-xs font-medium text-[#1A1A1A]/50 hover:text-[#1A1A1A] transition-colors duration-200">Nos engagements</a>
+        <!-- Nav desktop -->
+        <nav class="hidden md:flex items-center gap-7">
+
+          <!-- Menu déroulant Services -->
+          <div class="relative group/services">
+            <button class="flex items-center gap-1 text-xs font-medium text-[#1A1A1A]/50 hover:text-[#1A1A1A] transition-colors duration-200 py-5">
+              Services
+              <svg class="w-3 h-3 group-hover/services:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <!-- Dropdown -->
+            <div class="absolute top-full left-1/2 -translate-x-1/2 pt-1 opacity-0 invisible group-hover/services:opacity-100 group-hover/services:visible transition-all duration-200">
+              <div class="bg-white border border-[#EEEEEE] rounded-xl shadow-lg shadow-black/5 p-2 min-w-[200px]">
+                {services.map(({ href, label }) => (
+                  <a
+                    href={href}
+                    class="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-medium text-[#1A1A1A]/65 hover:bg-[#FFF3E0] hover:text-[#E65100] transition-colors duration-150"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>
+                    {label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <a href="/#engagement" class="text-xs font-medium text-[#1A1A1A]/50 hover:text-[#1A1A1A] transition-colors duration-200">Engagements</a>
           <a href="/#contact" class="text-xs font-medium text-[#1A1A1A]/50 hover:text-[#1A1A1A] transition-colors duration-200">Contact</a>
           <ContactButton variant="phone" />
         </nav>
 
-        <!-- Mobile -->
+        <!-- Mobile : bouton appel -->
         <a
           href="tel:+33664729600"
           class="md:hidden inline-flex items-center gap-2 bg-[#E65100] text-white text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-[#BF360C] transition-colors duration-200"
@@ -90,21 +122,82 @@ const jsonLd = {
       <slot />
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-[#EEEEEE] mt-24">
-      <div class="max-w-6xl mx-auto px-6 md:px-10 py-12">
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div class="space-y-2">
-            <p class="text-sm font-extrabold tracking-tight text-[#1A1A1A]">SUD RAMONAGE</p>
-            <p class="text-xs text-[#1A1A1A]/40">31 chemin des tamaris, 13500 Martigues</p>
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="border-t border-[#EEEEEE] mt-24 bg-[#FAFAFA]">
+      <div class="max-w-6xl mx-auto px-6 md:px-10 py-14">
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+
+          <!-- Colonne 1 : Marque -->
+          <div class="md:col-span-1 space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-md bg-[#E65100] flex items-center justify-center shrink-0">
+                <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C9.5 6 7 8 7 12a5 5 0 0010 0c0-4-2.5-6-5-10zm0 18a3 3 0 01-3-3c0-2 1.5-3.5 3-5 1.5 1.5 3 3 3 5a3 3 0 01-3 3z"/>
+                </svg>
+              </span>
+              <p class="text-sm font-extrabold tracking-tight text-[#1A1A1A]">SUD RAMONAGE</p>
+            </div>
+            <p class="text-xs text-[#1A1A1A]/40 leading-relaxed">
+              Artisan ramoneur certifié. 31 chemin des tamaris, 13500 Martigues.
+            </p>
             <ContactButton variant="email" />
+            <a href="tel:+33664729600" class="block text-xs text-[#1A1A1A]/40 hover:text-[#E65100] transition-colors duration-200">
+              06 64 72 96 00
+            </a>
           </div>
-          <div class="flex flex-col md:flex-row items-start md:items-center gap-4 text-xs text-[#1A1A1A]/35">
-            <a href="tel:+33664729600" class="hover:text-[#E65100] transition-colors duration-200">06 64 72 96 00</a>
-            <span class="hidden md:block">·</span>
-            <span>&copy; {new Date().getFullYear()} Sud Ramonage — Tous droits réservés</span>
+
+          <!-- Colonne 2 : Services -->
+          <div>
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-4">Services</p>
+            <ul class="space-y-2.5">
+              {services.map(({ href, label }) => (
+                <li>
+                  <a href={href} class="text-xs text-[#1A1A1A]/55 hover:text-[#E65100] transition-colors duration-200">{label}</a>
+                </li>
+              ))}
+              <li>
+                <a href="/#services" class="text-xs text-[#1A1A1A]/55 hover:text-[#E65100] transition-colors duration-200">Tous les services</a>
+              </li>
+            </ul>
           </div>
+
+          <!-- Colonne 3 : Villes Côte Bleue & Martigues -->
+          <div>
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-4">Côte Bleue & Martigues</p>
+            <ul class="space-y-2.5">
+              {villes.filter(v => ['martigues','sausset-les-pins','carry-le-rouet','chateauneuf-les-martigues'].includes(v.slug)).map(v => (
+                <li>
+                  <a href={`/villes/${v.slug}`} class="text-xs text-[#1A1A1A]/55 hover:text-[#E65100] transition-colors duration-200">
+                    Ramonage {v.nom}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Colonne 4 : Étang de Berre -->
+          <div>
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-4">Étang de Berre</p>
+            <ul class="space-y-2.5">
+              {villes.filter(v => ['istres','fos-sur-mer','gignac-la-nerthe'].includes(v.slug)).map(v => (
+                <li>
+                  <a href={`/villes/${v.slug}`} class="text-xs text-[#1A1A1A]/55 hover:text-[#E65100] transition-colors duration-200">
+                    Ramonage {v.nom}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
+
+        <!-- Bas du footer -->
+        <div class="pt-8 border-t border-[#EEEEEE] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#1A1A1A]/30">
+          <span>&copy; {new Date().getFullYear()} Sud Ramonage — Artisan ramoneur certifié à Martigues</span>
+          <span>Conforme RSD 13 — Bouches-du-Rhône</span>
+        </div>
+
       </div>
     </footer>
 

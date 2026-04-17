@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactButton from '../components/ContactButton.astro';
+---
+
+<Layout
+  title="Entretien Poêle à Bois & Granulés — Sud Ramonage Martigues"
+  description="Entretien et maintenance de poêle à bois et à granulés à Martigues. Ramonage, nettoyage, contrôle technique. Artisan certifié. Devis gratuit sous 24h."
+>
+
+  <section class="pt-32 pb-16 px-6 md:px-10 bg-[#1A1A1A]">
+    <div class="max-w-6xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-white/30 mb-8">
+        <a href="/" class="hover:text-white transition-colors duration-200">Accueil</a>
+        <span>/</span>
+        <span class="text-white/60">Entretien Poêle</span>
+      </nav>
+      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Service 03</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
+        Entretien Poêle<br />à Bois & Granulés.
+      </h1>
+      <p class="text-base text-white/55 font-light max-w-xl leading-relaxed mb-8">
+        Un poêle bien entretenu consomme moins, chauffe mieux et dure plus longtemps. Notre prestation d'entretien annuel couvre le ramonage du conduit, le nettoyage complet de l'appareil et un contrôle technique approfondi — pour votre confort et votre sécurité.
+      </p>
+      <ContactButton variant="phone" class="px-8 py-3.5" />
+    </div>
+  </section>
+
+  <section class="py-20 px-6 md:px-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-5">
+              Poêle à Bois vs Poêle à Granulés.
+            </h2>
+            <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed mb-5">
+              Ces deux types d'appareils n'ont pas les mêmes contraintes d'entretien. Le poêle à bois génère davantage de suies et nécessite un ramonage annuel rigoureux. Le poêle à granulés, bien que produisant moins de cendres, possède des composants électroniques, des ventilateurs et des sondes qui requièrent une maintenance spécifique.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              {[
+                { titre: 'Poêle à bois', items: ['Ramonage conduit', 'Nettoyage foyer', 'Joints vitre', 'Contrôle tirage'] },
+                { titre: 'Poêle à granulés', items: ['Ramonage conduit', 'Nettoyage brûleur', 'Contrôle ventilateur', 'Test électronique'] },
+              ].map(({ titre, items }) => (
+                <div class="bg-[#FAFAFA] rounded-xl p-5">
+                  <p class="text-xs font-bold text-[#1A1A1A] uppercase tracking-wider mb-3">{titre}</p>
+                  {items.map(i => (
+                    <p class="text-xs text-[#1A1A1A]/55 font-light py-1 border-b border-[#EEEEEE] last:border-0">{i}</p>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">
+              Quand Faire Entretenir Son Poêle ?
+            </h2>
+            <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed">
+              L'idéal est de planifier l'entretien annuel avant la saison de chauffe — en septembre ou octobre. Cela garantit que votre appareil est en parfait état de fonctionnement pour l'hiver, et que vous disposez du certificat exigé par votre assureur.
+            </p>
+          </div>
+        </div>
+        <div class="space-y-5">
+          <div class="bg-[#FFF3E0] rounded-xl p-7">
+            <p class="text-sm font-bold text-[#1A1A1A] mb-5">Entretien complet comprend</p>
+            {[
+              'Ramonage mécanique du conduit de fumée',
+              'Nettoyage du foyer et du cendrier',
+              'Vérification et remplacement des joints',
+              'Nettoyage de la vitre et des parois',
+              'Contrôle du tirage et de la ventilation',
+              'Certificat de ramonage conforme RSD 13',
+            ].map((item) => (
+              <div class="flex items-center gap-3 py-2.5 border-b border-[#E65100]/10 last:border-0">
+                <svg class="w-4 h-4 text-[#E65100] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-sm text-[#1A1A1A]/70 font-light">{item}</span>
+              </div>
+            ))}
+            <div class="pt-5">
+              <ContactButton variant="phone" class="w-full justify-center" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-6 md:px-10 bg-[#FFF3E0] text-center">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">Entretien Annuel Avant l'Hiver</h2>
+      <p class="text-sm text-[#1A1A1A]/55 font-light mb-8">Disponible dès septembre pour préparer la saison de chauffe.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <ContactButton variant="phone" class="px-8 py-4 text-sm" />
+        <ContactButton variant="email" />
+      </div>
+    </div>
+  </section>
+
+</Layout>
