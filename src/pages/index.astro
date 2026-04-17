@@ -4,41 +4,55 @@ import ContactButton from '../components/ContactButton.astro';
 ---
 
 <Layout
-  title="Sud Ramonage — Ramonage Certifié à Martigues, Côte Bleue & Étang de Berre"
-  description="Expert en ramonage certifié à Martigues. Ramonage de cheminée, poêle à bois et granulés, débistrage, contrôle technique. Certificat fourni. Conforme RSD 13."
+  title="Sud Ramonage — Artisan Ramoneur Certifié à Martigues & Côte Bleue"
+  description="Artisan ramoneur certifié à Martigues. Ramonage cheminée, poêle à bois et granulés, débistrage, contrôle technique. Certificat immédiat. Assurance pro. Conforme RSD 13."
 >
 
   <!-- ═══ HERO ═══ -->
   <section class="min-h-screen flex flex-col items-center justify-center text-center pt-16 pb-24 px-6 md:px-10">
     <div class="max-w-3xl mx-auto">
 
-      <p class="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#D5001C] mb-8">
-        Ramonage Certifié — Martigues & Environs
-      </p>
+      <!-- Badge localisation -->
+      <div class="inline-flex items-center gap-2 bg-[#FFF3E0] text-[#E65100] text-[11px] font-semibold px-4 py-2 rounded-full mb-8">
+        <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        VOTRE ARTISAN RAMONEUR À MARTIGUES & CÔTE BLEUE
+      </div>
 
-      <h1 class="text-[clamp(2.6rem,7vw,5.5rem)] font-black tracking-[0.05em] uppercase text-[#000000] leading-[1.05] mb-8">
-        SUD RAMONAGE :<br />L'ART DE LA SÉCURITÉ.
+      <h1 class="text-[clamp(2.4rem,6.5vw,5rem)] font-extrabold tracking-tight text-[#1A1A1A] leading-[1.08] mb-6">
+        SUD RAMONAGE :<br />L'Art de la Sécurité.
       </h1>
 
       <p class="text-base md:text-lg text-[#1A1A1A]/55 font-light max-w-lg mx-auto leading-relaxed mb-10">
-        Ramoneur certifié à Martigues. Chaque intervention est réalisée dans les règles de l'art — certificat officiel remis, reconnu par votre assurance.
+        Ramoneur certifié basé à Martigues. Certificat officiel remis après chaque intervention — conforme aux exigences de votre assurance et au RSD 13.
       </p>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <ContactButton variant="phone" class="w-full sm:w-auto px-10 py-4 text-sm" />
+      <!-- CTA + Badge -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+        <ContactButton variant="phone" class="w-full sm:w-auto px-8 py-3.5 text-sm" />
         <a
           href="#services"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-[#EEEEEE] text-[#1A1A1A]/60 text-xs font-semibold tracking-[0.1em] uppercase px-10 py-4 rounded-sm hover:border-[#1A1A1A]/30 hover:text-[#1A1A1A] transition-all duration-200"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-[#EEEEEE] text-[#1A1A1A]/55 text-xs font-semibold px-8 py-3.5 rounded-lg hover:border-[#1A1A1A]/25 hover:text-[#1A1A1A] transition-all duration-200"
         >
-          Nos prestations
+          Voir nos services
         </a>
+      </div>
+
+      <!-- Badge réassurance -->
+      <div class="inline-flex items-center gap-2 text-[11px] text-[#1A1A1A]/40 font-medium">
+        <svg class="w-4 h-4 text-[#E65100] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+        Certifié & Assuré — Devis gratuit sous 24h
       </div>
 
     </div>
   </section>
 
   <!-- ═══ CHIFFRES ═══ -->
-  <section class="border-t border-b border-[#EEEEEE]">
+  <section class="border-t border-b border-[#EEEEEE] bg-[#FAFAFA]">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
       <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#EEEEEE]">
         {[
@@ -48,36 +62,67 @@ import ContactButton from '../components/ContactButton.astro';
           { val: 'Lu–Sa', label: 'Disponibilité' },
         ].map(({ val, label }) => (
           <div class="py-10 px-6 text-center">
-            <p class="text-2xl md:text-3xl font-black tracking-[0.05em] text-[#000000] uppercase mb-1">{val}</p>
-            <p class="text-[10px] font-medium tracking-[0.2em] uppercase text-[#1A1A1A]/35">{label}</p>
+            <p class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-1">{val}</p>
+            <p class="text-[10px] font-medium tracking-wide uppercase text-[#1A1A1A]/35">{label}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ═══ PRÉSENTATION ═══ -->
-  <section class="py-24 px-6 md:px-10">
+  <!-- ═══ SERVICES ═══ -->
+  <section id="services" class="py-24 px-6 md:px-10">
     <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-        <div>
-          <p class="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#D5001C] mb-5">Notre expertise</p>
-          <h2 class="text-3xl md:text-4xl font-black tracking-[0.05em] uppercase text-[#000000] leading-tight mb-6">
-            Ramoneur Professionnel à Martigues.
-          </h2>
-          <div class="w-10 h-0.5 bg-[#D5001C]"></div>
+      <div class="mb-14 text-center">
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Ce que nous faisons</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A]">Nos Prestations</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Ramonage -->
+        <div class="bg-white border border-[#EEEEEE] rounded-lg p-8 hover:border-[#E65100]/30 hover:shadow-md transition-all duration-200">
+          <div class="w-12 h-12 rounded-lg bg-[#FFF3E0] flex items-center justify-center mb-6">
+            <!-- Flamme -->
+            <svg class="w-6 h-6 text-[#E65100]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C9.5 6 7 8 7 12a5 5 0 0010 0c0-4-2.5-6-5-10zm0 18a3 3 0 01-3-3c0-2 1.5-3.5 3-5 1.5 1.5 3 3 3 5a3 3 0 01-3 3z"/>
+            </svg>
+          </div>
+          <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100] mb-3">01</p>
+          <h3 class="text-lg font-bold tracking-tight text-[#1A1A1A] mb-3">Ramonage Certifié</h3>
+          <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light">
+            Ramonage mécanique complet de votre conduit, cheminée, insert ou poêle. <strong class="font-medium text-[#1A1A1A]/75">Certificat officiel</strong> remis à l'issue — exigé par les assurances et le RSD 13.
+          </p>
         </div>
 
-        <div class="space-y-5 text-[#1A1A1A]/65 text-base font-light leading-relaxed">
-          <p>
-            Installé à Martigues, au cœur des Bouches-du-Rhône, Sud Ramonage intervient auprès des particuliers et professionnels pour l'entretien complet de leurs installations de chauffage au bois. Notre activité respecte strictement le <strong class="font-semibold text-[#1A1A1A]">Règlement Sanitaire Départemental des Bouches-du-Rhône</strong>, qui impose un ramonage annuel pour tout conduit en service.
+        <!-- Débistrage -->
+        <div class="bg-white border border-[#EEEEEE] rounded-lg p-8 hover:border-[#E65100]/30 hover:shadow-md transition-all duration-200">
+          <div class="w-12 h-12 rounded-lg bg-[#FFF3E0] flex items-center justify-center mb-6">
+            <!-- Maison -->
+            <svg class="w-6 h-6 text-[#E65100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100] mb-3">02</p>
+          <h3 class="text-lg font-bold tracking-tight text-[#1A1A1A] mb-3">Débistrage</h3>
+          <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light">
+            Élimination des dépôts de goudron inflammables, première cause d'incendie de cheminée. Traitement <strong class="font-medium text-[#1A1A1A]/75">chimique et mécanique</strong> pour rétablir la sécurité totale.
           </p>
-          <p>
-            Nous maîtrisons tous les systèmes : <strong class="font-semibold text-[#1A1A1A]">cheminées à foyer ouvert</strong>, <strong class="font-semibold text-[#1A1A1A]">inserts</strong>, <strong class="font-semibold text-[#1A1A1A]">poêles à bois</strong> et <strong class="font-semibold text-[#1A1A1A]">poêles à granulés</strong>. Chaque intervention est unique, menée avec rigueur, et se conclut par la remise d'un <strong class="font-semibold text-[#1A1A1A]">certificat de ramonage conforme</strong> — document indispensable pour votre assurance.
-          </p>
-          <p>
-            Devis gratuit, sans engagement, sous 24 heures.
+        </div>
+
+        <!-- Contrôle -->
+        <div class="bg-white border border-[#EEEEEE] rounded-lg p-8 hover:border-[#E65100]/30 hover:shadow-md transition-all duration-200">
+          <div class="w-12 h-12 rounded-lg bg-[#FFF3E0] flex items-center justify-center mb-6">
+            <!-- Bouclier -->
+            <svg class="w-6 h-6 text-[#E65100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100] mb-3">03</p>
+          <h3 class="text-lg font-bold tracking-tight text-[#1A1A1A] mb-3">Contrôle Technique</h3>
+          <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light">
+            Vérification de la <strong class="font-medium text-[#1A1A1A]/75">vacuité</strong> et de l'<strong class="font-medium text-[#1A1A1A]/75">étanchéité</strong> du conduit. Recommandé avant toute mise en service ou achat immobilier.
           </p>
         </div>
 
@@ -85,42 +130,55 @@ import ContactButton from '../components/ContactButton.astro';
     </div>
   </section>
 
-  <!-- ═══ SERVICES ═══ -->
-  <section id="services" class="py-24 px-6 md:px-10 bg-[#FAFAFA]">
+  <!-- ═══ ENGAGEMENT ═══ -->
+  <section id="engagement" class="py-24 px-6 md:px-10 bg-[#1A1A1A]">
     <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-      <div class="mb-14">
-        <p class="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#D5001C] mb-5">Ce que nous faisons</p>
-        <h2 class="text-3xl md:text-4xl font-black tracking-[0.05em] uppercase text-[#000000] leading-tight">
-          Nos Prestations.
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 border border-[#EEEEEE] divide-y md:divide-y-0 md:divide-x divide-[#EEEEEE]">
-
-        <div class="p-8 md:p-10 bg-white hover:bg-[#FAFAFA] transition-colors duration-200">
-          <p class="text-[10px] font-semibold tracking-[0.25em] uppercase text-[#D5001C] mb-4">01</p>
-          <h3 class="text-lg font-black tracking-[0.03em] uppercase text-[#000000] mb-4">Ramonage Certifié</h3>
-          <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light">
-            Ramonage mécanique complet de votre conduit, cheminée, insert ou poêle. <strong class="font-medium text-[#1A1A1A]/80">Certificat officiel</strong> remis à l'issue — exigé par les assurances et le RSD 13.
+        <div>
+          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-5">Ce qui nous distingue</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight mb-4">
+            L'Engagement<br />Sud Ramonage.
+          </h2>
+          <p class="text-base text-white/45 font-light leading-relaxed">
+            Artisan local, nous intervenons chez vous comme chez nous — avec soin, ponctualité et le respect de votre foyer.
           </p>
         </div>
 
-        <div class="p-8 md:p-10 bg-white hover:bg-[#FAFAFA] transition-colors duration-200">
-          <p class="text-[10px] font-semibold tracking-[0.25em] uppercase text-[#D5001C] mb-4">02</p>
-          <h3 class="text-lg font-black tracking-[0.03em] uppercase text-[#000000] mb-4">Débistrage</h3>
-          <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light">
-            Élimination des dépôts de goudron hautement inflammables, première cause d'incendie de cheminée. Traitement <strong class="font-medium text-[#1A1A1A]/80">chimique et mécanique</strong> pour rétablir la sécurité.
-          </p>
-        </div>
-
-        <div class="p-8 md:p-10 bg-white hover:bg-[#FAFAFA] transition-colors duration-200">
-          <p class="text-[10px] font-semibold tracking-[0.25em] uppercase text-[#D5001C] mb-4">03</p>
-          <h3 class="text-lg font-black tracking-[0.03em] uppercase text-[#000000] mb-4">Contrôle Technique</h3>
-          <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light">
-            Vérification de la <strong class="font-medium text-[#1A1A1A]/80">vacuité</strong> et de l'<strong class="font-medium text-[#1A1A1A]/80">étanchéité</strong> du conduit. Recommandé avant toute mise en service ou lors d'un achat immobilier.
-          </p>
-        </div>
+        <ul class="space-y-5">
+          {[
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />`,
+              title: 'Travail propre garanti',
+              desc: 'Protection du sol et nettoyage complet après intervention. Vous ne voyez pas la différence.',
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />`,
+              title: 'Certificat immédiat',
+              desc: 'Document officiel remis sur place dès la fin du ramonage, valable pour votre assurance.',
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`,
+              title: 'Assurance professionnelle',
+              desc: 'Couvert en responsabilité civile professionnelle pour chaque intervention.',
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />`,
+              title: 'Artisan de proximité',
+              desc: 'Basé à Martigues, je connais le secteur et interviens rapidement sur toute la zone.',
+            },
+          ].map(({ icon, title, desc }) => (
+            <li class="flex gap-4">
+              <div class="w-10 h-10 rounded-lg bg-[#E65100]/15 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-[#E65100]" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={icon} />
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-white mb-1">{title}</p>
+                <p class="text-sm text-white/45 font-light leading-relaxed">{desc}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
 
       </div>
     </div>
@@ -132,14 +190,16 @@ import ContactButton from '../components/ContactButton.astro';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
         <div>
-          <p class="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#D5001C] mb-5">Zone d'intervention</p>
-          <h2 class="text-3xl md:text-4xl font-black tracking-[0.05em] uppercase text-[#000000] leading-tight mb-6">
-            Martigues, Côte Bleue & Étang de Berre.
+          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-5">Zone d'intervention</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-6">
+            Martigues, Côte Bleue<br />& Étang de Berre.
           </h2>
-          <div class="w-10 h-0.5 bg-[#D5001C] mb-8"></div>
+          <p class="text-sm text-[#1A1A1A]/55 font-light leading-relaxed mb-8">
+            Le <strong class="font-semibold text-[#1A1A1A]">RSD 13</strong> impose le ramonage annuel pour tout appareil à combustion. Intervention conforme, certificat reconnu par votre assureur.
+          </p>
           <div class="flex flex-wrap gap-2">
             {['Martigues', 'Istres', 'Fos-sur-Mer', 'Port-de-Bouc', 'Miramas', 'Sausset-les-Pins', 'Carry-le-Rouet', 'Ensuès'].map((ville) => (
-              <span class="text-[11px] font-medium tracking-[0.1em] uppercase border border-[#EEEEEE] text-[#1A1A1A]/45 px-3 py-1.5 rounded-sm">
+              <span class="text-[11px] font-medium border border-[#EEEEEE] text-[#1A1A1A]/45 px-3 py-1.5 rounded-md hover:border-[#E65100]/40 hover:text-[#E65100] transition-colors duration-200">
                 {ville}
               </span>
             ))}
@@ -148,10 +208,10 @@ import ContactButton from '../components/ContactButton.astro';
 
         <div class="space-y-5 text-[#1A1A1A]/65 text-base font-light leading-relaxed">
           <p>
-            Sud Ramonage couvre <strong class="font-semibold text-[#1A1A1A]">Martigues</strong>, <strong class="font-semibold text-[#1A1A1A]">Port-de-Bouc</strong>, <strong class="font-semibold text-[#1A1A1A]">Fos-sur-Mer</strong>, <strong class="font-semibold text-[#1A1A1A]">Istres</strong>, <strong class="font-semibold text-[#1A1A1A]">Miramas</strong>, le pourtour de l'<strong class="font-semibold text-[#1A1A1A]">Étang de Berre</strong> et la <strong class="font-semibold text-[#1A1A1A]">Côte Bleue</strong> (Sausset-les-Pins, Carry-le-Rouet, Ensuès-la-Redonne).
+            Sud Ramonage intervient sur l'ensemble du bassin de <strong class="font-semibold text-[#1A1A1A]">Martigues</strong> et ses communes : <strong class="font-semibold text-[#1A1A1A]">Port-de-Bouc</strong>, <strong class="font-semibold text-[#1A1A1A]">Fos-sur-Mer</strong>, <strong class="font-semibold text-[#1A1A1A]">Istres</strong>, <strong class="font-semibold text-[#1A1A1A]">Miramas</strong>, ainsi que le pourtour de l'<strong class="font-semibold text-[#1A1A1A]">Étang de Berre</strong>.
           </p>
           <p>
-            Le <strong class="font-semibold text-[#1A1A1A]">RSD 13</strong> impose le ramonage annuel des conduits de fumée dans tous les logements équipés d'un appareil à combustion. En faisant appel à Sud Ramonage, vous obtenez une intervention conforme, réalisée par un professionnel qualifié, avec remise d'un document reconnu par votre assureur.
+            Nous couvrons également la <strong class="font-semibold text-[#1A1A1A]">Côte Bleue</strong> : Sausset-les-Pins, Carry-le-Rouet et Ensuès-la-Redonne. Artisan local, nous connaissons le terrain et garantissons une réactivité maximale.
           </p>
         </div>
 
@@ -160,24 +220,38 @@ import ContactButton from '../components/ContactButton.astro';
   </section>
 
   <!-- ═══ CONTACT ═══ -->
-  <section id="contact" class="py-24 px-6 md:px-10 bg-[#000000]">
-    <div class="max-w-6xl mx-auto text-center">
+  <section id="contact" class="py-24 px-6 md:px-10 bg-[#FFF3E0]">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-      <p class="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#D5001C] mb-6">Prendre rendez-vous</p>
-      <h2 class="text-3xl md:text-5xl font-black tracking-[0.05em] uppercase text-white leading-tight mb-6">
-        Devis Gratuit Sous 24H.
-      </h2>
-      <p class="text-base text-white/40 font-light mb-10 max-w-md mx-auto">
-        Disponible du lundi au samedi. Intervention en urgence possible sur Martigues et environs.
-      </p>
+        <div>
+          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-5">Prendre rendez-vous</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-4">
+            Devis Gratuit Sous 24H.
+          </h2>
+          <p class="text-base text-[#1A1A1A]/55 font-light leading-relaxed">
+            Disponible du lundi au samedi. Intervention possible en urgence sur Martigues et environs.
+          </p>
+        </div>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <ContactButton variant="phone" class="w-full sm:w-auto px-10 py-4 text-sm" />
-        <ContactButton variant="email" class="text-white/40 hover:text-white text-sm" />
+        <div class="flex flex-col gap-5">
+          <ContactButton variant="phone" class="w-full sm:w-auto justify-center px-8 py-4 text-sm" />
+          <div class="flex items-center gap-3 text-sm text-[#1A1A1A]/50">
+            <svg class="w-4 h-4 text-[#E65100] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            Certifié & Assuré — Certificat remis après chaque intervention
+          </div>
+          <ContactButton variant="email" />
+          <div class="flex items-center gap-3 text-sm text-[#1A1A1A]/40">
+            <svg class="w-4 h-4 shrink-0 text-[#1A1A1A]/25" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            31 chemin des tamaris, 13500 Martigues
+          </div>
+        </div>
+
       </div>
-
-      <p class="text-xs text-white/20 mt-10">31 chemin des tamaris, 13500 Martigues</p>
-
     </div>
   </section>
 
