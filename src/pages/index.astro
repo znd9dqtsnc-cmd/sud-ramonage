@@ -3,32 +3,26 @@ import Layout from '../layouts/Layout.astro';
 import ContactButton from '../components/ContactButton.astro';
 ---
 
-<Layout title="SUD RAMONAGE — La Précision du Ramonage" description="Expert en ramonage certifié. Intervention rapide, travail soigné. Prenez rendez-vous en ligne.">
+<Layout
+  title="Sud Ramonage — Ramonage Certifié à Martigues, Côte Bleue & Étang de Berre"
+  description="Expert en ramonage certifié à Martigues. Ramonage de cheminée, poêle à bois et granulés, débistrage, contrôle technique. Certificat fourni. Conforme RSD 13."
+>
 
   <!-- Hero -->
   <section class="min-h-screen flex flex-col justify-center pt-24 pb-16 px-6 relative">
     <div class="max-w-7xl mx-auto w-full">
       <div class="max-w-4xl">
         <p class="text-xs tracking-[0.3em] uppercase text-[#111111]/50 mb-8">
-          Ramonage Certifié — Intervention Rapide
+          Ramonage Certifié — Martigues & Environs
         </p>
         <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] text-[#111111] mb-10">
-          LA PRÉCISION<br />DU RAMONAGE.
+          SUD RAMONAGE :<br />L'ART DE LA<br />SÉCURITÉ.
         </h1>
-        <p class="text-base md:text-lg text-[#111111]/60 font-light max-w-lg leading-relaxed mb-12">
-          Expertise technique, rigueur professionnelle. Chaque intervention est réalisée avec soin et certifiée conforme aux normes en vigueur.
+        <p class="text-base md:text-lg text-[#111111]/60 font-light max-w-xl leading-relaxed mb-12">
+          Ramoneur certifié à Martigues. Chaque intervention est réalisée dans les règles de l'art, certificat officiel remis à la fin — pour votre tranquillité et celle de votre assurance.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a
-            href="#contact"
-            id="rdv"
-            class="inline-flex items-center justify-center gap-3 bg-[#111111] text-white text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-[3px] hover:bg-[#333333] transition-colors duration-200 group"
-          >
-            Prendre RDV
-            <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
+          <ContactButton variant="phone" />
           <a
             href="#services"
             class="inline-flex items-center justify-center gap-3 border border-[#111111]/20 text-[#111111] text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-[3px] hover:border-[#111111] transition-colors duration-200"
@@ -43,39 +37,102 @@ import ContactButton from '../components/ContactButton.astro';
     </div>
   </section>
 
+  <!-- Présentation -->
+  <section class="py-32 px-6 border-t border-[#111111]/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+        <div class="md:col-span-4">
+          <p class="text-xs tracking-[0.3em] uppercase text-[#111111]/50 mb-4">Notre expertise</p>
+          <h2 class="text-3xl md:text-4xl font-black tracking-tight text-[#111111] leading-tight">
+            RAMONEUR<br />PROFESSIONNEL<br />À MARTIGUES.
+          </h2>
+        </div>
+        <div class="md:col-span-8 space-y-6">
+          <p class="text-base text-[#111111]/70 leading-relaxed font-light">
+            Installé à Martigues, au cœur des Bouches-du-Rhône, Sud Ramonage intervient auprès des particuliers et des professionnels pour l'entretien complet de leurs installations de chauffage au bois. Notre activité s'inscrit dans le respect strict du <strong class="font-semibold text-[#111111]">Règlement Sanitaire Départemental des Bouches-du-Rhône</strong>, qui impose un ramonage au moins une fois par an pour tout conduit en service.
+          </p>
+          <p class="text-base text-[#111111]/70 leading-relaxed font-light">
+            Nous maîtrisons l'ensemble des systèmes de chauffage au bois : <strong class="font-semibold text-[#111111]">cheminées à foyer ouvert</strong>, <strong class="font-semibold text-[#111111]">inserts</strong>, <strong class="font-semibold text-[#111111]">poêles à bois</strong> et <strong class="font-semibold text-[#111111]">poêles à granulés</strong>. Chaque appareil présente des caractéristiques propres — nature des dépôts, géométrie du conduit, type de combustion — et requiert une approche technique adaptée. Chez Sud Ramonage, nous ne faisons pas du volume : chaque intervention est unique, menée avec le soin et la rigueur qu'exige un travail de qualité.
+          </p>
+          <p class="text-base text-[#111111]/70 leading-relaxed font-light">
+            Le ramonage n'est pas une formalité administrative. Un conduit encrassé réduit le tirage, dégrade les performances de votre appareil et, surtout, fait courir un risque d'incendie de conduit ou d'intoxication au monoxyde de carbone. Notre intervention élimine les suies, les bistre et les dépôts de goudron accumulés, rétablit la circulation optimale des fumées et vous remet un <strong class="font-semibold text-[#111111]">certificat de ramonage conforme</strong> — document indispensable en cas de sinistre pour faire valoir votre couverture d'assurance.
+          </p>
+          <p class="text-base text-[#111111]/70 leading-relaxed font-light">
+            De Martigues à la Côte Bleue, de l'Étang de Berre aux communes limitrophes, nous assurons des délais d'intervention rapides et une disponibilité du lundi au samedi. Devis gratuit, sans engagement, sous 24 heures.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Services -->
   <section id="services" class="py-32 px-6 bg-[#F8F8F8]">
     <div class="max-w-7xl mx-auto">
       <p class="text-xs tracking-[0.3em] uppercase text-[#111111]/50 mb-4">Ce que nous faisons</p>
-      <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#111111] mb-20">NOS SERVICES.</h2>
+      <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#111111] mb-20">NOS PRESTATIONS.</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#111111]/10">
+
         <div class="bg-white p-10 hover:bg-[#F8F8F8] transition-colors duration-200">
           <span class="text-xs tracking-[0.2em] text-[#111111]/30 mb-6 block">01</span>
-          <h3 class="text-lg font-semibold tracking-tight text-[#111111] mb-4">Ramonage de Cheminée</h3>
-          <p class="text-sm text-[#111111]/60 leading-relaxed font-light">Nettoyage complet du conduit, certificat de ramonage fourni. Conforme aux exigences des assurances.</p>
+          <h3 class="text-lg font-semibold tracking-tight text-[#111111] mb-4">Ramonage Certifié</h3>
+          <p class="text-sm text-[#111111]/60 leading-relaxed font-light">
+            Ramonage mécanique complet de votre conduit de fumée, cheminée, insert ou poêle. À l'issue de chaque intervention, un <strong class="font-medium text-[#111111]/80">certificat de ramonage officiel</strong> vous est remis — pièce exigée par les compagnies d'assurance en cas de sinistre et par le RSD 13 pour tout conduit en service.
+          </p>
         </div>
+
         <div class="bg-white p-10 hover:bg-[#F8F8F8] transition-colors duration-200">
           <span class="text-xs tracking-[0.2em] text-[#111111]/30 mb-6 block">02</span>
-          <h3 class="text-lg font-semibold tracking-tight text-[#111111] mb-4">Ramonage de Poêle</h3>
-          <p class="text-sm text-[#111111]/60 leading-relaxed font-light">Poêle à bois, granulés ou insert — entretien annuel obligatoire réalisé par un professionnel certifié.</p>
+          <h3 class="text-lg font-semibold tracking-tight text-[#111111] mb-4">Débistrage</h3>
+          <p class="text-sm text-[#111111]/60 leading-relaxed font-light">
+            Le bistre est un dépôt de goudron hautement inflammable qui se forme dans les conduits mal entretenus ou utilisés avec du bois humide. Un conduit bistré est la première cause d'incendie de cheminée. Notre prestation de <strong class="font-medium text-[#111111]/80">débistrage professionnel</strong> élimine ces dépôts tenaces par traitement chimique et mécanique, et rétablit la sécurité de votre installation.
+          </p>
         </div>
+
         <div class="bg-white p-10 hover:bg-[#F8F8F8] transition-colors duration-200">
           <span class="text-xs tracking-[0.2em] text-[#111111]/30 mb-6 block">03</span>
-          <h3 class="text-lg font-semibold tracking-tight text-[#111111] mb-4">Diagnostic & Conseil</h3>
-          <p class="text-sm text-[#111111]/60 leading-relaxed font-light">Inspection vidéo du conduit, détection d'anomalies, recommandations techniques personnalisées.</p>
+          <h3 class="text-lg font-semibold tracking-tight text-[#111111] mb-4">Contrôle Technique</h3>
+          <p class="text-sm text-[#111111]/60 leading-relaxed font-light">
+            Inspection visuelle et technique de votre conduit : vérification de la <strong class="font-medium text-[#111111]/80">vacuité</strong> (absence d'obstruction), contrôle de l'<strong class="font-medium text-[#111111]/80">étanchéité</strong> (fissures, joints défaillants) et évaluation du tirage. Ce diagnostic complet est recommandé avant toute mise en service d'un appareil ou lors de l'achat d'un bien immobilier.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Zone Locale -->
+  <section class="py-32 px-6 border-t border-[#111111]/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+        <div class="md:col-span-4">
+          <p class="text-xs tracking-[0.3em] uppercase text-[#111111]/50 mb-4">Zone d'intervention</p>
+          <h2 class="text-3xl md:text-4xl font-black tracking-tight text-[#111111] leading-tight">
+            MARTIGUES,<br />CÔTE BLEUE<br />& ÉTANG DE BERRE.
+          </h2>
+        </div>
+        <div class="md:col-span-8 space-y-6">
+          <p class="text-base text-[#111111]/70 leading-relaxed font-light">
+            Sud Ramonage intervient sur l'ensemble du bassin de <strong class="font-semibold text-[#111111]">Martigues</strong> et ses communes environnantes : <strong class="font-semibold text-[#111111]">Port-de-Bouc</strong>, <strong class="font-semibold text-[#111111]">Fos-sur-Mer</strong>, <strong class="font-semibold text-[#111111]">Istres</strong>, <strong class="font-semibold text-[#111111]">Miramas</strong> et l'ensemble du pourtour de l'<strong class="font-semibold text-[#111111]">Étang de Berre</strong>. Nous couvrons également les communes de la <strong class="font-semibold text-[#111111]">Côte Bleue</strong> : Sausset-les-Pins, Carry-le-Rouet, Ensuès-la-Redonne.
+          </p>
+          <p class="text-base text-[#111111]/70 leading-relaxed font-light">
+            Le <strong class="font-semibold text-[#111111]">Règlement Sanitaire Départemental des Bouches-du-Rhône (RSD 13)</strong> impose le ramonage annuel des conduits de fumée dans tous les logements équipés d'un appareil à combustion. Cette obligation légale vise à prévenir les risques d'incendie et d'intoxication au monoxyde de carbone — deux accidents domestiques qui surviennent chaque hiver dans la région.
+          </p>
+          <p class="text-base text-[#111111]/70 leading-relaxed font-light">
+            En faisant appel à Sud Ramonage, vous bénéficiez d'une intervention conforme à cette réglementation, réalisée par un professionnel qualifié, avec remise d'un document officiel reconnu par votre assureur. Notre connaissance du terrain local et notre réactivité nous permettent de répondre à vos demandes dans les meilleurs délais.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact / RDV -->
-  <section id="contact" class="py-32 px-6">
+  <section id="contact" class="py-32 px-6 bg-[#F8F8F8]">
     <div class="max-w-7xl mx-auto">
       <div class="max-w-2xl">
-        <p class="text-xs tracking-[0.3em] uppercase text-[#111111]/50 mb-4">Contact</p>
-        <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#111111] mb-8">PARLONS DE<br />VOTRE PROJET.</h2>
+        <p class="text-xs tracking-[0.3em] uppercase text-[#111111]/50 mb-4">Prendre rendez-vous</p>
+        <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#111111] mb-8">DEVIS GRATUIT<br />SOUS 24H.</h2>
         <p class="text-sm text-[#111111]/60 leading-relaxed mb-10 font-light">
-          Disponible du lundi au samedi. Devis gratuit sous 24h. Intervention possible en urgence.
+          Disponible du lundi au samedi. Intervention possible en urgence sur Martigues et environs.
         </p>
         <div class="flex flex-col gap-6">
           <ContactButton variant="phone" />
