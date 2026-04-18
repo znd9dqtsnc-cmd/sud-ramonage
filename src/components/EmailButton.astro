@@ -1,0 +1,39 @@
+---
+export interface Props {
+  class?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+const { class: className = '', size = 'md' } = Astro.props;
+
+const sizeClasses = {
+  sm: 'px-4 py-2 text-xs gap-2',
+  md: 'px-5 py-3 text-sm gap-2.5',
+  lg: 'px-7 py-3.5 text-sm gap-3',
+};
+---
+
+<a
+  href="#"
+  data-email-btn
+  class={`inline-flex items-center justify-center bg-[#2d2d2d] text-white font-semibold rounded-lg hover:bg-[#1a1a1a] active:bg-[#111111] active:scale-[0.97] transition-all duration-150 select-none touch-manipulation ${sizeClasses[size]} ${className}`}
+  aria-label="Envoyer un email à Sud Ramonage"
+>
+  <!-- Lucide Mail -->
+  <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="2" y="4" width="20" height="16" rx="2"/>
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/>
+  </svg>
+  <span data-email-label>Email</span>
+</a>
+
+<script>
+  document.querySelectorAll('[data-email-btn]').forEach((el) => {
+    const u = ['m','a','j','e','o'];
+    const d = ['i','k','.','m','e'];
+    const email = u.join('') + '@' + d.join('');
+    const link = el as HTMLAnchorElement;
+    link.href = 'mailto:' + email;
+    const label = link.querySelector('[data-email-label]');
+    if (label) label.textContent = email;
+  });
+</script>
