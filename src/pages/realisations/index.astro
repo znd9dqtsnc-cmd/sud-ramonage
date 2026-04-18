@@ -1,0 +1,179 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { realisations, typeConfig } from '../../data/realisations';
+import type { TypeIntervention } from '../../data/realisations';
+
+const siteUrl = 'https://sud-ramonage.vercel.app';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Journal d\'Interventions — Rapports Techniques Sud Ramonage',
+  description: 'Rapports d\'interventions réelles de ramonage, débistrage et entretien de poêle réalisées par Sud Ramonage sur Martigues, la Côte Bleue et l\'Étang de Berre.',
+  url: `${siteUrl}/realisations`,
+  provider: { '@type': 'HomeAndConstructionBusiness', '@id': `${siteUrl}/#business` },
+};
+
+const types: { value: TypeIntervention | 'all'; label: string }[] = [
+  { value: 'all', label: 'Toutes' },
+  { value: 'ramonage', label: 'Ramonage' },
+  { value: 'debistrage', label: 'Débistrage' },
+  { value: 'entretien-poele', label: 'Entretien Poêle' },
+  { value: 'securite', label: 'Mise en Sécurité' },
+  { value: 'extraction', label: 'Extraction' },
+];
+---
+
+<Layout
+  title="Journal d'Interventions — Rapports Techniques | Sud Ramonage"
+  description="Rapports d'interventions réelles de ramonage, débistrage et entretien de poêle. Constats, travaux réalisés, résultats mesurés. Artisan certifié Martigues, Côte Bleue, Étang de Berre."
+  canonical={`${siteUrl}/realisations`}
+  breadcrumbs={[
+    { name: 'Accueil', url: '/' },
+    { name: 'Réalisations', url: '/realisations' },
+  ]}
+  pageSchema={pageSchema}
+>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="pt-32 pb-16 px-6 md:px-10 bg-[#1A1A1A]">
+    <div class="max-w-6xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-white/30 mb-8" aria-label="Fil d'Ariane">
+        <a href="/" class="hover:text-white transition-colors duration-200">Accueil</a>
+        <span>/</span>
+        <span class="text-white/60">Réalisations</span>
+      </nav>
+      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Journal d'Interventions</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-5">
+        Rapports Techniques d'Interventions.
+      </h1>
+      <p class="text-base text-white/50 font-light max-w-xl leading-relaxed">
+        Chaque chantier documenté : constat initial, travaux réalisés, résultats mesurés. Des interventions réelles, pas des témoignages.
+      </p>
+      <!-- Stats -->
+      <div class="flex flex-wrap gap-8 mt-10">
+        {[
+          { val: realisations.length.toString(), label: 'Interventions documentées' },
+          { val: new Set(realisations.map(r => r.villeSlug)).size.toString(), label: 'Villes couvertes' },
+          { val: realisations.filter(r => r.certificat).length.toString(), label: 'Certificats remis' },
+        ].map(({ val, label }) => (
+          <div>
+            <p class="text-2xl font-extrabold text-[#E65100]">{val}</p>
+            <p class="text-xs text-white/35 mt-0.5">{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FILTRES ═══ -->
+  <section class="sticky top-16 z-40 bg-white border-b border-[#EEEEEE] px-6 md:px-10 py-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-wrap gap-2 items-center">
+        <span class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mr-2">Filtrer :</span>
+        {types.map(({ value, label }) => (
+          <a
+            href={value === 'all' ? '/realisations' : `/realisations?type=${value}`}
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold border transition-colors duration-150"
+            class:list={[
+              value === 'all'
+                ? 'bg-[#E65100] text-white border-[#E65100]'
+                : 'bg-white text-[#1A1A1A]/55 border-[#EEEEEE] hover:border-[#E65100]/40 hover:text-[#E65100]',
+            ]}
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LISTE INTERVENTIONS ═══ -->
+  <section class="py-16 px-6 md:px-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {realisations.map((r) => {
+          const cfg = typeConfig[r.type];
+          const dateFormatted = new Date(r.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+          return (
+            <a
+              href={`/realisations/${r.slug}`}
+              class="group bg-white border border-[#EEEEEE] rounded-2xl overflow-hidden hover:border-[#E65100]/30 hover:shadow-lg transition-all duration-200 flex flex-col"
+            >
+              <!-- Stripe couleur type -->
+              <div class={`h-1 w-full ${cfg.bg.replace('bg-', 'bg-')} border-b ${cfg.border}`} style={`background-color: ${r.type === 'ramonage' ? '#FFF3E0' : ''}`}>
+                <div class={`h-full w-16 ${cfg.bg}`}></div>
+              </div>
+
+              <div class="p-6 flex flex-col flex-1">
+                <!-- Header -->
+                <div class="flex items-start justify-between gap-3 mb-4">
+                  <span class={`inline-flex items-center px-2.5 py-1 rounded-md text-[10px] font-semibold ${cfg.color} ${cfg.bg} border ${cfg.border}`}>
+                    {cfg.label}
+                  </span>
+                  <span class="text-[10px] text-[#1A1A1A]/30 font-mono shrink-0">{r.ref}</span>
+                </div>
+
+                <!-- Titre -->
+                <h2 class="text-sm font-bold text-[#1A1A1A] leading-snug mb-3 group-hover:text-[#E65100] transition-colors duration-200">
+                  {r.titre}
+                </h2>
+
+                <!-- Excerpt -->
+                <p class="text-xs text-[#1A1A1A]/50 font-light leading-relaxed mb-4 flex-1">
+                  {r.excerpt}
+                </p>
+
+                <!-- Meta -->
+                <div class="flex items-center justify-between pt-4 border-t border-[#EEEEEE]">
+                  <div class="flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-[#E65100] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span class="text-[11px] font-medium text-[#1A1A1A]/55">{r.nomVille}</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-[10px] text-[#1A1A1A]/30">{r.duree}</span>
+                    <time datetime={r.date} class="text-[10px] text-[#1A1A1A]/30">{dateFormatted}</time>
+                  </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="flex items-center gap-1.5 mt-4 text-[11px] font-semibold text-[#E65100] group-hover:gap-2.5 transition-all duration-200">
+                  Voir le rapport
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MAILLAGE SERVICES ═══ -->
+  <section class="py-12 px-6 md:px-10 bg-[#FAFAFA] border-t border-[#EEEEEE]">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-5">Nos services professionnels</p>
+      <div class="flex flex-wrap gap-3">
+        {[
+          { href: '/ramonage', label: 'Ramonage Certifié' },
+          { href: '/debistrage', label: 'Débistrage de Conduit' },
+          { href: '/entretien-poele', label: 'Entretien Poêle à Granulés' },
+          { href: '/conseils', label: 'Conseils d\'Experts' },
+        ].map(({ href, label }) => (
+          <a
+            href={href}
+            class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E65100]/30 hover:text-[#E65100] transition-all duration-200"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E65100]/40 shrink-0"></span>
+            {label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>
