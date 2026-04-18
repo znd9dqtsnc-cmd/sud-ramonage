@@ -205,8 +205,37 @@ const services = [
 
         </div>
 
+        <!-- Maillage sémantique croisé ville↔service -->
+        <nav aria-label="Liens thématiques ramonage par ville" class="pt-8 border-t border-[#EEEEEE] mb-6">
+          <p class="text-[9px] font-semibold tracking-widest uppercase text-[#1A1A1A]/20 mb-3">Ramonage par secteur</p>
+          <ul class="flex flex-wrap gap-x-5 gap-y-1.5">
+            {[
+              { href: '/ramonage',        label: 'Ramonage certifié Martigues'          },
+              { href: '/debistrage',      label: 'Débistrage conduit Istres'            },
+              { href: '/entretien-poele', label: 'Entretien poêle Fos-sur-Mer'         },
+              { href: '/ramonage',        label: 'Ramonage cheminée Sausset-les-Pins'  },
+              { href: '/debistrage',      label: 'Débistrage bistre Carry-le-Rouet'    },
+              { href: '/entretien-poele', label: 'Entretien poêle Châteauneuf'         },
+              { href: '/ramonage',        label: 'Ramonage conduit Gignac-la-Nerthe'   },
+              { href: '/villes/martigues',              label: 'Tubage inox Martigues'             },
+              { href: '/villes/istres',                 label: 'Tirage thermique Istres'           },
+              { href: '/villes/fos-sur-mer',            label: 'Test de vacuité Fos-sur-Mer'       },
+              { href: '/villes/sausset-les-pins',       label: 'RSD 13 Sausset-les-Pins'           },
+              { href: '/villes/carry-le-rouet',         label: 'Calcin cheminée Carry-le-Rouet'   },
+              { href: '/villes/chateauneuf-les-martigues', label: 'Ramonage RSD Châteauneuf'      },
+              { href: '/villes/gignac-la-nerthe',       label: 'Conduit inox Gignac-la-Nerthe'     },
+            ].map(({ href, label }) => (
+              <li>
+                <a href={href} class="text-[10px] text-[#1A1A1A]/25 hover:text-[#E65100] transition-colors duration-200">
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
         <!-- Bas du footer -->
-        <div class="pt-8 border-t border-[#EEEEEE] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#1A1A1A]/30">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#1A1A1A]/30">
           <span>&copy; {new Date().getFullYear()} Sud Ramonage — Artisan ramoneur certifié à Martigues</span>
           <span>Conforme RSD 13 — Bouches-du-Rhône</span>
         </div>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactButton from '../components/ContactButton.astro';
+import FAQ from '../components/FAQ.astro';
 import { Image } from 'astro:assets';
 
 import heroBg     from '../assets/images/service-bistrage.jpg';
@@ -74,21 +75,22 @@ const pageSchema = {
               Qu'est-ce que le Bistre ?
             </h2>
             <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed">
-              Le bistre est un dépôt de goudron et de résines qui se forme dans les conduits lorsque la combustion est incomplète — bois humide, combustion à basse température, tirage insuffisant. Contrairement à la suie sèche, le bistre est collant, très adhérent aux parois, et présente un risque d'inflammation bien supérieur. Un conduit bistré est une bombe à retardement.
+              Le bistre est un dépôt de goudron et de résines qui se forme dans les conduits lorsque la combustion est incomplète — bois humide, combustion à basse température, <strong class="font-medium text-[#1A1A1A]/80">tirage thermique</strong> insuffisant. Contrairement à la suie sèche ou au <strong class="font-medium text-[#1A1A1A]/80">calcin</strong> (dépôt vitreux issu du verre ou de matières minérales), le bistre est collant, très adhérent aux parois et présente un risque d'inflammation bien supérieur. Un conduit bistré est une bombe à retardement.
             </p>
           </div>
 
           <!-- Image illustration 1 : conduit encrassé -->
-          <div class="rounded-xl overflow-hidden aspect-[16/9]">
+          <figure class="rounded-xl overflow-hidden aspect-[16/9]">
             <Image
               src={conduitImg}
-              alt="Vue en coupe d'un conduit de cheminée avec dépôts de bistre et de goudron avant débistrage"
+              alt="Conduit de cheminée avec dépôts de bistre, goudron et calcin avant débistrage professionnel à Martigues"
               width={800}
               height={450}
               class="w-full h-full object-cover"
               loading="lazy"
             />
-          </div>
+            <figcaption class="sr-only">Conduit de cheminée encrassé de bistre et calcin à Martigues — débistrage professionnel chimique et mécanique. Élimination dépôts goudron, calcin, bistre. Artisan certifié RSD 13 Bouches-du-Rhône.</figcaption>
+          </figure>
 
           <div>
             <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-5">
@@ -136,7 +138,7 @@ const pageSchema = {
           </div>
 
           <!-- Image illustration 2 : artisan après débistrage -->
-          <div class="rounded-xl overflow-hidden aspect-[4/3]">
+          <figure class="rounded-xl overflow-hidden aspect-[4/3]">
             <Image
               src={artisanImg}
               alt="Artisan ramoneur vérifiant la propreté d'un conduit après une opération de débistrage à Martigues"
@@ -145,11 +147,35 @@ const pageSchema = {
               class="w-full h-full object-cover"
               loading="lazy"
             />
-          </div>
+            <figcaption class="sr-only">Artisan certifié Sud Ramonage Martigues après débistrage — vérification tirage thermique, test de vacuité post-traitement, conduit propre sans bistre ni calcin. Certificat RSD 13 Bouches-du-Rhône.</figcaption>
+          </figure>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <FAQ
+    title="Questions sur le Débistrage."
+    items={[
+      {
+        q: "Comment savoir si mon conduit est bistré ?",
+        a: "Plusieurs signes trahissent la présence de bistre : une odeur de goudron quand vous allumez le feu, des taches brunes ou noires autour du foyer, une fumée épaisse et noire au démarrage, un tirage thermique réduit malgré un conduit récemment ramoné, ou des suintements bruns sur les parois extérieures de la cheminée. En cas de doute, un diagnostic visuel par un artisan certifié permet de confirmer.",
+      },
+      {
+        q: "Quelle est la différence entre calcin et bistre ?",
+        a: "Le calcin est un dépôt minéral vitreux qui se forme sur les parois des conduits et des poêles à bois ou à granulés, issu de l'incinération de minéraux. Le bistre, lui, est organique — un mélange de goudron et de résines de bois. Les deux sont problématiques, mais le bistre est de loin le plus dangereux car son point d'ignition est bas. Un débistrage chimique suivi d'un ramonage mécanique traite les deux types de dépôts.",
+      },
+      {
+        q: "Le débistrage remplace-t-il le ramonage annuel obligatoire ?",
+        a: "Non. Le débistrage est une prestation complémentaire au ramonage annuel, nécessaire lorsque des dépôts de bistre ou de calcin sont présents. À l'issue d'un débistrage, un certificat de ramonage / débistrage est remis, valable pour votre assurance. La prestation suivante est un ramonage simple d'entretien, selon la fréquence imposée par le RSD 13.",
+      },
+      {
+        q: "Combien de temps dure un débistrage ?",
+        a: "Un débistrage complet (traitement chimique + intervention mécanique + test de vacuité + contrôle du tirage thermique) prend en général 2 à 3 heures, selon l'état et la longueur du conduit. Pour les conduits très encrassés, une seconde intervention peut être nécessaire 8 à 15 jours plus tard.",
+      },
+    ]}
+  />
 
   <!-- ═══ MAILLAGE SILO ═══ -->
   <section class="py-12 px-6 md:px-10 bg-[#FAFAFA]">

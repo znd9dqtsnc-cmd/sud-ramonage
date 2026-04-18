@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactButton from '../components/ContactButton.astro';
+import FAQ from '../components/FAQ.astro';
 import { Image } from 'astro:assets';
 
 // ─── Images locales ───────────────────────────────────────────────────────────
@@ -164,16 +165,17 @@ import artisanImg   from '../assets/images/artisan-intervention.jpg';
         <!-- Carte 2 — Débistrage -->
         <div class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 transition-all duration-300">
           <!-- Photo service (remplaçable : src/assets/images/service-bistrage.jpg) -->
-          <div class="aspect-[4/3] overflow-hidden bg-[#F5F5F5]">
+          <figure class="aspect-[4/3] overflow-hidden bg-[#F5F5F5]">
             <Image
               src={bistrageImg}
-              alt="Feu dans une cheminée — débistrage professionnel Martigues"
+              alt="Dépôts de bistre dans un conduit de cheminée — débistrage professionnel Martigues"
               width={600}
               height={450}
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
             />
-          </div>
+            <figcaption class="sr-only">Débistrage professionnel à Martigues — élimination des dépôts de goudron et de bistre dans les conduits de cheminée. Traitement chimique et mécanique conforme RSD 13.</figcaption>
+          </figure>
           <div class="p-7">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-9 h-9 rounded-lg bg-[#FFF3E0] flex items-center justify-center shrink-0">
@@ -200,16 +202,17 @@ import artisanImg   from '../assets/images/artisan-intervention.jpg';
         <!-- Carte 3 — Contrôle Technique -->
         <div class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 transition-all duration-300">
           <!-- Photo service (remplaçable : src/assets/images/service-controle.jpg) -->
-          <div class="aspect-[4/3] overflow-hidden bg-[#F5F5F5]">
+          <figure class="aspect-[4/3] overflow-hidden bg-[#F5F5F5]">
             <Image
               src={controleImg}
-              alt="Cheminée brique rouge — contrôle technique conduit Martigues"
+              alt="Contrôle technique et test de vacuité d'un conduit de cheminée à Martigues"
               width={600}
               height={450}
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
             />
-          </div>
+            <figcaption class="sr-only">Contrôle technique conduit cheminée Martigues — test de vacuité, vérification étanchéité tubage inox, tirage thermique. Artisan certifié RSD 13 Bouches-du-Rhône.</figcaption>
+          </figure>
           <div class="p-7">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-9 h-9 rounded-lg bg-[#FFF3E0] flex items-center justify-center shrink-0">
@@ -246,14 +249,17 @@ import artisanImg   from '../assets/images/artisan-intervention.jpg';
 
         <!-- Image latérale artisan (remplaçable : src/assets/images/artisan-intervention.jpg) -->
         <div class="relative order-2 lg:order-1">
+          <figure>
           <Image
             src={artisanImg}
-            alt="Artisan ramoneur en intervention — Sud Ramonage Martigues"
+            alt="Artisan ramoneur certifié en intervention à Martigues — ramonage mécanique conduit cheminée"
             width={800}
             height={600}
             class="w-full rounded-xl object-cover aspect-[4/3] shadow-2xl shadow-black/40"
             loading="lazy"
           />
+          <figcaption class="sr-only">Artisan ramoneur certifié Sud Ramonage à Martigues — intervention ramonage mécanique, tirage thermique, tubage inox, test de vacuité, certificat RSD 13 Bouches-du-Rhône.</figcaption>
+          </figure>
           <!-- Badge overlay sérieux technique -->
           <div class="absolute -bottom-4 -right-4 bg-[#E65100] text-white px-5 py-4 rounded-xl shadow-lg shadow-[#E65100]/30">
             <p class="text-2xl font-extrabold leading-none">RSD 13</p>
@@ -323,12 +329,48 @@ import artisanImg   from '../assets/images/artisan-intervention.jpg';
             Sud Ramonage couvre <strong class="font-semibold text-[#1A1A1A]">Martigues</strong>, <strong class="font-semibold text-[#1A1A1A]">Port-de-Bouc</strong>, <strong class="font-semibold text-[#1A1A1A]">Fos-sur-Mer</strong>, <strong class="font-semibold text-[#1A1A1A]">Istres</strong>, <strong class="font-semibold text-[#1A1A1A]">Miramas</strong>, le pourtour de l'<strong class="font-semibold text-[#1A1A1A]">Étang de Berre</strong> et la <strong class="font-semibold text-[#1A1A1A]">Côte Bleue</strong> (Sausset-les-Pins, Carry-le-Rouet, Ensuès-la-Redonne).
           </p>
           <p>
+            Chaque intervention comprend le ramonage mécanique, un <strong class="font-semibold text-[#1A1A1A]">test de vacuité</strong> (vérification de l'absence d'obstruction), le contrôle du <strong class="font-semibold text-[#1A1A1A]">tirage thermique</strong> et la remise du certificat conforme au <strong class="font-semibold text-[#1A1A1A]">Règlement Sanitaire Départemental (RSD 13)</strong>.
+          </p>
+          <p>
             Artisan local, nous connaissons le terrain et garantissons une réactivité maximale. Devis gratuit sous 24h, intervention possible en urgence.
           </p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════════════ -->
+  <FAQ
+    title="Vos Questions sur le Ramonage à Martigues."
+    items={[
+      {
+        q: "Le ramonage est-il vraiment obligatoire à Martigues ?",
+        a: "Oui. Le Règlement Sanitaire Départemental des Bouches-du-Rhône (RSD 13) impose un ramonage au minimum une fois par an pour tout conduit de fumée en service — cheminée à foyer ouvert, insert, poêle à bois ou poêle à granulés. Cette obligation s'applique aux résidences principales comme secondaires. En cas de sinistre (incendie de conduit, intoxication au monoxyde de carbone) sans certificat de ramonage valide, votre assureur peut légalement refuser la prise en charge.",
+      },
+      {
+        q: "Quel est le tarif d'un ramonage à Martigues ?",
+        a: "Le tarif varie selon le type d'appareil (cheminée à foyer ouvert, insert, poêle à bois ou à granulés), la longueur du conduit et son matériau (maçonnerie, tubage inox, conduit flexible). Contactez-nous pour un devis personnalisé gratuit sous 24h. Le certificat officiel est toujours inclus dans la prestation.",
+      },
+      {
+        q: "Délivrez-vous un certificat officiel de ramonage ?",
+        a: "Oui, un certificat de ramonage officiel est remis sur place immédiatement après chaque intervention. Ce document est conforme aux exigences du RSD 13 et reconnu par l'ensemble des assurances habitation. Il atteste du ramonage mécanique, du test de vacuité et du contrôle du tirage thermique.",
+      },
+      {
+        q: "Qu'est-ce que le bistre et pourquoi est-ce dangereux ?",
+        a: "Le bistre est un dépôt de goudron et de résines qui se forme dans les conduits lors d'une combustion incomplète (bois humide, température trop basse, tirage insuffisant). Contrairement à la suie sèche, le bistre est collant, adhère aux parois et est hautement inflammable — c'est la première cause d'incendie de cheminée en France. Un débistrage professionnel chimique et mécanique est nécessaire dès son apparition.",
+      },
+      {
+        q: "Intervenez-vous sur les poêles à granulés ?",
+        a: "Oui, nous intervenons sur tous types d'appareils : cheminées à foyer ouvert, inserts, poêles à bois et poêles à granulés. Les poêles à granulés nécessitent une maintenance spécifique incluant le ramonage du conduit, le nettoyage du brûleur, le contrôle du ventilateur et la vérification du système électronique, en plus du test de vacuité standard.",
+      },
+      {
+        q: "Qu'est-ce que le tubage inox et en avez-vous besoin ?",
+        a: "Le tubage inox est un conduit en acier inoxydable installé à l'intérieur d'un conduit de cheminée existant, pour le mettre aux normes ou l'adapter à un nouvel appareil. Nous intervenons sur tous les conduits tubés en inox pour le ramonage et le contrôle. Si un tubage est nécessaire suite à notre diagnostic, nous vous orientons vers un professionnel agréé.",
+      },
+    ]}
+  />
 
   <!-- ═══════════════════════════════════════════════
        CONTACT + CARTE

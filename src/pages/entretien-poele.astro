@@ -74,7 +74,7 @@ const pageSchema = {
               Poêle à Bois vs Poêle à Granulés.
             </h2>
             <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed mb-5">
-              Ces deux types d'appareils n'ont pas les mêmes contraintes d'entretien. Le poêle à bois génère davantage de suies et nécessite un ramonage annuel rigoureux. Le poêle à granulés, bien que produisant moins de cendres, possède des composants électroniques, des ventilateurs et des sondes qui requièrent une maintenance spécifique.
+              Ces deux types d'appareils n'ont pas les mêmes contraintes d'entretien. Le poêle à bois génère davantage de suies, de <strong class="font-medium text-[#1A1A1A]/80">bistre</strong> et de <strong class="font-medium text-[#1A1A1A]/80">calcin</strong>, et nécessite un ramonage annuel rigoureux avec contrôle du <strong class="font-medium text-[#1A1A1A]/80">tirage thermique</strong>. Le poêle à granulés, bien que produisant moins de cendres, possède des composants électroniques, des ventilateurs et des sondes qui requièrent une maintenance spécifique.
             </p>
             <div class="grid grid-cols-2 gap-4">
               {[
@@ -92,16 +92,17 @@ const pageSchema = {
           </div>
 
           <!-- Image illustration 1 : installation poêle -->
-          <div class="rounded-xl overflow-hidden aspect-[16/9]">
+          <figure class="rounded-xl overflow-hidden aspect-[16/9]">
             <Image
               src={poeleInstallImg}
-              alt="Installation moderne et entretien d'un poêle à granulés dans une maison à Martigues"
+              alt="Entretien annuel d'un poêle à granulés à Martigues — nettoyage brûleur, contrôle tirage thermique"
               width={800}
               height={450}
               class="w-full h-full object-cover"
               loading="lazy"
             />
-          </div>
+            <figcaption class="sr-only">Entretien poêle à granulés Martigues — nettoyage brûleur, ramonage conduit, contrôle tirage thermique, test de vacuité, tubage inox. Artisan certifié RSD 13 Bouches-du-Rhône.</figcaption>
+          </figure>
 
           <div>
             <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">
@@ -138,16 +139,17 @@ const pageSchema = {
           </div>
 
           <!-- Image illustration 2 : contrôle technique -->
-          <div class="rounded-xl overflow-hidden aspect-[4/3]">
+          <figure class="rounded-xl overflow-hidden aspect-[4/3]">
             <Image
               src={controleImg}
-              alt="Contrôle technique d'un poêle à granulés par un artisan certifié à Martigues"
+              alt="Contrôle technique complet d'un poêle à bois par un artisan certifié à Martigues — vérification tirage et joints"
               width={700}
               height={525}
               class="w-full h-full object-cover"
               loading="lazy"
             />
-          </div>
+            <figcaption class="sr-only">Contrôle technique poêle à bois Martigues — vérification joints vitre, tirage thermique, test de vacuité conduit, présence bistre ou calcin. Certificat entretien annuel RSD 13.</figcaption>
+          </figure>
         </div>
       </div>
     </div>

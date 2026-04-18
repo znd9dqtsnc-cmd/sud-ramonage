@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactButton from '../components/ContactButton.astro';
+import FAQ from '../components/FAQ.astro';
 import { Image } from 'astro:assets';
 
 import heroBg        from '../assets/images/service-ramonage.jpg';
@@ -81,16 +82,17 @@ const pageSchema = {
           </div>
 
           <!-- Image illustration 1 : artisan en intervention -->
-          <div class="rounded-xl overflow-hidden aspect-[16/9]">
+          <figure class="rounded-xl overflow-hidden aspect-[16/9]">
             <Image
               src={artisanImg}
-              alt="Artisan ramoneur certifié lors d'une intervention de ramonage de cheminée"
+              alt="Artisan ramoneur certifié lors d'une intervention de ramonage mécanique à Martigues"
               width={800}
               height={450}
               class="w-full h-full object-cover"
               loading="lazy"
             />
-          </div>
+            <figcaption class="sr-only">Artisan ramoneur certifié à Martigues effectuant un ramonage mécanique — hérisson rotatif, tirage thermique contrôlé, test de vacuité, tubage inox. Conforme RSD 13 Bouches-du-Rhône.</figcaption>
+          </figure>
 
           <div>
             <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">
@@ -101,7 +103,7 @@ const pageSchema = {
                 { n: '01', t: 'Protection du chantier', d: 'Bâches de protection au sol et autour du foyer avant toute intervention.' },
                 { n: '02', t: 'Ramonage mécanique', d: 'Hérissons rotatifs adaptés au type de conduit (maçonnerie, inox, tuile).' },
                 { n: '03', t: 'Aspiration des suies', d: 'Aspiration professionnelle pour un chantier propre sans dépôt dans la pièce.' },
-                { n: '04', t: 'Contrôle visuel', d: 'Vérification de l\'état du conduit, détection de fissures ou obstructions.' },
+                { n: '04', t: 'Test de vacuité', d: 'Vérification de l\'absence d\'obstruction (nid, calcin, effondrement partiel) et contrôle du tirage thermique.' },
                 { n: '05', t: 'Remise du certificat', d: 'Document officiel remis sur place, immédiatement après intervention.' },
               ].map(({ n, t, d }) => (
                 <li class="flex gap-4">
@@ -140,21 +142,22 @@ const pageSchema = {
           </div>
 
           <!-- Image illustration 2 : conduit/travaux -->
-          <div class="rounded-xl overflow-hidden aspect-[4/3]">
+          <figure class="rounded-xl overflow-hidden aspect-[4/3]">
             <Image
               src={conduitImg}
-              alt="Gros plan sur un conduit de cheminée lors d'une opération de ramonage professionnel"
+              alt="Gros plan sur un conduit de cheminée inox lors d'une opération de ramonage à Martigues"
               width={700}
               height={525}
               class="w-full h-full object-cover"
               loading="lazy"
             />
-          </div>
+            <figcaption class="sr-only">Conduit de cheminée en inox à Martigues — ramonage mécanique, élimination suie et calcin, test de vacuité, vérification tirage thermique. Artisan certifié Bouches-du-Rhône.</figcaption>
+          </figure>
 
           <div class="bg-[#1A1A1A] rounded-xl p-6">
             <p class="text-xs font-semibold text-white/40 uppercase tracking-widest mb-3">Appareils traités</p>
             <div class="flex flex-wrap gap-2">
-              {['Cheminée foyer ouvert', 'Insert', 'Poêle à bois', 'Poêle à granulés', 'Conduit maçonné', 'Conduit inox'].map((tag) => (
+              {['Cheminée foyer ouvert', 'Insert', 'Poêle à bois', 'Poêle à granulés', 'Conduit maçonné', 'Tubage inox'].map((tag) => (
                 <span class="text-[11px] font-medium border border-white/15 text-white/50 px-3 py-1.5 rounded-md">{tag}</span>
               ))}
             </div>
@@ -163,6 +166,29 @@ const pageSchema = {
       </div>
     </div>
   </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <FAQ
+    title="Questions sur le Ramonage Certifié."
+    items={[
+      {
+        q: "Quelle est la fréquence de ramonage obligatoire selon le RSD 13 ?",
+        a: "Le Règlement Sanitaire Départemental des Bouches-du-Rhône (RSD 13) impose un ramonage mécanique au minimum une fois par an pour tout conduit de fumée en service. Certains assureurs exigent deux ramonages annuels pour les appareils à combustion utilisés quotidiennement en hiver. Nous vous conseillons un entretien avant la saison de chauffe (septembre–octobre).",
+      },
+      {
+        q: "Qu'est-ce que le test de vacuité et est-il inclus dans le ramonage ?",
+        a: "Le test de vacuité vérifie l'absence totale d'obstruction dans le conduit — nid d'oiseau, effondrement partiel de maçonnerie, accumulation de calcin ou dépôt de bistre. Ce contrôle est inclus dans notre prestation de ramonage standard et figure sur le certificat officiel remis à l'issue de l'intervention.",
+      },
+      {
+        q: "Quelle différence entre un conduit maçonné et un tubage inox ?",
+        a: "Un conduit maçonné est intégré dans la structure de la maison (briques, pierres, béton). Un tubage inox est un conduit en acier inoxydable installé à l'intérieur d'un conduit existant ou en façade. Nous intervenons sur les deux types. Le tubage inox est souvent recommandé pour adapter un conduit ancien à un poêle moderne à haut rendement.",
+      },
+      {
+        q: "Combien de temps dure une intervention de ramonage ?",
+        a: "Une intervention standard (ramonage mécanique + test de vacuité + contrôle du tirage thermique + remise du certificat) prend entre 45 minutes et 1h30 selon le type d'appareil et la longueur du conduit. Pour un débistrage, prévoir 2 à 3 heures.",
+      },
+    ]}
+  />
 
   <!-- ═══ MAILLAGE SILO ═══ -->
   <section class="py-12 px-6 md:px-10 bg-[#FAFAFA]">

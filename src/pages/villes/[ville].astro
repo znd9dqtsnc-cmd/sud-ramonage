@@ -149,10 +149,10 @@ const pageSchema = {
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
         <!-- Photo 1 : ramonage en action -->
-        <div class="relative rounded-xl overflow-hidden aspect-[4/3] group">
+        <figure class="relative rounded-xl overflow-hidden aspect-[4/3] group">
           <Image
             src={galleryImg1}
-            alt={`Ramonage de cheminée en cours à ${data.nom} — intervention Sud Ramonage`}
+            alt={`Ramonage mécanique de cheminée en cours à ${data.nom} — hérisson rotatif, élimination suies et bistre`}
             width={600}
             height={450}
             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -160,13 +160,14 @@ const pageSchema = {
           />
           <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/60 to-transparent"></div>
           <p class="absolute bottom-4 left-4 text-xs font-semibold text-white">Ramonage en action</p>
-        </div>
+          <figcaption class="sr-only">Ramonage mécanique conduit cheminée à {data.nom} ({data.codePostal}) — élimination suies, bistre, calcin. Artisan certifié Bouches-du-Rhône, tirage thermique contrôlé, conforme RSD 13.</figcaption>
+        </figure>
 
         <!-- Photo 2 : artisan certifié -->
-        <div class="relative rounded-xl overflow-hidden aspect-[4/3] group">
+        <figure class="relative rounded-xl overflow-hidden aspect-[4/3] group">
           <Image
             src={galleryImg2}
-            alt={`Artisan ramoneur certifié lors d'une intervention à ${data.nom}, Bouches-du-Rhône`}
+            alt={`Artisan ramoneur certifié de Sud Ramonage lors d'une intervention à ${data.nom}, Bouches-du-Rhône`}
             width={600}
             height={450}
             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -174,13 +175,14 @@ const pageSchema = {
           />
           <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/60 to-transparent"></div>
           <p class="absolute bottom-4 left-4 text-xs font-semibold text-white">Artisan certifié</p>
-        </div>
+          <figcaption class="sr-only">Artisan ramoneur certifié Sud Ramonage à {data.nom} — intervention ramonage, test de vacuité, tubage inox. Devis gratuit sous 24h. Conforme Règlement Sanitaire Départemental RSD 13.</figcaption>
+        </figure>
 
         <!-- Photo 3 : contrôle technique -->
-        <div class="relative rounded-xl overflow-hidden aspect-[4/3] group">
+        <figure class="relative rounded-xl overflow-hidden aspect-[4/3] group">
           <Image
             src={galleryImg3}
-            alt={`Contrôle technique du conduit de cheminée après ramonage à ${data.nom}`}
+            alt={`Contrôle technique et test de vacuité du conduit de cheminée après ramonage à ${data.nom}`}
             width={600}
             height={450}
             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -188,7 +190,8 @@ const pageSchema = {
           />
           <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/60 to-transparent"></div>
           <p class="absolute bottom-4 left-4 text-xs font-semibold text-white">Contrôle & certificat</p>
-        </div>
+          <figcaption class="sr-only">Contrôle technique conduit cheminée à {data.nom} — test de vacuité, vérification tirage thermique, absence bistre et calcin. Certificat de ramonage RSD 13 remis immédiatement.</figcaption>
+        </figure>
 
       </div>
       <p class="text-xs text-[#1A1A1A]/35 mt-4 text-center">Photos illustratives — vos photos d'intervention seront intégrées ici.</p>
