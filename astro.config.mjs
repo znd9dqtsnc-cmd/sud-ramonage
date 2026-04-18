@@ -8,6 +8,10 @@ export default defineConfig({
   site: 'https://sud-ramonage.vercel.app',
   output: 'static',
   adapter: vercel(),
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'hover',
+  },
   integrations: [
     sitemap({
       changefreq: 'monthly',

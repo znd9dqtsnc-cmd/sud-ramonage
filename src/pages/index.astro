@@ -2,22 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 import ContactButton from '../components/ContactButton.astro';
 import FAQ from '../components/FAQ.astro';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 
 // ─── Images locales ───────────────────────────────────────────────────────────
-// Pour remplacer une image : déposez votre fichier dans src/assets/images/
-// puis relancez un déploiement (git push).
 import heroImg      from '../assets/images/hero-poele.jpg';
 import ramonageImg  from '../assets/images/service-ramonage.jpg';
 import bistrageImg  from '../assets/images/service-bistrage.jpg';
 import controleImg  from '../assets/images/service-controle.jpg';
 import artisanImg   from '../assets/images/artisan-intervention.jpg';
+
+// Preload LCP : récupère l'URL optimisée de l'image hero pour <link rel="preload">
+const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, format: 'webp' });
 ---
 
 <Layout
   title="Sud Ramonage — Artisan Ramoneur Certifié à Martigues & Côte Bleue"
   description="Artisan ramoneur certifié à Martigues. Ramonage cheminée, poêle à bois et granulés, débistrage, contrôle technique. Certificat immédiat. Assurance pro. Conforme RSD 13."
   canonical="https://sud-ramonage.vercel.app/"
+  preloadImageHref={optimizedHero.src}
 >
 
   <!-- ═══════════════════════════════════════════════

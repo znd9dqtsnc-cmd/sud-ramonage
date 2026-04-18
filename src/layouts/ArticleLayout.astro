@@ -49,6 +49,33 @@ const schemas = howToSchema
     <script type="application/ld+json" set:html={JSON.stringify(s)} />
   ))}
 
+  <!-- ═══ BARRE DE PROGRESSION DE LECTURE ═══ -->
+  <div
+    id="reading-progress"
+    aria-hidden="true"
+    style="position:fixed;top:64px;left:0;right:0;z-index:49;height:2px;background-color:#E65100;transform:scaleX(0);transform-origin:left;transition:transform 80ms linear;will-change:transform;"
+  ></div>
+  <script>
+    (function () {
+      const bar = document.getElementById('reading-progress');
+      const article = document.querySelector('article');
+      if (!bar || !article) return;
+
+      function update() {
+        const winH   = window.innerHeight;
+        const top    = article.getBoundingClientRect().top + window.scrollY;
+        const height = article.offsetHeight;
+        const progress = Math.max(0, Math.min(1,
+          (window.scrollY - top + winH * 0.15) / (height - winH * 0.7)
+        ));
+        bar.style.transform = `scaleX(${progress})`;
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+
   <!-- ═══ HERO ARTICLE ═══ -->
   <section class="pt-32 pb-12 px-6 md:px-10 bg-[#FAFAFA] border-b border-[#EEEEEE]">
     <div class="max-w-6xl mx-auto">
