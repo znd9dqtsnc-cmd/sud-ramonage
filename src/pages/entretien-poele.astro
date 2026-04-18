@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactButton from '../components/ContactButton.astro';
+import FAQ from '../components/FAQ.astro';
 import { Image } from 'astro:assets';
 
 import heroBg         from '../assets/images/hero-poele.jpg';
@@ -361,6 +362,29 @@ const pageSchema = {
       </div>
     </div>
   </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <FAQ
+    title="Questions sur l'Entretien de Poêle."
+    items={[
+      {
+        q: "À quelle fréquence faut-il entretenir son poêle à bois ou à granulés ?",
+        a: "Un entretien annuel minimum est obligatoire avant la saison de chauffe, idéalement en septembre ou octobre. Cela garantit que votre appareil est en parfait état pour l'hiver et que vous disposez du certificat RSD 13 exigé par votre assureur. Pour les poêles à granulés utilisés intensément, un second contrôle en cours de saison peut être utile.",
+      },
+      {
+        q: "Quelle est la différence entre l'entretien d'un poêle à bois et d'un poêle à granulés ?",
+        a: "Le poêle à bois nécessite principalement un ramonage du conduit et un nettoyage du foyer et des joints. Le poêle à granulés demande en plus le nettoyage du brûleur, de la chambre de combustion, du verre, et le contrôle du ventilateur et des sondes. Nos tarifs : 90 € pour un poêle à bois, 120 € pour un poêle à granulés — certificat RSD 13 inclus dans les deux cas.",
+      },
+      {
+        q: "Quel est le prix d'un entretien de poêle à Martigues ?",
+        a: "L'entretien annuel complet d'un poêle à bois à Martigues et sur la Côte Bleue est à 90 €. Pour un poêle à granulés (entretien plus complet), le tarif est de 120 €. Ramonage du conduit et certificat officiel RSD 13 inclus. Devis gratuit sous 24h — appelez le 06 64 72 96 00.",
+      },
+      {
+        q: "Un poêle mal entretenu peut-il présenter un danger pour la santé ?",
+        a: "Oui. Un conduit non ramoné ou un appareil mal entretenu favorise l'accumulation de bistre et une mauvaise évacuation des fumées. En cas de tirage insuffisant, le monoxyde de carbone (gaz inodore et mortel) peut s'infiltrer dans le logement. Symptômes : maux de tête, nausées, somnolence. En cas de doute, aérez immédiatement et consultez un professionnel. Une inspection caméra HD permet de vérifier l'état réel du conduit.",
+      },
+    ]}
+  />
 
   <!-- ═══ CTA ═══ -->
   <section class="py-16 px-6 md:px-10 bg-[#FFF3E0] text-center">

@@ -28,10 +28,11 @@ const {
 } = Astro.props;
 
 const services = [
-  { href: '/ramonage',        label: 'Ramonage Certifié',      desc: 'Nettoyage mécanique, certificat RSD 13' },
-  { href: '/debistrage',      label: 'Débistrage',              desc: 'Traitement chimique & mécanique du bistre' },
-  { href: '/entretien-poele', label: 'Entretien Poêle',        desc: 'Maintenance complète poêle à bois & granulés' },
-  { href: '/normes',          label: 'Normes & Sécurité',      desc: 'NF DTU 24.1, distances de sécurité, tubage' },
+  { href: '/ramonage',           label: 'Ramonage Certifié',    desc: 'Nettoyage mécanique, certificat RSD 13' },
+  { href: '/debistrage',         label: 'Débistrage',            desc: 'Traitement chimique & mécanique du bistre' },
+  { href: '/entretien-poele',    label: 'Entretien Poêle',      desc: 'Maintenance complète poêle à bois & granulés' },
+  { href: '/inspection-camera',  label: 'Inspection Caméra',    desc: 'Diagnostic vidéo HD — fissures, rapport assurance' },
+  { href: '/normes',             label: 'Normes & Sécurité',    desc: 'NF DTU 24.1, distances de sécurité, tubage' },
 ];
 
 const zonesGroupes = [
@@ -105,6 +106,15 @@ const zonesGroupes = [
             SUD RAMONAGE
           </span>
         </a>
+
+        <!-- ── Badge COSTIC — desktop uniquement ── -->
+        <div class="hidden lg:flex items-center gap-1.5 bg-[#1A4B8F]/8 border border-[#1A4B8F]/20 rounded-lg px-2.5 py-1.5 shrink-0" title="Certification COSTIC — Formation fumisterie et sécurité">
+          <svg class="w-3 h-3 text-[#1A4B8F] shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+          <span class="text-[9px] font-extrabold tracking-widest text-[#1A4B8F] uppercase">COSTIC</span>
+        </div>
 
         <!-- ── Nav Desktop ── -->
         <nav class="hidden lg:flex items-center gap-1 flex-1" aria-label="Navigation principale">
@@ -497,6 +507,17 @@ const zonesGroupes = [
             <p class="text-xs text-[#1A1A1A]/45 leading-relaxed max-w-xs">
               Artisan ramoneur certifié. Ramonage, débistrage et entretien de poêle sur Martigues, la Côte Bleue et l'Étang de Berre. Certificat RSD 13 immédiat.
             </p>
+            <!-- Badge COSTIC footer -->
+            <div class="inline-flex items-center gap-2.5 bg-[#1A4B8F]/8 border border-[#1A4B8F]/15 rounded-lg px-3.5 py-2.5 mt-1">
+              <svg class="w-4 h-4 text-[#1A4B8F] shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="8" r="6"/>
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+              </svg>
+              <div>
+                <p class="text-[10px] font-extrabold tracking-widest text-[#1A4B8F] uppercase leading-none">COSTIC</p>
+                <p class="text-[9px] text-[#1A4B8F]/60 font-light mt-0.5">Certifié Fumisterie</p>
+              </div>
+            </div>
             <address class="not-italic text-xs text-[#1A1A1A]/40 space-y-1">
               <p>31 chemin des tamaris, 13500 Martigues</p>
               <a href="tel:+33664729600" class="block hover:text-[#E65100] transition-colors duration-200">06 64 72 96 00</a>
@@ -591,6 +612,26 @@ const zonesGroupes = [
             ))}
           </ul>
         </nav>
+
+        <!-- ── Lexique Fumisterie — SEO footer ── -->
+        <div class="pt-8 border-t border-[#EEEEEE] mb-6">
+          <p class="text-[9px] font-semibold tracking-widest uppercase text-[#1A1A1A]/20 mb-3">Lexique Fumisterie</p>
+          <dl class="flex flex-wrap gap-x-8 gap-y-2">
+            {[
+              { t: 'Bistre',   d: 'Dépôt de goudron issu de la combustion de bois humide. Hautement inflammable.' },
+              { t: 'Tubage',   d: 'Installation d\'un conduit inox à l\'intérieur d\'un conduit existant pour mise aux normes.' },
+              { t: 'Tirage',   d: 'Mouvement ascendant des fumées dans le conduit, créé par la différence de température.' },
+              { t: 'Vacuité',  d: 'Absence d\'obstruction dans un conduit. Vérifiée par test mécanique lors du ramonage.' },
+              { t: 'Calcin',   d: 'Dépôt vitreux minéral formé dans les conduits par combustion de certaines essences.' },
+              { t: 'RSD 13',   d: 'Règlement Sanitaire Départemental des Bouches-du-Rhône : impose le ramonage annuel.' },
+            ].map(({ t, d }) => (
+              <div class="text-[10px] text-[#1A1A1A]/25 font-light max-w-[16rem]">
+                <dt class="font-semibold text-[#1A1A1A]/35 inline">{t} — </dt>
+                <dd class="inline">{d}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
 
         <!-- Bas du footer -->
         <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#1A1A1A]/30 pt-6 border-t border-[#EEEEEE]">
