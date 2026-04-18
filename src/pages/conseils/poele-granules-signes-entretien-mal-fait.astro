@@ -1,0 +1,168 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const siteUrl = 'https://sud-ramonage.vercel.app';
+const slug = 'poele-granules-signes-entretien-mal-fait';
+const datePublished = '2025-04-18';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Poêle à granulés : Les 3 signes d\'un entretien mal fait',
+  description: 'Un poêle à granulés mal entretenu ne tombe pas simplement en panne — il devient dangereux. Ces 3 signaux d\'alerte permettent de détecter un entretien insuffisant avant qu\'il ne provoque une panne coûteuse ou un sinistre.',
+  author: { '@type': 'Person', name: 'Sud Ramonage', url: siteUrl },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Sud Ramonage',
+    logo: { '@type': 'ImageObject', url: `${siteUrl}/favicon.svg` },
+  },
+  datePublished,
+  dateModified: datePublished,
+  url: `${siteUrl}/conseils/${slug}`,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}/conseils/${slug}` },
+  image: `${siteUrl}/og-image.jpg`,
+  articleSection: 'Diagnostic',
+  keywords: 'poêle à granulés, entretien, brûleur, ventilateur, bistre, calcin, tirage thermique, Martigues',
+};
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Diagnostiquer un entretien insuffisant sur un poêle à granulés',
+  description: '3 signes révélateurs qui indiquent qu\'un poêle à granulés a été mal ou insuffisamment entretenu.',
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Le temps de chauffe s\'allonge progressivement',
+      text: 'Si le poêle met de plus en plus de temps pour atteindre sa température cible, c\'est souvent le signe d\'un brûleur encrassé de calcin ou d\'un ventilateur colmaté par les cendres fines. Le tirage thermique est réduit, la combustion devient inefficace.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Des erreurs ou alarmes électroniques répétées',
+      text: 'Les codes d\'erreur liés à la température (sonde encrassée), au tirage (pressostats colmatés) ou à l\'allumage (électrode oxydée) révèlent un entretien insuffisant des composants électroniques et mécaniques du poêle.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Les résidus de combustion sont solides ou vitreux',
+      text: 'Des résidus solides, noirs ou vitreux dans le cendrier ou sur le brûleur indiquent une combustion incomplète due à un tirage insuffisant. C\'est le premier stade de formation de bistre dans le conduit d\'évacuation.',
+    },
+  ],
+};
+---
+
+<ArticleLayout
+  title="Poêle à granulés : Les 3 signes d'un entretien mal fait"
+  description="Un poêle à granulés mal entretenu ne tombe pas simplement en panne — il devient dangereux. Ces 3 signaux d'alerte permettent de détecter un entretien insuffisant avant qu'il ne provoque une panne coûteuse ou un sinistre."
+  slug={slug}
+  category="Diagnostic"
+  readTime="5 min"
+  datePublished={datePublished}
+  relatedService={{ href: '/entretien-poele', label: 'Entretien Annuel Poêle à Bois & Granulés' }}
+  articleSchema={articleSchema}
+  howToSchema={howToSchema}
+>
+
+<p>
+  Le poêle à granulés (ou poêle à pellets) est devenu en quelques années l'appareil de chauffage d'appoint préféré des Français. Économique, automatisé et confortable, il a pourtant une exigence que ses propriétaires sous-estiment souvent : il nécessite un <strong>entretien annuel rigoureux et spécifique</strong>, très différent de celui d'un poêle à bois traditionnel.
+</p>
+
+<p>
+  Un poêle à granulés mal entretenu ne se contente pas de consommer plus ou de chauffer moins bien. Il accumule silencieusement des dépôts dangereux dans son conduit d'évacuation, fragilise ses composants électroniques et mécaniques, et crée un risque d'incendie ou d'intoxication au monoxyde de carbone qui peut mettre des mois à se manifester — souvent en plein hiver, au pire moment.
+</p>
+
+<p>
+  Voici les 3 signaux d'alerte qui révèlent un entretien insuffisant, avant que la situation ne devienne critique.
+</p>
+
+<h2>Signe 1 — Le temps de chauffe s'allonge progressivement</h2>
+
+<p>
+  Vous avez l'impression que votre poêle "tire" moins bien qu'avant ? Qu'il met plus de temps à atteindre sa température de confort, ou qu'il semble peiner en mode haute puissance ? Ce n'est pas une question d'âge ou de qualité des granulés — c'est très probablement un problème d'entretien.
+</p>
+
+<p>
+  Plusieurs composants peuvent être en cause :
+</p>
+
+<ul>
+  <li><strong>Le brûleur encrassé de calcin</strong> : les résidus de combustion des granulés forment progressivement une couche dure et vitreuse (le calcin) sur et autour du brûleur. Cette couche réduit la surface de combustion disponible et perturbe l'alimentation en air comburant. La flamme devient plus petite, moins stable, et la puissance thermique chute.</li>
+  <li><strong>Le ventilateur de combustion colmaté</strong> : les cendres fines produites par les granulés s'accumulent sur les pales du ventilateur de combustion (la turbine qui aspire l'air frais dans le foyer). Un ventilateur encrassé tourne moins vite, aspire moins d'air, et dégrade directement la qualité de la combustion.</li>
+  <li><strong>Le conduit d'évacuation partiellement obstrué</strong> : la réduction du tirage thermique par encrassement progressif du conduit ou de l'échangeur interne est le facteur aggravant le plus fréquent. Les fumées peinent à s'évacuer, la pression interne augmente, et l'appareil entre en sécurité automatique de façon croissante.</li>
+</ul>
+
+<div class="callout">
+  <strong>Diagnostic rapide :</strong> si votre poêle met plus de 15-20 minutes pour atteindre sa température de confort habituelle, ou s'il déclenche régulièrement sa mise en sécurité automatique, planifiez un entretien complet avant d'aller plus loin.
+</div>
+
+<h2>Signe 2 — Des erreurs ou alarmes électroniques répétées</h2>
+
+<p>
+  Les poêles à granulés modernes sont équipés de nombreux capteurs et systèmes de sécurité électroniques. Ces composants sont extrêmement sensibles à l'encrassement — et c'est précisément pour cette raison qu'un entretien annuel approfondi est indispensable.
+</p>
+
+<p>
+  Les codes d'erreur les plus révélateurs d'un entretien insuffisant :
+</p>
+
+<ul>
+  <li><strong>Erreur de température (sonde encrassée)</strong> : la sonde de température du foyer se recouvre progressivement de cendres et de résidus de combustion. Elle transmet des valeurs erronées à l'électronique de contrôle, qui réagit en modifiant inutilement la puissance ou en déclenchant des alarmes.</li>
+  <li><strong>Erreur de tirage (pressostat colmaté)</strong> : le pressostat mesure la dépression dans le conduit d'évacuation pour s'assurer que les fumées s'évacuent correctement. Si le tube de connexion du pressostat est obstrué par des cendres fines — ce qui arrive systématiquement sans entretien —, le poêle reçoit des informations fausses et peut s'arrêter intempestivement.</li>
+  <li><strong>Erreur d'allumage (électrode oxydée ou encrassée)</strong> : l'électrode d'allumage qui enflamme les granulés se recouvre d'oxydes et de résidus carbonisés. Les tentatives d'allumage échouent, le cycle se répète jusqu'au déclenchement de l'alarme de sécurité.</li>
+</ul>
+
+<p>
+  Ces erreurs électroniques ne signalent pas une panne matérielle coûteuse — dans 80 % des cas, elles révèlent simplement un <strong>défaut d'entretien des composants</strong>. Un nettoyage professionnel complet résout le problème sans remplacement de pièces.
+</p>
+
+<h2>Signe 3 — Les résidus de combustion sont solides ou vitreux</h2>
+
+<p>
+  C'est le signe le plus facile à observer par vous-même, et l'un des plus parlants pour un technicien. Examinez le fond du cendrier et la surface du brûleur après quelques utilisations.
+</p>
+
+<p>
+  Voici ce que vous devriez normalement voir avec un appareil bien entretenu : des cendres légères, gris clair, presque poudreuses. Les granulés ont brûlé complètement, la température de combustion était correcte, le tirage suffisant.
+</p>
+
+<p>
+  Voici ce que révèle un entretien insuffisant :
+</p>
+
+<ul>
+  <li><strong>Résidus noirs et compacts</strong> (clinker) : la combustion était incomplète. La température du foyer était insuffisante, souvent à cause d'un manque d'air comburant lié à un ventilateur ou un brûleur encrassé.</li>
+  <li><strong>Dépôts vitreux brillants</strong> (calcin) : les minéraux des granulés ont fondu et se sont vitrifiés. Cela indique des points de surchauffe localisée liés à une mauvaise circulation d'air dans le foyer.</li>
+  <li><strong>Odeur de goudron en chauffe</strong> : le bistre commence à se former dans le conduit d'évacuation. La combustion incomplète génère des résines de bois qui se condensent sur les parois du conduit — le premier stade avant l'incendie de conduit.</li>
+</ul>
+
+<blockquote>
+  Un poêle à granulés qui produit du clinker ou du calcin en quantité importante n'est pas seulement moins efficace — il forme activement du bistre dans son conduit d'évacuation, hors de votre vue, silencieusement.
+</blockquote>
+
+<h2>Ce que comprend un entretien annuel complet</h2>
+
+<p>
+  Un entretien annuel professionnel d'un poêle à granulés ne se résume pas à "vider le cendrier et ramoner le conduit". Une intervention complète comprend :
+</p>
+
+<ol>
+  <li><strong>Ramonage mécanique du conduit de fumée</strong> et test de vacuité pour vérifier l'absence d'obstruction</li>
+  <li><strong>Démontage et nettoyage complet du brûleur</strong> : élimination du calcin et des résidus carbonisés</li>
+  <li><strong>Nettoyage du ventilateur de combustion et de l'échangeur</strong> : aspiration professionnelle des cendres fines</li>
+  <li><strong>Vérification et nettoyage de tous les capteurs</strong> : sonde de température, pressostat, cellule de flamme</li>
+  <li><strong>Contrôle des joints d'étanchéité</strong> : porte du foyer, vitre, conduit de raccordement</li>
+  <li><strong>Vérification du tirage thermique</strong> et ajustement si nécessaire</li>
+  <li><strong>Remise du certificat d'entretien</strong> conforme au RSD 13, valable pour votre assurance</li>
+</ol>
+
+<p>
+  La meilleure période pour cet entretien ? <strong>Septembre ou octobre</strong>, avant de relancer l'appareil pour la saison de chauffe. Vous avez ainsi la garantie d'une installation vérifiée, propre et sûre pour les mois d'hiver — et votre certificat est à jour pour votre assureur.
+</p>
+
+<div class="callout">
+  <strong>Bon à savoir :</strong> un poêle à granulés bien entretenu consomme jusqu'à 15 % de granulés en moins pour produire la même quantité de chaleur. L'entretien annuel est donc un investissement qui se rembourse rapidement sur votre facture énergétique.
+</div>
+
+</ArticleLayout>

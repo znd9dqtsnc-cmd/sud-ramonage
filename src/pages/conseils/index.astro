@@ -1,0 +1,156 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactButton from '../../components/ContactButton.astro';
+
+const siteUrl = 'https://sud-ramonage.vercel.app';
+
+const articles = [
+  {
+    slug: 'certificat-ramonage-assureur',
+    category: 'Réglementation',
+    categoryColor: 'bg-blue-600',
+    title: 'Certificat de ramonage : 5 points que votre assureur vérifie.',
+    excerpt: 'En cas de sinistre, votre assureur peut refuser la prise en charge si votre certificat est incomplet. Découvrez les 5 éléments indispensables qu\'un certificat conforme au RSD 13 doit obligatoirement mentionner.',
+    readTime: '5 min',
+    datePublished: '2025-04-18',
+    service: { href: '/ramonage', label: 'Ramonage Certifié' },
+    tags: ['RSD 13', 'Assurance', 'Certificat', 'Légalité'],
+  },
+  {
+    slug: 'bistre-calcin-ramonage-ne-suffit-plus',
+    category: 'Technique',
+    categoryColor: 'bg-amber-600',
+    title: 'Bistre et Calcin : Pourquoi le ramonage classique ne suffit plus ?',
+    excerpt: 'Le bistre — dépôt de goudron hautement inflammable — est la première cause d\'incendie de conduit en France. Un simple ramonage mécanique ne l\'élimine pas. Voici pourquoi et comment le traiter.',
+    readTime: '6 min',
+    datePublished: '2025-04-18',
+    service: { href: '/debistrage', label: 'Débistrage de Conduit' },
+    tags: ['Bistre', 'Calcin', 'Débistrage', 'Sécurité'],
+  },
+  {
+    slug: 'poele-granules-signes-entretien-mal-fait',
+    category: 'Diagnostic',
+    categoryColor: 'bg-[#E65100]',
+    title: 'Poêle à granulés : Les 3 signes d\'un entretien mal fait.',
+    excerpt: 'Un poêle à granulés mal entretenu ne tombe pas simplement en panne — il devient dangereux. Ces 3 signaux d\'alerte permettent de détecter un entretien insuffisant avant qu\'il ne provoque une panne coûteuse ou un sinistre.',
+    readTime: '5 min',
+    datePublished: '2025-04-18',
+    service: { href: '/entretien-poele', label: 'Entretien Poêle à Granulés' },
+    tags: ['Poêle à granulés', 'Entretien', 'Diagnostic', 'Sécurité'],
+  },
+];
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Conseils d\'Experts — Sud Ramonage',
+  description: 'Articles de conseil sur le ramonage, le débistrage et l\'entretien des poêles par un artisan certifié à Martigues.',
+  url: `${siteUrl}/conseils`,
+  publisher: { '@type': 'Organization', name: 'Sud Ramonage', url: siteUrl },
+};
+---
+
+<Layout
+  title="Conseils d'Experts — Ramonage, Bistre, Poêle à Granulés — Sud Ramonage"
+  description="Articles de conseils d'experts sur le ramonage, le débistrage et l'entretien des poêles à Martigues. Légalité, technique, sécurité — tout ce que vous devez savoir."
+  breadcrumbs={[
+    { name: 'Accueil', url: '/' },
+    { name: "Conseils d'Experts", url: '/conseils' },
+  ]}
+  pageSchema={pageSchema}
+>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="pt-32 pb-16 px-6 md:px-10 bg-[#1A1A1A]">
+    <div class="max-w-6xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-white/30 mb-8" aria-label="Fil d'Ariane">
+        <a href="/" class="hover:text-white transition-colors duration-200">Accueil</a>
+        <span>/</span>
+        <span class="text-white/60">Conseils d'Experts</span>
+      </nav>
+      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Le savoir de l'artisan</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
+        Conseils d'Experts<br />en Ramonage.
+      </h1>
+      <p class="text-base text-white/55 font-light max-w-xl leading-relaxed">
+        Réglementation, technique, sécurité — tout ce qu'un propriétaire doit savoir sur l'entretien de ses conduits de cheminée et de ses appareils à bois ou à granulés, expliqué par un artisan certifié.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ GRILLE ARTICLES ═══ -->
+  <section class="py-20 px-6 md:px-10">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {articles.map((article, i) => (
+          <article class="group flex flex-col bg-white border border-[#EEEEEE] rounded-2xl overflow-hidden hover:shadow-xl hover:border-[#E65100]/20 transition-all duration-300">
+
+            <!-- Bande colorée en haut -->
+            <div class={`h-1.5 w-full ${article.categoryColor}`}></div>
+
+            <div class="flex flex-col flex-1 p-7">
+
+              <!-- Meta -->
+              <div class="flex items-center gap-3 mb-5">
+                <span class={`text-[10px] font-bold tracking-widest uppercase text-white px-2 py-0.5 rounded ${article.categoryColor}`}>
+                  {article.category}
+                </span>
+                <span class="text-[10px] text-[#1A1A1A]/35 font-medium">{article.readTime} de lecture</span>
+              </div>
+
+              <!-- Numéro d'article -->
+              <p class="text-[10px] font-semibold text-[#1A1A1A]/20 mb-2">Article {String(i + 1).padStart(2, '0')}</p>
+
+              <!-- Titre -->
+              <h2 class="text-lg font-extrabold tracking-tight text-[#1A1A1A] leading-snug mb-4 group-hover:text-[#E65100] transition-colors duration-200">
+                {article.title}
+              </h2>
+
+              <!-- Extrait -->
+              <p class="text-sm text-[#1A1A1A]/55 font-light leading-relaxed mb-6 flex-1">
+                {article.excerpt}
+              </p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                {article.tags.map(tag => (
+                  <span class="text-[10px] font-medium border border-[#EEEEEE] text-[#1A1A1A]/40 px-2 py-0.5 rounded-md">{tag}</span>
+                ))}
+              </div>
+
+              <!-- CTA -->
+              <a
+                href={`/conseils/${article.slug}`}
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-[#E65100] hover:gap-3 transition-all duration-200 mt-auto"
+                aria-label={`Lire l'article : ${article.title}`}
+              >
+                Lire l'article
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="py-16 px-6 md:px-10 bg-[#FFF3E0]">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">Une question sur votre installation ?</h2>
+      <p class="text-sm text-[#1A1A1A]/55 font-light mb-8">
+        Artisan certifié à Martigues. Diagnostic gratuit lors du premier contact.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <ContactButton variant="phone" class="px-8 py-4 text-sm" />
+        <ContactButton variant="email" />
+      </div>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,142 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const siteUrl = 'https://sud-ramonage.vercel.app';
+const slug = 'bistre-calcin-ramonage-ne-suffit-plus';
+const datePublished = '2025-04-18';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Bistre et Calcin : Pourquoi le ramonage classique ne suffit plus ?',
+  description: 'Le bistre — dépôt de goudron hautement inflammable — est la première cause d\'incendie de conduit en France. Un simple ramonage mécanique ne l\'élimine pas. Voici pourquoi et comment le traiter.',
+  author: { '@type': 'Person', name: 'Sud Ramonage', url: siteUrl },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Sud Ramonage',
+    logo: { '@type': 'ImageObject', url: `${siteUrl}/favicon.svg` },
+  },
+  datePublished,
+  dateModified: datePublished,
+  url: `${siteUrl}/conseils/${slug}`,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}/conseils/${slug}` },
+  image: `${siteUrl}/og-image.jpg`,
+  articleSection: 'Technique',
+  keywords: 'bistre, calcin, débistrage, ramonage, conduit cheminée, incendie, Martigues, tirage thermique',
+};
+---
+
+<ArticleLayout
+  title="Bistre et Calcin : Pourquoi le ramonage classique ne suffit plus ?"
+  description="Le bistre — dépôt de goudron hautement inflammable — est la première cause d'incendie de conduit en France. Un simple ramonage mécanique ne l'élimine pas. Voici pourquoi et comment le traiter."
+  slug={slug}
+  category="Technique"
+  readTime="6 min"
+  datePublished={datePublished}
+  relatedService={{ href: '/debistrage', label: 'Débistrage de Conduit — Traitement Chimique & Mécanique' }}
+  articleSchema={articleSchema}
+>
+
+<p>
+  En France, <strong>plus de 40 000 incendies domestiques</strong> sont liés aux conduits de cheminée chaque année selon les statistiques des pompiers. La grande majorité de ces sinistres ne se produisent pas dans des conduits jamais ramonés — ils surviennent dans des conduits <em>ramonés régulièrement</em>, mais dont les parois contiennent des dépôts que le ramonage classique est incapable d'éliminer. On parle du <strong>bistre</strong> et du <strong>calcin</strong>.
+</p>
+
+<p>
+  Comprendre la différence entre ces deux types de dépôts — et entre eux et la suie ordinaire — est essentiel pour évaluer le risque réel de votre installation et choisir la bonne intervention.
+</p>
+
+<h2>La suie classique : le bon élève du conduit</h2>
+
+<p>
+  La suie est le dépôt le plus courant dans les conduits de cheminée. Elle résulte de la combustion incomplète du bois : les particules fines de carbone, en suspension dans les fumées, se déposent sur les parois du conduit à mesure qu'elles refroidissent.
+</p>
+
+<p>
+  Bonne nouvelle : la suie sèche est <strong>relativement facile à éliminer</strong>. Un ramonage mécanique standard — hérissons rotatifs ou brosses adaptées au type de conduit — suffit à la décrocher et à l'évacuer. C'est précisément ce que fait le ramonage annuel obligatoire prévu par le <strong>Règlement Sanitaire Départemental (RSD 13)</strong> dans les Bouches-du-Rhône.
+</p>
+
+<h2>Le bistre : la menace silencieuse</h2>
+
+<p>
+  Le bistre, c'est une autre histoire. Il se forme lorsque les conditions de combustion sont dégradées :
+</p>
+
+<ul>
+  <li><strong>Bois insuffisamment sec</strong> (taux d'humidité supérieur à 20 %)</li>
+  <li><strong>Tirage thermique insuffisant</strong> (tirage trop faible, conduit trop long ou trop froid)</li>
+  <li><strong>Combustion à basse température</strong> (feux étouffés, réglage incorrect du registre d'air)</li>
+  <li><strong>Conduit mal dimensionné</strong> par rapport à l'appareil</li>
+</ul>
+
+<p>
+  Dans ces conditions, les résines et les goudrons contenus dans le bois ne brûlent pas complètement. Ils se condensent sur les parois du conduit et forment une couche adhérente, visqueuse, parfois liquide à chaud — le bistre.
+</p>
+
+<blockquote>
+  Contrairement à la suie sèche qui se détache facilement, le bistre adhère aux parois avec une force considérable. Un hérisson de ramonage ne fait que le lisser ou l'étaler — il ne l'élimine pas.
+</blockquote>
+
+<p>
+  Le danger vient de son <strong>point d'ignition extrêmement bas</strong>. Alors que la suie sèche s'enflamme à plus de 400°C, le bistre peut s'embraser dès 200-250°C — une température que les fumées atteignent facilement lors d'un feu vif. Un incendie de conduit au bistre est violent, rapide et difficile à maîtriser.
+</p>
+
+<h2>Le calcin : le dépôt minéral méconnu</h2>
+
+<p>
+  Moins connu que le bistre, le calcin est pourtant tout aussi problématique pour le fonctionnement de votre installation. Il se forme principalement dans les <strong>poêles à bois et à granulés</strong>, sur les parois du foyer, la vitre et le conduit proche de l'appareil.
+</p>
+
+<p>
+  Le calcin est un dépôt <strong>vitreux d'origine minérale</strong> : il provient de la combustion des cendres et des minéraux contenus dans le bois. Au contact de la chaleur extrême du foyer, ces matières se vitrifient et forment une couche dure, brillante, extrêmement adhérente — quasi impossible à éliminer mécaniquement sans risquer d'endommager les parois.
+</p>
+
+<p>
+  Ses effets principaux :
+</p>
+
+<ul>
+  <li><strong>Réduction du tirage</strong> : la surface vitrifiée modifie l'écoulement des fumées</li>
+  <li><strong>Surchauffe localisée</strong> : les zones de calcin conduisent différemment la chaleur, créant des points chauds potentiellement dangereux</li>
+  <li><strong>Dégradation accélérée</strong> : l'expansion thermique différentielle entre le calcin et le matériau du conduit fragilise les parois sur le long terme</li>
+</ul>
+
+<h2>Pourquoi le ramonage mécanique ne suffit pas</h2>
+
+<p>
+  Un hérisson de ramonage est conçu pour décrocher des dépôts friables — la suie sèche. Face au bistre, il glisse sur la surface collante sans l'éliminer. Face au calcin, il risque même d'endommager le conduit en tentant de gratter le dépôt vitreux.
+</p>
+
+<p>
+  C'est pour cette raison qu'un conduit visuellement "ramoné" — donc propre en apparence — peut encore contenir une quantité dangereuse de bistre sur ses parois. Le test de vacuité confirme l'absence d'obstruction, mais ne mesure pas la présence de bistre.
+</p>
+
+<div class="callout">
+  <strong>Signes d'alerte à ne pas ignorer :</strong> odeur de goudron chaud, fumée épaisse noire au démarrage, taches brunes autour du foyer, tirage thermique réduit malgré un ramonage récent. Si vous observez l'un de ces signes, n'attendez pas : contactez un artisan pour un diagnostic.
+</div>
+
+<h2>Le débistrage : la seule solution efficace</h2>
+
+<p>
+  Le <strong>débistrage professionnel</strong> combine deux approches complémentaires que le ramonage seul ne peut pas remplacer :
+</p>
+
+<ol>
+  <li><strong>Traitement chimique</strong> : application d'un agent dissolvant spécifique qui pénètre le bistre, le ramollit et le désolidarise des parois. Ce produit agit plusieurs heures, parfois pendant un allumage contrôlé pour activer la réaction thermique.</li>
+  <li><strong>Intervention mécanique</strong> : une fois les dépôts ramollis, le ramonage mécanique devient efficace pour les évacuer complètement. L'aspiration professionnelle garantit un chantier propre.</li>
+</ol>
+
+<p>
+  À l'issue d'un débistrage complet, un <strong>test de vacuité</strong> et un contrôle du <strong>tirage thermique</strong> confirment que le conduit est totalement dégagé. Un certificat de débistrage est remis, valable pour votre assurance.
+</p>
+
+<h2>Prévenir plutôt que guérir</h2>
+
+<p>
+  La meilleure protection contre le bistre reste la prévention : brûler du <strong>bois suffisamment sec</strong> (humidité &lt; 20 %, idéalement &lt; 15 %), maintenir des feux vifs plutôt que de les étouffer, et faire ramoner son conduit <strong>une à deux fois par an</strong> par un artisan certifié qui saura détecter les premiers signes de bismutation avant qu'ils ne deviennent dangereux.
+</p>
+
+<p>
+  Si votre conduit n'a pas été inspecté par un professionnel depuis plus d'un an, ou si vous observez l'un des signes d'alerte mentionnés ci-dessus, n'attendez pas la prochaine saison de chauffe pour agir.
+</p>
+
+</ArticleLayout>

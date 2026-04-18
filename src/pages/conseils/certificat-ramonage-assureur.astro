@@ -1,0 +1,177 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const siteUrl = 'https://sud-ramonage.vercel.app';
+const slug = 'certificat-ramonage-assureur';
+const datePublished = '2025-04-18';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Certificat de ramonage : 5 points que votre assureur vérifie',
+  description: 'En cas de sinistre, votre assureur peut refuser la prise en charge si votre certificat est incomplet. Découvrez les 5 éléments indispensables qu\'un certificat conforme au RSD 13 doit mentionner.',
+  author: { '@type': 'Person', name: 'Sud Ramonage', url: siteUrl },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Sud Ramonage',
+    logo: { '@type': 'ImageObject', url: `${siteUrl}/favicon.svg` },
+  },
+  datePublished,
+  dateModified: datePublished,
+  url: `${siteUrl}/conseils/${slug}`,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}/conseils/${slug}` },
+  image: `${siteUrl}/og-image.jpg`,
+  articleSection: 'Réglementation',
+  keywords: 'certificat ramonage, assureur, RSD 13, Martigues, test de vacuité, conduit cheminée',
+};
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: '5 points que votre assureur vérifie sur un certificat de ramonage',
+  description: 'Liste des éléments obligatoires sur un certificat de ramonage conforme au RSD 13 pour être valable auprès de votre assureur habitation.',
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'La validité temporelle du certificat',
+      text: 'Le certificat doit dater de moins de 12 mois à la date du sinistre. Certains contrats exigent deux ramonages par an pour les appareils utilisés quotidiennement.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'L\'identité et la qualification de l\'artisan',
+      text: 'Le certificat doit mentionner le nom, le SIRET, et la qualification de l\'artisan (QUALIBAT, certification RGE, ou équivalent reconnu).',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'La nature exacte de l\'intervention',
+      text: 'Le document doit préciser le type d\'intervention : ramonage mécanique, chimique, débistrage, ou combiné. Un simple passage chimique sans ramonage mécanique peut être refusé.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'La conformité au Règlement Sanitaire Départemental (RSD)',
+      text: 'Le certificat doit mentionner explicitement la conformité au RSD applicable — pour les Bouches-du-Rhône : RSD 13. L\'adresse précise du logement et le type d\'appareil doivent y figurer.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 5,
+      name: 'Le test de vacuité et le contrôle du tirage thermique',
+      text: 'Un certificat complet mentionne le résultat du test de vacuité (absence d\'obstruction) et le contrôle du tirage thermique. Sans ces mentions, il peut être jugé incomplet.',
+    },
+  ],
+};
+---
+
+<ArticleLayout
+  title="Certificat de ramonage : 5 points que votre assureur vérifie"
+  description="En cas de sinistre, votre assureur peut refuser la prise en charge si votre certificat est incomplet. Découvrez les 5 éléments indispensables qu'un certificat conforme au RSD 13 doit mentionner."
+  slug={slug}
+  category="Réglementation"
+  readTime="5 min"
+  datePublished={datePublished}
+  relatedService={{ href: '/ramonage', label: 'Ramonage Certifié — Certificat RSD 13' }}
+  articleSchema={articleSchema}
+  howToSchema={howToSchema}
+>
+
+<p>
+  Chaque année, des centaines de propriétaires se retrouvent dans une situation délicate après un incendie de conduit ou une intoxication au monoxyde de carbone : leur assureur refuse la prise en charge au motif que leur certificat de ramonage est <strong>invalide, incomplet ou périmé</strong>. La question n'est pas de savoir si vous avez fait ramoner votre cheminée — c'est de savoir si vous pouvez le prouver, avec le bon document.
+</p>
+
+<p>
+  Le <strong>Règlement Sanitaire Départemental des Bouches-du-Rhône (RSD 13)</strong> impose le ramonage annuel de tout conduit de fumée en service. Mais l'obligation légale ne suffit pas : encore faut-il que le certificat qui en découle satisfasse aux critères stricts de votre contrat d'assurance habitation. Voici les 5 points qu'un expert d'assurance vérifiera en priorité.
+</p>
+
+<h2>Point 1 — La validité temporelle du certificat</h2>
+
+<p>
+  La règle de base : le certificat de ramonage doit <strong>dater de moins de 12 mois</strong> à la date du sinistre. Si votre ramonage date de novembre 2023 et qu'un incendie survient en décembre 2024, votre certificat est caduc.
+</p>
+
+<div class="callout">
+  <strong>Attention :</strong> certains contrats multirisques habitation (MRH) prévoient une obligation de <strong>deux ramonages par an</strong> pour les appareils à combustion utilisés plus de 6 mois consécutifs. Lisez attentivement les clauses de votre contrat avant la saison de chauffe.
+</div>
+
+<p>
+  La bonne pratique : planifiez votre ramonage en <strong>septembre ou octobre</strong>, avant de relancer l'appareil pour l'hiver. Vous serez couvert dès le premier allumage et disposez d'une marge confortable pour l'année suivante.
+</p>
+
+<h2>Point 2 — L'identité et la qualification de l'artisan</h2>
+
+<p>
+  Un certificat signé par un particulier, un voisin bricoleur ou même un professionnel du bâtiment non qualifié n'a <strong>aucune valeur juridique</strong>. Votre assureur exigera :
+</p>
+
+<ul>
+  <li>Le <strong>nom complet et le SIRET</strong> de l'entreprise ou de l'artisan</li>
+  <li>La <strong>qualification professionnelle</strong> — certification QUALIBAT, mention RGE (Reconnu Garant de l'Environnement), ou équivalent agréé</li>
+  <li>La <strong>souscription d'une assurance responsabilité civile professionnelle</strong>, qui couvre les dommages causés lors de l'intervention</li>
+</ul>
+
+<p>
+  Un artisan non assuré qui effectue un ramonage, même correctement, vous expose à un refus de garantie en cas de sinistre. C'est pourquoi il est essentiel de demander systématiquement une attestation RC Pro lors de chaque intervention.
+</p>
+
+<h2>Point 3 — La nature exacte de l'intervention</h2>
+
+<p>
+  Tous les ramonages ne se valent pas aux yeux d'un assureur. Le certificat doit préciser <strong>le type d'intervention réalisée</strong> :
+</p>
+
+<ul>
+  <li><strong>Ramonage mécanique</strong> : utilisation d'hérissons ou de brosses rotatives pour éliminer mécaniquement les dépôts de suie</li>
+  <li><strong>Ramonage chimique</strong> : application de produits dissolvants, généralement en complément du mécanique</li>
+  <li><strong>Débistrage</strong> : traitement spécifique des dépôts de goudron (bistre) qui ne peuvent pas être éliminés par simple ramonage</li>
+</ul>
+
+<p>
+  Un passage au produit chimique seul, sans ramonage mécanique, est souvent considéré comme insuffisant. Si votre conduit présente des dépôts de <strong>bistre ou de calcin</strong>, un simple ramonage ne réglera pas le problème — et l'assureur peut estimer que l'entretien était inadéquat.
+</p>
+
+<h2>Point 4 — La conformité au Règlement Sanitaire Départemental</h2>
+
+<p>
+  Le certificat doit mentionner explicitement la référence au <strong>Règlement Sanitaire Départemental applicable</strong>. Dans les Bouches-du-Rhône, il s'agit du <strong>RSD 13</strong>. Ce n'est pas un détail administratif : c'est ce qui confère au document sa valeur légale et son opposabilité aux assureurs.
+</p>
+
+<p>
+  Le certificat doit également mentionner :
+</p>
+
+<ul>
+  <li>L'<strong>adresse précise</strong> du logement concerné</li>
+  <li>Le <strong>type d'appareil</strong> ramoné (cheminée à foyer ouvert, insert, poêle à bois, poêle à granulés)</li>
+  <li>La <strong>nature du conduit</strong> (maçonné, tubage inox, conduit flexible)</li>
+  <li>La <strong>date précise</strong> de l'intervention</li>
+</ul>
+
+<h2>Point 5 — Le test de vacuité et le contrôle du tirage thermique</h2>
+
+<p>
+  C'est souvent le point qui fait défaut sur les certificats délivrés par des prestataires peu rigoureux. Un certificat complet et opposable doit mentionner :
+</p>
+
+<ul>
+  <li>Le <strong>test de vacuité</strong> : vérification de l'absence totale d'obstruction dans le conduit (nid d'oiseau, effondrement partiel de maçonnerie, accumulation de calcin)</li>
+  <li>Le <strong>contrôle du tirage thermique</strong> : vérification que l'évacuation des fumées est correcte et conforme aux normes de sécurité</li>
+  <li>L'état général du conduit, avec mention des anomalies détectées si applicable</li>
+</ul>
+
+<div class="callout">
+  <strong>Rappel légal :</strong> En cas de sinistre (incendie de conduit, intoxication au CO), si vous ne pouvez pas présenter un certificat de ramonage valide mentionnant ces éléments, votre assureur peut invoquer la clause d'<em>absence d'entretien</em> pour refuser tout ou partie de la garantie.
+</div>
+
+<h2>La solution : un seul document, toutes les garanties</h2>
+
+<p>
+  Un certificat de ramonage délivré par un artisan certifié inclut automatiquement ces 5 éléments. Il est remis <strong>sur place, immédiatement après l'intervention</strong> — vous n'avez pas à attendre, à relancer, ou à payer des frais supplémentaires pour l'obtenir.
+</p>
+
+<p>
+  Conservez ce document précieusement avec votre contrat d'assurance habitation. En cas de sinistre, il sera votre première et principale défense face à votre assureur.
+</p>
+
+</ArticleLayout>
