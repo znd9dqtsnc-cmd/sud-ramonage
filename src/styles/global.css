@@ -1,5 +1,36 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════════════
+   DESIGN TOKENS — variables CSS partagées light & dark
+   Style : précision typographique, contraste fort,
+   accent unique (orange #E65100), inspiration Porsche Design
+═══════════════════════════════════════════════════════ */
+:root {
+  /* Surfaces */
+  --sr-bg-base:     #ffffff;
+  --sr-bg-subtle:   #fafafa;
+  --sr-bg-card:     #ffffff;
+  --sr-bg-warm:     #fff3e0;
+  --sr-bg-dark:     #1a1a1a;
+
+  /* Texte */
+  --sr-text-primary:   #1a1a1a;
+  --sr-text-secondary: #6b6b6b;
+  --sr-text-muted:     #a3a3a3;
+
+  /* Bordures */
+  --sr-border:         #eeeeee;
+  --sr-border-strong:  #d4d4d4;
+
+  /* Accent */
+  --sr-orange:         #E65100;
+  --sr-orange-dark:    #BF360C;
+  --sr-orange-bg:      #fff3e0;
+
+  /* Transitions */
+  --sr-transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
 @layer base {
   html {
     font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -11,89 +42,141 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  body {
+    transition: var(--sr-transition);
+  }
 }
 
-/* ═══════════════════════════════════════
-   DARK MODE — hors @layer pour surclasser
-   les utilities Tailwind (cascade priority)
-═══════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   DARK MODE — Porsche Design System
+   Règles hors @layer → cascade > utilities Tailwind
+   Fond : anthracite profond · Texte : blanc cassé précis
+   Accent orange : conservé (lumineux sur fond sombre)
+═══════════════════════════════════════════════════════ */
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
+
+    /* Surfaces dark */
+    --sr-bg-base:   #0f0f0f;
+    --sr-bg-subtle: #161616;
+    --sr-bg-card:   #1c1c1c;
+    --sr-bg-warm:   #1f1508;
+    --sr-bg-dark:   #0a0a0a;
+
+    /* Texte dark — contraste WCAG AA minimum */
+    --sr-text-primary:   #f0f0f0;
+    --sr-text-secondary: #9a9a9a;
+    --sr-text-muted:     #5a5a5a;
+
+    /* Bordures dark — discrètes mais présentes */
+    --sr-border:        #242424;
+    --sr-border-strong: #333333;
+
+    /* Orange légèrement plus lumineux sur fond sombre */
+    --sr-orange-bg: #1f1508;
   }
 
-  /* ── Fond & texte de base ── */
+  /* ── Corps ── */
   body {
-    background-color: #111111;
-    color: #e5e5e7;
+    background-color: var(--sr-bg-base);
+    color: var(--sr-text-primary);
   }
 
-  /* ── Header ── */
+  /* ── Chrome : header ── */
   #site-header {
-    background-color: rgba(17, 17, 17, 0.97) !important;
-    border-color: #2a2a2a !important;
-    box-shadow: 0 1px 0 0 #2a2a2a;
+    background-color: rgba(15, 15, 15, 0.96) !important;
+    border-color: var(--sr-border) !important;
+    backdrop-filter: blur(12px);
   }
 
-  /* ── Footer ── */
+  /* ── Chrome : footer ── */
   #site-footer {
-    background-color: #181818;
-    border-color: #2a2a2a;
+    background-color: var(--sr-bg-subtle);
+    border-color: var(--sr-border);
   }
 
   /* ── Menu mobile ── */
   #mobile-panel {
-    background-color: #1c1c1c !important;
-    border-color: #2a2a2a;
+    background-color: var(--sr-bg-card) !important;
   }
-  #mobile-panel .border-\[\#EEEEEE\] {
-    border-color: #2a2a2a;
-  }
-  #mobile-panel .bg-\[\#FAFAFA\] {
-    background-color: #1c1c1c;
+  #mobile-panel .border-\[\#EEEEEE\] { border-color: var(--sr-border); }
+  #mobile-panel .bg-\[\#FAFAFA\]     { background-color: var(--sr-bg-subtle); }
+
+  /* ── Dropdowns nav desktop ── */
+  nav .bg-white {
+    background-color: var(--sr-bg-card);
+    border-color: var(--sr-border);
   }
 
-  /* ── Surfaces blanches → gris anthracite ── */
-  .bg-white {
-    background-color: #1e1e1e;
-  }
-  .bg-\[\#FAFAFA\] {
-    background-color: #181818;
-  }
-
-  /* ── Teinte chaude orange → version dark ── */
-  .bg-\[\#FFF3E0\] {
-    background-color: #2a1e0e;
-  }
+  /* ── Surfaces principales ── */
+  .bg-white          { background-color: var(--sr-bg-card);   }
+  .bg-\[\#FAFAFA\]   { background-color: var(--sr-bg-subtle); }
+  .bg-\[\#F5F5F5\]   { background-color: #1a1a1a; }
+  .bg-\[\#FFF3E0\]   { background-color: var(--sr-bg-warm);   }
 
   /* ── Bordures ── */
-  .border-\[\#EEEEEE\] {
-    border-color: #2e2e2e;
-  }
-  .shadow-\[0_1px_0_0_\#EEEEEE\] {
-    box-shadow: 0 1px 0 0 #2a2a2a;
+  .border-\[\#EEEEEE\]            { border-color: var(--sr-border); }
+  .border-t.border-\[\#EEEEEE\]  { border-color: var(--sr-border); }
+  .border-b.border-\[\#EEEEEE\]  { border-color: var(--sr-border); }
+  .divide-\[\#EEEEEE\] > * + *   { border-color: var(--sr-border); }
+
+  /* ── Texte principal ── */
+  .text-\[\#1A1A1A\] { color: var(--sr-text-primary); }
+
+  /* ── Cards & composants ── */
+  .bg-\[\#1A1A1A\] {
+    /* sections dark existantes → légèrement plus foncées */
+    background-color: #0a0a0a;
   }
 
-  /* ── Texte sombre → clair ── */
-  .text-\[\#1A1A1A\] {
-    color: #e5e5e7;
-  }
+  /* TrustBadge card header reste orange — pas de changement */
 
-  /* ── Article layout ── */
+  /* ── Articles (prose-serif) ── */
+  .prose-serif {
+    color: #e8e8e8;
+  }
+  .prose-serif h2 {
+    color: #f0f0f0;
+  }
   .prose-serif blockquote {
-    border-color: #E65100;
-    background-color: #1e1e1e;
+    background-color: var(--sr-bg-card);
+    border-color: var(--sr-orange);
+    color: #c0c0c0;
+  }
+  .prose-serif strong {
+    color: #f5f5f5;
   }
   .callout {
-    background-color: #2a1e0e;
-    border-color: #E65100;
+    background-color: var(--sr-bg-warm);
+    border-color: var(--sr-orange);
+    color: #d0c0a0;
+  }
+  .step-block {
+    background-color: var(--sr-bg-card);
+    border-color: var(--sr-border);
   }
 
-  /* ── Ombres adoucies ── */
-  .shadow-lg,
-  .shadow-xl,
-  .hover\:shadow-lg:hover,
-  .hover\:shadow-md:hover {
-    --tw-shadow-color: rgba(0,0,0,0.6);
+  /* ── Ombres : portée réduite, plus sombres ── */
+  .shadow-sm  { box-shadow: 0 1px 2px 0 rgba(0,0,0,0.5); }
+  .shadow-md  { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5); }
+  .shadow-lg  { box-shadow: 0 8px 24px -4px rgba(0,0,0,0.6); }
+  .shadow-xl  { box-shadow: 0 12px 32px -6px rgba(0,0,0,0.7); }
+
+  /* ── Hover backgrounds ── */
+  .hover\:bg-\[\#F5F5F5\]:hover { background-color: #202020; }
+  .hover\:bg-\[\#FFF3E0\]:hover { background-color: #241a08; }
+  .hover\:bg-\[\#FFE0B2\]:hover { background-color: #2a1e0c; }
+
+  /* ── Barre de progression de lecture ── */
+  #reading-progress {
+    background-color: var(--sr-orange);
   }
+
+  /* ── Scrollbar (Webkit) ── */
+  ::-webkit-scrollbar              { width: 6px; }
+  ::-webkit-scrollbar-track        { background: var(--sr-bg-subtle); }
+  ::-webkit-scrollbar-thumb        { background: #333; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover  { background: #444; }
 }

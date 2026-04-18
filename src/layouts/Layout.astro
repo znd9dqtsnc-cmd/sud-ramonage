@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import ContactButton from '../components/ContactButton.astro';
 import SEO from '../components/SEO.astro';
+import { ClientRouter } from 'astro:transitions';
 import { villes } from '../data/villes';
 
 export interface Props {
@@ -70,6 +71,9 @@ const zonesGroupes = [
     </noscript>
 
     <title>{title}</title>
+
+    <!-- Transitions de page fluides (SPA-like avec prefetch) -->
+    <ClientRouter />
 
     <SEO
       title={title}

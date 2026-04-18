@@ -67,6 +67,38 @@ const businessSchema = {
     'https://fr.wikipedia.org/wiki/R%C3%A8glement_sanitaire_d%C3%A9partemental',
     'https://www.service-public.fr/particuliers/vosdroits/F20028',
   ],
+  knowsAbout: [
+    {
+      '@type': 'Thing',
+      name: 'Ramonage',
+      description: 'Nettoyage professionnel des conduits de fumée par voie mécanique',
+      url: 'https://fr.wikipedia.org/wiki/Ramonage',
+    },
+    {
+      '@type': 'Thing',
+      name: 'Fumisterie',
+      description: 'Installation, entretien et contrôle des appareils à combustion et conduits de fumée',
+      url: 'https://fr.wikipedia.org/wiki/Fumisterie_(technique)',
+    },
+    {
+      '@type': 'Thing',
+      name: 'Sécurité incendie',
+      description: 'Prévention des incendies de conduit par entretien et ramonage régulier',
+      url: 'https://fr.wikipedia.org/wiki/S%C3%A9curit%C3%A9_incendie',
+    },
+    {
+      '@type': 'Thing',
+      name: 'Intoxication au monoxyde de carbone',
+      description: 'Détection et prévention des intoxications au CO par entretien des conduits de fumée',
+      url: 'https://fr.wikipedia.org/wiki/Intoxication_au_monoxyde_de_carbone',
+    },
+    {
+      '@type': 'Thing',
+      name: 'Règlement Sanitaire Départemental',
+      description: 'Conformité RSD 13 — obligation légale de ramonage annuel dans les Bouches-du-Rhône',
+      url: 'https://fr.wikipedia.org/wiki/R%C3%A8glement_sanitaire_d%C3%A9partemental',
+    },
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Services de ramonage',
@@ -123,23 +155,30 @@ const breadcrumbSchema = breadcrumbs ? {
 <meta name="geo.position" content="43.4046;5.0511" />
 <meta name="ICBM" content="43.4046, 5.0511" />
 
-<!-- OpenGraph -->
+<!-- OpenGraph — WhatsApp, Facebook, LinkedIn -->
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:secure_url" content={ogImageUrl} />
+<meta property="og:image:type" content="image/jpeg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Sud Ramonage — Artisan ramoneur certifié à Martigues" />
+<meta property="og:image:alt" content="Sud Ramonage — Artisan ramoneur certifié à Martigues & Côte Bleue" />
 <meta property="og:site_name" content="Sud Ramonage" />
 <meta property="og:locale" content="fr_FR" />
 
-<!-- Twitter Card -->
+<!-- Twitter / X Card (large image) -->
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@sudramonage" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageUrl} />
+<meta name="twitter:image:alt" content="Sud Ramonage — Artisan ramoneur certifié à Martigues" />
+
+<!-- WhatsApp préfère une description courte + image carrée en fallback -->
+<meta property="og:image:url" content={ogImageUrl} />
 
 <!-- JSON-LD Business -->
 <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
