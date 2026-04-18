@@ -1,6 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactButton from '../components/ContactButton.astro';
+import { Image } from 'astro:assets';
+
+import heroBg         from '../assets/images/hero-poele.jpg';
+import poeleInstallImg from '../assets/images/poele-installation.jpg';
+import controleImg    from '../assets/images/service-controle.jpg';
 
 const siteUrl = 'https://sud-ramonage.vercel.app';
 
@@ -26,8 +31,21 @@ const pageSchema = {
   pageSchema={pageSchema}
 >
 
-  <section class="pt-32 pb-16 px-6 md:px-10 bg-[#1A1A1A]">
-    <div class="max-w-6xl mx-auto">
+  <!-- ═══ HERO avec image de fond ═══ -->
+  <section class="relative pt-32 pb-20 px-6 md:px-10 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <Image
+        src={heroBg}
+        alt="Poêle à bois moderne et design dans un salon provençal chaleureux à Martigues"
+        width={1920}
+        height={1080}
+        class="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-[#1A1A1A]/75"></div>
+    </div>
+    <div class="relative z-10 max-w-6xl mx-auto">
       <nav class="flex items-center gap-2 text-xs text-white/30 mb-8" aria-label="Fil d'Ariane">
         <a href="/" class="hover:text-white transition-colors duration-200">Accueil</a>
         <span>/</span>
@@ -44,9 +62,12 @@ const pageSchema = {
     </div>
   </section>
 
+  <!-- ═══ CONTENU PRINCIPAL ═══ -->
   <section class="py-20 px-6 md:px-10">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+        <!-- Colonne gauche -->
         <div class="space-y-8">
           <div>
             <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-5">
@@ -69,6 +90,19 @@ const pageSchema = {
               ))}
             </div>
           </div>
+
+          <!-- Image illustration 1 : installation poêle -->
+          <div class="rounded-xl overflow-hidden aspect-[16/9]">
+            <Image
+              src={poeleInstallImg}
+              alt="Installation moderne et entretien d'un poêle à granulés dans une maison à Martigues"
+              width={800}
+              height={450}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
           <div>
             <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">
               Quand Faire Entretenir Son Poêle ?
@@ -78,7 +112,9 @@ const pageSchema = {
             </p>
           </div>
         </div>
-        <div class="space-y-5">
+
+        <!-- Colonne droite -->
+        <div class="space-y-6">
           <div class="bg-[#FFF3E0] rounded-xl p-7">
             <p class="text-sm font-bold text-[#1A1A1A] mb-5">Entretien complet comprend</p>
             {[
@@ -100,36 +136,44 @@ const pageSchema = {
               <ContactButton variant="phone" class="w-full justify-center" />
             </div>
           </div>
+
+          <!-- Image illustration 2 : contrôle technique -->
+          <div class="rounded-xl overflow-hidden aspect-[4/3]">
+            <Image
+              src={controleImg}
+              alt="Contrôle technique d'un poêle à granulés par un artisan certifié à Martigues"
+              width={700}
+              height={525}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Maillage Silo : lien vers ramonage + ville principale -->
+  <!-- ═══ MAILLAGE SILO ═══ -->
   <section class="py-12 px-6 md:px-10 bg-[#FAFAFA]">
     <div class="max-w-6xl mx-auto">
       <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-4">Services associés & zones d'intervention</p>
       <div class="flex flex-wrap gap-3">
-        <a href="/ramonage" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E65100]/30 hover:text-[#E65100] transition-all duration-200">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>
-          Ramonage Certifié
-        </a>
-        <a href="/villes/martigues" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E65100]/30 hover:text-[#E65100] transition-all duration-200">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>
-          Entretien Poêle Martigues
-        </a>
-        <a href="/villes/sausset-les-pins" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E65100]/30 hover:text-[#E65100] transition-all duration-200">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>
-          Entretien Poêle Sausset-les-Pins
-        </a>
-        <a href="/villes/carry-le-rouet" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E65100]/30 hover:text-[#E65100] transition-all duration-200">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>
-          Entretien Poêle Carry-le-Rouet
-        </a>
+        {[
+          { href: '/ramonage',                  label: 'Ramonage Certifié' },
+          { href: '/villes/martigues',           label: 'Entretien Poêle Martigues' },
+          { href: '/villes/sausset-les-pins',    label: 'Entretien Poêle Sausset-les-Pins' },
+          { href: '/villes/carry-le-rouet',      label: 'Entretien Poêle Carry-le-Rouet' },
+        ].map(({ href, label }) => (
+          <a href={href} class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E65100]/30 hover:text-[#E65100] transition-all duration-200">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>
+            {label}
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
+  <!-- ═══ CTA ═══ -->
   <section class="py-16 px-6 md:px-10 bg-[#FFF3E0] text-center">
     <div class="max-w-xl mx-auto">
       <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">Entretien Annuel Avant l'Hiver</h2>
