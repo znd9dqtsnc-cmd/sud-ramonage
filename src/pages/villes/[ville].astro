@@ -8,9 +8,35 @@ export function getStaticPaths() {
 }
 
 const { data } = Astro.props;
+const siteUrl = 'https://sud-ramonage.vercel.app';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Ramonage certifié à ${data.nom}`,
+  description: data.metaDescription,
+  provider: { '@type': 'HomeAndConstructionBusiness', '@id': `${siteUrl}/#business` },
+  areaServed: {
+    '@type': 'City',
+    name: data.nom,
+    postalCode: data.codePostal,
+    containedInPlace: { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
+  },
+  serviceType: 'Ramonage de cheminée',
+  url: `${siteUrl}/villes/${data.slug}`,
+};
 ---
 
-<Layout title={data.metaTitle} description={data.metaDescription}>
+<Layout
+  title={data.metaTitle}
+  description={data.metaDescription}
+  breadcrumbs={[
+    { name: 'Accueil', url: '/' },
+    { name: 'Services', url: '/#services' },
+    { name: data.nom, url: `/villes/${data.slug}` },
+  ]}
+  pageSchema={pageSchema}
+>
 
   <!-- Hero compact -->
   <section class="pt-32 pb-16 px-6 md:px-10 bg-[#1A1A1A]">
@@ -151,6 +177,25 @@ const { data } = Astro.props;
         </blockquote>
         <p class="text-sm font-semibold text-white">{data.temoignage.auteur}</p>
         <p class="text-xs text-white/35 mt-1">{data.nom}, Bouches-du-Rhône</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Maillage Silo : lien vers service principal + villes proches -->
+  <section class="py-12 px-6 md:px-10 bg-[#FAFAFA]">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-4">Service principal & zones voisines</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/ramonage" class="inline-flex items-center gap-2 bg-white border border-[#E65100]/20 rounded-lg px-4 py-2.5 text-xs font-semibold text-[#E65100] hover:bg-[#FFF3E0] transition-all duration-200">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>
+          Ramonage Certifié — Toute la Zone
+        </a>
+        {villes.filter(v => v.slug !== data.slug).slice(0, 4).map(v => (
+          <a href={`/villes/${v.slug}`} class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E65100]/30 hover:text-[#E65100] transition-all duration-200">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]/20 shrink-0"></span>
+            Ramonage {v.nom}
+          </a>
+        ))}
       </div>
     </div>
   </section>

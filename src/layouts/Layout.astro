@@ -1,36 +1,26 @@
 ---
 import '../styles/global.css';
 import ContactButton from '../components/ContactButton.astro';
+import SEO from '../components/SEO.astro';
 import { villes } from '../data/villes';
 
 export interface Props {
   title?: string;
   description?: string;
+  canonical?: string;
+  ogImage?: string;
+  breadcrumbs?: { name: string; url: string }[];
+  pageSchema?: object;
 }
 
 const {
   title = 'SUD RAMONAGE — Ramonage Professionnel à Martigues',
   description = 'Artisan ramoneur certifié à Martigues. Ramonage cheminée, poêle à bois et granulés. Certificat immédiat. Assurance pro. Conforme RSD 13.',
+  canonical,
+  ogImage,
+  breadcrumbs,
+  pageSchema,
 } = Astro.props;
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "SUD RAMONAGE",
-  "description": description,
-  "telephone": "+33664729600",
-  "email": "majeo@ik.me",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "31 chemin des tamaris",
-    "addressLocality": "Martigues",
-    "postalCode": "13500",
-    "addressCountry": "FR"
-  },
-  "areaServed": villes.map(v => v.nom),
-  "url": "https://sud-ramonage.vercel.app",
-  "openingHours": "Mo-Sa 08:00-18:00"
-};
 
 const services = [
   { href: '/ramonage',        label: 'Ramonage Certifié' },
@@ -45,14 +35,37 @@ const services = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Sud Ramonage" />
+
+    <!-- Preconnect Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- font-display:swap via &display=swap, chargement non-bloquant -->
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
     <title>{title}</title>
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- SEO : canonical, OG, Twitter, JSON-LD -->
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogImage={ogImage}
+      breadcrumbs={breadcrumbs}
+      pageSchema={pageSchema}
+    />
   </head>
   <body class="bg-white text-[#1A1A1A] font-sans antialiased">
 

@@ -1,16 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactButton from '../components/ContactButton.astro';
+
+const siteUrl = 'https://sud-ramonage.vercel.app';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Débistrage de conduit de cheminée',
+  description: 'Élimination des dépôts de goudron et de bistre par traitement chimique et mécanique combiné.',
+  provider: { '@type': 'HomeAndConstructionBusiness', '@id': `${siteUrl}/#business` },
+  areaServed: { '@type': 'City', name: 'Martigues' },
+  serviceType: 'Débistrage de conduit',
+  url: `${siteUrl}/debistrage`,
+};
 ---
 
 <Layout
   title="Débistrage Conduit de Cheminée — Sud Ramonage Martigues"
   description="Débistrage professionnel à Martigues et Côte Bleue. Élimination des dépôts de goudron et de bistre. Traitement chimique et mécanique. Devis gratuit sous 24h."
+  breadcrumbs={[
+    { name: 'Accueil', url: '/' },
+    { name: 'Débistrage', url: '/debistrage' },
+  ]}
+  pageSchema={pageSchema}
 >
 
   <section class="pt-32 pb-16 px-6 md:px-10 bg-[#1A1A1A]">
     <div class="max-w-6xl mx-auto">
-      <nav class="flex items-center gap-2 text-xs text-white/30 mb-8">
+      <nav class="flex items-center gap-2 text-xs text-white/30 mb-8" aria-label="Fil d'Ariane">
         <a href="/" class="hover:text-white transition-colors duration-200">Accueil</a>
         <span>/</span>
         <span class="text-white/60">Débistrage</span>
@@ -81,6 +99,31 @@ import ContactButton from '../components/ContactButton.astro';
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Maillage Silo : lien vers ramonage certifié + ville principale -->
+  <section class="py-12 px-6 md:px-10 bg-[#FAFAFA]">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-4">Services associés & zones d'intervention</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/ramonage" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E65100]/30 hover:text-[#E65100] transition-all duration-200">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>
+          Ramonage Certifié
+        </a>
+        <a href="/villes/martigues" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E65100]/30 hover:text-[#E65100] transition-all duration-200">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>
+          Ramonage Martigues
+        </a>
+        <a href="/villes/istres" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E65100]/30 hover:text-[#E65100] transition-all duration-200">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>
+          Ramonage Istres
+        </a>
+        <a href="/villes/fos-sur-mer" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E65100]/30 hover:text-[#E65100] transition-all duration-200">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>
+          Ramonage Fos-sur-Mer
+        </a>
       </div>
     </div>
   </section>
