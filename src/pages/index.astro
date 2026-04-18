@@ -129,7 +129,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <!-- Carte 1 — Ramonage certifié -->
-        <div class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 transition-all duration-300">
+        <div class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 hover:-translate-y-1 transition-all duration-300">
           <!-- Photo service (remplaçable : src/assets/images/service-ramonage.jpg) -->
           <div class="aspect-[4/3] overflow-hidden bg-[#F5F5F5]">
             <Image
@@ -155,8 +155,8 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light mb-5">
               Ramonage mécanique complet de votre conduit, cheminée, insert ou poêle. <strong class="font-medium text-[#1A1A1A]/75">Certificat officiel</strong> remis à l'issue — exigé par les assurances et le RSD 13.
             </p>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] hover:gap-3 transition-all duration-200">
-              Prendre RDV
+            <a href="/ramonage" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] hover:gap-3 transition-all duration-200">
+              En savoir plus
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
@@ -165,7 +165,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         </div>
 
         <!-- Carte 2 — Débistrage -->
-        <div class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 transition-all duration-300">
+        <div class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 hover:-translate-y-1 transition-all duration-300">
           <!-- Photo service (remplaçable : src/assets/images/service-bistrage.jpg) -->
           <figure class="aspect-[4/3] overflow-hidden bg-[#F5F5F5]">
             <Image
@@ -192,8 +192,8 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light mb-5">
               Élimination des dépôts de goudron hautement inflammables. Traitement <strong class="font-medium text-[#1A1A1A]/75">chimique et mécanique</strong> pour rétablir la sécurité totale de votre installation.
             </p>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] hover:gap-3 transition-all duration-200">
-              Prendre RDV
+            <a href="/debistrage" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] hover:gap-3 transition-all duration-200">
+              En savoir plus
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
@@ -202,7 +202,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         </div>
 
         <!-- Carte 3 — Contrôle Technique -->
-        <div class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 transition-all duration-300">
+        <div class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 hover:-translate-y-1 transition-all duration-300">
           <!-- Photo service (remplaçable : src/assets/images/service-controle.jpg) -->
           <figure class="aspect-[4/3] overflow-hidden bg-[#F5F5F5]">
             <Image
@@ -229,8 +229,8 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light mb-5">
               Inspection complète : <strong class="font-medium text-[#1A1A1A]/75">vacuité</strong> (absence d'obstruction) et <strong class="font-medium text-[#1A1A1A]/75">étanchéité</strong> du conduit. Indispensable avant mise en service ou achat immobilier.
             </p>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] hover:gap-3 transition-all duration-200">
-              Prendre RDV
+            <a href="/entretien-poele" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] hover:gap-3 transition-all duration-200">
+              En savoir plus
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
@@ -239,6 +239,107 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       TARIFS — Grille 3 services
+  ═══════════════════════════════════════════════ -->
+  <section id="tarifs" class="py-24 px-6 md:px-10 bg-[#FAFAFA]">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12 text-center">
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Transparence tarifaire</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A]">Nos Tarifs.</h2>
+        <p class="text-sm text-[#1A1A1A]/45 font-light mt-3 max-w-md mx-auto">
+          Certificat officiel inclus dans chaque prestation. Devis définitif confirmé avant intervention.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Ramonage -->
+        <div class="bg-white border border-[#EEEEEE] rounded-xl overflow-hidden">
+          <div class="bg-[#1A1A1A] px-6 py-5">
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100] mb-1">Ramonage certifié</p>
+            <p class="text-3xl font-extrabold text-white">75 <span class="text-lg font-semibold text-white/60">€</span></p>
+            <p class="text-xs text-white/40 font-light mt-0.5">à partir de — certificat inclus</p>
+          </div>
+          <div class="p-6">
+            {[
+              { label: 'Cheminée foyer ouvert', prix: '75 €' },
+              { label: 'Insert bois',            prix: '90 €' },
+              { label: 'Poêle à bois',           prix: '90 €' },
+              { label: 'Poêle à granulés',       prix: '110 €' },
+            ].map(({ label, prix }) => (
+              <div class="flex items-center justify-between py-2.5 border-b border-[#EEEEEE] last:border-0">
+                <span class="text-xs text-[#1A1A1A]/65 font-light">{label}</span>
+                <span class="text-xs font-bold text-[#1A1A1A]">{prix}</span>
+              </div>
+            ))}
+            <a href="/ramonage" class="mt-5 flex items-center justify-center gap-2 w-full bg-[#FFF3E0] text-[#E65100] text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-[#FFE0B2] transition-colors duration-200">
+              En savoir plus
+            </a>
+          </div>
+        </div>
+
+        <!-- Débistrage -->
+        <div class="bg-white border border-[#E65100]/30 rounded-xl overflow-hidden relative">
+          <div class="absolute top-3 right-3">
+            <span class="text-[10px] font-bold bg-[#E65100] text-white px-2.5 py-1 rounded-full uppercase tracking-wider">Urgence</span>
+          </div>
+          <div class="bg-[#E65100] px-6 py-5">
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-white/70 mb-1">Débistrage</p>
+            <p class="text-3xl font-extrabold text-white">150 <span class="text-lg font-semibold text-white/60">€</span></p>
+            <p class="text-xs text-white/60 font-light mt-0.5">à partir de — traitement complet</p>
+          </div>
+          <div class="p-6">
+            {[
+              { label: 'Traitement chimique + mécanique',   prix: 'dès 150 €' },
+              { label: 'Conduit très encrassé (2 passes)', prix: 'dès 195 €' },
+              { label: 'Diagnostic inclus',                 prix: '—' },
+              { label: 'Certificat remis à l\'issue',       prix: '—' },
+            ].map(({ label, prix }) => (
+              <div class="flex items-center justify-between py-2.5 border-b border-[#EEEEEE] last:border-0">
+                <span class="text-xs text-[#1A1A1A]/65 font-light">{label}</span>
+                <span class="text-xs font-bold text-[#1A1A1A]">{prix}</span>
+              </div>
+            ))}
+            <a href="/debistrage" class="mt-5 flex items-center justify-center gap-2 w-full bg-[#FFF3E0] text-[#E65100] text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-[#FFE0B2] transition-colors duration-200">
+              En savoir plus
+            </a>
+          </div>
+        </div>
+
+        <!-- Entretien poêle -->
+        <div class="bg-white border border-[#EEEEEE] rounded-xl overflow-hidden">
+          <div class="bg-[#1A1A1A] px-6 py-5">
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100] mb-1">Entretien poêle</p>
+            <p class="text-3xl font-extrabold text-white">90 <span class="text-lg font-semibold text-white/60">€</span></p>
+            <p class="text-xs text-white/40 font-light mt-0.5">à partir de — entretien complet</p>
+          </div>
+          <div class="p-6">
+            {[
+              { label: 'Poêle à bois (entretien complet)', prix: '90 €'  },
+              { label: 'Poêle à granulés (entretien complet)', prix: '120 €' },
+              { label: 'Ramonage conduit inclus',           prix: '✓'   },
+              { label: 'Certificat RSD 13 inclus',          prix: '✓'   },
+            ].map(({ label, prix }) => (
+              <div class="flex items-center justify-between py-2.5 border-b border-[#EEEEEE] last:border-0">
+                <span class="text-xs text-[#1A1A1A]/65 font-light">{label}</span>
+                <span class="text-xs font-bold text-[#1A1A1A]">{prix}</span>
+              </div>
+            ))}
+            <a href="/entretien-poele" class="mt-5 flex items-center justify-center gap-2 w-full bg-[#FFF3E0] text-[#E65100] text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-[#FFE0B2] transition-colors duration-200">
+              En savoir plus
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-center text-[11px] text-[#1A1A1A]/35 font-light mt-8">
+        Tarifs indicatifs — zone Martigues et Côte Bleue. Devis gratuit sous 24h. Modification possible après diagnostic.
+      </p>
     </div>
   </section>
 

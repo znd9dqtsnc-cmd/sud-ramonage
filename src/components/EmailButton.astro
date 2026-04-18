@@ -23,7 +23,7 @@ const sizeClasses = {
     <rect x="2" y="4" width="20" height="16" rx="2"/>
     <path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/>
   </svg>
-  <span data-email-label>Email</span>
+  <span data-email-label>Nous envoyer un e-mail</span>
 </a>
 
 <script>
@@ -33,7 +33,5 @@ const sizeClasses = {
     const email = u.join('') + '@' + d.join('');
     const link = el as HTMLAnchorElement;
     link.href = 'mailto:' + email;
-    const label = link.querySelector('[data-email-label]');
-    if (label) label.textContent = email;
   });
 </script>

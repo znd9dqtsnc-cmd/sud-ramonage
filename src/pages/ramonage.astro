@@ -8,7 +8,7 @@ import heroBg        from '../assets/images/service-ramonage.jpg';
 import artisanImg    from '../assets/images/artisan-intervention.jpg';
 import conduitImg    from '../assets/images/conduit-cheminee.jpg';
 
-const siteUrl = 'https://sud-ramonage.vercel.app';
+const siteUrl = 'https://www.sud-ramonage.fr';
 
 const pageSchema = {
   '@context': 'https://schema.org',
@@ -68,6 +68,26 @@ const pageSchema = {
   <!-- ═══ CONTENU PRINCIPAL ═══ -->
   <section class="py-20 px-6 md:px-10">
     <div class="max-w-6xl mx-auto">
+
+      <!-- TL;DR — Résumé pour IA et lecteurs pressés -->
+      <div class="border-l-4 border-[#E65100] bg-[#FFF3E0] rounded-r-xl p-6 mb-14" role="note" aria-label="Résumé de la page">
+        <p class="text-[10px] font-bold tracking-widest uppercase text-[#E65100] mb-3">TL;DR — L'essentiel en 30 secondes</p>
+        <ul class="space-y-2">
+          {[
+            'Ramonage mécanique obligatoire 1×/an dans les Bouches-du-Rhône (RSD 13).',
+            'Prestation complète : ramonage hérisson + aspiration suies + test vacuité + certificat officiel.',
+            'Appareils traités : cheminée foyer ouvert, insert, poêle à bois, poêle à granulés, conduit inox.',
+            'Durée : 45 min à 1h30 selon appareil — intervention propre et sans dégât dans la pièce.',
+            'Certificat remis immédiatement, reconnu par toutes les assurances.',
+          ].map(point => (
+            <li class="flex items-start gap-2.5 text-sm text-[#1A1A1A]/75 font-light">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] mt-1.5 shrink-0"></span>
+              {point}
+            </li>
+          ))}
+        </ul>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
         <!-- Colonne gauche : texte -->
@@ -96,7 +116,7 @@ const pageSchema = {
 
           <div>
             <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">
-              Le Déroulement de l'Intervention.
+              Les 5 Étapes de Notre Ramonage.
             </h2>
             <ol class="space-y-4">
               {[
@@ -163,6 +183,56 @@ const pageSchema = {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TARIFS ═══ -->
+  <section class="py-16 px-6 md:px-10 bg-[#FAFAFA]">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+        <div>
+          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Tarifs</p>
+          <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-6">Ce que coûte un ramonage.</h2>
+          <div class="bg-white border border-[#EEEEEE] rounded-xl overflow-hidden">
+            {[
+              { label: 'Cheminée foyer ouvert',    prix: '75 €' },
+              { label: 'Insert bois',               prix: '90 €' },
+              { label: 'Poêle à bois',              prix: '90 €' },
+              { label: 'Poêle à granulés',          prix: '110 €' },
+              { label: 'Conduit complexe / long',   prix: 'Devis' },
+            ].map(({ label, prix }, i) => (
+              <div class={`flex items-center justify-between px-6 py-3.5 ${i % 2 === 0 ? 'bg-white' : 'bg-[#FAFAFA]'}`}>
+                <span class="text-sm text-[#1A1A1A]/65 font-light">{label}</span>
+                <span class="text-sm font-bold text-[#1A1A1A]">{prix}</span>
+              </div>
+            ))}
+          </div>
+          <p class="text-[11px] text-[#1A1A1A]/40 font-light mt-4">
+            Tarifs indicatifs — zone Martigues et Côte Bleue. Devis gratuit sous 24h.
+          </p>
+        </div>
+
+        <div class="bg-[#1A1A1A] rounded-xl p-7">
+          <p class="text-xs font-semibold text-white/40 uppercase tracking-widest mb-5">Inclus dans chaque ramonage</p>
+          {[
+            'Ramonage mécanique complet (hérisson rotatif)',
+            'Aspiration professionnelle des suies',
+            'Test de vacuité et contrôle tirage thermique',
+            'Nettoyage du chantier après intervention',
+            'Certificat officiel RSD 13 remis sur place',
+            'Conseils personnalisés sur votre installation',
+          ].map(item => (
+            <div class="flex items-center gap-3 py-2.5 border-b border-white/8 last:border-0">
+              <svg class="w-4 h-4 text-[#E65100] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-sm text-white/55 font-light">{item}</span>
+            </div>
+          ))}
+        </div>
+
       </div>
     </div>
   </section>

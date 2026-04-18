@@ -8,7 +8,7 @@ import heroBg     from '../assets/images/service-bistrage.jpg';
 import conduitImg from '../assets/images/conduit-cheminee.jpg';
 import artisanImg from '../assets/images/artisan-intervention.jpg';
 
-const siteUrl = 'https://sud-ramonage.vercel.app';
+const siteUrl = 'https://www.sud-ramonage.fr';
 
 const pageSchema = {
   '@context': 'https://schema.org',
@@ -66,6 +66,26 @@ const pageSchema = {
   <!-- ═══ CONTENU PRINCIPAL ═══ -->
   <section class="py-20 px-6 md:px-10">
     <div class="max-w-6xl mx-auto">
+
+      <!-- TL;DR — Résumé pour IA et lecteurs pressés -->
+      <div class="border-l-4 border-[#E65100] bg-[#FFF3E0] rounded-r-xl p-6 mb-14" role="note" aria-label="Résumé de la page">
+        <p class="text-[10px] font-bold tracking-widest uppercase text-[#E65100] mb-3">TL;DR — L'essentiel en 30 secondes</p>
+        <ul class="space-y-2">
+          {[
+            'Le bistre = dépôt de goudron et résines de bois humide — 1re cause d\'incendie de conduit en France.',
+            'Traitement en 2 temps : agent chimique professionnel (ramollissement) + hérisson mécanique (évacuation).',
+            'Signes d\'alerte : odeur de goudron, fumée épaisse, taches brunes autour du foyer, tirage réduit.',
+            'Durée : 2 à 3h selon état du conduit — certificat remis à l\'issue, valable pour l\'assurance.',
+            'Prévention clé : utiliser du bois sec (taux d\'humidité < 20%) et faire ramoner chaque année.',
+          ].map(point => (
+            <li class="flex items-start gap-2.5 text-sm text-[#1A1A1A]/75 font-light">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] mt-1.5 shrink-0"></span>
+              {point}
+            </li>
+          ))}
+        </ul>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
         <!-- Colonne gauche -->
@@ -150,6 +170,55 @@ const pageSchema = {
             <figcaption class="sr-only">Artisan certifié Sud Ramonage Martigues après débistrage — vérification tirage thermique, test de vacuité post-traitement, conduit propre sans bistre ni calcin. Certificat RSD 13 Bouches-du-Rhône.</figcaption>
           </figure>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TARIFS ═══ -->
+  <section class="py-16 px-6 md:px-10 bg-[#FAFAFA]">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+        <div>
+          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Tarifs</p>
+          <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-6">Ce que coûte un débistrage.</h2>
+          <div class="bg-white border border-[#EEEEEE] rounded-xl overflow-hidden">
+            {[
+              { label: 'Traitement chimique + mécanique (1 passe)',   prix: 'dès 150 €' },
+              { label: 'Conduit très encrassé (2 passes)',            prix: 'dès 195 €' },
+              { label: 'Diagnostic initial',                          prix: 'inclus' },
+              { label: 'Certificat de débistrage',                    prix: 'inclus' },
+            ].map(({ label, prix }, i) => (
+              <div class={`flex items-center justify-between px-6 py-3.5 ${i % 2 === 0 ? 'bg-white' : 'bg-[#FAFAFA]'}`}>
+                <span class="text-sm text-[#1A1A1A]/65 font-light">{label}</span>
+                <span class="text-sm font-bold text-[#1A1A1A]">{prix}</span>
+              </div>
+            ))}
+          </div>
+          <p class="text-[11px] text-[#1A1A1A]/40 font-light mt-4">
+            Tarifs indicatifs — zone Martigues et Côte Bleue. Devis précis après diagnostic gratuit.
+          </p>
+        </div>
+
+        <div class="bg-[#1A1A1A] rounded-xl p-7">
+          <p class="text-xs font-semibold text-white/40 uppercase tracking-widest mb-5">Inclus dans chaque débistrage</p>
+          {[
+            'Diagnostic visuel initial de l\'état du conduit',
+            'Application du traitement chimique professionnel',
+            'Débistrage mécanique complet',
+            'Aspiration et évacuation des résidus',
+            'Contrôle visuel post-traitement',
+            'Certificat de ramonage / débistrage RSD 13',
+          ].map(item => (
+            <div class="flex items-center gap-3 py-2.5 border-b border-white/8 last:border-0">
+              <svg class="w-4 h-4 text-[#E65100] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-sm text-white/55 font-light">{item}</span>
+            </div>
+          ))}
+        </div>
+
       </div>
     </div>
   </section>

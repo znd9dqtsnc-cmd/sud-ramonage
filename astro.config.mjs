@@ -5,7 +5,7 @@ import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://sud-ramonage.vercel.app',
+  site: 'https://www.sud-ramonage.fr',
   output: 'static',
   adapter: vercel(),
   prefetch: {

@@ -21,7 +21,7 @@ const {
   pageSchema,
 } = Astro.props;
 
-const siteUrl = 'https://sud-ramonage.vercel.app';
+const siteUrl = 'https://www.sud-ramonage.fr';
 const canonicalUrl = canonical ?? `${siteUrl}${Astro.url.pathname}`;
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 
@@ -49,19 +49,34 @@ const businessSchema = {
     latitude: 43.4046,
     longitude: 5.0511,
   },
-  areaServed: villes.map(v => ({
-    '@type': 'City',
-    name: v.nom,
-  })),
+  brand: {
+    '@type': 'Brand',
+    name: 'Sud Ramonage',
+  },
+  hasMap: 'https://maps.app.goo.gl/sud-ramonage-martigues',
+  areaServed: [
+    { '@type': 'PostalAddress', addressLocality: 'Martigues',           postalCode: '13500', addressCountry: 'FR' },
+    { '@type': 'PostalAddress', addressLocality: 'Istres',              postalCode: '13800', addressCountry: 'FR' },
+    { '@type': 'PostalAddress', addressLocality: 'Miramas',             postalCode: '13140', addressCountry: 'FR' },
+    { '@type': 'PostalAddress', addressLocality: 'Port-de-Bouc',        postalCode: '13110', addressCountry: 'FR' },
+    { '@type': 'PostalAddress', addressLocality: 'Fos-sur-Mer',         postalCode: '13270', addressCountry: 'FR' },
+    { '@type': 'PostalAddress', addressLocality: 'Châteauneuf-les-Martigues', postalCode: '13220', addressCountry: 'FR' },
+    { '@type': 'PostalAddress', addressLocality: 'Sausset-les-Pins',    postalCode: '13960', addressCountry: 'FR' },
+    { '@type': 'PostalAddress', addressLocality: 'Carry-le-Rouet',      postalCode: '13620', addressCountry: 'FR' },
+    { '@type': 'PostalAddress', addressLocality: 'Saint-Mitre-les-Remparts', postalCode: '13920', addressCountry: 'FR' },
+    { '@type': 'PostalAddress', addressLocality: 'Gignac-la-Nerthe',    postalCode: '13180', addressCountry: 'FR' },
+    ...villes.map(v => ({ '@type': 'City' as const, name: v.nom })),
+  ],
+  openingHours: 'Mo-Sa 08:00-19:00',
   openingHoursSpecification: [{
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     opens: '08:00',
-    closes: '18:00',
+    closes: '19:00',
   }],
   priceRange: '€€',
   currenciesAccepted: 'EUR',
-  paymentAccepted: 'Cash, Chèque, Virement',
+  paymentAccepted: 'Cash, Chèque, Carte bancaire',
   sameAs: [
     'https://fr.wikipedia.org/wiki/Ramonage',
     'https://fr.wikipedia.org/wiki/R%C3%A8glement_sanitaire_d%C3%A9partemental',
@@ -105,28 +120,37 @@ const businessSchema = {
     itemListElement: [
       {
         '@type': 'Offer',
+        price: '75',
+        priceCurrency: 'EUR',
+        priceSpecification: { '@type': 'PriceSpecification', minPrice: '75', maxPrice: '110', priceCurrency: 'EUR' },
         itemOffered: {
           '@type': 'Service',
           name: 'Ramonage certifié',
-          description: 'Ramonage mécanique complet avec certificat officiel conforme RSD 13.',
+          description: 'Ramonage mécanique complet avec certificat officiel conforme RSD 13. À partir de 75 €.',
           url: `${siteUrl}/ramonage`,
         },
       },
       {
         '@type': 'Offer',
+        price: '150',
+        priceCurrency: 'EUR',
+        priceSpecification: { '@type': 'PriceSpecification', minPrice: '150', maxPrice: '195', priceCurrency: 'EUR' },
         itemOffered: {
           '@type': 'Service',
           name: 'Débistrage de conduit',
-          description: 'Élimination des dépôts de goudron par traitement chimique et mécanique.',
+          description: 'Élimination des dépôts de goudron par traitement chimique et mécanique. À partir de 150 €.',
           url: `${siteUrl}/debistrage`,
         },
       },
       {
         '@type': 'Offer',
+        price: '90',
+        priceCurrency: 'EUR',
+        priceSpecification: { '@type': 'PriceSpecification', minPrice: '90', maxPrice: '120', priceCurrency: 'EUR' },
         itemOffered: {
           '@type': 'Service',
           name: 'Entretien poêle à bois et granulés',
-          description: 'Maintenance complète de poêle à bois et à granulés.',
+          description: 'Maintenance complète de poêle à bois et à granulés. À partir de 90 €.',
           url: `${siteUrl}/entretien-poele`,
         },
       },
