@@ -7,46 +7,28 @@ export interface Props {
 
 const { variant = 'card', dark = false, class: cls = '' } = Astro.props;
 
-// Tailles en px — tout en inline-style pour éviter les classes Tailwind dynamiques non scannables
 const cfg = {
-  header: { block: 28, totalW: 116, px: 10, py: 7,  gap: 8,  textSize: 10, subSize: 6.5, radius: 10 },
-  hero:   { block: 40, totalW: 166, px: 14, py: 10, gap: 12, textSize: 13, subSize: 8,   radius: 12 },
-  card:   { block: 36, totalW: 152, px: 12, py: 9,  gap: 10, textSize: 12, subSize: 7.5, radius: 11 },
-  footer: { block: 52, totalW: 210, px: 14, py: 11, gap: 12, textSize: 16, subSize: 9,   radius: 12 },
+  header: { imgW: 64,  totalW: 120, px: 8,  py: 6,  gap: 8,  radius: 10 },
+  hero:   { imgW: 90,  totalW: 160, px: 12, py: 10, gap: 10, radius: 12 },
+  card:   { imgW: 80,  totalW: 144, px: 10, py: 8,  gap: 9,  radius: 11 },
+  footer: { imgW: 110, totalW: 190, px: 12, py: 10, gap: 10, radius: 12 },
 }[variant];
 
-const textColor   = dark ? '#ffffff'                 : '#C0392B';
-const subColor    = dark ? 'rgba(255,255,255,0.55)'  : '#6a6a6a';
-const borderColor = dark ? 'rgba(255,255,255,0.12)'  : 'rgba(192,57,43,0.20)';
-const bgColor     = dark ? 'rgba(255,255,255,0.06)'  : 'rgba(192,57,43,0.04)';
+const borderColor = dark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.08)';
+const bgColor     = dark ? 'rgba(255,255,255,0.06)' : 'rgba(255,255,255,0.80)';
 ---
 
 <div
   class={cls}
-  style={`display:inline-flex; align-items:center; gap:${cfg.gap}px; width:${cfg.totalW}px; padding:${cfg.py}px ${cfg.px}px; border-radius:${cfg.radius}px; background:${bgColor}; border:1px solid ${borderColor};`}
+  style={`display:inline-flex; align-items:center; gap:${cfg.gap}px; padding:${cfg.py}px ${cfg.px}px; border-radius:${cfg.radius}px; background:${bgColor}; border:1px solid ${borderColor};`}
   title="Sud Ramonage — Artisan certifié COSTIC (Comité Scientifique et Technique des Industries Climatiques)"
 >
-  <!-- Carré rouge COSTIC avec 3 arcs blancs -->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={cfg.block}
-    height={cfg.block}
-    viewBox="0 0 60 60"
-    role="img"
-    aria-label="Logo officiel COSTIC - Certification ramonage et fumisterie Sud Ramonage"
-    style="display:block; flex-shrink:0;"
-  >
-    <rect x="0" y="0" width="60" height="60" fill="#C0392B" rx="4"/>
-    <g fill="none" stroke="#ffffff" stroke-linecap="round">
-      <path d="M 0 60 A 16 16 0 0 1 16 44" stroke-width="5.5"/>
-      <path d="M 0 60 A 32 32 0 0 1 32 28" stroke-width="5.5"/>
-      <path d="M 0 60 A 50 50 0 0 1 50 10" stroke-width="5.5"/>
-    </g>
-  </svg>
-
-  <!-- Texte -->
-  <div style="min-width:0; overflow:hidden;">
-    <p style={`font-size:${cfg.textSize}px; font-weight:800; letter-spacing:0.12em; color:${textColor}; line-height:1; white-space:nowrap;`}>COSTIC</p>
-    <p style={`font-size:${cfg.subSize}px; font-weight:300; color:${subColor}; line-height:1.3; margin-top:2px; white-space:nowrap;`}>Artisan Certifié</p>
-  </div>
+  <img
+    src="/images/costic-logo.png"
+    alt="Logo officiel COSTIC - Certification ramonage et fumisterie Sud Ramonage"
+    width={cfg.imgW}
+    style={`display:block; width:${cfg.imgW}px; height:auto; object-fit:contain; flex-shrink:0;`}
+    loading="lazy"
+    decoding="async"
+  />
 </div>
