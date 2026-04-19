@@ -1,0 +1,215 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const siteUrl = 'https://www.sud-ramonage.fr';
+const slug = 'contester-refus-assurance-feu-cheminee';
+const datePublished = '2026-04-19';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Incendie de cheminée et refus d\'assurance : vos droits et recours',
+  description: 'Votre assureur a refusé de couvrir un incendie de conduit faute de certificat de ramonage ? Voici la procédure juridique complète, les jurisprudences et comment vous défendre.',
+  author: { '@type': 'Person', name: 'Sud Ramonage', url: siteUrl },
+  publisher: { '@type': 'Organization', name: 'Sud Ramonage', logo: { '@type': 'ImageObject', url: `${siteUrl}/favicon.svg` } },
+  datePublished,
+  dateModified: datePublished,
+  url: `${siteUrl}/conseils/${slug}`,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}/conseils/${slug}` },
+  image: `${siteUrl}/og-image.jpg`,
+  articleSection: 'Réglementation',
+  keywords: 'refus assurance feu cheminée, contestation assurance incendie conduit, jurisprudence ramonage, recours assurance cheminée',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'L\'assureur peut-il refuser de rembourser un incendie de cheminée sans certificat de ramonage ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Oui. Si votre contrat d\'assurance habitation prévoit l\'obligation d\'entretien des appareils à combustion (clause fréquente), l\'assureur peut invoquer le défaut d\'entretien pour réduire ou refuser l\'indemnisation. Cependant, un refus total n\'est pas automatique : il doit être justifié par un lien de causalité prouvé entre le défaut d\'entretien et le sinistre.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quelle est la procédure pour contester un refus d\'assurance ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'La procédure est : 1) Lettre recommandée AR au service réclamations de l\'assureur (délai légal 10 jours pour accuser réception, 2 mois pour répondre). 2) En cas d\'échec, saisine du Médiateur de l\'Assurance (gratuit, délai 3 mois). 3) En cas d\'échec, saisine du Tribunal judiciaire. La charge de la preuve du lien de causalité incombe à l\'assureur.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Un ramonage effectué par soi-même est-il valable pour l\'assurance ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Non, dans la quasi-totalité des cas. Les assureurs exigent un certificat de ramonage émis par un artisan qualifié (professionnel du bâtiment, ramoneur certifié). Un ramonage "maison" sans document opposable ne constitue pas une preuve d\'entretien au sens des conditions générales du contrat.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Que faire si l\'incendie est survenu chez le locataire mais le ramonage n\'a pas été fait ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'La responsabilité dépend de qui avait l\'obligation d\'entretien. Le ramonage annuel est une charge locative (décret 87-712), donc le locataire est en défaut. Mais si le bailleur n\'a pas fourni un conduit en bon état structurel (article 6 loi 89-462), la responsabilité peut être partagée. L\'assureur du locataire et celui du bailleur peuvent être mis en cause simultanément.' },
+    },
+  ],
+};
+---
+
+<ArticleLayout
+  title="Incendie de cheminée : contester un refus d'assurance — Jurisprudence & Recours"
+  description="Refus d'assurance après un feu de conduit ? Vos droits, la jurisprudence, la procédure de réclamation et comment un certificat de ramonage conforme protège vos intérêts."
+  slug={slug}
+  category="Réglementation"
+  readTime="7 min"
+  datePublished={datePublished}
+  relatedService={{ href: '/ramonage', label: 'Ramonage Certifié RSD 13' }}
+  articleSchema={articleSchema}
+  howToSchema={undefined}
+>
+
+  <p class="lead">
+    Chaque année, des sinistres liés à un feu de conduit voient leur indemnisation refusée ou réduite par les assureurs — faute d'un certificat de ramonage conforme. Voici vos droits, la jurisprudence applicable, et la procédure pour contester un refus abusif.
+  </p>
+
+  <div class="callout callout-warning">
+    <strong>Attention</strong> : cet article est informatif et ne constitue pas un conseil juridique. En cas de litige avec votre assureur, consultez un avocat spécialisé en droit des assurances.
+  </div>
+
+  <h2>Le fondement du refus : la clause d'entretien</h2>
+
+  <p>
+    La plupart des contrats d'assurance multirisque habitation comportent une clause d'entretien des appareils à combustion. Elle peut être libellée ainsi :
+  </p>
+
+  <blockquote>
+    <p>« L'assuré est tenu d'entretenir les installations de chauffage et les conduits de fumée conformément aux règles en vigueur. Tout défaut d'entretien susceptible d'être à l'origine du sinistre peut entraîner une réduction ou un refus d'indemnisation. »</p>
+    <cite>— Formulation type, Conditions Générales assurance habitation</cite>
+  </blockquote>
+
+  <p>
+    La clé juridique est dans les mots <strong>« susceptible d'être à l'origine »</strong>. Le refus n'est légitime que si l'assureur peut démontrer un <em>lien de causalité</em> entre le défaut d'entretien (absence de ramonage) et le sinistre.
+  </p>
+
+  <h2>Ce que dit la jurisprudence</h2>
+
+  <p>
+    Plusieurs décisions de juridictions civiles ont précisé les contours de cette clause :
+  </p>
+
+  <h3>Principe de proportionnalité de la sanction</h3>
+  <p>
+    La Cour de cassation (2e civ., 7 janvier 2016, n°14-26.306) a rappelé que la déchéance de garantie doit être expressément prévue par le contrat et ne peut s'appliquer qu'en cas de faute suffisamment grave. Un simple retard dans le ramonage, sans bistre avéré ni obstruction, peut ne pas constituer une faute grave au sens du contrat.
+  </p>
+
+  <h3>Charge de la preuve du lien de causalité</h3>
+  <p>
+    La charge de la preuve incombe à l'assureur qui invoque la déchéance. Il doit prouver que l'incendie aurait pu être évité si le ramonage avait été effectué. En l'absence d'expertise technique indépendante démontrant ce lien, le refus peut être contesté.
+  </p>
+
+  <h3>Réduction proportionnelle vs refus total</h3>
+  <p>
+    L'article L.113-1 du Code des assurances distingue la faute simple (réduction de l'indemnité) de la faute intentionnelle (déchéance totale). Un défaut de ramonage par négligence n'est pas une faute intentionnelle — l'assureur ne peut donc pas refuser totalement l'indemnisation à ce seul titre.
+  </p>
+
+  <div class="callout callout-info">
+    <strong>À retenir</strong> : la déchéance totale de garantie pour défaut de ramonage est rarement justifiée juridiquement si le sinistré peut démontrer que l'incendie n'est pas directement causé par l'absence de ramonage (ex. : cause externe, défaut du conduit lui-même, etc.).
+  </div>
+
+  <h2>La procédure de contestation — étape par étape</h2>
+
+  <h3>Étape 1 — Réclamation écrite au service dédié (délai : 60 jours)</h3>
+  <p>
+    Toute assurance doit disposer d'un service réclamations. Envoyez une lettre recommandée AR mentionnant :
+  </p>
+  <ul>
+    <li>Le numéro de sinistre et la décision contestée</li>
+    <li>Les motifs précis de votre contestation (absence de lien de causalité, clause non opposable, etc.)</li>
+    <li>Les pièces à l'appui (rapport d'expertise contradictoire si possible)</li>
+    <li>La demande d'indemnisation chiffrée</li>
+  </ul>
+  <p>
+    L'assureur a <strong>10 jours pour accuser réception</strong> et <strong>2 mois pour répondre</strong> (art. L.133-2 Code des assurances).
+  </p>
+
+  <h3>Étape 2 — Médiation de l'Assurance (gratuit — délai : 3 mois)</h3>
+  <p>
+    En cas d'échec de la réclamation, saisissez le <strong>Médiateur de l'Assurance</strong> (médiateur-assurance.fr). La médiation est gratuite, obligatoire avant toute action judiciaire, et aboutit dans environ 70 % des cas. Le médiateur n'est pas lié par la décision de l'assureur et applique le droit.
+  </p>
+
+  <h3>Étape 3 — Expertise contradictoire</h3>
+  <p>
+    Si l'assureur conteste la cause de l'incendie, demandez une expertise contradictoire. Vous avez le droit de mandater votre propre expert (expert d'assuré) qui travaille dans votre intérêt — à l'inverse de l'expert d'assurance mandaté par la compagnie.
+  </p>
+  <p>
+    Un rapport d'inspection caméra du conduit <em>après</em> le sinistre peut démontrer que la cause était une fissure structurelle (responsabilité du bailleur/constructeur) et non un défaut de ramonage.
+  </p>
+
+  <h3>Étape 4 — Tribunal judiciaire</h3>
+  <p>
+    Si la médiation échoue, l'action en justice est possible. Le délai de prescription est de <strong>2 ans</strong> à compter de la notification du refus (art. L.114-1 Code des assurances). Pour les litiges inférieurs à 10 000 €, le juge de proximité ou le tribunal de proximité est compétent.
+  </p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Étape</th>
+          <th>Délai</th>
+          <th>Coût</th>
+          <th>Taux de succès estimé</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Réclamation interne</td><td>2 mois</td><td>Gratuit</td><td>20–30 %</td></tr>
+        <tr><td>Médiation de l'Assurance</td><td>3 mois</td><td>Gratuit</td><td>~70 % (toutes causes)</td></tr>
+        <tr><td>Expertise contradictoire</td><td>1–3 mois</td><td>500–2 000 €</td><td>Variable</td></tr>
+        <tr><td>Tribunal judiciaire</td><td>12–24 mois</td><td>Avocat requis > 10 000 €</td><td>Variable</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Comment éviter ce scénario : le certificat comme bouclier</h2>
+
+  <p>
+    Le certificat de ramonage conforme au RSD local est votre seule preuve opposable à l'assureur. Un document complet doit mentionner :
+  </p>
+
+  <ul>
+    <li>Nom, prénom et qualification de l'artisan (numéro de certification COSTIC ou équivalent)</li>
+    <li>Adresse exacte du bien et identification de l'appareil</li>
+    <li>Date de l'intervention et nature des travaux effectués</li>
+    <li>Conformité au RSD applicable (RSD 13 pour les Bouches-du-Rhône)</li>
+    <li>Signature et cachet de l'artisan</li>
+  </ul>
+
+  <p>
+    Un simple reçu de paiement ou un document sans ces mentions n'est pas opposable. Les assureurs l'ont bien compris — et leurs experts savent identifier un certificat non conforme.
+  </p>
+
+  <div class="callout callout-info">
+    <strong>Conseil pratique</strong> : conservez vos certificats de ramonage pendant au moins 5 ans. En cas de sinistre, vous devrez prouver que le ramonage a été effectué pour <em>chacune</em> des années précédant le sinistre — pas seulement la dernière.
+  </div>
+
+  <h2>Cas particulier : le locataire sans certificat</h2>
+
+  <p>
+    Dans une location, le locataire supporte l'obligation de ramonage (décret 87-712). En cas de sinistre sans certificat :
+  </p>
+  <ol>
+    <li>L'assureur du locataire peut refuser sa garantie responsabilité civile → le locataire finance les dommages sur ses propres deniers</li>
+    <li>L'assureur du bailleur peut se retourner contre le locataire (subrogation)</li>
+    <li>Le bailleur peut réclamer les dommages causés à son bien au locataire</li>
+  </ol>
+  <p>
+    Si, à l'inverse, le conduit était structurellement défectueux (fissures, section inadaptée) — et que le bailleur avait connaissance de ce défaut — la responsabilité se partage ou bascule vers le bailleur.
+  </p>
+
+  <h2>Questions fréquentes</h2>
+  <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+    {faqSchema.mainEntity.map(item => (
+      <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary itemprop="name">{item.name}</summary>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">{item.acceptedAnswer.text}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+</ArticleLayout>

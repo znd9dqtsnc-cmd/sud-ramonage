@@ -724,7 +724,209 @@ const actsNiveaux = [
     </div>
   </section>
 
+  <!-- ══════════════════════════════════════════════════
+       SECTION G — FORMULAIRE B2B PRIORITAIRE
+  ══════════════════════════════════════════════════ -->
+  <section class="py-20 px-6 md:px-10 bg-[#F4F7FF]">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="text-center mb-12">
+        <p class="text-[11px] font-bold uppercase tracking-widest text-[#1A4B8F] mb-3">Espace partenaires</p>
+        <h2 class="text-3xl font-extrabold tracking-tight text-[#1A1A1A]">Transmettre un dossier ACTS</h2>
+        <p class="text-sm text-[#1A1A1A]/45 font-light mt-3 max-w-xl mx-auto">Remplissez ce formulaire. Votre dossier est transmis en priorité et nous vous rappelons sous 4h en jours ouvrés.</p>
+      </div>
+
+      <div class="bg-white border border-[#1A4B8F]/15 rounded-2xl shadow-sm p-8 md:p-10">
+
+        <form id="acts-form" class="space-y-6" novalidate>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Profil -->
+            <div>
+              <label for="profil" class="block text-xs font-semibold text-[#1A1A1A]/70 mb-2">Vous êtes *</label>
+              <select id="profil" name="profil" required
+                class="w-full border border-[#DDDDDD] rounded-xl px-4 py-3 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1A4B8F]/30 focus:border-[#1A4B8F] bg-white">
+                <option value="">— Sélectionnez —</option>
+                <option value="Diagnostiqueur DPE">Diagnostiqueur DPE</option>
+                <option value="Agent immobilier">Agent immobilier</option>
+                <option value="Notaire">Notaire</option>
+                <option value="Syndic de copropriété">Syndic de copropriété</option>
+                <option value="Architecte">Architecte</option>
+                <option value="Autre professionnel">Autre professionnel</option>
+              </select>
+            </div>
+
+            <!-- Nom / Société -->
+            <div>
+              <label for="societe" class="block text-xs font-semibold text-[#1A1A1A]/70 mb-2">Société / Cabinet *</label>
+              <input id="societe" name="societe" type="text" required placeholder="Cabinet Dupont DPE"
+                class="w-full border border-[#DDDDDD] rounded-xl px-4 py-3 text-sm text-[#1A1A1A] placeholder-[#1A1A1A]/25 focus:outline-none focus:ring-2 focus:ring-[#1A4B8F]/30 focus:border-[#1A4B8F]" />
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Email -->
+            <div>
+              <label for="email-pro" class="block text-xs font-semibold text-[#1A1A1A]/70 mb-2">Email professionnel *</label>
+              <input id="email-pro" name="email" type="email" required placeholder="contact@cabinet-dpe.fr"
+                class="w-full border border-[#DDDDDD] rounded-xl px-4 py-3 text-sm text-[#1A1A1A] placeholder-[#1A1A1A]/25 focus:outline-none focus:ring-2 focus:ring-[#1A4B8F]/30 focus:border-[#1A4B8F]" />
+            </div>
+
+            <!-- Téléphone -->
+            <div>
+              <label for="tel-pro" class="block text-xs font-semibold text-[#1A1A1A]/70 mb-2">Téléphone direct</label>
+              <input id="tel-pro" name="tel" type="tel" placeholder="06 xx xx xx xx"
+                class="w-full border border-[#DDDDDD] rounded-xl px-4 py-3 text-sm text-[#1A1A1A] placeholder-[#1A1A1A]/25 focus:outline-none focus:ring-2 focus:ring-[#1A4B8F]/30 focus:border-[#1A4B8F]" />
+            </div>
+          </div>
+
+          <!-- Adresse du bien -->
+          <div>
+            <label for="adresse-bien" class="block text-xs font-semibold text-[#1A1A1A]/70 mb-2">Adresse du bien à expertiser *</label>
+            <input id="adresse-bien" name="adresse" type="text" required placeholder="12 avenue de la Mer, 13500 Martigues"
+              class="w-full border border-[#DDDDDD] rounded-xl px-4 py-3 text-sm text-[#1A1A1A] placeholder-[#1A1A1A]/25 focus:outline-none focus:ring-2 focus:ring-[#1A4B8F]/30 focus:border-[#1A4B8F]" />
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- Type appareil -->
+            <div>
+              <label for="appareil" class="block text-xs font-semibold text-[#1A1A1A]/70 mb-2">Type d'appareil</label>
+              <select id="appareil" name="appareil"
+                class="w-full border border-[#DDDDDD] rounded-xl px-4 py-3 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1A4B8F]/30 focus:border-[#1A4B8F] bg-white">
+                <option value="Non précisé">Non précisé</option>
+                <option value="Foyer ouvert">Foyer ouvert</option>
+                <option value="Insert bois">Insert bois</option>
+                <option value="Poêle bois">Poêle bois</option>
+                <option value="Poêle granulés">Poêle granulés</option>
+                <option value="Chaudière gaz/fioul">Chaudière gaz/fioul</option>
+              </select>
+            </div>
+
+            <!-- Niveau ACTS -->
+            <div>
+              <label for="niveau-acts" class="block text-xs font-semibold text-[#1A1A1A]/70 mb-2">Niveau ACTS souhaité</label>
+              <select id="niveau-acts" name="niveau"
+                class="w-full border border-[#DDDDDD] rounded-xl px-4 py-3 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1A4B8F]/30 focus:border-[#1A4B8F] bg-white">
+                <option value="Essentiel (120 €)">Essentiel — 120 €</option>
+                <option value="Intégral (220 €)">Intégral — 220 €</option>
+                <option value="À définir">À définir ensemble</option>
+              </select>
+            </div>
+
+            <!-- Urgence -->
+            <div>
+              <label for="urgence" class="block text-xs font-semibold text-[#1A1A1A]/70 mb-2">Délai souhaité</label>
+              <select id="urgence" name="urgence"
+                class="w-full border border-[#DDDDDD] rounded-xl px-4 py-3 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1A4B8F]/30 focus:border-[#1A4B8F] bg-white">
+                <option value="Standard (48–72h)">Standard — 48 à 72h</option>
+                <option value="Urgent (24h)">Urgent — 24h</option>
+                <option value="Très urgent (aujourd'hui)">Très urgent — aujourd'hui</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Date signature -->
+          <div>
+            <label for="date-signature" class="block text-xs font-semibold text-[#1A1A1A]/70 mb-2">Date de signature prévue (si vente)</label>
+            <input id="date-signature" name="signature" type="date"
+              class="w-full border border-[#DDDDDD] rounded-xl px-4 py-3 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1A4B8F]/30 focus:border-[#1A4B8F]" />
+          </div>
+
+          <!-- Informations complémentaires -->
+          <div>
+            <label for="infos" class="block text-xs font-semibold text-[#1A1A1A]/70 mb-2">Informations complémentaires</label>
+            <textarea id="infos" name="infos" rows="3" placeholder="État apparent du conduit, date du dernier ramonage connu, contexte particulier..."
+              class="w-full border border-[#DDDDDD] rounded-xl px-4 py-3 text-sm text-[#1A1A1A] placeholder-[#1A1A1A]/25 focus:outline-none focus:ring-2 focus:ring-[#1A4B8F]/30 focus:border-[#1A4B8F] resize-none"></textarea>
+          </div>
+
+          <!-- Rapport notaire -->
+          <div class="flex items-start gap-3">
+            <input type="checkbox" id="rapport-notaire" name="notaire" value="Oui"
+              class="mt-0.5 w-4 h-4 rounded border-[#DDDDDD] accent-[#1A4B8F]" />
+            <label for="rapport-notaire" class="text-xs text-[#1A1A1A]/60 font-light leading-relaxed cursor-pointer">
+              Le rapport doit être transmis directement au notaire (indiquez les coordonnées dans les infos complémentaires)
+            </label>
+          </div>
+
+          <!-- Submit -->
+          <div class="flex items-center gap-4 pt-2">
+            <button type="submit"
+              class="inline-flex items-center gap-2 bg-[#1A4B8F] text-white text-sm font-bold px-8 py-4 rounded-xl hover:bg-[#143A72] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1A4B8F] focus:ring-offset-2">
+              Transmettre le dossier
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+            </button>
+            <p class="text-xs text-[#1A1A1A]/35 font-light">Réponse garantie sous 4h · Pas de spam</p>
+          </div>
+
+          <!-- Message confirmation -->
+          <div id="form-success" class="hidden bg-green-50 border border-green-200 rounded-xl p-4 text-sm text-green-800 font-medium">
+            ✓ Votre dossier a été transmis. Nous vous contactons sous 4h.
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
   <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 </Layout>
+
+<script>
+const form = document.getElementById('acts-form') as HTMLFormElement | null;
+const success = document.getElementById('form-success');
+
+form?.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const f = form.elements as any;
+  const profil    = f.profil?.value    || '';
+  const societe   = f.societe?.value   || '';
+  const email     = f.email?.value     || '';
+  const tel       = f.tel?.value       || 'Non fourni';
+  const adresse   = f.adresse?.value   || '';
+  const appareil  = f.appareil?.value  || 'Non précisé';
+  const niveau    = f.niveau?.value    || 'Essentiel';
+  const urgence   = f.urgence?.value   || 'Standard';
+  const signature = f.signature?.value || 'Non précisée';
+  const infos     = f.infos?.value     || 'Aucune';
+  const notaire   = f.notaire?.checked ? 'Oui' : 'Non';
+
+  if (!profil || !societe || !email || !adresse) {
+    alert('Merci de remplir les champs obligatoires (*).');
+    return;
+  }
+
+  const subject = encodeURIComponent(`[ACTS] Dossier partenaire — ${societe} — ${adresse}`);
+  const body = encodeURIComponent(
+`Nouveau dossier ACTS transmis via le formulaire partenaires.
+
+— Profil        : ${profil}
+— Société       : ${societe}
+— Email         : ${email}
+— Téléphone     : ${tel}
+— Adresse bien  : ${adresse}
+— Appareil      : ${appareil}
+— Niveau ACTS   : ${niveau}
+— Urgence       : ${urgence}
+— Date signature: ${signature}
+— Rapport notaire : ${notaire}
+
+Informations complémentaires :
+${infos}
+
+---
+Envoyé depuis /partenaires-diagnostiqueurs`
+  );
+
+  window.location.href = `mailto:contact@sud-ramonage.fr?subject=${subject}&body=${body}`;
+
+  setTimeout(() => {
+    form.reset();
+    success?.classList.remove('hidden');
+  }, 500);
+});
+</script>
