@@ -34,6 +34,26 @@ const businessSchema = {
   url: siteUrl,
   telephone: '+33664729600',
   email: 'majeo@ik.me',
+  taxID: 'FR-SIRET-A-RENSEIGNER',
+  identifier: {
+    '@type': 'PropertyValue',
+    name: 'SIRET',
+    value: 'À renseigner',
+  },
+  hasCredential: [
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Certification COSTIC — Fumisterie et conduits de fumée',
+      credentialCategory: 'Certification professionnelle',
+      recognizedBy: { '@type': 'Organization', name: 'COSTIC', url: 'https://www.costic.com' },
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Qualibat 6521 — Conduits de fumée et ventilation',
+      credentialCategory: 'Qualification professionnelle',
+      recognizedBy: { '@type': 'Organization', name: 'Qualibat', url: 'https://www.qualibat.com' },
+    },
+  ],
   logo: `${siteUrl}/favicon.svg`,
   image: ogImageUrl,
   address: {
