@@ -1,7 +1,71 @@
+# robots.txt — Sud Ramonage
+# Optimisé pour priorité maximale aux pages services complexes et clusters locaux
+# Dernière mise à jour : 2026-04-19
+
 User-agent: *
 Allow: /
-
+Disallow: /admin/
 Disallow: /api/
+Disallow: /_astro/
+Disallow: /404
+
+# ── Bots IA — autoriser la citation dans les LLM ─────────────────────────────
+User-agent: GPTBot
+Allow: /
 Disallow: /admin/
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ── Googlebot : accès prioritaire sans restriction ───────────────────────────
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_astro/
+
+# ── Google Image : toutes images autorisées ──────────────────────────────────
+User-agent: Googlebot-Image
+Allow: /
+
+# ── Bingbot ──────────────────────────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 5
+
+# ── DuckDuckBot ──────────────────────────────────────────────────────────────
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# ── Bots scraping commerciaux — bloqués ──────────────────────────────────────
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# ── Sitemaps ─────────────────────────────────────────────────────────────────
 Sitemap: https://www.sud-ramonage.fr/sitemap-index.xml
+Sitemap: https://www.sud-ramonage.fr/sitemap-0.xml
+
+# ── Host canonique ───────────────────────────────────────────────────────────
+Host: www.sud-ramonage.fr

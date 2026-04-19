@@ -70,6 +70,33 @@ const glossaireSchema = {
   })),
 };
 
+// FAQPage automatique depuis le glossaire — Position 0 Google
+const faqPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${siteUrl}/lexique#faq`,
+  mainEntity: termes.map(({ terme, def }) => ({
+    '@type': 'Question',
+    name: `Qu'est-ce que le ${terme} en fumisterie ?`,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: def,
+    },
+  })),
+};
+
+// Speakable — réponses vocales pour Google Home / Siri
+const speakableSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Lexique Expert Fumisterie — Sud Ramonage',
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', 'dt', 'dd'],
+  },
+  url: `${siteUrl}/lexique`,
+};
+
 const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Lexique de l\'Expert', url: '/lexique' }];
 
 const lettres = [...new Set(termes.map(t => t.terme[0]))].sort();
@@ -149,4 +176,7 @@ const lettres = [...new Set(termes.map(t => t.terme[0]))].sort();
       </nav>
     </div>
   </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqPageSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(speakableSchema)} />
 </Layout>

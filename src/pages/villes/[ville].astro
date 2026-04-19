@@ -58,9 +58,28 @@ const pageSchema = {
     name: data.nom,
     postalCode: data.codePostal,
     containedInPlace: { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
+    ...(data.geo ? {
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: data.geo.latitude,
+        longitude: data.geo.longitude,
+      },
+    } : {}),
+    ...(data.landmark ? { landmark: data.landmark } : {}),
   },
   serviceType: 'Ramonage de cheminée',
   url: `${siteUrl}/villes/${data.slug}`,
+  ...(data.geo ? {
+    spatialCoverage: {
+      '@type': 'Place',
+      name: data.nom,
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: data.geo.latitude,
+        longitude: data.geo.longitude,
+      },
+    },
+  } : {}),
   offers: {
     '@type': 'Offer',
     price: '75',

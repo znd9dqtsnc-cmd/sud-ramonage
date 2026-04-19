@@ -13,6 +13,10 @@ export interface VilleData {
   temoignage: { auteur: string; texte: string };
   metaTitle: string;
   metaDescription: string;
+  /** Coordonnées GPS centre-ville — Local Entity Siloing */
+  geo?: { latitude: number; longitude: number };
+  /** Point de repère local connu — ancrage entité géographique */
+  landmark?: string;
   /** Note terrain en première personne — spécificité locale observée sur le chantier */
   expertiseTerrain?: string;
   /** Cas de non-conformité fréquents dans cette zone (2-3 items) */
@@ -35,6 +39,8 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Michel R., propriétaire à Jonquières', texte: "Ponctuel, propre et très professionnel. Le certificat m'a été remis immédiatement. Je recommande sans hésiter pour tout le secteur de Martigues." },
     metaTitle: 'Ramonage Certifié à Martigues (13500) — Sud Ramonage',
     metaDescription: "Artisan ramoneur certifié COSTIC à Martigues (13500). Ramonage cheminée, insert, poêle. Inspection caméra, certificat RSD 13 immédiat. Devis gratuit 24h.",
+    geo: { latitude: 43.4046, longitude: 5.0511 },
+    landmark: 'Miroir aux Oiseaux — quartier de l\'Île historique de Martigues',
     expertiseTerrain: "Le vent de mistral à Martigues ne fonctionne pas comme on l'imagine depuis l'extérieur. Il arrive par rafales asymétriques — parfois 80 km/h depuis le nord-ouest, parfois rien, puis une bourrasque est-nord-est que personne ne voit venir. Ce déséquilibre de pression crée des comportements de conduit que j'ai appris à identifier après des années d'intervention dans le bassin. J'ai trouvé des inserts qui fonctionnaient parfaitement en octobre et refoulaient dès décembre. Dans la majorité des cas : un chapeau de conduit orienté face au vent dominant, qui devient une prise de vent quand la tramontane tourne. Ça se règle. Mais sans diagnostic, on cherche ailleurs pendant des années.",
     casTypiques: [
       { titre: 'Chapeau mal orienté sous mistral', detail: 'Orientation du chapeau face au vent dominant crée une dépression inverse. Fréquent dans les maisons du bord de l\'étang exposées plein nord-ouest.', dtu: 'NF DTU 24.1 P1-1 art. 6.4.2' },
@@ -57,6 +63,8 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Sophie L., propriétaire à Trigance', texte: "J'avais un poêle qui tirait mal depuis un an. Sud Ramonage a trouvé une obstruction partielle et m'a remis le certificat le jour même. Excellent travail." },
     metaTitle: 'Ramonage à Istres (13800) — Artisan Certifié Sud Ramonage',
     metaDescription: "Ramonage de cheminée et poêle à Istres (13800). Artisan certifié COSTIC, inspection caméra, intervention rapide. Certificat RSD 13 remis sur place. Devis gratuit.",
+    geo: { latitude: 43.5151, longitude: 4.9907 },
+    landmark: 'Lac de l\'Olivier — vieille ville d\'Istres et base aérienne 125',
     expertiseTerrain: "À Istres, ce qui me frappe depuis des années, c'est l'humidité. Pas l'humidité que les gens remarquent — l'humidité des conduits. L'étang de Berre génère une hygrométrie constante qui transforme les suies normales en bistre, puis le bistre en calcin. J'ai ramoné des inserts à Trigance où le propriétaire brûlait du bon bois sec — et le conduit était encrassé comme si on avait brûlé du bois vert pendant dix ans. Cause : l'humidité ambiante se condense sur les parois froides d'un conduit mal isolé. La solution ? Soit un tubage isolé, soit une utilisation plus intensive pour maintenir le conduit chaud. Je prends le temps de l'expliquer sur place.",
     casTypiques: [
       { titre: 'Bistre tenace lié à l\'humidité de l\'étang', detail: 'Suies humidifiées par la vapeur de l\'étang de Berre créent des dépôts de bistre durs même avec un bois sec. Nécessite un débistrage chimique avant ramonage mécanique.', dtu: 'NF DTU 24.1 P1-1 art. 9.1' },
@@ -79,6 +87,8 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Jean-Pierre M., propriétaire aux Caïres', texte: "Service au top. Intervenu le lendemain de mon appel, conduit nettoyé en profondeur, certificat fourni. Le prix est honnête pour une prestation complète." },
     metaTitle: 'Ramonage Cheminée à Fos-sur-Mer (13270) — Sud Ramonage',
     metaDescription: "Ramonage certifié à Fos-sur-Mer (13270). Cheminée, insert, poêle à bois. Intervention rapide depuis Martigues, certificat RSD 13 immédiat. Devis gratuit sous 24h.",
+    geo: { latitude: 43.4381, longitude: 4.9443 },
+    landmark: 'Tour d\'Hauture — quartier Les Caïres, port industriel de Fos',
     expertiseTerrain: "Fos-sur-Mer, c'est le mistral amplifié. La plaine de la Crau canalisée vers le golfe crée des accélérations de vent que je ne retrouve nulle part ailleurs dans mon secteur. J'ai mesuré des différences de tirage de 20 Pascals entre un chantier à l'abri et un chantier exposé, à 200 mètres l'un de l'autre. Ce que ça change concrètement : les chapeaux standards ne fonctionnent pas aux Caïres ou à La Fossette. Il faut des chapeaux anti-refoulement à déflecteur centrifuge — pas optionnels, indispensables. Je le signale systématiquement dans mon rapport.",
     casTypiques: [
       { titre: 'Refoulement de fumée sous vent fort', detail: 'Vent de secteur nord-ouest canalisé par la plaine crée une surpression en tête de conduit. Chapeau standard insuffisant — refoulement même avec un conduit propre.', dtu: 'NF DTU 24.1 P1-1 art. 6.4.3' },
@@ -219,6 +229,8 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Nadine K., propriétaire quartier La Frescoule', texte: "Très satisfaite de l'intervention. L'artisan est arrivé à l'heure, a travaillé proprement avec des protections partout. Le certificat m'a permis de régulariser ma situation avec l'assureur." },
     metaTitle: 'Ramonage à Vitrolles (13127) — Artisan Certifié Sud Ramonage',
     metaDescription: "Ramonage certifié à Vitrolles (13127). Cheminées, inserts, poêles à granulés. Artisan COSTIC, inspection caméra, certificat RSD 13. Devis gratuit.",
+    geo: { latitude: 43.4567, longitude: 5.2426 },
+    landmark: 'Rocher de Vitrolles — étang de Bolmon, quartiers pavillonnaires des Fauvins',
   },
   {
     slug: 'rognac',
@@ -267,6 +279,8 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Patricia V., propriétaire à Marignane', texte: "Intervention sérieuse et rapide. L'artisan a vérifié l'ensemble du conduit avec sa caméra avant de procéder au ramonage. Je n'aurais pas pensé à faire ce diagnostic — c'est très rassurant." },
     metaTitle: 'Ramonage à Marignane (13700) — Artisan Certifié Sud Ramonage',
     metaDescription: "Ramonage certifié à Marignane (13700). Maisons individuelles et copropriétés. Artisan COSTIC, inspection caméra, certificat RSD 13. Devis gratuit.",
+    geo: { latitude: 43.4186, longitude: 5.2144 },
+    landmark: 'Château de Marignane — étang de Bolmon, quartier du Moulin de Gage',
   },
   {
     slug: 'saint-chamas',
@@ -315,6 +329,8 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Dominique A., propriétaire centre historique', texte: "Ma maison de ville dispose d'une cheminée du XVIIIe siècle. L'artisan a su la traiter avec le soin qu'elle méritait. Diagnostic caméra, ramonage adapté, certificat conforme. Très satisfait." },
     metaTitle: 'Ramonage à Salon-de-Provence (13300) — Sud Ramonage',
     metaDescription: "Ramonage certifié à Salon-de-Provence (13300). Cheminées historiques et poêles modernes. Artisan COSTIC, inspection caméra, certificat RSD 13. Devis gratuit.",
+    geo: { latitude: 43.6407, longitude: 5.0969 },
+    landmark: 'Château de l\'Empéri — Cours Gimon et vieille ville de Salon',
     expertiseTerrain: "Salon-de-Provence, c'est une ville où le château de l'Empéri domine encore les toits. Et ces toits, je les connais de l'intérieur. Les maisons de ville du centre historique ont des conduits qui zigzaguent entre les niveaux selon les modifications successives sur 4 siècles — ajout d'étages, percement de murs, rénovations qui ne tenaient pas compte du parcours du conduit. J'ai trouvé un conduit qui passait sous une fenêtre rajoutée au XIXe, créant un coude à 90° non conforme qui piégeait les suies. Le propriétaire cherchait pourquoi son insert fumait depuis 3 ans. Réponse dans la caméra en 8 minutes.",
     casTypiques: [
       { titre: 'Coude à 90° non conforme dans maison de ville ancienne', detail: 'Modifications successives des maisons salonaises XIXe-XXe ont créé des conduits avec coudes supérieurs à 45°, interdits par la NF DTU 24.1. Accumulation de suies dans les angles.', dtu: 'NF DTU 24.1 P1-1 art. 5.3.1' },
@@ -336,6 +352,8 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Hélène B., propriétaire d\'un hôtel particulier', texte: "Nous avons des cheminées classées dans notre propriété. L'artisan de Sud Ramonage a fait preuve d'une grande délicatesse et d'un savoir-faire irréprochable. Je le recommande sans réserve pour les bâtisses de caractère." },
     metaTitle: 'Ramonage à Aix-en-Provence (13100) — Sud Ramonage',
     metaDescription: "Ramonage certifié à Aix-en-Provence (13100). Spécialiste cheminées de caractère, hôtels particuliers. Artisan COSTIC, certificat RSD 13. Devis gratuit.",
+    geo: { latitude: 43.5263, longitude: 5.4454 },
+    landmark: 'Cours Mirabeau — cathédrale Saint-Sauveur, quartier Mazarin',
     expertiseTerrain: "Les hôtels particuliers du Cours Mirabeau, je les connais bien. Et je sais qu'ils réservent des surprises. En 2024, j'interviens sur une cheminée dans un duplex du XVIIIe siècle — le propriétaire l'utilise depuis quinze ans, jamais de problème. La caméra révèle une fissure de 8 centimètres dans la colonne de conduit, au deuxième étage, côté commun avec l'appartement voisin. Ce type de fissure dans un conduit partagé : c'est un risque d'intoxication collective au CO. Je l'ai trouvée parce que je passe la caméra sur tous les conduits de plus de 30 ans, sans exception. Sans ça, on ne ramonait pas — et on rentrait chez soi en pensant avoir fait le travail.",
     casTypiques: [
       { titre: 'Fissure de colonne dans hôtel particulier partagé', detail: 'Conduits maçonnés XIXe siècle desservant plusieurs appartements : fissuration par dilatation thermique répétée. Risque CO collectif. Détectable uniquement à la caméra.', dtu: 'NF DTU 24.1 P1-1 art. 4.3.2' },
@@ -551,6 +569,8 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'René P., propriétaire à L\'Estaque', texte: "Ma maison de pêcheur de L'Estaque a une cheminée de 1910. L'artisan a su traiter ce conduit centenaire avec méthode. Inspection caméra, ramonage adapté, certificat conforme. Je suis rassuré pour l'hiver." },
     metaTitle: "Ramonage Marseille 16e L'Estaque (13016) — Sud Ramonage",
     metaDescription: "Ramonage certifié Marseille 16e arrondissement (13016) — L'Estaque. Cheminées anciennes, immeubles historiques. Artisan COSTIC, inspection caméra, certificat RSD 13.",
+    geo: { latitude: 43.3558, longitude: 5.3092 },
+    landmark: 'L\'Estaque — quartier historique peint par Cézanne, port de L\'Estaque',
     expertiseTerrain: "L'Estaque, c'est une leçon d'humilité architecturale. Les immeubles des années 1900-1930 ici ont des conduits qui montent sur 4, 5, parfois 6 étages avant de sortir en toiture — des colonnes de maçonnerie qui ont absorbé un siècle de flambées, de fumées, de condensations. J'ai trouvé des conduits dans des états parfaits après 100 ans — et d'autres effondrés sur eux-mêmes sans que personne ne le sache. La différence ? L'entretien régulier et la qualité du combustible utilisé. Ce que je fais dans le 16e : je ne ramone jamais sans avoir passé la caméra au préalable. La surprise peut être au 3ème étage.",
     casTypiques: [
       { titre: 'Effondrement partiel de conduit maçonné ancien', detail: 'Immeubles L\'Estaque 1900-1930 : briques creuses et mortier de chaux dégradés par l\'humidité marine. Effondrement possible sur plusieurs rangées. Risque incendie majeur.', dtu: 'NF DTU 24.1 P1-1 art. 4.2' },
@@ -685,6 +705,8 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Henri R., président de copropriété au Prado', texte: "L'artisan gère le ramonage de nos 12 cheminées depuis 2 ans. Il est efficace, connaît nos conduits et remet les certificats dans les délais. La copropriété est sereine sur ce point." },
     metaTitle: "Ramonage Marseille 8e Prado (13008) — Artisan Certifié Sud Ramonage",
     metaDescription: "Ramonage certifié Marseille 8e arrondissement (13008). Prado, immeubles haussmanniens, villas. Artisan COSTIC, inspection caméra, certificat RSD 13. Devis gratuit.",
+    geo: { latitude: 43.2665, longitude: 5.3928 },
+    landmark: 'Avenue du Prado — plages du Prado, château Pastré, Notre-Dame de la Garde à 2 km',
     expertiseTerrain: "Dans le 8e, les copropriétés haussmanniennes me posent un problème récurrent : les syndics qui font ramoner le conduit collectif une fois par an — mais qui ne font vérifier ni les clapets, ni les sorties individuelles dans chaque logement. J'ai inspecté des immeubles du Prado où le conduit principal était propre, et où j'ai trouvé trois clapets anti-retour bloqués ouverts dans des appartements différents. Ce que ça veut dire concrètement : si le voisin du 2e allume sa cheminée, la fumée peut monter jusqu'au 5e par le conduit d'un appartement dont le clapet est défaillant. Ce genre de configuration, je la détecte, je la documente, et je fournis un rapport écrit au syndic.",
     casTypiques: [
       { titre: 'Clapets anti-retour défaillants en immeuble haussmannien', detail: 'Conduits collectifs du Prado : clapets bloqués ouverts permettent le reflux de fumées entre appartements. Risque CO diffus. Nécessite inspection par logement, pas seulement du conduit collectif.' },
@@ -982,6 +1004,8 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Marie-Jo P., propriétaire à Aubagne', texte: "Artisan très professionnel venu depuis Martigues. Il connaît parfaitement les spécificités des cheminées de notre région. Intervention soignée, certificat conforme, je recommande à tous mes voisins." },
     metaTitle: 'Ramonage Certifié à Aubagne (13400) — Sud Ramonage',
     metaDescription: "Ramonage certifié à Aubagne (13400). Cité de Pagnol, bastides et maisons de caractère. Artisan COSTIC, inspection caméra, certificat RSD 13. Devis gratuit.",
+    geo: { latitude: 43.2942, longitude: 5.5713 },
+    landmark: 'Musée Marcel Pagnol — Légion Étrangère d\'Aubagne, vieille ville médiévale',
   },
   {
     slug: 'auriol',
@@ -1149,6 +1173,8 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Sylvie D., propriétaire d\'une résidence face à la baie', texte: "Ma résidence de La Ciotat dispose d'une cheminée en pierre naturelle avec un insert de marque. L'artisan de Sud Ramonage maîtrise ces installations et a réalisé un travail exemplaire. Rapport caméra inclus, assureur satisfait." },
     metaTitle: 'Ramonage Certifié COSTIC Résidences de Prestige à La Ciotat (13600) — Sud Ramonage',
     metaDescription: "Ramonage certifié COSTIC pour résidences de prestige à La Ciotat (13600). Villas bord de mer, cheminées design, baie de La Ciotat. Diagnostic sécurité marine, certificat RSD 13.",
+    geo: { latitude: 43.1751, longitude: 5.6069 },
+    landmark: 'Eden Cinéma — premier cinéma du monde (1899), Chantiers de La Ciotat, baie de La Ciotat',
   },
   // ── MARSEILLE ARRONDISSEMENTS 1-7 ──────────────────────────────────────────
   {
