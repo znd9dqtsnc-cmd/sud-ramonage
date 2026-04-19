@@ -18,7 +18,13 @@ const villesAix = villes.filter(v =>
   ['aix-en-provence','luynes','les-milles','puyricard','venelles','gardanne','bouc-bel-air','cabries','calas','les-pennes-mirabeau','meyreuil','rousset','simiane-collongue','ventabren','eguilles','saint-cannat','lambesc'].includes(v.slug)
 );
 const villesCrau = villes.filter(v =>
-  ['salon-de-provence','pelissanne','saint-martin-de-crau'].includes(v.slug)
+  ['salon-de-provence','pelissanne','saint-martin-de-crau','alleins','mallemort','charleval','la-roque-dantheron'].includes(v.slug)
+);
+const villesEstAubagne = villes.filter(v =>
+  ['aubagne','auriol','roquevaire','la-destrousse','peypin','allauch','plan-de-cuques'].includes(v.slug)
+);
+const villesLittoralEst = villes.filter(v =>
+  ['cassis','la-ciotat','roquefort-la-bedoule'].includes(v.slug)
 );
 
 const sections = [
@@ -26,8 +32,10 @@ const sections = [
   { titre: 'Nord Étang de Berre', villes: villesBerre },
   { titre: 'Côte Bleue', villes: villesCoteBleue },
   { titre: 'Marseille et Périphérie', villes: villesMarseille },
+  { titre: 'Est Aubagne — Vallée Huveaune', villes: villesEstAubagne },
   { titre: 'Pays d\'Aix — Fumisterie de Prestige', villes: villesAix },
-  { titre: 'Crau & Salon', villes: villesCrau },
+  { titre: 'Haut Pays Salonais & Durance', villes: villesCrau },
+  { titre: 'Littoral Est — Prestige Balnéaire', villes: villesLittoralEst },
 ];
 
 const pageSchema = {
