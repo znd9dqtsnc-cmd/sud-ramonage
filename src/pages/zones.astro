@@ -8,14 +8,14 @@ const villesMartigues = villes.filter(v =>
   ['martigues','port-de-bouc','saint-mitre-les-remparts','chateauneuf-les-martigues','fos-sur-mer','port-saint-louis-du-rhone'].includes(v.slug)
 );
 const villesBerre = villes.filter(v =>
-  ['istres','miramas','berre-letang','rognac','vitrolles','marignane','saint-chamas','la-fare-les-oliviers','velaux','lancon-provence','grans'].includes(v.slug)
+  ['istres','miramas','berre-letang','rognac','vitrolles','marignane','saint-victoret','saint-chamas','la-fare-les-oliviers','velaux','coudoux','lancon-provence','grans'].includes(v.slug)
 );
 const villesCoteBleue = villes.filter(v =>
   ['sausset-les-pins','carry-le-rouet','ensues-la-redonne','le-rove','gignac-la-nerthe'].includes(v.slug)
 );
 const villesMarseille = villes.filter(v => v.slug.startsWith('marseille') || ['allauch','plan-de-cuques','septemes-les-vallons'].includes(v.slug));
 const villesAix = villes.filter(v =>
-  ['aix-en-provence','gardanne','bouc-bel-air','cabries','les-pennes-mirabeau','meyreuil','rousset','simiane-collongue','ventabren','eguilles','saint-cannat','lambesc'].includes(v.slug)
+  ['aix-en-provence','luynes','les-milles','puyricard','venelles','gardanne','bouc-bel-air','cabries','calas','les-pennes-mirabeau','meyreuil','rousset','simiane-collongue','ventabren','eguilles','saint-cannat','lambesc'].includes(v.slug)
 );
 const villesCrau = villes.filter(v =>
   ['salon-de-provence','pelissanne','saint-martin-de-crau'].includes(v.slug)
@@ -23,10 +23,10 @@ const villesCrau = villes.filter(v =>
 
 const sections = [
   { titre: 'Bassin de Martigues', villes: villesMartigues },
-  { titre: 'Étang de Berre', villes: villesBerre },
+  { titre: 'Nord Étang de Berre', villes: villesBerre },
   { titre: 'Côte Bleue', villes: villesCoteBleue },
   { titre: 'Marseille et Périphérie', villes: villesMarseille },
-  { titre: 'Pays d\'Aix', villes: villesAix },
+  { titre: 'Pays d\'Aix — Fumisterie de Prestige', villes: villesAix },
   { titre: 'Crau & Salon', villes: villesCrau },
 ];
 
@@ -178,6 +178,53 @@ const pageSchema = {
             </div>
           </div>
         </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SECTION PAYS D'AIX PRESTIGE ═══ -->
+  <section class="py-20 px-6 md:px-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Secteur Or</p>
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-5">
+            Fumisterie de Prestige<br />en Pays d'Aix.
+          </h2>
+          <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed mb-5">
+            Le pays d'Aix concentre un patrimoine immobilier exceptionnel : <strong class="text-[#1A1A1A]">bastides centenaires</strong>, mas provençaux en pierres de taille, résidences de standing contemporaines. Ces propriétés méritent une fumisterie à la hauteur de leur standing.
+          </p>
+          <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed mb-5">
+            Mes interventions en Pays d'Aix incluent systématiquement un <strong class="text-[#1A1A1A]">diagnostic de sécurité conduits anciens</strong> : inspection caméra haute définition, relevé des fissures et déformations, test de vacuité, rapport écrit joint au certificat. Pour les cheminées de caractère, je n'interviens qu'après avoir établi un état complet du conduit.
+          </p>
+          <div class="grid grid-cols-2 gap-4 mt-6">
+            {[
+              { label: 'Bastides XVIIIe-XIXe', desc: 'Conduits en pierres de taille, grande section, tirage puissant' },
+              { label: 'Mas provençaux', desc: 'Maçonnerie ancienne, foyers ouverts monumentaux' },
+              { label: 'Résidences standing', desc: 'Inserts premium, cheminées design, plusieurs points de feu' },
+              { label: 'Diagnostic caméra', desc: 'Systématique sur tout bâti antérieur à 1975' },
+            ].map(({ label, desc }) => (
+              <div class="bg-[#FFF3E0] rounded-xl p-4">
+                <p class="text-xs font-bold text-[#E65100] mb-1">{label}</p>
+                <p class="text-[11px] text-[#1A1A1A]/55 font-light leading-snug">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="space-y-3">
+          <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/30 mb-4">Communes Pays d'Aix couvertes</p>
+          {villes.filter(v => ['aix-en-provence','luynes','puyricard','les-milles','venelles','eguilles','bouc-bel-air','cabries','calas','gardanne','meyreuil','rousset','simiane-collongue','ventabren','saint-cannat','lambesc'].includes(v.slug)).map(v => (
+            <a href={`/villes/${v.slug}`} class="group flex items-center justify-between bg-white border border-[#EEEEEE] rounded-xl px-4 py-3 hover:border-[#E65100]/30 hover:shadow-sm transition-all duration-200">
+              <div>
+                <p class="text-sm font-semibold text-[#1A1A1A] group-hover:text-[#E65100] transition-colors duration-200">{v.nom}</p>
+                <p class="text-[10px] text-[#1A1A1A]/35 font-mono">{v.codePostal} · {v.tempsIntervention}</p>
+              </div>
+              <svg class="w-3.5 h-3.5 text-[#1A1A1A]/20 group-hover:text-[#E65100] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   </section>

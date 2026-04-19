@@ -554,12 +554,12 @@ const zonesGroupes = [
             </nav>
           </div>
 
-          <!-- Colonne 3 : Côte Bleue & Martigues -->
+          <!-- Colonne 3 : Interventions Pays d'Aix -->
           <div>
-            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-4">Côte Bleue & Martigues</p>
-            <nav aria-label="Ramonage Côte Bleue et Martigues">
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-4">Interventions Pays d'Aix</p>
+            <nav aria-label="Ramonage Pays d'Aix — fumisterie de prestige">
               <ul class="space-y-2.5">
-                {villes.filter(v => ['martigues','port-de-bouc','sausset-les-pins','carry-le-rouet','ensues-la-redonne','chateauneuf-les-martigues'].includes(v.slug)).map(v => (
+                {villes.filter(v => ['aix-en-provence','luynes','puyricard','les-milles','venelles','eguilles','bouc-bel-air','cabries','calas'].includes(v.slug)).map(v => (
                   <li>
                     <a href={`/villes/${v.slug}`} class="text-xs text-[#1A1A1A]/55 hover:text-[#E65100] transition-colors duration-200">
                       Ramonage {v.nom}
@@ -568,18 +568,18 @@ const zonesGroupes = [
                   </li>
                 ))}
                 <li>
-                  <a href="/zones" class="text-[10px] text-[#E65100]/70 hover:text-[#E65100] transition-colors duration-200">→ Voir les 50 communes</a>
+                  <a href="/zones" class="text-[10px] text-[#E65100]/70 hover:text-[#E65100] transition-colors duration-200">→ Toutes les villes du 13</a>
                 </li>
               </ul>
             </nav>
           </div>
 
-          <!-- Colonne 4 : Grandes villes -->
+          <!-- Colonne 4 : Interventions Étang de Berre -->
           <div>
-            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-4">Marseille · Aix · Salon</p>
-            <nav aria-label="Ramonage Marseille Aix Salon">
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-4">Interventions Étang de Berre</p>
+            <nav aria-label="Ramonage secteur Étang de Berre">
               <ul class="space-y-2.5">
-                {villes.filter(v => ['marseille-16','marseille-8','aix-en-provence','salon-de-provence','vitrolles','istres','fos-sur-mer'].includes(v.slug)).map(v => (
+                {villes.filter(v => ['vitrolles','marignane','saint-victoret','gignac-la-nerthe','velaux','ventabren','coudoux','la-fare-les-oliviers','rognac','berre-letang'].includes(v.slug)).map(v => (
                   <li>
                     <a href={`/villes/${v.slug}`} class="text-xs text-[#1A1A1A]/55 hover:text-[#E65100] transition-colors duration-200">
                       Ramonage {v.nom}
@@ -588,7 +588,7 @@ const zonesGroupes = [
                   </li>
                 ))}
                 <li>
-                  <a href="/zones" class="text-[10px] text-[#E65100]/70 hover:text-[#E65100] transition-colors duration-200">→ Voir toutes les zones</a>
+                  <a href="/zones" class="text-[10px] text-[#E65100]/70 hover:text-[#E65100] transition-colors duration-200">→ Toutes les zones d'intervention</a>
                 </li>
               </ul>
             </nav>
