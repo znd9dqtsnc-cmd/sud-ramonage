@@ -163,6 +163,57 @@ const businessSchema = {
   },
 };
 
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${siteUrl}/#gerant`,
+  name: 'Le gérant — Sud Ramonage',
+  jobTitle: 'Artisan ramoneur certifié COSTIC',
+  worksFor: {
+    '@type': 'HomeAndConstructionBusiness',
+    '@id': `${siteUrl}/#business`,
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Martigues',
+    postalCode: '13500',
+    addressRegion: 'Bouches-du-Rhône',
+    addressCountry: 'FR',
+  },
+  knowsAbout: [
+    'Ramonage de cheminée — NF DTU 24.1 P1-1',
+    'Fumisterie — NF EN 1443',
+    'Conduits de fumée — NF EN 1856-1',
+    'Inserts et foyers fermés — NF EN 13229',
+    'Diagnostic conduit — endoscope et caméra d\'inspection',
+    'Règlement Sanitaire Départemental 13 (RSD 13)',
+    'Débuage et débistrage conduit de fumée',
+    'Entretien poêle à bois et poêle à granulés',
+  ],
+  hasCredential: [
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Certification COSTIC — Fumisterie et conduits de fumée',
+      credentialCategory: 'Certification professionnelle',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'COSTIC',
+        url: 'https://www.costic.com',
+      },
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Qualibat 6521 — Conduits de fumée et ventilation',
+      credentialCategory: 'Qualification professionnelle',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'Qualibat',
+        url: 'https://www.qualibat.com',
+      },
+    },
+  ],
+};
+
 const breadcrumbSchema = breadcrumbs ? {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -211,6 +262,9 @@ const breadcrumbSchema = breadcrumbs ? {
 
 <!-- JSON-LD Business -->
 <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+
+<!-- JSON-LD Person (gérant — E-E-A-T) -->
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
 <!-- JSON-LD Breadcrumb -->
 {breadcrumbSchema && (

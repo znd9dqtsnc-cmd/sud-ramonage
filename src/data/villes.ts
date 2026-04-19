@@ -13,6 +13,10 @@ export interface VilleData {
   temoignage: { auteur: string; texte: string };
   metaTitle: string;
   metaDescription: string;
+  /** Note terrain en première personne — spécificité locale observée sur le chantier */
+  expertiseTerrain?: string;
+  /** Cas de non-conformité fréquents dans cette zone (2-3 items) */
+  casTypiques?: { titre: string; detail: string; dtu?: string }[];
 }
 
 export const villes: VilleData[] = [
@@ -31,6 +35,12 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Michel R., propriétaire à Jonquières', texte: "Ponctuel, propre et très professionnel. Le certificat m'a été remis immédiatement. Je recommande sans hésiter pour tout le secteur de Martigues." },
     metaTitle: 'Ramonage Certifié à Martigues (13500) — Sud Ramonage',
     metaDescription: "Artisan ramoneur certifié COSTIC à Martigues (13500). Ramonage cheminée, insert, poêle. Inspection caméra, certificat RSD 13 immédiat. Devis gratuit 24h.",
+    expertiseTerrain: "Le vent de mistral à Martigues ne fonctionne pas comme on l'imagine depuis l'extérieur. Il arrive par rafales asymétriques — parfois 80 km/h depuis le nord-ouest, parfois rien, puis une bourrasque est-nord-est que personne ne voit venir. Ce déséquilibre de pression crée des comportements de conduit que j'ai appris à identifier après des années d'intervention dans le bassin. J'ai trouvé des inserts qui fonctionnaient parfaitement en octobre et refoulaient dès décembre. Dans la majorité des cas : un chapeau de conduit orienté face au vent dominant, qui devient une prise de vent quand la tramontane tourne. Ça se règle. Mais sans diagnostic, on cherche ailleurs pendant des années.",
+    casTypiques: [
+      { titre: 'Chapeau mal orienté sous mistral', detail: 'Orientation du chapeau face au vent dominant crée une dépression inverse. Fréquent dans les maisons du bord de l\'étang exposées plein nord-ouest.', dtu: 'NF DTU 24.1 P1-1 art. 6.4.2' },
+      { titre: 'Conduit de grande section mal tirant', detail: 'Les cheminées à foyer ouvert du centre ancien (section > 40×40 cm) tirent mal avec les inserts modernes — section trop grande pour le débit de fumée. Non-conformité d\'adaptation fréquente.', dtu: 'NF DTU 24.1 P1-1 art. 5.2.3' },
+      { titre: 'Nids d\'oiseaux en haut de souche', detail: 'Étangs et marais proches = présence importante d\'étourneaux et martinets. Je trouve des nids obstruant jusqu\'à 70 % de la section en début de saison. À vérifier chaque automne avant la première flambée.' },
+    ],
   },
   {
     slug: 'istres',
@@ -47,6 +57,12 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Sophie L., propriétaire à Trigance', texte: "J'avais un poêle qui tirait mal depuis un an. Sud Ramonage a trouvé une obstruction partielle et m'a remis le certificat le jour même. Excellent travail." },
     metaTitle: 'Ramonage à Istres (13800) — Artisan Certifié Sud Ramonage',
     metaDescription: "Ramonage de cheminée et poêle à Istres (13800). Artisan certifié COSTIC, inspection caméra, intervention rapide. Certificat RSD 13 remis sur place. Devis gratuit.",
+    expertiseTerrain: "À Istres, ce qui me frappe depuis des années, c'est l'humidité. Pas l'humidité que les gens remarquent — l'humidité des conduits. L'étang de Berre génère une hygrométrie constante qui transforme les suies normales en bistre, puis le bistre en calcin. J'ai ramoné des inserts à Trigance où le propriétaire brûlait du bon bois sec — et le conduit était encrassé comme si on avait brûlé du bois vert pendant dix ans. Cause : l'humidité ambiante se condense sur les parois froides d'un conduit mal isolé. La solution ? Soit un tubage isolé, soit une utilisation plus intensive pour maintenir le conduit chaud. Je prends le temps de l'expliquer sur place.",
+    casTypiques: [
+      { titre: 'Bistre tenace lié à l\'humidité de l\'étang', detail: 'Suies humidifiées par la vapeur de l\'étang de Berre créent des dépôts de bistre durs même avec un bois sec. Nécessite un débistrage chimique avant ramonage mécanique.', dtu: 'NF DTU 24.1 P1-1 art. 9.1' },
+      { titre: 'Conduit en inox flexible sous-dimensionné', detail: 'Installations poêles à granulés années 2000-2010 souvent réalisées avec conduit ø 80mm au lieu du ø 100mm préconisé — tirage insuffisant, condensation, panne précoce de l\'appareil.' },
+      { titre: 'Joint de boisseau fissuré en zone pavillonnaire', detail: 'Constructions années 1980-2000 : mortier de jointement boisseaux terre cuite dégradé après 30+ ans. Fuite potentielle de CO dans les combles. Détecté uniquement à la caméra.' },
+    ],
   },
   {
     slug: 'fos-sur-mer',
@@ -63,6 +79,12 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Jean-Pierre M., propriétaire aux Caïres', texte: "Service au top. Intervenu le lendemain de mon appel, conduit nettoyé en profondeur, certificat fourni. Le prix est honnête pour une prestation complète." },
     metaTitle: 'Ramonage Cheminée à Fos-sur-Mer (13270) — Sud Ramonage',
     metaDescription: "Ramonage certifié à Fos-sur-Mer (13270). Cheminée, insert, poêle à bois. Intervention rapide depuis Martigues, certificat RSD 13 immédiat. Devis gratuit sous 24h.",
+    expertiseTerrain: "Fos-sur-Mer, c'est le mistral amplifié. La plaine de la Crau canalisée vers le golfe crée des accélérations de vent que je ne retrouve nulle part ailleurs dans mon secteur. J'ai mesuré des différences de tirage de 20 Pascals entre un chantier à l'abri et un chantier exposé, à 200 mètres l'un de l'autre. Ce que ça change concrètement : les chapeaux standards ne fonctionnent pas aux Caïres ou à La Fossette. Il faut des chapeaux anti-refoulement à déflecteur centrifuge — pas optionnels, indispensables. Je le signale systématiquement dans mon rapport.",
+    casTypiques: [
+      { titre: 'Refoulement de fumée sous vent fort', detail: 'Vent de secteur nord-ouest canalisé par la plaine crée une surpression en tête de conduit. Chapeau standard insuffisant — refoulement même avec un conduit propre.', dtu: 'NF DTU 24.1 P1-1 art. 6.4.3' },
+      { titre: 'Corrosion accélérée en milieu industriel', detail: 'Particules fines et SO₂ émis par la zone industrielle de Fos dégradent les joints et les pièces métalliques plus vite qu\'ailleurs. Inspection annuelle obligatoire.' },
+      { titre: 'Dépôts de bistre secs par combustion incomplète', detail: 'Vent violent + tirage fort = combustion trop rapide = température de flamme basse = bistre sec. Phénomène contre-intuitif fréquent sur ce secteur.', dtu: 'NF DTU 24.1 P1-1 art. 9.2' },
+    ],
   },
   {
     slug: 'sausset-les-pins',
@@ -79,6 +101,11 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Isabelle C., propriétaire d\'une villa face à la mer', texte: "Mon poêle tirait mal. En réalité, le conduit était obstrué par du sel et de la corrosion. Après l'intervention, le tirage est parfait. Merci pour le diagnostic précis." },
     metaTitle: 'Ramonage à Sausset-les-Pins (13960) — Côte Bleue — Sud Ramonage',
     metaDescription: "Ramonage certifié à Sausset-les-Pins (13960), Côte Bleue. Spécialiste conduits en milieu marin. Intervention rapide, certificat RSD 13. Devis gratuit.",
+    expertiseTerrain: "La Côte Bleue m'a appris quelque chose que je ne savais pas en sortant de formation : le sel attaque le conduit, pas le poêle. Les propriétaires regardent l'état de leur appareil — brillant, propre, comme neuf. Ils ne regardent pas le conduit en inox à l'intérieur de la gaine, qui lui a pris trois ans d'embruns. J'ai ouvert des conduits à Sausset où l'inox était perforé par la corrosion, invisible sans caméra. Résultat : fuite de CO entre la gaine et le mur, détectable uniquement par un test au fumigène. Ce type d'inspection, je la fais systématiquement ici.",
+    casTypiques: [
+      { titre: 'Perforation du conduit inox par corrosion marine', detail: 'L\'air salin de la Côte Bleue attaque l\'inox 316L en moins de 5 ans en l\'absence de traitement. Fuite de CO entre gaine et mur — invisible sans caméra et test fumigène.', dtu: 'NF EN 1856-1 exigences conduits inox' },
+      { titre: 'Dégradation des joints de scellement en bord de mer', detail: 'Sel + humidité + cycles thermiques détruisent le mortier de scellement des conduits en maçonnerie en 8-10 ans au lieu de 20+ ans en zone continentale.' },
+    ],
   },
   {
     slug: 'carry-le-rouet',
@@ -288,6 +315,11 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Dominique A., propriétaire centre historique', texte: "Ma maison de ville dispose d'une cheminée du XVIIIe siècle. L'artisan a su la traiter avec le soin qu'elle méritait. Diagnostic caméra, ramonage adapté, certificat conforme. Très satisfait." },
     metaTitle: 'Ramonage à Salon-de-Provence (13300) — Sud Ramonage',
     metaDescription: "Ramonage certifié à Salon-de-Provence (13300). Cheminées historiques et poêles modernes. Artisan COSTIC, inspection caméra, certificat RSD 13. Devis gratuit.",
+    expertiseTerrain: "Salon-de-Provence, c'est une ville où le château de l'Empéri domine encore les toits. Et ces toits, je les connais de l'intérieur. Les maisons de ville du centre historique ont des conduits qui zigzaguent entre les niveaux selon les modifications successives sur 4 siècles — ajout d'étages, percement de murs, rénovations qui ne tenaient pas compte du parcours du conduit. J'ai trouvé un conduit qui passait sous une fenêtre rajoutée au XIXe, créant un coude à 90° non conforme qui piégeait les suies. Le propriétaire cherchait pourquoi son insert fumait depuis 3 ans. Réponse dans la caméra en 8 minutes.",
+    casTypiques: [
+      { titre: 'Coude à 90° non conforme dans maison de ville ancienne', detail: 'Modifications successives des maisons salonaises XIXe-XXe ont créé des conduits avec coudes supérieurs à 45°, interdits par la NF DTU 24.1. Accumulation de suies dans les angles.', dtu: 'NF DTU 24.1 P1-1 art. 5.3.1' },
+      { titre: 'Conduit trop court par rapport au faîtage', detail: 'Suréhaussements de toitures des années 1970-1980 ont réduit le dépassement du conduit en toiture sous les 40cm réglementaires. Tirage insuffisant, refoulements par vent de sud.', dtu: 'NF DTU 24.1 P1-1 art. 6.4.1' },
+    ],
   },
   {
     slug: 'aix-en-provence',
@@ -304,6 +336,12 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Hélène B., propriétaire d\'un hôtel particulier', texte: "Nous avons des cheminées classées dans notre propriété. L'artisan de Sud Ramonage a fait preuve d'une grande délicatesse et d'un savoir-faire irréprochable. Je le recommande sans réserve pour les bâtisses de caractère." },
     metaTitle: 'Ramonage à Aix-en-Provence (13100) — Sud Ramonage',
     metaDescription: "Ramonage certifié à Aix-en-Provence (13100). Spécialiste cheminées de caractère, hôtels particuliers. Artisan COSTIC, certificat RSD 13. Devis gratuit.",
+    expertiseTerrain: "Les hôtels particuliers du Cours Mirabeau, je les connais bien. Et je sais qu'ils réservent des surprises. En 2024, j'interviens sur une cheminée dans un duplex du XVIIIe siècle — le propriétaire l'utilise depuis quinze ans, jamais de problème. La caméra révèle une fissure de 8 centimètres dans la colonne de conduit, au deuxième étage, côté commun avec l'appartement voisin. Ce type de fissure dans un conduit partagé : c'est un risque d'intoxication collective au CO. Je l'ai trouvée parce que je passe la caméra sur tous les conduits de plus de 30 ans, sans exception. Sans ça, on ne ramonait pas — et on rentrait chez soi en pensant avoir fait le travail.",
+    casTypiques: [
+      { titre: 'Fissure de colonne dans hôtel particulier partagé', detail: 'Conduits maçonnés XIXe siècle desservant plusieurs appartements : fissuration par dilatation thermique répétée. Risque CO collectif. Détectable uniquement à la caméra.', dtu: 'NF DTU 24.1 P1-1 art. 4.3.2' },
+      { titre: 'Section surdimensionnée — mauvais tirage à l\'insert', detail: 'Adaptation d\'un insert dans une cheminée à foyer ouvert de grande section (50×60 cm ou plus) : tirage insuffisant par volume trop grand. Solution : manchon de réduction ou tubage. Non conforme sans adaptation (art. 5.2.3 DTU 24.1).' },
+      { titre: 'Conduit traversant des combles non isolés', detail: 'Nombreux immeubles aixois XIXe : conduit non isolé traversant des combles froids sur 4-6 m. Condensation intense, bistre rapide. Obligation d\'isolation selon NF DTU 24.1 P1-1 art. 5.4.', dtu: 'NF DTU 24.1 P1-1 art. 5.4' },
+    ],
   },
   {
     slug: 'gardanne',
@@ -513,6 +551,12 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'René P., propriétaire à L\'Estaque', texte: "Ma maison de pêcheur de L'Estaque a une cheminée de 1910. L'artisan a su traiter ce conduit centenaire avec méthode. Inspection caméra, ramonage adapté, certificat conforme. Je suis rassuré pour l'hiver." },
     metaTitle: "Ramonage Marseille 16e L'Estaque (13016) — Sud Ramonage",
     metaDescription: "Ramonage certifié Marseille 16e arrondissement (13016) — L'Estaque. Cheminées anciennes, immeubles historiques. Artisan COSTIC, inspection caméra, certificat RSD 13.",
+    expertiseTerrain: "L'Estaque, c'est une leçon d'humilité architecturale. Les immeubles des années 1900-1930 ici ont des conduits qui montent sur 4, 5, parfois 6 étages avant de sortir en toiture — des colonnes de maçonnerie qui ont absorbé un siècle de flambées, de fumées, de condensations. J'ai trouvé des conduits dans des états parfaits après 100 ans — et d'autres effondrés sur eux-mêmes sans que personne ne le sache. La différence ? L'entretien régulier et la qualité du combustible utilisé. Ce que je fais dans le 16e : je ne ramone jamais sans avoir passé la caméra au préalable. La surprise peut être au 3ème étage.",
+    casTypiques: [
+      { titre: 'Effondrement partiel de conduit maçonné ancien', detail: 'Immeubles L\'Estaque 1900-1930 : briques creuses et mortier de chaux dégradés par l\'humidité marine. Effondrement possible sur plusieurs rangées. Risque incendie majeur.', dtu: 'NF DTU 24.1 P1-1 art. 4.2' },
+      { titre: 'Shunt collectif défaillant en immeuble années 60', detail: 'Clapets anti-retour des shunts collectifs bloqués ouverts ou fermés : mélange des fumées entre logements et risque d\'intoxication croisée au CO.' },
+      { titre: 'Dépassement en toiture insuffisant sur toit-terrasse', detail: 'Toits-terrasses transformés en logements ou terrasses : conduit ne dépasse plus les 40cm réglementaires après modification du toit. Non-conforme DTU 24.1 art. 6.4.1.', dtu: 'NF DTU 24.1 P1-1 art. 6.4.1' },
+    ],
   },
   {
     slug: 'marseille-15',
@@ -641,6 +685,12 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Henri R., président de copropriété au Prado', texte: "L'artisan gère le ramonage de nos 12 cheminées depuis 2 ans. Il est efficace, connaît nos conduits et remet les certificats dans les délais. La copropriété est sereine sur ce point." },
     metaTitle: "Ramonage Marseille 8e Prado (13008) — Artisan Certifié Sud Ramonage",
     metaDescription: "Ramonage certifié Marseille 8e arrondissement (13008). Prado, immeubles haussmanniens, villas. Artisan COSTIC, inspection caméra, certificat RSD 13. Devis gratuit.",
+    expertiseTerrain: "Dans le 8e, les copropriétés haussmanniennes me posent un problème récurrent : les syndics qui font ramoner le conduit collectif une fois par an — mais qui ne font vérifier ni les clapets, ni les sorties individuelles dans chaque logement. J'ai inspecté des immeubles du Prado où le conduit principal était propre, et où j'ai trouvé trois clapets anti-retour bloqués ouverts dans des appartements différents. Ce que ça veut dire concrètement : si le voisin du 2e allume sa cheminée, la fumée peut monter jusqu'au 5e par le conduit d'un appartement dont le clapet est défaillant. Ce genre de configuration, je la détecte, je la documente, et je fournis un rapport écrit au syndic.",
+    casTypiques: [
+      { titre: 'Clapets anti-retour défaillants en immeuble haussmannien', detail: 'Conduits collectifs du Prado : clapets bloqués ouverts permettent le reflux de fumées entre appartements. Risque CO diffus. Nécessite inspection par logement, pas seulement du conduit collectif.' },
+      { titre: 'Distance de sécurité non respectée — insert en appartement', detail: 'Inserts posés en rénovation dans d\'anciens foyers ouverts : distance de 16cm aux matériaux combustibles (parquet, boiseries) souvent non respectée.', dtu: 'NF DTU 24.1 P1-1 art. 3.4 + NF EN 13229' },
+      { titre: 'Conduit de villa non conforme après extension', detail: 'Extensions de villas du 8e réalisées sans revoir le parcours du conduit : coudes >45° créant des zones d\'accumulation de suies, non conformes NF DTU 24.1 art. 5.3.', dtu: 'NF DTU 24.1 P1-1 art. 5.3' },
+    ],
   },
   {
     slug: 'allauch',
@@ -1078,6 +1128,11 @@ export const villes: VilleData[] = [
     temoignage: { auteur: 'Jean-François L., propriétaire d\'une villa aux calanques', texte: "Notre villa de Cassis dispose d'une cheminée d'architecte avec un conduit en céramique. L'artisan connaît ce type d'installation rare, a effectué le diagnostic complet et le ramonage sans aucune fausse note. Service d'excellence." },
     metaTitle: 'Entretien Conduit Cheminée Villa à Cassis (13260) — Sud Ramonage',
     metaDescription: "Ramonage certifié COSTIC pour résidences de prestige à Cassis (13260). Villas de luxe, cheminées d'architecte, calanques. Diagnostic sécurité, certificat RSD 13.",
+    expertiseTerrain: "Cassis m'a appris ce que 'prestige' veut dire en fumisterie. Les villas avec vue sur les calanques ont des cheminées dessinées par des architectes — belles, parfois très belles. Et parfois non conformes à la NF DTU 24.1, parce que l'esthétique a primé sur la technique. J'ai ramoné des foyers ouverts à Cassis dont la hotte décorative créait un effet de siphonnage inverse — la fumée remontait dans la pièce au lieu de monter dans le conduit. Le maçon avait construit une cheminée magnifique. Il n'avait pas calculé la section de gorge selon l'article 5.1.4 du DTU. Ça se corrèle. Mais il faut le savoir.",
+    casTypiques: [
+      { titre: 'Section de gorge sous-dimensionnée — cheminée d\'architecte', detail: 'Foyers ouverts sur-mesure de Cassis : gorge trop étroite par rapport à la section du foyer (ratio 1/7 non respecté). Fumée dans la pièce dès vent de mer.', dtu: 'NF DTU 24.1 P1-1 art. 5.1.4' },
+      { titre: 'Corrosion marine accélérée sur conduit céramique', detail: 'Conduits en céramique réfractaire des villas de luxe : joints d\'emboîtement dégradés par l\'air marin en 3-5 ans. Fuite de CO entre les éléments. Invisible sans caméra.' },
+    ],
   },
   {
     slug: 'la-ciotat',
