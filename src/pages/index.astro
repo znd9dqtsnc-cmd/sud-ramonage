@@ -748,6 +748,28 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
     </div>
   </section>
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Simulateur Éco-Rendement Ramonage — Sud Ramonage',
+    description: 'Calculez combien vous économisez en faisant ramoner votre cheminée ou poêle chaque année. Estimation basée sur votre budget chauffage.',
+    applicationCategory: 'FinanceApplication',
+    operatingSystem: 'Web',
+    url: 'https://www.sud-ramonage.fr/#simulateur',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+    author: { '@type': 'Organization', name: 'Sud Ramonage', url: 'https://www.sud-ramonage.fr' },
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Sud Ramonage — Artisan Ramoneur Certifié à Martigues',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '.hero-desc', '[data-speakable]'],
+    },
+    url: 'https://www.sud-ramonage.fr/',
+  })} />
+
 </Layout>
 
 <script>

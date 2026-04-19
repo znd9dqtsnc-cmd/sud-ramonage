@@ -53,6 +53,30 @@ const faqSchema = {
   ],
 };
 
+const softwareAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Diagnostic Sécurité Conduit — Sud Ramonage',
+  description: 'Questionnaire interactif 5 étapes pour évaluer le risque de sécurité de votre installation de chauffage. Score Vert/Orange/Rouge en 3 minutes.',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Web',
+  url: `${siteUrl}/diagnostic-securite`,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  author: { '@type': 'Organization', name: 'Sud Ramonage', url: siteUrl },
+  featureList: 'Évaluation risque conduit, Score sécurité, Recommandations personnalisées, Gratuit',
+};
+
+const speakableSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Diagnostic Sécurité Conduit — Sud Ramonage',
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['.lead', 'h1', 'h2'],
+  },
+  url: `${siteUrl}/diagnostic-securite`,
+};
+
 const breadcrumbs = [
   { name: 'Accueil', url: '/' },
   { name: 'Diagnostic Sécurité', url: '/diagnostic-securite' },
@@ -339,6 +363,8 @@ const breadcrumbs = [
 
   <!-- JSON-LD FAQ -->
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(softwareAppSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(speakableSchema)} />
 
 </Layout>
 

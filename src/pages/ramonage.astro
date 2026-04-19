@@ -20,6 +20,17 @@ const pageSchema = {
   serviceType: 'Ramonage de cheminée',
   url: `${siteUrl}/ramonage`,
 };
+
+const speakableSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Ramonage Certifié — Sud Ramonage Martigues',
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', '.lead', '[data-speakable]'],
+  },
+  url: `${siteUrl}/ramonage`,
+};
 ---
 
 <Layout
@@ -302,5 +313,7 @@ const pageSchema = {
       </div>
     </div>
   </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(speakableSchema)} />
 
 </Layout>
