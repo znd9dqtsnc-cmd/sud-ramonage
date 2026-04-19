@@ -1,0 +1,206 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { villes } from '../data/villes';
+
+const siteUrl = 'https://www.sud-ramonage.fr';
+
+const villesMartigues = villes.filter(v =>
+  ['martigues','port-de-bouc','saint-mitre-les-remparts','chateauneuf-les-martigues','fos-sur-mer','port-saint-louis-du-rhone'].includes(v.slug)
+);
+const villesBerre = villes.filter(v =>
+  ['istres','miramas','berre-letang','rognac','vitrolles','marignane','saint-chamas','la-fare-les-oliviers','velaux','lancon-provence','grans'].includes(v.slug)
+);
+const villesCoteBleue = villes.filter(v =>
+  ['sausset-les-pins','carry-le-rouet','ensues-la-redonne','le-rove','gignac-la-nerthe'].includes(v.slug)
+);
+const villesMarseille = villes.filter(v => v.slug.startsWith('marseille') || ['allauch','plan-de-cuques','septemes-les-vallons'].includes(v.slug));
+const villesAix = villes.filter(v =>
+  ['aix-en-provence','gardanne','bouc-bel-air','cabries','les-pennes-mirabeau','meyreuil','rousset','simiane-collongue','ventabren','eguilles','saint-cannat','lambesc'].includes(v.slug)
+);
+const villesCrau = villes.filter(v =>
+  ['salon-de-provence','pelissanne','saint-martin-de-crau'].includes(v.slug)
+);
+
+const sections = [
+  { titre: 'Bassin de Martigues', villes: villesMartigues },
+  { titre: 'Étang de Berre', villes: villesBerre },
+  { titre: 'Côte Bleue', villes: villesCoteBleue },
+  { titre: 'Marseille et Périphérie', villes: villesMarseille },
+  { titre: 'Pays d\'Aix', villes: villesAix },
+  { titre: 'Crau & Salon', villes: villesCrau },
+];
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Zones d\'intervention Sud Ramonage — Rayon 50 km de Martigues',
+  description: 'Liste de toutes les communes servies par Sud Ramonage dans les Bouches-du-Rhône (13).',
+  numberOfItems: villes.length,
+  itemListElement: villes.map((v, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `Ramonage ${v.nom} (${v.codePostal})`,
+    url: `${siteUrl}/villes/${v.slug}`,
+  })),
+};
+---
+
+<Layout
+  title="Nos Zones d'Intervention — Ramonage dans tout le 13 | Sud Ramonage"
+  description="Sud Ramonage intervient dans 50 communes des Bouches-du-Rhône (13) dans un rayon de 50 km autour de Martigues : Marseille, Aix-en-Provence, Salon, Étang de Berre, Côte Bleue."
+  breadcrumbs={[
+    { name: 'Accueil', url: '/' },
+    { name: 'Zones d\'intervention', url: '/zones' },
+  ]}
+  pageSchema={pageSchema}
+>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="pt-32 pb-16 px-6 md:px-10 bg-[#1A1A1A]">
+    <div class="max-w-6xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-white/30 mb-8" aria-label="Fil d'Ariane">
+        <a href="/" class="hover:text-white transition-colors duration-200">Accueil</a>
+        <span>/</span>
+        <span class="text-white/60">Zones d'intervention</span>
+      </nav>
+      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Rayon 50 km</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-6">
+        Nos Zones d'Intervention<br />dans les Bouches-du-Rhône.
+      </h1>
+      <p class="text-base text-white/55 font-light max-w-2xl leading-relaxed mb-8">
+        Sud Ramonage intervient dans <strong class="text-white">{villes.length} communes</strong> du département 13 — de Martigues à Marseille, d'Aix-en-Provence à Salon-de-Provence — dans un rayon de 50 km. Artisan certifié COSTIC, devis gratuit sous 24h.
+      </p>
+      <!-- Stats band -->
+      <div class="grid grid-cols-3 gap-6 max-w-xl">
+        {[
+          { val: `${villes.length}+`, label: 'Communes couvertes' },
+          { val: '50 km', label: 'Rayon d\'intervention' },
+          { val: '13', label: 'Département' },
+        ].map(({ val, label }) => (
+          <div>
+            <p class="text-2xl font-extrabold text-[#E65100]">{val}</p>
+            <p class="text-xs text-white/40 font-light mt-1">{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GRILLES PAR ZONE ═══ -->
+  <section class="py-16 px-6 md:px-10">
+    <div class="max-w-6xl mx-auto space-y-14">
+      {sections.map(({ titre, villes: villesZone }) => villesZone.length > 0 && (
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="w-2 h-2 rounded-full bg-[#E65100] shrink-0"></span>
+            <h2 class="text-lg font-extrabold tracking-tight text-[#1A1A1A]">{titre}</h2>
+            <span class="text-xs text-[#1A1A1A]/30 font-light">— {villesZone.length} commune{villesZone.length > 1 ? 's' : ''}</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            {villesZone.map(v => (
+              <a
+                href={`/villes/${v.slug}`}
+                class="group bg-white border border-[#EEEEEE] rounded-xl px-4 py-3.5 hover:border-[#E65100]/30 hover:shadow-sm transition-all duration-200 flex items-center justify-between"
+              >
+                <div>
+                  <p class="text-sm font-semibold text-[#1A1A1A] group-hover:text-[#E65100] transition-colors duration-200 leading-snug">{v.nom}</p>
+                  <p class="text-[10px] text-[#1A1A1A]/35 font-mono mt-0.5">{v.codePostal} · {v.tempsIntervention}</p>
+                </div>
+                <svg class="w-3.5 h-3.5 text-[#1A1A1A]/20 group-hover:text-[#E65100] shrink-0 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ═══ SECTION MARSEILLE SPÉCIALE ═══ -->
+  <section class="py-20 px-6 md:px-10 bg-[#FAFAFA]">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-7 space-y-6">
+          <div>
+            <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Expertise Marseille</p>
+            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-5">
+              Les Conduits Anciens des Immeubles Marseillais.
+            </h2>
+            <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed mb-4">
+              Marseille est une ville à l'architecture exceptionnelle — et à l'architecture <em>complexe</em>. Les immeubles du XIXe et du début du XXe siècle concentrés dans les arrondissements centraux et nord (8e, 10e, 15e, 16e) présentent des configurations de conduits de fumée que l'on ne trouve nulle part ailleurs en France.
+            </p>
+            <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed mb-4">
+              <strong class="text-[#1A1A1A]">Les souches de cheminée marseillaises</strong> sont caractérisées par leur hauteur — souvent 3 à 4 mètres au-dessus du toit — et par des sections généreuses qui créent un tirage thermique puissant, mais aussi des zones de dépôt importantes. Ces souches en maçonnerie, typiques de l'architecture haussmannienne adaptée au climat provençal, peuvent desservir jusqu'à 8 logements par colonne.
+            </p>
+            <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed">
+              <strong class="text-[#1A1A1A]">Les shunts collectifs</strong>, très répandus dans les immeubles des années 1960-1970 du nord de Marseille, présentent une problématique spécifique : un seul conduit collectif regroupe les évacuations de plusieurs logements avec des clapets anti-retour dont la défaillance est fréquente. Mon inspection caméra permet de diagnostiquer ces shunts en totalité et de détecter les clapets bloqués avant qu'ils ne causent des intoxications au CO.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { titre: 'Souches historiques', desc: 'Maçonnerie XIXe, grande section, tirage puissant mais dépôts importants.' },
+              { titre: 'Shunts collectifs', desc: 'Conduits partagés des années 60-70, clapets anti-retour à vérifier impérativement.' },
+              { titre: 'Conduits modifiés', desc: 'Rénovations successives créant des configurations hybrides imprévisibles.' },
+            ].map(({ titre, desc }) => (
+              <div class="bg-white border border-[#EEEEEE] rounded-xl p-5">
+                <p class="text-xs font-bold text-[#E65100] mb-2">{titre}</p>
+                <p class="text-xs text-[#1A1A1A]/55 font-light leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <aside class="lg:col-span-5">
+          <div class="bg-[#1A1A1A] rounded-2xl p-8 space-y-5">
+            <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100]">Marseille — Protocole d'intervention</p>
+            <h3 class="text-lg font-bold text-white">Chaque immeuble marseillais est unique.</h3>
+            <div class="space-y-4">
+              {[
+                { num: '01', txt: 'Relevé de la configuration du conduit (collectif ou individuel)' },
+                { num: '02', txt: 'Inspection caméra de haut en bas — détection fissures, nids, clapets' },
+                { num: '03', txt: 'Ramonage adapté à la section et au type de conduit' },
+                { num: '04', txt: 'Test de vacuité par fumigène (obligatoire RSD 13)' },
+                { num: '05', txt: 'Certificat conforme remis — valable assureur et syndic' },
+              ].map(({ num, txt }) => (
+                <div class="flex items-start gap-4">
+                  <span class="text-[10px] font-bold text-[#E65100] font-mono shrink-0 mt-0.5">{num}</span>
+                  <p class="text-sm text-white/65 font-light leading-relaxed">{txt}</p>
+                </div>
+              ))}
+            </div>
+            <div class="pt-4 border-t border-white/8">
+              <a href="/inspection-camera" class="inline-flex items-center gap-2 text-xs font-semibold text-[#E65100] hover:underline">
+                En savoir plus sur l'inspection caméra
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MAILLAGE SERVICES ═══ -->
+  <section class="py-12 px-6 md:px-10">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/30 mb-5">Nos prestations dans tout le 13</p>
+      <div class="flex flex-wrap gap-3">
+        {[
+          { href: '/ramonage', label: 'Ramonage Certifié — dès 75€' },
+          { href: '/debistrage', label: 'Débistrage — dès 150€' },
+          { href: '/entretien-poele', label: 'Entretien Poêle — dès 90€' },
+          { href: '/inspection-camera', label: 'Inspection Caméra — dès 120€' },
+          { href: '/normes', label: 'Normes NF DTU 24.1' },
+        ].map(({ href, label }) => (
+          <a href={href} class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E65100]/30 hover:text-[#E65100] transition-all duration-200">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E65100]/40 shrink-0"></span>
+            {label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>

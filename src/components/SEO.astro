@@ -54,19 +54,24 @@ const businessSchema = {
     name: 'Sud Ramonage',
   },
   hasMap: 'https://maps.app.goo.gl/sud-ramonage-martigues',
-  areaServed: [
-    { '@type': 'PostalAddress', addressLocality: 'Martigues',           postalCode: '13500', addressCountry: 'FR' },
-    { '@type': 'PostalAddress', addressLocality: 'Istres',              postalCode: '13800', addressCountry: 'FR' },
-    { '@type': 'PostalAddress', addressLocality: 'Miramas',             postalCode: '13140', addressCountry: 'FR' },
-    { '@type': 'PostalAddress', addressLocality: 'Port-de-Bouc',        postalCode: '13110', addressCountry: 'FR' },
-    { '@type': 'PostalAddress', addressLocality: 'Fos-sur-Mer',         postalCode: '13270', addressCountry: 'FR' },
-    { '@type': 'PostalAddress', addressLocality: 'Châteauneuf-les-Martigues', postalCode: '13220', addressCountry: 'FR' },
-    { '@type': 'PostalAddress', addressLocality: 'Sausset-les-Pins',    postalCode: '13960', addressCountry: 'FR' },
-    { '@type': 'PostalAddress', addressLocality: 'Carry-le-Rouet',      postalCode: '13620', addressCountry: 'FR' },
-    { '@type': 'PostalAddress', addressLocality: 'Saint-Mitre-les-Remparts', postalCode: '13920', addressCountry: 'FR' },
-    { '@type': 'PostalAddress', addressLocality: 'Gignac-la-Nerthe',    postalCode: '13180', addressCountry: 'FR' },
-    ...villes.map(v => ({ '@type': 'City' as const, name: v.nom })),
-  ],
+  serviceArea: {
+    '@type': 'GeoCircle',
+    geoMidpoint: {
+      '@type': 'GeoCoordinates',
+      latitude: 43.4046,
+      longitude: 5.0511,
+    },
+    geoRadius: '50000',
+  },
+  areaServed: villes.map(v => ({
+    '@type': 'City' as const,
+    name: v.nom,
+    containedInPlace: {
+      '@type': 'AdministrativeArea',
+      name: 'Bouches-du-Rhône',
+      postalCode: v.codePostal,
+    },
+  })),
   openingHours: 'Mo-Sa 08:00-19:00',
   openingHoursSpecification: [{
     '@type': 'OpeningHoursSpecification',
