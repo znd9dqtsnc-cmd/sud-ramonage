@@ -1,0 +1,199 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const siteUrl = 'https://www.sud-ramonage.fr';
+const slug = 'detecteur-co-obligations-placement';
+const datePublished = '2026-04-19';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Détecteur de CO : est-il obligatoire ? Où le placer ? Quel modèle choisir ?',
+  description: 'Tout sur l\'obligation légale du détecteur de monoxyde de carbone en France, les normes à respecter (NF EN 50291), les emplacements corrects et les modèles recommandés pour cheminée et poêle.',
+  author: { '@type': 'Person', name: 'Sud Ramonage', url: siteUrl },
+  publisher: { '@type': 'Organization', name: 'Sud Ramonage', logo: { '@type': 'ImageObject', url: `${siteUrl}/favicon.svg` } },
+  datePublished,
+  dateModified: datePublished,
+  url: `${siteUrl}/conseils/${slug}`,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}/conseils/${slug}` },
+  image: `${siteUrl}/og-image.jpg`,
+  articleSection: 'Sécurité',
+  keywords: 'détecteur CO obligatoire, détecteur monoxyde carbone, norme EN 50291, où placer détecteur CO, alarme CO cheminée',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Le détecteur de monoxyde de carbone est-il obligatoire en France ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'En France, le détecteur de CO (DAACO — Détecteur Avertisseur Autonome de CO) n\'est pas légalement obligatoire dans tous les logements, contrairement au détecteur de fumée (DAAF). Cependant, il est fortement recommandé par l\'ANSES et les pompiers pour tout logement équipé d\'un appareil à combustion. Certains assureurs l\'exigent. Compte tenu du risque mortel, son installation est vivement conseillée.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quelle est la norme pour un bon détecteur de CO ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'La norme européenne NF EN 50291 est la référence pour les détecteurs de CO résidentiels. Elle garantit la fiabilité de la détection, les seuils d\'alarme (30 ppm/60 min, 50 ppm/10 min, 300 ppm instantané) et la durée de vie minimale (5 ans). Vérifiez toujours la mention "NF EN 50291" sur l\'emballage.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Où placer un détecteur de CO dans une pièce avec cheminée ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Le détecteur de CO doit être placé à hauteur de respiration (1,5 m du sol), à proximité de la chambre si possible pour alerter pendant le sommeil, et à au moins 1 m de l\'appareil à combustion (pas directement au-dessus — les variations normales de CO au démarrage déclencheraient des fausses alarmes). Idéalement, un appareil par pièce équipée d\'un appareil à combustion + un dans le couloir menant aux chambres.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Que faire si le détecteur de CO sonne ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Quittez immédiatement les lieux en laissant la porte ouverte. N\'allumez ou n\'éteignez rien. Appelez le 15 (SAMU) ou le 18 (pompiers) depuis l\'extérieur. Ne ré-entrez pas avant que les pompiers aient aéré et identifié la source. Faites intervenir un technicien qualifié avant toute remise en marche de l\'appareil.' },
+    },
+  ],
+};
+---
+
+<ArticleLayout
+  title="Détecteur de CO : obligatoire ? Où le placer ? Quel modèle ?"
+  description="Monoxyde de carbone : obligation légale, norme NF EN 50291, emplacement idéal et meilleurs modèles pour protéger votre famille. Guide de l'artisan certifié COSTIC."
+  slug={slug}
+  category="Sécurité"
+  readTime="5 min"
+  datePublished={datePublished}
+  relatedService={{ href: '/sante-qualite-air', label: 'Santé & Qualité de l\'Air' }}
+  articleSchema={articleSchema}
+  howToSchema={undefined}
+>
+
+  <p class="lead">
+    Chaque année en France, le monoxyde de carbone tue entre 80 et 100 personnes et hospitalise plus de 3 000. Le détecteur de CO est la première ligne de défense — pas seulement un accessoire. Voici ce que dit la loi, où l'installer, et quel modèle choisir.
+  </p>
+
+  <h2>Le CO : pourquoi c'est différent de la fumée</h2>
+
+  <p>
+    La fumée, vous la voyez et vous la sentez. Le monoxyde de carbone (CO), non. Il est incolore, inodore et s'accumule silencieusement. Une intoxication au CO ressemble à une grippe — maux de tête, nausées, vertiges — et les victimes somnolentes ne réalisent souvent pas ce qui se passe.
+  </p>
+
+  <p>
+    Le CO est produit par toute combustion incomplète : cheminée, insert, poêle à bois ou à granulés, chaudière à gaz ou fioul. Un conduit obstrué ou fissuré empêche son évacuation et le fait refluer dans la pièce de vie.
+  </p>
+
+  <div class="callout callout-danger">
+    À 200 ppm (parties par million), une exposition de 2 à 3 heures provoque maux de tête sévères et vertiges. À 400 ppm, c'est potentiellement mortel en 2 heures. La norme OMS fixe le seuil d'alerte à 10 ppm sur 8 heures.
+  </div>
+
+  <h2>Est-ce obligatoire en France ?</h2>
+
+  <p>
+    Contrairement au détecteur de fumée (DAAF — obligatoire depuis 2015 par la loi n°2010-238), le <strong>détecteur de CO n'est pas légalement obligatoire</strong> dans tous les logements en France à ce jour.
+  </p>
+
+  <p>
+    Cependant, plusieurs contextes rendent son installation quasi-incontournable :
+  </p>
+
+  <ul>
+    <li><strong>Assurance habitation</strong> : certaines compagnies l'exigent comme condition de garantie pour les sinistres liés à un appareil à combustion</li>
+    <li><strong>Logement locatif</strong> : les nouvelles normes de décence tendent vers son intégration obligatoire</li>
+    <li><strong>Copropriété</strong> : recommandé par les diagnostiqueurs DPE dans les rapports sur les biens avec cheminée</li>
+    <li><strong>Responsabilité morale</strong> : avec un enfant, une personne âgée ou un sommeil lourd, il devient indispensable</li>
+  </ul>
+
+  <h2>La norme qui compte : NF EN 50291</h2>
+
+  <p>
+    Tous les détecteurs de CO ne se valent pas. La norme européenne <strong>NF EN 50291-1</strong> (résidentiel) garantit :
+  </p>
+
+  <ul>
+    <li>Seuils d'alarme calibrés sur la toxicité réelle du CO (et non sur une fausse alarme systématique)</li>
+    <li>Durée de vie minimale de 5 ans (avec indication de péremption)</li>
+    <li>Résistance aux fausses alarmes (humidité, alcool, solvants de peinture)</li>
+    <li>Temps de réponse certifié selon la concentration</li>
+  </ul>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Concentration CO</th>
+          <th>Alarme NF EN 50291 déclenchée en</th>
+          <th>Risque</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>30 ppm</td><td>60 minutes maximum</td><td>Faible (seuil d'alerte)</td></tr>
+        <tr><td>50 ppm</td><td>10 minutes maximum</td><td>Modéré</td></tr>
+        <tr><td>100 ppm</td><td>3 minutes maximum</td><td>Élevé</td></tr>
+        <tr><td>300 ppm</td><td>Immédiat (< 30 sec)</td><td>Très élevé — danger de mort</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Évitez les détecteurs "combinés fumée + CO" bon marché qui ne respectent pas la norme EN 50291 séparément. Un vrai détecteur de CO coûte entre 25 et 80 € — c'est l'investissement le plus rentable de votre maison.
+  </p>
+
+  <h2>Où placer le détecteur de CO ?</h2>
+
+  <p>
+    Le CO a approximativement la même densité que l'air (légèrement plus léger). Il se mélange uniformément dans la pièce — contrairement à la fumée qui monte. Les règles de placement sont donc différentes d'un détecteur de fumée :
+  </p>
+
+  <h3>Emplacement idéal</h3>
+  <ul>
+    <li><strong>Hauteur :</strong> 1,5 m du sol — hauteur de respiration debout ou assis, niveau de la tête allongée dans un lit</li>
+    <li><strong>Distance de l'appareil :</strong> 1 à 4 mètres — pas directement au-dessus (fausses alarmes au démarrage)</li>
+    <li><strong>Proximité des chambres :</strong> le risque majeur est l'intoxication nocturne — privilégiez le couloir entre salon et chambre</li>
+  </ul>
+
+  <h3>Emplacements à éviter</h3>
+  <ul>
+    <li>Directement au-dessus d'un appareil à combustion</li>
+    <li>Dans un coin mort ou derrière un meuble</li>
+    <li>Dans une cuisine (vapeurs d'alcool et gaz de cuisson provoquent des fausses alarmes)</li>
+    <li>Dans un garage (CO d'une voiture au démarrage)</li>
+    <li>Au plafond ou au ras du sol</li>
+  </ul>
+
+  <div class="callout callout-info">
+    <strong>Règle pratique</strong> : installez un détecteur par pièce équipée d'un appareil à combustion, et un supplémentaire dans le couloir menant aux chambres. Dans une maison à deux niveaux, un par étage minimum.
+  </div>
+
+  <h2>Modèles recommandés (2026)</h2>
+
+  <p>
+    Sans recommander une marque spécifique, voici les critères d'un bon modèle :
+  </p>
+
+  <ul>
+    <li>Certification NF EN 50291-1 clairement indiquée</li>
+    <li>Affichage numérique de la concentration en ppm (pour surveiller même sans alarme)</li>
+    <li>Mémoire de pic (enregistre la concentration maximale atteinte)</li>
+    <li>Test manuel possible</li>
+    <li>Indication de péremption (les capteurs électrochimiques vieillissent)</li>
+    <li>Batterie de secours (si coupure de courant pendant une utilisation nocturne)</li>
+  </ul>
+
+  <h2>Le détecteur ne remplace pas l'entretien</h2>
+
+  <p>
+    Un détecteur de CO est un filet de sécurité de dernier recours — pas une solution de prévention. La vraie prévention, c'est un conduit propre et étanche, un appareil bien entretenu, et un ramonage annuel certifié.
+  </p>
+
+  <p>
+    Un conduit ramoné chaque année par un artisan certifié COSTIC évacue correctement les gaz de combustion — le détecteur ne devrait jamais sonner. S'il sonne, c'est que quelque chose ne fonctionne pas. Dans ce cas, cessez immédiatement d'utiliser l'installation et faites appel à un professionnel.
+  </p>
+
+  <h2>Questions fréquentes</h2>
+  <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+    {faqSchema.mainEntity.map(item => (
+      <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary itemprop="name">{item.name}</summary>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">{item.acceptedAnswer.text}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+</ArticleLayout>

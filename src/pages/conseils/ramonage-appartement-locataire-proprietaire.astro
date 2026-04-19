@@ -1,0 +1,221 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const siteUrl = 'https://www.sud-ramonage.fr';
+const slug = 'ramonage-appartement-locataire-proprietaire';
+const datePublished = '2026-04-19';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Ramonage en appartement : locataire ou propriétaire, qui paie et qui organise ?',
+  description: 'Qui est responsable du ramonage en appartement ? Locataire ou propriétaire ? Ce que dit la loi, la différence entre charges locatives et travaux, et comment se protéger en cas de sinistre.',
+  author: { '@type': 'Person', name: 'Sud Ramonage', url: siteUrl },
+  publisher: { '@type': 'Organization', name: 'Sud Ramonage', logo: { '@type': 'ImageObject', url: `${siteUrl}/favicon.svg` } },
+  datePublished,
+  dateModified: datePublished,
+  url: `${siteUrl}/conseils/${slug}`,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}/conseils/${slug}` },
+  image: `${siteUrl}/og-image.jpg`,
+  articleSection: 'Réglementation',
+  keywords: 'ramonage appartement locataire propriétaire, charge locative ramonage, qui paie le ramonage, obligation ramonage location',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Le ramonage est-il une charge locative ou la responsabilité du propriétaire ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Selon le décret n°87-712 du 26 août 1987, le ramonage des conduits de fumée est une charge locative récupérable. C\'est donc le locataire qui paie le ramonage annuel courant. En revanche, si le conduit nécessite des travaux de réhabilitation (tubage, débistrage, réparation), c\'est au propriétaire d\'assumer le coût.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Que se passe-t-il si le locataire ne fait pas ramoner et qu\'un incendie survient ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'En cas de sinistre, si le ramonage annuel n\'a pas été effectué, l\'assureur du locataire peut refuser de prendre en charge le sinistre incendie, invoquant un défaut d\'entretien. Le locataire peut être tenu responsable des dommages. Le certificat de ramonage est la seule preuve opposable à l\'assureur.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Le propriétaire peut-il imposer un artisan spécifique pour le ramonage ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Non. Le propriétaire ne peut pas imposer un prestataire spécifique au locataire. Il peut recommander un artisan, mais le locataire est libre de choisir son ramoneur, à condition que celui-ci soit qualifié et délivre un certificat conforme au RSD local.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'En copropriété, qui est responsable du ramonage des conduits collectifs (shunts) ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Le ramonage des conduits collectifs (shunts VMC, conduits d\'évacuation communs) est à la charge du syndicat de copropriété, sur les parties communes. Chaque propriétaire ou locataire est responsable du ramonage de l\'appareil et du conduit privatif raccordé dans son appartement.' },
+    },
+  ],
+};
+---
+
+<ArticleLayout
+  title="Ramonage en appartement : locataire ou propriétaire, qui paie ?"
+  description="Charge locative ou responsabilité du propriétaire ? Ce que dit le décret de 1987 sur le ramonage en location, la copropriété et les shunts collectifs. Protégez-vous avant un sinistre."
+  slug={slug}
+  category="Réglementation"
+  readTime="5 min"
+  datePublished={datePublished}
+  relatedService={{ href: '/ramonage', label: 'Ramonage Certifié RSD 13' }}
+  articleSchema={articleSchema}
+  howToSchema={undefined}
+>
+
+  <p class="lead">
+    La question revient à chaque début de saison : en appartement loué, c'est le locataire ou le propriétaire qui doit faire ramoner la cheminée ? La réponse est précise dans la loi — et mal connue des deux côtés. Une confusion sur ce point peut coûter très cher en cas de sinistre.
+  </p>
+
+  <h2>Ce que dit le décret n°87-712 du 26 août 1987</h2>
+
+  <p>
+    Ce texte fixe la liste des <strong>charges locatives récupérables</strong> — c'est-à-dire les dépenses que le propriétaire peut refacturer au locataire. Le ramonage des conduits de fumée y figure explicitement.
+  </p>
+
+  <blockquote>
+    <p>« Ramonage des conduits de fumée, de ventilation et d'évacuation des eaux usées. »</p>
+    <cite>— Décret n°87-712 du 26 août 1987, annexe I, point 4</cite>
+  </blockquote>
+
+  <p>
+    <strong>Conséquence directe :</strong> le ramonage annuel courant est une charge du locataire. C'est lui qui doit mandater un artisan, payer l'intervention et conserver le certificat.
+  </p>
+
+  <h2>La limite : travaux vs entretien courant</h2>
+
+  <p>
+    La distinction est cruciale et souvent mal appliquée. Voici la règle simple :
+  </p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Nature de l'intervention</th>
+          <th>Qui paie ?</th>
+          <th>Base légale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ramonage annuel</td>
+          <td class="highlight">Locataire</td>
+          <td>Décret 87-712</td>
+        </tr>
+        <tr>
+          <td>Nettoyage de bistre (débistrage)</td>
+          <td class="highlight">Locataire si usage, Propriétaire si vétusté</td>
+          <td>Analyse au cas par cas</td>
+        </tr>
+        <tr>
+          <td>Tubage ou chemisage du conduit</td>
+          <td class="highlight-owner">Propriétaire</td>
+          <td>Art. 6 loi 89-462</td>
+        </tr>
+        <tr>
+          <td>Réparation de fissures du conduit</td>
+          <td class="highlight-owner">Propriétaire</td>
+          <td>Art. 6 loi 89-462</td>
+        </tr>
+        <tr>
+          <td>Remplacement de l'appareil vétuste</td>
+          <td class="highlight-owner">Propriétaire</td>
+          <td>Art. 6 loi 89-462</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    L'article 6 de la loi du 6 juillet 1989 oblige le propriétaire à délivrer et maintenir un logement <em>décent</em> et <em>en bon état d'usage</em>. Un conduit fissuré ou non conforme relève de sa responsabilité — pas du locataire.
+  </p>
+
+  <h2>En cas de sinistre : la question de l'assurance</h2>
+
+  <p>
+    C'est là que l'enjeu devient concret. En cas d'incendie de conduit, l'assureur du locataire (assurance habitation) va demander le certificat de ramonage. Si ce document est :
+  </p>
+
+  <ul>
+    <li><strong>Absent</strong> : refus de garantie possible — l'incendie résulte d'un défaut d'entretien imputable au locataire</li>
+    <li><strong>Non conforme</strong> (artisan non qualifié, document incomplet) : même risque</li>
+    <li><strong>Trop ancien</strong> (plus de 12 mois) : la couverture peut être refusée si le sinistre survient hors de la période de validité</li>
+  </ul>
+
+  <div class="callout callout-warning">
+    <strong>Point clé</strong> : le certificat doit être émis par un artisan qualifié et mentionner le type d'appareil, l'adresse du logement, la date, et la conformité au RSD applicable. Un simple reçu de passage ne suffit pas.
+  </div>
+
+  <h2>La copropriété : un cas particulier</h2>
+
+  <p>
+    Dans un immeuble en copropriété, deux niveaux de responsabilité coexistent :
+  </p>
+
+  <h3>1. Les conduits privatifs</h3>
+  <p>
+    Le conduit raccordé à votre cheminée, insert ou poêle, qui passe dans votre appartement — c'est un équipement privatif. Le ramonage est à la charge du locataire (ou du propriétaire occupant).
+  </p>
+
+  <h3>2. Les conduits collectifs (shunts)</h3>
+  <p>
+    Les shunts sont des conduits d'extraction collectifs utilisés par plusieurs appartements. Très répandus dans les immeubles des années 1960-1980, ils évacuent la ventilation et parfois les fumées d'appareils raccordés. Leur entretien incombe au <strong>syndicat de copropriété</strong>, sur le budget des charges communes.
+  </p>
+
+  <div class="callout callout-info">
+    <strong>Problème fréquent</strong> : certains locataires raccordent un appareil à combustion sur un shunt collectif sans vérification préalable. Un shunt n'est pas forcément dimensionné pour un appareil à combustion. Une vérification de conformité par un artisan certifié COSTIC est indispensable avant tout raccordement.
+  </div>
+
+  <h2>Que faire si votre propriétaire refuse de faire les travaux ?</h2>
+
+  <p>
+    Si le conduit présente des défauts structurels (fissures, section insuffisante, matériaux non conformes) et que le propriétaire refuse d'intervenir, plusieurs recours existent :
+  </p>
+
+  <ol>
+    <li>Mise en demeure écrite par lettre recommandée</li>
+    <li>Saisine de la Commission Départementale de Conciliation (CDC)</li>
+    <li>Si le logement est indécent : saisine du Tribunal judiciaire (réduction de loyer, réalisation des travaux aux frais du propriétaire)</li>
+  </ol>
+
+  <p>
+    Un rapport d'inspection de conduit établi par un artisan certifié COSTIC constitue une preuve technique solide pour appuyer votre démarche. Il documente objectivement l'état du conduit et les travaux nécessaires.
+  </p>
+
+  <h2>La bonne pratique : le ramonage dès l'entrée dans les lieux</h2>
+
+  <p>
+    Lors de la remise des clés, demandez systématiquement à voir le dernier certificat de ramonage. S'il date de plus de 12 mois, faites réaliser un nouveau ramonage avant d'allumer l'installation. Ce coût est faible (à partir de 75 €) au regard du risque.
+  </p>
+
+  <p>
+    Si vous êtes propriétaire et que vous louez un bien avec cheminée, l'idéal est de joindre un certificat récent à l'état des lieux d'entrée — et de spécifier dans le bail que le ramonage annuel est à la charge du locataire.
+  </p>
+
+  <h2>Résumé — Qui fait quoi ?</h2>
+
+  <ul>
+    <li>✓ <strong>Locataire</strong> : ramonage annuel, conservation du certificat, entretien courant de l'appareil</li>
+    <li>✓ <strong>Propriétaire</strong> : conduit en bon état structurel, travaux de réhabilitation (tubage, chemisage, réparation), remplacement d'appareil vétuste</li>
+    <li>✓ <strong>Copropriété</strong> : entretien des conduits collectifs (shunts) sur les parties communes</li>
+  </ul>
+
+  <p>
+    En cas de doute sur l'état de votre conduit — avant de signer un bail, avant la saison de chauffe, ou après un sinistre — un diagnostic par un artisan certifié COSTIC est la solution la plus rapide et la plus économique.
+  </p>
+
+  <!-- FAQ -->
+  <h2>Questions fréquentes</h2>
+  <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+    {faqSchema.mainEntity.map(item => (
+      <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary itemprop="name">{item.name}</summary>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">{item.acceptedAnswer.text}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+</ArticleLayout>

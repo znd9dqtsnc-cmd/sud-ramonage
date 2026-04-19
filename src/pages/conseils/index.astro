@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import ContactButton from '../../components/ContactButton.astro';
 
-const siteUrl = 'https://sud-ramonage.vercel.app';
+const siteUrl = 'https://www.sud-ramonage.fr';
 
 const articles = [
   {
@@ -37,6 +37,50 @@ const articles = [
     datePublished: '2025-04-18',
     service: { href: '/entretien-poele', label: 'Entretien Poêle à Granulés' },
     tags: ['Poêle à granulés', 'Entretien', 'Diagnostic', 'Sécurité'],
+  },
+  {
+    slug: 'ramonage-appartement-locataire-proprietaire',
+    category: 'Réglementation',
+    categoryColor: 'bg-blue-600',
+    title: 'Ramonage en appartement : locataire ou propriétaire, qui paie ?',
+    excerpt: 'Charge locative ou responsabilité du propriétaire ? Ce que dit le décret n°87-712, la différence entre entretien courant et travaux, et comment vous protéger en cas de sinistre.',
+    readTime: '5 min',
+    datePublished: '2026-04-19',
+    service: { href: '/ramonage', label: 'Ramonage Certifié RSD 13' },
+    tags: ['Location', 'Charges locatives', 'Copropriété', 'Légalité'],
+  },
+  {
+    slug: 'insert-fume-dans-piece-causes-solutions',
+    category: 'Diagnostic',
+    categoryColor: 'bg-[#E65100]',
+    title: 'Mon insert fume dans la pièce : 5 causes et leurs solutions.',
+    excerpt: 'Refoulement de fumée : 5 causes classées par fréquence — conduit obstrué, tirage insuffisant, dépression, vent, fissure. Auto-diagnostic, risque CO et quand appeler un professionnel.',
+    readTime: '6 min',
+    datePublished: '2026-04-19',
+    service: { href: '/inspection-camera', label: 'Inspection Caméra HD' },
+    tags: ['Refoulement', 'Tirage', 'CO', 'Urgence', 'Diagnostic'],
+  },
+  {
+    slug: 'quel-bois-pour-cheminee-poele',
+    category: 'Technique',
+    categoryColor: 'bg-amber-600',
+    title: 'Quel bois pour ma cheminée ou mon poêle ? Le guide complet.',
+    excerpt: 'Taux d\'humidité, essences recommandées, label Bois Énergie, bois interdits — tout ce qu\'il faut savoir pour bien chauffer, réduire le bistre et diviser par deux la fréquence des ramonages.',
+    readTime: '7 min',
+    datePublished: '2026-04-19',
+    service: { href: '/ramonage', label: 'Ramonage Certifié' },
+    tags: ['Bois de chauffage', 'Humidité', 'Bistre', 'Combustible'],
+  },
+  {
+    slug: 'detecteur-co-obligations-placement',
+    category: 'Sécurité',
+    categoryColor: 'bg-red-600',
+    title: 'Détecteur de CO : obligatoire ? Où le placer ? Quel modèle ?',
+    excerpt: 'Le CO tue 80 à 100 personnes par an en France. Obligation légale, norme NF EN 50291, emplacement idéal et critères de choix pour protéger votre famille — expliqués par un artisan certifié COSTIC.',
+    readTime: '5 min',
+    datePublished: '2026-04-19',
+    service: { href: '/sante-qualite-air', label: 'Santé & Qualité de l\'Air' },
+    tags: ['Monoxyde de carbone', 'Sécurité', 'NF EN 50291', 'Prévention'],
   },
 ];
 

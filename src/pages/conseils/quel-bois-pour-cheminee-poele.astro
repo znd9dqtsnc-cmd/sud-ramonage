@@ -1,0 +1,228 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const siteUrl = 'https://www.sud-ramonage.fr';
+const slug = 'quel-bois-pour-cheminee-poele';
+const datePublished = '2026-04-19';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Quel bois brûler dans une cheminée ou un poêle ? Le guide complet du combustible',
+  description: 'Bois sec, bois dense, label Bois Énergie, essences à éviter — tout ce qu\'il faut savoir pour bien chauffer, réduire le bistre et prolonger la vie de votre conduit. Guide certifié COSTIC.',
+  author: { '@type': 'Person', name: 'Sud Ramonage', url: siteUrl },
+  publisher: { '@type': 'Organization', name: 'Sud Ramonage', logo: { '@type': 'ImageObject', url: `${siteUrl}/favicon.svg` } },
+  datePublished,
+  dateModified: datePublished,
+  url: `${siteUrl}/conseils/${slug}`,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}/conseils/${slug}` },
+  image: `${siteUrl}/og-image.jpg`,
+  articleSection: 'Technique',
+  keywords: 'quel bois cheminée, bois de chauffage, bois sec poêle, taux humidité bois, label bois énergie, essence bois chauffage',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Quel est le taux d\'humidité idéal pour le bois de chauffage ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Le bois de chauffage ne doit pas dépasser 20 % d\'humidité pour une combustion optimale. En dessous de 20 %, le pouvoir calorifique est maximal et la production de bistre minimale. Le label "Bois Énergie" garantit un taux ≤ 25 %. Utilisez un hygromètre à bois (15-20 €) pour vérifier avant d\'acheter.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Peut-on brûler du bois de palette dans une cheminée ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Non. Les palettes sont souvent traitées aux biocides ou imprégnées de produits chimiques. Leur combustion libère des gaz toxiques (dioxines, furanes) dangereux pour la santé et dommageables pour le conduit. La combustion de bois traité est interdite par le Code de l\'environnement.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Chêne ou hêtre : quelle est la meilleure essence pour une cheminée ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Le chêne et le hêtre sont les deux meilleures essences pour le chauffage : haute densité (800-900 kg/m³ sec), longue durée de combustion, braises persistantes. Le chêne supporte mieux l\'humidité résiduelle. Le hêtre donne des flammes plus vives. Les deux nécessitent 2 ans de séchage minimum à l\'air libre.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Peut-on brûler des bois résineux (pin, épicéa) dans un insert ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Oui, mais avec précautions. Les résineux contiennent de la térébenthine qui produit beaucoup de bistre lors de la combustion. Ils sont utiles pour le démarrage (allumage rapide) mais ne doivent pas constituer le combustible principal. Utilisés seuls, ils encrassent le conduit 3 à 4 fois plus vite que les feuillus.' },
+    },
+  ],
+};
+---
+
+<ArticleLayout
+  title="Quel bois pour ma cheminée ou mon poêle ? Le guide complet"
+  description="Bois sec ou humide ? Chêne ou hêtre ? Label Bois Énergie ? Ce guide répond à toutes vos questions sur le combustible bois : essences, taux d'humidité, stockage et impact sur l'entretien du conduit."
+  slug={slug}
+  category="Technique"
+  readTime="7 min"
+  datePublished={datePublished}
+  relatedService={{ href: '/ramonage', label: 'Ramonage Certifié' }}
+  articleSchema={articleSchema}
+  howToSchema={undefined}
+>
+
+  <p class="lead">
+    Le combustible que vous mettez dans votre cheminée ou votre poêle détermine directement la fréquence de vos ramonages, la production de bistre, et le risque d'incendie de conduit. Un bon bois, c'est 40 % moins d'encrassement. Voici tout ce qu'il faut savoir.
+  </p>
+
+  <h2>La règle fondamentale : le taux d'humidité</h2>
+
+  <p>
+    C'est le critère le plus important — et le plus souvent ignoré. Un bois "vert" (fraîchement coupé) contient 50 à 60 % d'eau. Cette eau doit être évaporée lors de la combustion, ce qui consume de l'énergie utile et abaisse dramatiquement la température de la flamme.
+  </p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Taux d'humidité</th>
+          <th>Pouvoir calorifique</th>
+          <th>Production de bistre</th>
+          <th>Jugement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>≤ 15 %</td>
+          <td class="highlight">Excellent — 4,5 kWh/kg</td>
+          <td class="highlight">Très faible</td>
+          <td>Idéal</td>
+        </tr>
+        <tr>
+          <td>15 – 20 %</td>
+          <td class="highlight">Bon — 4,0 kWh/kg</td>
+          <td class="highlight">Faible</td>
+          <td>Recommandé</td>
+        </tr>
+        <tr>
+          <td>20 – 25 %</td>
+          <td>Moyen — 3,4 kWh/kg</td>
+          <td>Modérée</td>
+          <td>Limite acceptable</td>
+        </tr>
+        <tr>
+          <td>> 25 %</td>
+          <td class="highlight-owner">Faible — < 3 kWh/kg</td>
+          <td class="highlight-owner">Élevée à très élevée</td>
+          <td>À éviter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    <strong>Comment vérifier ?</strong> Un hygromètre à bois (humidimètre) coûte 15 à 25 € et donne une lecture instantanée. Introduisez les pointes dans la tranche d'une bûche fendue. Visez ≤ 20 %.
+  </p>
+
+  <div class="callout callout-warning">
+    <strong>Le label "Bois Énergie"</strong> garantit un taux d'humidité ≤ 25 % et une traçabilité de l'origine du bois. C'est le minimum à exiger de votre fournisseur. Pour les meilleurs résultats, stockez le bois livré 12 mois supplémentaires avant utilisation.
+  </div>
+
+  <h2>Les essences : feuillus vs résineux</h2>
+
+  <h3>Les feuillus denses — les champions du chauffage</h3>
+
+  <p>
+    Chêne, hêtre, charme, frêne, orme, robinier — ces essences ont une densité élevée (700 à 950 kg/m³ sec) et une valeur calorifique au volume très avantageuse. Elles brûlent lentement, produisent peu de bistre et donnent des braises durables.
+  </p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Essence</th>
+          <th>Densité sèche</th>
+          <th>Durée de séchage</th>
+          <th>Qualité de combustion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Charme</td><td>850 kg/m³</td><td>2 ans</td><td>Excellente</td></tr>
+        <tr><td>Chêne</td><td>800 kg/m³</td><td>2-3 ans</td><td>Excellente</td></tr>
+        <tr><td>Hêtre</td><td>780 kg/m³</td><td>2 ans</td><td>Excellente</td></tr>
+        <tr><td>Frêne</td><td>750 kg/m³</td><td>1,5 ans</td><td>Très bonne</td></tr>
+        <tr><td>Orme</td><td>710 kg/m³</td><td>2 ans</td><td>Bonne</td></tr>
+        <tr><td>Bouleau</td><td>600 kg/m³</td><td>1 an</td><td>Bonne</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Les résineux — utiles mais à doser</h3>
+
+  <p>
+    Pin, épicéa, sapin, mélèze — essences légères (400 à 550 kg/m³) qui s'enflamment rapidement mais brûlent vite. Leur teneur en résine produit beaucoup de goudron (bistre) lors de la combustion, surtout à basse température.
+  </p>
+
+  <p>
+    <strong>Usage recommandé :</strong> allumage uniquement. Quelques bûchettes de pin ou d'épicéa pour démarrer le feu rapidement, puis relais par du feuillu sec pour la combustion principale. Ne jamais utiliser les résineux comme combustible exclusif dans un insert ou un poêle.
+  </p>
+
+  <h3>Les essences à ne jamais brûler</h3>
+
+  <ul>
+    <li><strong>Bois traités, vernis, peints ou imprégnés</strong> — dégagent des substances toxiques (formaldéhyde, dioxines, métaux lourds)</li>
+    <li><strong>Contreplaqués et panneaux de particules</strong> — mêmes risques, plus colle de résine</li>
+    <li><strong>Palettes marquées MB (Methyl Bromide)</strong> — bromure de méthyle extrêmement toxique</li>
+    <li><strong>Bois de déchets de chantier</strong> — impossibilité de connaître les traitements</li>
+    <li><strong>Papiers glacés, cartons imprimés</strong> — encres à métaux lourds</li>
+  </ul>
+
+  <div class="callout callout-danger">
+    Brûler du bois traité est interdit par l'article R. 543-226 du Code de l'environnement. En cas de sinistre, votre assureur peut refuser la garantie si des résidus de bois traité sont identifiés dans le conduit.
+  </div>
+
+  <h2>Stockage du bois : les bonnes pratiques</h2>
+
+  <p>
+    Un bois livré sec peut se ré-humidifier s'il est mal stocké. Voici les règles essentielles :
+  </p>
+
+  <ul>
+    <li><strong>Couvrir le dessus</strong> — toiture ou bâche, mais laisser les côtés ouverts pour la ventilation</li>
+    <li><strong>Surélever du sol</strong> — palette ou poutres — pour éviter la remontée d'humidité par capillarité</li>
+    <li><strong>Orienter les rangées nord-sud</strong> — exposition maximale aux vents dominants</li>
+    <li><strong>Ne jamais stocker contre un mur</strong> — laisser 15 cm minimum pour la circulation d'air</li>
+    <li><strong>Rentrer le bois 48h avant</strong> — le bois froid brûle moins bien qu'un bois à température ambiante</li>
+  </ul>
+
+  <h2>L'impact direct sur l'entretien de votre conduit</h2>
+
+  <p>
+    Le lien entre la qualité du bois et la fréquence des ramonages est direct et documenté par le COSTIC (Centre d'Études et de Formation pour le Chauffage) :
+  </p>
+
+  <ul>
+    <li>Bois sec (≤ 20 %) + bon tirage → <strong>1 ramonage/an</strong> suffisant (conformité RSD 13)</li>
+    <li>Bois humide (> 25 %) + petites flambées → <strong>2 à 3 ramonages/an</strong> nécessaires</li>
+    <li>Bois humide + résineux → <strong>Débistrage dans les 2-3 saisons</strong> quasi inévitable</li>
+  </ul>
+
+  <p>
+    Investir dans du bois de qualité bien sec coûte légèrement plus cher à l'achat, mais réduit significativement vos frais d'entretien et le risque d'incendie de conduit.
+  </p>
+
+  <h2>Bois vs granulés : quelle différence d'entretien ?</h2>
+
+  <p>
+    Les granulés (pellets) sont fabriqués avec un taux d'humidité contrôlé de 8-10 % et une densité homogène. Leur combustion est plus propre que celle du bois bûche, avec une production de cendres et de goudron très faible.
+  </p>
+
+  <p>
+    Cependant, un poêle à granulés nécessite un entretien annuel spécifique (brûleur, vis sans fin, ventilateur, électrovannes) que le ramonage seul ne couvre pas. L'entretien complet est recommandé chaque année avant la saison.
+  </p>
+
+  <h2>Questions fréquentes</h2>
+  <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+    {faqSchema.mainEntity.map(item => (
+      <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary itemprop="name">{item.name}</summary>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">{item.acceptedAnswer.text}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+</ArticleLayout>

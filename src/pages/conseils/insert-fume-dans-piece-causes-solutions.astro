@@ -1,0 +1,201 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const siteUrl = 'https://www.sud-ramonage.fr';
+const slug = 'insert-fume-dans-piece-causes-solutions';
+const datePublished = '2026-04-19';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Mon insert ou ma cheminée fume dans la pièce : 5 causes et leurs solutions',
+  description: 'Votre insert, foyer ou poêle refoule la fumée dans la pièce ? 5 causes classées par fréquence, comment les diagnostiquer soi-même et quand appeler un professionnel. Risque CO inclus.',
+  author: { '@type': 'Person', name: 'Sud Ramonage', url: siteUrl },
+  publisher: { '@type': 'Organization', name: 'Sud Ramonage', logo: { '@type': 'ImageObject', url: `${siteUrl}/favicon.svg` } },
+  datePublished,
+  dateModified: datePublished,
+  url: `${siteUrl}/conseils/${slug}`,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}/conseils/${slug}` },
+  image: `${siteUrl}/og-image.jpg`,
+  articleSection: 'Diagnostic',
+  keywords: 'insert fume dans pièce, cheminée refoule, refoulement fumée, tirage insuffisant, conduit obstrué',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Pourquoi ma cheminée refoule-t-elle la fumée dans la pièce ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Les causes les plus fréquentes sont : conduit encrassé ou obstrué (bistre, nid d\'oiseaux), tirage insuffisant (conduit trop court ou froid), dépression de la pièce (manque d\'air de combustion), vent contraire en toiture, ou fissure dans le conduit créant un court-circuit de tirage. Un diagnostic par un artisan certifié COSTIC permet d\'identifier la cause exacte.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Le refoulement de fumée est-il dangereux pour la santé ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Oui. La fumée contient du monoxyde de carbone (CO), un gaz inodore et mortel. Un refoulement chronique crée une accumulation progressive de CO dans la pièce. Les premiers symptômes (maux de tête, nausées, vertiges) ressemblent à une grippe. En cas de refoulement, aérez immédiatement et cessez d\'utiliser l\'appareil jusqu\'à diagnostic.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Est-ce que le vent peut faire fumer une cheminée ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Oui. Certains vents dominants créent une surpression en toiture qui inverse temporairement le tirage. Ce phénomène, appelé refoulement éolien, est accentué par une sortie de conduit mal positionnée (trop basse, dans une zone de dépression aérodynamique du toit). La solution est souvent un chapeau anti-refoulement ou une augmentation de la hauteur du conduit.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Mon insert fume uniquement au démarrage — est-ce normal ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Un léger refoulement au démarrage à froid (1-3 minutes) est normal — le conduit froid crée une colonne d\'air froid qui résiste au tirage. En revanche, si le refoulement dure plus de 5 minutes ou survient en cours d\'utilisation, c\'est un signe d\'anomalie à diagnostiquer.' },
+    },
+  ],
+};
+---
+
+<ArticleLayout
+  title="Mon insert fume dans la pièce : 5 causes et leurs solutions"
+  description="Insert, foyer ou poêle qui refoule ? 5 causes classées par fréquence, auto-diagnostic étape par étape, risque CO et quand appeler d'urgence. Artisan certifié COSTIC — Martigues."
+  slug={slug}
+  category="Diagnostic"
+  readTime="6 min"
+  datePublished={datePublished}
+  relatedService={{ href: '/inspection-camera', label: 'Inspection Caméra HD' }}
+  articleSchema={articleSchema}
+  howToSchema={undefined}
+>
+
+  <p class="lead">
+    Votre insert ou votre foyer refoule la fumée dans la pièce. C'est pénible — mais surtout dangereux. La fumée contient du monoxyde de carbone. Voici les 5 causes les plus fréquentes, comment les identifier, et ce que vous pouvez faire dans l'immédiat.
+  </p>
+
+  <div class="callout callout-danger">
+    <strong>Priorité : sécurité immédiate</strong><br />
+    Si votre pièce est enfumée, ouvrez les fenêtres maintenant. Éteignez l'appareil. N'y retournez pas avant aération complète. En cas de malaise, appelez le 15 (SAMU) ou le 18 (pompiers).
+  </div>
+
+  <h2>Cause n°1 — Conduit encrassé ou obstrué (la plus fréquente)</h2>
+
+  <p>
+    Un conduit bouché réduit la section de passage des fumées. Lorsque l'encrassement est suffisant, les fumées n'ont plus d'autre issue que de revenir dans la pièce.
+  </p>
+
+  <p>
+    <strong>Signes caractéristiques :</strong> le problème apparaît progressivement sur plusieurs saisons, aggravé par l'usage. Des dépôts noirs ou bruns sont visibles sur le chambranle ou autour de la porte de l'insert.
+  </p>
+
+  <p>
+    <strong>Causes de l'obstruction :</strong>
+  </p>
+  <ul>
+    <li>Bistre (goudron de combustion incomplète — bois humide)</li>
+    <li>Nid d'oiseaux ou d'insectes en haut du conduit</li>
+    <li>Effondrement partiel d'un joint ou d'une brique réfractaire</li>
+    <li>Accumulation de suie sur plusieurs saisons sans ramonage</li>
+  </ul>
+
+  <p>
+    <strong>Solution :</strong> ramonage mécanique par un artisan certifié. Si des dépôts de bistre sont présents, un débistrage chimique suivi d'un second ramonage sera nécessaire. Après cette intervention, le tirage redevient normal immédiatement.
+  </p>
+
+  <h2>Cause n°2 — Tirage insuffisant (conduit froid ou trop court)</h2>
+
+  <p>
+    Le tirage d'un conduit repose sur le principe physique de la convection : l'air chaud monte. Si le conduit est trop court, trop froid (maison non chauffée depuis longtemps) ou de section trop large par rapport à l'appareil, le différentiel de température entre la fumée et l'air extérieur est insuffisant pour créer une dépression efficace.
+  </p>
+
+  <p>
+    <strong>Signes caractéristiques :</strong> le refoulement survient essentiellement à froid — en début de saison ou après une longue période d'arrêt. Une fois l'appareil chaud, le tirage s'améliore.
+  </p>
+
+  <p>
+    <strong>Solutions :</strong>
+  </p>
+  <ul>
+    <li>Préchauffage du conduit : allumez quelques feuilles de papier froissé dans le foyer avant d'allumer, porte ouverte, pour "réveiller" le tirage</li>
+    <li>Allumage par le haut (méthode top-down) : bûches en bas, petit bois et allume-feu au-dessus — le feu descend en préchauffant le conduit progressivement</li>
+    <li>Si le problème est structurel : tubage du conduit (conduit inox intérieur de diamètre adapté) ou ajout d'une hauteur de conduit en toiture</li>
+  </ul>
+
+  <h2>Cause n°3 — Dépression de la pièce (manque d'air de combustion)</h2>
+
+  <p>
+    Tout appareil à combustion consomme de l'air. Un insert ou un foyer ouvert nécessite environ 7 m³/h par kW de puissance. Dans une pièce hermétiquement fermée (double vitrage, calfeutrage, VMC en surpression), cet air manque — et la flamme "aspire" son air depuis le bas du conduit.
+  </p>
+
+  <p>
+    <strong>Test rapide :</strong> entrouvrez légèrement une fenêtre de la pièce. Si le refoulement cesse immédiatement, c'est un déficit d'air de combustion.
+  </p>
+
+  <p>
+    <strong>Solution :</strong> installation d'une amenée d'air neuf (grille de ventilation basse, conduit d'amenée d'air extérieur). Réglementaire selon NF DTU 24.1 article 5.1.4. À faire installer par un artisan qualifié.
+  </p>
+
+  <h2>Cause n°4 — Refoulement éolien (vent en toiture)</h2>
+
+  <p>
+    Certaines configurations de toiture créent des zones de surpression aérodynamique selon la direction du vent. Lorsque la sortie du conduit est dans cette zone, le vent "pousse" l'air vers le bas du conduit — inversant ponctuellement le tirage.
+  </p>
+
+  <p>
+    <strong>Signes caractéristiques :</strong> le refoulement est intermittent, survient par vent fort dans une direction précise, et disparaît par temps calme.
+  </p>
+
+  <p>
+    <strong>Solutions :</strong>
+  </p>
+  <ul>
+    <li>Chapeau anti-refoulement (turbine aspirante ou chapeau à ailettes) à installer sur le conduit en toiture</li>
+    <li>Augmentation de la hauteur du conduit au-dessus de la faîtière (réglementation NF DTU 24.1 art. 4.3 : au moins 40 cm au-dessus des éléments de toiture à moins de 8 m)</li>
+  </ul>
+
+  <div class="callout callout-info">
+    En Provence, le mistral crée régulièrement des refoulements éoliens sur les conduits mal positionnés. Un chapeau anti-vent adapté à la configuration de la toiture est souvent suffisant.
+  </div>
+
+  <h2>Cause n°5 — Fissure ou défaut d'étanchéité du conduit</h2>
+
+  <p>
+    Un conduit fissuré crée un "court-circuit de tirage" : l'air froid extérieur s'infiltre dans le conduit par la fissure, refroidissant la colonne de fumée et réduisant le tirage. Dans les cas graves, les fumées s'échappent directement par la fissure vers les pièces ou les parois de l'immeuble.
+  </p>
+
+  <p>
+    <strong>Signes caractéristiques :</strong> odeurs de fumée dans des pièces sans cheminée, traces noires sur les murs autour du conduit, refoulement persistant malgré un conduit propre.
+  </p>
+
+  <p>
+    <strong>Diagnostic :</strong> seule une inspection caméra HD ou un test fumigène permet de localiser les fissures avec précision.
+  </p>
+
+  <p>
+    <strong>Solutions :</strong> chemisage ou tubage du conduit selon l'étendue des dégâts. Un conduit fissuré ne doit pas être utilisé — risque d'incendie de parois et d'intoxication au CO.
+  </p>
+
+  <h2>Quand appeler un professionnel ?</h2>
+
+  <p>
+    Appelez immédiatement si :
+  </p>
+  <ul>
+    <li>Le refoulement survient en cours d'utilisation (pas seulement au démarrage)</li>
+    <li>Vous sentez une odeur de brûlé ou de goudron dans des pièces sans cheminée</li>
+    <li>Des membres du foyer présentent des maux de tête ou nausées récurrents à l'intérieur</li>
+    <li>Des traces noires apparaissent sur les murs autour du conduit</li>
+    <li>Le problème persiste après ramonage</li>
+  </ul>
+
+  <p>
+    Un diagnostic par inspection caméra HD permet d'identifier en 30 minutes la cause exacte du refoulement. Le rapport photo est transmissible à votre assureur.
+  </p>
+
+  <h2>Questions fréquentes</h2>
+  <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+    {faqSchema.mainEntity.map(item => (
+      <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary itemprop="name">{item.name}</summary>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">{item.acceptedAnswer.text}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+</ArticleLayout>
