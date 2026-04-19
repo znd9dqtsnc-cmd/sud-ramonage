@@ -1,0 +1,152 @@
+---
+import Layout from '../layouts/Layout.astro';
+const siteUrl = 'https://www.sud-ramonage.fr';
+
+const termes = [
+  { terme: 'Bistre', def: 'Dépôt goudroneux brun-noir formé par la condensation des hydrocarbures lors de la combustion de bois humide. Hautement inflammable. Cause principale des incendies de conduit.' },
+  { terme: 'Calcin', def: 'Dépôt vitreux minéral résultant de la combustion de certaines essences de bois riches en minéraux. Adhérent et difficile à éliminer mécaniquement.' },
+  { terme: 'Suie', def: 'Particules carbonées en suspension issues de la combustion incomplète. La suie légère se nettoie au hérisson ; la suie compactée et le bistre nécessitent un débistrage.' },
+  { terme: 'Tirage', def: 'Mouvement ascendant des gaz de combustion dans le conduit, créé par la différence de température entre les gaz chauds et l\'air extérieur. Un tirage insuffisant provoque le refoulement.' },
+  { terme: 'Refoulement', def: 'Entrée des gaz de combustion dans la pièce au lieu de leur évacuation par le conduit. Causé par un tirage insuffisant, une pression extérieure élevée (vent) ou une obstruction.' },
+  { terme: 'Vacuité', def: 'Absence totale d\'obstruction dans un conduit sur toute sa hauteur. La vacuité est vérifiée lors de chaque ramonage — le certificat l\'atteste.' },
+  { terme: 'Tubage', def: 'Installation d\'un conduit inox (flexible ou rigide) à l\'intérieur d\'un conduit existant. Obligatoire lors du raccordement d\'un insert, d\'un poêle ou d\'une chaudière à un vieux conduit maçonné.' },
+  { terme: 'Chemisage', def: 'Technique de réhabilitation par projection ou coulée d\'une résine époxy thermo-durcissante à l\'intérieur du conduit. Alternative au tubage pour les conduits très courbés.' },
+  { terme: 'Boisseau', def: 'Élément unitaire de conduit en terre cuite, béton ou fibrociment. Les boisseaux s\'emboîtent et sont jointoyés. Les joints sont les premiers à se dégrader avec le temps.' },
+  { terme: 'Souche', def: 'Partie du conduit qui dépasse de la couverture. La souche doit dépasser d\'au moins 40 cm le faîtage le plus proche (NF DTU 24.1 P1-1 art. 6.4.1).' },
+  { terme: 'Déflecteur', def: 'Plaque réfractaire (fonte ou vermiculite) positionnée dans la chambre de combustion pour diriger les flammes et optimiser la combustion. Son état est contrôlé à chaque entretien de poêle.' },
+  { terme: 'Hérisson', def: 'Brosse sphérique à lamelles métalliques ou nylon, montée sur des tiges vissables, utilisée pour le ramonage mécanique du conduit. Le diamètre doit correspondre à la section du conduit.' },
+  { terme: 'Section de conduit', def: 'Dimension intérieure du conduit, exprimée en mm (diamètre pour les conduits ronds, dimensions pour les rectangulaires). Elle doit être adaptée à la puissance de l\'appareil raccordé.' },
+  { terme: 'Conduit individuel', def: 'Conduit desservant un seul appareil et un seul logement. Opposé au conduit collectif (shunt) qui regroupe plusieurs appartements.' },
+  { terme: 'Shunt collectif', def: 'Conduit d\'évacuation collectif qui concentre les gaz de plusieurs chaudières individuelles dans un conduit unique avec des clapets anti-retour. Fréquent dans les immeubles des années 60-80.' },
+  { terme: 'Clapet anti-retour', def: 'Dispositif mécanique dans un shunt collectif qui s\'ouvre quand l\'appareil fonctionne et se ferme sinon, empêchant le reflux de gaz entre logements.' },
+  { terme: 'Débistrage', def: 'Traitement spécifique d\'élimination des dépôts de bistre sévère par voie chimique (cartouche débistrante) et/ou mécanique. Différent du ramonage simple et plus coûteux.' },
+  { terme: 'Certificat de ramonage', def: 'Document officiel établi par le ramoneur professionnel après intervention, attestant du nettoyage mécanique et de la vacuité du conduit. Requis par les assureurs et conforme au RSD 13.' },
+  { terme: 'RSD 13', def: 'Règlement Sanitaire Départemental des Bouches-du-Rhône. Impose le ramonage annuel de tout conduit de fumée raccordé à un appareil à combustion sur le territoire du département 13.' },
+  { terme: 'NF DTU 24.1 P1-1', def: 'Norme française de référence pour les travaux de fumisterie : conception, installation, réhabilitation et entretien des conduits de fumée. Publiée par l\'AFNOR, elle fait foi en cas de litige.' },
+  { terme: 'COSTIC', def: 'Centre d\'études et de formation en génie climatique et énergies. Organisme de certification professionnelle pour les artisans de la fumisterie. La certification COSTIC est une référence de compétence reconnue par les assureurs.' },
+  { terme: 'Qualibat 6521', def: 'Qualification professionnelle délivrée par l\'organisme Qualibat pour les travaux de conduits de fumée et ventilation. Gage de compétence technique reconnu par les donneurs d\'ordre et les assureurs.' },
+  { terme: 'Pression de tirage', def: 'Dépression créée par la colonne de gaz chauds dans le conduit, exprimée en Pascals (Pa). Un tirage sain doit être supérieur à 4 Pa pour une chaudière gaz et 8-12 Pa pour un foyer ouvert.' },
+  { terme: 'Inox 316 L', def: 'Acier inoxydable austénitique à faible teneur en carbone et ajout de molybdène. Résistant à la corrosion humide. Utilisé pour les conduits de chaudières gaz à condensation.' },
+  { terme: 'Inox 316 Ti', def: 'Acier inoxydable austénitique stabilisé au titane. Résistant aux températures élevées (jusqu\'à 800°C). Utilisé pour les conduits de foyers à bois, inserts et poêles.' },
+  { terme: 'NF EN 1443', def: 'Norme européenne définissant les caractéristiques générales des conduits de fumée : résistance thermique, étanchéité, résistance à la corrosion. Classification T (température), P (pression), C (condensats), O ou I (isolation).' },
+  { terme: 'NF EN 1856-1', def: 'Norme européenne pour les conduits de fumée métalliques (inox). Définit les classes de résistance thermique et de corrosion des matériaux.' },
+  { terme: 'NF EN 13229', def: 'Norme européenne pour les inserts et foyers fermés à combustible solide. Définit les exigences de sécurité, de rendement et d\'émissions.' },
+  { terme: 'Monoxyde de carbone (CO)', def: 'Gaz inodore et incolore produit lors de toute combustion incomplète. Mortel à forte concentration. Premier risque d\'un conduit obstrué ou d\'un appareil mal entretenu.' },
+  { terme: 'VMC gaz', def: 'Ventilation Mécanique Contrôlée couplée à l\'évacuation des gaz de combustion des chaudières. Les conduits VMC gaz (shunts) nécessitent un entretien spécifique en immeuble collectif.' },
+  { terme: 'Rendement de combustion', def: 'Rapport entre l\'énergie utile produite et l\'énergie contenue dans le combustible. Un conduit encrassé réduit le tirage et fait chuter le rendement de 10 à 20 %.' },
+  { terme: 'Insert', def: 'Appareil à foyer fermé conçu pour s\'insérer dans une cheminée ouverte existante. Transforme un foyer à 15-20 % de rendement en un appareil à 70-80 %. Le tubage du conduit est obligatoire.' },
+  { terme: 'Poêle à bois', def: 'Appareil indépendant à combustion de bois bûches, à foyer fermé. Rendement 70-80 %. Ramonage annuel obligatoire. Nécessite un conduit correctement dimensionné.' },
+  { terme: 'Poêle à granulés', def: 'Appareil à combustion automatique de pellets de bois compressé. Alimentation motorisée, combustion forcée. Entretien annuel complexe incluant brûleur, vis sans fin, ventilateur et conduit.' },
+  { terme: 'Pellets', def: 'Granulés de bois compressé, combustible standardisé (diamètre 6 ou 8 mm). Norme EN ISO 17225-2 qui impose un taux d\'humidité maximal de 10 % et un pouvoir calorifique minimal.' },
+  { terme: 'Foyer ouvert', def: 'Cheminée traditionnelle à âtre ouvert sur la pièce. Rendement très faible (15-30 %). La section de conduit est grande, l\'accumulation de bistre rapide, la fréquence de ramonage élevée.' },
+  { terme: 'Âtre', def: 'Fond en pierre ou brique du foyer ouvert, sur lequel repose le bois. La tablette (ou manteau) encadre l\'ouverture du foyer vers la pièce.' },
+  { terme: 'Chambre de combustion', def: 'Volume intérieur de l\'appareil où se déroule la combustion. Dans un poêle, elle est délimitée par des plaques réfractaires. Sa géométrie influence directement le rendement.' },
+  { terme: 'Réfractaire', def: 'Matériau résistant aux très hautes températures (brique, vermiculite, fonte). Utilisé pour les parois des foyers et des poêles. La vermiculite est un minéral expansé léger et isolant.' },
+  { terme: 'Vermiculite', def: 'Minéral silicaté expansé utilisé comme matériau réfractaire dans les foyers et poêles. Très léger, excellent isolant thermique. Se fissure avec le temps et doit être remplacé.' },
+  { terme: 'Distance de sécurité', def: 'Distance minimale à respecter entre l\'appareil à combustion et les matériaux combustibles environnants (boiseries, lambris, parquet). Définie par la NF DTU 24.1 P1-1 art. 9.1 et 9.2.' },
+  { terme: 'Ramonage chimique', def: 'Traitement complémentaire par bûche ou sel chimique qui transforme les dépôts de bistre en cendres plus facilement éliminables. Ne remplace pas le ramonage mécanique pour la délivrance du certificat.' },
+  { terme: 'Vitrocéramique', def: 'Verre céramique résistant aux chocs thermiques (jusqu\'à 700°C) utilisé pour les portes de foyers fermés, inserts et poêles. Une fissure compromet l\'étanchéité de l\'appareil.' },
+  { terme: 'Joint céramique', def: 'Tresse en fibre de céramique réfractaire qui assure l\'étanchéité entre la porte et le cadre de l\'appareil. S\'use progressivement et doit être remplacé régulièrement.' },
+  { terme: 'Coude', def: 'Raccord angulaire dans un conduit de fumée. Chaque coude à 90° équivaut à environ 1,5 m de conduit droit en termes de résistance au tirage. La NF DTU 24.1 limite leur nombre et leur angle.' },
+  { terme: 'Chapeau anti-refoulement', def: 'Accessoire posé sur la sortie du conduit pour dévier le vent et prévenir les refoulements. Indispensable en zone exposée au mistral et aux vents côtiers méditerranéens.' },
+  { terme: 'Mise en dépression', def: 'Phénomène inverse du tirage : une pression positive à la sortie du conduit (vent de dos) crée un refoulement de fumée. Le chapeau anti-refoulement l\'élimine.' },
+  { terme: 'Test fumigène', def: 'Technique de diagnostic qui introduit une fumée colorée non toxique dans le conduit pour révéler les fuites d\'étanchéité (joints fissurés, parois percées).' },
+  { terme: 'Inspection endoscopique', def: 'Examen vidéo du conduit à l\'aide d\'une caméra montée sur câble flexible. Permet de détecter les fissures, effondrements, corps étrangers et anomalies invisibles à l\'œil nu.' },
+  { terme: 'Fumisterie', def: 'Métier et art de la construction, de l\'installation et de l\'entretien des conduits de fumée et appareils à combustion. Le fumiste est le praticien spécialisé, différent du simple ramoneur.' },
+];
+
+const glossaireSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  '@id': `${siteUrl}/lexique#glossaire`,
+  name: 'Lexique de l\'Expert — Fumisterie et Ramonage',
+  description: '50 termes techniques de fumisterie et ramonage définis par un artisan certifié COSTIC',
+  url: `${siteUrl}/lexique`,
+  hasDefinedTerm: termes.map(({ terme, def }) => ({
+    '@type': 'DefinedTerm',
+    name: terme,
+    description: def,
+    inDefinedTermSet: `${siteUrl}/lexique#glossaire`,
+  })),
+};
+
+const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Lexique de l\'Expert', url: '/lexique' }];
+
+const lettres = [...new Set(termes.map(t => t.terme[0]))].sort();
+---
+<Layout
+  title="Lexique de l'Expert Fumisterie — 50 Termes Techniques | Sud Ramonage"
+  description="50 termes techniques de fumisterie et ramonage définis par un artisan certifié COSTIC. Bistre, tubage, tirage, RSD 13, NF DTU 24.1 — tout le vocabulaire expliqué."
+  breadcrumbs={breadcrumbs}
+  pageSchema={glossaireSchema}
+>
+
+  <section class="bg-gradient-to-br from-[#1A1A1A] to-[#1A4B8F] text-white pt-28 pb-16">
+    <div class="max-w-4xl mx-auto px-6 md:px-10">
+      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-white/40 mb-6">
+        <a href="/" class="hover:text-white/70">Accueil</a><span>/</span><span class="text-white/60">Lexique de l'Expert</span>
+      </nav>
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-3 py-1.5 text-[11px] text-white/70 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#E65100]"></span>
+        Savoir & Transparence — COSTIC
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-5">
+        Lexique de l'Expert<br /><span class="text-[#E65100]">Fumisterie & Ramonage</span>
+      </h1>
+      <p class="text-base text-white/65 max-w-2xl leading-relaxed">
+        {termes.length} termes techniques expliqués par un artisan certifié COSTIC. Du bistre au tubage, de la vermiculite au RSD 13 — le vocabulaire du métier en clair.
+      </p>
+    </div>
+  </section>
+
+  <!-- Index alphabétique -->
+  <div class="sticky top-16 z-20 bg-white/97 backdrop-blur-sm border-b border-[#EEEEEE]">
+    <div class="max-w-4xl mx-auto px-6 md:px-10 py-3">
+      <div class="flex flex-wrap gap-1.5">
+        {lettres.map(l => (
+          <a href={`#lettre-${l}`} class="w-7 h-7 flex items-center justify-center text-xs font-bold text-[#1A1A1A]/50 hover:text-[#E65100] hover:bg-[#FFF3E0] rounded-lg transition-colors">{l}</a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <section class="py-14">
+    <div class="max-w-4xl mx-auto px-6 md:px-10">
+      <dl class="space-y-0">
+        {lettres.map(l => (
+          <div id={`lettre-${l}`} class="mb-8">
+            <p class="text-2xl font-extrabold text-[#E65100] mb-4 pt-2 border-b border-[#EEEEEE] pb-2">{l}</p>
+            <div class="space-y-5">
+              {termes.filter(t => t.terme[0] === l).map(({ terme, def }) => (
+                <div class="flex gap-4">
+                  <dt class="text-sm font-bold text-[#1A1A1A] w-44 shrink-0 pt-0.5">{terme}</dt>
+                  <dd class="text-sm text-[#1A1A1A]/60 leading-relaxed">{def}</dd>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </dl>
+
+      <div class="mt-12 bg-[#E65100] rounded-2xl p-8 text-white">
+        <h2 class="text-xl font-bold mb-3">Un terme vous préoccupe dans votre installation ?</h2>
+        <p class="text-sm text-white/75 mb-6">Je réponds à vos questions techniques et interviens dans tout le département. Diagnostic gratuit lors du ramonage annuel.</p>
+        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-white text-[#E65100] text-sm font-bold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors">06 64 72 96 00</a>
+      </div>
+
+      <nav aria-label="Liens thématiques" class="mt-10 pt-8 border-t border-[#EEEEEE]">
+        <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/30 mb-4">Approfondir</p>
+        <ul class="flex flex-wrap gap-3">
+          {[
+            { href: '/reglementation', label: 'Guide réglementation RSD 13' },
+            { href: '/normes', label: 'Normes NF DTU 24.1 détaillées' },
+            { href: '/ramonage', label: 'Ramonage certifié' },
+            { href: '/debistrage', label: 'Débistrage — bistre et calcin' },
+          ].map(({ href, label }) => (
+            <li><a href={href} class="text-xs text-[#1A1A1A]/50 border border-[#EEEEEE] rounded-lg px-3 py-1.5 hover:text-[#E65100] hover:border-[#E65100]/30 transition-colors">{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </section>
+</Layout>
