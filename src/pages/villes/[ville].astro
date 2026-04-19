@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ContactButton from '../../components/ContactButton.astro';
+import COSTICBadge from '../../components/COSTICBadge.astro';
 import { Image } from 'astro:assets';
 import { villes } from '../../data/villes';
 import { getRealisationsByVille, typeConfig } from '../../data/realisations';
@@ -184,11 +185,16 @@ const personSchema = {
           <div>
             <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Contexte local</p>
             <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-5">
-              Entretien de Cheminée sur le Secteur de {data.nom}.
+              Conduits & Cheminées sur le Secteur de {data.nom}.
             </h2>
             <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed">
               {data.contexteLocal}
             </p>
+            {data.landmark && (
+              <p class="text-xs text-[#1A1A1A]/35 font-light mt-3 italic">
+                Interventions régulières dans les quartiers de {data.nom} — du centre-ville jusqu'aux abords de {data.landmark}.
+              </p>
+            )}
           </div>
           <div>
             <h3 class="text-lg font-bold tracking-tight text-[#1A1A1A] mb-3">Spécificités des conduits à {data.nom}</h3>
@@ -279,7 +285,7 @@ const personSchema = {
     <div class="max-w-6xl mx-auto">
       <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Galerie</p>
       <h2 class="text-xl md:text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-8">
-        Nos Interventions à {data.nom} et Environs.
+        Chantiers & Interventions — {data.nom} et ses Environs.
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
@@ -402,8 +408,9 @@ const personSchema = {
           <p class="text-sm text-[#1A1A1A]/55 font-light leading-relaxed mb-4">
             Artisan ramoneur basé à Martigues, certifié <strong class="text-[#1A1A1A]">COSTIC</strong> et qualifié <strong class="text-[#1A1A1A]">Qualibat 6521</strong>. Je travaille seul, sans sous-traitance — c'est moi qui interviens chez vous, moi qui établis le diagnostic et moi qui signe le certificat. Je connais personnellement chaque secteur de ma zone d'intervention, des conduits du bord de mer aux cheminées des bastides du pays d'Aix.
           </p>
-          <div class="flex flex-wrap gap-2">
-            {['Certification COSTIC', 'NF DTU 24.1', 'Qualibat 6521', 'Inspection caméra HD', 'RSD Bouches-du-Rhône'].map(badge => (
+          <div class="flex flex-wrap items-center gap-3">
+            <COSTICBadge variant="card" />
+            {['NF DTU 24.1', 'Qualibat 6521', 'Inspection caméra HD', 'RSD Bouches-du-Rhône'].map(badge => (
               <span class="text-[10px] font-semibold text-[#1A1A1A]/50 bg-white border border-[#EEEEEE] rounded-md px-2.5 py-1">{badge}</span>
             ))}
           </div>

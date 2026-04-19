@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import COSTICBadge from '../components/COSTICBadge.astro';
 const siteUrl = 'https://www.sud-ramonage.fr';
 
 const serviceSchema = {
@@ -357,11 +358,18 @@ const pointsControle = [
             <p class="text-xs font-bold text-[#1A1A1A]/50 mb-1">DPE</p>
             <p class="text-[10px] text-[#1A1A1A]/35">Diagnostic de Performance Énergétique</p>
           </div>
-          <div class="p-5 border-b border-l border-[#EEEEEE] bg-[#1A4B8F]/5">
+          <div class="p-5 border-b border-l border-[#EEEEEE] bg-[#FFF8F6]">
             <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-[#1A4B8F] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 60 60" role="img" aria-label="Logo officiel COSTIC - Certification ramonage et fumisterie Sud Ramonage" class="shrink-0 rounded-[3px]">
+                <rect x="0" y="0" width="60" height="60" fill="#C0392B" rx="4"/>
+                <g fill="none" stroke="#ffffff" stroke-linecap="round">
+                  <path d="M 0 60 A 16 16 0 0 1 16 44" stroke-width="5.5"/>
+                  <path d="M 0 60 A 32 32 0 0 1 32 28" stroke-width="5.5"/>
+                  <path d="M 0 60 A 50 50 0 0 1 50 10" stroke-width="5.5"/>
+                </g>
+              </svg>
               <div>
-                <p class="text-xs font-bold text-[#1A4B8F]">Audit Fumisterie Sud Ramonage</p>
+                <p class="text-xs font-bold text-[#C0392B]">Audit Fumisterie Sud Ramonage</p>
                 <p class="text-[10px] text-[#1A1A1A]/35">Certifié COSTIC + Qualibat 6521</p>
               </div>
             </div>

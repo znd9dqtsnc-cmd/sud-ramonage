@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import COSTICBadge from '../components/COSTICBadge.astro';
 const siteUrl = 'https://www.sud-ramonage.fr';
 
 // ── Schemas ────────────────────────────────────────────────────────────
@@ -227,8 +228,15 @@ const actsNiveaux = [
       <div class="grid lg:grid-cols-[1fr_auto] gap-16 items-start">
         <div class="max-w-2xl">
           <!-- Eyebrow ACTS -->
-          <div class="inline-flex items-center gap-2.5 bg-[#1A4B8F]/20 border border-[#1A4B8F]/30 rounded-xl px-5 py-3 mb-7">
-            <svg class="w-4 h-4 text-[#4A90D9] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          <div class="inline-flex items-center gap-3 bg-[#1A4B8F]/20 border border-[#1A4B8F]/30 rounded-xl px-5 py-3 mb-7">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 60 60" role="img" aria-label="Logo officiel COSTIC - Certification ramonage et fumisterie Sud Ramonage" class="shrink-0 rounded-[3px]">
+              <rect x="0" y="0" width="60" height="60" fill="#C0392B" rx="4"/>
+              <g fill="none" stroke="#ffffff" stroke-linecap="round">
+                <path d="M 0 60 A 16 16 0 0 1 16 44" stroke-width="5.5"/>
+                <path d="M 0 60 A 32 32 0 0 1 32 28" stroke-width="5.5"/>
+                <path d="M 0 60 A 50 50 0 0 1 50 10" stroke-width="5.5"/>
+              </g>
+            </svg>
             <span class="text-xs font-bold text-[#4A90D9] tracking-wide">ACTS — Audit de Conformité Thermique & Sécurité · Certifié COSTIC</span>
           </div>
 
@@ -440,13 +448,18 @@ const actsNiveaux = [
                   <span class="font-normal text-amber-600/70 normal-case tracking-normal text-[10px]">Diagnostic de Perf. Énergétique</span>
                 </div>
               </th>
-              <th class="p-5 text-center text-xs font-bold uppercase tracking-widest border-b border-l border-[#EEEEEE] bg-[#1A4B8F]/6 text-[#1A4B8F] w-[31%]">
-                <div class="flex flex-col items-center gap-1">
-                  <div class="flex items-center gap-1.5">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-                    <span>Expert COSTIC ACTS</span>
-                  </div>
-                  <span class="font-normal text-[#1A4B8F]/60 normal-case tracking-normal text-[10px]">Audit de Conformité T&S</span>
+              <th class="p-5 text-center text-xs font-bold uppercase tracking-widest border-b border-l border-[#EEEEEE] bg-[#FFF8F6] text-[#C0392B] w-[31%]">
+                <div class="flex flex-col items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 60 60" role="img" aria-label="Logo officiel COSTIC - Certification ramonage et fumisterie Sud Ramonage" class="shrink-0 rounded-[3px]">
+                    <rect x="0" y="0" width="60" height="60" fill="#C0392B" rx="4"/>
+                    <g fill="none" stroke="#ffffff" stroke-linecap="round">
+                      <path d="M 0 60 A 16 16 0 0 1 16 44" stroke-width="5.5"/>
+                      <path d="M 0 60 A 32 32 0 0 1 32 28" stroke-width="5.5"/>
+                      <path d="M 0 60 A 50 50 0 0 1 50 10" stroke-width="5.5"/>
+                    </g>
+                  </svg>
+                  <span>Expert COSTIC ACTS</span>
+                  <span class="font-normal text-[#C0392B]/60 normal-case tracking-normal text-[10px]">Audit de Conformité T&S</span>
                 </div>
               </th>
             </tr>

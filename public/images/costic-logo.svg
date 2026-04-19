@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" role="img" aria-label="Logo officiel COSTIC - Certification ramonage et fumisterie Sud Ramonage">
+  <!-- Carré rouge -->
+  <rect x="0" y="0" width="60" height="60" fill="#C0392B" rx="3"/>
+  <!-- Arcs blancs concentriques (coin bas-gauche) -->
+  <g fill="none" stroke="#ffffff" stroke-linecap="round">
+    <path d="M 0 60 A 18 18 0 0 1 18 42" stroke-width="5"/>
+    <path d="M 0 60 A 34 34 0 0 1 34 26" stroke-width="5"/>
+    <path d="M 0 60 A 52 52 0 0 1 52 8" stroke-width="5"/>
+  </g>
+  <!-- Texte COSTIC -->
+  <text x="72" y="26" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="800" fill="#C0392B" letter-spacing="1">COSTIC</text>
+  <!-- Sous-titre -->
+  <text x="72" y="42" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4a4a4a" letter-spacing="0">Comité Scientifique et Technique</text>
+  <text x="72" y="53" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4a4a4a" letter-spacing="0">des Industries Climatiques</text>
+</svg>
