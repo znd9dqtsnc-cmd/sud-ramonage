@@ -1,0 +1,447 @@
+---
+import Layout from '../layouts/Layout.astro';
+const siteUrl = 'https://www.sud-ramonage.fr';
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  '@id': `${siteUrl}/diagnostic-securite#howto`,
+  name: 'Comment évaluer le risque de sécurité de votre installation fumisterie',
+  description: 'Questionnaire en 5 étapes pour calculer votre score de risque conduit/appareil. Résultat immédiat : Vert, Orange ou Rouge.',
+  totalTime: 'PT3M',
+  tool: [
+    { '@type': 'HowToTool', name: 'Ce questionnaire interactif' },
+  ],
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Type d\'appareil', text: 'Identifiez votre appareil de chauffage : foyer ouvert, insert, poêle à bois, poêle à granulés ou chaudière.' },
+    { '@type': 'HowToStep', position: 2, name: 'Fréquence d\'utilisation', text: 'Évaluez à quelle fréquence vous utilisez votre appareil : quotidiennement, hebdomadairement ou occasionnellement.' },
+    { '@type': 'HowToStep', position: 3, name: 'Dernière intervention professionnelle', text: 'Indiquez quand a eu lieu votre dernier ramonage ou entretien par un artisan certifié.' },
+    { '@type': 'HowToStep', position: 4, name: 'État visuel du conduit', text: 'Observez la présence éventuelle de traces de bistre (dépôts noirs gluants) dans votre foyer ou sur le conduit.' },
+    { '@type': 'HowToStep', position: 5, name: 'Refoulement de fumée', text: 'Signalez si vous constatez des épisodes de refoulement : fumée qui rentre dans la pièce au lieu de monter dans le conduit.' },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Comment savoir si mon conduit est dangereux ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Les signes d\'alerte sont : refoulement de fumée, dépôts de bistre noirs et brillants (indice d\'un conduit encrassé proche de l\'inflammation), odeurs persistantes et difficultés d\'allumage. Ce diagnostic interactif vous donne une première évaluation en 3 minutes.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quelle est la fréquence légale de ramonage dans les Bouches-du-Rhône ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Le Règlement Sanitaire Départemental 13 (RSD 13) impose un ramonage au minimum une fois par an pour tout appareil à combustion raccordé à un conduit de fumée. Pour un usage intensif (quotidien en saison), un second ramonage est recommandé.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Qu\'est-ce que le bistre et est-ce dangereux ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Le bistre est un dépôt goudroneux qui se forme par combustion incomplète du bois humide. Hautement inflammable, il est la première cause d\'incendie de conduit en France. Des dépôts noirs brillants indiquent un risque immédiat — un ramonage et un débistrage sont impératifs.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Un refoulement de fumée est-il un signe de danger pour le CO ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Oui. Un refoulement chronique signifie que le conduit ne tire plus correctement. La fumée — qui contient du monoxyde de carbone (CO) — peut s\'accumuler dans la pièce. Le CO est inodore, incolore et mortel à haute concentration. Une intervention immédiate est nécessaire.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Mon score est rouge. Que faire ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Un score rouge indique un risque élevé. Cessez d\'utiliser l\'appareil jusqu\'à inspection par un professionnel certifié. Appelez Sud Ramonage au 06 64 72 96 00 pour un diagnostic d\'urgence. Le coût du diagnostic est sans commune mesure avec le risque d\'incendie ou d\'intoxication au CO.' },
+    },
+  ],
+};
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Diagnostic Sécurité', url: '/diagnostic-securite' },
+];
+---
+
+<Layout
+  title="Diagnostic Sécurité Gratuit — Score de Risque Conduit & Fumisterie | Sud Ramonage"
+  description="Évaluez gratuitement le risque de votre installation en 3 minutes. 5 questions, score instantané Vert/Orange/Rouge, conseil personnalisé. Artisan certifié COSTIC — Martigues."
+  breadcrumbs={breadcrumbs}
+  pageSchema={howToSchema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1A1A1A] to-[#0D0D0D] text-white pt-28 pb-16">
+    <div class="max-w-3xl mx-auto px-6 md:px-10">
+      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-white/40 mb-6">
+        <a href="/" class="hover:text-white/70">Accueil</a><span>/</span><span class="text-white/60">Diagnostic Sécurité</span>
+      </nav>
+      <div class="inline-flex items-center gap-2 bg-[#E65100]/15 border border-[#E65100]/30 text-[#E65100] text-[11px] font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        Outil gratuit · 3 minutes
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-5">
+        Diagnostic Sécurité<br /><span class="text-[#E65100]">Évaluez votre Risque Conduit</span>
+      </h1>
+      <p class="text-base text-white/65 max-w-2xl leading-relaxed">
+        5 questions pour obtenir votre score de risque personnalisé. Basé sur les critères d'inspection COSTIC et les seuils du RSD 13.
+      </p>
+    </div>
+  </section>
+
+  <!-- Questionnaire -->
+  <section class="py-16 px-6 md:px-10 bg-[#F8F8F8]">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Progress bar -->
+      <div class="mb-10">
+        <div class="flex justify-between text-[11px] text-[#1A1A1A]/40 font-medium mb-2">
+          <span id="step-label">Étape 1 sur 5</span>
+          <span id="step-pct">0 %</span>
+        </div>
+        <div class="h-1.5 bg-[#E0E0E0] rounded-full overflow-hidden">
+          <div id="progress-bar" class="h-full bg-[#E65100] rounded-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Questions container -->
+      <div id="quiz-container">
+
+        <!-- Step 1 — Type d'appareil -->
+        <div class="quiz-step" data-step="1">
+          <h2 class="text-xl font-bold text-[#1A1A1A] mb-2">Quel est votre appareil de chauffage ?</h2>
+          <p class="text-sm text-[#1A1A1A]/50 mb-6">Sélectionnez l'appareil raccordé à votre conduit de fumée.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              { val: 2, label: 'Foyer ouvert', desc: 'Cheminée traditionnelle à âtre ouvert', icon: 'M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z' },
+              { val: 1, label: 'Insert', desc: 'Foyer fermé encastré dans la cheminée', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
+              { val: 1, label: 'Poêle à bois', desc: 'Appareil indépendant à bûches', icon: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z' },
+              { val: 1, label: 'Poêle à granulés', desc: 'Appareil automatique à pellets', icon: 'M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18' },
+              { val: 1, label: 'Chaudière', desc: 'Chaudière gaz ou fioul avec conduit', icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' },
+            ].map(({ val, label, desc, icon }) => (
+              <button
+                class="quiz-option text-left bg-white border-2 border-[#E0E0E0] rounded-xl p-4 hover:border-[#E65100] hover:bg-[#FFF3E0] transition-all duration-200 group"
+                data-step="1"
+                data-value={val}
+                data-label={label}
+                type="button"
+              >
+                <div class="flex items-start gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-[#F5F5F5] group-hover:bg-[#E65100]/10 flex items-center justify-center shrink-0 transition-colors">
+                    <svg class="w-4.5 h-4.5 text-[#1A1A1A]/50 group-hover:text-[#E65100] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d={icon} />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-[#1A1A1A] group-hover:text-[#E65100] transition-colors">{label}</p>
+                    <p class="text-xs text-[#1A1A1A]/45 mt-0.5">{desc}</p>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Step 2 — Fréquence -->
+        <div class="quiz-step hidden" data-step="2">
+          <h2 class="text-xl font-bold text-[#1A1A1A] mb-2">À quelle fréquence utilisez-vous votre appareil ?</h2>
+          <p class="text-sm text-[#1A1A1A]/50 mb-6">Pendant la saison de chauffe (octobre — avril).</p>
+          <div class="grid grid-cols-1 gap-3">
+            {[
+              { val: 3, label: 'Quotidienne', desc: 'Tous les jours ou presque — appareil principal de chauffage', badge: 'Risque +' },
+              { val: 2, label: 'Hebdomadaire', desc: 'Plusieurs fois par semaine — usage régulier', badge: null },
+              { val: 1, label: 'Occasionnelle', desc: 'Week-ends et soirées — usage d\'appoint', badge: null },
+            ].map(({ val, label, desc, badge }) => (
+              <button
+                class="quiz-option text-left bg-white border-2 border-[#E0E0E0] rounded-xl p-5 hover:border-[#E65100] hover:bg-[#FFF3E0] transition-all duration-200 group flex items-center justify-between"
+                data-step="2"
+                data-value={val}
+                data-label={label}
+                type="button"
+              >
+                <div>
+                  <p class="text-sm font-semibold text-[#1A1A1A] group-hover:text-[#E65100] transition-colors">{label}</p>
+                  <p class="text-xs text-[#1A1A1A]/45 mt-0.5">{desc}</p>
+                </div>
+                {badge && (
+                  <span class="text-[10px] font-bold text-[#E65100] bg-[#E65100]/10 px-2 py-1 rounded-full uppercase tracking-wide shrink-0 ml-3">{badge}</span>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Step 3 — Dernière intervention -->
+        <div class="quiz-step hidden" data-step="3">
+          <h2 class="text-xl font-bold text-[#1A1A1A] mb-2">Quand a eu lieu votre dernier ramonage ?</h2>
+          <p class="text-sm text-[#1A1A1A]/50 mb-6">Par un artisan certifié, avec remise d'un certificat.</p>
+          <div class="grid grid-cols-1 gap-3">
+            {[
+              { val: 0, label: 'Il y a moins d\'1 an', desc: 'Conforme au RSD 13 — certificat à jour', badge: 'Conforme' },
+              { val: 2, label: 'Il y a 1 à 2 ans', desc: 'Légèrement en retard selon l\'usage', badge: null },
+              { val: 4, label: 'Il y a plus de 2 ans', desc: 'Hors conformité — risque accru d\'encrassement', badge: 'Attention' },
+              { val: 5, label: 'Jamais ou ne sait pas', desc: 'Risque maximum — intervention urgente recommandée', badge: 'Urgent' },
+            ].map(({ val, label, desc, badge }) => (
+              <button
+                class="quiz-option text-left bg-white border-2 border-[#E0E0E0] rounded-xl p-4 hover:border-[#E65100] hover:bg-[#FFF3E0] transition-all duration-200 group flex items-center justify-between"
+                data-step="3"
+                data-value={val}
+                data-label={label}
+                type="button"
+              >
+                <div>
+                  <p class="text-sm font-semibold text-[#1A1A1A] group-hover:text-[#E65100] transition-colors">{label}</p>
+                  <p class="text-xs text-[#1A1A1A]/45 mt-0.5">{desc}</p>
+                </div>
+                {badge && (
+                  <span class={`text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide shrink-0 ml-3 ${badge === 'Conforme' ? 'text-green-700 bg-green-100' : badge === 'Attention' ? 'text-orange-600 bg-orange-100' : 'text-red-600 bg-red-100'}`}>{badge}</span>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Step 4 — Bistre -->
+        <div class="quiz-step hidden" data-step="4">
+          <h2 class="text-xl font-bold text-[#1A1A1A] mb-2">Observez-vous des traces de bistre ?</h2>
+          <p class="text-sm text-[#1A1A1A]/50 mb-6">Le bistre est un dépôt brun/noir gluant visible dans le foyer, sur la vitre ou autour du conduit.</p>
+          <div class="grid grid-cols-1 gap-3">
+            {[
+              { val: 0, label: 'Aucune trace', desc: 'Conduit propre, combustion complète', badge: null },
+              { val: 1, label: 'Traces légères', desc: 'Légère suie brune — usage normal avec bois sec', badge: null },
+              { val: 3, label: 'Dépôts importants', desc: 'Dépôts épais noirs — combustion incomplète', badge: 'Attention' },
+              { val: 5, label: 'Dépôts noirs brillants', desc: 'Bistre goudronné — risque d\'incendie de conduit', badge: 'Urgent' },
+            ].map(({ val, label, desc, badge }) => (
+              <button
+                class="quiz-option text-left bg-white border-2 border-[#E0E0E0] rounded-xl p-4 hover:border-[#E65100] hover:bg-[#FFF3E0] transition-all duration-200 group flex items-center justify-between"
+                data-step="4"
+                data-value={val}
+                data-label={label}
+                type="button"
+              >
+                <div>
+                  <p class="text-sm font-semibold text-[#1A1A1A] group-hover:text-[#E65100] transition-colors">{label}</p>
+                  <p class="text-xs text-[#1A1A1A]/45 mt-0.5">{desc}</p>
+                </div>
+                {badge && (
+                  <span class={`text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide shrink-0 ml-3 ${badge === 'Attention' ? 'text-orange-600 bg-orange-100' : 'text-red-600 bg-red-100'}`}>{badge}</span>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Step 5 — Refoulement -->
+        <div class="quiz-step hidden" data-step="5">
+          <h2 class="text-xl font-bold text-[#1A1A1A] mb-2">Constatez-vous des refoulements de fumée ?</h2>
+          <p class="text-sm text-[#1A1A1A]/50 mb-6">Fumée qui entre dans la pièce au lieu de monter dans le conduit.</p>
+          <div class="grid grid-cols-1 gap-3">
+            {[
+              { val: 0, label: 'Jamais', desc: 'Le tirage est bon — pas d\'anomalie détectée', badge: null },
+              { val: 2, label: 'Occasionnellement', desc: 'Au démarrage ou par grand vent — tirage perturbé', badge: 'À surveiller' },
+              { val: 4, label: 'Fréquemment', desc: 'Refoulement régulier — risque d\'intoxication au CO', badge: 'Urgent' },
+            ].map(({ val, label, desc, badge }) => (
+              <button
+                class="quiz-option text-left bg-white border-2 border-[#E0E0E0] rounded-xl p-4 hover:border-[#E65100] hover:bg-[#FFF3E0] transition-all duration-200 group flex items-center justify-between"
+                data-step="5"
+                data-value={val}
+                data-label={label}
+                type="button"
+              >
+                <div>
+                  <p class="text-sm font-semibold text-[#1A1A1A] group-hover:text-[#E65100] transition-colors">{label}</p>
+                  <p class="text-xs text-[#1A1A1A]/45 mt-0.5">{desc}</p>
+                </div>
+                {badge && (
+                  <span class={`text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide shrink-0 ml-3 ${badge === 'À surveiller' ? 'text-orange-600 bg-orange-100' : 'text-red-600 bg-red-100'}`}>{badge}</span>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Résultat -->
+        <div id="quiz-result" class="hidden text-center">
+          <div id="result-icon" class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-lg"></div>
+          <p id="result-niveau" class="text-[11px] font-bold tracking-widest uppercase mb-2"></p>
+          <h2 id="result-titre" class="text-2xl md:text-3xl font-extrabold mb-4"></h2>
+          <p id="result-conseil" class="text-sm text-[#1A1A1A]/65 leading-relaxed max-w-md mx-auto mb-8"></p>
+
+          <div id="result-details" class="bg-white border border-[#EEEEEE] rounded-2xl p-6 text-left mb-8 max-w-sm mx-auto">
+            <p class="text-xs font-bold uppercase tracking-widest text-[#1A1A1A]/40 mb-3">Votre profil</p>
+            <div id="result-summary" class="space-y-2"></div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="tel:+33664729600"
+              class="inline-flex items-center justify-center gap-2 bg-[#E65100] hover:bg-[#BF360C] text-white text-sm font-bold px-8 py-4 rounded-xl shadow-lg shadow-[#E65100]/25 transition-all duration-150"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              Réserver mon expertise
+              <span class="font-normal text-xs text-white/75">06 64 72 96 00</span>
+            </a>
+            <button
+              id="restart-btn"
+              class="inline-flex items-center justify-center gap-2 bg-white border border-[#EEEEEE] text-[#1A1A1A] text-sm font-semibold px-6 py-4 rounded-xl hover:border-[#E65100]/30 transition-all duration-150"
+              type="button"
+            >
+              Recommencer
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 px-6 md:px-10 border-t border-[#EEEEEE]">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-3 text-center">Questions fréquentes</p>
+      <h2 class="text-2xl font-extrabold text-[#1A1A1A] mb-8 text-center">Diagnostic sécurité — FAQ</h2>
+
+      <div class="space-y-3" itemscope itemtype="https://schema.org/FAQPage">
+        {[
+          {
+            q: 'Comment savoir si mon conduit est dangereux ?',
+            a: 'Les signes d\'alerte sont : refoulement de fumée, dépôts de bistre noirs et brillants, odeurs persistantes et difficultés d\'allumage. Ce diagnostic interactif vous donne une première évaluation en 3 minutes.',
+          },
+          {
+            q: 'Quelle est la fréquence légale de ramonage dans les Bouches-du-Rhône ?',
+            a: 'Le Règlement Sanitaire Départemental 13 (RSD 13) impose un ramonage au minimum une fois par an. Pour un usage quotidien, un second ramonage en cours de saison est recommandé.',
+          },
+          {
+            q: 'Qu\'est-ce que le bistre et est-ce dangereux ?',
+            a: 'Le bistre est un dépôt goudroneux issu d\'une combustion incomplète du bois humide. Hautement inflammable, il est la première cause d\'incendie de conduit. Des dépôts noirs brillants = danger immédiat.',
+          },
+          {
+            q: 'Un refoulement de fumée est-il un signe de danger pour le CO ?',
+            a: 'Oui. Un refoulement chronique signifie que la fumée — qui contient du monoxyde de carbone inodore et mortel — peut s\'accumuler dans la pièce. Une intervention immédiate est nécessaire.',
+          },
+          {
+            q: 'Mon score est rouge. Que faire ?',
+            a: 'Cessez d\'utiliser l\'appareil jusqu\'à inspection par un professionnel certifié. Appelez le 06 64 72 96 00 pour un diagnostic d\'urgence.',
+          },
+        ].map(({ q, a }) => (
+          <details class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer select-none list-none" itemprop="name">
+              <span class="text-sm font-semibold text-[#1A1A1A]">{q}</span>
+              <svg class="w-4 h-4 shrink-0 text-[#E65100] transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-5 pb-5" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="text-sm text-[#1A1A1A]/60 leading-relaxed" itemprop="text">{a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- JSON-LD FAQ -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+</Layout>
+
+<script>
+  const answers: Record<number, { value: number; label: string }> = {};
+  let currentStep = 1;
+  const totalSteps = 5;
+
+  const steps = document.querySelectorAll<HTMLElement>('.quiz-step');
+  const progressBar = document.getElementById('progress-bar')!;
+  const stepLabel = document.getElementById('step-label')!;
+  const stepPct = document.getElementById('step-pct')!;
+  const resultEl = document.getElementById('quiz-result')!;
+
+  function updateProgress(step: number) {
+    const pct = Math.round(((step - 1) / totalSteps) * 100);
+    progressBar.style.width = `${pct}%`;
+    stepLabel.textContent = step <= totalSteps ? `Étape ${step} sur ${totalSteps}` : 'Résultat';
+    stepPct.textContent = `${pct} %`;
+  }
+
+  function showStep(step: number) {
+    steps.forEach(el => {
+      const s = parseInt(el.dataset.step!);
+      el.classList.toggle('hidden', s !== step);
+    });
+    resultEl.classList.add('hidden');
+    updateProgress(step);
+    currentStep = step;
+  }
+
+  function showResult() {
+    steps.forEach(el => el.classList.add('hidden'));
+    resultEl.classList.remove('hidden');
+    progressBar.style.width = '100%';
+    stepLabel.textContent = 'Résultat';
+    stepPct.textContent = '100 %';
+
+    const score = Object.values(answers).reduce((sum, a) => sum + a.value, 0);
+
+    let niveau: string, titre: string, conseil: string, bg: string, iconChar: string, textColor: string;
+
+    if (score <= 6) {
+      niveau = 'Risque faible';
+      titre = 'Votre installation semble en bon état';
+      conseil = 'Bonne nouvelle — votre profil indique un faible risque. Maintenez votre calendrier de ramonage annuel pour rester conforme au RSD 13 et protéger votre famille. Un entretien préventif reste la meilleure garantie.';
+      bg = 'bg-green-100';
+      textColor = 'text-green-700';
+      iconChar = '✓';
+    } else if (score <= 12) {
+      niveau = 'Risque modéré — Attention recommandée';
+      titre = 'Un contrôle professionnel est conseillé';
+      conseil = 'Votre installation présente des signaux qui méritent attention. Un ramonage certifié permettra de vérifier l\'état du conduit, nettoyer les dépôts et vous remettre un certificat conforme à votre assurance. Ne tardez pas.';
+      bg = 'bg-orange-100';
+      textColor = 'text-orange-700';
+      iconChar = '⚠';
+    } else {
+      niveau = 'Risque élevé — Intervention urgente';
+      titre = 'N\'utilisez plus cet appareil avant inspection';
+      conseil = 'Votre profil indique un risque sérieux d\'incendie de conduit ou d\'intoxication au monoxyde de carbone. Cessez d\'utiliser l\'appareil et appelez un artisan certifié immédiatement. Le coût d\'un diagnostic est sans commune mesure avec les conséquences.';
+      bg = 'bg-red-100';
+      textColor = 'text-red-700';
+      iconChar = '✕';
+    }
+
+    const iconEl = document.getElementById('result-icon')!;
+    iconEl.className = `w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold shadow-lg ${bg} ${textColor}`;
+    iconEl.textContent = iconChar;
+
+    document.getElementById('result-niveau')!.className = `text-[11px] font-bold tracking-widest uppercase mb-2 ${textColor}`;
+    document.getElementById('result-niveau')!.textContent = niveau;
+    document.getElementById('result-titre')!.textContent = titre;
+    document.getElementById('result-conseil')!.textContent = conseil;
+
+    const summaryEl = document.getElementById('result-summary')!;
+    summaryEl.innerHTML = Object.entries(answers).map(([step, a]) => {
+      const labels = ['Type d\'appareil', 'Fréquence', 'Dernière intervention', 'Traces de bistre', 'Refoulement'];
+      return `<div class="flex justify-between text-xs gap-2">
+        <span class="text-[#1A1A1A]/45">${labels[parseInt(step) - 1]}</span>
+        <span class="font-medium text-[#1A1A1A] text-right">${a.label}</span>
+      </div>`;
+    }).join('');
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.quiz-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const step = parseInt(btn.dataset.step!);
+      const value = parseInt(btn.dataset.value!);
+      const label = btn.dataset.label!;
+      answers[step] = { value, label };
+
+      if (step < totalSteps) {
+        showStep(step + 1);
+      } else {
+        showResult();
+      }
+    });
+  });
+
+  document.getElementById('restart-btn')?.addEventListener('click', () => {
+    Object.keys(answers).forEach(k => delete answers[parseInt(k)]);
+    showStep(1);
+  });
+
+  showStep(1);
+</script>

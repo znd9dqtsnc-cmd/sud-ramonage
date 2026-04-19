@@ -234,6 +234,79 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   </section>
 
   <!-- ═══════════════════════════════════════════════
+       SIMULATEUR ÉCO-RENDEMENT
+  ═══════════════════════════════════════════════ -->
+  <section class="py-16 px-6 md:px-10 bg-gradient-to-br from-[#1A1A1A] to-[#2D1A00] text-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-[#E65100]/20 border border-[#E65100]/30 text-[#E65100] text-[11px] font-bold px-4 py-2 rounded-full mb-5 uppercase tracking-widest">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            Simulateur COSTIC — Calcul d'économies
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white mb-4">
+            Combien pouvez-vous<br />économiser par an ?
+          </h2>
+          <p class="text-sm text-white/60 leading-relaxed mb-6">
+            Un conduit certifié COSTIC améliore le rendement de votre appareil de <strong class="text-white">8 à 15 %</strong> en moyenne. Calculez votre économie estimée en quelques secondes.
+          </p>
+          <p class="text-[11px] text-white/35 leading-relaxed">
+            Calcul basé sur un gain moyen de rendement de 12 % (source COSTIC — Fiche Technique FT 002). Résultat indicatif, non contractuel.
+          </p>
+        </div>
+
+        <div class="bg-white/8 backdrop-blur-sm border border-white/12 rounded-2xl p-8">
+          <label for="budget-bois" class="block text-sm font-semibold text-white mb-2">
+            Votre budget bois / granulés annuel (€)
+          </label>
+          <div class="relative mb-3">
+            <input
+              type="range"
+              id="budget-slider"
+              min="200"
+              max="3000"
+              step="50"
+              value="800"
+              class="w-full h-2 bg-white/20 rounded-full appearance-none cursor-pointer accent-[#E65100] mb-4"
+              aria-label="Budget bois annuel en euros"
+            />
+          </div>
+          <div class="flex items-center gap-3 mb-6">
+            <input
+              type="number"
+              id="budget-bois"
+              min="100"
+              max="5000"
+              value="800"
+              class="w-32 bg-white/10 border border-white/20 text-white font-bold text-lg text-center rounded-xl px-3 py-2.5 focus:outline-none focus:border-[#E65100] transition-colors"
+              aria-label="Budget bois annuel"
+            />
+            <span class="text-white/60 text-sm font-medium">€ / an</span>
+          </div>
+
+          <div class="bg-[#E65100]/15 border border-[#E65100]/30 rounded-xl p-5 mb-5">
+            <p class="text-[11px] font-bold uppercase tracking-widest text-[#E65100] mb-1">Économie estimée</p>
+            <p class="text-4xl font-extrabold text-white mb-1"><span id="eco-value">96</span> €</p>
+            <p class="text-xs text-white/50" id="eco-detail">par an · 12 % de gain sur 800 €</p>
+          </div>
+
+          <p class="text-xs text-white/50 text-center mb-4" id="eco-phrase">
+            Économisez jusqu'à <strong class="text-white">96 €</strong> par an grâce à un conduit certifié COSTIC.
+          </p>
+
+          <a
+            href="tel:+33664729600"
+            class="flex items-center justify-center gap-2 bg-[#E65100] hover:bg-[#BF360C] text-white text-sm font-bold px-6 py-3.5 rounded-xl transition-colors shadow-lg shadow-[#E65100]/25 w-full"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Réaliser ces économies — 06 64 72 96 00
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
        GALERIE SERVICES — 3 cartes avec photo
   ═══════════════════════════════════════════════ -->
   <section id="services" class="py-24 px-6 md:px-10">
@@ -676,3 +749,34 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   </section>
 
 </Layout>
+
+<script>
+  const slider = document.getElementById('budget-slider') as HTMLInputElement | null;
+  const input = document.getElementById('budget-bois') as HTMLInputElement | null;
+  const ecoValue = document.getElementById('eco-value');
+  const ecoDetail = document.getElementById('eco-detail');
+  const ecoPhrase = document.getElementById('eco-phrase');
+
+  function calcEco(budget: number): number {
+    return Math.round(budget * 0.12);
+  }
+
+  function update(budget: number) {
+    const eco = calcEco(budget);
+    if (ecoValue) ecoValue.textContent = eco.toString();
+    if (ecoDetail) ecoDetail.textContent = `par an · 12 % de gain sur ${budget} €`;
+    if (ecoPhrase) ecoPhrase.innerHTML = `Économisez jusqu'à <strong class="text-white">${eco} €</strong> par an grâce à un conduit certifié COSTIC.`;
+  }
+
+  slider?.addEventListener('input', () => {
+    const v = parseInt(slider.value);
+    if (input) input.value = v.toString();
+    update(v);
+  });
+
+  input?.addEventListener('input', () => {
+    const v = Math.min(5000, Math.max(100, parseInt(input.value) || 0));
+    if (slider) slider.value = Math.min(3000, Math.max(200, v)).toString();
+    update(v);
+  });
+</script>

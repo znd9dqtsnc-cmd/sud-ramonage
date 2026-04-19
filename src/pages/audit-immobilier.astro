@@ -1,0 +1,353 @@
+---
+import Layout from '../layouts/Layout.astro';
+const siteUrl = 'https://www.sud-ramonage.fr';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${siteUrl}/audit-immobilier#service`,
+  name: 'Audit Fumisterie Immobilier — Carnet de Santé du Conduit',
+  description: 'Audit certifié COSTIC de votre installation fumisterie pour toute transaction immobilière. Évite les vices cachés, valorise le bien. Vendeurs, acheteurs, notaires et agents immobiliers — Bouches-du-Rhône.',
+  provider: { '@type': 'HomeAndConstructionBusiness', '@id': `${siteUrl}/#business` },
+  serviceType: 'Audit fumisterie immobilier — Carnet de Santé du Conduit',
+  areaServed: { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'EUR',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      minPrice: '120',
+      maxPrice: '190',
+      priceCurrency: 'EUR',
+    },
+    description: 'Audit complet avec rapport détaillé, photos et Carnet de Santé du Conduit certifié',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'L\'audit fumisterie est-il obligatoire lors d\'une vente immobilière ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Non obligatoire légalement, mais fortement recommandé. En cas de vice caché lié au conduit (article 1641 du Code civil), le vendeur peut être condamné à rembourser une partie du prix de vente. Un audit certifié COSTIC constitue une preuve opposable qui protège toutes les parties.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Qu\'est-ce que le Carnet de Santé du Conduit ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Le Carnet de Santé du Conduit est un rapport complet établi par un artisan certifié COSTIC, qui documente l\'état de chaque conduit de fumée et appareil à combustion du logement : photos, mesures, état de conformité, travaux recommandés. Ce document peut être remis à l\'acheteur lors de la signature.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Comment l\'audit fumisterie impacte-t-il le DPE ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Un conduit propre et conforme améliore le rendement de l\'appareil de chauffage. Un poêle à bois ou un insert entretenu peut voir son rendement augmenter de 8 à 15 %, ce qui a un impact positif sur l\'étiquette énergétique et donc sur la valeur du bien au DPE.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quel est le délai pour obtenir le rapport d\'audit ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Le rapport complet avec photos et Carnet de Santé du Conduit est remis le jour de l\'intervention ou dans les 24h. Ce délai est compatible avec les délais de signature chez le notaire.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Qui paie l\'audit — vendeur ou acheteur ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Généralement le vendeur, qui a intérêt à valoriser son bien et se protéger juridiquement. Certains acheteurs le commandent eux-mêmes, notamment avant signature du compromis pour valider leur décision. Le coût (120-190 €) est négligeable dans une transaction immobilière.',
+      },
+    },
+  ],
+};
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Audit Immobilier', url: '/audit-immobilier' },
+];
+
+const etapes = [
+  {
+    n: '01',
+    titre: 'Prise de contact & dossier',
+    desc: 'Vous transmettez l\'adresse du bien, le type d\'appareils présents et la date souhaitée. Je prends en compte les contraintes du calendrier notarial.',
+  },
+  {
+    n: '02',
+    titre: 'Inspection complète sur site',
+    desc: 'Contrôle visuel et mécanique de chaque conduit et appareil. Caméra endoscopique si nécessaire. Mesure du tirage et de l\'étanchéité. Photos datées et géolocalisées.',
+  },
+  {
+    n: '03',
+    titre: 'Rapport technique détaillé',
+    desc: 'Rapport PDF complet : état de chaque conduit, conformité RSD 13, travaux recommandés avec ordre de priorité. Remis le jour même ou dans les 24h.',
+  },
+  {
+    n: '04',
+    titre: 'Carnet de Santé du Conduit',
+    desc: 'Document officiel certifié COSTIC remis avec certificat de ramonage si une intervention a eu lieu. Transmissible au notaire, à l\'acheteur ou à l\'assureur.',
+  },
+  {
+    n: '05',
+    titre: 'Suivi & travaux si besoin',
+    desc: 'Si des travaux sont nécessaires (tubage, débistrage, réparation), je peux les réaliser avant la vente pour vous remettre un bien en conformité complète.',
+  },
+];
+---
+
+<Layout
+  title="Audit Fumisterie Immobilier — Carnet de Santé du Conduit | Sud Ramonage Martigues"
+  description="Audit certifié COSTIC pour toute transaction immobilière. Le 'Carnet de Santé du Conduit' protège vendeurs et acheteurs des vices cachés et valorise le bien au DPE. Bouches-du-Rhône."
+  breadcrumbs={breadcrumbs}
+  pageSchema={serviceSchema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1A1A1A] via-[#1A1A1A] to-[#1E2A1A] text-white pt-28 pb-16">
+    <div class="max-w-4xl mx-auto px-6 md:px-10">
+      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-white/40 mb-6">
+        <a href="/" class="hover:text-white/70">Accueil</a><span>/</span><span class="text-white/60">Audit Immobilier</span>
+      </nav>
+
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span class="text-[10px] font-bold uppercase tracking-widest bg-[#E65100]/15 text-[#E65100] border border-[#E65100]/30 px-3 py-1.5 rounded-full">Vendeurs</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest bg-white/8 text-white/60 border border-white/15 px-3 py-1.5 rounded-full">Acheteurs</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest bg-white/8 text-white/60 border border-white/15 px-3 py-1.5 rounded-full">Notaires</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest bg-white/8 text-white/60 border border-white/15 px-3 py-1.5 rounded-full">Agents immobiliers</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-5">
+        Audit Immobilier Fumisterie<br />
+        <span class="text-[#E65100]">Le Carnet de Santé du Conduit™</span>
+      </h1>
+      <p class="text-base text-white/65 max-w-2xl leading-relaxed mb-8">
+        Un document certifié COSTIC qui protège le vendeur des vices cachés, rassure l'acheteur et valorise le bien lors du DPE. Rapport complet remis sous 24h.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#E65100] hover:bg-[#BF360C] text-white text-sm font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-[#E65100]/25 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Commander l'audit — 06 64 72 96 00
+        </a>
+        <a href="mailto:majeo@ik.me?subject=Demande%20audit%20immobilier%20fumisterie&body=Bonjour%2C%20je%20souhaite%20un%20audit%20fumisterie%20pour%20une%20transaction%20immobilière.%20" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white text-sm font-semibold px-6 py-3.5 rounded-xl transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Demande par email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 profils bénéficiaires -->
+  <section class="py-16 px-6 md:px-10 border-b border-[#EEEEEE]">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-10">
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-3">Qui est concerné ?</p>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-[#1A1A1A]">Trois parties protégées, un seul document</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          {
+            role: 'Vendeur',
+            icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+            avantages: [
+              'Protection légale contre le vice caché (art. 1641 C.civ.)',
+              'Argument de vente — installation en conformité',
+              'Meilleur rendement = meilleure étiquette DPE',
+              'Négociation du prix sur des bases objectives',
+            ],
+            color: '#E65100',
+          },
+          {
+            role: 'Acheteur',
+            icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+            avantages: [
+              'État réel du conduit avant engagement',
+              'Estimation des travaux éventuels à prévoir',
+              'Sécurité incendie & CO vérifiée dès l\'emménagement',
+              'Document à jour pour l\'assurance habitation',
+            ],
+            color: '#1A4B8F',
+          },
+          {
+            role: 'Notaire & Agent immobilier',
+            icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+            avantages: [
+              'Document technique opposable à verser au dossier',
+              'Réduction du risque de contentieux post-vente',
+              'Délai de rapport compatible avec planning notarial',
+              'Rapport signé par artisan certifié COSTIC + Qualibat',
+            ],
+            color: '#2D2D2D',
+          },
+        ].map(({ role, icon, avantages, color }) => (
+          <div class="bg-white border border-[#EEEEEE] rounded-2xl p-6 hover:shadow-md transition-shadow">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style={`background: ${color}15;`}>
+              <svg class="w-5 h-5" style={`color: ${color};`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d={icon} />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#1A1A1A] mb-4">{role}</h3>
+            <ul class="space-y-2.5">
+              {avantages.map(av => (
+                <li class="flex gap-2.5 text-sm text-[#1A1A1A]/65">
+                  <span class="font-bold shrink-0" style={`color: ${color};`}>✓</span>
+                  <span>{av}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Carnet de Santé — le concept -->
+  <section class="py-16 px-6 md:px-10 bg-[#FAFAFA] border-b border-[#EEEEEE]">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-3">Notre document exclusif</p>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] mb-5">Le Carnet de Santé<br />du Conduit™</h2>
+          <p class="text-sm text-[#1A1A1A]/60 leading-relaxed mb-6">
+            Inspiré du carnet d'entretien automobile, le Carnet de Santé du Conduit est le passeport technique de votre installation fumisterie. Il consigne l'historique complet du conduit, son état actuel et les recommandations de l'expert.
+          </p>
+          <div class="space-y-3">
+            {[
+              { label: 'Identification complète', detail: 'Type, dimensions, matériaux, année d\'installation de chaque conduit' },
+              { label: 'État de conformité', detail: 'Vérification RSD 13, NF DTU 24.1, distances de sécurité' },
+              { label: 'Photos datées', detail: 'Documentation visuelle de l\'intérieur et des accès du conduit' },
+              { label: 'Travaux réalisés', detail: 'Historique des interventions avec dates et références' },
+              { label: 'Préconisations', detail: 'Travaux recommandés classés par priorité (sécurité / confort / conformité)' },
+            ].map(({ label, detail }) => (
+              <div class="flex gap-3 bg-white rounded-xl p-4 border border-[#EEEEEE]">
+                <span class="text-[#E65100] font-bold shrink-0 text-lg leading-none mt-0.5">→</span>
+                <div>
+                  <p class="text-sm font-semibold text-[#1A1A1A]">{label}</p>
+                  <p class="text-xs text-[#1A1A1A]/50 mt-0.5">{detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- DPE impact card -->
+        <div>
+          <div class="bg-gradient-to-br from-[#1A4B8F] to-[#0D2B5C] rounded-2xl p-8 text-white mb-6">
+            <div class="text-4xl font-extrabold mb-1">+8 à +15 %</div>
+            <p class="text-sm text-white/70 mb-4">Gain de rendement moyen après entretien certifié COSTIC</p>
+            <p class="text-xs text-white/55 leading-relaxed">Un insert ou poêle à bois entretenu consomme moins de bois pour la même chaleur. Ce gain de rendement améliore l'étiquette DPE et la valorisation du bien dans le cadre d'une vente.</p>
+          </div>
+          <div class="bg-[#1A1A1A] rounded-2xl p-6 text-white">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-3">Protection juridique</p>
+            <p class="text-sm text-white/75 leading-relaxed">
+              L'article <strong class="text-white">1641 du Code civil</strong> engage la responsabilité du vendeur sur les vices cachés. Un conduit présentant des fissures, une obstruction ou des dépôts de bistre non signalés peut constituer un vice caché. Le Carnet de Santé du Conduit constitue une preuve que l'état de l'installation était <em>connu et déclaré</em> lors de la vente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process 5 étapes -->
+  <section class="py-16 px-6 md:px-10 border-b border-[#EEEEEE]">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-10">
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-3">Déroulement</p>
+        <h2 class="text-2xl font-extrabold text-[#1A1A1A]">Comment se déroule l'audit ?</h2>
+      </div>
+      <div class="relative">
+        <div class="absolute left-5 top-0 bottom-0 w-px bg-[#EEEEEE] hidden md:block"></div>
+        <div class="space-y-6">
+          {etapes.map(({ n, titre, desc }) => (
+            <div class="flex gap-5">
+              <div class="w-10 h-10 rounded-full bg-[#E65100] text-white flex items-center justify-center text-xs font-bold shrink-0 relative z-10">{n}</div>
+              <div class="bg-white border border-[#EEEEEE] rounded-xl p-5 flex-1 hover:border-[#E65100]/20 transition-colors">
+                <p class="text-sm font-semibold text-[#1A1A1A] mb-1">{titre}</p>
+                <p class="text-xs text-[#1A1A1A]/55 leading-relaxed">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarif & CTA -->
+  <section class="py-16 px-6 md:px-10 bg-[#FAFAFA] border-b border-[#EEEEEE]">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+      <div class="bg-white border border-[#EEEEEE] rounded-2xl p-6">
+        <p class="text-[11px] font-bold uppercase tracking-widest text-[#1A1A1A]/40 mb-3">Audit simple</p>
+        <p class="text-3xl font-extrabold text-[#1A1A1A] mb-1">120 €</p>
+        <p class="text-xs text-[#1A1A1A]/50 mb-4">1 conduit · Rapport PDF · Certificat de contrôle</p>
+        <ul class="space-y-2 text-xs text-[#1A1A1A]/65">
+          <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Inspection visuelle complète</li>
+          <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Contrôle de tirage</li>
+          <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Rapport PDF daté + signé</li>
+          <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Carnet de Santé du Conduit</li>
+        </ul>
+      </div>
+      <div class="bg-[#1A1A1A] rounded-2xl p-6 text-white col-span-1">
+        <p class="text-[11px] font-bold uppercase tracking-widest text-white/40 mb-3">Audit complet</p>
+        <p class="text-3xl font-extrabold text-white mb-1">190 €</p>
+        <p class="text-xs text-white/50 mb-4">Multi-conduits · Caméra HD · Rapport assurance</p>
+        <ul class="space-y-2 text-xs text-white/65">
+          <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Tous les conduits du bien</li>
+          <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Inspection caméra HD</li>
+          <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Photos datées et géolocalisées</li>
+          <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Rapport complet transmissible au notaire</li>
+          <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Carnet de Santé du Conduit™</li>
+        </ul>
+        <div class="mt-4 bg-[#E65100]/15 rounded-xl px-4 py-2 text-[10px] text-[#E65100] font-bold uppercase tracking-wide">Recommandé pour la vente</div>
+      </div>
+      <div class="bg-[#E65100] rounded-2xl p-6 text-white flex flex-col justify-between">
+        <div>
+          <p class="text-[11px] font-bold uppercase tracking-widest text-white/60 mb-3">Commander l'audit</p>
+          <p class="text-sm text-white/80 leading-relaxed mb-6">Délai compatible avec votre calendrier notarial. Rapport remis sous 24h.</p>
+        </div>
+        <div class="space-y-3">
+          <a href="tel:+33664729600" class="flex items-center justify-center gap-2 bg-white text-[#E65100] text-sm font-bold px-5 py-3 rounded-xl hover:bg-white/90 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            06 64 72 96 00
+          </a>
+          <a href="mailto:majeo@ik.me?subject=Audit%20immobilier%20fumisterie" class="flex items-center justify-center gap-2 bg-white/15 text-white text-sm font-semibold px-5 py-3 rounded-xl hover:bg-white/20 transition-colors border border-white/20">
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 px-6 md:px-10">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-3 text-center">Questions fréquentes</p>
+      <h2 class="text-2xl font-extrabold text-[#1A1A1A] mb-8 text-center">Audit fumisterie immobilier — FAQ</h2>
+      <div class="space-y-3" itemscope itemtype="https://schema.org/FAQPage">
+        {faqSchema.mainEntity.map(item => (
+          <details class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer select-none list-none" itemprop="name">
+              <span class="text-sm font-semibold text-[#1A1A1A]">{item.name}</span>
+              <svg class="w-4 h-4 shrink-0 text-[#E65100] transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-5 pb-5" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="text-sm text-[#1A1A1A]/60 leading-relaxed" itemprop="text">{item.acceptedAnswer.text}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</Layout>
