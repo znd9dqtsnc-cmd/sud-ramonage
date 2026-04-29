@@ -94,6 +94,33 @@ const pageSchema = {
   },
 };
 
+const collectionPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `Services de ramonage à ${data.nom} — Sud Ramonage`,
+  description: `Annuaire complet des services de ramonage, débistrage, inspection caméra et entretien poêle disponibles à ${data.nom} (${data.codePostal}).`,
+  url: `${siteUrl}/villes/${data.slug}`,
+  inLanguage: 'fr-FR',
+  publisher: {
+    '@type': 'HomeAndConstructionBusiness',
+    '@id': `${siteUrl}/#business`,
+  },
+  hasPart: [
+    { '@type': 'WebPage', name: 'Ramonage certifié RSD 13', url: `${siteUrl}/ramonage` },
+    { '@type': 'WebPage', name: 'Débistrage — traitement anti-bistre', url: `${siteUrl}/debistrage` },
+    { '@type': 'WebPage', name: 'Inspection caméra endoscopique HD', url: `${siteUrl}/inspection-camera` },
+    { '@type': 'WebPage', name: 'Entretien corps de chauffe — poêle bois et granulés', url: `${siteUrl}/entretien-poele` },
+    { '@type': 'WebPage', name: 'Tubage inox conduit de fumée', url: `${siteUrl}/tubage` },
+    { '@type': 'WebPage', name: 'Normes et obligations légales RSD 13', url: `${siteUrl}/normes` },
+  ],
+  about: {
+    '@type': 'City',
+    name: data.nom,
+    postalCode: data.codePostal,
+    containedInPlace: { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
+  },
+};
+
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -134,6 +161,7 @@ const personSchema = {
 >
 
 <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(collectionPageSchema)} />
 
   <!-- ═══ HERO ═══ -->
   <section class="relative pt-32 pb-20 px-6 md:px-10 overflow-hidden">
