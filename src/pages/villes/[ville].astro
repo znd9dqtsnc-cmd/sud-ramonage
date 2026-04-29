@@ -4,6 +4,7 @@ import ContactButton from '../../components/ContactButton.astro';
 import COSTICBadge from '../../components/COSTICBadge.astro';
 import { Image } from 'astro:assets';
 import { villes } from '../../data/villes';
+import { villesWiki } from '../../data/villesWiki';
 import { getRealisationsByVille, typeConfig } from '../../data/realisations';
 
 import heroBg      from '../../assets/images/hero-toits.jpg';
@@ -40,6 +41,8 @@ const defaultCas = [
 
 const casAffichés = data.casTypiques && data.casTypiques.length > 0 ? data.casTypiques : defaultCas;
 
+const wikiData = villesWiki[data.slug];
+
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -67,6 +70,13 @@ const pageSchema = {
       },
     } : {}),
     ...(data.landmark ? { landmark: data.landmark } : {}),
+    ...(wikiData ? {
+      subjectOf: [
+        { '@type': 'WebPage', url: wikiData.cityUrl, name: `${data.nom} — Wikipedia` },
+        ...(wikiData.landmarkUrl ? [{ '@type': 'WebPage', url: wikiData.landmarkUrl, name: `${data.landmark ?? data.nom} — Wikipedia` }] : []),
+      ],
+      sameAs: wikiData.cityUrl,
+    } : {}),
   },
   serviceType: 'Ramonage de cheminée',
   url: `${siteUrl}/villes/${data.slug}`,
