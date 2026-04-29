@@ -784,9 +784,36 @@ const zonesGroupes = [
         </div>
 
         <!-- Bas du footer -->
-        <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#1A1A1A]/30 pt-6 border-t border-[#EEEEEE]">
-          <span>&copy; {new Date().getFullYear()} Sud Ramonage — Artisan ramoneur certifié à Martigues</span>
-          <span>Conforme RSD 13 — Bouches-du-Rhône</span>
+        <div class="pt-6 border-t border-[#EEEEEE] space-y-4">
+
+          <!-- Ligne légale RC Pro + médiateur -->
+          <div class="text-[10px] text-[#1A1A1A]/30 font-light leading-relaxed space-y-1">
+            <p>
+              <strong class="font-medium text-[#1A1A1A]/40">RC Professionnelle</strong> souscrite auprès de
+              <span class="text-[#E65100]/70 font-medium">[À COMPLÉTER — nom assureur]</span>,
+              contrat n° <span class="text-[#E65100]/70 font-medium">[À COMPLÉTER]</span> — couverture France métropolitaine.
+            </p>
+            <p>
+              <strong class="font-medium text-[#1A1A1A]/40">Médiateur de la consommation</strong> :
+              CM2C — Centre de la Médiation de la Consommation de Conciliateurs de Justice —
+              <a href="https://www.cm2c.net" target="_blank" rel="noopener noreferrer" class="hover:text-[#E65100] transition-colors">www.cm2c.net</a>
+            </p>
+            <p>
+              Vos données personnelles (prise de RDV) sont traitées uniquement pour l'exécution de la prestation, conservées 5 ans — conformément au RGPD (UE 2016/679).
+              <a href="/mentions-legales#rgpd" class="hover:text-[#E65100] transition-colors">En savoir plus</a>
+            </p>
+          </div>
+
+          <!-- Copyright + liens légaux -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-[#1A1A1A]/30">
+            <span>&copy; {new Date().getFullYear()} Sud Ramonage — Artisan ramoneur certifié à Martigues</span>
+            <div class="flex items-center gap-4">
+              <a href="/mentions-legales" class="hover:text-[#E65100] transition-colors duration-200">Mentions légales</a>
+              <span class="text-[#1A1A1A]/15">·</span>
+              <span>Conforme RSD 13 &amp; Décret 2023-641 — Bouches-du-Rhône</span>
+            </div>
+          </div>
+
         </div>
 
       </div>
