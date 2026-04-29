@@ -14,10 +14,22 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      changefreq: 'monthly',
+      changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
-      customPages: [],
+      serialize(item) {
+        if (item.url === 'https://www.sud-ramonage.fr/')
+          return { ...item, changefreq: 'weekly', priority: 1.0 };
+        if (['/ramonage', '/debistrage', '/inspection-camera', '/entretien-poele', '/tubage'].some(p => item.url.endsWith(p)))
+          return { ...item, changefreq: 'monthly', priority: 0.9 };
+        if (item.url.includes('/conseils/') && item.url !== 'https://www.sud-ramonage.fr/conseils/')
+          return { ...item, changefreq: 'weekly', priority: 0.8, lastmod: new Date().toISOString() };
+        if (['/statistiques-securite', '/guide-conformite-rsd13', '/normes'].some(p => item.url.includes(p)))
+          return { ...item, changefreq: 'monthly', priority: 0.8 };
+        if (item.url.includes('/villes/'))
+          return { ...item, changefreq: 'monthly', priority: 0.75 };
+        return item;
+      },
     }),
   ],
   compressHTML: true,

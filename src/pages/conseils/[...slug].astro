@@ -1,0 +1,66 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('blog', ({ data }) => !data.draft);
+  return entries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { data } = entry;
+
+const siteUrl = 'https://www.sud-ramonage.fr';
+const canonicalUrl = `${siteUrl}/conseils/${entry.slug}`;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: data.title,
+  description: data.description,
+  author: {
+    '@type': 'Person',
+    '@id': `${siteUrl}/#gerant`,
+    name: 'Le gérant — Sud Ramonage',
+    jobTitle: 'Artisan ramoneur certifié COSTIC',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Sud Ramonage',
+    logo: { '@type': 'ImageObject', url: `${siteUrl}/favicon.svg` },
+  },
+  datePublished: data.datePublished,
+  dateModified: data.dateModified ?? data.datePublished,
+  url: canonicalUrl,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+  image: data.ogImage ? `${siteUrl}${data.ogImage}` : `${siteUrl}/og-image.jpg`,
+  articleSection: data.category,
+  keywords: data.keywords ?? data.tags.join(', '),
+  about: {
+    '@type': 'Thing',
+    name: 'Ramonage certifié — Bouches-du-Rhône (RSD 13)',
+  },
+  mentions: [
+    { '@type': 'Organization', name: 'Sud Ramonage', url: siteUrl },
+    { '@type': 'Thing', name: 'RSD 13 — Règlement Sanitaire Départemental Bouches-du-Rhône' },
+  ],
+};
+
+---
+
+<ArticleLayout
+  title={data.title}
+  description={data.description}
+  slug={entry.slug}
+  category={data.category}
+  readTime={data.readTime}
+  datePublished={data.datePublished}
+  relatedService={data.relatedService}
+  articleSchema={articleSchema}
+>
+  <Content />
+</ArticleLayout>

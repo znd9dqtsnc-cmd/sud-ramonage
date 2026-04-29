@@ -5,6 +5,7 @@ import EmailButton from '../components/EmailButton.astro';
 import TrustBadge from '../components/TrustBadge.astro';
 import FAQ from '../components/FAQ.astro';
 import COSTICBadge from '../components/COSTICBadge.astro';
+import LatestArticles from '../components/LatestArticles.astro';
 import { Image, getImage } from 'astro:assets';
 
 // ─── Images locales ───────────────────────────────────────────────────────────
@@ -873,6 +874,11 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
       </div>
     </div>
   </section>
+
+  <!-- ═══════════════════════════════════════════════
+       DERNIERS ARTICLES — pipeline contenu
+  ═══════════════════════════════════════════════ -->
+  <LatestArticles count={3} title="Derniers Conseils d'Experts" />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
