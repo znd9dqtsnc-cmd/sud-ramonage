@@ -124,27 +124,10 @@ const zonesGroupes = [
   </head>
   <body class="bg-white text-[#1A1A1A] font-sans antialiased">
 
-    <!-- ═══ BANDEAU URGENCE SÉCURITÉ ═══ -->
-    <div id="urgence-bandeau" class="fixed top-0 left-0 right-0 z-[60] bg-[#0F172A] border-b border-[#E65100]/30 py-1.5 px-4 flex items-center justify-center gap-3 text-center">
-      <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] animate-pulse shrink-0" aria-hidden="true"></span>
-      <p class="text-[11px] text-white/70 font-light">
-        <strong class="text-white font-semibold">1 ramonage sur 10 évite un départ de feu réel.</strong>
-        &nbsp;Artisan certifié COSTIC à Martigues —&nbsp;
-        <a href="/ramonage" class="text-[#E65100] font-semibold hover:underline">Prendre RDV</a>
-      </p>
-      <button
-        id="close-bandeau"
-        class="absolute right-3 text-white/30 hover:text-white/70 transition-colors duration-150 p-1"
-        aria-label="Fermer le bandeau"
-      >
-        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-    </div>
-
     <!-- ═══════════════════════════════════════════
          HEADER
     ═══════════════════════════════════════════ -->
-    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#EEEEEE] transition-shadow duration-300 translate-y-[32px]">
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#EEEEEE] transition-shadow duration-300">
       <div class="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between gap-6">
 
         <!-- ── Logo ── -->
@@ -553,54 +536,6 @@ const zonesGroupes = [
     </div>
 
     <!-- ═══════════════════════════════════════════
-         WIDGET URGENCE MONOXYDE DE CARBONE
-    ═══════════════════════════════════════════ -->
-    <div
-      id="co-banner"
-      class="fixed bottom-0 left-0 right-0 z-30 bg-amber-50/97 backdrop-blur-sm border-t border-amber-200 px-4 py-2.5 translate-y-full transition-transform duration-500"
-      role="complementary"
-      aria-label="Alerte sécurité — signes d'un mauvais tirage"
-    >
-      <div class="max-w-6xl mx-auto flex items-center gap-3 md:gap-6 justify-between flex-wrap md:flex-nowrap">
-        <div class="flex items-center gap-3 min-w-0">
-          <div class="w-8 h-8 rounded-full bg-amber-100 border border-amber-300 flex items-center justify-center shrink-0" aria-hidden="true">
-            <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
-          </div>
-          <div class="min-w-0">
-            <p class="text-xs font-bold text-amber-900">Signes d'un mauvais tirage ou d'intoxication au CO</p>
-            <p class="text-[11px] text-amber-700 font-light">
-              Odeurs de fumée · Maux de tête · Nausées · Flammes couchées → Aérez immédiatement et appelez.
-            </p>
-          </div>
-        </div>
-        <div class="flex items-center gap-2 shrink-0 ml-auto">
-          <a
-            href="tel:+33664729600"
-            class="inline-flex items-center gap-1.5 bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-colors duration-150 touch-manipulation"
-            aria-label="Appeler Sud Ramonage — urgence mauvais tirage"
-          >
-            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-            Appeler
-          </a>
-          <button
-            id="co-dismiss"
-            type="button"
-            class="w-7 h-7 flex items-center justify-center rounded-lg text-amber-500 hover:bg-amber-100 transition-colors duration-150"
-            aria-label="Fermer l'alerte"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══════════════════════════════════════════
          CONTENU PRINCIPAL
     ═══════════════════════════════════════════ -->
     <main>
@@ -628,8 +563,6 @@ const zonesGroupes = [
             <p class="text-xs text-[#1A1A1A]/45 leading-relaxed max-w-xs">
               Artisan ramoneur certifié. Ramonage, débistrage et entretien de poêle sur Martigues, la Côte Bleue et l'Étang de Berre. Certificat RSD 13 immédiat.
             </p>
-            <!-- Logo COSTIC officiel footer -->
-            <COSTICBadge variant="footer" class="mt-1" />
             <address class="not-italic text-xs text-[#1A1A1A]/40 space-y-1">
               <p>31 chemin des tamaris, 13500 Martigues</p>
               <a href="tel:+33664729600" class="block hover:text-[#E65100] transition-colors duration-200">06 64 72 96 00</a>
@@ -892,72 +825,21 @@ const zonesGroupes = [
         }
       }, { passive: true });
 
-      // Bandeau Urgence Sécurité
-      const bandeauEl    = document.getElementById('urgence-bandeau');
-      const closeBandeau = document.getElementById('close-bandeau');
-      const siteHeader   = document.getElementById('site-header');
-
-      function initBandeau() {
-        const dismissed = localStorage.getItem('bandeau-dismissed-until');
-        if (dismissed && Date.now() < parseInt(dismissed, 10)) {
-          bandeauEl?.classList.add('hidden');
-          siteHeader?.classList.remove('translate-y-[32px]');
-          siteHeader?.classList.add('translate-y-0');
-        }
-      }
-
-      closeBandeau?.addEventListener('click', () => {
-        bandeauEl?.classList.add('hidden');
-        siteHeader?.classList.remove('translate-y-[32px]');
-        siteHeader?.classList.add('translate-y-0');
-        localStorage.setItem('bandeau-dismissed-until', String(Date.now() + 3 * 24 * 60 * 60 * 1000));
-      });
-
-      initBandeau();
-
-      // Widget Urgence Monoxyde de Carbone
-      const coBanner  = document.getElementById('co-banner');
-      const coDismiss = document.getElementById('co-dismiss');
-
-      function initCOBanner() {
-        const stored  = localStorage.getItem('co-dismissed-until');
-        const expires = stored ? parseInt(stored, 10) : 0;
-        if (Date.now() < expires) return;
-        setTimeout(() => coBanner?.classList.remove('translate-y-full'), 4000);
-      }
-
-      coDismiss?.addEventListener('click', () => {
-        coBanner?.classList.add('translate-y-full');
-        localStorage.setItem('co-dismissed-until', String(Date.now() + 7 * 24 * 60 * 60 * 1000));
-      });
-
-      initCOBanner();
     </script>
 
     <!-- ═══════════════════════════════════════════
-         BARRE D'ACTION RAPIDE — Mobile uniquement
+         BARRE TÉLÉPHONE MOBILE — simple & visible
     ═══════════════════════════════════════════ -->
-    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-[55] flex gap-0 shadow-2xl shadow-black/20">
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-[55] shadow-2xl shadow-black/20">
       <a
         href="tel:+33664729600"
-        class="flex-1 flex items-center justify-center gap-2 bg-[#E65100] hover:bg-[#BF360C] active:bg-[#8A2200] active:scale-[0.98] text-white text-sm font-bold py-4 transition-all duration-150 touch-manipulation"
+        class="flex items-center justify-center gap-2.5 bg-[#E65100] hover:bg-[#BF360C] active:bg-[#8A2200] text-white text-sm font-bold py-4 transition-colors duration-150 touch-manipulation w-full"
         aria-label="Appeler Sud Ramonage — 06 64 72 96 00"
       >
         <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg>
-        Appeler
-      </a>
-      <div class="w-px bg-white/20"></div>
-      <a
-        href="mailto:majeo@ik.me"
-        class="flex-1 flex items-center justify-center gap-2 bg-[#1A4B8F] hover:bg-[#0D2D5A] active:bg-[#091D3A] active:scale-[0.98] text-white text-sm font-bold py-4 transition-all duration-150 touch-manipulation"
-        aria-label="Demander un devis par email"
-      >
-        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-        Devis
+        Appeler au 06 64 72 96 00
       </a>
     </div>
 
