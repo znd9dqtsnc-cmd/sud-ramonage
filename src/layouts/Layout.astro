@@ -35,7 +35,7 @@ const megaMenu = {
     { href: '/debistrage',        label: 'Débistrage',           desc: 'Traitement chimique et mécanique du bistre, dépôt goudronné hautement inflammable issu du bois humide.' },
   ],
   diagnostic: [
-    { href: '/vacuite',          label: 'Inspection du Conduit',          desc: 'Vérification par caméra HD : obstruction, état des parois. Pour un doute ou un problème.' },
+    { href: '/vacuite',          label: 'Contrôle de Vacuité',            desc: 'Vérification par caméra HD : obstruction, état des parois. Pour un doute ou un problème.' },
     { href: '/audit-conformite', label: 'Diagnostic Sécurité Conduit',    desc: 'Contrôle complet vacuité + étanchéité avec rapport certifié. Pour l\'assurance, un notaire, ou une garantie totale.' },
   ],
   appareils: [
@@ -189,7 +189,7 @@ const zonesGroupes = [
                   </div>
                   <!-- Col 2 : Diagnostic + Réhabilitation -->
                   <div>
-                    <p class="text-[9px] font-bold tracking-widest uppercase text-[#1A1A1A]/30 mb-3">Diagnostic & Inspection</p>
+                    <p class="text-[9px] font-bold tracking-widest uppercase text-[#1A1A1A]/30 mb-3">Diagnostic de Sécurité</p>
                     <ul class="space-y-0.5">
                       {megaMenu.diagnostic.map(({ href, label, desc }) => (
                         <li>
@@ -452,7 +452,7 @@ const zonesGroupes = [
                 </ul>
               </div>
               <div>
-                <p class="text-[9px] font-bold tracking-widest uppercase text-[#1A1A1A]/30 px-3 py-1">Diagnostic & Inspection</p>
+                <p class="text-[9px] font-bold tracking-widest uppercase text-[#1A1A1A]/30 px-3 py-1">Diagnostic de Sécurité</p>
                 <ul class="space-y-0.5">
                   {megaMenu.diagnostic.map(({ href, label }) => (
                     <li><a href={href} class="block px-3 py-2 text-xs font-medium text-[#1A1A1A]/70 hover:bg-[#FFF3E0] hover:text-[#E65100] rounded-lg transition-colors">{label}</a></li>
