@@ -98,6 +98,51 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Tubage Conduit', ur
         </div>
       </div>
 
+      <!-- COMPARATIF TUBAGE vs CHEMISAGE -->
+      <div>
+        <h2 class="text-2xl font-bold mb-2">Tubage inox ou chemisage ?</h2>
+        <p class="text-sm text-[#1A1A1A]/60 leading-relaxed mb-6">
+          Le chemisage (gainage souple résine) est parfois proposé comme alternative au tubage. C'est une technique qui peut convenir à des conduits très irréguliers ou très courbés où le tubage est difficile — mais elle présente des limitations importantes qu'il faut connaître avant de choisir.
+        </p>
+        <div class="overflow-x-auto rounded-2xl border border-[#EEEEEE]">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-[#FAFAFA] border-b border-[#EEEEEE]">
+                <th class="text-left py-3 px-5 text-xs font-semibold text-[#1A1A1A]/50">Critère</th>
+                <th class="text-left py-3 px-5 text-xs font-bold text-[#E65100] flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-[#E65100] inline-block"></span> Tubage inox <span class="text-[10px] font-bold bg-[#E65100]/10 px-2 py-0.5 rounded-full ml-1">Recommandé</span>
+                </th>
+                <th class="text-left py-3 px-5 text-xs font-semibold text-[#1A1A1A]/45">Chemisage résine</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[#EEEEEE]">
+              {[
+                { c: 'Durée de vie', tubage: '25–40 ans ✓', chemisage: '15–25 ans' },
+                { c: 'Appareils compatibles', tubage: 'Tous — bois, granulés, gaz, fioul ✓', chemisage: 'Gaz & chaudière basse température uniquement' },
+                { c: 'Résistance thermique', tubage: 'Inox 316 Ti — jusqu\'à 600°C ✓', chemisage: 'Résine époxy — max 250°C' },
+                { c: 'Norme de référence', tubage: 'NF DTU 24.1 P1-1 ✓', chemisage: 'Variable selon produit utilisé' },
+                { c: 'Entretien / ramonage', tubage: 'Facile — surface lisse inox ✓', chemisage: 'Surface parfois irrégulière après prise' },
+                { c: 'Conduit très irrégulier', tubage: 'Flexible inox s\'adapte aux coudes ✓', chemisage: '✓ Avantage sur conduits très tortueux' },
+                { c: 'Coût initial', tubage: 'Plus élevé', chemisage: 'Moins cher à l\'installation' },
+                { c: 'Coût sur 30 ans', tubage: 'Optimal — une seule intervention ✓', chemisage: 'Supérieur — à refaire en milieu de vie' },
+              ].map(({ c, tubage, chemisage }) => (
+                <tr class="hover:bg-[#FAFAFA] transition-colors">
+                  <td class="py-3 px-5 text-xs text-[#1A1A1A]/55 font-medium">{c}</td>
+                  <td class="py-3 px-5 text-xs text-[#1A1A1A] font-medium">{tubage}</td>
+                  <td class="py-3 px-5 text-xs text-[#1A1A1A]/55">{chemisage}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl px-5 py-4 flex gap-3">
+          <svg class="w-4 h-4 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <p class="text-xs text-amber-800 leading-relaxed">
+            <strong class="text-amber-900">Mon choix professionnel :</strong> je réalise uniquement le tubage inox. Moins cher à l'installation, le chemisage résine nécessite d'être refait en milieu de vie et n'est pas compatible avec les appareils à bois ou granulés. Sur 30 ans, le tubage inox est la solution la plus économique et la plus sûre.
+          </p>
+        </div>
+      </div>
+
       <div class="bg-[#E65100] rounded-2xl p-8 text-white">
         <h2 class="text-xl font-bold mb-3">Devis tubage gratuit</h2>
         <p class="text-sm text-white/75 mb-6">Je me déplace pour évaluer votre conduit et vous proposer la solution adaptée (flexible ou rigide, diamètre, longueur). Devis détaillé sans engagement.</p>
@@ -108,10 +153,10 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Tubage Conduit', ur
         <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/30 mb-4">Voir aussi</p>
         <ul class="flex flex-wrap gap-3">
           {[
-            { href: '/chemisage', label: 'Chemisage conduit' },
             { href: '/inserts', label: 'Ramonage insert' },
-            { href: '/test-fumigene', label: 'Test fumigène post-tubage' },
-            { href: '/inspection-camera', label: 'Diagnostic caméra avant tubage' },
+            { href: '/audit-conformite', label: 'Audit de conformité' },
+            { href: '/test-fumigene', label: "Test d'étanchéité post-tubage" },
+            { href: '/vacuite', label: 'Contrôle de vacuité' },
             { href: '/normes', label: 'Normes NF DTU 24.1' },
           ].map(({ href, label }) => (
             <li><a href={href} class="text-xs text-[#1A1A1A]/50 border border-[#EEEEEE] rounded-lg px-3 py-1.5 hover:text-[#E65100] hover:border-[#E65100]/30 transition-colors">{label}</a></li>
