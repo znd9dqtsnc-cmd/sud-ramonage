@@ -30,7 +30,7 @@ const articles = [
   {
     slug: 'poele-granules-signes-entretien-mal-fait',
     category: 'Diagnostic',
-    categoryColor: 'bg-[#F97316]',
+    categoryColor: 'bg-[#D4763A]',
     title: 'Poêle à granulés : Les 3 signes d\'un entretien mal fait.',
     excerpt: 'Un poêle à granulés mal entretenu ne tombe pas simplement en panne — il devient dangereux. Ces 3 signaux d\'alerte permettent de détecter un entretien insuffisant avant qu\'il ne provoque une panne coûteuse ou un sinistre.',
     readTime: '5 min',
@@ -52,7 +52,7 @@ const articles = [
   {
     slug: 'insert-fume-dans-piece-causes-solutions',
     category: 'Diagnostic',
-    categoryColor: 'bg-[#F97316]',
+    categoryColor: 'bg-[#D4763A]',
     title: 'Mon insert fume dans la pièce : 5 causes et leurs solutions.',
     excerpt: 'Refoulement de fumée : 5 causes classées par fréquence — conduit obstrué, tirage insuffisant, dépression, vent, fissure. Auto-diagnostic, risque CO et quand appeler un professionnel.',
     readTime: '6 min',
@@ -123,7 +123,7 @@ const pageSchema = {
         <span>/</span>
         <span class="text-white/60">Conseils d'Experts</span>
       </nav>
-      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F97316] mb-4">Le savoir de l'artisan</p>
+      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#D4763A] mb-4">Le savoir de l'artisan</p>
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
         Conseils d'Experts<br />en Ramonage.
       </h1>
@@ -139,7 +139,7 @@ const pageSchema = {
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {articles.map((article, i) => (
-          <article class="group flex flex-col bg-white border border-[#EEEEEE] rounded-2xl overflow-hidden hover:shadow-xl hover:border-[#F97316]/20 transition-all duration-300">
+          <article class="group flex flex-col bg-white border border-[#EEEEEE] rounded-2xl overflow-hidden hover:shadow-xl hover:border-[#D4763A]/20 transition-all duration-300">
 
             <!-- Bande colorée en haut -->
             <div class={`h-1.5 w-full ${article.categoryColor}`}></div>
@@ -158,7 +158,7 @@ const pageSchema = {
               <p class="text-[10px] font-semibold text-[#1A1A1A]/20 mb-2">Article {String(i + 1).padStart(2, '0')}</p>
 
               <!-- Titre -->
-              <h2 class="text-lg font-extrabold tracking-tight text-[#1A1A1A] leading-snug mb-4 group-hover:text-[#F97316] transition-colors duration-200">
+              <h2 class="text-lg font-extrabold tracking-tight text-[#1A1A1A] leading-snug mb-4 group-hover:text-[#D4763A] transition-colors duration-200">
                 {article.title}
               </h2>
 
@@ -177,7 +177,7 @@ const pageSchema = {
               <!-- CTA -->
               <a
                 href={`/conseils/${article.slug}`}
-                class="inline-flex items-center gap-1.5 text-xs font-bold text-[#F97316] hover:gap-3 transition-all duration-200 mt-auto"
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-[#D4763A] hover:gap-3 transition-all duration-200 mt-auto"
                 aria-label={`Lire l'article : ${article.title}`}
               >
                 Lire l'article
@@ -195,7 +195,7 @@ const pageSchema = {
   </section>
 
   <!-- ═══ CTA ═══ -->
-  <section class="py-16 px-6 md:px-10 bg-[#FFF7ED]">
+  <section class="py-16 px-6 md:px-10 bg-[#FEF6EE]">
     <div class="max-w-xl mx-auto text-center">
       <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">Une question sur votre installation ?</h2>
       <p class="text-sm text-[#1A1A1A]/55 font-light mb-8">
