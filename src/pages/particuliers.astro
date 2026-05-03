@@ -420,6 +420,41 @@ const breadcrumbs = [
     </div>
   </section>
 
+  <!-- SIGNES D'ALERTE -->
+  <section class="py-12 px-6 md:px-10 bg-amber-50 border-t border-amber-200">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-[11px] font-bold uppercase tracking-widest text-amber-700 mb-3">Signes d'alerte</p>
+      <h2 class="text-xl font-bold text-[#1A1A1A] mb-6">Votre installation demande une intervention si…</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+        {[
+          { signal: 'Pas de ramonage depuis plus d\'1 an', niveau: 'Obligatoire', couleur: 'orange' },
+          { signal: 'Dépôts noirs brillants dans le foyer', niveau: 'Bistre — urgent', couleur: 'red' },
+          { signal: 'Fumée qui rentre dans la pièce', niveau: 'Risque CO', couleur: 'red' },
+          { signal: 'Odeurs persistantes de fumée', niveau: 'Attention', couleur: 'orange' },
+          { signal: 'Difficultés d\'allumage répétées', niveau: 'Tirage défaillant', couleur: 'orange' },
+          { signal: 'Conduit jamais inspecté par caméra', niveau: 'Audit conseillé', couleur: 'orange' },
+        ].map(({ signal, niveau, couleur }) => (
+          <div class={`flex items-start gap-3 p-4 rounded-xl border ${couleur === 'red' ? 'bg-red-50 border-red-200' : 'bg-amber-50 border-amber-200'}`}>
+            <div class={`w-2 h-2 rounded-full shrink-0 mt-1.5 ${couleur === 'red' ? 'bg-red-500' : 'bg-amber-500'}`}></div>
+            <div>
+              <p class="text-xs font-semibold text-[#1A1A1A] leading-snug">{signal}</p>
+              <p class={`text-[10px] font-bold mt-0.5 uppercase tracking-wide ${couleur === 'red' ? 'text-red-600' : 'text-amber-700'}`}>{niveau}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#E65100] text-white text-xs font-bold px-5 py-2.5 rounded-lg hover:bg-[#BF360C] transition-colors">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Prendre RDV — 06 64 72 96 00
+        </a>
+        <a href="/audit-conformite" class="inline-flex items-center gap-2 bg-white border border-amber-300 text-amber-800 text-xs font-semibold px-5 py-2.5 rounded-lg hover:bg-amber-50 transition-colors">
+          Demander un audit de conformité →
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <FAQ
     title="Vos Questions — Ramonage Particuliers"
@@ -429,16 +464,24 @@ const breadcrumbs = [
         a: "Oui. Le RSD 13 (Règlement Sanitaire Départemental des Bouches-du-Rhône) impose un ramonage au minimum une fois par an pour tout conduit de fumée en service. En cas de sinistre sans certificat valide, votre assureur peut refuser la prise en charge.",
       },
       {
-        q: 'Quelle différence entre ramonage et débistrage ?',
-        a: "Le ramonage mécanique nettoie les dépôts courants (suie sèche) et vérifie la vacuité. Le débistrage est un traitement chimique et mécanique spécifique du bistre (goudron adhérent, très inflammable) qui se forme lors de combustion de bois humide. Le bistre ne s'élimine pas par simple ramonage.",
+        q: 'Qu\'est-ce que le bistre et est-ce dangereux ?',
+        a: "Le bistre est un dépôt goudroneux qui se forme lors de combustion de bois humide ou à basse température. Hautement inflammable, il est la première cause d\'incendie de conduit en France. Des dépôts noirs brillants dans le foyer ou sur la vitre indiquent un risque immédiat — un débistrage est impératif, le ramonage standard ne suffit pas.",
       },
       {
-        q: 'Combien de temps dure une intervention ?',
-        a: "Un ramonage standard dure entre 45 minutes et 1h30 selon le type d'appareil et l'état du conduit. L'entretien complet d'un poêle à granulés prend environ 1h30 à 2h. L'inspection caméra s'ajoute en option, +30 minutes.",
+        q: 'Un refoulement de fumée est-il dangereux ?',
+        a: "Oui — c\'est un signal sérieux. Un refoulement chronique signifie que le conduit ne tire plus correctement. La fumée contient du monoxyde de carbone (CO), inodore, incolore et mortel à haute concentration. Aérez immédiatement, cessez d\'utiliser l\'appareil et appelez un professionnel.",
+      },
+      {
+        q: 'Quelle différence entre ramonage et débistrage ?',
+        a: "Le ramonage mécanique nettoie les dépôts courants (suie sèche) et vérifie la vacuité. Le débistrage est un traitement chimique et mécanique spécifique du bistre (goudron adhérent, très inflammable). Le bistre ne s'élimine pas par simple ramonage.",
       },
       {
         q: 'Quand faut-il ramoner ?',
         a: "Idéalement en début de saison (septembre-octobre) ou en fin de saison (mars-avril) pour les appareils à bois. Pour les chaudières, l'entretien annuel est à réaliser avant la mise en route hivernale. Le certificat est valable 12 mois.",
+      },
+      {
+        q: 'Combien de temps dure une intervention ?',
+        a: "Un ramonage standard dure entre 45 minutes et 1h30 selon le type d'appareil et l'état du conduit. L'entretien complet d'un poêle à granulés prend environ 1h30 à 2h. L'audit de conformité (caméra + fumigène) s'ajoute en +30 à 45 minutes.",
       },
     ]}
   />
