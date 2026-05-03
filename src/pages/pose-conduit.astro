@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+const siteUrl = 'https://www.sud-ramonage.fr';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${siteUrl}/pose-conduit#service`,
+  name: 'Pose de conduit de fumée neuf',
+  description: 'Installation d\'un conduit de fumée neuf quand le tubage est impossible. Conduit maçonné, inox ou système modulaire. Certifié COSTIC. Bouches-du-Rhône.',
+  provider: { '@type': 'HomeAndConstructionBusiness', '@id': `${siteUrl}/#business` },
+  serviceType: 'Pose conduit fumée neuf',
+  areaServed: { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
+};
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Pose de Conduit', url: '/pose-conduit' },
+];
+---
+
+<Layout
+  title="Pose de Conduit de Fumée Neuf — Quand le Tubage est Impossible | Sud Ramonage"
+  description="Installation d'un conduit de fumée neuf : conduit effondré, section inadaptée, parcours impossible à tuber. Devis gratuit. Martigues & Bouches-du-Rhône."
+  breadcrumbs={breadcrumbs}
+  pageSchema={serviceSchema}
+>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-[#1A1A1A] to-[#2D1A00] text-white pt-28 pb-16">
+    <div class="max-w-4xl mx-auto px-6 md:px-10">
+      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-white/40 mb-6">
+        <a href="/" class="hover:text-white/70">Accueil</a><span>/</span><span class="text-white/60">Pose de Conduit</span>
+      </nav>
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-3 py-1.5 text-[11px] text-white/70 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#E65100]"></span>
+        Solution quand le tubage est impossible
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-5">
+        Pose de Conduit<br /><span class="text-[#E65100]">de Fumée Neuf</span>
+      </h1>
+      <p class="text-base text-white/65 max-w-2xl leading-relaxed mb-8">
+        Certains conduits anciens sont dans un état tel qu'un tubage flexible n'est plus possible : effondrement partiel, section trop réduite, parcours trop tortueux ou absence totale de conduit. Dans ces cas, la pose d'un conduit neuf est la seule solution viable et durable.
+      </p>
+      <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#E65100] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#BF360C] transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Devis gratuit — 06 64 72 96 00
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6 md:px-10 space-y-12">
+
+      <!-- Quand la pose neuve s'impose -->
+      <div>
+        <h2 class="text-2xl font-bold mb-5">Quand le tubage ne suffit plus</h2>
+        <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-6">
+          Le tubage flexible est toujours ma première recommandation — c'est la solution la moins invasive et la plus économique. Mais certaines situations rendent le tubage impossible ou insuffisant, et nécessitent l'installation d'un conduit neuf.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {[
+            { titre: 'Conduit effondré', desc: 'Une partie du conduit en maçonnerie s\'est effondrée — le tubage ne peut pas passer ni garantir l\'étanchéité.' },
+            { titre: 'Section trop réduite', desc: 'Après des années de dépôts ou suite à une construction, la section utile est insuffisante pour loger un tube inox adapté.' },
+            { titre: 'Parcours introuvable', desc: 'Dans certaines maisons anciennes, le tracé du conduit est inconnu ou inaccessible — il faut créer un nouveau passage.' },
+            { titre: 'Absence de conduit', desc: 'Installation d\'un poêle ou d\'un insert dans une pièce sans conduit existant — création complète nécessaire.' },
+          ].map(({ titre, desc }) => (
+            <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-xl p-5">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-[#E65100] shrink-0 mt-1.5"></div>
+                <div>
+                  <h3 class="text-sm font-bold text-[#1A1A1A] mb-1">{titre}</h3>
+                  <p class="text-xs text-[#1A1A1A]/55 leading-relaxed">{desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Ce que comprend la pose -->
+      <div>
+        <h2 class="text-2xl font-bold mb-5">Ce que comprend la pose d'un conduit neuf</h2>
+        <div class="bg-white border border-[#EEEEEE] rounded-2xl p-6 space-y-4">
+          {[
+            { etape: '1', titre: 'Diagnostic préalable', detail: 'Inspection caméra et/ou sondage pour évaluer l\'état du conduit existant et déterminer le meilleur tracé pour le nouveau conduit.' },
+            { etape: '2', titre: 'Choix de la solution', detail: 'Conduit inox modulaire (le plus fréquent), conduit double paroi isolé ou conduit maçonné selon la configuration du bâtiment et l\'appareil raccordé.' },
+            { etape: '3', titre: 'Installation', detail: 'Pose du conduit en respectant les distances de sécurité NF DTU 24.1 : passages de planchers, traversées de murs, dépassement en toiture.' },
+            { etape: '4', titre: 'Test d\'étanchéité', detail: 'Test fumigène obligatoire après pose pour valider l\'étanchéité de l\'ensemble avant raccordement de l\'appareil.' },
+            { etape: '5', titre: 'Rapport et certificat', detail: 'Remise d\'un rapport d\'intervention avec photos, références des matériaux posés et certificat de conformité NF DTU 24.1.' },
+          ].map(({ etape, titre, detail }) => (
+            <div class="flex gap-4 p-4 bg-[#FAFAFA] rounded-xl">
+              <div class="w-7 h-7 rounded-full bg-[#E65100] text-white text-xs font-bold flex items-center justify-center shrink-0">{etape}</div>
+              <div>
+                <p class="text-sm font-bold text-[#1A1A1A] mb-1">{titre}</p>
+                <p class="text-xs text-[#1A1A1A]/55 leading-relaxed">{detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Tubage vs Pose neuve -->
+      <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+        <div class="flex gap-3">
+          <svg class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div>
+            <p class="text-sm font-bold text-amber-900 mb-1">Tubage flexible toujours en priorité</p>
+            <p class="text-sm text-amber-800/75 leading-relaxed">La pose d'un conduit neuf est plus invasive et plus coûteuse que le tubage. Je l'envisage uniquement quand le tubage flexible est réellement impossible — après diagnostic caméra confirmant l'état du conduit existant. Si le tubage est faisable, c'est systématiquement ma recommandation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-[#E65100] rounded-2xl p-8 text-white">
+        <h2 class="text-xl font-bold mb-3">Votre conduit est irrécupérable ?</h2>
+        <p class="text-sm text-white/75 mb-6">Je me déplace pour un diagnostic sur place — inspection caméra incluse — et vous propose la solution adaptée : tubage si possible, pose neuve si nécessaire. Devis sans engagement.</p>
+        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-white text-[#E65100] text-sm font-bold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors">06 64 72 96 00</a>
+      </div>
+
+      <!-- Liens associés -->
+      <nav aria-label="Services associés" class="pt-8 border-t border-[#EEEEEE]">
+        <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/30 mb-4">Voir aussi</p>
+        <ul class="flex flex-wrap gap-3">
+          {[
+            { href: '/tubage', label: 'Tubage Flexible — solution prioritaire' },
+            { href: '/vacuite', label: 'Contrôle de vacuité' },
+            { href: '/audit-conformite', label: 'Diagnostic de sécurité' },
+            { href: '/accessoires-toiture', label: 'Accessoires toiture' },
+          ].map(({ href, label }) => (
+            <li><a href={href} class="text-xs text-[#1A1A1A]/50 border border-[#EEEEEE] rounded-lg px-3 py-1.5 hover:text-[#E65100] hover:border-[#E65100]/30 transition-colors">{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+</Layout>
