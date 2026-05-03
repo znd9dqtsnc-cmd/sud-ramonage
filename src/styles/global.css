@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "@fontsource-variable/inter";
 
 /* ═══════════════════════════════════════════════════════
    DESIGN TOKENS — variables CSS partagées light & dark
@@ -8,16 +7,16 @@
 ═══════════════════════════════════════════════════════ */
 :root {
   /* Surfaces */
-  --sr-bg-base:     #F8FAFC;
-  --sr-bg-subtle:   #F1F5F9;
+  --sr-bg-base:     #ffffff;
+  --sr-bg-subtle:   #fafafa;
   --sr-bg-card:     #ffffff;
   --sr-bg-warm:     #fff3e0;
-  --sr-bg-dark:     #0F172A;
+  --sr-bg-dark:     #1a1a1a;
 
   /* Texte */
-  --sr-text-primary:   #334155;
-  --sr-text-secondary: #64748B;
-  --sr-text-muted:     #94A3B8;
+  --sr-text-primary:   #1a1a1a;
+  --sr-text-secondary: #6b6b6b;
+  --sr-text-muted:     #a3a3a3;
 
   /* Bordures */
   --sr-border:         #eeeeee;

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactButton from '../components/ContactButton.astro';
+import EmailButton from '../components/EmailButton.astro';
 import TrustBadge from '../components/TrustBadge.astro';
 import FAQ from '../components/FAQ.astro';
 import { Image, getImage } from 'astro:assets';
@@ -39,8 +40,8 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         loading="eager"
         fetchpriority="high"
       />
-      <!-- Overlay sombre progressif -->
-      <div class="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/75 via-[#1A1A1A]/60 to-[#1A1A1A]/80"></div>
+      <!-- Overlay sombre progressif — fond plus léger en bas pour le glassmorphisme -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/82 via-[#1A1A1A]/65 to-[#1A1A1A]/40"></div>
     </div>
 
     <!-- Contenu texte -->
@@ -78,8 +79,8 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
     </div>
 
-    <!-- Flèche scroll -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+    <!-- Flèche scroll — remontée au-dessus de la trust bar -->
+    <div class="absolute bottom-28 left-1/2 -translate-x-1/2 z-10 animate-bounce">
       <svg class="w-5 h-5 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
@@ -87,26 +88,131 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
   </section>
 
-  <!-- ═══ TRUST STRIP ═══ -->
-  <TrustBadge variant="strip" />
+  <!-- ═══════════════════════════════════════════════
+       TRUST-BAR PREMIUM — Overlap hero + glassmorphisme
+  ═══════════════════════════════════════════════ -->
+  <section class="relative z-10 -mt-16 sm:-mt-20 lg:-mt-24 px-4 sm:px-6 md:px-10 pb-2">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+
+        <!-- Carte 1 — Certifié & Assuré -->
+        <div class="group relative bg-[#0c0c0c]/90 backdrop-blur-2xl rounded-2xl p-5 md:p-6 border border-white/8 shadow-2xl shadow-black/70 hover:-translate-y-2 transition-all duration-300 overflow-hidden" style="border-left: 3px solid #E65100">
+          <div class="absolute -top-10 -right-10 w-28 h-28 bg-[#E65100]/8 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true"></div>
+          <div class="w-11 h-11 rounded-xl bg-[#E65100]/12 flex items-center justify-center mb-4 group-hover:bg-[#E65100]/20 transition-colors duration-300">
+            <svg class="w-5 h-5 text-[#E65100]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <p class="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-none mb-1">100%</p>
+          <p class="text-[10px] font-bold text-[#E65100] uppercase tracking-widest mb-2.5">Certifié & Assuré</p>
+          <p class="text-[11px] text-white/40 font-light leading-relaxed">Assurance RC Pro incluse à chaque intervention.</p>
+        </div>
+
+        <!-- Carte 2 — 24h Délai de réponse -->
+        <div class="group relative bg-[#0c0c0c]/90 backdrop-blur-2xl rounded-2xl p-5 md:p-6 border border-white/8 shadow-2xl shadow-black/70 hover:-translate-y-2 transition-all duration-300 overflow-hidden" style="border-left: 3px solid #E65100">
+          <div class="absolute -top-10 -right-10 w-28 h-28 bg-[#E65100]/8 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true"></div>
+          <div class="w-11 h-11 rounded-xl bg-[#E65100]/12 flex items-center justify-center mb-4 group-hover:bg-[#E65100]/20 transition-colors duration-300">
+            <svg class="w-5 h-5 text-[#E65100]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <p class="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-none mb-1">24h</p>
+          <p class="text-[10px] font-bold text-[#E65100] uppercase tracking-widest mb-2.5">Délai de réponse</p>
+          <p class="text-[11px] text-white/40 font-light leading-relaxed">Rappel immédiat pour toute urgence.</p>
+        </div>
+
+        <!-- Carte 3 — Conformité RSD 13 -->
+        <div class="group relative bg-[#0c0c0c]/90 backdrop-blur-2xl rounded-2xl p-5 md:p-6 border border-white/8 shadow-2xl shadow-black/70 hover:-translate-y-2 transition-all duration-300 overflow-hidden" style="border-left: 3px solid #E65100">
+          <div class="absolute -top-10 -right-10 w-28 h-28 bg-[#E65100]/8 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true"></div>
+          <div class="w-11 h-11 rounded-xl bg-[#E65100]/12 flex items-center justify-center mb-4 group-hover:bg-[#E65100]/20 transition-colors duration-300">
+            <svg class="w-5 h-5 text-[#E65100]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="6"/>
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+          </div>
+          <p class="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-none mb-1">RSD 13</p>
+          <p class="text-[10px] font-bold text-[#E65100] uppercase tracking-widest mb-2.5">Conformité légale</p>
+          <p class="text-[11px] text-white/40 font-light leading-relaxed">Certificat officiel délivré après chaque intervention.</p>
+        </div>
+
+        <!-- Carte 4 — Disponibilité 6j/7 -->
+        <div class="group relative bg-[#0c0c0c]/90 backdrop-blur-2xl rounded-2xl p-5 md:p-6 border border-white/8 shadow-2xl shadow-black/70 hover:-translate-y-2 transition-all duration-300 overflow-hidden" style="border-left: 3px solid #E65100">
+          <div class="absolute -top-10 -right-10 w-28 h-28 bg-[#E65100]/8 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true"></div>
+          <div class="w-11 h-11 rounded-xl bg-[#E65100]/12 flex items-center justify-center mb-4 group-hover:bg-[#E65100]/20 transition-colors duration-300">
+            <svg class="w-5 h-5 text-[#E65100]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2"/>
+              <path d="M16 2v4M8 2v4M3 10h18"/>
+              <path d="m9 16 2 2 4-4"/>
+            </svg>
+          </div>
+          <p class="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-none mb-1">6j / 7</p>
+          <p class="text-[10px] font-bold text-[#E65100] uppercase tracking-widest mb-2.5">Disponibilité</p>
+          <p class="text-[11px] text-white/40 font-light leading-relaxed">Rendez-vous flexibles du lundi au samedi.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ═══════════════════════════════════════════════
-       CHIFFRES CLÉS
+       SECTION COSTIC — Certification & confiance
   ═══════════════════════════════════════════════ -->
-  <section class="border-b border-[#EEEEEE] bg-[#FAFAFA]">
-    <div class="max-w-6xl mx-auto px-6 md:px-10">
-      <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#EEEEEE]">
-        {[
-          { val: '100%', label: 'Certifié & Assuré' },
-          { val: '24h',  label: 'Délai de réponse'  },
-          { val: 'RSD 13', label: 'Conformité légale' },
-          { val: 'Lu–Sa',  label: 'Disponibilité'    },
-        ].map(({ val, label }) => (
-          <div class="py-10 px-6 text-center">
-            <p class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-1">{val}</p>
-            <p class="text-[10px] font-medium tracking-wide uppercase text-[#1A1A1A]/35">{label}</p>
+  <section class="py-16 px-6 md:px-10 border-b border-[#EEEEEE]">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <div>
+          <div class="inline-flex items-center gap-3 bg-[#1A4B8F]/8 border border-[#1A4B8F]/15 rounded-xl px-5 py-3.5 mb-6">
+            <svg class="w-7 h-7 text-[#1A4B8F] shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="6"/>
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+            <div>
+              <p class="text-xs font-extrabold tracking-widest text-[#1A4B8F] uppercase leading-none">Certifié COSTIC</p>
+              <p class="text-[10px] text-[#1A4B8F]/60 font-light mt-0.5">Centre d'expertise fumisterie & sécurité</p>
+            </div>
           </div>
-        ))}
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">
+            Formé aux dernières normes<br />de sécurité fumisterie.
+          </h2>
+          <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed">
+            La certification COSTIC atteste d'une formation rigoureuse aux techniques de fumisterie, à la réglementation en vigueur (NF DTU 24.1, RSD 13) et aux méthodes de diagnostic avancées. Ce n'est pas une simple attestation — c'est la garantie que votre artisan maîtrise les normes qui protègent votre famille.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4">
+          {[
+            {
+              icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+              titre: 'Maîtrise des normes NF DTU 24.1',
+              desc: 'Distances de sécurité, obligations de tubage, conformité des installations — appliquées à chaque intervention.',
+            },
+            {
+              icon: 'M15 10l4.553-2.069A1 1 0 0121 8.868V15.13a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z',
+              titre: 'Diagnostic avancé par caméra HD',
+              desc: 'Formation aux techniques d\'inspection vidéo endoscopique pour détecter fissures et anomalies invisibles à l\'œil nu.',
+            },
+            {
+              icon: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z',
+              titre: 'Prévention CO & risques incendie',
+              desc: 'Bonnes pratiques de combustion, détection des situations à risque, conseils de prévention au client après chaque intervention.',
+            },
+          ].map(({ icon, titre, desc }) => (
+            <div class="flex gap-4 bg-[#FAFAFA] rounded-xl p-4 border border-[#EEEEEE]">
+              <div class="w-9 h-9 rounded-lg bg-[#1A4B8F]/8 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4.5 h-4.5 text-[#1A4B8F]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d={icon} />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-[#1A1A1A] mb-1">{titre}</p>
+                <p class="text-xs text-[#1A1A1A]/55 font-light leading-relaxed">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </div>
   </section>
@@ -128,7 +234,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <!-- Carte 1 — Ramonage certifié -->
-        <div class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 transition-all duration-300">
+        <a href="/ramonage" class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 hover:-translate-y-1 transition-all duration-300 block">
           <!-- Photo service (remplaçable : src/assets/images/service-ramonage.jpg) -->
           <div class="aspect-[4/3] overflow-hidden bg-[#F5F5F5]">
             <Image
@@ -154,17 +260,17 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light mb-5">
               Ramonage mécanique complet de votre conduit, cheminée, insert ou poêle. <strong class="font-medium text-[#1A1A1A]/75">Certificat officiel</strong> remis à l'issue — exigé par les assurances et le RSD 13.
             </p>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] hover:gap-3 transition-all duration-200">
-              Prendre RDV
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] group-hover:gap-3 transition-all duration-200">
+              En savoir plus
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
-            </a>
+            </span>
           </div>
-        </div>
+        </a>
 
         <!-- Carte 2 — Débistrage -->
-        <div class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 transition-all duration-300">
+        <a href="/debistrage" class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 hover:-translate-y-1 transition-all duration-300 block">
           <!-- Photo service (remplaçable : src/assets/images/service-bistrage.jpg) -->
           <figure class="aspect-[4/3] overflow-hidden bg-[#F5F5F5]">
             <Image
@@ -191,17 +297,17 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light mb-5">
               Élimination des dépôts de goudron hautement inflammables. Traitement <strong class="font-medium text-[#1A1A1A]/75">chimique et mécanique</strong> pour rétablir la sécurité totale de votre installation.
             </p>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] hover:gap-3 transition-all duration-200">
-              Prendre RDV
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] group-hover:gap-3 transition-all duration-200">
+              En savoir plus
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
-            </a>
+            </span>
           </div>
-        </div>
+        </a>
 
         <!-- Carte 3 — Contrôle Technique -->
-        <div class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 transition-all duration-300">
+        <a href="/entretien-poele" class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 hover:-translate-y-1 transition-all duration-300 block">
           <!-- Photo service (remplaçable : src/assets/images/service-controle.jpg) -->
           <figure class="aspect-[4/3] overflow-hidden bg-[#F5F5F5]">
             <Image
@@ -228,16 +334,117 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light mb-5">
               Inspection complète : <strong class="font-medium text-[#1A1A1A]/75">vacuité</strong> (absence d'obstruction) et <strong class="font-medium text-[#1A1A1A]/75">étanchéité</strong> du conduit. Indispensable avant mise en service ou achat immobilier.
             </p>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] hover:gap-3 transition-all duration-200">
-              Prendre RDV
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] group-hover:gap-3 transition-all duration-200">
+              En savoir plus
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       TARIFS — Grille 3 services
+  ═══════════════════════════════════════════════ -->
+  <section id="tarifs" class="py-24 px-6 md:px-10 bg-[#FAFAFA]">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12 text-center">
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Transparence tarifaire</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A]">Nos Tarifs.</h2>
+        <p class="text-sm text-[#1A1A1A]/45 font-light mt-3 max-w-md mx-auto">
+          Certificat officiel inclus dans chaque prestation. Devis définitif confirmé avant intervention.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Ramonage -->
+        <div class="bg-white border border-[#EEEEEE] rounded-xl overflow-hidden">
+          <div class="bg-[#1A1A1A] px-6 py-5">
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100] mb-1">Ramonage certifié</p>
+            <p class="text-3xl font-extrabold text-white">75 <span class="text-lg font-semibold text-white/60">€</span></p>
+            <p class="text-xs text-white/40 font-light mt-0.5">à partir de — certificat inclus</p>
+          </div>
+          <div class="p-6">
+            {[
+              { label: 'Cheminée foyer ouvert', prix: '75 €' },
+              { label: 'Insert bois',            prix: '90 €' },
+              { label: 'Poêle à bois',           prix: '90 €' },
+              { label: 'Poêle à granulés',       prix: '110 €' },
+            ].map(({ label, prix }) => (
+              <div class="flex items-center justify-between py-2.5 border-b border-[#EEEEEE] last:border-0">
+                <span class="text-xs text-[#1A1A1A]/65 font-light">{label}</span>
+                <span class="text-xs font-bold text-[#1A1A1A]">{prix}</span>
+              </div>
+            ))}
+            <a href="/ramonage" class="mt-5 flex items-center justify-center gap-2 w-full bg-[#FFF3E0] text-[#E65100] text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-[#FFE0B2] transition-colors duration-200">
+              En savoir plus
+            </a>
+          </div>
+        </div>
+
+        <!-- Débistrage -->
+        <div class="bg-white border border-[#E65100]/30 rounded-xl overflow-hidden relative">
+          <div class="absolute top-3 right-3">
+            <span class="text-[10px] font-bold bg-[#E65100] text-white px-2.5 py-1 rounded-full uppercase tracking-wider">Urgence</span>
+          </div>
+          <div class="bg-[#E65100] px-6 py-5">
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-white/70 mb-1">Débistrage</p>
+            <p class="text-3xl font-extrabold text-white">150 <span class="text-lg font-semibold text-white/60">€</span></p>
+            <p class="text-xs text-white/60 font-light mt-0.5">à partir de — traitement complet</p>
+          </div>
+          <div class="p-6">
+            {[
+              { label: 'Traitement chimique + mécanique',   prix: 'dès 150 €' },
+              { label: 'Conduit très encrassé (2 passes)', prix: 'dès 195 €' },
+              { label: 'Diagnostic inclus',                 prix: '—' },
+              { label: 'Certificat remis à l\'issue',       prix: '—' },
+            ].map(({ label, prix }) => (
+              <div class="flex items-center justify-between py-2.5 border-b border-[#EEEEEE] last:border-0">
+                <span class="text-xs text-[#1A1A1A]/65 font-light">{label}</span>
+                <span class="text-xs font-bold text-[#1A1A1A]">{prix}</span>
+              </div>
+            ))}
+            <a href="/debistrage" class="mt-5 flex items-center justify-center gap-2 w-full bg-[#FFF3E0] text-[#E65100] text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-[#FFE0B2] transition-colors duration-200">
+              En savoir plus
+            </a>
+          </div>
+        </div>
+
+        <!-- Entretien poêle -->
+        <div class="bg-white border border-[#EEEEEE] rounded-xl overflow-hidden">
+          <div class="bg-[#1A1A1A] px-6 py-5">
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100] mb-1">Entretien poêle</p>
+            <p class="text-3xl font-extrabold text-white">90 <span class="text-lg font-semibold text-white/60">€</span></p>
+            <p class="text-xs text-white/40 font-light mt-0.5">à partir de — entretien complet</p>
+          </div>
+          <div class="p-6">
+            {[
+              { label: 'Poêle à bois (entretien complet)', prix: '90 €'  },
+              { label: 'Poêle à granulés (entretien complet)', prix: '120 €' },
+              { label: 'Ramonage conduit inclus',           prix: '✓'   },
+              { label: 'Certificat RSD 13 inclus',          prix: '✓'   },
+            ].map(({ label, prix }) => (
+              <div class="flex items-center justify-between py-2.5 border-b border-[#EEEEEE] last:border-0">
+                <span class="text-xs text-[#1A1A1A]/65 font-light">{label}</span>
+                <span class="text-xs font-bold text-[#1A1A1A]">{prix}</span>
+              </div>
+            ))}
+            <a href="/entretien-poele" class="mt-5 flex items-center justify-center gap-2 w-full bg-[#FFF3E0] text-[#E65100] text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-[#FFE0B2] transition-colors duration-200">
+              En savoir plus
             </a>
           </div>
         </div>
 
       </div>
+
+      <p class="text-center text-[11px] text-[#1A1A1A]/35 font-light mt-8">
+        Tarifs indicatifs — zone Martigues et Côte Bleue. Devis gratuit sous 24h. Modification possible après diagnostic.
+      </p>
     </div>
   </section>
 
@@ -398,7 +605,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
               </svg>
               Certifié & Assuré — Certificat remis après chaque intervention
             </div>
-            <ContactButton variant="email" />
+            <EmailButton size="md" class="w-full sm:w-auto justify-center" />
             <p class="text-sm text-[#1A1A1A]/35 flex items-center gap-2">
               <svg class="w-4 h-4 shrink-0 text-[#1A1A1A]/25" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
