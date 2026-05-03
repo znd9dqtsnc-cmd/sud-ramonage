@@ -25,12 +25,12 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Corps de Chauffe', 
         <a href="/" class="hover:text-white/70">Accueil</a><span>/</span><span class="text-white/60">Corps de Chauffe</span>
       </nav>
       <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-5">
-        Corps de Chauffe<br /><span class="text-[#D4763A]">Tous Appareils à Combustion</span>
+        Corps de Chauffe<br /><span class="text-[#2B7A78]">Tous Appareils à Combustion</span>
       </h1>
       <p class="text-base text-white/65 max-w-2xl leading-relaxed mb-8">
         Le corps de chauffe désigne l'ensemble de l'appareil qui produit la chaleur par combustion : foyer ouvert, insert, poêle à bois, poêle à granulés, chaudière. Son bon état est indissociable de celui du conduit — les deux se contrôlent ensemble.
       </p>
-      <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#D4763A] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#BE6530] transition-colors">
+      <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#2B7A78] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#1F5F5C] transition-colors">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
         06 64 72 96 00
       </a>
@@ -50,8 +50,8 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Corps de Chauffe', 
             { titre: 'Chaudière gaz/fioul', href: '/chaudieres', desc: 'Conduit de fumée soumis au RSD 13. Ramonage annuel.' },
             { titre: 'Four à pizza/restauration', href: '/restauration', desc: 'Usage intensif. Ramonage trimestriel minimum.' },
           ].map(({ titre, href, desc }) => (
-            <a href={href} class="block bg-[#FAFAFA] border border-[#EEEEEE] rounded-xl p-5 hover:border-[#D4763A]/30 hover:bg-[#FEF6EE] transition-colors group">
-              <p class="text-sm font-semibold text-[#1A1A1A] group-hover:text-[#D4763A] mb-2 transition-colors">{titre} →</p>
+            <a href={href} class="block bg-[#FAFAFA] border border-[#EEEEEE] rounded-xl p-5 hover:border-[#2B7A78]/30 hover:bg-[#F0FDFC] transition-colors group">
+              <p class="text-sm font-semibold text-[#1A1A1A] group-hover:text-[#2B7A78] mb-2 transition-colors">{titre} →</p>
               <p class="text-xs text-[#1A1A1A]/55 leading-relaxed">{desc}</p>
             </a>
           ))}
@@ -70,16 +70,16 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Corps de Chauffe', 
             'Fonctionnement des réglages d\'air (primaire/secondaire)',
           ].map(item => (
             <div class="flex gap-2 text-sm text-[#1A1A1A]/65">
-              <span class="text-[#D4763A] font-bold shrink-0">✓</span>{item}
+              <span class="text-[#2B7A78] font-bold shrink-0">✓</span>{item}
             </div>
           ))}
         </div>
       </div>
 
-      <div class="bg-[#D4763A] rounded-2xl p-8 text-white">
+      <div class="bg-[#2B7A78] rounded-2xl p-8 text-white">
         <h2 class="text-xl font-bold mb-3">Diagnostic de votre corps de chauffe</h2>
         <p class="text-sm text-white/75 mb-6">Je prends en charge tous les appareils à combustion dans les Bouches-du-Rhône. Certificat RSD 13 remis le jour même.</p>
-        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-white text-[#D4763A] text-sm font-bold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors">06 64 72 96 00</a>
+        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-white text-[#2B7A78] text-sm font-bold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors">06 64 72 96 00</a>
       </div>
     </div>
   </section>

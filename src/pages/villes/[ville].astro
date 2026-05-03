@@ -193,7 +193,7 @@ const personSchema = {
         <span>/</span>
         <span class="text-white/60">{data.nom}</span>
       </nav>
-      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#D4763A] mb-4">
+      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#2B7A78] mb-4">
         Ramonage — {data.zone}
       </p>
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
@@ -205,7 +205,7 @@ const personSchema = {
       <div class="flex flex-col sm:flex-row gap-4">
         <ContactButton variant="phone" class="w-full sm:w-auto px-8 py-3.5" />
         <span class="inline-flex items-center gap-2 text-xs text-white/35">
-          <svg class="w-4 h-4 text-[#D4763A] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-[#2B7A78] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           Intervention en {data.tempsIntervention} ({data.distance})
@@ -221,7 +221,7 @@ const personSchema = {
 
         <div class="lg:col-span-7 space-y-6">
           <div>
-            <p class="text-[11px] font-semibold tracking-widest uppercase text-[#D4763A] mb-4">Contexte local</p>
+            <p class="text-[11px] font-semibold tracking-widest uppercase text-[#2B7A78] mb-4">Contexte local</p>
             <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-5">
               Conduits & Cheminées sur le Secteur de {data.nom}.
             </h2>
@@ -243,8 +243,8 @@ const personSchema = {
 
           <!-- Note de terrain — si disponible -->
           {data.expertiseTerrain && (
-            <div class="bg-[#FAFAFA] border-l-4 border-[#D4763A] rounded-r-xl px-6 py-5 mt-2">
-              <p class="text-[10px] font-semibold tracking-widest uppercase text-[#D4763A] mb-2">Ce que je vois sur le terrain ici</p>
+            <div class="bg-[#FAFAFA] border-l-4 border-[#2B7A78] rounded-r-xl px-6 py-5 mt-2">
+              <p class="text-[10px] font-semibold tracking-widest uppercase text-[#2B7A78] mb-2">Ce que je vois sur le terrain ici</p>
               <p class="text-sm text-[#1A1A1A]/70 font-light leading-relaxed italic">
                 {data.expertiseTerrain}
               </p>
@@ -254,7 +254,7 @@ const personSchema = {
 
         <!-- Réassurance latérale -->
         <aside class="lg:col-span-5">
-          <div class="bg-[#FEF6EE] rounded-xl p-7 space-y-5">
+          <div class="bg-[#F0FDFC] rounded-xl p-7 space-y-5">
             <p class="text-sm font-bold text-[#1A1A1A]">Intervention à {data.nom}</p>
             {[
               { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', txt: `Délai : ${data.tempsIntervention}` },
@@ -264,7 +264,7 @@ const personSchema = {
             ].map(({ icon, txt }) => (
               <div class="flex items-center gap-3">
                 <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center shrink-0">
-                  <svg class="w-4 h-4 text-[#D4763A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 text-[#2B7A78]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icon} />
                   </svg>
                 </div>
@@ -285,7 +285,7 @@ const personSchema = {
   <section class="py-16 px-6 md:px-10 bg-[#1A1A1A]">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-xl mb-10">
-        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#D4763A] mb-3">Diagnostic expert</p>
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#2B7A78] mb-3">Diagnostic expert</p>
         <h2 class="text-xl md:text-2xl font-extrabold tracking-tight text-white mb-3">
           Ce que je trouve le plus souvent à {data.nom}.
         </h2>
@@ -297,7 +297,7 @@ const personSchema = {
         {casAffichés.map((cas, i) => (
           <div class="bg-white/5 border border-white/8 rounded-xl p-6 space-y-3">
             <div class="flex items-start justify-between gap-3">
-              <span class="text-[10px] font-bold text-[#D4763A] font-mono">0{i + 1}</span>
+              <span class="text-[10px] font-bold text-[#2B7A78] font-mono">0{i + 1}</span>
               {cas.dtu && (
                 <span class="text-[9px] font-mono text-white/20 bg-white/5 rounded px-2 py-1 shrink-0">{cas.dtu}</span>
               )}
@@ -307,8 +307,8 @@ const personSchema = {
           </div>
         ))}
       </div>
-      <div class="mt-8 flex items-start gap-4 bg-[#D4763A]/10 border border-[#D4763A]/20 rounded-xl p-5">
-        <svg class="w-5 h-5 text-[#D4763A] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="mt-8 flex items-start gap-4 bg-[#2B7A78]/10 border border-[#2B7A78]/20 rounded-xl p-5">
+        <svg class="w-5 h-5 text-[#2B7A78] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
         <p class="text-xs text-white/60 font-light leading-relaxed">
@@ -321,7 +321,7 @@ const personSchema = {
   <!-- ═══ GALERIE D'INTERVENTION ═══ -->
   <section class="py-16 px-6 md:px-10 bg-[#FAFAFA]">
     <div class="max-w-6xl mx-auto">
-      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#D4763A] mb-4">Galerie</p>
+      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#2B7A78] mb-4">Galerie</p>
       <h2 class="text-xl md:text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-8">
         Chantiers & Interventions — {data.nom} et ses Environs.
       </h2>
@@ -373,7 +373,7 @@ const personSchema = {
   <!-- ═══ SERVICES ═══ -->
   <section class="py-20 px-6 md:px-10">
     <div class="max-w-6xl mx-auto">
-      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#D4763A] mb-4">Prestations</p>
+      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#2B7A78] mb-4">Prestations</p>
       <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-10">
         Nos Services à {data.nom}.
       </h2>
@@ -384,9 +384,9 @@ const personSchema = {
           { href: '/entretien-poele',   num: '03', titre: 'Entretien Poêle',       desc: 'Maintenance complète de votre poêle à bois ou à granulés — vérification des joints, vitre, étanchéité.' },
           { href: '/inspection-camera', num: '04', titre: 'Inspection Caméra',     desc: 'Diagnostic HD du conduit. Rapport écrit joint au certificat — exigé pour les conduits de plus de 30 ans.' },
         ].map(({ href, num, titre, desc }) => (
-          <a href={href} class="group bg-white border border-[#EEEEEE] rounded-xl p-6 hover:border-[#D4763A]/30 hover:shadow-md transition-all duration-200">
-            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#D4763A] mb-3">{num}</p>
-            <h3 class="text-base font-bold text-[#1A1A1A] mb-2 group-hover:text-[#D4763A] transition-colors duration-200">{titre}</h3>
+          <a href={href} class="group bg-white border border-[#EEEEEE] rounded-xl p-6 hover:border-[#2B7A78]/30 hover:shadow-md transition-all duration-200">
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#2B7A78] mb-3">{num}</p>
+            <h3 class="text-base font-bold text-[#1A1A1A] mb-2 group-hover:text-[#2B7A78] transition-colors duration-200">{titre}</h3>
             <p class="text-sm text-[#1A1A1A]/50 font-light">{desc}</p>
           </a>
         ))}
@@ -398,14 +398,14 @@ const personSchema = {
   <section class="py-20 px-6 md:px-10 bg-[#FAFAFA]">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-3xl">
-        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#D4763A] mb-4">Réglementation</p>
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#2B7A78] mb-4">Réglementation</p>
         <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-5">
           Obligation de Ramonage à {data.nom} (RSD 13).
         </h2>
         <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed mb-6">
           {data.rsdContexte}
         </p>
-        <div class="bg-[#FEF6EE] border-l-4 border-[#D4763A] rounded-r-xl px-6 py-5">
+        <div class="bg-[#F0FDFC] border-l-4 border-[#2B7A78] rounded-r-xl px-6 py-5">
           <p class="text-sm font-semibold text-[#1A1A1A] mb-1">Rappel légal</p>
           <p class="text-sm text-[#1A1A1A]/65 font-light leading-relaxed">
             En cas de sinistre — incendie de conduit ou intoxication au CO — votre assureur peut refuser la prise en charge sans certificat de ramonage valide. Sud Ramonage vous remet ce document immédiatement après chaque intervention, signé et conforme au Règlement Sanitaire Départemental des Bouches-du-Rhône.
@@ -419,7 +419,7 @@ const personSchema = {
   <section class="py-16 px-6 md:px-10 bg-[#1A1A1A]">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-2xl mx-auto text-center">
-        <svg class="w-8 h-8 text-[#D4763A] mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+        <svg class="w-8 h-8 text-[#2B7A78] mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
         </svg>
         <blockquote class="text-lg text-white/80 font-light italic leading-relaxed mb-6">
@@ -436,12 +436,12 @@ const personSchema = {
     <div class="max-w-6xl mx-auto">
       <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-2xl p-8 flex flex-col md:flex-row items-start md:items-center gap-8">
         <div class="w-16 h-16 rounded-2xl bg-[#1A1A1A] flex items-center justify-center shrink-0">
-          <svg class="w-8 h-8 text-[#D4763A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-8 h-8 text-[#2B7A78]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
           </svg>
         </div>
         <div class="flex-1">
-          <p class="text-[10px] font-semibold tracking-widest uppercase text-[#D4763A] mb-1">Votre artisan</p>
+          <p class="text-[10px] font-semibold tracking-widest uppercase text-[#2B7A78] mb-1">Votre artisan</p>
           <h3 class="text-lg font-extrabold text-[#1A1A1A] mb-1">Le gérant — Sud Ramonage, Martigues</h3>
           <p class="text-sm text-[#1A1A1A]/55 font-light leading-relaxed mb-4">
             Artisan ramoneur basé à Martigues, certifié <strong class="text-[#1A1A1A]">COSTIC</strong> et qualifié <strong class="text-[#1A1A1A]">Qualibat 6521</strong>. Je travaille seul, sans sous-traitance — c'est moi qui interviens chez vous, moi qui établis le diagnostic et moi qui signe le certificat. Je connais personnellement chaque secteur de ma zone d'intervention, des conduits du bord de mer aux cheminées des bastides du pays d'Aix.
@@ -465,31 +465,31 @@ const personSchema = {
     <div class="max-w-6xl mx-auto">
       <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-4">Nos prestations à {data.nom}</p>
       <div class="flex flex-wrap gap-3">
-        <a href="/ramonage" class="inline-flex items-center gap-2 bg-white border border-[#D4763A]/20 rounded-lg px-4 py-2.5 text-xs font-semibold text-[#D4763A] hover:bg-[#FEF6EE] transition-all duration-200">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#D4763A] shrink-0"></span>
+        <a href="/ramonage" class="inline-flex items-center gap-2 bg-white border border-[#2B7A78]/20 rounded-lg px-4 py-2.5 text-xs font-semibold text-[#2B7A78] hover:bg-[#F0FDFC] transition-all duration-200">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#2B7A78] shrink-0"></span>
           Ramonage Certifié RSD 13
         </a>
-        <a href="/debistrage" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#D4763A]/30 hover:text-[#D4763A] transition-all duration-200">
+        <a href="/debistrage" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#2B7A78]/30 hover:text-[#2B7A78] transition-all duration-200">
           <span class="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]/20 shrink-0"></span>
           Débistrage Conduit
         </a>
-        <a href="/inspection-camera" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#D4763A]/30 hover:text-[#D4763A] transition-all duration-200">
+        <a href="/inspection-camera" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#2B7A78]/30 hover:text-[#2B7A78] transition-all duration-200">
           <span class="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]/20 shrink-0"></span>
           Inspection Caméra HD
         </a>
-        <a href="/entretien-poele" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#D4763A]/30 hover:text-[#D4763A] transition-all duration-200">
+        <a href="/entretien-poele" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#2B7A78]/30 hover:text-[#2B7A78] transition-all duration-200">
           <span class="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]/20 shrink-0"></span>
           Entretien Poêle
         </a>
-        <a href="/tubage" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#D4763A]/30 hover:text-[#D4763A] transition-all duration-200">
+        <a href="/tubage" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#2B7A78]/30 hover:text-[#2B7A78] transition-all duration-200">
           <span class="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]/20 shrink-0"></span>
           Tubage Inox NF DTU 24.1
         </a>
-        <a href="/normes" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#D4763A]/30 hover:text-[#D4763A] transition-all duration-200">
+        <a href="/normes" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#2B7A78]/30 hover:text-[#2B7A78] transition-all duration-200">
           <span class="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]/20 shrink-0"></span>
           Normes & Sécurité
         </a>
-        <a href="/" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#D4763A]/30 hover:text-[#D4763A] transition-all duration-200">
+        <a href="/" class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#2B7A78]/30 hover:text-[#2B7A78] transition-all duration-200">
           <span class="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]/20 shrink-0"></span>
           Accueil Sud Ramonage
         </a>
@@ -503,12 +503,12 @@ const personSchema = {
       <div class="max-w-6xl mx-auto">
         <div class="flex items-end justify-between mb-8">
           <div>
-            <p class="text-[11px] font-semibold tracking-widest uppercase text-[#D4763A] mb-2">Interventions récentes</p>
+            <p class="text-[11px] font-semibold tracking-widest uppercase text-[#2B7A78] mb-2">Interventions récentes</p>
             <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A]">
               Dernières Interventions à {data.nom}.
             </h2>
           </div>
-          <a href="/realisations" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-[#D4763A] hover:underline">
+          <a href="/realisations" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-[#2B7A78] hover:underline">
             Voir toutes les réalisations
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -520,18 +520,18 @@ const personSchema = {
             const cfg = typeConfig[r.type];
             const dateFormatted = new Date(r.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
             return (
-              <a href={`/realisations/${r.slug}`} class="group bg-white border border-[#EEEEEE] rounded-2xl p-6 hover:border-[#D4763A]/30 hover:shadow-md transition-all duration-200 flex flex-col gap-4">
+              <a href={`/realisations/${r.slug}`} class="group bg-white border border-[#EEEEEE] rounded-2xl p-6 hover:border-[#2B7A78]/30 hover:shadow-md transition-all duration-200 flex flex-col gap-4">
                 <div class="flex items-start justify-between gap-3">
                   <span class={`inline-flex items-center px-2.5 py-1 rounded-md text-[10px] font-semibold ${cfg.color} ${cfg.bg} border ${cfg.border}`}>{cfg.label}</span>
                   <span class="text-[10px] text-[#1A1A1A]/30 font-mono shrink-0">{r.ref}</span>
                 </div>
                 <div>
-                  <h3 class="text-sm font-bold text-[#1A1A1A] leading-snug mb-2 group-hover:text-[#D4763A] transition-colors duration-200">{r.titre}</h3>
+                  <h3 class="text-sm font-bold text-[#1A1A1A] leading-snug mb-2 group-hover:text-[#2B7A78] transition-colors duration-200">{r.titre}</h3>
                   <p class="text-xs text-[#1A1A1A]/50 font-light leading-relaxed">{r.excerpt}</p>
                 </div>
                 <div class="flex items-center justify-between pt-3 border-t border-[#EEEEEE]">
                   <span class="text-[10px] text-[#1A1A1A]/30">{r.duree} · {dateFormatted}</span>
-                  <span class="text-[11px] font-semibold text-[#D4763A] group-hover:underline">Voir le rapport →</span>
+                  <span class="text-[11px] font-semibold text-[#2B7A78] group-hover:underline">Voir le rapport →</span>
                 </div>
               </a>
             );
@@ -542,7 +542,7 @@ const personSchema = {
   )}
 
   <!-- ═══ CTA FINAL ═══ -->
-  <section class="py-20 px-6 md:px-10 bg-[#FEF6EE]">
+  <section class="py-20 px-6 md:px-10 bg-[#F0FDFC]">
     <div class="max-w-6xl mx-auto text-center">
       <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">
         Besoin d'un Ramonage à {data.nom} ?
