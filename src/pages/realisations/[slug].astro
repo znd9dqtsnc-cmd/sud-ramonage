@@ -9,7 +9,7 @@ export function getStaticPaths() {
 
 const { r } = Astro.props;
 const cfg = typeConfig[r.type];
-const siteUrl = 'https://sud-ramonage.vercel.app';
+const siteUrl = 'https://www.sud-ramonage.fr';
 
 const dateFormatted = new Date(r.date).toLocaleDateString('fr-FR', {
   day: 'numeric', month: 'long', year: 'numeric'

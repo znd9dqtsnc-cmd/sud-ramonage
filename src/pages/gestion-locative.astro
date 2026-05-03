@@ -95,7 +95,7 @@ const tarifs = [
     lotMin: 5,
     mensuel: '14,90 €',
     annuel: '178,80 €',
-    color: 'border-[#2B7A78]',
+    color: 'border-[#E65100]',
     badge: 'Recommandé agences',
     inclus: [
       'Ramonage annuel par lot',
@@ -131,8 +131,8 @@ const tarifs = [
     </div>
 
     <!-- Glows -->
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#9A3412] opacity-25 rounded-full blur-[120px] pointer-events-none" aria-hidden="true"></div>
-    <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-[#2B7A78] opacity-15 rounded-full blur-[120px] pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#1A4B8F] opacity-25 rounded-full blur-[120px] pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-[#E65100] opacity-15 rounded-full blur-[120px] pointer-events-none" aria-hidden="true"></div>
 
     <div class="relative max-w-6xl mx-auto">
       <nav class="flex items-center gap-2 text-xs text-white/30 mb-10" aria-label="Fil d'Ariane">
@@ -143,14 +143,14 @@ const tarifs = [
 
       <div class="grid lg:grid-cols-2 gap-14 items-center">
         <div>
-          <div class="inline-flex items-center gap-2 bg-[#9A3412]/20 border border-[#9A3412]/30 rounded-full px-3 py-1.5 mb-6">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#9A3412] animate-pulse"></span>
+          <div class="inline-flex items-center gap-2 bg-[#1A4B8F]/20 border border-[#1A4B8F]/30 rounded-full px-3 py-1.5 mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#1A4B8F] animate-pulse"></span>
             <span class="text-[10px] font-bold tracking-widest uppercase text-[#6B9FD4]">Bailleurs & Agences</span>
           </div>
 
           <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-6">
             Zéro gestion.<br />
-            <span class="text-[#2B7A78]">Conformité garantie.</span>
+            <span class="text-[#E65100]">Conformité garantie.</span>
           </h1>
 
           <p class="text-base text-white/55 font-light leading-relaxed mb-8 max-w-lg">
@@ -160,7 +160,7 @@ const tarifs = [
           <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <a
               href="mailto:contact@sud-ramonage.fr?subject=Devis%20Contrat%20S%C3%A9curit%C3%A9%20Mensualise%20%E2%80%94%20[NOM%20AGENCE]&body=Bonjour%2C%0A%0AJe%20g%C3%A8re%20un%20parc%20de%20____%20lots%20%C3%A9quip%C3%A9s%20de%20ch%C3%A9min%C3%A9e%2Fpoele.%0AJe%20souhaite%20un%20devis%20pour%20le%20Contrat%20de%20S%C3%A9curit%C3%A9%20Mensualise.%0A%0APaolo%20%2F%20[Agence]"
-              class="inline-flex items-center gap-2 bg-[#2B7A78] text-white text-sm font-bold px-6 py-3.5 rounded-xl hover:bg-[#1F5F5C] transition-colors duration-200"
+              class="inline-flex items-center gap-2 bg-[#E65100] text-white text-sm font-bold px-6 py-3.5 rounded-xl hover:bg-[#BF360C] transition-colors duration-200"
             >
               Demander un devis agence
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
@@ -194,7 +194,7 @@ const tarifs = [
 
       <div class="grid lg:grid-cols-2 gap-16 items-start">
         <div>
-          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#2B7A78] mb-4">Cadre légal</p>
+          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Cadre légal</p>
           <h2 class="text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-6">
             Le bailleur porte la responsabilité — même si c'est le locataire qui paie.
           </h2>
@@ -232,8 +232,8 @@ const tarifs = [
         </div>
 
         <!-- Simulateur lots -->
-        <div class="bg-[#9A3412] rounded-2xl p-8 text-white">
-          <p class="text-[10px] font-bold tracking-widest uppercase text-[#2B7A78] mb-2">Simulateur</p>
+        <div class="bg-[#1A1A1A] rounded-2xl p-8 text-white">
+          <p class="text-[10px] font-bold tracking-widest uppercase text-[#E65100] mb-2">Simulateur</p>
           <h3 class="text-xl font-extrabold mb-1">Votre coût annuel</h3>
           <p class="text-xs text-white/40 mb-8">par abonnement vs interventions ponctuelles</p>
 
@@ -246,7 +246,7 @@ const tarifs = [
                 min="3"
                 max="50"
                 value="10"
-                class="flex-1 accent-[#2B7A78]"
+                class="flex-1 accent-[#E65100]"
               />
               <input
                 id="nb-lots-val"
@@ -265,10 +265,10 @@ const tarifs = [
               <p id="cout-ponctuel" class="text-2xl font-extrabold text-white">1 200 €</p>
               <p class="text-[10px] text-white/30 mt-1">≈ 120 €/lot/an</p>
             </div>
-            <div class="bg-[#2B7A78]/15 border border-[#2B7A78]/30 rounded-xl p-4">
-              <p class="text-[10px] text-[#2B7A78]/80 mb-1">Pack Essentiel</p>
-              <p id="cout-abonnement" class="text-2xl font-extrabold text-[#2B7A78]">900 €</p>
-              <p class="text-[10px] text-[#2B7A78]/50 mt-1">7,50 €/lot/mois</p>
+            <div class="bg-[#E65100]/15 border border-[#E65100]/30 rounded-xl p-4">
+              <p class="text-[10px] text-[#E65100]/80 mb-1">Pack Essentiel</p>
+              <p id="cout-abonnement" class="text-2xl font-extrabold text-[#E65100]">900 €</p>
+              <p class="text-[10px] text-[#E65100]/50 mt-1">7,50 €/lot/mois</p>
             </div>
           </div>
 
@@ -282,7 +282,7 @@ const tarifs = [
 
           <a
             href="mailto:contact@sud-ramonage.fr?subject=Devis%20Contrat%20S%C3%A9curit%C3%A9%20Mensualise&body=Nombre%20de%20lots%20:%20"
-            class="block text-center bg-[#2B7A78] text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-[#1F5F5C] transition-colors duration-200"
+            class="block text-center bg-[#E65100] text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-[#BF360C] transition-colors duration-200"
           >
             Obtenir mon devis personnalisé
           </a>
@@ -297,7 +297,7 @@ const tarifs = [
     <div class="max-w-5xl mx-auto">
 
       <div class="text-center mb-14">
-        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#2B7A78] mb-3">Contrat de Sécurité Mensualisé</p>
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-3">Contrat de Sécurité Mensualisé</p>
         <h2 class="text-3xl font-extrabold tracking-tight text-[#1A1A1A]">Deux formules, zéro contrainte.</h2>
         <p class="text-sm text-[#1A1A1A]/45 font-light mt-3">Tarifs par lot, facturés mensuellement. Engagement annuel.</p>
       </div>
@@ -307,7 +307,7 @@ const tarifs = [
           <div class={`bg-white border-2 ${pack.color} rounded-2xl p-8 relative`}>
             {pack.badge && (
               <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                <span class="bg-[#2B7A78] text-white text-[10px] font-bold px-3 py-1 rounded-full">{pack.badge}</span>
+                <span class="bg-[#E65100] text-white text-[10px] font-bold px-3 py-1 rounded-full">{pack.badge}</span>
               </div>
             )}
 
@@ -336,7 +336,7 @@ const tarifs = [
 
             <a
               href="mailto:contact@sud-ramonage.fr?subject=Devis%20Contrat%20S%C3%A9curit%C3%A9%20—%20{pack.nom}"
-              class={`block text-center text-sm font-bold px-5 py-3 rounded-xl transition-colors duration-200 ${pack.badge ? 'bg-[#2B7A78] text-white hover:bg-[#1F5F5C]' : 'bg-[#1A1A1A]/5 text-[#1A1A1A] hover:bg-[#1A1A1A]/10'}`}
+              class={`block text-center text-sm font-bold px-5 py-3 rounded-xl transition-colors duration-200 ${pack.badge ? 'bg-[#E65100] text-white hover:bg-[#BF360C]' : 'bg-[#1A1A1A]/5 text-[#1A1A1A] hover:bg-[#1A1A1A]/10'}`}
             >
               Demander ce devis
             </a>
@@ -354,7 +354,7 @@ const tarifs = [
     <div class="max-w-6xl mx-auto">
 
       <div class="text-center mb-14">
-        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#2B7A78] mb-3">Comment ça fonctionne</p>
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-3">Comment ça fonctionne</p>
         <h2 class="text-3xl font-extrabold tracking-tight text-[#1A1A1A]">Zéro appel de votre part. Tout est géré.</h2>
       </div>
 
@@ -382,8 +382,8 @@ const tarifs = [
           },
         ].map(step => (
           <div class="relative">
-            <div class="w-10 h-10 rounded-2xl bg-[#2B7A78]/10 flex items-center justify-center mb-4">
-              <span class="text-xs font-extrabold text-[#2B7A78]">{step.num}</span>
+            <div class="w-10 h-10 rounded-2xl bg-[#E65100]/10 flex items-center justify-center mb-4">
+              <span class="text-xs font-extrabold text-[#E65100]">{step.num}</span>
             </div>
             <h3 class="text-sm font-bold text-[#1A1A1A] mb-2">{step.titre}</h3>
             <p class="text-xs text-[#1A1A1A]/50 font-light leading-relaxed">{step.texte}</p>
@@ -439,20 +439,20 @@ const tarifs = [
             cta: 'Contacter →',
           },
         ].map(profil => (
-          <div class="bg-white border border-[#EEEEEE] rounded-2xl p-7 hover:shadow-lg hover:border-[#2B7A78]/20 transition-all duration-300">
+          <div class="bg-white border border-[#EEEEEE] rounded-2xl p-7 hover:shadow-lg hover:border-[#E65100]/20 transition-all duration-300">
             <h3 class="text-base font-extrabold text-[#1A1A1A] mb-1">{profil.titre}</h3>
             <p class="text-[10px] text-[#1A1A1A]/35 mb-5 font-light italic">{profil.exemples}</p>
             <ul class="space-y-2.5 mb-6">
               {profil.avantages.map(av => (
                 <li class="flex items-start gap-2 text-xs text-[#1A1A1A]/65">
-                  <svg class="w-3.5 h-3.5 text-[#2B7A78] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <svg class="w-3.5 h-3.5 text-[#E65100] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                   {av}
                 </li>
               ))}
             </ul>
             <a
               href="mailto:contact@sud-ramonage.fr?subject=Contrat%20S%C3%A9curit%C3%A9%20—%20{profil.titre}"
-              class="text-xs font-bold text-[#2B7A78] hover:underline"
+              class="text-xs font-bold text-[#E65100] hover:underline"
             >
               {profil.cta}
             </a>
@@ -490,7 +490,7 @@ const tarifs = [
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
           href="mailto:contact@sud-ramonage.fr?subject=Devis%20Contrat%20S%C3%A9curit%C3%A9%20Mensualise%20%E2%80%94%20[NOM%20AGENCE]"
-          class="inline-flex items-center gap-2 bg-[#2B7A78] text-white text-sm font-bold px-7 py-4 rounded-xl hover:bg-[#1F5F5C] transition-colors duration-200"
+          class="inline-flex items-center gap-2 bg-[#E65100] text-white text-sm font-bold px-7 py-4 rounded-xl hover:bg-[#BF360C] transition-colors duration-200"
         >
           Obtenir un devis
         </a>

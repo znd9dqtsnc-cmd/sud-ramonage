@@ -34,6 +34,26 @@ const businessSchema = {
   url: siteUrl,
   telephone: '+33664729600',
   email: 'majeo@ik.me',
+  taxID: 'FR-SIRET-A-RENSEIGNER',
+  identifier: {
+    '@type': 'PropertyValue',
+    name: 'SIRET',
+    value: 'À renseigner',
+  },
+  hasCredential: [
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Certification COSTIC — Fumisterie et conduits de fumée',
+      credentialCategory: 'Certification professionnelle',
+      recognizedBy: { '@type': 'Organization', name: 'COSTIC', url: 'https://www.costic.com' },
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Qualibat 6521 — Conduits de fumée et ventilation',
+      credentialCategory: 'Qualification professionnelle',
+      recognizedBy: { '@type': 'Organization', name: 'Qualibat', url: 'https://www.qualibat.com' },
+    },
+  ],
   logo: `${siteUrl}/favicon.svg`,
   image: ogImageUrl,
   address: {
@@ -53,7 +73,7 @@ const businessSchema = {
     '@type': 'Brand',
     name: 'Sud Ramonage',
   },
-  hasMap: 'https://maps.app.goo.gl/sud-ramonage-martigues',
+  hasMap: 'https://www.google.com/maps/search/Sud+Ramonage+31+chemin+des+tamaris+13500+Martigues',
   serviceArea: {
     '@type': 'GeoCircle',
     geoMidpoint: {
@@ -83,39 +103,103 @@ const businessSchema = {
   currenciesAccepted: 'EUR',
   paymentAccepted: 'Cash, Chèque, Carte bancaire',
   sameAs: [
+    // ── Autorités normatives (triangulation sémantique) ──────────────────────
+    'https://www.afnor.org/',
+    'https://www.ademe.fr/',
+    'https://www.costic.com/',
+    'https://www.qualibat.com/',
+    // ── Portails officiels État ───────────────────────────────────────────────
+    'https://www.service-public.fr/particuliers/vosdroits/F20028',
+    'https://www.ecologie.gouv.fr/renovation-energetique',
+    'https://france-renov.gouv.fr/',
+    // ── Références encyclopédiques ────────────────────────────────────────────
     'https://fr.wikipedia.org/wiki/Ramonage',
     'https://fr.wikipedia.org/wiki/R%C3%A8glement_sanitaire_d%C3%A9partemental',
-    'https://www.service-public.fr/particuliers/vosdroits/F20028',
+    'https://fr.wikipedia.org/wiki/Fumisterie_(technique)',
+  ],
+  mentions: [
+    // ── Textes légaux opposables (ancrage juridique) ──────────────────────────
+    {
+      '@type': 'Legislation',
+      name: 'Règlement Sanitaire Départemental type — obligation de ramonage',
+      url: 'https://www.service-public.fr/particuliers/vosdroits/F20028',
+      legislationIdentifier: 'Arrêté préfectoral RSD — Article 31',
+      jurisdiction: { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
+    },
+    {
+      '@type': 'Legislation',
+      name: 'Décret n° 2023-641 du 20 juillet 2023 — entretien des appareils à combustion',
+      url: 'https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047844681',
+      legislationIdentifier: 'Décret 2023-641',
+      jurisdiction: { '@type': 'Country', name: 'France' },
+    },
+    {
+      '@type': 'Legislation',
+      name: 'Décret n°87-712 du 26 août 1987 relatif aux réparations locatives',
+      url: 'https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000874276',
+      legislationIdentifier: 'Décret 87-712',
+      jurisdiction: { '@type': 'Country', name: 'France' },
+    },
+    {
+      '@type': 'Legislation',
+      name: 'Code de la construction — Article R131-1 : entretien des appareils à combustion',
+      url: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006896445',
+      legislationIdentifier: 'CCH Art. R131-1',
+    },
+    {
+      '@type': 'GovernmentService',
+      name: 'Obligations d\'entretien des conduits de fumée — Service-Public.fr',
+      url: 'https://www.service-public.fr/particuliers/vosdroits/F20028',
+      provider: { '@type': 'GovernmentOrganization', name: 'Direction de l\'information légale et administrative' },
+    },
+    {
+      '@type': 'TechArticle',
+      name: 'NF DTU 24.1 — Travaux de fumisterie : conduits de fumée associés aux appareils à combustion',
+      url: 'https://www.afnor.org/',
+      about: { '@type': 'Thing', name: 'Fumisterie — conduits de fumée NF DTU 24.1' },
+    },
   ],
   knowsAbout: [
     {
       '@type': 'Thing',
       name: 'Ramonage',
-      description: 'Nettoyage professionnel des conduits de fumée par voie mécanique',
+      description: 'Nettoyage professionnel des conduits de fumée par voie mécanique — élimination bistre, suie, calcin',
       url: 'https://fr.wikipedia.org/wiki/Ramonage',
     },
     {
       '@type': 'Thing',
       name: 'Fumisterie',
-      description: 'Installation, entretien et contrôle des appareils à combustion et conduits de fumée',
+      description: 'Installation, entretien et contrôle des appareils à combustion et conduits de fumée — NF DTU 24.1',
       url: 'https://fr.wikipedia.org/wiki/Fumisterie_(technique)',
     },
     {
       '@type': 'Thing',
+      name: 'Bouches-du-Rhône',
+      description: 'Département 13 — zone d\'intervention principale Sud Ramonage, RSD 13 applicable',
+      url: 'https://fr.wikipedia.org/wiki/Bouches-du-Rh%C3%B4ne',
+    },
+    {
+      '@type': 'Thing',
+      name: 'Bistre (dépôt)',
+      description: 'Dépôt de goudron hautement inflammable formé dans les conduits lors d\'une combustion incomplète',
+      url: 'https://fr.wikipedia.org/wiki/Ramonage',
+    },
+    {
+      '@type': 'Thing',
       name: 'Sécurité incendie',
-      description: 'Prévention des incendies de conduit par entretien et ramonage régulier',
+      description: 'Prévention des incendies de conduit — bistre, calcin, obstruction',
       url: 'https://fr.wikipedia.org/wiki/S%C3%A9curit%C3%A9_incendie',
     },
     {
       '@type': 'Thing',
       name: 'Intoxication au monoxyde de carbone',
-      description: 'Détection et prévention des intoxications au CO par entretien des conduits de fumée',
+      description: 'Prévention des intoxications au CO par entretien des conduits de fumée',
       url: 'https://fr.wikipedia.org/wiki/Intoxication_au_monoxyde_de_carbone',
     },
     {
       '@type': 'Thing',
       name: 'Règlement Sanitaire Départemental',
-      description: 'Conformité RSD 13 — obligation légale de ramonage annuel dans les Bouches-du-Rhône',
+      description: 'RSD 13 — obligation légale de ramonage annuel dans les Bouches-du-Rhône',
       url: 'https://fr.wikipedia.org/wiki/R%C3%A8glement_sanitaire_d%C3%A9partemental',
     },
   ],
@@ -161,6 +245,57 @@ const businessSchema = {
       },
     ],
   },
+};
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${siteUrl}/#gerant`,
+  name: 'Le gérant — Sud Ramonage',
+  jobTitle: 'Artisan ramoneur certifié COSTIC',
+  worksFor: {
+    '@type': 'HomeAndConstructionBusiness',
+    '@id': `${siteUrl}/#business`,
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Martigues',
+    postalCode: '13500',
+    addressRegion: 'Bouches-du-Rhône',
+    addressCountry: 'FR',
+  },
+  knowsAbout: [
+    'Ramonage de cheminée — NF DTU 24.1 P1-1',
+    'Fumisterie — NF EN 1443',
+    'Conduits de fumée — NF EN 1856-1',
+    'Inserts et foyers fermés — NF EN 13229',
+    'Diagnostic conduit — endoscope et caméra d\'inspection',
+    'Règlement Sanitaire Départemental 13 (RSD 13)',
+    'Débuage et débistrage conduit de fumée',
+    'Entretien poêle à bois et poêle à granulés',
+  ],
+  hasCredential: [
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Certification COSTIC — Fumisterie et conduits de fumée',
+      credentialCategory: 'Certification professionnelle',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'COSTIC',
+        url: 'https://www.costic.com',
+      },
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Qualibat 6521 — Conduits de fumée et ventilation',
+      credentialCategory: 'Qualification professionnelle',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'Qualibat',
+        url: 'https://www.qualibat.com',
+      },
+    },
+  ],
 };
 
 const breadcrumbSchema = breadcrumbs ? {
@@ -211,6 +346,9 @@ const breadcrumbSchema = breadcrumbs ? {
 
 <!-- JSON-LD Business -->
 <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+
+<!-- JSON-LD Person (gérant — E-E-A-T) -->
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
 <!-- JSON-LD Breadcrumb -->
 {breadcrumbSchema && (

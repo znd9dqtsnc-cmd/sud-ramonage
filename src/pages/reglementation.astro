@@ -20,17 +20,17 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Aide & Réglementat
   pageSchema={faqSchema}
 >
 
-  <section class="bg-gradient-to-br from-[#1A1A1A] to-[#9A3412] text-white pt-28 pb-16">
+  <section class="bg-gradient-to-br from-[#1A1A1A] to-[#1A4B8F] text-white pt-28 pb-16">
     <div class="max-w-4xl mx-auto px-6 md:px-10">
       <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-white/40 mb-6">
         <a href="/" class="hover:text-white/70">Accueil</a><span>/</span><span class="text-white/60">Aide & Réglementation</span>
       </nav>
       <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-3 py-1.5 text-[11px] text-white/70 mb-5">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#2B7A78]"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#E65100]"></span>
         Savoir & Transparence
       </div>
       <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-5">
-        Aide & Réglementation<br /><span class="text-[#2B7A78]">Guide des Obligations RSD 13</span>
+        Aide & Réglementation<br /><span class="text-[#E65100]">Guide des Obligations RSD 13</span>
       </h1>
       <p class="text-base text-white/65 max-w-2xl leading-relaxed">
         Tout ce que vous devez savoir sur les obligations légales de ramonage dans les Bouches-du-Rhône : textes de loi, fréquences, sanctions, certificats, assurances.
@@ -52,7 +52,7 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Aide & Réglementat
             { titre: 'Code des assurances — Art. L.113-1', texte: 'Les polices d\'assurance habitation peuvent légalement exclure la garantie incendie en l\'absence de preuve d\'entretien régulier des conduits. Le certificat de ramonage est la preuve exigée.' },
           ].map(({ titre, texte }) => (
             <div class="flex gap-4 p-5 bg-[#FAFAFA] border border-[#EEEEEE] rounded-xl">
-              <div class="w-2 h-2 rounded-full bg-[#9A3412] mt-2 shrink-0"></div>
+              <div class="w-2 h-2 rounded-full bg-[#1A4B8F] mt-2 shrink-0"></div>
               <div>
                 <p class="text-sm font-bold text-[#1A1A1A] mb-2">{titre}</p>
                 <p class="text-sm text-[#1A1A1A]/60 leading-relaxed">{texte}</p>
@@ -68,7 +68,7 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Aide & Réglementat
         <div class="overflow-x-auto">
           <table class="w-full text-sm border-collapse">
             <thead>
-              <tr class="bg-[#1E293B] text-white">
+              <tr class="bg-[#1A1A1A] text-white">
                 <th class="text-left p-4 text-xs font-semibold rounded-tl-xl">Type d'appareil</th>
                 <th class="text-left p-4 text-xs font-semibold">Fréquence minimale</th>
                 <th class="text-left p-4 text-xs font-semibold rounded-tr-xl">Recommandation COSTIC</th>
@@ -86,7 +86,7 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Aide & Réglementat
               ].map(({ appareil, mini, costic }, i) => (
                 <tr class={i % 2 === 0 ? 'bg-white' : 'bg-[#FAFAFA]'}>
                   <td class="p-4 text-xs text-[#1A1A1A] border-b border-[#EEEEEE]">{appareil}</td>
-                  <td class="p-4 text-xs font-semibold text-[#2B7A78] border-b border-[#EEEEEE]">{mini}</td>
+                  <td class="p-4 text-xs font-semibold text-[#E65100] border-b border-[#EEEEEE]">{mini}</td>
                   <td class="p-4 text-xs text-[#1A1A1A]/60 border-b border-[#EEEEEE]">{costic}</td>
                 </tr>
               ))}
@@ -134,10 +134,10 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Aide & Réglementat
         </div>
       </div>
 
-      <div class="bg-[#2B7A78] rounded-2xl p-8 text-white">
+      <div class="bg-[#E65100] rounded-2xl p-8 text-white">
         <h2 class="text-xl font-bold mb-3">Régularisez votre situation dès aujourd'hui</h2>
         <p class="text-sm text-white/75 mb-6">Certificat de ramonage RSD 13 remis le jour même. Je me déplace dans tout le département des Bouches-du-Rhône.</p>
-        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-white text-[#2B7A78] text-sm font-bold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors">06 64 72 96 00</a>
+        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-white text-[#E65100] text-sm font-bold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors">06 64 72 96 00</a>
       </div>
 
       <nav aria-label="Liens thématiques" class="pt-8 border-t border-[#EEEEEE]">
@@ -149,7 +149,7 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Aide & Réglementat
             { href: '/ramonage', label: 'Ramonage certifié — prise de RDV' },
             { href: '/immobilier-notaires', label: 'Audit pré-vente immobilier' },
           ].map(({ href, label }) => (
-            <li><a href={href} class="text-xs text-[#1A1A1A]/50 border border-[#EEEEEE] rounded-lg px-3 py-1.5 hover:text-[#2B7A78] hover:border-[#2B7A78]/30 transition-colors">{label}</a></li>
+            <li><a href={href} class="text-xs text-[#1A1A1A]/50 border border-[#EEEEEE] rounded-lg px-3 py-1.5 hover:text-[#E65100] hover:border-[#E65100]/30 transition-colors">{label}</a></li>
           ))}
         </ul>
       </nav>
