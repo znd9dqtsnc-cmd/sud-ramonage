@@ -52,22 +52,35 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Chaudières', url: 
 
       <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-xl p-6">
-          <h3 class="text-base font-bold text-[#1A1A1A] mb-3">Chaudière gaz à tirage naturel</h3>
-          <ul class="space-y-2 text-sm text-[#1A1A1A]/65">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="text-base font-bold text-[#1A1A1A]">Chaudière gaz à tirage naturel</h3>
+            <span class="text-[10px] font-bold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full uppercase tracking-wide">Conduit uniquement</span>
+          </div>
+          <ul class="space-y-2 text-sm text-[#1A1A1A]/65 mb-4">
             <li class="flex gap-2"><span class="text-[#E65100] shrink-0">→</span>Conduit individuel ou collectif (shunt)</li>
             <li class="flex gap-2"><span class="text-[#E65100] shrink-0">→</span>Vérification du tirage — minimum 4 Pa</li>
             <li class="flex gap-2"><span class="text-[#E65100] shrink-0">→</span>Contrôle joint de raccordement</li>
-            <li class="flex gap-2"><span class="text-[#E65100] shrink-0">→</span>Rapport de ramonage pour assurance</li>
+            <li class="flex gap-2"><span class="text-[#E65100] shrink-0">→</span>Certificat de ramonage pour assurance</li>
           </ul>
+          <p class="text-xs text-[#1A1A1A]/45 bg-white border border-[#EEEEEE] rounded-lg px-3 py-2">
+            L'entretien du corps de chauffe (brûleur, échangeur) est du ressort d'un technicien habilité gaz — non réalisé dans le cadre du ramonage.
+          </p>
         </div>
         <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-xl p-6">
-          <h3 class="text-base font-bold text-[#1A1A1A] mb-3">Chaudière fioul</h3>
-          <ul class="space-y-2 text-sm text-[#1A1A1A]/65">
-            <li class="flex gap-2"><span class="text-[#E65100] shrink-0">→</span>Conduit avec dépôts sulfureux (suie acide)</li>
-            <li class="flex gap-2"><span class="text-[#E65100] shrink-0">→</span>Ramonage spécifique — hérisson adapté</li>
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="text-base font-bold text-[#1A1A1A]">Chaudière fioul</h3>
+            <span class="text-[10px] font-bold bg-[#FFF3E0] text-[#E65100] px-2 py-0.5 rounded-full uppercase tracking-wide">Conduit + corps de chauffe</span>
+          </div>
+          <ul class="space-y-2 text-sm text-[#1A1A1A]/65 mb-4">
+            <li class="flex gap-2"><span class="text-[#E65100] shrink-0">→</span>Ramonage du conduit — hérisson adapté (suie acide)</li>
+            <li class="flex gap-2"><span class="text-[#E65100] shrink-0">→</span>Nettoyage du corps de chauffe (brûleur, filtre, gicleur)</li>
             <li class="flex gap-2"><span class="text-[#E65100] shrink-0">→</span>Contrôle état de la chemise intérieure</li>
-            <li class="flex gap-2"><span class="text-[#E65100] shrink-0">→</span>Risque corrosion accentué — inspection caméra recommandée</li>
+            <li class="flex gap-2"><span class="text-[#E65100] shrink-0">→</span>Inspection caméra recommandée (risque corrosion)</li>
+            <li class="flex gap-2"><span class="text-[#E65100] shrink-0">→</span>Certificat de ramonage pour assurance</li>
           </ul>
+          <p class="text-xs text-[#1A1A1A]/45 bg-white border border-[#EEEEEE] rounded-lg px-3 py-2">
+            Pour les chaudières fioul, le corps de chauffe est inclus dans l'intervention — une seule visite suffit.
+          </p>
         </div>
       </div>
 
@@ -91,9 +104,9 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Chaudières', url: 
         <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/30 mb-4">Voir aussi</p>
         <ul class="flex flex-wrap gap-3">
           {[
-            { href: '/inspection-camera', label: 'Inspection caméra conduit' },
-            { href: '/test-fumigene', label: 'Test fumigène étanchéité' },
-            { href: '/vacuite', label: 'Test de vacuité' },
+            { href: '/audit-conformite', label: 'Audit de conformité conduit' },
+            { href: '/vacuite', label: 'Contrôle de vacuité' },
+            { href: '/test-fumigene', label: "Test d'étanchéité" },
             { href: '/ramonage', label: 'Ramonage certifié RSD 13' },
             { href: '/syndics', label: 'Services Syndics & Collectifs' },
           ].map(({ href, label }) => (
