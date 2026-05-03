@@ -153,14 +153,14 @@ const zonesGroupes = [
               </a>
             </li>
 
-            <!-- Mega-menu Particuliers -->
+            <!-- Mega-menu Ramonage -->
             <li class="relative group/services">
               <button type="button" class="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-[#1A1A1A]/55 hover:text-[#1A1A1A] hover:bg-[#F5F5F5] transition-all duration-150" aria-haspopup="true">
-                Particuliers
+                Ramonage
                 <svg class="w-3 h-3 group-hover/services:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
               </button>
               <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover/services:opacity-100 group-hover/services:visible transition-all duration-200 pointer-events-none group-hover/services:pointer-events-auto z-50">
-                <div class="bg-white border border-[#EEEEEE] rounded-2xl shadow-2xl shadow-black/10 p-5 w-[700px] grid grid-cols-3 gap-6">
+                <div class="bg-white border border-[#EEEEEE] rounded-2xl shadow-2xl shadow-black/10 p-5 w-[660px] grid grid-cols-3 gap-6">
                   <!-- Col 1 : Ramonage & Entretien -->
                   <div>
                     <p class="text-[9px] font-bold tracking-widest uppercase text-[#1A1A1A]/30 mb-3">Ramonage & Entretien</p>
@@ -175,7 +175,7 @@ const zonesGroupes = [
                       ))}
                     </ul>
                   </div>
-                  <!-- Col 2 : Diagnostic + Pose & Réhabilitation -->
+                  <!-- Col 2 : Inspection & Diagnostic -->
                   <div>
                     <p class="text-[9px] font-bold tracking-widest uppercase text-[#1A1A1A]/30 mb-3">Inspection & Diagnostic</p>
                     <ul class="space-y-0.5">
@@ -188,33 +188,19 @@ const zonesGroupes = [
                         </li>
                       ))}
                     </ul>
-                    <div class="mt-4 pt-3 border-t border-[#EEEEEE]">
-                      <p class="text-[9px] font-bold tracking-widest uppercase text-[#1A1A1A]/30 mb-3">Pose & Réhabilitation</p>
-                      <ul class="space-y-0.5">
-                        {megaMenu.rehabilitation.map(({ href, label, desc }) => (
-                          <li>
-                            <a href={href} class="flex flex-col gap-0.5 px-3 py-2.5 rounded-lg hover:bg-[#FFF3E0] group/item transition-colors duration-150">
-                              <span class="text-xs font-semibold text-[#1A1A1A] group-hover/item:text-[#E65100] transition-colors flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-[#E65100] shrink-0"></span>{label}</span>
-                              <span class="text-[10px] text-[#1A1A1A]/40 pl-2.5">{desc}</span>
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
                   </div>
-                  <!-- Col 3 : mise en avant -->
+                  <!-- Col 3 : Types d'installation -->
                   <div class="bg-gradient-to-br from-[#E65100] to-[#BF360C] rounded-xl p-4 text-white flex flex-col justify-between">
                     <div>
-                      <p class="text-[10px] font-bold tracking-widest uppercase text-white/60 mb-2">Certifié COSTIC</p>
-                      <p class="text-sm font-bold leading-snug mb-3">Intervention sur tous types d'installations</p>
+                      <p class="text-sm font-bold leading-snug mb-3">Type d'Installation</p>
                       <ul class="space-y-1 text-[11px] text-white/75 leading-relaxed">
-                        <li class="flex gap-1.5"><span class="text-white/50">→</span>Cheminées & foyers ouverts</li>
-                        <li class="flex gap-1.5"><span class="text-white/50">→</span>Inserts</li>
-                        <li class="flex gap-1.5"><span class="text-white/50">→</span>Poêles à bois</li>
-                        <li class="flex gap-1.5"><span class="text-white/50">→</span>Poêles à granulés</li>
-                        <li class="flex gap-1.5"><span class="text-white/50">→</span>Chaudières gaz</li>
-                        <li class="flex gap-1.5"><span class="text-white/50">→</span>Chaudières fioul</li>
-                        <li class="flex gap-1.5"><span class="text-white/50">→</span>Chaudières bois</li>
+                        <li><a href="/foyers-ouverts" class="flex gap-1.5 hover:text-white transition-colors"><span class="text-white/50">→</span>Cheminée & foyer ouvert</a></li>
+                        <li><a href="/inserts" class="flex gap-1.5 hover:text-white transition-colors"><span class="text-white/50">→</span>Insert</a></li>
+                        <li><a href="/poeles-bois" class="flex gap-1.5 hover:text-white transition-colors"><span class="text-white/50">→</span>Poêle à bois</a></li>
+                        <li><a href="/poeles-granules" class="flex gap-1.5 hover:text-white transition-colors"><span class="text-white/50">→</span>Poêle à granulés</a></li>
+                        <li><a href="/chaudieres" class="flex gap-1.5 hover:text-white transition-colors"><span class="text-white/50">→</span>Chaudière gaz</a></li>
+                        <li><a href="/chaudieres" class="flex gap-1.5 hover:text-white transition-colors"><span class="text-white/50">→</span>Chaudière fioul</a></li>
+                        <li><a href="/chaudieres" class="flex gap-1.5 hover:text-white transition-colors"><span class="text-white/50">→</span>Chaudière bois</a></li>
                       </ul>
                     </div>
                     <div class="mt-4 space-y-2">
@@ -227,6 +213,29 @@ const zonesGroupes = [
                       </a>
                     </div>
                   </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Menu Réhabilitation -->
+            <li class="relative group/rehab">
+              <button type="button" class="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-[#1A1A1A]/55 hover:text-[#1A1A1A] hover:bg-[#F5F5F5] transition-all duration-150" aria-haspopup="true">
+                Réhabilitation
+                <svg class="w-3 h-3 group-hover/rehab:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover/rehab:opacity-100 group-hover/rehab:visible transition-all duration-200 pointer-events-none group-hover/rehab:pointer-events-auto z-50">
+                <div class="bg-white border border-[#EEEEEE] rounded-xl shadow-xl shadow-black/8 p-2 w-72">
+                  <p class="text-[9px] font-bold tracking-widest uppercase text-[#1A1A1A]/30 px-4 pt-2 pb-1">Pose & Réhabilitation</p>
+                  <ul>
+                    {megaMenu.rehabilitation.map(({ href, label, desc }) => (
+                      <li>
+                        <a href={href} class="flex flex-col gap-0.5 px-4 py-3 rounded-lg hover:bg-[#FFF3E0] group/item transition-colors duration-150">
+                          <span class="text-xs font-semibold text-[#1A1A1A] group-hover/item:text-[#E65100] transition-colors flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>{label}</span>
+                          <span class="text-[11px] text-[#1A1A1A]/45 pl-3.5">{desc}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </li>
