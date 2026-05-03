@@ -65,7 +65,7 @@ const speakableSchema = {
         <span>/</span>
         <span class="text-white/60">Ramonage Certifié</span>
       </nav>
-      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#C0622F] mb-4">Service 01</p>
+      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F97316] mb-4">Service 01</p>
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
         Ramonage Certifié<br />Cheminée & Poêle.
       </h1>
@@ -81,8 +81,8 @@ const speakableSchema = {
     <div class="max-w-6xl mx-auto">
 
       <!-- TL;DR — Résumé pour IA et lecteurs pressés -->
-      <div class="border-l-4 border-[#C0622F] bg-[#FFF5EF] rounded-r-xl p-6 mb-14" role="note" aria-label="Résumé de la page">
-        <p class="text-[10px] font-bold tracking-widest uppercase text-[#C0622F] mb-3">TL;DR — L'essentiel en 30 secondes</p>
+      <div class="border-l-4 border-[#F97316] bg-[#FFF7ED] rounded-r-xl p-6 mb-14" role="note" aria-label="Résumé de la page">
+        <p class="text-[10px] font-bold tracking-widest uppercase text-[#F97316] mb-3">TL;DR — L'essentiel en 30 secondes</p>
         <ul class="space-y-2">
           {[
             'Ramonage mécanique obligatoire 1×/an (RSD 13) — hérisson rotatif + aspiration suies + test vacuité + certificat NF DTU 24.1.',
@@ -92,7 +92,7 @@ const speakableSchema = {
             'Certificat RSD 13 conforme NF DTU 24.1 remis immédiatement — valable pour votre assureur.',
           ].map(point => (
             <li class="flex items-start gap-2.5 text-sm text-[#1A1A1A]/75 font-light">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#C0622F] mt-1.5 shrink-0"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#F97316] mt-1.5 shrink-0"></span>
               {point}
             </li>
           ))}
@@ -144,7 +144,7 @@ const speakableSchema = {
                 { n: '05', t: 'Remise du certificat', d: 'Document officiel remis sur place, immédiatement après intervention.' },
               ].map(({ n, t, d }) => (
                 <li class="flex gap-4">
-                  <span class="text-[11px] font-bold text-[#C0622F] mt-0.5 shrink-0">{n}</span>
+                  <span class="text-[11px] font-bold text-[#F97316] mt-0.5 shrink-0">{n}</span>
                   <div>
                     <p class="text-sm font-semibold text-[#1A1A1A]">{t}</p>
                     <p class="text-sm text-[#1A1A1A]/50 font-light">{d}</p>
@@ -157,7 +157,7 @@ const speakableSchema = {
 
         <!-- Colonne droite : checklist + image -->
         <div class="space-y-6">
-          <div class="bg-[#FFF5EF] rounded-xl p-7">
+          <div class="bg-[#FFF7ED] rounded-xl p-7">
             <p class="text-sm font-bold text-[#1A1A1A] mb-5">Ce service comprend</p>
             {[
               'Ramonage mécanique complet',
@@ -166,8 +166,8 @@ const speakableSchema = {
               'Certificat officiel de ramonage (RSD 13)',
               'Conseils personnalisés sur l\'entretien',
             ].map((item) => (
-              <div class="flex items-center gap-3 py-2.5 border-b border-[#C0622F]/10 last:border-0">
-                <svg class="w-4 h-4 text-[#C0622F] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="flex items-center gap-3 py-2.5 border-b border-[#F97316]/10 last:border-0">
+                <svg class="w-4 h-4 text-[#F97316] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span class="text-sm text-[#1A1A1A]/70 font-light">{item}</span>
@@ -191,11 +191,11 @@ const speakableSchema = {
             <figcaption class="sr-only">Conduit de cheminée en inox à Martigues — ramonage mécanique, élimination suie et calcin, test de vacuité, vérification tirage thermique. Artisan certifié Bouches-du-Rhône.</figcaption>
           </figure>
 
-          <div class="bg-[#FFF5EF] border border-[#FFC9A8] rounded-xl p-6">
-            <p class="text-xs font-semibold text-[#7A3520]/60 uppercase tracking-widest mb-3">Appareils traités</p>
+          <div class="bg-[#FFF7ED] border border-[#FED7AA] rounded-xl p-6">
+            <p class="text-xs font-semibold text-[#9A3412]/60 uppercase tracking-widest mb-3">Appareils traités</p>
             <div class="flex flex-wrap gap-2">
               {['Cheminée foyer ouvert', 'Insert', 'Poêle à bois', 'Poêle à granulés', 'Conduit maçonné', 'Tubage inox'].map((tag) => (
-                <span class="text-[11px] font-medium bg-white border border-[#FFC9A8] text-[#7A3520] px-3 py-1.5 rounded-md">{tag}</span>
+                <span class="text-[11px] font-medium bg-white border border-[#FED7AA] text-[#9A3412] px-3 py-1.5 rounded-md">{tag}</span>
               ))}
             </div>
           </div>
@@ -210,7 +210,7 @@ const speakableSchema = {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
         <div>
-          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#C0622F] mb-4">Tarifs</p>
+          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F97316] mb-4">Tarifs</p>
           <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-6">Ce que coûte un ramonage.</h2>
           <div class="bg-white border border-[#EEEEEE] rounded-xl overflow-hidden">
             {[
@@ -231,8 +231,8 @@ const speakableSchema = {
           </p>
         </div>
 
-        <div class="bg-[#FFF5EF] border border-[#FFC9A8] rounded-xl p-7">
-          <p class="text-xs font-semibold text-[#7A3520]/60 uppercase tracking-widest mb-5">Inclus dans chaque ramonage</p>
+        <div class="bg-[#FFF7ED] border border-[#FED7AA] rounded-xl p-7">
+          <p class="text-xs font-semibold text-[#9A3412]/60 uppercase tracking-widest mb-5">Inclus dans chaque ramonage</p>
           {[
             'Ramonage mécanique complet (hérisson rotatif)',
             'Aspiration professionnelle des suies',
@@ -241,8 +241,8 @@ const speakableSchema = {
             'Certificat officiel RSD 13 remis sur place',
             'Conseils personnalisés sur votre installation',
           ].map(item => (
-            <div class="flex items-center gap-3 py-2.5 border-b border-[#FFC9A8]/60 last:border-0">
-              <svg class="w-4 h-4 text-[#C0622F] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="flex items-center gap-3 py-2.5 border-b border-[#FED7AA]/60 last:border-0">
+              <svg class="w-4 h-4 text-[#F97316] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
               <span class="text-sm text-[#334155] font-light">{item}</span>
@@ -299,8 +299,8 @@ const speakableSchema = {
           { href: '/villes/chateauneuf-les-martigues',label: 'Ramonage Châteauneuf' },
           { href: '/villes/gignac-la-nerthe',         label: 'Ramonage Gignac-la-Nerthe' },
         ].map(({ href, label }) => (
-          <a href={href} class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#C0622F]/30 hover:text-[#C0622F] transition-all duration-200">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#C0622F] shrink-0"></span>
+          <a href={href} class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#F97316]/30 hover:text-[#F97316] transition-all duration-200">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#F97316] shrink-0"></span>
             {label}
           </a>
         ))}
@@ -309,7 +309,7 @@ const speakableSchema = {
   </section>
 
   <!-- ═══ CTA ═══ -->
-  <section class="py-16 px-6 md:px-10 bg-[#FFF5EF] text-center">
+  <section class="py-16 px-6 md:px-10 bg-[#FFF7ED] text-center">
     <div class="max-w-xl mx-auto">
       <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">Prendre Rendez-Vous</h2>
       <p class="text-sm text-[#1A1A1A]/55 font-light mb-8">Disponible du lundi au samedi. Devis gratuit sous 24h.</p>

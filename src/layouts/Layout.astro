@@ -1,11 +1,7 @@
 ---
 import '../styles/global.css';
-import ContactButton from '../components/ContactButton.astro';
-import EmailButton from '../components/EmailButton.astro';
 import SEO from '../components/SEO.astro';
-import COSTICBadge from '../components/COSTICBadge.astro';
 import { ClientRouter } from 'astro:transitions';
-import { villes } from '../data/villes';
 
 export interface Props {
   title?: string;
@@ -28,20 +24,20 @@ const {
 } = Astro.props;
 
 const particuliersMenu = [
-  { href: '/particuliers#ramonage',   label: 'Ramonage & Entretien' },
-  { href: '/particuliers#poeles',     label: 'Poêles & Granulés' },
-  { href: '/particuliers#chaudieres', label: 'Chaudières' },
-  { href: '/particuliers#audit',      label: 'Audit & Diagnostic' },
+  { href: '/particuliers#ramonage',   label: 'Ramonage & Entretien',    desc: 'Cheminées, inserts, poêles à bois' },
+  { href: '/particuliers#poeles',     label: 'Poêles à Granulés',        desc: 'Entretien complet corps de chauffe' },
+  { href: '/particuliers#chaudieres', label: 'Chaudières Gaz & Fioul',   desc: 'Conduit d\'évacuation certifié' },
+  { href: '/particuliers#audit',      label: 'Audit & Diagnostic',        desc: 'Caméra HD, fumigène, vacuité' },
 ];
 
 const proMenu = [
-  { href: '/pro-syndics#pro',     label: 'Professionnels & CHR' },
-  { href: '/pro-syndics#syndics', label: 'Syndics & Immobilier' },
+  { href: '/pro-syndics#pro',     label: 'Restauration & CHR',    desc: 'Fours, hottes, contrats annuels' },
+  { href: '/pro-syndics#syndics', label: 'Syndics & Immobilier',   desc: 'Conduits collectifs, audit vente' },
 ];
 
 const expertiseMenu = [
-  { href: '/expertise#reglementation', label: 'Guide réglementaire' },
-  { href: '/expertise#conseils',       label: "Conseils d'entretien" },
+  { href: '/expertise#reglementation', label: 'Réglementation RSD 13', desc: 'DTU, obligations, dates clés' },
+  { href: '/expertise#conseils',       label: "Conseils d'Entretien",   desc: 'Bois, prévention CO, fréquences' },
 ];
 ---
 
@@ -50,454 +46,293 @@ const expertiseMenu = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Sud Ramonage" />
-
-    {preloadImageHref && (
-      <link rel="preload" as="image" href={preloadImageHref} fetchpriority="high" />
-    )}
-
+    {preloadImageHref && <link rel="preload" as="image" href={preloadImageHref} fetchpriority="high" />}
     <title>{title}</title>
     <ClientRouter />
-    <SEO
-      title={title}
-      description={description}
-      canonical={canonical}
-      ogImage={ogImage}
-      breadcrumbs={breadcrumbs}
-      pageSchema={pageSchema}
-    />
+    <SEO title={title} description={description} canonical={canonical} ogImage={ogImage} breadcrumbs={breadcrumbs} pageSchema={pageSchema} />
   </head>
-  <body class="bg-[#FFFDF9] text-[#1A1A1A] font-sans antialiased">
+  <body class="bg-white text-[#111111] font-sans antialiased">
 
     <!-- HEADER -->
-    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-[#1A1A1A] backdrop-blur-sm border-b border-white/8 transition-shadow duration-300">
-      <div class="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between gap-6">
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#F3F4F6] transition-shadow duration-300">
+      <div class="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between gap-8">
 
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-2.5 shrink-0 group" aria-label="Sud Ramonage - Ramonage à Martigues">
-          <span class="w-7 h-7 rounded-md bg-[#C0622F] flex items-center justify-center shrink-0" aria-hidden="true">
-            <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+        <a href="/" class="flex items-center gap-3 shrink-0 group" aria-label="Sud Ramonage">
+          <div class="w-8 h-8 bg-[#F97316] rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-4.5 h-4.5 text-white" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C9.5 6 7 8 7 12a5 5 0 0010 0c0-4-2.5-6-5-10zm0 18a3 3 0 01-3-3c0-2 1.5-3.5 3-5 1.5 1.5 3 3 3 5a3 3 0 01-3 3z"/>
             </svg>
-          </span>
-          <span class="text-sm font-extrabold tracking-tight text-white group-hover:text-[#C0622F] transition-colors duration-200">
-            SUD RAMONAGE
-          </span>
+          </div>
+          <div>
+            <span class="block text-sm font-extrabold tracking-tight text-[#111111] leading-none">SUD RAMONAGE</span>
+            <span class="block text-[10px] text-[#6B7280] font-normal tracking-wide leading-none mt-0.5">Martigues · Bouches-du-Rhône</span>
+          </div>
         </a>
 
         <!-- Nav Desktop -->
-        <nav class="hidden lg:flex items-center gap-0.5 flex-1" aria-label="Navigation principale">
-          <ul class="flex items-center gap-0.5">
+        <nav class="hidden lg:flex items-center gap-1 flex-1 ml-8" aria-label="Navigation principale">
 
-            <li>
-              <a href="/" class="px-3 py-2 rounded-lg text-xs font-medium text-white/60 hover:text-white hover:bg-white/8 transition-all duration-150">
-                Accueil
-              </a>
-            </li>
+          <a href="/" class="px-3.5 py-2 rounded-lg text-sm font-medium text-[#6B7280] hover:text-[#111111] hover:bg-[#F9F9F9] transition-all duration-150">
+            Accueil
+          </a>
 
-            <!-- Particuliers -->
-            <li class="relative group/part">
-              <a href="/particuliers" class="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-white/60 hover:text-white hover:bg-white/8 transition-all duration-150">
-                Particuliers
-                <svg class="w-3 h-3 group-hover/part:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-              </a>
-              <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover/part:opacity-100 group-hover/part:visible transition-all duration-200 pointer-events-none group-hover/part:pointer-events-auto z-50">
-                <div class="bg-[#1A1A1A] border border-white/10 rounded-xl shadow-2xl shadow-black/40 p-2 w-52">
-                  <ul>
-                    {particuliersMenu.map(({ href, label }) => (
-                      <li>
-                        <a href={href} class="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-150">
-                          <span class="w-1.5 h-1.5 rounded-full bg-[#C0622F] shrink-0"></span>
-                          <span class="text-xs font-medium text-white/75">{label}</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          <!-- Particuliers -->
+          <div class="relative group/part">
+            <a href="/particuliers" class="flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium text-[#6B7280] hover:text-[#111111] hover:bg-[#F9F9F9] transition-all duration-150">
+              Particuliers
+              <svg class="w-3.5 h-3.5 group-hover/part:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover/part:opacity-100 group-hover/part:visible transition-all duration-200 z-50">
+              <div class="bg-white border border-[#F3F4F6] rounded-2xl shadow-xl shadow-black/8 p-3 w-64">
+                {particuliersMenu.map(({ href, label, desc }) => (
+                  <a href={href} class="flex gap-3 px-3 py-2.5 rounded-xl hover:bg-[#FFF7ED] transition-colors duration-150 group/item">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#F97316] shrink-0 mt-2"></div>
+                    <div>
+                      <p class="text-sm font-semibold text-[#111111] group-hover/item:text-[#F97316] transition-colors">{label}</p>
+                      <p class="text-xs text-[#6B7280] leading-tight mt-0.5">{desc}</p>
+                    </div>
+                  </a>
+                ))}
               </div>
-            </li>
+            </div>
+          </div>
 
-            <!-- Pro & Syndics -->
-            <li class="relative group/pro">
-              <a href="/pro-syndics" class="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-white/60 hover:text-white hover:bg-white/8 transition-all duration-150">
-                Pro &amp; Syndics
-                <svg class="w-3 h-3 group-hover/pro:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-              </a>
-              <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover/pro:opacity-100 group-hover/pro:visible transition-all duration-200 pointer-events-none group-hover/pro:pointer-events-auto z-50">
-                <div class="bg-[#1A1A1A] border border-white/10 rounded-xl shadow-2xl shadow-black/40 p-2 w-52">
-                  <ul>
-                    {proMenu.map(({ href, label }) => (
-                      <li>
-                        <a href={href} class="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-150">
-                          <span class="w-1.5 h-1.5 rounded-full bg-[#C0622F] shrink-0"></span>
-                          <span class="text-xs font-medium text-white/75">{label}</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          <!-- Pro & Syndics -->
+          <div class="relative group/pro">
+            <a href="/pro-syndics" class="flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium text-[#6B7280] hover:text-[#111111] hover:bg-[#F9F9F9] transition-all duration-150">
+              Pro & Syndics
+              <svg class="w-3.5 h-3.5 group-hover/pro:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover/pro:opacity-100 group-hover/pro:visible transition-all duration-200 z-50">
+              <div class="bg-white border border-[#F3F4F6] rounded-2xl shadow-xl shadow-black/8 p-3 w-64">
+                {proMenu.map(({ href, label, desc }) => (
+                  <a href={href} class="flex gap-3 px-3 py-2.5 rounded-xl hover:bg-[#FFF7ED] transition-colors duration-150 group/item">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#F97316] shrink-0 mt-2"></div>
+                    <div>
+                      <p class="text-sm font-semibold text-[#111111] group-hover/item:text-[#F97316] transition-colors">{label}</p>
+                      <p class="text-xs text-[#6B7280] leading-tight mt-0.5">{desc}</p>
+                    </div>
+                  </a>
+                ))}
               </div>
-            </li>
+            </div>
+          </div>
 
-            <!-- Expertise -->
-            <li class="relative group/exp">
-              <a href="/expertise" class="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-white/60 hover:text-white hover:bg-white/8 transition-all duration-150">
-                Expertise
-                <svg class="w-3 h-3 group-hover/exp:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-              </a>
-              <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover/exp:opacity-100 group-hover/exp:visible transition-all duration-200 pointer-events-none group-hover/exp:pointer-events-auto z-50">
-                <div class="bg-[#1A1A1A] border border-white/10 rounded-xl shadow-2xl shadow-black/40 p-2 w-52">
-                  <ul>
-                    {expertiseMenu.map(({ href, label }) => (
-                      <li>
-                        <a href={href} class="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-150">
-                          <span class="w-1.5 h-1.5 rounded-full bg-[#C0622F] shrink-0"></span>
-                          <span class="text-xs font-medium text-white/75">{label}</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          <!-- Expertise -->
+          <div class="relative group/exp">
+            <a href="/expertise" class="flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium text-[#6B7280] hover:text-[#111111] hover:bg-[#F9F9F9] transition-all duration-150">
+              Expertise
+              <svg class="w-3.5 h-3.5 group-hover/exp:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover/exp:opacity-100 group-hover/exp:visible transition-all duration-200 z-50">
+              <div class="bg-white border border-[#F3F4F6] rounded-2xl shadow-xl shadow-black/8 p-3 w-64">
+                {expertiseMenu.map(({ href, label, desc }) => (
+                  <a href={href} class="flex gap-3 px-3 py-2.5 rounded-xl hover:bg-[#FFF7ED] transition-colors duration-150 group/item">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#F97316] shrink-0 mt-2"></div>
+                    <div>
+                      <p class="text-sm font-semibold text-[#111111] group-hover/item:text-[#F97316] transition-colors">{label}</p>
+                      <p class="text-xs text-[#6B7280] leading-tight mt-0.5">{desc}</p>
+                    </div>
+                  </a>
+                ))}
               </div>
-            </li>
+            </div>
+          </div>
 
-          </ul>
         </nav>
 
-        <!-- CTA + Burger -->
-        <div class="flex items-center gap-2 shrink-0">
-
-          <a
-            href="tel:+33664729600"
-            class="lg:hidden inline-flex items-center gap-2 bg-[#C0622F] text-white text-xs font-bold px-4 py-2.5 rounded-lg hover:bg-[#A85228] active:scale-[0.97] transition-all duration-150 touch-manipulation"
-            aria-label="Appeler le 06 64 72 96 00"
-          >
-            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-            Appeler
-          </a>
-
-          <a
-            href="tel:+33664729600"
-            class="hidden lg:inline-flex items-center gap-2 bg-[#C0622F] text-white text-xs font-bold px-4 py-2.5 rounded-lg hover:bg-[#A85228] transition-colors duration-200 shadow-sm shadow-[#C0622F]/25"
-          >
-            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
+        <!-- CTA Desktop -->
+        <div class="hidden lg:flex items-center gap-3 shrink-0">
+          <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#F97316] hover:bg-[#EA580C] text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-colors duration-150 shadow-sm shadow-[#F97316]/25">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             06 64 72 96 00
           </a>
-
-          <button
-            id="burger-btn"
-            type="button"
-            class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg text-white/70 hover:bg-white/8 transition-colors duration-150"
-            aria-label="Ouvrir le menu"
-            aria-controls="mobile-menu"
-            aria-expanded="false"
-          >
-            <svg id="burger-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <svg id="burger-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
         </div>
 
+        <!-- Mobile burger -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-[#F9F9F9] transition-colors" aria-label="Menu" aria-expanded="false">
+          <svg id="burger-icon" class="w-5 h-5 text-[#111111]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="close-icon" class="w-5 h-5 text-[#111111] hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-[#F3F4F6]">
+        <div class="max-w-7xl mx-auto px-6 py-6 space-y-1">
+          <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#F9F9F9] text-sm font-medium text-[#111111] transition-colors">Accueil</a>
+
+          <div>
+            <button id="mob-part-btn" class="flex items-center justify-between w-full px-4 py-3 rounded-xl hover:bg-[#F9F9F9] text-sm font-semibold text-[#111111] transition-colors">
+              Particuliers <svg class="w-4 h-4 text-[#6B7280] transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="mob-part-panel" class="hidden pl-6 mt-1 space-y-1">
+              {particuliersMenu.map(({ href, label }) => (
+                <a href={href} class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm text-[#6B7280] hover:text-[#F97316] transition-colors">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#F97316] shrink-0"></span>{label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <button id="mob-pro-btn" class="flex items-center justify-between w-full px-4 py-3 rounded-xl hover:bg-[#F9F9F9] text-sm font-semibold text-[#111111] transition-colors">
+              Pro & Syndics <svg class="w-4 h-4 text-[#6B7280] transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="mob-pro-panel" class="hidden pl-6 mt-1 space-y-1">
+              {proMenu.map(({ href, label }) => (
+                <a href={href} class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm text-[#6B7280] hover:text-[#F97316] transition-colors">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#F97316] shrink-0"></span>{label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <button id="mob-exp-btn" class="flex items-center justify-between w-full px-4 py-3 rounded-xl hover:bg-[#F9F9F9] text-sm font-semibold text-[#111111] transition-colors">
+              Expertise <svg class="w-4 h-4 text-[#6B7280] transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="mob-exp-panel" class="hidden pl-6 mt-1 space-y-1">
+              {expertiseMenu.map(({ href, label }) => (
+                <a href={href} class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm text-[#6B7280] hover:text-[#F97316] transition-colors">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#F97316] shrink-0"></span>{label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-[#F3F4F6]">
+            <a href="tel:+33664729600" class="flex items-center justify-center gap-2 bg-[#F97316] hover:bg-[#EA580C] text-white text-sm font-bold px-6 py-3.5 rounded-xl transition-colors w-full">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              06 64 72 96 00 — Appeler
+            </a>
+          </div>
+        </div>
       </div>
     </header>
 
-    <!-- MENU MOBILE -->
-    <div id="mobile-menu" class="fixed inset-0 z-40 lg:hidden hidden" aria-hidden="true">
-      <div id="mobile-overlay" class="absolute inset-0 bg-[#1A1A1A]/70 backdrop-blur-sm"></div>
-      <nav
-        class="absolute top-0 right-0 h-full w-80 max-w-full bg-[#1A1A1A] shadow-2xl flex flex-col translate-x-full transition-transform duration-300 ease-in-out"
-        id="mobile-panel"
-        aria-label="Menu mobile"
-      >
-        <div class="flex items-center justify-between px-6 h-16 border-b border-white/10 shrink-0">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-md bg-[#C0622F] flex items-center justify-center" aria-hidden="true">
-              <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C9.5 6 7 8 7 12a5 5 0 0010 0c0-4-2.5-6-5-10zm0 18a3 3 0 01-3-3c0-2 1.5-3.5 3-5 1.5 1.5 3 3 3 5a3 3 0 01-3 3z"/>
-              </svg>
-            </span>
-            <span class="text-sm font-extrabold tracking-tight text-white">SUD RAMONAGE</span>
-          </div>
-          <button
-            id="mobile-close"
-            type="button"
-            class="flex items-center justify-center w-9 h-9 rounded-lg text-white/50 hover:bg-white/8 transition-colors duration-150"
-            aria-label="Fermer le menu"
-          >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        <div class="flex-1 overflow-y-auto px-4 py-6 space-y-1">
-          <ul class="space-y-1">
-            <li>
-              <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-white/75 hover:bg-white/8 hover:text-white transition-colors duration-150">
-                <svg class="w-4 h-4 text-[#C0622F] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
-                Accueil
-              </a>
-            </li>
-          </ul>
-
-          <div>
-            <button type="button" id="mobile-part-btn" class="w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium text-white/75 hover:bg-white/8 transition-colors duration-150" aria-expanded="false" aria-controls="mobile-part">
-              <span class="flex items-center gap-3">
-                <svg class="w-4 h-4 text-[#C0622F] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                Particuliers
-              </span>
-              <svg id="mobile-part-arrow" class="w-4 h-4 text-white/30 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <ul id="mobile-part" class="hidden mt-1 ml-4 space-y-0.5 border-l-2 border-[#C0622F]/30 pl-3">
-              {particuliersMenu.map(({ href, label }) => (
-                <li><a href={href} class="block px-3 py-2 text-xs font-medium text-white/55 hover:bg-white/8 hover:text-white rounded-lg transition-colors">{label}</a></li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <button type="button" id="mobile-pro-btn" class="w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium text-white/75 hover:bg-white/8 transition-colors duration-150" aria-expanded="false" aria-controls="mobile-pro">
-              <span class="flex items-center gap-3">
-                <svg class="w-4 h-4 text-[#C0622F] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                Pro &amp; Syndics
-              </span>
-              <svg id="mobile-pro-arrow" class="w-4 h-4 text-white/30 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <ul id="mobile-pro" class="hidden mt-1 ml-4 space-y-0.5 border-l-2 border-[#C0622F]/30 pl-3">
-              {proMenu.map(({ href, label }) => (
-                <li><a href={href} class="block px-3 py-2 text-xs font-medium text-white/55 hover:bg-white/8 hover:text-white rounded-lg transition-colors">{label}</a></li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <button type="button" id="mobile-exp-btn" class="w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium text-white/75 hover:bg-white/8 transition-colors duration-150" aria-expanded="false" aria-controls="mobile-exp">
-              <span class="flex items-center gap-3">
-                <svg class="w-4 h-4 text-[#C0622F] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                Expertise
-              </span>
-              <svg id="mobile-exp-arrow" class="w-4 h-4 text-white/30 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <ul id="mobile-exp" class="hidden mt-1 ml-4 space-y-0.5 border-l-2 border-[#C0622F]/30 pl-3">
-              {expertiseMenu.map(({ href, label }) => (
-                <li><a href={href} class="block px-3 py-2 text-xs font-medium text-white/55 hover:bg-white/8 hover:text-white rounded-lg transition-colors">{label}</a></li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div class="px-6 py-5 border-t border-white/10 bg-black/20 shrink-0 space-y-3">
-          <a
-            href="tel:+33664729600"
-            class="flex items-center justify-center gap-2 w-full bg-[#C0622F] text-white text-sm font-bold px-5 py-3.5 rounded-xl hover:bg-[#A85228] transition-colors duration-200"
-          >
-            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-            Prendre RDV — 06 64 72 96 00
-          </a>
-          <ContactButton variant="email" class="w-full justify-center" />
-        </div>
-
-      </nav>
-    </div>
-
-    <!-- CONTENU -->
     <main>
       <slot />
     </main>
 
     <!-- FOOTER -->
-    <footer id="site-footer" class="border-t border-[#F0EDE8] mt-24 bg-[#1A1A1A] text-white">
-      <div class="max-w-6xl mx-auto px-6 md:px-10 py-14">
+    <footer class="bg-[#111111] text-white">
+      <div class="max-w-7xl mx-auto px-6 md:px-10 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-
-          <div class="space-y-4">
-            <div class="flex items-center gap-2">
-              <span class="w-7 h-7 rounded-md bg-[#C0622F] flex items-center justify-center shrink-0" aria-hidden="true">
+          <!-- Marque -->
+          <div class="md:col-span-1">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 bg-[#F97316] rounded-lg flex items-center justify-center shrink-0">
                 <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2C9.5 6 7 8 7 12a5 5 0 0010 0c0-4-2.5-6-5-10zm0 18a3 3 0 01-3-3c0-2 1.5-3.5 3-5 1.5 1.5 3 3 3 5a3 3 0 01-3 3z"/>
                 </svg>
-              </span>
-              <p class="text-sm font-extrabold tracking-tight text-white">SUD RAMONAGE</p>
+              </div>
+              <span class="text-sm font-extrabold tracking-tight">SUD RAMONAGE</span>
             </div>
-            <p class="text-xs text-white/40 leading-relaxed max-w-xs">
-              Artisan ramoneur certifié. Ramonage, débistrage et entretien sur Martigues, la Côte Bleue et l'Étang de Berre. Certificat RSD 13 immédiat.
-            </p>
-            <address class="not-italic text-xs text-white/35 space-y-1">
-              <p>31 chemin des tamaris, 13500 Martigues</p>
-              <a href="tel:+33664729600" class="block hover:text-[#C0622F] transition-colors duration-200">06 64 72 96 00</a>
-              <EmailButton size="sm" class="mt-1" />
-            </address>
+            <p class="text-xs text-white/50 leading-relaxed mb-4">Artisan ramoneur certifié COSTIC à Martigues. Bouches-du-Rhône.</p>
+            <p class="text-xs text-white/35">SIRET : [À COMPLÉTER]</p>
+            <p class="text-xs text-white/35 mt-1">31 chemin des tamaris, 13500 Martigues</p>
+            <a href="tel:+33664729600" class="inline-flex items-center gap-2 mt-4 text-[#F97316] text-sm font-bold hover:text-[#FB923C] transition-colors">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              06 64 72 96 00
+            </a>
           </div>
 
-          <div class="space-y-3">
-            <p class="text-[10px] font-semibold tracking-widest uppercase text-white/30 mb-3">Particuliers</p>
-            <ul class="space-y-2">
+          <!-- Particuliers -->
+          <div>
+            <p class="text-xs font-bold uppercase tracking-widest text-white/40 mb-4">Particuliers</p>
+            <ul class="space-y-2.5">
               {[
-                { href: '/particuliers#ramonage',   label: 'Ramonage & Entretien' },
-                { href: '/particuliers#poeles',     label: 'Poêles & Granulés' },
-                { href: '/particuliers#chaudieres', label: 'Chaudières' },
+                { href: '/particuliers#ramonage',   label: 'Ramonage certifié' },
+                { href: '/particuliers#poeles',     label: 'Poêles à granulés' },
+                { href: '/particuliers#chaudieres', label: 'Chaudières gaz & fioul' },
                 { href: '/particuliers#audit',      label: 'Audit & Diagnostic' },
-                { href: '/particuliers#tarifs',     label: 'Tarifs' },
               ].map(({ href, label }) => (
-                <li><a href={href} class="text-xs text-white/45 hover:text-[#C0622F] transition-colors duration-200">{label}</a></li>
+                <li><a href={href} class="text-xs text-white/55 hover:text-[#F97316] transition-colors">{label}</a></li>
               ))}
             </ul>
           </div>
 
-          <div class="space-y-3">
-            <p class="text-[10px] font-semibold tracking-widest uppercase text-white/30 mb-3">Pro &amp; Syndics</p>
-            <ul class="space-y-2">
+          <!-- Pro & Syndics -->
+          <div>
+            <p class="text-xs font-bold uppercase tracking-widest text-white/40 mb-4">Pro & Syndics</p>
+            <ul class="space-y-2.5">
               {[
-                { href: '/pro-syndics#pro',     label: 'Professionnels & CHR' },
-                { href: '/pro-syndics#syndics', label: 'Syndics & Immobilier' },
-                { href: '/restauration',        label: 'Restauration' },
-                { href: '/zones',               label: "Zones d'intervention" },
+                { href: '/pro-syndics#pro',     label: 'Restauration & CHR' },
+                { href: '/pro-syndics#syndics', label: 'Syndics & Collectifs' },
+                { href: '/pro-syndics#syndics', label: 'Immobilier & Notaires' },
+                { href: '/pro-syndics#syndics', label: 'Gestion locative' },
               ].map(({ href, label }) => (
-                <li><a href={href} class="text-xs text-white/45 hover:text-[#C0622F] transition-colors duration-200">{label}</a></li>
+                <li><a href={href} class="text-xs text-white/55 hover:text-[#F97316] transition-colors">{label}</a></li>
               ))}
             </ul>
           </div>
 
-          <div class="space-y-3">
-            <p class="text-[10px] font-semibold tracking-widest uppercase text-white/30 mb-3">Expertise</p>
-            <ul class="space-y-2">
+          <!-- Expertise & Legal -->
+          <div>
+            <p class="text-xs font-bold uppercase tracking-widest text-white/40 mb-4">Expertise & Légal</p>
+            <ul class="space-y-2.5">
               {[
-                { href: '/expertise#reglementation', label: 'Guide réglementaire RSD 13' },
+                { href: '/expertise#reglementation', label: 'Réglementation RSD 13' },
                 { href: '/expertise#conseils',       label: "Conseils d'entretien" },
-                { href: '/reglementation',           label: 'Réglementation' },
-                { href: '/conseils',                 label: 'Blog & Conseils' },
-                { href: '/lexique',                  label: 'Lexique fumisterie' },
-                { href: '/realisations',             label: 'Réalisations' },
+                { href: '/cgv',                      label: 'Conditions Générales' },
+                { href: '/mentions-legales',         label: 'Mentions légales' },
               ].map(({ href, label }) => (
-                <li><a href={href} class="text-xs text-white/45 hover:text-[#C0622F] transition-colors duration-200">{label}</a></li>
+                <li><a href={href} class="text-xs text-white/55 hover:text-[#F97316] transition-colors">{label}</a></li>
               ))}
             </ul>
           </div>
 
         </div>
 
-        <nav aria-label="Liens thématiques ramonage par ville" class="pt-8 border-t border-white/8 mb-6">
-          <p class="text-[9px] font-semibold tracking-widest uppercase text-white/15 mb-3">Ramonage par secteur</p>
-          <ul class="flex flex-wrap gap-x-5 gap-y-1.5">
-            {[
-              { href: '/ramonage',                         label: 'Ramonage certifié Martigues'              },
-              { href: '/debistrage',                       label: 'Débistrage conduit Istres'                },
-              { href: '/villes/salon-de-provence',         label: 'Ramonage Salon-de-Provence'               },
-              { href: '/villes/aix-en-provence',           label: 'Ramonage Aix-en-Provence'                 },
-              { href: '/villes/vitrolles',                 label: 'Ramonage certifié Vitrolles'              },
-              { href: '/villes/marignane',                 label: 'Ramonage Marignane'                       },
-              { href: '/villes/berre-letang',              label: "Ramonage Berre-l'Étang"                   },
-              { href: '/villes/port-de-bouc',              label: 'Ramonage Port-de-Bouc'                    },
-              { href: '/villes/sausset-les-pins',          label: 'RSD 13 Sausset-les-Pins'                  },
-              { href: '/villes/carry-le-rouet',            label: 'Carry-le-Rouet'                           },
-              { href: '/villes/chateauneuf-les-martigues', label: 'Ramonage RSD Châteauneuf'                 },
-              { href: '/zones',                            label: "Toutes nos zones →"                       },
-            ].map(({ href, label }) => (
-              <li>
-                <a href={href} class="text-[10px] text-white/20 hover:text-[#C0622F] transition-colors duration-200">{label}</a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div class="pt-6 border-t border-white/8 space-y-4">
-          <div class="text-[10px] text-white/25 font-light leading-relaxed">
-            <p>
-              <strong class="font-medium text-white/35">RC Professionnelle</strong> souscrite — couverture France métropolitaine.
-              <strong class="font-medium text-white/35">Médiateur</strong> : CM2C — <a href="https://www.cm2c.net" target="_blank" rel="noopener noreferrer" class="hover:text-[#C0622F] transition-colors">www.cm2c.net</a>
-            </p>
-          </div>
-          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/25">
-            <span>&copy; {new Date().getFullYear()} Sud Ramonage — Artisan ramoneur certifié à Martigues</span>
-            <div class="flex items-center gap-4">
-              <a href="/mentions-legales" class="hover:text-[#C0622F] transition-colors duration-200">Mentions légales</a>
-              <span class="text-white/10">·</span>
-              <a href="/cgv" class="hover:text-[#C0622F] transition-colors duration-200">CGV</a>
-              <span class="text-white/10">·</span>
-              <span>Conforme RSD 13 &amp; Décret 2023-641</span>
-            </div>
+        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-white/30">© 2024 Sud Ramonage — Tous droits réservés · TVA non applicable Art. 293 B CGI</p>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-bold bg-[#F97316]/20 text-[#F97316] px-2.5 py-1 rounded-lg">Certifié COSTIC</span>
+            <span class="text-[10px] font-bold bg-white/8 text-white/50 px-2.5 py-1 rounded-lg">Qualibat 6521</span>
+            <span class="text-[10px] font-bold bg-white/8 text-white/50 px-2.5 py-1 rounded-lg">RC Pro</span>
           </div>
         </div>
-
       </div>
     </footer>
 
     <script>
-      const burgerBtn     = document.getElementById('burger-btn');
-      const mobileMenu    = document.getElementById('mobile-menu');
-      const mobilePanel   = document.getElementById('mobile-panel');
-      const mobileOverlay = document.getElementById('mobile-overlay');
-      const closeBtn      = document.getElementById('mobile-close');
-      const iconOpen      = document.getElementById('burger-icon-open');
-      const iconClose     = document.getElementById('burger-icon-close');
+      // Mobile menu toggle
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      const burgerIcon = document.getElementById('burger-icon');
+      const closeIcon = document.getElementById('close-icon');
 
-      function openMenu() {
-        mobileMenu?.classList.remove('hidden');
-        mobileMenu?.setAttribute('aria-hidden', 'false');
-        burgerBtn?.setAttribute('aria-expanded', 'true');
-        setTimeout(() => mobilePanel?.classList.remove('translate-x-full'), 10);
-        iconOpen?.classList.add('hidden');
-        iconClose?.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeMenu() {
-        mobilePanel?.classList.add('translate-x-full');
-        burgerBtn?.setAttribute('aria-expanded', 'false');
-        iconOpen?.classList.remove('hidden');
-        iconClose?.classList.add('hidden');
-        document.body.style.overflow = '';
-        setTimeout(() => {
-          mobileMenu?.classList.add('hidden');
-          mobileMenu?.setAttribute('aria-hidden', 'true');
-        }, 300);
-      }
-
-      burgerBtn?.addEventListener('click', openMenu);
-      closeBtn?.addEventListener('click', closeMenu);
-      mobileOverlay?.addEventListener('click', closeMenu);
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeMenu();
+      btn?.addEventListener('click', () => {
+        const isOpen = !menu?.classList.contains('hidden');
+        menu?.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        burgerIcon?.classList.toggle('hidden');
+        closeIcon?.classList.toggle('hidden');
       });
 
-      function setupAccordion(btnId: string, panelId: string, arrowId: string) {
-        const btn   = document.getElementById(btnId);
-        const panel = document.getElementById(panelId);
-        const arrow = document.getElementById(arrowId);
-        btn?.addEventListener('click', () => {
-          const isOpen = btn.getAttribute('aria-expanded') === 'true';
-          btn.setAttribute('aria-expanded', String(!isOpen));
-          panel?.classList.toggle('hidden', isOpen);
-          arrow?.classList.toggle('rotate-180', !isOpen);
+      // Mobile accordions
+      function setupAccordion(btnId: string, panelId: string) {
+        const b = document.getElementById(btnId);
+        const p = document.getElementById(panelId);
+        const chevron = b?.querySelector('svg');
+        b?.addEventListener('click', () => {
+          p?.classList.toggle('hidden');
+          chevron?.classList.toggle('rotate-180');
         });
       }
+      setupAccordion('mob-part-btn', 'mob-part-panel');
+      setupAccordion('mob-pro-btn', 'mob-pro-panel');
+      setupAccordion('mob-exp-btn', 'mob-exp-panel');
 
-      setupAccordion('mobile-part-btn', 'mobile-part', 'mobile-part-arrow');
-      setupAccordion('mobile-pro-btn',  'mobile-pro',  'mobile-pro-arrow');
-      setupAccordion('mobile-exp-btn',  'mobile-exp',  'mobile-exp-arrow');
-
+      // Scroll shadow
       const header = document.getElementById('site-header');
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 8) {
-          header?.classList.add('shadow-sm');
-        } else {
-          header?.classList.remove('shadow-sm');
-        }
+        header?.classList.toggle('shadow-md', window.scrollY > 20);
       }, { passive: true });
     </script>
 

@@ -78,10 +78,10 @@ const categoryColors: Record<string, string> = {
 
     <div class="flex items-end justify-between mb-10">
       <div>
-        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#C0622F] mb-3">Guide Expert</p>
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F97316] mb-3">Guide Expert</p>
         <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A]">{title}</h2>
       </div>
-      <a href="/conseils" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold text-[#1A1A1A]/55 hover:text-[#C0622F] transition-colors duration-200">
+      <a href="/conseils" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold text-[#1A1A1A]/55 hover:text-[#F97316] transition-colors duration-200">
         Tous les articles
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -93,7 +93,7 @@ const categoryColors: Record<string, string> = {
       {allArticles.map(article => (
         <a
           href={article.href}
-          class="group bg-white border border-[#EEEEEE] rounded-xl p-6 hover:shadow-md hover:border-[#C0622F]/20 hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
+          class="group bg-white border border-[#EEEEEE] rounded-xl p-6 hover:shadow-md hover:border-[#F97316]/20 hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
         >
           <div class="flex items-center gap-2 mb-4">
             <span
@@ -105,7 +105,7 @@ const categoryColors: Record<string, string> = {
             <span class="text-[11px] text-[#1A1A1A]/35 font-light">{article.readTime}</span>
           </div>
 
-          <h3 class="text-sm font-bold text-[#1A1A1A] leading-snug mb-3 group-hover:text-[#C0622F] transition-colors duration-200 flex-1">
+          <h3 class="text-sm font-bold text-[#1A1A1A] leading-snug mb-3 group-hover:text-[#F97316] transition-colors duration-200 flex-1">
             {article.title}
           </h3>
 
@@ -121,7 +121,7 @@ const categoryColors: Record<string, string> = {
             ))}
           </div>
 
-          <div class="flex items-center gap-1.5 text-xs font-semibold text-[#C0622F] mt-auto group-hover:gap-3 transition-all duration-200">
+          <div class="flex items-center gap-1.5 text-xs font-semibold text-[#F97316] mt-auto group-hover:gap-3 transition-all duration-200">
             Lire l'article
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -132,7 +132,7 @@ const categoryColors: Record<string, string> = {
     </div>
 
     <div class="mt-8 text-center sm:hidden">
-      <a href="/conseils" class="inline-flex items-center gap-2 text-xs font-semibold text-[#1A1A1A]/55 hover:text-[#C0622F] transition-colors duration-200">
+      <a href="/conseils" class="inline-flex items-center gap-2 text-xs font-semibold text-[#1A1A1A]/55 hover:text-[#F97316] transition-colors duration-200">
         Tous les articles d'experts
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
