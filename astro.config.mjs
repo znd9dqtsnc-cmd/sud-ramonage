@@ -7,6 +7,16 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://www.sud-ramonage.fr',
   output: 'static',
+  redirects: {
+    '/gestion-locative':            '/bailleurs-syndics',
+    '/syndics':                     '/bailleurs-syndics',
+    '/pro-syndics':                 '/bailleurs-syndics',
+    '/aide-vente-immobilier':       '/transaction-immobiliere',
+    '/audit-immobilier':            '/transaction-immobiliere',
+    '/immobilier-notaires':         '/transaction-immobiliere',
+    '/partenaires-diagnostiqueurs': '/transaction-immobiliere',
+    '/restauration':                '/restauration-pro',
+  },
   adapter: vercel(),
   prefetch: {
     prefetchAll: true,
