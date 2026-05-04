@@ -1,0 +1,285 @@
+---
+import Layout from '../layouts/Layout.astro';
+const siteUrl = 'https://www.sud-ramonage.fr';
+const annee = new Date().getFullYear();
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: `Normes & Réglementation Conduits de Fumée — RSD 13 & NF DTU 24.1 ${annee}`,
+  description: 'Guide complet des obligations légales de ramonage dans les Bouches-du-Rhône (RSD 13), de la norme NF DTU 24.1 et des distances de sécurité. Par Sud Ramonage, artisan certifié.',
+  author: { '@type': 'Organization', name: 'Sud Ramonage', url: siteUrl },
+  url: `${siteUrl}/normes-reglementation`,
+};
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Normes & Réglementation', url: '/normes-reglementation' },
+];
+---
+
+<style>
+  @media print {
+    #site-header, #site-footer, .no-print { display: none !important; }
+    body { font-size: 11pt; color: #000; background: #fff; }
+    h1 { font-size: 20pt; } h2 { font-size: 14pt; page-break-after: avoid; }
+    table { page-break-inside: avoid; width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 6pt 8pt; font-size: 9pt; }
+    a { color: #000; text-decoration: none; }
+  }
+</style>
+
+<Layout
+  title={`Normes & Réglementation Ramonage — RSD 13 & NF DTU 24.1 ${annee} | Sud Ramonage`}
+  description="Obligations légales de ramonage dans les Bouches-du-Rhône (RSD 13), norme NF DTU 24.1, distances de sécurité et fréquences par appareil. Guide complet téléchargeable."
+  breadcrumbs={breadcrumbs}
+  pageSchema={pageSchema}
+>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-[#1A1A1A] to-[#1A4B8F] text-white pt-28 pb-16">
+    <div class="max-w-4xl mx-auto px-6 md:px-10">
+      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-white/40 mb-6">
+        <a href="/" class="hover:text-white/70">Accueil</a><span>/</span><span class="text-white/60">Normes & Réglementation</span>
+      </nav>
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-3 py-1.5 text-[11px] text-white/70 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#E65100]"></span>
+        RSD 13 · NF DTU 24.1 · {annee}
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-5">
+        Normes & Réglementation<br /><span class="text-[#E65100]">Conduits de Fumée</span>
+      </h1>
+      <p class="text-base text-white/65 max-w-2xl leading-relaxed mb-8">
+        Tout ce que la loi impose : obligations d'entretien (RSD 13), normes techniques de construction (NF DTU 24.1), fréquences légales par appareil, distances de sécurité et sanctions en cas de non-conformité.
+      </p>
+      <div class="flex flex-wrap gap-3 no-print">
+        <button onclick="window.print()" class="inline-flex items-center gap-2 bg-[#E65100] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#BF360C] transition-colors cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          Télécharger en PDF
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TL;DR -->
+  <section class="py-8 px-6 md:px-10 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="border-l-4 border-[#E65100] bg-[#FFF3E0] rounded-r-xl p-6">
+        <p class="text-[10px] font-bold tracking-widest uppercase text-[#E65100] mb-3">L'essentiel en 30 secondes</p>
+        <ul class="space-y-2">
+          {[
+            'RSD 13 = ramonage mécanique obligatoire au moins 1×/an pour tout conduit de fumée en service dans les Bouches-du-Rhône.',
+            'NF DTU 24.1 = norme technique obligatoire pour toute construction ou réhabilitation de conduit (tubage, distances de sécurité).',
+            'Sans certificat de ramonage valide : l\'assureur peut refuser l\'indemnisation en cas de sinistre.',
+            'Tubage inox obligatoire dès qu\'un ancien conduit maçonné est raccordé à un appareil à haut rendement.',
+            'Distance de sécurité minimale : 16 cm entre conduit non isolé et matériaux combustibles.',
+          ].map(p => (
+            <li class="flex items-start gap-2.5 text-sm text-[#1A1A1A]/75">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] mt-1.5 shrink-0"></span>{p}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-6 md:px-10">
+    <div class="max-w-4xl mx-auto space-y-16">
+
+      <!-- 1. Textes de référence -->
+      <div>
+        <h2 class="text-2xl font-bold mb-6">Les textes qui s'appliquent dans les Bouches-du-Rhône</h2>
+        <div class="overflow-x-auto rounded-xl border border-[#EEEEEE] mb-6">
+          <table class="w-full text-sm border-collapse bg-white">
+            <thead>
+              <tr class="bg-[#1A1A1A] text-white">
+                <th class="text-left px-5 py-4 text-xs font-semibold">Texte légal</th>
+                <th class="text-left px-5 py-4 text-xs font-semibold">Contenu</th>
+                <th class="text-left px-5 py-4 text-xs font-semibold">Portée</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { texte: 'RSD 13 — Art. 31', contenu: 'Ramonage annuel obligatoire de tout conduit de fumée actif', portee: 'Bouches-du-Rhône (13)' },
+                { texte: 'Décret n°87-712 (1987)', contenu: 'Ramonage = charge locative récupérable sur le locataire', portee: 'France entière' },
+                { texte: 'Arrêté du 22 octobre 1969', contenu: 'Construction et entretien des conduits domestiques', portee: 'France entière' },
+                { texte: 'NF DTU 24.1 P1-1', contenu: 'Norme technique — fumisterie, conduits, tubage', portee: 'Norme française' },
+                { texte: 'NF EN 1443', contenu: 'Exigences générales des conduits de fumée', portee: 'Norme européenne' },
+                { texte: 'Code des assurances — L.113-1', contenu: 'Exclusion possible de garantie incendie sans certificat de ramonage', portee: 'France entière' },
+              ].map((row, i) => (
+                <tr class={i % 2 === 0 ? 'bg-white' : 'bg-[#FAFAFA]'}>
+                  <td class="px-5 py-3.5 font-mono text-xs font-bold text-[#E65100]">{row.texte}</td>
+                  <td class="px-5 py-3.5 text-xs text-[#1A1A1A]/70">{row.contenu}</td>
+                  <td class="px-5 py-3.5 text-xs text-[#1A1A1A]/45">{row.portee}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <div class="bg-[#FAFAFA] rounded-xl p-5 border border-[#EEEEEE]">
+            <p class="text-xs font-bold text-[#1A1A1A] uppercase tracking-widest mb-3">Conséquences du non-ramonage</p>
+            <ul class="space-y-2">
+              {['Refus d\'indemnisation assurance habitation en cas de sinistre', 'Mise en demeure préfectorale possible (RSD 13)', 'Responsabilité civile engagée si dommages causés à autrui', 'Pour les bailleurs : responsabilité pénale si conduit non conforme'].map(item => (
+                <li class="flex gap-2 text-xs text-[#1A1A1A]/65"><span class="text-[#E65100] shrink-0">→</span>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-[#FAFAFA] rounded-xl p-5 border border-[#EEEEEE]">
+            <p class="text-xs font-bold text-[#1A1A1A] uppercase tracking-widest mb-3">Ce que doit contenir le certificat</p>
+            <ul class="space-y-2">
+              {['Nom, adresse et qualification du ramoneur (n° SIRET)', 'Date et adresse du bien ramoné', 'Type d\'appareil et description du conduit', 'Mention « conforme RSD 13 » ou observations', 'Signature et cachet du professionnel'].map(item => (
+                <li class="flex gap-2 text-xs text-[#1A1A1A]/65"><span class="text-[#E65100] shrink-0">→</span>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Fréquences par appareil -->
+      <div>
+        <h2 class="text-2xl font-bold mb-6">Fréquences de ramonage par type d'appareil</h2>
+        <div class="overflow-x-auto rounded-xl border border-[#EEEEEE]">
+          <table class="w-full text-sm border-collapse bg-white">
+            <thead>
+              <tr class="bg-[#1A1A1A] text-white">
+                <th class="text-left px-5 py-4 text-xs font-semibold">Type d'appareil</th>
+                <th class="text-left px-5 py-4 text-xs font-semibold">Fréquence RSD 13</th>
+                <th class="text-left px-5 py-4 text-xs font-semibold">Période conseillée</th>
+                <th class="text-left px-5 py-4 text-xs font-semibold">Tarif indicatif</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { appareil: 'Cheminée à foyer ouvert', freq: '1× / an', periode: 'Septembre – Octobre', tarif: 'dès 75 €' },
+                { appareil: 'Insert à bois', freq: '1× / an', periode: 'Avant saison de chauffe', tarif: 'dès 90 €' },
+                { appareil: 'Poêle à bois', freq: '1× / an', periode: 'Avant saison de chauffe', tarif: 'dès 90 €' },
+                { appareil: 'Poêle à granulés', freq: '1× / an', periode: 'Fin de saison (bilan)', tarif: 'dès 110 €' },
+                { appareil: 'Chaudière à bois / biomasse', freq: '2× / an', periode: 'Avant + après saison', tarif: 'Sur devis' },
+                { appareil: 'Chaudière au fioul', freq: '1× / an', periode: 'Au choix', tarif: 'Sur devis' },
+                { appareil: 'Four à pizza / restauration', freq: 'Trimestriel (ERP)', periode: 'Mensuel si activité intense', tarif: 'Sur devis' },
+              ].map((row, i) => (
+                <tr class={i % 2 === 0 ? 'bg-white' : 'bg-[#FAFAFA]'}>
+                  <td class="px-5 py-3.5 text-sm font-medium text-[#1A1A1A]">{row.appareil}</td>
+                  <td class="px-5 py-3.5">
+                    <span class="text-[#E65100] font-bold text-xs flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>{row.freq}</span>
+                  </td>
+                  <td class="px-5 py-3.5 text-xs text-[#1A1A1A]/55">{row.periode}</td>
+                  <td class="px-5 py-3.5 text-xs font-bold text-[#1A1A1A]">{row.tarif}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-[11px] text-[#1A1A1A]/35 mt-3">Tarifs indicatifs — zone Martigues & Côte Bleue {annee}. Certificat RSD 13 inclus. Déplacement gratuit sur 30 km.</p>
+      </div>
+
+      <!-- 3. NF DTU 24.1 — Distances de sécurité -->
+      <div>
+        <h2 class="text-2xl font-bold mb-2">NF DTU 24.1 — Distances de sécurité</h2>
+        <p class="text-sm text-[#1A1A1A]/60 leading-relaxed mb-6">La norme NF DTU 24.1 fixe les règles techniques obligatoires pour tout conduit de fumée : construction, tubage, raccordement. La méconnaître peut entraîner un refus d'indemnisation de l'assureur.</p>
+
+        <div class="grid md:grid-cols-3 gap-5 mb-6">
+          {[
+            { val: '16 cm', titre: 'Matériaux combustibles', desc: 'Distance minimale entre un conduit non isolé et tout matériau combustible (bois de charpente, isolation organique).' },
+            { val: '40 cm', titre: 'Débouché en toiture', desc: 'Hauteur minimale de dépassement du conduit par rapport au point de couverture le plus proche. 50 cm si à moins de 1,5 m d\'une arête.' },
+            { val: '4 Pa', titre: 'Tirage minimal', desc: 'Pression de tirage minimale pour une chaudière gaz. 8 à 12 Pa pour un foyer ouvert. Mesurée lors du diagnostic.' },
+          ].map(({ val, titre, desc }) => (
+            <div class="bg-white border border-[#EEEEEE] rounded-xl p-6">
+              <p class="text-3xl font-extrabold text-[#E65100] mb-1">{val}</p>
+              <p class="text-xs font-bold text-[#1A1A1A] uppercase tracking-wider mb-2">{titre}</p>
+              <p class="text-xs text-[#1A1A1A]/55 leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Quand le tubage est obligatoire -->
+        <div class="bg-[#1A1A1A] rounded-2xl p-8">
+          <h3 class="text-base font-bold text-white mb-5">Quand le tubage inox est obligatoire</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            {[
+              { n: '01', t: 'Raccordement d\'un appareil à haut rendement', d: 'Tout insert ou poêle moderne raccordé à un ancien conduit maçonné doit être tubé.' },
+              { n: '02', t: 'Conduit fissuré ou non étanche', d: 'Fissures, joints dégradés ou parois percées compromettent l\'évacuation des fumées et exposent au CO.' },
+              { n: '03', t: 'Section inadaptée', d: 'Conduit trop grand ou trop petit pour l\'appareil raccordé — le tubage corrige la section.' },
+              { n: '04', t: 'Après un incendie de conduit', d: 'Un feu de conduit fragilise les parois maçonnées. Tubage obligatoire avant toute remise en service.' },
+            ].map(({ n, t, d }) => (
+              <div class="flex gap-3 bg-white/5 rounded-xl p-4 border border-white/8">
+                <span class="text-[11px] font-bold text-[#E65100] shrink-0 mt-0.5">{n}</span>
+                <div>
+                  <p class="text-sm font-semibold text-white mb-1">{t}</p>
+                  <p class="text-xs text-white/50 leading-relaxed">{d}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. RSD 13 vs NF DTU 24.1 -->
+      <div class="bg-[#FAFAFA] rounded-2xl p-8">
+        <h2 class="text-xl font-bold mb-6">RSD 13 & NF DTU 24.1 — Deux obligations cumulatives</h2>
+        <div class="grid md:grid-cols-2 gap-5">
+          <div class="bg-white rounded-xl p-5 border border-[#EEEEEE]">
+            <p class="text-xs font-bold text-[#E65100] uppercase tracking-wider mb-2">RSD 13 — L'usage</p>
+            <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-3">Concerne l'<strong class="text-[#1A1A1A]">entretien régulier</strong> : ramonage mécanique annuel obligatoire, certificat officiel, conformité assurance.</p>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-[#EEEEEE]">
+            <p class="text-xs font-bold text-[#E65100] uppercase tracking-wider mb-2">NF DTU 24.1 — L'installation</p>
+            <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-3">Concerne la <strong class="text-[#1A1A1A]">conformité de l'installation</strong> : distances de sécurité, tubage, matériaux certifiés CE.</p>
+          </div>
+        </div>
+        <div class="mt-4 bg-[#1A1A1A] rounded-xl p-5">
+          <p class="text-sm font-semibold text-white mb-1">Les assureurs exigent les deux simultanément</p>
+          <p class="text-sm text-white/55 leading-relaxed">En cas d'incendie, l'expert mandaté par votre assureur vérifie les deux points. L'absence de l'un d'eux constitue un motif légal de réduction ou de refus d'indemnisation.</p>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div>
+        <h2 class="text-2xl font-bold mb-6">Questions fréquentes</h2>
+        <div class="space-y-4">
+          {[
+            { q: 'Mon locataire doit-il faire le ramonage ?', r: 'Selon le décret n°87-712, le ramonage courant est une charge locative récupérable — c\'est le locataire qui en supporte le coût. Mais le bailleur reste responsable si le conduit est non conforme ou nécessite des travaux de réhabilitation.' },
+            { q: 'Un ramonage chimique remplace-t-il le ramonage mécanique ?', r: 'Non. Seul le ramonage mécanique par voie de hérisson permet de délivrer un certificat valable auprès des assureurs et conforme au RSD 13. La bûche chimique est un complément, pas un substitut.' },
+            { q: 'Je n\'utilise plus ma cheminée, dois-je quand même ramoner ?', r: 'Si l\'appareil est raccordé et le conduit accessible, le RSD 13 s\'applique. Si vous souhaitez arrêter définitivement, un professionnel doit condamner le conduit officiellement avec un compte-rendu d\'intervention.' },
+            { q: 'Mon assurance peut-elle refuser d\'indemniser un incendie de conduit ?', r: 'Oui. En l\'absence de certificat de ramonage datant de moins de 12 mois, l\'assureur est en droit de réduire ou d\'annuler l\'indemnisation. C\'est la clause d\'entretien courant présente dans la quasi-totalité des contrats habitation.' },
+            { q: 'Quelle est la différence entre RSD 13 et NF DTU 24.1 ?', r: 'Le RSD 13 concerne l\'usage et l\'entretien (ramonage annuel). La NF DTU 24.1 concerne la construction et la conformité de l\'installation elle-même. Les deux sont exigés simultanément par les compagnies d\'assurance.' },
+          ].map(({ q, r }) => (
+            <details class="group border border-[#EEEEEE] rounded-xl overflow-hidden">
+              <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-[#FAFAFA] transition-colors">
+                <p class="text-sm font-semibold text-[#1A1A1A] pr-4">{q}</p>
+                <svg class="w-4 h-4 text-[#1A1A1A]/40 shrink-0 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-5 pb-5 text-sm text-[#1A1A1A]/65 leading-relaxed border-t border-[#EEEEEE]">
+                <p class="pt-4">{r}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-[#E65100] rounded-2xl p-8 text-white">
+        <h2 class="text-xl font-bold mb-3">Régularisez votre situation dès aujourd'hui</h2>
+        <p class="text-sm text-white/75 mb-6">Certificat de ramonage RSD 13 remis le jour même. Intervention dans tout le département des Bouches-du-Rhône.</p>
+        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-white text-[#E65100] text-sm font-bold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors">06 64 72 96 00</a>
+      </div>
+
+      <nav aria-label="Voir aussi" class="pt-8 border-t border-[#EEEEEE]">
+        <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/30 mb-4">Voir aussi</p>
+        <ul class="flex flex-wrap gap-3">
+          {[
+            { href: '/securite-sante', label: 'Sécurité & Santé — CO, incendies' },
+            { href: '/tubage', label: 'Tubage inox — mise aux normes' },
+            { href: '/ramonage', label: 'Ramonage certifié RSD 13' },
+            { href: '/lexique', label: 'Lexique fumisterie' },
+          ].map(({ href, label }) => (
+            <li><a href={href} class="text-xs text-[#1A1A1A]/50 border border-[#EEEEEE] rounded-lg px-3 py-1.5 hover:text-[#E65100] hover:border-[#E65100]/30 transition-colors">{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+    </div>
+  </section>
+</Layout>
