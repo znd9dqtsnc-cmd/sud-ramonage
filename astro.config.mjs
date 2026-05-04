@@ -21,6 +21,12 @@ export default defineConfig({
     '/guide-conformite-rsd13':      '/normes-reglementation',
     '/sante-qualite-air':           '/securite-sante',
     '/statistiques-securite':       '/securite-sante',
+    '/expertise':                   '/normes-reglementation',
+    '/corps-de-chauffe':            '/entretien-poele',
+    '/guide-vente-cheminee':        '/transaction-immobiliere',
+    '/chemisage':                   '/tubage',
+    '/test-fumigene':               '/audit-conformite',
+    '/diagnostic-securite':         '/audit-conformite',
   },
   adapter: vercel(),
   prefetch: {
