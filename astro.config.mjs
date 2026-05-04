@@ -16,6 +16,11 @@ export default defineConfig({
     '/immobilier-notaires':         '/transaction-immobiliere',
     '/partenaires-diagnostiqueurs': '/transaction-immobiliere',
     '/restauration':                '/restauration-pro',
+    '/reglementation':              '/normes-reglementation',
+    '/normes':                      '/normes-reglementation',
+    '/guide-conformite-rsd13':      '/normes-reglementation',
+    '/sante-qualite-air':           '/securite-sante',
+    '/statistiques-securite':       '/securite-sante',
   },
   adapter: vercel(),
   prefetch: {

@@ -1,0 +1,410 @@
+---
+import Layout from '../layouts/Layout.astro';
+const siteUrl = 'https://www.sud-ramonage.fr';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  '@id': `${siteUrl}/securite-sante#dataset`,
+  name: 'Sécurité & Santé — Incendies de conduit, CO, PM2.5 & Prévention',
+  description: 'Données chiffrées sur les incendies domestiques de conduit, les intoxications au monoxyde de carbone, les particules PM2.5 et les mesures de prévention. Sources : SDIS, CNPP, OMS, ANSES, Santé Publique France.',
+  creator: {
+    '@type': 'Organization',
+    name: 'Compilation Sud Ramonage — sources : OMS, ANSES, SDIS, CNPP, Santé Publique France',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Combien d\'incendies de cheminée se produisent en France chaque année ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'En France, les feux de cheminée et de conduit représentent environ 70 000 interventions des sapeurs-pompiers chaque année selon les statistiques SDIS. Ils constituent l\'une des premières causes d\'incendie domestique, avec un coût moyen des sinistres évalué entre 8 000 € et 30 000 €. La grande majorité de ces incendies aurait pu être évitée par un ramonage annuel.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Le monoxyde de carbone vient-il de ma cheminée ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Oui. Une cheminée, un insert, un poêle ou une chaudière mal entretenus ou dont le conduit est obstrué peut provoquer un refoulement de fumée contenant du CO. Le monoxyde de carbone (CO) est inodore, incolore et mortel en quelques heures à concentration élevée. En France, il cause environ 3 000 accidents et 300 décès par an selon Santé Publique France.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quels sont les risques d\'une cheminée non ramonée ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Une cheminée non ramonée expose à trois risques majeurs : (1) incendie de conduit par inflammation du bistre ou du calcin accumulé — ces dépôts s\'enflamment à 200 °C et atteignent 1 000 °C en quelques secondes ; (2) intoxication au monoxyde de carbone par refoulement des fumées dû à un conduit obstrué ou dégradé ; (3) refus d\'indemnisation assurantielle en cas de sinistre sans certificat de ramonage valide conforme RSD 13.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Comment les PM2.5 sont-elles liées au ramonage ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'La combustion incomplète du bois (bois humide, conduit encrassé) produit des particules fines PM2.5 qui s\'accumulent dans le foyer, dans le conduit et dans l\'air intérieur. Un ramonage régulier et un conduit étanche réduisent les émissions de PM2.5 de 40 à 65 % selon les études ADEME.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Le bistre est-il vraiment dangereux dans un conduit de cheminée ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Oui. Le bistre est un dépôt de goudron (résine pyrolysée) qui s\'accumule sur les parois internes du conduit lors d\'une combustion à basse température ou avec du bois humide. Il s\'enflamme à partir de 200 °C et génère des températures de 800 à 1 000 °C à l\'intérieur du conduit — bien au-delà de la résistance thermique des maçonneries et tubages standard.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Comment reconnaître une intoxication au CO ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Les symptômes d\'une intoxication au CO sont proches d\'une grippe : maux de tête, nausées, vertiges, fatigue soudaine. Ils disparaissent à l\'air libre. Si plusieurs personnes dans le logement présentent ces symptômes simultanément, quittez immédiatement les lieux, appelez le 15 (SAMU) ou le 18 (pompiers) et ne ré-entrez pas avant aération complète et vérification par un professionnel.',
+      },
+    },
+  ],
+};
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Sécurité & Santé', url: '/securite-sante' },
+];
+---
+
+<Layout
+  title="Sécurité & Santé — Incendies, CO, PM2.5 & Prévention | Sud Ramonage"
+  description="Données chiffrées sur les incendies de cheminée (70 000/an), les intoxications au CO (3 000 accidents, 300 décès) et les particules PM2.5. Causes, prévention, gestes essentiels. Sources SDIS, OMS, ANSES."
+  breadcrumbs={breadcrumbs}
+  pageSchema={pageSchema}
+>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#0D1A2D] via-[#1A1A1A] to-[#1A1A1A] text-white pt-28 pb-16">
+    <div class="max-w-4xl mx-auto px-6 md:px-10">
+      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-white/40 mb-6">
+        <a href="/" class="hover:text-white/70">Accueil</a><span>/</span><span class="text-white/60">Sécurité & Santé</span>
+      </nav>
+      <div class="inline-flex items-center gap-2 bg-red-900/30 border border-red-500/30 text-red-400 text-[11px] font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        Données scientifiques · SDIS, OMS, ANSES, Santé Publique France
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-5">
+        Sécurité & Santé :<br />
+        <span class="text-red-400">Ce que les chiffres disent vraiment</span>
+      </h1>
+      <p class="text-base text-white/65 max-w-2xl leading-relaxed">
+        70 000 feux de cheminée par an, 3 000 intoxications au CO, des PM2.5 qui pénètrent vos poumons — voici les données réelles sur les risques d'une installation mal entretenue, et comment les éliminer.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats choc -->
+  <section class="bg-[#1A1A1A] border-b border-white/5 py-10 px-6 md:px-10">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { val: '70 000', unit: 'interventions/an', label: 'Feux de cheminée pris en charge par les pompiers', source: 'SDIS France' },
+          { val: '3 000', unit: 'accidents/an', label: 'Intoxications au CO en France toutes sources', source: 'Santé Publique France' },
+          { val: '≈ 80 %', unit: 'évitables', label: 'Des feux de conduit évitables par ramonage annuel', source: 'CNPP / SDIS 13' },
+          { val: '40–65 %', unit: 'réduction', label: 'De PM2.5 après ramonage certifié COSTIC', source: 'ADEME' },
+        ].map(({ val, unit, label, source }) => (
+          <div class="text-center p-5 rounded-2xl bg-white/5 border border-white/8">
+            <p class="text-3xl md:text-4xl font-extrabold text-white mb-0.5">{val}</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100] mb-2">{unit}</p>
+            <p class="text-[11px] text-white/50 leading-tight mb-2">{label}</p>
+            <p class="text-[9px] text-white/25 font-medium">Source : {source}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Incendies de conduit -->
+  <section class="py-16 px-6 md:px-10 border-b border-[#EEEEEE]">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-10">
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-3">SDIS / CNPP — France</p>
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-3">Incendies de conduit & feux de cheminée</h2>
+        <p class="text-sm text-[#1A1A1A]/55 leading-relaxed max-w-2xl">Les feux de conduit représentent l'une des premières causes d'incendie domestique en France. La majorité résulte d'un défaut d'entretien annuel.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-10">
+        {[
+          { chiffre: '~\u00a070\u00a0000', unite: 'interventions / an', label: 'Feux de cheminée pris en charge par les sapeurs-pompiers français chaque année', source: 'Source : SDIS — Direction générale de la Sécurité civile' },
+          { chiffre: '~\u00a08\u00a0000\u00a0€', unite: 'coût moyen', label: 'Montant moyen d\'un sinistre lié à un feu de conduit (dégâts structure, fumée, eau d\'extinction)', source: 'Source : CNPP — Centre National de Prévention et de Protection' },
+          { chiffre: '~\u00a080\u00a0%', unite: 'évitables', label: 'Des feux de cheminée auraient pu être évités par un ramonage annuel conforme, selon les enquêtes SDIS', source: 'Source : rapports d\'intervention SDIS 13 / CNPP' },
+        ].map(({ chiffre, unite, label, source }) => (
+          <div class="bg-white border border-[#EEEEEE] rounded-xl p-7">
+            <p class="text-3xl md:text-4xl font-extrabold text-[#E65100] leading-none mb-1">{chiffre}</p>
+            <p class="text-xs text-[#1A1A1A]/45 font-medium uppercase tracking-wider mb-3">{unite}</p>
+            <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">{label}</p>
+            <p class="text-[10px] text-[#1A1A1A]/30 italic">{source}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="overflow-x-auto rounded-xl border border-[#EEEEEE]">
+        <table class="w-full text-sm border-collapse bg-white">
+          <thead>
+            <tr class="bg-[#1A1A1A] text-white">
+              <th class="text-left px-5 py-4 text-xs font-semibold tracking-wider">Cause de l'incendie de conduit</th>
+              <th class="text-left px-5 py-4 text-xs font-semibold tracking-wider">Fréquence estimée</th>
+              <th class="text-left px-5 py-4 text-xs font-semibold tracking-wider">Mécanisme</th>
+              <th class="text-left px-5 py-4 text-xs font-semibold tracking-wider">Prévention</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { cause: 'Dépôt de bistre enflammé', freq: 'Cause principale (~60 %)', mecanisme: 'Goudron de combustion incomplète s\'enflamme à 200 °C, atteint 800–1 000 °C', prevention: 'Ramonage annuel + débistrage si encrassement' },
+              { cause: 'Accumulation de calcin', freq: 'Cause secondaire (~20 %)', mecanisme: 'Dépôt minéral dur réduisant la section du conduit et augmentant la pression des fumées', prevention: 'Ramonage mécanique — hérisson adapté au type de conduit' },
+              { cause: 'Obstruction (nid, corps étranger)', freq: '~10 % des interventions', mecanisme: 'Blocage des fumées → refoulement CO dans la pièce ou surpression thermique', prevention: 'Test de vacuité annuel lors du ramonage' },
+              { cause: 'Fissure ou joint dégradé', freq: '~8 % des cas', mecanisme: 'Fuite de monoxyde de carbone dans les parois ou combles — indétectable sans caméra', prevention: 'Inspection caméra HD — diagnostic conduit complet' },
+              { cause: 'Dépassement insuffisant en toiture', freq: '~2 % des sinistres', mecanisme: 'Tirage inversé par vent dominant — refoulement de fumées en pièce de vie', prevention: 'Contrôle réglementaire hauteur conduit — NF DTU 24.1 art. 6.4.1' },
+            ].map((row, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-[#FAFAFA]'}>
+                <td class="px-5 py-4 font-medium text-[#1A1A1A]">{row.cause}</td>
+                <td class="px-5 py-4">
+                  <span class="inline-flex items-center gap-1.5 text-[#E65100] font-semibold text-xs">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>
+                    {row.freq}
+                  </span>
+                </td>
+                <td class="px-5 py-4 text-[#1A1A1A]/65 text-xs leading-relaxed">{row.mecanisme}</td>
+                <td class="px-5 py-4 text-[#1A1A1A]/65 text-xs leading-relaxed">{row.prevention}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[11px] text-[#1A1A1A]/35 mt-3">Sources : CNPP, rapports d'intervention SDIS France, Observatoire national du risque incendie.</p>
+    </div>
+  </section>
+
+  <!-- Monoxyde de carbone -->
+  <section class="py-16 px-6 md:px-10 bg-[#FAFAFA] border-b border-[#EEEEEE]">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-red-50 border border-red-200 text-red-700 text-[11px] font-bold px-4 py-2 rounded-full mb-5 uppercase tracking-widest">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            Risque n°1 — Inodore & invisible
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] mb-5">Monoxyde de Carbone (CO)</h2>
+          <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
+            Le CO est produit par toute combustion incomplète. Un conduit obstrué, fissuré ou mal tirant empêche son évacuation — il se répand alors dans les pièces de vie, sans odeur, sans couleur, sans goût.
+          </p>
+          <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-6">
+            Il se fixe sur l'hémoglobine à la place de l'oxygène (affinité 240× supérieure), provoquant une asphyxie progressive. Les symptômes ressemblent à une grippe et disparaissent à l'air libre — d'où le retard fréquent de prise en charge.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            {[
+              { chiffre: '~\u00a03\u00a0000', unite: 'accidents/an', source: 'Santé Publique France' },
+              { chiffre: '~\u00a0300', unite: 'décès/an', source: 'Santé Publique France / InVS' },
+            ].map(({ chiffre, unite, source }) => (
+              <div class="bg-[#1A1A1A] rounded-2xl p-5 text-white">
+                <p class="text-2xl font-extrabold text-[#E65100] mb-0.5">{chiffre}</p>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-white/50 mb-1">{unite}</p>
+                <p class="text-[10px] text-white/30 italic">{source}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="bg-red-50 border border-red-200 rounded-2xl p-5">
+            <p class="text-sm font-bold text-red-800 mb-3">Concentrations de référence (OMS / ANSES)</p>
+            <div class="space-y-2">
+              {[
+                { ppm: '35 ppm', effet: 'Maux de tête après 6–8 h', couleur: 'text-orange-600' },
+                { ppm: '100 ppm', effet: 'Maux de tête sévères, vertiges — 2–3h', couleur: 'text-orange-700' },
+                { ppm: '200 ppm', effet: 'Nausées, confusion, perte de connaissance', couleur: 'text-red-600' },
+                { ppm: '400 ppm', effet: 'Danger vital — mort possible sous 1–2h', couleur: 'text-red-800' },
+              ].map(({ ppm, effet, couleur }) => (
+                <div class="flex items-center gap-3 text-xs">
+                  <span class={`font-bold shrink-0 w-20 ${couleur}`}>{ppm}</span>
+                  <span class="text-red-700">{effet}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-[#1A1A1A] rounded-2xl p-6 text-white">
+            <h3 class="font-bold text-white mb-3">Signes d'alerte en cas d'intoxication</h3>
+            <ul class="space-y-2">
+              {[
+                'Maux de tête inhabituels à l\'intérieur',
+                'Nausées et vertiges qui disparaissent à l\'air libre',
+                'Plusieurs personnes du foyer malades simultanément',
+                'Animaux domestiques somnolents ou malades',
+                'Flamme jaune/orange au lieu de bleue (chaudière gaz)',
+              ].map(s => (
+                <li class="flex gap-2 text-sm text-white/65">
+                  <span class="text-red-400 shrink-0">⚠</span>{s}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-[#E65100] rounded-2xl p-6 text-white">
+            <h3 class="font-bold text-white mb-2">En cas de suspicion d'intoxication</h3>
+            <p class="text-sm text-white/80 mb-4">Quittez immédiatement les lieux. N'allumez rien. Laissez la porte ouverte.</p>
+            <div class="flex gap-3">
+              <a href="tel:15" class="bg-white text-[#E65100] font-bold text-sm px-4 py-2.5 rounded-xl">15 — SAMU</a>
+              <a href="tel:18" class="bg-white/15 text-white font-bold text-sm px-4 py-2.5 rounded-xl border border-white/20">18 — Pompiers</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PM2.5 -->
+  <section class="py-16 px-6 md:px-10 border-b border-[#EEEEEE]">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-700 text-[11px] font-bold px-4 py-2 rounded-full mb-5 uppercase tracking-widest">
+            Particules fines — Risque chronique
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] mb-5">Particules Fines PM2.5</h2>
+          <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
+            Les PM2.5 (diamètre inférieur à 2,5 µm) pénètrent profondément dans les alvéoles pulmonaires, traversent la barrière alvéolo-capillaire et peuvent atteindre la circulation sanguine.
+          </p>
+          <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-6">
+            Un foyer avec un conduit encrassé produit davantage de particules. La combustion incomplète multiplie les émissions de PM2.5 par <strong>3 à 8</strong> par rapport à une installation bien entretenue.
+          </p>
+          <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5">
+            <p class="text-sm font-bold text-amber-800 mb-3">Impact sanitaire des PM2.5 (OMS 2021)</p>
+            <div class="space-y-2 text-xs text-amber-700">
+              <div class="flex gap-2"><span>→</span><span>Irritation des voies respiratoires supérieures</span></div>
+              <div class="flex gap-2"><span>→</span><span>Aggravation de l'asthme et des BPCO</span></div>
+              <div class="flex gap-2"><span>→</span><span>Risque cardiovasculaire accru (inflammation vasculaire)</span></div>
+              <div class="flex gap-2"><span>→</span><span>Seuil OMS : 5 µg/m³ sur 24h (valeur guide 2021)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-white border border-[#EEEEEE] rounded-2xl p-6">
+            <h3 class="font-bold text-[#1A1A1A] mb-4 text-sm">Facteurs aggravants PM2.5</h3>
+            <div class="space-y-3">
+              {[
+                { facteur: 'Bois humide (taux d\'humidité > 20 %)', impact: 'Émissions PM2.5 × 4', niveau: 'Élevé' },
+                { facteur: 'Conduit encrassé (bistre)', impact: 'Tirage réduit → combustion incomplète', niveau: 'Élevé' },
+                { facteur: 'Foyer ouvert sans plaque de propreté', impact: 'Diffusion directe dans la pièce', niveau: 'Moyen' },
+                { facteur: 'Allumage par le bas', impact: 'Phase de démarrage polluante prolongée', niveau: 'Faible' },
+              ].map(({ facteur, impact, niveau }) => (
+                <div class="flex gap-3 text-xs">
+                  <span class={`text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0 self-start mt-0.5 ${niveau === 'Élevé' ? 'bg-red-100 text-red-700' : niveau === 'Moyen' ? 'bg-orange-100 text-orange-700' : 'bg-green-100 text-green-700'}`}>{niveau}</span>
+                  <div>
+                    <p class="font-medium text-[#1A1A1A]">{facteur}</p>
+                    <p class="text-[#1A1A1A]/50 mt-0.5">{impact}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="bg-[#1A4B8F]/8 border border-[#1A4B8F]/15 rounded-2xl p-5">
+            <h3 class="font-semibold text-[#1A4B8F] mb-2 text-sm">Réduction par le ramonage</h3>
+            <p class="text-xs text-[#1A1A1A]/60 leading-relaxed">Selon l'ADEME, un ramonage annuel certifié réduit les émissions de PM2.5 d'un foyer de bois de 40 à 65 %. L'entretien complet (corps de chauffe + conduit) est la mesure la plus efficace pour améliorer la qualité de l'air intérieur.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prévention -->
+  <section class="py-16 px-6 md:px-10 bg-[#FAFAFA] border-b border-[#EEEEEE]">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-3">Ce que vous pouvez faire</p>
+          <h2 class="text-2xl font-extrabold text-[#1A1A1A] mb-5">Prévention en 5 gestes essentiels</h2>
+          <div class="space-y-3">
+            {[
+              { n: '1', geste: 'Ramonage annuel certifié', detail: 'Par un artisan qualifié COSTIC — certificat à conserver pour votre assurance et le RSD 13.' },
+              { n: '2', geste: 'Brûler du bois sec (< 20 % d\'humidité)', detail: 'Séchage minimum 2 ans. Label "Bois Énergie" recommandé. Bois humide = CO × 3 et PM2.5 × 4.' },
+              { n: '3', geste: 'Ventilation suffisante', detail: 'Un foyer nécessite 7 m³/h d\'air de combustion par kW. Veillez aux entrées d\'air.' },
+              { n: '4', geste: 'Détecteur de CO normé EN 50291', detail: 'Obligatoire avec détecteur certifié. Placez-le à 1,5 m de hauteur, proche de la chambre.' },
+              { n: '5', geste: 'Inspection caméra tous les 3-5 ans', detail: 'Pour détecter fissures et dépôts invisibles dans les conduits anciens.' },
+            ].map(({ n, geste, detail }) => (
+              <div class="flex gap-4 bg-white border border-[#EEEEEE] rounded-xl p-4">
+                <div class="w-7 h-7 rounded-full bg-[#E65100] text-white flex items-center justify-center text-xs font-bold shrink-0">{n}</div>
+                <div>
+                  <p class="text-sm font-semibold text-[#1A1A1A]">{geste}</p>
+                  <p class="text-xs text-[#1A1A1A]/50 mt-0.5">{detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="bg-[#1A1A1A] rounded-2xl p-8 text-white">
+          <h2 class="text-xl font-bold mb-3">Diagnostic sécurité<br />de votre installation</h2>
+          <p class="text-sm text-white/65 leading-relaxed mb-6">
+            Je réalise un contrôle complet : état du conduit, mesure de tirage, test de vacuité et inspection caméra si nécessaire. Rapport technique remis le jour même. Certificat conforme RSD 13.
+          </p>
+          <div class="space-y-3">
+            <a href="tel:+33664729600" class="flex items-center justify-center gap-2 bg-[#E65100] text-white font-bold text-sm px-6 py-3.5 rounded-xl hover:bg-[#BF360C] transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              06 64 72 96 00
+            </a>
+            <a href="/ramonage" class="flex items-center justify-center gap-2 bg-white/8 text-white text-sm font-semibold px-6 py-3.5 rounded-xl hover:bg-white/12 border border-white/15 transition-colors">
+              Voir nos prestations de ramonage →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 px-6 md:px-10">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-3 text-center">Questions fréquentes</p>
+      <h2 class="text-2xl font-extrabold text-[#1A1A1A] mb-8 text-center">Incendies, CO & santé — Réponses directes</h2>
+      <div class="space-y-3" itemscope itemtype="https://schema.org/FAQPage">
+        {faqSchema.mainEntity.map(item => (
+          <details class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer select-none list-none" itemprop="name">
+              <span class="text-sm font-semibold text-[#1A1A1A]">{item.name}</span>
+              <svg class="w-4 h-4 shrink-0 text-[#E65100] transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-5 pb-5" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="text-sm text-[#1A1A1A]/60 leading-relaxed" itemprop="text">{item.acceptedAnswer.text}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Nav links -->
+  <nav aria-label="Services associés" class="py-12 px-6 md:px-10 bg-[#1A1A1A]">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-[10px] font-semibold tracking-widest uppercase text-white/30 mb-5">Voir aussi</p>
+      <div class="flex flex-wrap gap-3">
+        {[
+          { href: '/ramonage',             label: 'Ramonage certifié RSD 13' },
+          { href: '/debistrage',           label: 'Débistrage — traitement anti-bistre' },
+          { href: '/inspection-camera',    label: 'Inspection caméra endoscopique HD' },
+          { href: '/normes-reglementation', label: 'Normes & Réglementation' },
+          { href: '/valeur-verte',         label: 'Valeur Verte & DPE' },
+        ].map(({ href, label }) => (
+          <a href={href} class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-xs font-medium text-white/55 hover:border-[#E65100]/50 hover:text-[#E65100] transition-all">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0"></span>
+            {label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </nav>
+
+</Layout>
