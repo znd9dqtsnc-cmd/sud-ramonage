@@ -72,12 +72,14 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   <!-- ═══════════════════════════════════════════════
        PRESTATIONS + TARIFS
   ═══════════════════════════════════════════════ -->
-  <section id="services" class="py-28 px-6 md:px-10 bg-[#FAFAFA]">
+  <section id="services" class="py-28 px-6 md:px-10 bg-white">
     <div class="max-w-6xl mx-auto">
 
       <div class="mb-16">
+        <span class="inline-block bg-[#FEF3C7] text-[#92400E] text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5">Certifié COSTIC · RSD 13</span>
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A]">Prestations & Tarifs.</h2>
-        <p class="text-base text-[#1A1A1A]/40 font-light mt-3">
+        <div class="w-10 h-0.5 bg-[#E65100]/30 mt-4 mb-0"></div>
+        <p class="text-base text-[#1A1A1A]/40 font-light mt-4">
           Certificat RSD 13 inclus dans chaque prestation. Devis gratuit sous 24h.
         </p>
       </div>
@@ -85,7 +87,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <!-- Ramonage -->
-        <a href="/ramonage" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <a href="/ramonage" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] border-t-2 border-t-[#E65100]/40 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <div class="aspect-[3/2] overflow-hidden">
             <Image src={artisanImg} alt="Artisan ramoneur sur un toit — ramonage certifié Martigues" width={600} height={400} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
@@ -109,7 +111,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         </a>
 
         <!-- Débistrage -->
-        <a href="/debistrage" class="group flex flex-col bg-white rounded-2xl border border-[#F5E6DC] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <a href="/debistrage" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] border-t-2 border-t-[#B45309]/35 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <div class="aspect-[3/2] overflow-hidden">
             <Image src={bistrageImg} alt="Dépôts de bistre dans un conduit — débistrage professionnel" width={600} height={400} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
@@ -133,7 +135,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         </a>
 
         <!-- Diagnostic -->
-        <a href="/entretien-poele" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <a href="/entretien-poele" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] border-t-2 border-t-[#1A4B8F]/30 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <div class="aspect-[3/2] overflow-hidden">
             <Image src={controleImg} alt="Contrôle technique d'un conduit de cheminée" width={600} height={400} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
@@ -167,7 +169,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   <!-- ═══════════════════════════════════════════════
        ENGAGEMENT — Image + texte
   ═══════════════════════════════════════════════ -->
-  <section class="py-28 px-6 md:px-10 bg-white border-t border-[#EEEEEE]">
+  <section class="py-28 px-6 md:px-10 bg-[#FAFEF8] border-t border-[#E8F0E8]">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
       <div class="relative order-2 lg:order-1">
@@ -179,28 +181,30 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
           class="w-full rounded-2xl object-cover aspect-[4/3]"
           loading="lazy"
         />
-        <div class="absolute -bottom-4 -right-4 bg-[#1A1A1A] text-white px-5 py-4 rounded-xl shadow-xl">
+        <div class="absolute -bottom-4 -right-4 bg-[#1A4B8F] text-white px-5 py-4 rounded-xl shadow-lg">
           <p class="text-xl font-extrabold leading-none">RSD 13</p>
-          <p class="text-[10px] uppercase tracking-widest text-white/40 mt-1">Conformité garantie</p>
+          <p class="text-[10px] uppercase tracking-widest text-white/50 mt-1">Conformité garantie</p>
         </div>
       </div>
 
       <div class="order-1 lg:order-2">
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-6">
+        <span class="inline-block bg-[#ECFDF5] text-[#065F46] text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5">Notre engagement</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-4">
           Un seul artisan.<br />Un travail fait bien.
         </h2>
+        <div class="w-10 h-0.5 bg-[#065F46]/30 mb-6"></div>
         <p class="text-base text-[#1A1A1A]/50 font-light leading-relaxed mb-10">
           Basé à Martigues, j'interviens seul chez vous — avec soin, ponctualité et respect de votre foyer.
         </p>
-        <ul class="space-y-6">
+        <ul class="space-y-5">
           {[
-            ['Travail propre garanti', 'Protection du sol et nettoyage complet après chaque intervention.'],
-            ['Certificat officiel immédiat', 'Document valide auprès de votre assurance habitation.'],
-            ['Assuré RC Pro', 'Couverture complète pour toutes mes interventions.'],
-            ['Artisan local', 'Basé à Martigues, je connais votre secteur.'],
-          ].map(([t, d]) => (
-            <li class="flex gap-4">
-              <div class="w-1.5 h-1.5 rounded-full bg-[#E65100] mt-2 shrink-0"></div>
+            { t: 'Travail propre garanti',      d: 'Protection du sol et nettoyage complet après chaque intervention.', dot: 'bg-[#E65100]/70' },
+            { t: 'Certificat officiel immédiat', d: 'Document valide auprès de votre assurance habitation.',             dot: 'bg-[#1A4B8F]/60' },
+            { t: 'Assuré RC Pro',               d: 'Couverture complète pour toutes mes interventions.',                dot: 'bg-[#065F46]/60' },
+            { t: 'Artisan local',               d: 'Basé à Martigues, je connais votre secteur.',                       dot: 'bg-[#B45309]/60' },
+          ].map(({ t, d, dot }) => (
+            <li class="flex gap-4 items-start">
+              <div class={`w-2 h-2 rounded-full mt-1.5 shrink-0 ${dot}`}></div>
               <div>
                 <p class="text-sm font-semibold text-[#1A1A1A]">{t}</p>
                 <p class="text-sm text-[#1A1A1A]/40 font-light mt-0.5">{d}</p>
@@ -219,30 +223,32 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   <section class="py-28 px-6 md:px-10 bg-[#FAFAFA] border-t border-[#EEEEEE]">
     <div class="max-w-6xl mx-auto">
       <div class="mb-16">
+        <span class="inline-block bg-[#EEF3FF] text-[#1A4B8F] text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5">Ils nous font confiance</span>
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A]">Témoignages Clients.</h2>
+        <div class="w-10 h-0.5 bg-[#1A4B8F]/25 mt-4"></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
           {
             q: '"Intervention rapide et soignée sur ma cheminée à Sausset-les-Pins. Le certificat m\'a été remis dans la foulée. Enfin un artisan qui respecte son engagement."',
-            n: 'Jean-Luc M.',
-            l: 'Sausset-les-Pins · Foyer ouvert',
+            n: 'Jean-Luc M.', l: 'Sausset-les-Pins · Foyer ouvert',
+            accent: 'border-l-[3px] border-l-[#E65100]/40',
           },
           {
             q: '"Mon poêle à granulés n\'avait pas été entretenu depuis 3 ans — tout démonté, nettoyé et vérifié. Je le recommande sans hésiter à mes voisins d\'Istres."',
-            n: 'Marie A.',
-            l: 'Istres · Poêle à granulés',
+            n: 'Marie A.', l: 'Istres · Poêle à granulés',
+            accent: 'border-l-[3px] border-l-[#065F46]/40',
           },
           {
             q: '"14 appartements gérés, tous les certificats remis en une seule tournée avec un rapport consolidé. Un vrai partenaire professionnel."',
-            n: 'Cabinet Immo Provence',
-            l: 'Aix-en-Provence · 14 lots gérés',
+            n: 'Cabinet Immo Provence', l: 'Aix-en-Provence · 14 lots gérés',
+            accent: 'border-l-[3px] border-l-[#1A4B8F]/40',
           },
-        ].map(({ q, n, l }) => (
-          <div class="bg-white border border-[#EEEEEE] rounded-2xl p-8">
+        ].map(({ q, n, l, accent }) => (
+          <div class={`bg-white border border-[#EEEEEE] rounded-2xl p-8 ${accent}`}>
             <div class="flex gap-0.5 mb-6">
               {[1,2,3,4,5].map(() => (
-                <svg class="w-4 h-4 text-[#E65100]" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-4 h-4 text-[#E65100]/70" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.033a1 1 0 00-1.175 0l-2.8 2.033c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                 </svg>
               ))}
@@ -259,28 +265,30 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   <!-- ═══════════════════════════════════════════════
        ZONE + CONTACT
   ═══════════════════════════════════════════════ -->
-  <section class="py-28 px-6 md:px-10 border-t border-[#EEEEEE]">
+  <section class="py-28 px-6 md:px-10 border-t border-[#EEEEEE] bg-white">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
       <div>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-6">
+        <span class="inline-block bg-[#FEF3C7] text-[#92400E] text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5">Zone d'intervention</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-4">
           Martigues, Côte Bleue<br />& Étang de Berre.
         </h2>
+        <div class="w-10 h-0.5 bg-[#B45309]/30 mb-6"></div>
         <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed mb-8">
           Basé à Martigues, j'interviens dans un rayon de 50 km — Côte Bleue, Étang de Berre, Pays d'Aix. Certificat conforme RSD 13 remis à l'issue de chaque visite.
         </p>
         <div class="flex flex-wrap gap-2 mb-8">
           {[
-            { label: 'Martigues', slug: 'martigues' },
-            { label: 'Istres', slug: 'istres' },
-            { label: 'Fos-sur-Mer', slug: 'fos-sur-mer' },
-            { label: 'Port-de-Bouc', slug: 'port-de-bouc' },
-            { label: 'Miramas', slug: 'miramas' },
-            { label: 'Sausset-les-Pins', slug: 'sausset-les-pins' },
-            { label: 'Carry-le-Rouet', slug: 'carry-le-rouet' },
-            { label: 'Ensuès', slug: 'ensues-la-redonne' },
-          ].map(({ label, slug }) => (
-            <a href={`/villes/${slug}`} class="text-[11px] font-medium border border-[#EEEEEE] text-[#1A1A1A]/45 px-3 py-1.5 rounded-md hover:border-[#E65100]/40 hover:text-[#E65100] transition-colors">
+            { label: 'Martigues',      slug: 'martigues',       cls: 'bg-[#FFF3E0] border-[#F5D9C4] text-[#C2410C]' },
+            { label: 'Istres',         slug: 'istres',          cls: 'bg-[#EEF3FF] border-[#DBEAFE] text-[#1A4B8F]' },
+            { label: 'Fos-sur-Mer',   slug: 'fos-sur-mer',     cls: 'bg-[#ECFDF5] border-[#BBF7D0] text-[#065F46]' },
+            { label: 'Port-de-Bouc',  slug: 'port-de-bouc',    cls: 'bg-[#FEF3C7] border-[#FDE68A] text-[#92400E]' },
+            { label: 'Miramas',       slug: 'miramas',          cls: 'bg-[#EEF3FF] border-[#DBEAFE] text-[#1A4B8F]' },
+            { label: 'Sausset',       slug: 'sausset-les-pins', cls: 'bg-[#ECFDF5] border-[#BBF7D0] text-[#065F46]' },
+            { label: 'Carry-le-Rouet',slug: 'carry-le-rouet',  cls: 'bg-[#FFF3E0] border-[#F5D9C4] text-[#C2410C]' },
+            { label: 'Ensuès',        slug: 'ensues-la-redonne',cls: 'bg-[#FEF3C7] border-[#FDE68A] text-[#92400E]' },
+          ].map(({ label, slug, cls }) => (
+            <a href={`/villes/${slug}`} class={`text-[11px] font-semibold border px-3 py-1.5 rounded-full hover:opacity-75 transition-opacity ${cls}`}>
               {label}
             </a>
           ))}
