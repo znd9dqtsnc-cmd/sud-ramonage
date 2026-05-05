@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import artisanImg from '../assets/images/artisan-intervention.jpg';
 const siteUrl = 'https://www.sud-ramonage.fr';
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -43,7 +45,16 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Restauration & Pro'
     </div>
   </section>
 
-  <section class="py-16">
+  <section class="max-w-4xl mx-auto px-6 md:px-10 py-10">
+    <figure class="rounded-2xl overflow-hidden aspect-[21/9] relative">
+      <Image src={artisanImg} alt="Artisan ramoneur en intervention dans un restaurant — entretien four à pizza et hotte professionnelle" width={1200} height={514} class="w-full h-full object-cover object-center" loading="lazy" />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/60 to-transparent flex items-end p-8">
+        <p class="text-white text-sm font-medium leading-snug">Intervention restauration — four à pizza bois, hotte professionnelle, conformité ERP.</p>
+      </div>
+    </figure>
+  </section>
+
+  <section class="py-8">
     <div class="max-w-4xl mx-auto px-6 md:px-10 space-y-12">
 
       <div class="grid md:grid-cols-2 gap-6">

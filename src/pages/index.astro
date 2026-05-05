@@ -563,10 +563,19 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             Le <strong class="font-semibold text-[#1A1A1A]">RSD 13</strong> impose le ramonage annuel pour tout appareil à combustion. Intervention conforme, certificat reconnu par votre assureur.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['Martigues', 'Istres', 'Fos-sur-Mer', 'Port-de-Bouc', 'Miramas', 'Sausset-les-Pins', 'Carry-le-Rouet', 'Ensuès'].map((ville) => (
-              <span class="text-[11px] font-medium border border-[#EEEEEE] text-[#1A1A1A]/45 px-3 py-1.5 rounded-md hover:border-[#E65100]/40 hover:text-[#E65100] transition-colors duration-200 cursor-default">
-                {ville}
-              </span>
+            {[
+              { label: 'Martigues', slug: 'martigues' },
+              { label: 'Istres', slug: 'istres' },
+              { label: 'Fos-sur-Mer', slug: 'fos-sur-mer' },
+              { label: 'Port-de-Bouc', slug: 'port-de-bouc' },
+              { label: 'Miramas', slug: 'miramas' },
+              { label: 'Sausset-les-Pins', slug: 'sausset-les-pins' },
+              { label: 'Carry-le-Rouet', slug: 'carry-le-rouet' },
+              { label: 'Ensuès', slug: 'ensues-la-redonne' },
+            ].map(({ label, slug }) => (
+              <a href={`/villes/${slug}`} class="text-[11px] font-medium border border-[#EEEEEE] text-[#1A1A1A]/45 px-3 py-1.5 rounded-md hover:border-[#E65100]/40 hover:text-[#E65100] transition-colors duration-200">
+                {label}
+              </a>
             ))}
           </div>
         </div>
