@@ -282,20 +282,19 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         <!-- Pastilles villes -->
         <div class="flex flex-wrap gap-2 mb-8">
           {[
-            { label: 'Martigues',       slug: 'martigues' },
-            { label: 'Istres',          slug: 'istres' },
-            { label: 'Fos-sur-Mer',    slug: 'fos-sur-mer' },
-            { label: 'Port-de-Bouc',   slug: 'port-de-bouc' },
-            { label: 'Miramas',        slug: 'miramas' },
-            { label: 'Sausset',        slug: 'sausset-les-pins' },
-            { label: 'Carry-le-Rouet', slug: 'carry-le-rouet' },
-            { label: 'Ensuès',         slug: 'ensues-la-redonne' },
-          ].map(({ label, slug }) => (
+            { label: 'Martigues',       slug: 'martigues',        cls: 'bg-[#FEF3C7] border-[#F5E4A0] text-[#92400E]' },
+            { label: 'Istres',          slug: 'istres',           cls: 'bg-[#ECFDF5] border-[#A7F3D0] text-[#065F46]' },
+            { label: 'Fos-sur-Mer',    slug: 'fos-sur-mer',      cls: 'bg-[#EEF3FF] border-[#BFDBFE] text-[#1A4B8F]' },
+            { label: 'Port-de-Bouc',   slug: 'port-de-bouc',     cls: 'bg-[#FEF3C7] border-[#F5E4A0] text-[#92400E]' },
+            { label: 'Miramas',        slug: 'miramas',           cls: 'bg-[#ECFDF5] border-[#A7F3D0] text-[#065F46]' },
+            { label: 'Sausset',        slug: 'sausset-les-pins',  cls: 'bg-[#EEF3FF] border-[#BFDBFE] text-[#1A4B8F]' },
+            { label: 'Carry-le-Rouet', slug: 'carry-le-rouet',   cls: 'bg-[#FEF3C7] border-[#F5E4A0] text-[#92400E]' },
+            { label: 'Ensuès',         slug: 'ensues-la-redonne', cls: 'bg-[#ECFDF5] border-[#A7F3D0] text-[#065F46]' },
+          ].map(({ label, slug, cls }) => (
             <a
               href={`/villes/${slug}`}
-              class="group inline-flex items-center gap-1.5 bg-white border border-[#E8E8E8] text-[#1A1A1A]/60 text-xs font-semibold px-4 py-2 rounded-lg shadow-sm hover:border-[#E65100]/40 hover:text-[#E65100] hover:shadow-md transition-all duration-200"
+              class={`inline-flex items-center gap-1.5 border text-xs font-semibold px-4 py-2 rounded-lg hover:shadow-md hover:opacity-80 transition-all duration-200 ${cls}`}
             >
-              <span class="w-1.5 h-1.5 rounded-full bg-[#E65100]/40 group-hover:bg-[#E65100] transition-colors duration-200 shrink-0"></span>
               {label}
             </a>
           ))}
