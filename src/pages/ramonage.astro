@@ -194,11 +194,11 @@ const speakableSchema = {
             <figcaption class="sr-only">Conduit de cheminée en inox à Martigues — ramonage mécanique, élimination suie et calcin, test de vacuité, vérification tirage thermique. Artisan certifié Bouches-du-Rhône.</figcaption>
           </figure>
 
-          <div class="bg-[#1A1A1A] rounded-xl p-6">
-            <p class="text-xs font-semibold text-white/40 uppercase tracking-widest mb-3">Appareils traités</p>
+          <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-xl p-6">
+            <p class="text-xs font-semibold text-[#1A1A1A]/40 uppercase tracking-widest mb-3">Appareils traités</p>
             <div class="flex flex-wrap gap-2">
               {['Cheminée foyer ouvert', 'Insert', 'Poêle à bois', 'Poêle à granulés', 'Conduit maçonné', 'Tubage inox'].map((tag) => (
-                <span class="text-[11px] font-medium border border-white/15 text-white/50 px-3 py-1.5 rounded-md">{tag}</span>
+                <span class="text-[11px] font-medium border border-[#EEEEEE] text-[#1A1A1A]/55 px-3 py-1.5 rounded-md">{tag}</span>
               ))}
             </div>
           </div>
@@ -234,8 +234,8 @@ const speakableSchema = {
           </p>
         </div>
 
-        <div class="bg-[#1A1A1A] rounded-xl p-7">
-          <p class="text-xs font-semibold text-white/40 uppercase tracking-widest mb-5">Inclus dans chaque ramonage</p>
+        <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-xl p-7">
+          <p class="text-xs font-semibold text-[#1A1A1A]/40 uppercase tracking-widest mb-5">Inclus dans chaque ramonage</p>
           {[
             'Ramonage mécanique complet (hérisson rotatif)',
             'Aspiration professionnelle des suies',
@@ -244,11 +244,11 @@ const speakableSchema = {
             'Certificat officiel RSD 13 remis sur place',
             'Conseils personnalisés sur votre installation',
           ].map(item => (
-            <div class="flex items-center gap-3 py-2.5 border-b border-white/8 last:border-0">
+            <div class="flex items-center gap-3 py-2.5 border-b border-[#EEEEEE] last:border-0">
               <svg class="w-4 h-4 text-[#E65100] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span class="text-sm text-white/55 font-light">{item}</span>
+              <span class="text-sm text-[#1A1A1A]/60 font-light">{item}</span>
             </div>
           ))}
         </div>

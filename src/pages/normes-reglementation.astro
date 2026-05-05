@@ -92,7 +92,7 @@ const breadcrumbs = [
         <div class="overflow-x-auto rounded-xl border border-[#EEEEEE] mb-6">
           <table class="w-full text-sm border-collapse bg-white">
             <thead>
-              <tr class="bg-[#1A1A1A] text-white">
+              <tr class="bg-[#FAFAFA] text-[#1A1A1A] border-b border-[#EEEEEE]">
                 <th class="text-left px-5 py-4 text-xs font-semibold">Texte légal</th>
                 <th class="text-left px-5 py-4 text-xs font-semibold">Contenu</th>
                 <th class="text-left px-5 py-4 text-xs font-semibold">Portée</th>
@@ -143,7 +143,7 @@ const breadcrumbs = [
         <div class="overflow-x-auto rounded-xl border border-[#EEEEEE]">
           <table class="w-full text-sm border-collapse bg-white">
             <thead>
-              <tr class="bg-[#1A1A1A] text-white">
+              <tr class="bg-[#FAFAFA] text-[#1A1A1A] border-b border-[#EEEEEE]">
                 <th class="text-left px-5 py-4 text-xs font-semibold">Type d'appareil</th>
                 <th class="text-left px-5 py-4 text-xs font-semibold">Fréquence RSD 13</th>
                 <th class="text-left px-5 py-4 text-xs font-semibold">Période conseillée</th>
@@ -195,8 +195,8 @@ const breadcrumbs = [
         </div>
 
         <!-- Quand le tubage est obligatoire -->
-        <div class="bg-[#1A1A1A] rounded-2xl p-8">
-          <h3 class="text-base font-bold text-white mb-5">Quand le tubage inox est obligatoire</h3>
+        <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-2xl p-8">
+          <h3 class="text-base font-bold text-[#1A1A1A] mb-5">Quand le tubage inox est obligatoire</h3>
           <div class="grid md:grid-cols-2 gap-4">
             {[
               { n: '01', t: 'Raccordement d\'un appareil à haut rendement', d: 'Tout insert ou poêle moderne raccordé à un ancien conduit maçonné doit être tubé.' },
@@ -204,11 +204,11 @@ const breadcrumbs = [
               { n: '03', t: 'Section inadaptée', d: 'Conduit trop grand ou trop petit pour l\'appareil raccordé — le tubage corrige la section.' },
               { n: '04', t: 'Après un incendie de conduit', d: 'Un feu de conduit fragilise les parois maçonnées. Tubage obligatoire avant toute remise en service.' },
             ].map(({ n, t, d }) => (
-              <div class="flex gap-3 bg-white/5 rounded-xl p-4 border border-white/8">
+              <div class="flex gap-3 bg-white rounded-xl p-4 border border-[#EEEEEE]">
                 <span class="text-[11px] font-bold text-[#E65100] shrink-0 mt-0.5">{n}</span>
                 <div>
-                  <p class="text-sm font-semibold text-white mb-1">{t}</p>
-                  <p class="text-xs text-white/50 leading-relaxed">{d}</p>
+                  <p class="text-sm font-semibold text-[#1A1A1A] mb-1">{t}</p>
+                  <p class="text-xs text-[#1A1A1A]/50 leading-relaxed">{d}</p>
                 </div>
               </div>
             ))}
@@ -229,9 +229,9 @@ const breadcrumbs = [
             <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-3">Concerne la <strong class="text-[#1A1A1A]">conformité de l'installation</strong> : distances de sécurité, tubage, matériaux certifiés CE.</p>
           </div>
         </div>
-        <div class="mt-4 bg-[#1A1A1A] rounded-xl p-5">
-          <p class="text-sm font-semibold text-white mb-1">Les assureurs exigent les deux simultanément</p>
-          <p class="text-sm text-white/55 leading-relaxed">En cas d'incendie, l'expert mandaté par votre assureur vérifie les deux points. L'absence de l'un d'eux constitue un motif légal de réduction ou de refus d'indemnisation.</p>
+        <div class="mt-4 bg-[#FFF3E0] border border-[#E65100]/20 rounded-xl p-5">
+          <p class="text-sm font-semibold text-[#1A1A1A] mb-1">Les assureurs exigent les deux simultanément</p>
+          <p class="text-sm text-[#1A1A1A]/60 leading-relaxed">En cas d'incendie, l'expert mandaté par votre assureur vérifie les deux points. L'absence de l'un d'eux constitue un motif légal de réduction ou de refus d'indemnisation.</p>
         </div>
       </div>
 

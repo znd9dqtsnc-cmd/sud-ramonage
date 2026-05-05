@@ -53,8 +53,8 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Test de Vacuité', 
         </p>
       </div>
 
-      <div class="bg-[#1A1A1A] rounded-2xl p-8">
-        <h2 class="text-lg font-bold text-white mb-5">Obstructions les plus fréquentes</h2>
+      <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-2xl p-8">
+        <h2 class="text-lg font-bold text-[#1A1A1A] mb-5">Obstructions les plus fréquentes</h2>
         <div class="grid md:grid-cols-2 gap-4">
           {[
             { titre: 'Nids d\'oiseaux', detail: 'Étourneaux, martinets, pigeons. Le nid peut représenter jusqu\'à 80 % de la section du conduit. Fréquent sur conduits sans chapeau en Provence.', risque: 'élevé' },
@@ -62,12 +62,12 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Test de Vacuité', 
             { titre: 'Bistre et calcin consolidés', detail: 'Accumulation extrême qui réduit la section fonctionnelle. Requiert un débistrage avant toute utilisation.', risque: 'moyen' },
             { titre: 'Corps étrangers divers', detail: 'Outils oubliés lors de travaux, tuile tombée, briques... Surtout dans les vieilles maisons de village du Pays d\'Aix.', risque: 'variable' },
           ].map(({ titre, detail, risque }) => (
-            <div class="p-4 bg-white/5 rounded-xl border border-white/8">
+            <div class="p-4 bg-white rounded-xl border border-[#EEEEEE]">
               <div class="flex items-center gap-2 mb-2">
-                <p class="text-sm font-semibold text-white">{titre}</p>
-                <span class={`text-[10px] px-1.5 py-0.5 rounded font-mono ${risque === 'élevé' ? 'bg-red-500/20 text-red-400' : risque === 'moyen' ? 'bg-amber-500/20 text-amber-400' : 'bg-white/10 text-white/50'}`}>{risque}</span>
+                <p class="text-sm font-semibold text-[#1A1A1A]">{titre}</p>
+                <span class={`text-[10px] px-1.5 py-0.5 rounded font-mono ${risque === 'élevé' ? 'bg-red-100 text-red-600' : risque === 'moyen' ? 'bg-amber-100 text-amber-600' : 'bg-[#F5F5F5] text-[#1A1A1A]/45'}`}>{risque}</span>
               </div>
-              <p class="text-xs text-white/55 leading-relaxed">{detail}</p>
+              <p class="text-xs text-[#1A1A1A]/55 leading-relaxed">{detail}</p>
             </div>
           ))}
         </div>

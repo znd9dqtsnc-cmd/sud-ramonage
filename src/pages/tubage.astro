@@ -77,8 +77,8 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Tubage Conduit', ur
         </div>
       </div>
 
-      <div class="bg-[#1A1A1A] rounded-2xl p-8">
-        <h2 class="text-lg font-bold text-white mb-6">Points de contrôle DTU — avant et après tubage</h2>
+      <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-2xl p-8">
+        <h2 class="text-lg font-bold text-[#1A1A1A] mb-6">Points de contrôle DTU — avant et après tubage</h2>
         <div class="space-y-4">
           {[
             { titre: 'Diamètre adapté à l\'appareil', detail: 'Le diamètre intérieur du tube doit correspondre à la sortie de l\'appareil. Jamais inférieur.', dtu: 'NF DTU 24.1 P1-1 art. 5.2.3' },
@@ -86,12 +86,12 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Tubage Conduit', ur
             { titre: 'Dépassement en toiture', detail: 'Le conduit tubé doit respecter les mêmes hauteurs de dépassement que tout autre conduit.', dtu: 'NF DTU 24.1 P1-1 art. 6.4.1' },
             { titre: 'Résistance thermique', detail: 'L\'inox doit être de qualité adaptée au combustible : 316 L pour gaz, 316 Ti pour bois et fioul (haute température).', dtu: 'NF EN 1856-1' },
           ].map(({ titre, detail, dtu }) => (
-            <div class="flex gap-4 p-4 bg-white/5 rounded-xl border border-white/8">
+            <div class="flex gap-4 p-4 bg-white rounded-xl border border-[#EEEEEE]">
               <div class="w-2 h-2 rounded-full bg-[#E65100] mt-1.5 shrink-0"></div>
               <div>
-                <p class="text-sm font-semibold text-white mb-1">{titre}</p>
-                <p class="text-xs text-white/55 leading-relaxed mb-2">{detail}</p>
-                <span class="inline-block text-[10px] font-mono bg-[#E65100]/15 text-[#E65100] px-2 py-0.5 rounded">{dtu}</span>
+                <p class="text-sm font-semibold text-[#1A1A1A] mb-1">{titre}</p>
+                <p class="text-xs text-[#1A1A1A]/55 leading-relaxed mb-2">{detail}</p>
+                <span class="inline-block text-[10px] font-mono bg-[#FFF3E0] text-[#E65100] px-2 py-0.5 rounded">{dtu}</span>
               </div>
             </div>
           ))}
