@@ -570,16 +570,14 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             ))}
           </div>
         </div>
-        <div class="space-y-5 text-[#1A1A1A]/65 text-base font-light leading-relaxed">
+        <div class="space-y-5 text-[#1A1A1A]/65 text-sm font-light leading-relaxed">
           <p>
-            Sud Ramonage couvre <strong class="font-semibold text-[#1A1A1A]">Martigues</strong>, <strong class="font-semibold text-[#1A1A1A]">Port-de-Bouc</strong>, <strong class="font-semibold text-[#1A1A1A]">Fos-sur-Mer</strong>, <strong class="font-semibold text-[#1A1A1A]">Istres</strong>, <strong class="font-semibold text-[#1A1A1A]">Miramas</strong>, le pourtour de l'<strong class="font-semibold text-[#1A1A1A]">Étang de Berre</strong> et la <strong class="font-semibold text-[#1A1A1A]">Côte Bleue</strong> (Sausset-les-Pins, Carry-le-Rouet, Ensuès-la-Redonne).
+            Basé à Martigues, j'interviens sur toute la zone — Côte Bleue, Étang de Berre, Pays d'Aix et Marseille — dans un rayon de 50 km. Chaque intervention comprend le ramonage mécanique, le test de vacuité et la remise immédiate du certificat conforme au <strong class="font-semibold text-[#1A1A1A]">RSD 13</strong>.
           </p>
-          <p>
-            Chaque intervention comprend le ramonage mécanique, un <strong class="font-semibold text-[#1A1A1A]">test de vacuité</strong> (vérification de l'absence d'obstruction), le contrôle du <strong class="font-semibold text-[#1A1A1A]">tirage thermique</strong> et la remise du certificat conforme au <strong class="font-semibold text-[#1A1A1A]">Règlement Sanitaire Départemental (RSD 13)</strong>.
-          </p>
-          <p>
-            Artisan local, nous connaissons le terrain et garantissons une réactivité maximale. Devis gratuit sous 24h, intervention possible en urgence.
-          </p>
+          <a href="/zones" class="inline-flex items-center gap-2 text-sm font-semibold text-[#E65100] hover:gap-3 transition-all duration-200">
+            Voir toutes les zones d'intervention
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -593,27 +591,23 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
     items={[
       {
         q: "Le ramonage est-il vraiment obligatoire à Martigues ?",
-        a: "Oui. Le Règlement Sanitaire Départemental des Bouches-du-Rhône (RSD 13) impose un ramonage au minimum une fois par an pour tout conduit de fumée en service — cheminée à foyer ouvert, insert, poêle à bois ou poêle à granulés. Cette obligation s'applique aux résidences principales comme secondaires. En cas de sinistre (incendie de conduit, intoxication au monoxyde de carbone) sans certificat de ramonage valide, votre assureur peut légalement refuser la prise en charge.",
+        a: "Oui. Le RSD 13 (Règlement Sanitaire Départemental des Bouches-du-Rhône) impose un ramonage annuel pour tout conduit de fumée actif — cheminée, insert, poêle à bois ou granulés. Sans certificat valide, votre assureur peut refuser toute indemnisation en cas de sinistre.",
       },
       {
-        q: "Quel est le tarif d'un ramonage à Martigues ?",
-        a: "Le tarif varie selon le type d'appareil (cheminée à foyer ouvert, insert, poêle à bois ou à granulés), la longueur du conduit et son matériau (maçonnerie, tubage inox, conduit flexible). Contactez-nous pour un devis personnalisé gratuit sous 24h. Le certificat officiel est toujours inclus dans la prestation.",
-      },
-      {
-        q: "Délivrez-vous un certificat officiel de ramonage ?",
-        a: "Oui, un certificat de ramonage officiel est remis sur place immédiatement après chaque intervention. Ce document est conforme aux exigences du RSD 13 et reconnu par l'ensemble des assurances habitation. Il atteste du ramonage mécanique, du test de vacuité et du contrôle du tirage thermique.",
+        q: "Quel est le tarif d'un ramonage ?",
+        a: "À partir de 75 € pour une cheminée à foyer ouvert, 90 € pour un insert ou poêle à bois, 110 € pour un poêle à granulés. Certificat RSD 13 toujours inclus. Devis gratuit sous 24h pour les cas particuliers (conduit long, accès difficile).",
       },
       {
         q: "Qu'est-ce que le bistre et pourquoi est-ce dangereux ?",
-        a: "Le bistre est un dépôt de goudron et de résines qui se forme dans les conduits lors d'une combustion incomplète (bois humide, température trop basse, tirage insuffisant). Contrairement à la suie sèche, le bistre est collant, adhère aux parois et est hautement inflammable — c'est la première cause d'incendie de cheminée en France. Un débistrage professionnel chimique et mécanique est nécessaire dès son apparition.",
+        a: "Le bistre est un dépôt de goudron qui se forme lors de combustion de bois humide ou à basse température. Hautement inflammable (il s'embrase à 200 °C), c'est la première cause d'incendie de conduit en France. Le ramonage classique ne l'élimine pas — un débistrage chimique et mécanique est nécessaire.",
       },
       {
-        q: "Intervenez-vous sur les poêles à granulés ?",
-        a: "Oui, nous intervenons sur tous types d'appareils : cheminées à foyer ouvert, inserts, poêles à bois et poêles à granulés. Les poêles à granulés nécessitent une maintenance spécifique incluant le ramonage du conduit, le nettoyage du brûleur, le contrôle du ventilateur et la vérification du système électronique, en plus du test de vacuité standard.",
+        q: "Locataire ou propriétaire : qui doit payer le ramonage ?",
+        a: "Le ramonage est une charge locative — il incombe au locataire en place. En cas de logement vacant ou lors d'un changement de locataire, c'est au propriétaire de s'en assurer. En copropriété, les colonnes communes sont à la charge du syndic.",
       },
       {
-        q: "Qu'est-ce que le tubage inox et en avez-vous besoin ?",
-        a: "Le tubage inox est un conduit en acier inoxydable installé à l'intérieur d'un conduit de cheminée existant, pour le mettre aux normes ou l'adapter à un nouvel appareil. Nous intervenons sur tous les conduits tubés en inox pour le ramonage et le contrôle. Si un tubage est nécessaire suite à notre diagnostic, nous vous orientons vers un professionnel agréé.",
+        q: "Dans quel délai intervenez-vous ?",
+        a: "Devis gratuit sous 24h, intervention disponible sous 48 à 72h pour une demande standard. Intervention en urgence possible (refoulement de fumée, doute sur obstruction, intoxication suspectée) dans la journée sur Martigues et la Côte Bleue.",
       },
     ]}
   />
