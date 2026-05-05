@@ -239,15 +239,13 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
           {
             q: '"Mon poêle à granulés n\'avait pas été entretenu depuis 3 ans — tout démonté, nettoyé et vérifié. Je le recommande sans hésiter à mes voisins d\'Istres."',
             n: 'Marie A.', l: 'Istres · Poêle à granulés',
-            accent: 'border-l-[3px] border-l-[#065F46]/40',
           },
           {
             q: '"14 appartements gérés, tous les certificats remis en une seule tournée avec un rapport consolidé. Un vrai partenaire professionnel."',
             n: 'Cabinet Immo Provence', l: 'Aix-en-Provence · 14 lots gérés',
-            accent: 'border-l-[3px] border-l-[#1A4B8F]/40',
           },
-        ].map(({ q, n, l, accent }) => (
-          <div class={`bg-white border border-[#EEEEEE] rounded-2xl p-8 ${accent}`}>
+        ].map(({ q, n, l }) => (
+          <div class="bg-white border border-[#EEEEEE] rounded-2xl p-8">
             <div class="flex gap-0.5 mb-6">
               {[1,2,3,4,5].map(() => (
                 <svg class="w-4 h-4 text-[#E65100]/70" fill="currentColor" viewBox="0 0 20 20">
