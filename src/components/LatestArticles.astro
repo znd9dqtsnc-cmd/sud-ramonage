@@ -63,13 +63,13 @@ const allArticles = collectionArticles.length >= count
   ? collectionArticles
   : [...collectionArticles, ...staticArticles].slice(0, count);
 
-const categoryColors: Record<string, string> = {
-  'Réglementation': '#1A4B8F',
-  'Technique':      '#B45309',
-  'Diagnostic':     '#E65100',
-  'Sécurité':       '#B91C1C',
-  'Actualité':      '#047857',
-  'Conseil':        '#6B21A8',
+const categoryStyles: Record<string, string> = {
+  'Réglementation': 'bg-[#EEF3FF] text-[#1A4B8F]',
+  'Technique':      'bg-[#FEF3C7] text-[#92400E]',
+  'Diagnostic':     'bg-[#FFF3E0] text-[#C2410C]',
+  'Sécurité':       'bg-[#FEE2E2] text-[#B91C1C]',
+  'Actualité':      'bg-[#D1FAE5] text-[#065F46]',
+  'Conseil':        'bg-[#FDF6F0] text-[#E65100]',
 };
 ---
 
@@ -97,8 +97,7 @@ const categoryColors: Record<string, string> = {
         >
           <div class="flex items-center gap-2 mb-4">
             <span
-              class="text-[10px] font-bold uppercase tracking-widest text-white px-2.5 py-1 rounded-full"
-              style={`background-color: ${categoryColors[article.category] ?? '#555'}`}
+              class={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full ${categoryStyles[article.category] ?? 'bg-[#F3F4F6] text-[#1A1A1A]/60'}`}
             >
               {article.category}
             </span>

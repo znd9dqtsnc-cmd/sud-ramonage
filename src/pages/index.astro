@@ -91,9 +91,10 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
           </div>
           <div class="p-7 flex flex-col flex-1">
             <p class="text-[10px] font-semibold uppercase tracking-widest text-[#1A1A1A]/35 mb-3">Ramonage</p>
-            <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Ramonage Certifié</h3>
+            <h3 class="text-lg font-bold text-[#1A1A1A] mb-1">Ramonage Certifié</h3>
+            <p class="text-2xl font-extrabold text-[#E65100] mb-3">dès 75 <span class="text-base font-semibold">€</span></p>
             <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">Ramonage mécanique complet — cheminée, insert, poêle à bois ou granulés.</p>
-            <div class="mt-6 pt-5 border-t border-[#F0F0F0] space-y-2.5">
+            <div class="mt-5 pt-5 border-t border-[#F0F0F0] space-y-2.5">
               {[['Foyer ouvert', '75 €'], ['Insert / Poêle à bois', '90 €'], ['Poêle à granulés', '110 €']].map(([l, p]) => (
                 <div class="flex items-center justify-between">
                   <span class="text-xs text-[#1A1A1A]/45 font-light">{l}</span>
@@ -114,9 +115,10 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
           </div>
           <div class="p-7 flex flex-col flex-1">
             <p class="text-[10px] font-semibold uppercase tracking-widest text-[#1A1A1A]/35 mb-3">Débistrage</p>
-            <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Traitement Bistre & Goudron</h3>
+            <h3 class="text-lg font-bold text-[#1A1A1A] mb-1">Traitement Bistre & Goudron</h3>
+            <p class="text-2xl font-extrabold text-[#E65100] mb-3">dès 150 <span class="text-base font-semibold">€</span></p>
             <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">Élimination des dépôts hautement inflammables — traitement chimique et mécanique.</p>
-            <div class="mt-6 pt-5 border-t border-[#F0F0F0] space-y-2.5">
+            <div class="mt-5 pt-5 border-t border-[#F0F0F0] space-y-2.5">
               {[['Traitement standard', 'dès 150 €'], ['Conduit très encrassé', 'dès 195 €'], ['Diagnostic inclus', '✓']].map(([l, p]) => (
                 <div class="flex items-center justify-between">
                   <span class="text-xs text-[#1A1A1A]/45 font-light">{l}</span>
@@ -137,9 +139,10 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
           </div>
           <div class="p-7 flex flex-col flex-1">
             <p class="text-[10px] font-semibold uppercase tracking-widest text-[#1A1A1A]/35 mb-3">Entretien & Diagnostic</p>
-            <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Contrôle Technique</h3>
+            <h3 class="text-lg font-bold text-[#1A1A1A] mb-1">Contrôle Technique</h3>
+            <p class="text-2xl font-extrabold text-[#E65100] mb-3">dès 60 <span class="text-base font-semibold">€</span></p>
             <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">Entretien poêle, inspection vacuité et étanchéité. Rapport illustré pour assurance et notaire.</p>
-            <div class="mt-6 pt-5 border-t border-[#F0F0F0] space-y-2.5">
+            <div class="mt-5 pt-5 border-t border-[#F0F0F0] space-y-2.5">
               {[['Entretien poêle à bois', '90 €'], ['Entretien poêle granulés', '120 €'], ['Diagnostic conduit', 'dès 60 €']].map(([l, p]) => (
                 <div class="flex items-center justify-between">
                   <span class="text-xs text-[#1A1A1A]/45 font-light">{l}</span>
@@ -288,25 +291,26 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         </a>
       </div>
 
-      <div class="bg-[#111111] rounded-2xl p-10 text-white">
-        <h3 class="text-xl font-extrabold mb-2">Devis Gratuit Sous 24H.</h3>
-        <p class="text-sm text-white/35 font-light mb-8">Disponible du lundi au samedi, 8h–19h.</p>
+      <div class="bg-white border border-[#EAD9C9] rounded-2xl p-10">
+        <p class="text-[10px] font-semibold uppercase tracking-widest text-[#E65100]/70 mb-3">Prendre rendez-vous</p>
+        <h3 class="text-2xl font-extrabold text-[#1A1A1A] leading-tight mb-2">Devis Gratuit<br />Sous 24H.</h3>
+        <p class="text-sm text-[#1A1A1A]/40 font-light mb-8">Lundi au samedi, 8h–19h. Intervention possible sous 48h.</p>
         <a
           href="tel:+33664729600"
-          class="flex items-center justify-center gap-2 w-full bg-[#E65100] hover:bg-[#BF360C] text-white text-sm font-bold px-6 py-4 rounded-xl mb-3 transition-colors"
+          class="flex items-center justify-center gap-2 w-full bg-[#E65100] hover:bg-[#BF360C] text-white text-sm font-bold px-6 py-4 rounded-xl mb-3 transition-colors duration-200"
         >
           <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
           06 64 72 96 00
         </a>
         <a
           href="mailto:contact@sud-ramonage.fr?subject=Demande%20de%20devis%20ramonage"
-          class="flex items-center justify-center gap-2 w-full bg-white/8 border border-white/15 text-white text-sm font-semibold px-6 py-4 rounded-xl hover:bg-white/15 transition-colors"
+          class="flex items-center justify-center gap-2 w-full bg-[#FDF6F0] border border-[#EAD9C9] text-[#1A1A1A]/60 text-sm font-semibold px-6 py-4 rounded-xl hover:border-[#E65100]/30 hover:text-[#E65100] transition-colors duration-200"
         >
           Par email
         </a>
-        <div class="mt-8 pt-7 border-t border-white/10 flex items-center gap-3">
-          <svg class="w-4 h-4 text-white/25 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <p class="text-xs text-white/25">31 chemin des tamaris, 13500 Martigues</p>
+        <div class="mt-8 pt-7 border-t border-[#EAD9C9]/60 flex items-center gap-3">
+          <svg class="w-4 h-4 text-[#1A1A1A]/20 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <p class="text-xs text-[#1A1A1A]/30">31 chemin des tamaris, 13500 Martigues</p>
         </div>
       </div>
 
