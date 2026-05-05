@@ -80,9 +80,18 @@ const categoryBorder: Record<string, string> = {
   'Actualité':      'border-l-[3px] border-l-[#065F46]/40',
   'Conseil':        'border-l-[3px] border-l-[#E65100]/40',
 };
+
+const categoryBg: Record<string, string> = {
+  'Réglementation': 'bg-[#EEF3FF]',
+  'Technique':      'bg-[#FEF3C7]',
+  'Diagnostic':     'bg-[#FEF3C7]',
+  'Sécurité':       'bg-[#FEF3C7]',
+  'Actualité':      'bg-[#ECFDF5]',
+  'Conseil':        'bg-[#EEF3FF]',
+};
 ---
 
-<section class="py-16 px-6 md:px-10 bg-[#FFFBEB]">
+<section class="py-16 px-6 md:px-10 bg-[#FAFAFA]">
   <div class="max-w-6xl mx-auto">
 
     <div class="flex items-end justify-between mb-10">
@@ -102,7 +111,7 @@ const categoryBorder: Record<string, string> = {
       {allArticles.map(article => (
         <a
           href={article.href}
-          class={`group bg-white border border-[#EEEEEE] rounded-xl p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col ${categoryBorder[article.category] ?? 'border-l-[3px] border-l-[#E65100]/30'}`}
+          class={`group border border-[#EEEEEE] rounded-xl p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col ${categoryBorder[article.category] ?? 'border-l-[3px] border-l-[#E65100]/30'} ${categoryBg[article.category] ?? 'bg-white'}`}
         >
           <div class="flex items-center gap-2 mb-4">
             <span
