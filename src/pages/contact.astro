@@ -28,15 +28,15 @@ const pageSchema = {
 >
 
   <!-- Hero -->
-  <section class="bg-[#1A1A1A] text-white pt-28 pb-14">
+  <section class="bg-white border-b border-[#EEEEEE] pt-28 pb-12">
     <div class="max-w-4xl mx-auto px-6 md:px-10">
-      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-white/40 mb-6">
-        <a href="/" class="hover:text-white/70">Accueil</a><span>/</span><span class="text-white/60">Contact</span>
+      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-[#1A1A1A]/35 mb-6">
+        <a href="/" class="hover:text-[#1A1A1A]/60">Accueil</a><span>/</span><span class="text-[#1A1A1A]/50">Contact</span>
       </nav>
-      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-4">
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-4 text-[#1A1A1A]">
         Demandez votre devis <span class="text-[#E65100]">gratuit</span>
       </h1>
-      <p class="text-base text-white/60 max-w-xl leading-relaxed">
+      <p class="text-base text-[#1A1A1A]/55 max-w-xl leading-relaxed">
         Réponse sous 24h. Disponible du lundi au samedi, 8h–19h. Intervention sur Martigues, Côte Bleue et tout le département 13.
       </p>
     </div>
@@ -172,6 +172,83 @@ const pageSchema = {
 
             <p class="text-[11px] text-[#1A1A1A]/35 text-center">Ou appelez directement : <a href="tel:+33664729600" class="text-[#E65100] font-semibold">06 64 72 96 00</a></p>
           </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- À propos de l'artisan -->
+  <section class="py-16 px-6 md:px-10 bg-[#FAFAFA] border-t border-[#EEEEEE]">
+    <div class="max-w-4xl mx-auto space-y-12">
+
+      <div class="flex flex-col md:flex-row items-start gap-8">
+        <div class="shrink-0">
+          <div class="w-20 h-20 rounded-2xl bg-[#E65100]/10 border border-[#E65100]/20 flex items-center justify-center">
+            <svg class="w-10 h-10 text-[#E65100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <p class="text-[10px] font-bold tracking-widest uppercase text-[#E65100] mb-3">Votre artisan</p>
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">
+            Artisan indépendant,<br /><span class="text-[#E65100]">certifié et assuré.</span>
+          </h2>
+          <p class="text-sm text-[#1A1A1A]/60 max-w-2xl leading-relaxed">
+            Je travaille seul — c'est moi qui décroche le téléphone, c'est moi qui interviens chez vous, et c'est moi qui vous remet le certificat. Pas d'intermédiaire, pas de sous-traitant.
+          </p>
+        </div>
+      </div>
+
+      <blockquote class="border-l-4 border-[#E65100] pl-6 py-2">
+        <p class="text-base md:text-lg font-light text-[#1A1A1A]/70 leading-relaxed italic mb-3">
+          "Je travaille dans ce métier parce qu'un conduit propre, c'est une famille à l'abri. Chaque intervention, je prends le temps de vous expliquer ce que j'ai trouvé — et ce que ça aurait pu donner sans ramonage."
+        </p>
+        <cite class="text-sm font-semibold text-[#E65100] not-italic">Votre artisan — Sud Ramonage, Martigues</cite>
+      </blockquote>
+
+      <!-- Certifications -->
+      <div>
+        <p class="text-[10px] font-bold tracking-widest uppercase text-[#E65100] mb-5">Certifications & qualifications</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {[
+            { titre: 'Certification COSTIC', desc: 'Formation aux techniques de fumisterie, aux normes NF DTU 24.1 et aux méthodes de diagnostic avancées.', badge: 'COSTIC', color: '#1A4B8F' },
+            { titre: 'Qualibat 6521', desc: 'Qualification officielle pour les travaux de fumisterie et de conduits de fumée. Reconnue par les assureurs.', badge: '6521', color: '#1A4B8F' },
+            { titre: 'Assurance RC Pro', desc: 'Responsabilité civile professionnelle active pour toutes mes interventions. Vous êtes couverts en toutes circonstances.', badge: 'RC Pro', color: '#E65100' },
+            { titre: 'Certificat NF DTU 24.1', desc: 'Chaque intervention donne lieu à un certificat officiel valable auprès de votre assureur habitation.', badge: 'RSD 13', color: '#E65100' },
+          ].map(({ titre, desc, badge, color }) => (
+            <div class="flex gap-4 bg-white border border-[#EEEEEE] rounded-2xl p-5">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 font-extrabold text-[10px] text-white tracking-wider" style={`background: ${color};`}>{badge}</div>
+              <div>
+                <p class="text-sm font-bold text-[#1A1A1A] mb-1">{titre}</p>
+                <p class="text-xs text-[#1A1A1A]/55 leading-relaxed">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Valeurs -->
+      <div>
+        <p class="text-[10px] font-bold tracking-widest uppercase text-[#E65100] mb-5">Ce qui me distingue</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {[
+            { titre: 'Travail propre garanti', desc: 'Protection du sol et de vos meubles avant intervention. Aspiration complète des suies. Je repars en laissant votre intérieur impeccable.' },
+            { titre: 'Artisan seul — pas de sous-traitant', desc: 'C\'est moi qui interviens, sans exception. Vous savez qui vient chez vous.' },
+            { titre: 'Transparence sur les prix', desc: 'Tarifs annoncés avant l\'intervention. Pas de surprise sur la facture.' },
+            { titre: 'Ponctualité', desc: 'Je m\'engage sur un créneau et je le tiens. Si un imprévu survient, je vous préviens.' },
+            { titre: 'Pédagogie', desc: 'Je vous explique ce que j\'ai trouvé, ce que j\'ai fait, et comment entretenir votre installation.' },
+            { titre: 'Réactivité', desc: 'Devis sous 24h, intervention possible en urgence. Zone Martigues–Marseille–Aix-en-Provence.' },
+          ].map(({ titre, desc }) => (
+            <div class="flex gap-3 bg-white border border-[#EEEEEE] rounded-xl p-5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#E65100] shrink-0 mt-1.5"></span>
+              <div>
+                <p class="text-sm font-semibold text-[#1A1A1A] mb-1">{titre}</p>
+                <p class="text-xs text-[#1A1A1A]/55 leading-relaxed">{desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

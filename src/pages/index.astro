@@ -320,10 +320,10 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
         <!-- Ramonage -->
         <div class="bg-white border border-[#EEEEEE] rounded-xl overflow-hidden">
-          <div class="bg-[#1A1A1A] px-6 py-5">
+          <div class="bg-[#FFF3E0] px-6 py-5 border-b border-[#EEEEEE]">
             <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100] mb-1">Ramonage certifié</p>
-            <p class="text-3xl font-extrabold text-white">75 <span class="text-lg font-semibold text-white/60">€</span></p>
-            <p class="text-xs text-white/40 font-light mt-0.5">à partir de — certificat inclus</p>
+            <p class="text-3xl font-extrabold text-[#1A1A1A]">75 <span class="text-lg font-semibold text-[#1A1A1A]/40">€</span></p>
+            <p class="text-xs text-[#1A1A1A]/45 font-light mt-0.5">à partir de — certificat inclus</p>
           </div>
           <div class="p-6">
             {[
@@ -373,10 +373,10 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
         <!-- Entretien poêle -->
         <div class="bg-white border border-[#EEEEEE] rounded-xl overflow-hidden">
-          <div class="bg-[#1A1A1A] px-6 py-5">
+          <div class="bg-[#FFF3E0] px-6 py-5 border-b border-[#EEEEEE]">
             <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100] mb-1">Entretien poêle</p>
-            <p class="text-3xl font-extrabold text-white">90 <span class="text-lg font-semibold text-white/60">€</span></p>
-            <p class="text-xs text-white/40 font-light mt-0.5">à partir de — entretien complet</p>
+            <p class="text-3xl font-extrabold text-[#1A1A1A]">90 <span class="text-lg font-semibold text-[#1A1A1A]/40">€</span></p>
+            <p class="text-xs text-[#1A1A1A]/45 font-light mt-0.5">à partir de — entretien complet</p>
           </div>
           <div class="p-6">
             {[
@@ -414,11 +414,10 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   <!-- ═══════════════════════════════════════════════
        SECTION ENGAGEMENT — Image latérale + puces
   ═══════════════════════════════════════════════ -->
-  <section id="engagement" class="py-24 px-6 md:px-10 bg-[#1A1A1A]">
+  <section id="engagement" class="py-24 px-6 md:px-10 bg-white border-t border-[#EEEEEE]">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-        <!-- Image latérale artisan (remplaçable : src/assets/images/artisan-intervention.jpg) -->
         <div class="relative order-2 lg:order-1">
           <figure>
           <Image
@@ -426,43 +425,41 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             alt="Artisan ramoneur certifié en intervention à Martigues — ramonage mécanique conduit cheminée"
             width={800}
             height={600}
-            class="w-full rounded-xl object-cover aspect-[4/3] shadow-2xl shadow-black/40"
+            class="w-full rounded-xl object-cover aspect-[4/3] shadow-md"
             loading="lazy"
           />
-          <figcaption class="sr-only">Artisan ramoneur certifié Sud Ramonage à Martigues — intervention ramonage mécanique, tirage thermique, tubage inox, test de vacuité, certificat RSD 13 Bouches-du-Rhône.</figcaption>
+          <figcaption class="sr-only">Artisan ramoneur certifié Sud Ramonage à Martigues.</figcaption>
           </figure>
-          <!-- Badge overlay sérieux technique -->
-          <div class="absolute -bottom-4 -right-4 bg-[#E65100] text-white px-5 py-4 rounded-xl shadow-lg shadow-[#E65100]/30">
+          <div class="absolute -bottom-4 -right-4 bg-[#E65100] text-white px-5 py-4 rounded-xl shadow-lg shadow-[#E65100]/20">
             <p class="text-2xl font-extrabold leading-none">RSD 13</p>
             <p class="text-[10px] font-medium tracking-widest uppercase text-white/70 mt-1">Conformité garantie</p>
           </div>
         </div>
 
-        <!-- Engagements -->
         <div class="order-1 lg:order-2">
-          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-5">Ce qui nous distingue</p>
-          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight mb-4">
-            L'Engagement<br />Sud Ramonage.
+          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-5">Ce qui me distingue</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-4">
+            Mon engagement<br />envers vous.
           </h2>
-          <p class="text-base text-white/45 font-light leading-relaxed mb-8">
-            Artisan local basé à Martigues, j'interviens chez vous avec soin, ponctualité et le respect de votre foyer.
+          <p class="text-base text-[#1A1A1A]/55 font-light leading-relaxed mb-8">
+            Artisan local basé à Martigues, j'interviens seul chez vous — avec soin, ponctualité et respect de votre foyer.
           </p>
-          <ul class="space-y-5">
+          <ul class="space-y-4">
             {[
               { path: 'M5 13l4 4L19 7',    title: 'Travail propre garanti',    desc: 'Protection du sol et nettoyage complet après chaque intervention.' },
               { path: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Certificat immédiat', desc: 'Document officiel remis sur place, valable pour votre assurance habitation.' },
-              { path: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title: 'Assurance professionnelle', desc: 'Couvert en responsabilité civile pro pour toutes mes interventions.' },
+              { path: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title: 'Assuré RC Pro', desc: 'Couvert en responsabilité civile professionnelle pour toutes mes interventions.' },
               { path: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Artisan de proximité', desc: 'Basé à Martigues, je connais le secteur et interviens rapidement.' },
             ].map(({ path, title, desc }) => (
               <li class="flex gap-4 items-start">
-                <div class="w-9 h-9 rounded-lg bg-[#E65100]/15 flex items-center justify-center shrink-0 mt-0.5">
+                <div class="w-9 h-9 rounded-lg bg-[#FFF3E0] flex items-center justify-center shrink-0 mt-0.5">
                   <svg class="w-4.5 h-4.5 text-[#E65100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={path} />
                   </svg>
                 </div>
                 <div>
-                  <p class="text-sm font-semibold text-white mb-0.5">{title}</p>
-                  <p class="text-sm text-white/40 font-light leading-relaxed">{desc}</p>
+                  <p class="text-sm font-semibold text-[#1A1A1A] mb-0.5">{title}</p>
+                  <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">{desc}</p>
                 </div>
               </li>
             ))}

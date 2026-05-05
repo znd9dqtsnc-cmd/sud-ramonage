@@ -27,6 +27,7 @@ export default defineConfig({
     '/chemisage':                   '/tubage',
     '/test-fumigene':               '/audit-conformite',
     '/diagnostic-securite':         '/audit-conformite',
+    '/a-propos':                    '/contact',
   },
   adapter: vercel(),
   prefetch: {
