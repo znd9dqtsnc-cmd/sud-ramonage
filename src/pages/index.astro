@@ -86,19 +86,19 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <!-- Ramonage -->
+        <!-- Ramonage & Entretien — ocre -->
         <a href="/ramonage" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <div class="relative bg-[#FFF3E0] px-7 pt-7 pb-5 overflow-hidden">
             <span class="absolute right-4 top-2 text-[5rem] font-black text-[#E65100]/8 leading-none select-none">01</span>
-            <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100]/60 mb-3 relative z-10">Ramonage</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100]/60 mb-3 relative z-10">Ramonage & Entretien</p>
             <p class="text-3xl font-extrabold text-[#E65100] relative z-10">75 <span class="text-lg font-semibold">€</span></p>
             <p class="text-[11px] text-[#1A1A1A]/40 font-light relative z-10">Tarif foyer ouvert</p>
           </div>
           <div class="p-7 flex flex-col flex-1">
-            <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Ramonage Certifié</h3>
-            <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">Ramonage mécanique complet — cheminée, insert, poêle à bois ou granulés.</p>
+            <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Ramonage, Débistrage & Entretien Poêle</h3>
+            <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">Nettoyage mécanique du conduit, traitement du bistre et maintenance complète de votre appareil. Certificat RSD 13 inclus.</p>
             <div class="mt-5 pt-5 border-t border-[#F0F0F0] space-y-2.5">
-              {[['Foyer ouvert', '75 €'], ['Insert / Poêle à bois', '90 €'], ['Poêle à granulés', '110 €']].map(([l, p]) => (
+              {[['Ramonage foyer ouvert', '75 €'], ['Insert / Poêle à bois', '90 €'], ['Débistrage conduit', 'dès 150 €'], ['Entretien poêle granulés', '120 €']].map(([l, p]) => (
                 <div class="flex items-center justify-between">
                   <span class="text-xs text-[#1A1A1A]/45 font-light">{l}</span>
                   <span class="text-xs font-semibold text-[#1A1A1A]">{p}</span>
@@ -106,57 +106,57 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
               ))}
             </div>
             <span class="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] group-hover:gap-2.5 transition-all duration-200">
-              En savoir plus <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              Voir les prestations <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </span>
           </div>
         </a>
 
-        <!-- Débistrage -->
-        <a href="/debistrage" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div class="relative bg-[#FEF3C7] px-7 pt-7 pb-5 overflow-hidden">
-            <span class="absolute right-4 top-2 text-[5rem] font-black text-[#B45309]/8 leading-none select-none">02</span>
-            <p class="text-[10px] font-bold uppercase tracking-widest text-[#B45309]/60 mb-3 relative z-10">Débistrage</p>
-            <p class="text-3xl font-extrabold text-[#B45309] relative z-10">150 <span class="text-lg font-semibold">€</span></p>
-            <p class="text-[11px] text-[#1A1A1A]/40 font-light relative z-10">Traitement standard</p>
-          </div>
-          <div class="p-7 flex flex-col flex-1">
-            <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Traitement Bistre & Goudron</h3>
-            <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">Élimination des dépôts hautement inflammables — traitement chimique et mécanique.</p>
-            <div class="mt-5 pt-5 border-t border-[#F0F0F0] space-y-2.5">
-              {[['Traitement standard', 'dès 150 €'], ['Conduit très encrassé', 'dès 195 €'], ['Diagnostic inclus', '✓']].map(([l, p]) => (
-                <div class="flex items-center justify-between">
-                  <span class="text-xs text-[#1A1A1A]/45 font-light">{l}</span>
-                  <span class="text-xs font-semibold text-[#1A1A1A]">{p}</span>
-                </div>
-              ))}
-            </div>
-            <span class="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] group-hover:gap-2.5 transition-all duration-200">
-              En savoir plus <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- Diagnostic -->
-        <a href="/entretien-poele" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div class="relative bg-[#EEF3FF] px-7 pt-7 pb-5 overflow-hidden">
-            <span class="absolute right-4 top-2 text-[5rem] font-black text-[#1A4B8F]/8 leading-none select-none">03</span>
-            <p class="text-[10px] font-bold uppercase tracking-widest text-[#1A4B8F]/60 mb-3 relative z-10">Entretien & Diagnostic</p>
-            <p class="text-3xl font-extrabold text-[#1A4B8F] relative z-10">60 <span class="text-lg font-semibold">€</span></p>
+        <!-- Inspection & Diagnostic — vert -->
+        <a href="/inspection-camera" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="relative bg-[#ECFDF5] px-7 pt-7 pb-5 overflow-hidden">
+            <span class="absolute right-4 top-2 text-[5rem] font-black text-[#065F46]/8 leading-none select-none">02</span>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#065F46]/60 mb-3 relative z-10">Inspection & Diagnostic</p>
+            <p class="text-3xl font-extrabold text-[#065F46] relative z-10">60 <span class="text-lg font-semibold">€</span></p>
             <p class="text-[11px] text-[#1A1A1A]/40 font-light relative z-10">Diagnostic conduit</p>
           </div>
           <div class="p-7 flex flex-col flex-1">
-            <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Contrôle Technique</h3>
-            <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">Entretien poêle, inspection vacuité et étanchéité. Rapport illustré pour assurance et notaire.</p>
+            <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Caméra, Vacuité & Audit de Sécurité</h3>
+            <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">Inspection vidéo HD du conduit, contrôle de vacuité et rapport certifié — pour votre assurance, un notaire ou une vente.</p>
             <div class="mt-5 pt-5 border-t border-[#F0F0F0] space-y-2.5">
-              {[['Entretien poêle à bois', '90 €'], ['Entretien poêle granulés', '120 €'], ['Diagnostic conduit', 'dès 60 €']].map(([l, p]) => (
+              {[['Inspection caméra HD', 'dès 60 €'], ['Contrôle de vacuité', 'dès 60 €'], ['Diagnostic de sécurité', 'sur devis'], ['Rapport illustré inclus', '✓']].map(([l, p]) => (
                 <div class="flex items-center justify-between">
                   <span class="text-xs text-[#1A1A1A]/45 font-light">{l}</span>
                   <span class="text-xs font-semibold text-[#1A1A1A]">{p}</span>
                 </div>
               ))}
             </div>
-            <span class="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] group-hover:gap-2.5 transition-all duration-200">
-              En savoir plus <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <span class="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-[#065F46] group-hover:gap-2.5 transition-all duration-200">
+              Voir les prestations <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Réhabilitation — bleu -->
+        <a href="/tubage" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="relative bg-[#EEF3FF] px-7 pt-7 pb-5 overflow-hidden">
+            <span class="absolute right-4 top-2 text-[5rem] font-black text-[#1A4B8F]/8 leading-none select-none">03</span>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#1A4B8F]/60 mb-3 relative z-10">Réhabilitation</p>
+            <p class="text-3xl font-extrabold text-[#1A4B8F] relative z-10">Sur <span class="text-lg font-semibold">devis</span></p>
+            <p class="text-[11px] text-[#1A1A1A]/40 font-light relative z-10">Étude gratuite</p>
+          </div>
+          <div class="p-7 flex flex-col flex-1">
+            <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Tubage, Pose de Conduit & Accessoires</h3>
+            <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">Mise aux normes DTU 24.1, installation neuve et équipements toiture — pour sécuriser et pérenniser votre installation.</p>
+            <div class="mt-5 pt-5 border-t border-[#F0F0F0] space-y-2.5">
+              {[['Tubage rigide & flexible', 'sur devis'], ['Pose conduit métallique', 'sur devis'], ['Chapeaux anti-refoulement', 'sur devis'], ['Étude technique gratuite', '✓']].map(([l, p]) => (
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-[#1A1A1A]/45 font-light">{l}</span>
+                  <span class="text-xs font-semibold text-[#1A1A1A]">{p}</span>
+                </div>
+              ))}
+            </div>
+            <span class="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-[#1A4B8F] group-hover:gap-2.5 transition-all duration-200">
+              Voir les prestations <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </span>
           </div>
         </a>
