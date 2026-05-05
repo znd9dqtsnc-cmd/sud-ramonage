@@ -109,10 +109,10 @@ const faqSchema = {
             { val: '1 cran', label: 'DPE possible', sub: 'Avec conduit conforme' },
             { val: 'NF DTU', label: '24.1', sub: 'Conformité certifiée' },
           ].map(k => (
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-5 text-center">
-              <p class="text-3xl font-extrabold text-green-300 mb-1">{k.val}</p>
-              <p class="text-xs font-semibold text-white/70 mb-0.5">{k.label}</p>
-              <p class="text-[10px] text-white/35">{k.sub}</p>
+            <div class="bg-green-50 border border-green-200 rounded-2xl p-5 text-center">
+              <p class="text-3xl font-extrabold text-green-600 mb-1">{k.val}</p>
+              <p class="text-xs font-semibold text-[#1A1A1A] mb-0.5">{k.label}</p>
+              <p class="text-[10px] text-[#1A1A1A]/45">{k.sub}</p>
             </div>
           ))}
         </div>
@@ -157,18 +157,18 @@ const faqSchema = {
 
         <!-- ZFE Marseille -->
         <div>
-          <div class="bg-[#1A1A1A] rounded-2xl p-8 text-white mb-6">
+          <div class="border-l-4 border-[#1A4B8F] bg-[#EEF3FF] rounded-r-2xl p-8 mb-6">
             <div class="flex items-center gap-3 mb-5">
-              <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+              <div class="w-10 h-10 rounded-xl bg-[#1A4B8F]/10 border border-[#1A4B8F]/20 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-[#1A4B8F]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
               </div>
               <div>
-                <p class="text-xs font-bold text-blue-300 tracking-widest uppercase">ZFE Marseille</p>
-                <p class="text-sm font-extrabold text-white">Zone à Faibles Émissions</p>
+                <p class="text-xs font-bold text-[#1A4B8F] tracking-widest uppercase">ZFE Marseille</p>
+                <p class="text-sm font-extrabold text-[#1A1A1A]">Zone à Faibles Émissions</p>
               </div>
             </div>
-            <p class="text-xs text-white/55 font-light leading-relaxed mb-5">
-              La Métropole Aix-Marseille-Provence a instauré une Zone à Faibles Émissions (ZFE) centrée sur la réduction des polluants atmosphériques. Si les véhicules sont la cible principale, les plans locaux air-énergie-climat (PLAEC) visent aussi les <strong class="text-white">émissions résidentielles de chauffage au bois</strong>.
+            <p class="text-xs text-[#1A1A1A]/65 font-light leading-relaxed mb-5">
+              La Métropole Aix-Marseille-Provence a instauré une Zone à Faibles Émissions (ZFE) centrée sur la réduction des polluants atmosphériques. Si les véhicules sont la cible principale, les plans locaux air-énergie-climat (PLAEC) visent aussi les <strong class="text-[#1A1A1A]">émissions résidentielles de chauffage au bois</strong>.
             </p>
             <div class="space-y-3">
               {[
@@ -178,10 +178,10 @@ const faqSchema = {
               ].map(s => (
                 <div class="flex gap-3 items-start">
                   <div class="shrink-0 mt-0.5">
-                    <span class="text-sm font-extrabold text-green-400">{s.val}</span>
-                    <span class="text-[10px] text-green-400/60 ml-1">{s.unit}</span>
+                    <span class="text-sm font-extrabold text-green-700">{s.val}</span>
+                    <span class="text-[10px] text-green-600/70 ml-1">{s.unit}</span>
                   </div>
-                  <p class="text-xs text-white/45 font-light">{s.texte}</p>
+                  <p class="text-xs text-[#1A1A1A]/55 font-light">{s.texte}</p>
                 </div>
               ))}
             </div>
@@ -342,16 +342,16 @@ const faqSchema = {
   </section>
 
   <!-- ═══ CTA ═══ -->
-  <section class="py-16 px-6 md:px-10 bg-[#FAFAFA] border-t border-[#EEEEEE]">
-    <div class="max-w-xl mx-auto text-center">
-      <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">Valorisez votre installation dès aujourd'hui.</h2>
-      <p class="text-sm text-[#1A1A1A]/45 font-light mb-8">
-        Check-up Valeur Verte — 149 € — Certificat sous 24h.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+  <section class="py-16 px-6 md:px-10">
+    <div class="max-w-4xl mx-auto border border-[#EEEEEE] rounded-2xl p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div>
+        <h2 class="text-xl font-extrabold tracking-tight text-[#1A1A1A] mb-2">Valorisez votre installation dès aujourd'hui.</h2>
+        <p class="text-sm text-[#1A1A1A]/45 font-light">Check-up Valeur Verte — 149 € — Certificat sous 24h.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
         <a
           href="mailto:contact@sud-ramonage.fr?subject=Check-up%20Valeur%20Verte"
-          class="inline-flex items-center gap-2 bg-green-600 text-white text-sm font-bold px-7 py-4 rounded-xl hover:bg-green-700 transition-colors duration-200"
+          class="inline-flex items-center gap-2 bg-green-600 text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-green-700 transition-colors duration-200"
         >
           Réserver mon Check-up
         </a>

@@ -88,10 +88,10 @@ const breadcrumbs = [
       <div>
         <h2 class="text-2xl font-bold text-[#1A1A1A] mb-5">Insert et tubage : les points de contrôle essentiels</h2>
         <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
-          Un insert est systématiquement raccordé à un conduit tubé (flexible inox ou rigide). La norme NF EN 13229 et le NF DTU 24.1 P1-1 art. 5.2.3 imposent que la section du conduit tubé soit adaptée à la puissance nominale de l'insert. Un sous-dimensionnement crée une accumulation rapide de suie et un risque de refoulement de CO.
+          Un insert est systématiquement raccordé à un conduit tubé (flexible inox ou rigide). La norme NF EN 13229 et le NF DTU 24.1 imposent que la section du conduit tubé soit adaptée à la puissance nominale de l'insert. Un sous-dimensionnement crée une accumulation rapide de suie et un risque de refoulement de CO.
         </p>
         <p class="text-sm text-[#1A1A1A]/65 leading-relaxed">
-          Je contrôle systématiquement la distance de sécurité entre l'insert et les matériaux combustibles environnants (tablette de cheminée, lambris, parquet) selon l'art. 9.1 et 9.2 de la NF DTU 24.1 P1-1. Dans les bastides et maisons de caractère du Pays d'Aix, je trouve régulièrement des inserts installés trop près de boiseries anciennes.
+          Je contrôle systématiquement la distance de sécurité entre l'insert et les matériaux combustibles environnants (tablette de cheminée, lambris, parquet) selon les exigences de la NF DTU 24.1. Dans les bastides et maisons de caractère du Pays d'Aix, je trouve régulièrement des inserts installés trop près de boiseries anciennes.
         </p>
       </div>
 
@@ -99,8 +99,8 @@ const breadcrumbs = [
         <h2 class="text-lg font-bold text-[#1A1A1A] mb-6">Non-conformités fréquentes — inserts</h2>
         <div class="space-y-4">
           {[
-            { titre: 'Tubage sous-dimensionné ou absent', detail: 'L\'insert a été posé dans l\'ancien conduit de foyer ouvert sans tubage. Section trop grande = mauvais tirage, condensats, monoxyde de carbone.', dtu: 'NF DTU 24.1 P1-1 art. 5.2.3' },
-            { titre: 'Distance de sécurité non respectée', detail: 'Matériaux combustibles (boiseries, lambris) à moins de la distance minimale réglementaire de la face de l\'insert.', dtu: 'NF DTU 24.1 P1-1 art. 9.1' },
+            { titre: 'Tubage sous-dimensionné ou absent', detail: 'L\'insert a été posé dans l\'ancien conduit de foyer ouvert sans tubage. Section trop grande = mauvais tirage, condensats, monoxyde de carbone.', dtu: 'NF DTU 24.1' },
+            { titre: 'Distance de sécurité non respectée', detail: 'Matériaux combustibles (boiseries, lambris) à moins de la distance minimale réglementaire de la face de l\'insert.', dtu: 'NF DTU 24.1' },
             { titre: 'Vitrocéramique fissurée ou encrassée', detail: 'Perte d\'étanchéité = entrée d\'air parasite, déperdition de rendement. Remplacement nécessaire avant toute utilisation.' },
             { titre: 'Joint de porte dégradé', detail: 'Le joint tressé en fibre céramique assure l\'étanchéité entre la porte et le cadre. Usure → air froid parasite → forte chute de rendement.' },
           ].map(({ titre, detail, dtu }) => (
@@ -123,10 +123,12 @@ const breadcrumbs = [
         </p>
       </div>
 
-      <div class="bg-[#E65100] rounded-2xl p-8 text-white">
-        <h2 class="text-xl font-bold mb-3">Insert à entretenir dans les Bouches-du-Rhône ?</h2>
-        <p class="text-sm text-white/75 mb-6">Ramonage + contrôle complet insert, tubage, liaison, souche. Certificat RSD 13 remis le jour même.</p>
-        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-white text-[#E65100] text-sm font-bold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors">
+      <div class="border border-[#EEEEEE] rounded-2xl p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div>
+          <h2 class="text-xl font-extrabold tracking-tight text-[#1A1A1A] mb-2">Insert à entretenir dans les Bouches-du-Rhône ?</h2>
+          <p class="text-sm text-[#1A1A1A]/55 font-light">Ramonage + contrôle complet insert, tubage, liaison, souche. Certificat RSD 13 remis le jour même.</p>
+        </div>
+        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#E65100] text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-[#BF360C] transition-colors shrink-0">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
           06 64 72 96 00
         </a>

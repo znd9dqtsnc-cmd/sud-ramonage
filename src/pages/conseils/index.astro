@@ -9,6 +9,7 @@ const articles = [
     slug: 'certificat-ramonage-assureur',
     category: 'Réglementation',
     categoryColor: 'bg-blue-600',
+    badgeClass: 'bg-blue-50 text-blue-700 border border-blue-200',
     title: 'Certificat de ramonage : 5 points que votre assureur vérifie.',
     excerpt: 'En cas de sinistre, votre assureur peut refuser la prise en charge si votre certificat est incomplet. Découvrez les 5 éléments indispensables qu\'un certificat conforme au RSD 13 doit obligatoirement mentionner.',
     readTime: '5 min',
@@ -20,6 +21,7 @@ const articles = [
     slug: 'bistre-calcin-ramonage-ne-suffit-plus',
     category: 'Technique',
     categoryColor: 'bg-amber-600',
+    badgeClass: 'bg-amber-50 text-amber-700 border border-amber-200',
     title: 'Bistre et Calcin : Pourquoi le ramonage classique ne suffit plus ?',
     excerpt: 'Le bistre — dépôt de goudron hautement inflammable — est la première cause d\'incendie de conduit en France. Un simple ramonage mécanique ne l\'élimine pas. Voici pourquoi et comment le traiter.',
     readTime: '6 min',
@@ -31,6 +33,7 @@ const articles = [
     slug: 'poele-granules-signes-entretien-mal-fait',
     category: 'Diagnostic',
     categoryColor: 'bg-[#E65100]',
+    badgeClass: 'bg-[#FFF3E0] text-[#E65100] border border-[#E65100]/20',
     title: 'Poêle à granulés : Les 3 signes d\'un entretien mal fait.',
     excerpt: 'Un poêle à granulés mal entretenu ne tombe pas simplement en panne — il devient dangereux. Ces 3 signaux d\'alerte permettent de détecter un entretien insuffisant avant qu\'il ne provoque une panne coûteuse ou un sinistre.',
     readTime: '5 min',
@@ -42,6 +45,7 @@ const articles = [
     slug: 'ramonage-appartement-locataire-proprietaire',
     category: 'Réglementation',
     categoryColor: 'bg-blue-600',
+    badgeClass: 'bg-blue-50 text-blue-700 border border-blue-200',
     title: 'Ramonage en appartement : locataire ou propriétaire, qui paie ?',
     excerpt: 'Charge locative ou responsabilité du propriétaire ? Ce que dit le décret n°87-712, la différence entre entretien courant et travaux, et comment vous protéger en cas de sinistre.',
     readTime: '5 min',
@@ -53,6 +57,7 @@ const articles = [
     slug: 'insert-fume-dans-piece-causes-solutions',
     category: 'Diagnostic',
     categoryColor: 'bg-[#E65100]',
+    badgeClass: 'bg-[#FFF3E0] text-[#E65100] border border-[#E65100]/20',
     title: 'Mon insert fume dans la pièce : 5 causes et leurs solutions.',
     excerpt: 'Refoulement de fumée : 5 causes classées par fréquence — conduit obstrué, tirage insuffisant, dépression, vent, fissure. Auto-diagnostic, risque CO et quand appeler un professionnel.',
     readTime: '6 min',
@@ -64,6 +69,7 @@ const articles = [
     slug: 'quel-bois-pour-cheminee-poele',
     category: 'Technique',
     categoryColor: 'bg-amber-600',
+    badgeClass: 'bg-amber-50 text-amber-700 border border-amber-200',
     title: 'Quel bois pour ma cheminée ou mon poêle ? Le guide complet.',
     excerpt: 'Taux d\'humidité, essences recommandées, label Bois Énergie, bois interdits — tout ce qu\'il faut savoir pour bien chauffer, réduire le bistre et diviser par deux la fréquence des ramonages.',
     readTime: '7 min',
@@ -75,6 +81,7 @@ const articles = [
     slug: 'detecteur-co-obligations-placement',
     category: 'Sécurité',
     categoryColor: 'bg-red-600',
+    badgeClass: 'bg-red-50 text-red-700 border border-red-200',
     title: 'Détecteur de CO : obligatoire ? Où le placer ? Quel modèle ?',
     excerpt: 'Le CO tue 80 à 100 personnes par an en France. Obligation légale, norme NF EN 50291, emplacement idéal et critères de choix pour protéger votre famille — expliqués par un artisan certifié COSTIC.',
     readTime: '5 min',
@@ -86,6 +93,7 @@ const articles = [
     slug: 'contester-refus-assurance-feu-cheminee',
     category: 'Réglementation',
     categoryColor: 'bg-blue-600',
+    badgeClass: 'bg-blue-50 text-blue-700 border border-blue-200',
     title: 'Incendie de cheminée : contester un refus d\'assurance.',
     excerpt: 'Votre assureur refuse d\'indemniser un feu de conduit faute de certificat ? La jurisprudence, la procédure de réclamation en 4 étapes, et comment le certificat de ramonage vous protège.',
     readTime: '7 min',
@@ -116,18 +124,18 @@ const pageSchema = {
 >
 
   <!-- ═══ HERO ═══ -->
-  <section class="pt-32 pb-16 px-6 md:px-10 bg-[#1A1A1A]">
+  <section class="pt-32 pb-16 px-6 md:px-10 bg-white border-b border-[#EEEEEE]">
     <div class="max-w-6xl mx-auto">
-      <nav class="flex items-center gap-2 text-xs text-white/30 mb-8" aria-label="Fil d'Ariane">
-        <a href="/" class="hover:text-white transition-colors duration-200">Accueil</a>
+      <nav class="flex items-center gap-2 text-xs text-[#1A1A1A]/35 mb-8" aria-label="Fil d'Ariane">
+        <a href="/" class="hover:text-[#1A1A1A]/60 transition-colors duration-200">Accueil</a>
         <span>/</span>
-        <span class="text-white/60">Conseils d'Experts</span>
+        <span class="text-[#1A1A1A]/50">Conseils d'Experts</span>
       </nav>
       <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Le savoir de l'artisan</p>
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-6">
         Conseils d'Experts<br />en Ramonage.
       </h1>
-      <p class="text-base text-white/55 font-light max-w-xl leading-relaxed">
+      <p class="text-base text-[#1A1A1A]/55 font-light max-w-xl leading-relaxed">
         Réglementation, technique, sécurité — tout ce qu'un propriétaire doit savoir sur l'entretien de ses conduits de cheminée et de ses appareils à bois ou à granulés, expliqué par un artisan certifié.
       </p>
     </div>
@@ -139,7 +147,7 @@ const pageSchema = {
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {articles.map((article, i) => (
-          <article class="group flex flex-col bg-white border border-[#EEEEEE] rounded-2xl overflow-hidden hover:shadow-xl hover:border-[#E65100]/20 transition-all duration-300">
+          <article class="group flex flex-col bg-white border border-[#EEEEEE] rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 hover:border-[#E65100]/20 transition-all duration-300">
 
             <!-- Bande colorée en haut -->
             <div class={`h-1.5 w-full ${article.categoryColor}`}></div>
@@ -148,7 +156,7 @@ const pageSchema = {
 
               <!-- Meta -->
               <div class="flex items-center gap-3 mb-5">
-                <span class={`text-[10px] font-bold tracking-widest uppercase text-white px-2 py-0.5 rounded ${article.categoryColor}`}>
+                <span class={`text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded ${article.badgeClass}`}>
                   {article.category}
                 </span>
                 <span class="text-[10px] text-[#1A1A1A]/35 font-medium">{article.readTime} de lecture</span>
@@ -195,14 +203,16 @@ const pageSchema = {
   </section>
 
   <!-- ═══ CTA ═══ -->
-  <section class="py-16 px-6 md:px-10 bg-[#FFF3E0]">
-    <div class="max-w-xl mx-auto text-center">
-      <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">Une question sur votre installation ?</h2>
-      <p class="text-sm text-[#1A1A1A]/55 font-light mb-8">
-        Artisan certifié à Martigues. Diagnostic gratuit lors du premier contact.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <ContactButton variant="phone" class="px-8 py-4 text-sm" />
+  <section class="py-16 px-6 md:px-10">
+    <div class="max-w-4xl mx-auto border border-[#EEEEEE] rounded-2xl p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div>
+        <h2 class="text-xl font-extrabold tracking-tight text-[#1A1A1A] mb-2">Une question sur votre installation ?</h2>
+        <p class="text-sm text-[#1A1A1A]/55 font-light">
+          Artisan certifié à Martigues. Diagnostic gratuit lors du premier contact.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
+        <ContactButton variant="phone" class="px-6 py-3 text-sm" />
         <ContactButton variant="email" />
       </div>
     </div>

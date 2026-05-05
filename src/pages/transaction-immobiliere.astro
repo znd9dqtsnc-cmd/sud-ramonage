@@ -72,10 +72,10 @@ const breadcrumbs = [
             { val: '120 €', label: 'Audit simple', sub: '1 conduit — rapport PDF signé' },
             { val: '+15 %', label: 'Rendement retrouvé', sub: 'Argument DPE + valorisation' },
           ].map(({ val, label, sub }) => (
-            <div class="bg-white/8 border border-white/10 rounded-2xl p-4">
-              <p class="text-lg font-extrabold text-white leading-none mb-1">{val}</p>
-              <p class="text-[11px] font-semibold text-[#E65100] mb-1">{label}</p>
-              <p class="text-[10px] text-white/35">{sub}</p>
+            <div class="bg-[#FFF3E0] border border-[#E65100]/15 rounded-2xl p-4">
+              <p class="text-lg font-extrabold text-[#E65100] leading-none mb-1">{val}</p>
+              <p class="text-[11px] font-semibold text-[#1A1A1A] mb-1">{label}</p>
+              <p class="text-[10px] text-[#1A1A1A]/45">{sub}</p>
             </div>
           ))}
         </div>
@@ -126,7 +126,7 @@ const breadcrumbs = [
                 'Délai compatible avec le planning notarial',
                 'Rapport signé par artisan qualifié',
               ],
-              color: '#2D2D2D',
+              color: '#1A4B8F',
             },
           ].map(({ role, avantages, color }) => (
             <div class="bg-white border border-[#EEEEEE] rounded-2xl p-6">
@@ -171,12 +171,12 @@ const breadcrumbs = [
           </div>
         </div>
         <div class="space-y-5">
-          <div class="bg-[#1A1A1A] rounded-2xl p-8 text-white">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-3">Cas typique — Vente Marseille 7e</p>
-            <blockquote class="text-sm text-white/70 leading-relaxed mb-4 italic">
+          <div class="border-l-4 border-[#1A4B8F] bg-[#EEF3FF] rounded-r-2xl p-8">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#1A4B8F] mb-3">Cas typique — Vente Marseille 7e</p>
+            <blockquote class="text-sm text-[#1A1A1A]/70 leading-relaxed mb-4 italic">
               "L'acheteur voulait retenir 8 000 € sur le prix pour les travaux de cheminée. Après l'audit qui montrait que tout était conforme, la négociation a été close. Le rapport a été versé au dossier du notaire."
             </blockquote>
-            <p class="text-xs text-white/40">Agent immobilier — Transaction 550 000 € · Marseille 7e</p>
+            <p class="text-xs text-[#1A1A1A]/45">Agent immobilier — Transaction 550 000 € · Marseille 7e</p>
           </div>
           <div class="bg-[#1A4B8F]/8 border border-[#1A4B8F]/15 rounded-2xl p-6">
             <p class="text-sm font-bold text-[#1A4B8F] mb-3">Ce que contient le dossier vendeur</p>
@@ -224,17 +224,19 @@ const breadcrumbs = [
               <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Carnet de Santé du Conduit</li>
             </ul>
           </div>
-          <div class="bg-[#1A1A1A] rounded-2xl p-6 text-white">
-            <p class="text-[11px] font-bold uppercase tracking-widest text-white/40 mb-3">Audit complet</p>
-            <p class="text-3xl font-extrabold text-white mb-1">190 €</p>
-            <p class="text-xs text-white/50 mb-4">Multi-conduits · Caméra HD · Rapport assurance</p>
-            <ul class="space-y-2 text-xs text-white/65">
-              <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Tous les conduits du bien</li>
-              <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Inspection caméra HD</li>
-              <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Photos datées et géolocalisées</li>
-              <li class="flex gap-2"><span class="text-[#E65100]">✓</span> Rapport transmissible au notaire</li>
+          <div class="bg-[#EEF3FF] border-2 border-[#1A4B8F] rounded-2xl p-6 relative">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+              <span class="bg-[#1A4B8F] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Recommandé</span>
+            </div>
+            <p class="text-[11px] font-bold uppercase tracking-widest text-[#1A4B8F]/60 mb-3">Audit complet</p>
+            <p class="text-3xl font-extrabold text-[#1A1A1A] mb-1">190 €</p>
+            <p class="text-xs text-[#1A1A1A]/50 mb-4">Multi-conduits · Caméra HD · Rapport assurance</p>
+            <ul class="space-y-2 text-xs text-[#1A1A1A]/65">
+              <li class="flex gap-2"><span class="text-[#1A4B8F] font-bold">✓</span> Tous les conduits du bien</li>
+              <li class="flex gap-2"><span class="text-[#1A4B8F] font-bold">✓</span> Inspection caméra HD</li>
+              <li class="flex gap-2"><span class="text-[#1A4B8F] font-bold">✓</span> Photos datées et géolocalisées</li>
+              <li class="flex gap-2"><span class="text-[#1A4B8F] font-bold">✓</span> Rapport transmissible au notaire</li>
             </ul>
-            <div class="mt-4 bg-[#E65100]/15 rounded-xl px-4 py-2 text-[10px] text-[#E65100] font-bold uppercase tracking-wide">Recommandé pour la vente</div>
           </div>
           <div class="bg-[#E65100] rounded-2xl p-6 text-white flex flex-col justify-between">
             <div>

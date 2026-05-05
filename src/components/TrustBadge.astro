@@ -50,19 +50,19 @@ const pillars = [
 
 <!-- ─── VARIANT STRIP : 3 piliers horizontaux ─── -->
 {variant === 'strip' && (
-  <section class={`bg-[#1A1A1A] border-y border-white/5 ${className}`} aria-label="Garanties Sud Ramonage">
+  <section class={`bg-[#FAFAFA] border-y border-[#EEEEEE] ${className}`} aria-label="Garanties Sud Ramonage">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
-      <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/8">
+      <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#EEEEEE]">
         {pillars.map(({ icon, label, sub }) => (
           <div class="flex items-center gap-4 py-6 px-4 md:px-8">
-            <div class="w-10 h-10 rounded-xl bg-[#E65100]/15 border border-[#E65100]/25 flex items-center justify-center shrink-0">
+            <div class="w-10 h-10 rounded-xl bg-[#FFF3E0] border border-[#E65100]/20 flex items-center justify-center shrink-0">
               <svg class="w-5 h-5 text-[#E65100]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d={icon} />
               </svg>
             </div>
             <div>
-              <p class="text-xs font-bold text-white tracking-tight">{label}</p>
-              <p class="text-[11px] text-white/40 font-light mt-0.5">{sub}</p>
+              <p class="text-xs font-bold text-[#1A1A1A] tracking-tight">{label}</p>
+              <p class="text-[11px] text-[#1A1A1A]/45 font-light mt-0.5">{sub}</p>
             </div>
           </div>
         ))}

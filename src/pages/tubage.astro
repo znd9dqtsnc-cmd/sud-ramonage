@@ -49,7 +49,7 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Tubage Conduit', ur
       <div>
         <h2 class="text-2xl font-bold mb-5">Quand le tubage est-il obligatoire ?</h2>
         <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
-          Selon la NF DTU 24.1 P1-1, le tubage est obligatoire dans plusieurs situations : installation d'un appareil à étanchéité renforcée (insert, poêle, chaudière à condensation), conduit maçonné fissuré ou dégradé, conduit dont la section ou le tracé est inadapté à l'appareil raccordé, ou conduit utilisé après une longue période d'inactivité présentant des anomalies à l'inspection.
+          Selon la NF DTU 24.1, le tubage est obligatoire dans plusieurs situations : installation d'un appareil à étanchéité renforcée (insert, poêle, chaudière à condensation), conduit maçonné fissuré ou dégradé, conduit dont la section ou le tracé est inadapté à l'appareil raccordé, ou conduit utilisé après une longue période d'inactivité présentant des anomalies à l'inspection.
         </p>
         <p class="text-sm text-[#1A1A1A]/65 leading-relaxed">
           Dans les constructions anciennes du Pays d'Aix et de Martigues, les conduits en boisseau de terre cuite ont souvent 50 à 100 ans. Les joints sont dégradés, les parois fissurent. Un tubage inox résoudra définitivement le problème d'étanchéité.
@@ -81,9 +81,9 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Tubage Conduit', ur
         <h2 class="text-lg font-bold text-[#1A1A1A] mb-6">Points de contrôle DTU — avant et après tubage</h2>
         <div class="space-y-4">
           {[
-            { titre: 'Diamètre adapté à l\'appareil', detail: 'Le diamètre intérieur du tube doit correspondre à la sortie de l\'appareil. Jamais inférieur.', dtu: 'NF DTU 24.1 P1-1 art. 5.2.3' },
-            { titre: 'Continuité et étanchéité', detail: 'Chaque jonction doit être étanche. Test fumigène après pose pour validation.', dtu: 'NF DTU 24.1 P1-1 art. 4.2' },
-            { titre: 'Dépassement en toiture', detail: 'Le conduit tubé doit respecter les mêmes hauteurs de dépassement que tout autre conduit.', dtu: 'NF DTU 24.1 P1-1 art. 6.4.1' },
+            { titre: 'Diamètre adapté à l\'appareil', detail: 'Le diamètre intérieur du tube doit correspondre à la sortie de l\'appareil. Jamais inférieur.', dtu: 'NF DTU 24.1' },
+            { titre: 'Continuité et étanchéité', detail: 'Chaque jonction doit être étanche. Test fumigène après pose pour validation.', dtu: 'NF DTU 24.1' },
+            { titre: 'Dépassement en toiture', detail: 'Le conduit tubé doit respecter les mêmes hauteurs de dépassement que tout autre conduit.', dtu: 'NF DTU 24.1' },
             { titre: 'Résistance thermique', detail: 'L\'inox doit être de qualité adaptée au combustible : 316 L pour gaz, 316 Ti pour bois et fioul (haute température).', dtu: 'NF EN 1856-1' },
           ].map(({ titre, detail, dtu }) => (
             <div class="flex gap-4 p-4 bg-white rounded-xl border border-[#EEEEEE]">
@@ -120,7 +120,7 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Tubage Conduit', ur
                 { c: 'Durée de vie', tubage: '25–40 ans ✓', chemisage: '15–25 ans' },
                 { c: 'Appareils compatibles', tubage: 'Tous — bois, granulés, gaz, fioul ✓', chemisage: 'Gaz & chaudière basse température uniquement' },
                 { c: 'Résistance thermique', tubage: 'Inox 316 Ti — jusqu\'à 600°C ✓', chemisage: 'Résine époxy — max 250°C' },
-                { c: 'Norme de référence', tubage: 'NF DTU 24.1 P1-1 ✓', chemisage: 'Variable selon produit utilisé' },
+                { c: 'Norme de référence', tubage: 'NF DTU 24.1 ✓', chemisage: 'Variable selon produit utilisé' },
                 { c: 'Entretien / ramonage', tubage: 'Facile — surface lisse inox ✓', chemisage: 'Surface parfois irrégulière après prise' },
                 { c: 'Conduit très irrégulier', tubage: 'Flexible inox s\'adapte aux coudes ✓', chemisage: '✓ Avantage sur conduits très tortueux' },
                 { c: 'Coût initial', tubage: 'Plus élevé', chemisage: 'Moins cher à l\'installation' },
@@ -143,10 +143,12 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Tubage Conduit', ur
         </div>
       </div>
 
-      <div class="bg-[#E65100] rounded-2xl p-8 text-white">
-        <h2 class="text-xl font-bold mb-3">Devis tubage gratuit</h2>
-        <p class="text-sm text-white/75 mb-6">Je me déplace pour évaluer votre conduit et vous proposer la solution adaptée (flexible ou rigide, diamètre, longueur). Devis détaillé sans engagement.</p>
-        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-white text-[#E65100] text-sm font-bold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors">06 64 72 96 00</a>
+      <div class="border border-[#EEEEEE] rounded-2xl p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div>
+          <h2 class="text-xl font-extrabold tracking-tight text-[#1A1A1A] mb-2">Devis tubage gratuit</h2>
+          <p class="text-sm text-[#1A1A1A]/55 font-light">Déplacement pour évaluer votre conduit et proposer la solution adaptée. Flexible ou rigide, diamètre, longueur — sans engagement.</p>
+        </div>
+        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#E65100] text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-[#BF360C] transition-colors shrink-0">06 64 72 96 00</a>
       </div>
 
       <nav aria-label="Services associés" class="pt-8 border-t border-[#EEEEEE]">

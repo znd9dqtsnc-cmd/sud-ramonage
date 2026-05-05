@@ -25,17 +25,17 @@ const defaultCas = [
   {
     titre: 'Dépassement insuffisant en toiture',
     detail: `Conduit trop court par rapport au faîtage — tirage insuffisant et refoulements fréquents par vent dominant. Non-conformité courante sur les toitures modifiées.`,
-    dtu: 'NF DTU 24.1 P1-1 art. 6.4.1',
+    dtu: 'NF DTU 24.1',
   },
   {
     titre: 'Joint de boisseau fissuré',
     detail: `Mortier de jointement entre boisseaux de terre cuite dégradé après 30-40 ans. Fuite de monoxyde de carbone dans les combles possible — détectable uniquement à la caméra.`,
-    dtu: 'NF DTU 24.1 P1-1 art. 4.3',
+    dtu: 'NF DTU 24.1',
   },
   {
     titre: 'Section conduit inadaptée à l\'appareil',
     detail: `Poêle ou insert installé dans un foyer ouvert sans adaptation de section — ratio foyer/gorge non respecté, fumée dans la pièce dès vent fort.`,
-    dtu: 'NF DTU 24.1 P1-1 art. 5.2.3',
+    dtu: 'NF DTU 24.1',
   },
 ];
 
@@ -183,7 +183,7 @@ const personSchema = {
         class="w-full h-full object-cover"
         loading="eager" fetchpriority="high"
       />
-      <div class="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/80 via-[#1A1A1A]/70 to-[#1A1A1A]/85"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/85 via-[#1A1A1A]/65 to-[#1A1A1A]/30"></div>
     </div>
     <div class="relative z-10 max-w-6xl mx-auto">
       <nav class="flex items-center gap-2 text-xs text-white/30 mb-8" aria-label="Fil d'Ariane">
@@ -282,37 +282,37 @@ const personSchema = {
   </section>
 
   <!-- ═══ CAS DE NON-CONFORMITÉ TERRAIN — DTU ═══ -->
-  <section class="py-16 px-6 md:px-10 bg-[#1A1A1A]">
+  <section class="py-16 px-6 md:px-10 bg-[#FAFAFA] border-y border-[#EEEEEE]">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-xl mb-10">
         <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-3">Diagnostic expert</p>
-        <h2 class="text-xl md:text-2xl font-extrabold tracking-tight text-white mb-3">
+        <h2 class="text-xl md:text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-3">
           Ce que je trouve le plus souvent à {data.nom}.
         </h2>
-        <p class="text-sm text-white/45 font-light leading-relaxed">
-          Chaque secteur a ses non-conformités récurrentes. Les ignorer, c'est risquer un incendie de conduit ou une intoxication au CO. Les voici — avec les références DTU qui s'appliquent.
+        <p class="text-sm text-[#1A1A1A]/55 font-light leading-relaxed">
+          Chaque secteur a ses non-conformités récurrentes. Les ignorer, c'est risquer un incendie de conduit ou une intoxication au CO.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-{casAffichés.length === 2 ? '2' : '3'} gap-4">
         {casAffichés.map((cas, i) => (
-          <div class="bg-white/5 border border-white/8 rounded-xl p-6 space-y-3">
+          <div class="bg-white border border-[#EEEEEE] rounded-xl p-6 space-y-3">
             <div class="flex items-start justify-between gap-3">
               <span class="text-[10px] font-bold text-[#E65100] font-mono">0{i + 1}</span>
               {cas.dtu && (
-                <span class="text-[9px] font-mono text-white/20 bg-white/5 rounded px-2 py-1 shrink-0">{cas.dtu}</span>
+                <span class="text-[9px] font-mono text-[#E65100] bg-[#FFF3E0] rounded px-2 py-1 shrink-0">{cas.dtu}</span>
               )}
             </div>
-            <h3 class="text-sm font-bold text-white leading-snug">{cas.titre}</h3>
-            <p class="text-xs text-white/50 font-light leading-relaxed">{cas.detail}</p>
+            <h3 class="text-sm font-bold text-[#1A1A1A] leading-snug">{cas.titre}</h3>
+            <p class="text-xs text-[#1A1A1A]/55 font-light leading-relaxed">{cas.detail}</p>
           </div>
         ))}
       </div>
-      <div class="mt-8 flex items-start gap-4 bg-[#E65100]/10 border border-[#E65100]/20 rounded-xl p-5">
-        <svg class="w-5 h-5 text-[#E65100] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="mt-8 flex items-start gap-4 border-l-4 border-[#1A4B8F] bg-[#EEF3FF] rounded-r-xl p-5">
+        <svg class="w-5 h-5 text-[#1A4B8F] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <p class="text-xs text-white/60 font-light leading-relaxed">
-          <strong class="text-white">Référence normative :</strong> La NF DTU 24.1 P1-1 (décembre 2006, révisée 2013) est la norme française applicable à tous les travaux de fumisterie. Son respect conditionne la validité de votre assurance habitation en cas de sinistre. Je travaille systématiquement dans ce cadre normatif.
+        <p class="text-xs text-[#1A4B8F]/80 font-light leading-relaxed">
+          <strong class="text-[#1A4B8F]">Référence normative :</strong> La NF DTU 24.1 est la norme française applicable à tous les travaux de fumisterie. Son respect conditionne la validité de votre assurance habitation en cas de sinistre. Je travaille systématiquement dans ce cadre normatif.
         </p>
       </div>
     </div>
@@ -416,17 +416,17 @@ const personSchema = {
   </section>
 
   <!-- ═══ TÉMOIGNAGE ═══ -->
-  <section class="py-16 px-6 md:px-10 bg-[#1A1A1A]">
+  <section class="py-16 px-6 md:px-10 bg-white border-t border-[#EEEEEE]">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-2xl mx-auto text-center">
         <svg class="w-8 h-8 text-[#E65100] mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
         </svg>
-        <blockquote class="text-lg text-white/80 font-light italic leading-relaxed mb-6">
+        <blockquote class="text-lg text-[#1A1A1A]/70 font-light italic leading-relaxed mb-6">
           "{data.temoignage.texte}"
         </blockquote>
-        <p class="text-sm font-semibold text-white">{data.temoignage.auteur}</p>
-        <p class="text-xs text-white/35 mt-1">{data.nom}, Bouches-du-Rhône</p>
+        <p class="text-sm font-semibold text-[#1A1A1A]">{data.temoignage.auteur}</p>
+        <p class="text-xs text-[#1A1A1A]/40 mt-1">{data.nom}, Bouches-du-Rhône</p>
       </div>
     </div>
   </section>
@@ -435,7 +435,7 @@ const personSchema = {
   <section class="py-16 px-6 md:px-10">
     <div class="max-w-6xl mx-auto">
       <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-2xl p-8 flex flex-col md:flex-row items-start md:items-center gap-8">
-        <div class="w-16 h-16 rounded-2xl bg-[#1A1A1A] flex items-center justify-center shrink-0">
+        <div class="w-16 h-16 rounded-2xl bg-[#FFF3E0] border border-[#E65100]/20 flex items-center justify-center shrink-0">
           <svg class="w-8 h-8 text-[#E65100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
           </svg>
@@ -542,16 +542,18 @@ const personSchema = {
   )}
 
   <!-- ═══ CTA FINAL ═══ -->
-  <section class="py-20 px-6 md:px-10 bg-[#FFF3E0]">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">
-        Besoin d'un Ramonage à {data.nom} ?
-      </h2>
-      <p class="text-base text-[#1A1A1A]/55 font-light mb-8">
-        Intervention sous {data.tempsIntervention}. Devis gratuit, sans engagement.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <ContactButton variant="phone" class="px-10 py-4 text-sm" />
+  <section class="py-16 px-6 md:px-10">
+    <div class="max-w-6xl mx-auto border border-[#EEEEEE] rounded-2xl p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div>
+        <h2 class="text-xl font-extrabold tracking-tight text-[#1A1A1A] mb-2">
+          Besoin d'un Ramonage à {data.nom} ?
+        </h2>
+        <p class="text-sm text-[#1A1A1A]/55 font-light">
+          Intervention sous {data.tempsIntervention}. Devis gratuit, sans engagement.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <ContactButton variant="phone" class="px-6 py-3 text-sm" />
         <ContactButton variant="email" />
       </div>
     </div>

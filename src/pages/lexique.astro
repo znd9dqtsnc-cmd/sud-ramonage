@@ -12,7 +12,7 @@ const termes = [
   { terme: 'Tubage', def: 'Installation d\'un conduit inox (flexible ou rigide) à l\'intérieur d\'un conduit existant. Obligatoire lors du raccordement d\'un insert, d\'un poêle ou d\'une chaudière à un vieux conduit maçonné.' },
   { terme: 'Chemisage', def: 'Technique de réhabilitation par projection ou coulée d\'une résine époxy thermo-durcissante à l\'intérieur du conduit. Alternative au tubage pour les conduits très courbés.' },
   { terme: 'Boisseau', def: 'Élément unitaire de conduit en terre cuite, béton ou fibrociment. Les boisseaux s\'emboîtent et sont jointoyés. Les joints sont les premiers à se dégrader avec le temps.' },
-  { terme: 'Souche', def: 'Partie du conduit qui dépasse de la couverture. La souche doit dépasser d\'au moins 40 cm le faîtage le plus proche (NF DTU 24.1 P1-1 art. 6.4.1).' },
+  { terme: 'Souche', def: 'Partie du conduit qui dépasse de la couverture. La souche doit dépasser d\'au moins 40 cm le faîtage le plus proche (NF DTU 24.1).' },
   { terme: 'Déflecteur', def: 'Plaque réfractaire (fonte ou vermiculite) positionnée dans la chambre de combustion pour diriger les flammes et optimiser la combustion. Son état est contrôlé à chaque entretien de poêle.' },
   { terme: 'Hérisson', def: 'Brosse sphérique à lamelles métalliques ou nylon, montée sur des tiges vissables, utilisée pour le ramonage mécanique du conduit. Le diamètre doit correspondre à la section du conduit.' },
   { terme: 'Section de conduit', def: 'Dimension intérieure du conduit, exprimée en mm (diamètre pour les conduits ronds, dimensions pour les rectangulaires). Elle doit être adaptée à la puissance de l\'appareil raccordé.' },
@@ -43,7 +43,7 @@ const termes = [
   { terme: 'Chambre de combustion', def: 'Volume intérieur de l\'appareil où se déroule la combustion. Dans un poêle, elle est délimitée par des plaques réfractaires. Sa géométrie influence directement le rendement.' },
   { terme: 'Réfractaire', def: 'Matériau résistant aux très hautes températures (brique, vermiculite, fonte). Utilisé pour les parois des foyers et des poêles. La vermiculite est un minéral expansé léger et isolant.' },
   { terme: 'Vermiculite', def: 'Minéral silicaté expansé utilisé comme matériau réfractaire dans les foyers et poêles. Très léger, excellent isolant thermique. Se fissure avec le temps et doit être remplacé.' },
-  { terme: 'Distance de sécurité', def: 'Distance minimale à respecter entre l\'appareil à combustion et les matériaux combustibles environnants (boiseries, lambris, parquet). Définie par la NF DTU 24.1 P1-1 art. 9.1 et 9.2.' },
+  { terme: 'Distance de sécurité', def: 'Distance minimale à respecter entre l\'appareil à combustion et les matériaux combustibles environnants (boiseries, lambris, parquet). Définie par la NF DTU 24.1.' },
   { terme: 'Ramonage chimique', def: 'Traitement complémentaire par bûche ou sel chimique qui transforme les dépôts de bistre en cendres plus facilement éliminables. Ne remplace pas le ramonage mécanique pour la délivrance du certificat.' },
   { terme: 'Vitrocéramique', def: 'Verre céramique résistant aux chocs thermiques (jusqu\'à 700°C) utilisé pour les portes de foyers fermés, inserts et poêles. Une fissure compromet l\'étanchéité de l\'appareil.' },
   { terme: 'Joint céramique', def: 'Tresse en fibre de céramique réfractaire qui assure l\'étanchéité entre la porte et le cadre de l\'appareil. S\'use progressivement et doit être remplacé régulièrement.' },
@@ -155,10 +155,12 @@ const lettres = [...new Set(termes.map(t => t.terme[0]))].sort();
         ))}
       </dl>
 
-      <div class="mt-12 bg-[#E65100] rounded-2xl p-8 text-white">
-        <h2 class="text-xl font-bold mb-3">Un terme vous préoccupe dans votre installation ?</h2>
-        <p class="text-sm text-white/75 mb-6">Je réponds à vos questions techniques et interviens dans tout le département. Diagnostic gratuit lors du ramonage annuel.</p>
-        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-white text-[#E65100] text-sm font-bold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors">06 64 72 96 00</a>
+      <div class="mt-12 border border-[#EEEEEE] rounded-2xl p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div>
+          <h2 class="text-xl font-extrabold tracking-tight text-[#1A1A1A] mb-2">Un terme vous préoccupe dans votre installation ?</h2>
+          <p class="text-sm text-[#1A1A1A]/55 font-light">Je réponds à vos questions techniques et interviens dans tout le département. Diagnostic gratuit lors du ramonage annuel.</p>
+        </div>
+        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#E65100] text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-[#BF360C] transition-colors shrink-0">06 64 72 96 00</a>
       </div>
 
       <nav aria-label="Liens thématiques" class="mt-10 pt-8 border-t border-[#EEEEEE]">
