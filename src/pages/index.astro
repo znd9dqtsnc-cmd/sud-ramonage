@@ -1,297 +1,140 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ContactButton from '../components/ContactButton.astro';
-import EmailButton from '../components/EmailButton.astro';
-import TrustBadge from '../components/TrustBadge.astro';
 import FAQ from '../components/FAQ.astro';
-import COSTICBadge from '../components/COSTICBadge.astro';
 import LatestArticles from '../components/LatestArticles.astro';
 import { Image, getImage } from 'astro:assets';
 
-// ─── Images locales ───────────────────────────────────────────────────────────
-import heroImg      from '../assets/images/hero-poele.jpg';
-import ramonageImg  from '../assets/images/service-ramonage.jpg';
-import bistrageImg  from '../assets/images/service-bistrage.jpg';
-import controleImg  from '../assets/images/service-controle.jpg';
-import artisanImg   from '../assets/images/artisan-intervention.jpg';
+import heroImg     from '../assets/images/ramonage-toiture.jpg';
+import artisanImg  from '../assets/images/artisan-toiture.jpg';
+import bistrageImg from '../assets/images/service-bistrage.jpg';
+import controleImg from '../assets/images/service-controle.jpg';
+import interiorImg from '../assets/images/cheminee-interieur.jpg';
 
-// Preload LCP : récupère l'URL optimisée de l'image hero pour <link rel="preload">
 const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, format: 'webp' });
 ---
 
 <Layout
   title="Sud Ramonage — Artisan Ramoneur Certifié à Martigues & Côte Bleue"
-  description="Artisan ramoneur certifié à Martigues. Ramonage cheminée, poêle à bois et granulés, débistrage, contrôle technique. Certificat immédiat. Assurance pro. Conforme RSD 13."
+  description="Artisan ramoneur certifié COSTIC à Martigues. Ramonage, débistrage, contrôle technique. Certificat RSD 13 remis après chaque intervention. Bouches-du-Rhône."
   canonical="https://www.sud-ramonage.fr/"
   preloadImageHref={optimizedHero.src}
 >
 
   <!-- ═══════════════════════════════════════════════
-       HERO — Image de fond avec overlay
+       HERO
   ═══════════════════════════════════════════════ -->
-  <section class="relative min-h-screen flex flex-col items-center justify-center text-center pt-16 pb-24 px-6 md:px-10 overflow-hidden">
-
-    <!-- Image de fond optimisée en WebP par Astro -->
-    <div class="absolute inset-0 z-0">
+  <section class="relative h-screen min-h-[640px] flex flex-col items-center justify-center text-center overflow-hidden">
+    <div class="absolute inset-0">
       <Image
         src={heroImg}
-        alt="Poêle à bois moderne dans un intérieur chaleureux"
+        alt="Artisans ramoneurs en intervention sur un toit — Sud Ramonage Martigues"
         width={1920}
         height={1080}
         class="w-full h-full object-cover"
         loading="eager"
         fetchpriority="high"
       />
-      <!-- Overlay sombre progressif — fond plus léger en bas pour le glassmorphisme -->
-      <div class="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/82 via-[#1A1A1A]/65 to-[#1A1A1A]/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/70"></div>
     </div>
 
-    <!-- Contenu texte -->
-    <div class="relative z-10 max-w-3xl mx-auto">
-
-      <!-- Badge localisation -->
-      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-[11px] font-semibold px-4 py-2 rounded-full mb-8">
-        <svg class="w-3.5 h-3.5 shrink-0 text-[#E65100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-        VOTRE ARTISAN RAMONEUR À MARTIGUES & CÔTE BLEUE
-      </div>
-
-      <h1 class="text-[clamp(2.4rem,6.5vw,5rem)] font-extrabold tracking-tight text-white leading-[1.08] mb-6 drop-shadow-lg">
-        SUD RAMONAGE :<br />L'Art de la Sécurité.
+    <div class="relative z-10 px-6 max-w-3xl mx-auto">
+      <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-white/40 mb-6">Martigues · Bouches-du-Rhône</p>
+      <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05] mb-6">
+        L'expertise du conduit.<br />La sécurité de votre foyer.
       </h1>
-
-      <p class="text-base md:text-lg text-white/75 font-light max-w-lg mx-auto leading-relaxed mb-10">
-        <strong class="text-white font-semibold">Sud Ramonage</strong> — artisan certifié <strong class="text-white font-semibold">COSTIC</strong> basé à Martigues. Certificat officiel conforme <strong class="text-white font-semibold">NF DTU 24.1</strong> et <strong class="text-white font-semibold">RSD&nbsp;13</strong> remis à l'issue de chaque intervention — valable auprès de votre assureur.
+      <p class="text-base md:text-lg text-white/60 font-light max-w-xl mx-auto mb-10">
+        Artisan certifié COSTIC — certificat RSD 13 remis à l'issue de chaque intervention.
       </p>
-
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
-        <!-- CTA principal : Appeler l'Expert (Orange) -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
         <a
           href="tel:+33664729600"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#E65100] hover:bg-[#BF360C] active:bg-[#8A2200] active:scale-[0.97] text-white text-sm font-extrabold px-8 py-4 rounded-xl shadow-lg shadow-[#E65100]/30 transition-all duration-150 touch-manipulation"
-          aria-label="Appeler l'expert ramoneur — 06 64 72 96 00"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#E65100] hover:bg-[#BF360C] text-white text-sm font-bold px-8 py-4 rounded-xl transition-colors duration-200"
         >
-          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-          </svg>
-          Appeler l'Expert
-          <span class="text-white/70 font-normal text-xs">06 64 72 96 00</span>
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          06 64 72 96 00
         </a>
-        <!-- CTA secondaire : Audit Email (Anthracite) -->
         <a
-          href="mailto:majeo@ik.me?subject=Demande%20d%27audit%20fumisterie&body=Bonjour%2C%20je%20souhaite%20un%20audit%20de%20mon%20installation.%20"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/12 hover:bg-white/22 border border-white/25 backdrop-blur-sm text-white text-sm font-semibold px-8 py-4 rounded-xl transition-all duration-150"
-          aria-label="Demander un audit fumisterie par email"
+          href="#tarifs"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white text-sm font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors duration-200"
         >
-          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-          Audit Email
+          Voir les tarifs
         </a>
       </div>
-
-      <!-- Badge de confiance hero -->
-      <TrustBadge variant="hero" class="mt-2" />
-
     </div>
 
-    <!-- Flèche scroll — remontée au-dessus de la trust bar -->
-    <div class="absolute bottom-28 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-      <svg class="w-5 h-5 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-5 h-5 text-white/25" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
       </svg>
     </div>
-
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       TRUST-BAR PREMIUM — Overlap hero + glassmorphisme
+       BARRE GARANTIES
   ═══════════════════════════════════════════════ -->
-  <section class="relative z-10 -mt-16 sm:-mt-20 lg:-mt-24 px-4 sm:px-6 md:px-10 pb-2">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-
-        <!-- Carte 1 — COSTIC Certifié -->
-        <a href="/ramonage" class="group bg-white rounded-2xl p-5 md:p-6 border border-[#EEEEEE] shadow-lg shadow-black/5 hover:-translate-y-2 hover:shadow-xl hover:border-[#1A4B8F]/20 transition-all duration-300 block" style="border-left: 3px solid #1A4B8F">
-          <div class="w-11 h-11 rounded-xl bg-[#EEF3FF] flex items-center justify-center mb-4 group-hover:bg-[#DBEAFE] transition-colors duration-300">
-            <svg class="w-5 h-5 text-[#1A4B8F]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="8" r="6"/>
-              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
-            </svg>
-          </div>
-          <p class="text-xl md:text-2xl font-extrabold text-[#1A1A1A] tracking-tight leading-none mb-1">COSTIC</p>
-          <p class="text-[10px] font-bold text-[#1A4B8F] uppercase tracking-widest mb-2.5">Certifié Fumisterie</p>
-          <p class="text-[11px] text-[#1A1A1A]/50 font-light leading-relaxed">Qualification professionnelle. Chaque intervention aux normes.</p>
-        </a>
-
-        <!-- Carte 2 — Caméra HD -->
-        <a href="/inspection-camera" class="group bg-white rounded-2xl p-5 md:p-6 border border-[#EEEEEE] shadow-lg shadow-black/5 hover:-translate-y-2 hover:shadow-xl hover:border-[#E65100]/20 transition-all duration-300 block" style="border-left: 3px solid #E65100">
-          <div class="w-11 h-11 rounded-xl bg-[#FFF3E0] flex items-center justify-center mb-4 group-hover:bg-[#FFE0B2] transition-colors duration-300">
-            <svg class="w-5 h-5 text-[#E65100]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M15 10l4.553-2.069A1 1 0 0121 8.868V15.13a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/>
-            </svg>
-          </div>
-          <p class="text-xl md:text-2xl font-extrabold text-[#1A1A1A] tracking-tight leading-none mb-1">Caméra HD</p>
-          <p class="text-[10px] font-bold text-[#E65100] uppercase tracking-widest mb-2.5">Inspection vidéo</p>
-          <p class="text-[11px] text-[#1A1A1A]/50 font-light leading-relaxed">Diagnostic endoscopique. Rapport illustré pour assurance.</p>
-        </a>
-
-        <!-- Carte 3 — RC Pro + Certificat -->
-        <div class="group bg-white rounded-2xl p-5 md:p-6 border border-[#EEEEEE] shadow-lg shadow-black/5 hover:-translate-y-2 hover:shadow-xl hover:border-green-200 transition-all duration-300" style="border-left: 3px solid #15803D">
-          <div class="w-11 h-11 rounded-xl bg-green-50 flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors duration-300">
-            <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="m9 12 2 2 4-4"/>
-            </svg>
-          </div>
-          <p class="text-xl md:text-2xl font-extrabold text-[#1A1A1A] tracking-tight leading-none mb-1">Assuré RC Pro</p>
-          <p class="text-[10px] font-bold text-green-700 uppercase tracking-widest mb-2.5">Certificat RSD 13</p>
-          <p class="text-[11px] text-[#1A1A1A]/50 font-light leading-relaxed">Certificat officiel remis après chaque intervention.</p>
+  <section class="bg-[#111111] py-12 px-6">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+      {[
+        { val: 'COSTIC', label: 'Certifié fumisterie' },
+        { val: '6j / 7', label: 'Intervention rapide' },
+        { val: 'RSD 13', label: 'Certificat officiel' },
+        { val: 'RC Pro', label: 'Couverture assurance' },
+      ].map(({ val, label }) => (
+        <div>
+          <p class="text-xl md:text-2xl font-extrabold text-white tracking-tight">{val}</p>
+          <p class="text-[10px] text-white/30 uppercase tracking-widest mt-1.5">{label}</p>
         </div>
-
-        <!-- Carte 4 — Disponibilité 6j/7 -->
-        <div class="group bg-white rounded-2xl p-5 md:p-6 border border-[#EEEEEE] shadow-lg shadow-black/5 hover:-translate-y-2 hover:shadow-xl hover:border-amber-200 transition-all duration-300" style="border-left: 3px solid #D97706">
-          <div class="w-11 h-11 rounded-xl bg-amber-50 flex items-center justify-center mb-4 group-hover:bg-amber-100 transition-colors duration-300">
-            <svg class="w-5 h-5 text-amber-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="4" width="18" height="18" rx="2"/>
-              <path d="M16 2v4M8 2v4M3 10h18"/>
-              <path d="m9 16 2 2 4-4"/>
-            </svg>
-          </div>
-          <p class="text-xl md:text-2xl font-extrabold text-[#1A1A1A] tracking-tight leading-none mb-1">6j / 7</p>
-          <p class="text-[10px] font-bold text-amber-700 uppercase tracking-widest mb-2.5">Intervention rapide</p>
-          <p class="text-[11px] text-[#1A1A1A]/50 font-light leading-relaxed">Lundi au samedi, 8h-19h. 50 km autour de Martigues.</p>
-        </div>
-
-      </div>
+      ))}
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       GALERIE SERVICES — 3 cartes avec photo
+       PRESTATIONS
   ═══════════════════════════════════════════════ -->
-  <section id="services" class="py-24 px-6 md:px-10">
+  <section id="services" class="py-28 px-6 md:px-10">
     <div class="max-w-6xl mx-auto">
-
-      <div class="mb-14 text-center">
-        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Ce que nous faisons</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A]">Nos Prestations</h2>
-        <p class="text-sm text-[#1A1A1A]/45 font-light mt-3 max-w-md mx-auto">
-          Chaque intervention est réalisée avec soin et se conclut par la remise d'un certificat officiel.
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A]">Nos Prestations.</h2>
+        <p class="text-base text-[#1A1A1A]/40 font-light mt-3">
+          Chaque intervention se conclut par un certificat officiel remis sur place.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <!-- Carte 1 — Ramonage certifié -->
-        <a href="/ramonage" class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 hover:-translate-y-1 transition-all duration-300 block">
-          <!-- Photo service (remplaçable : src/assets/images/service-ramonage.jpg) -->
-          <div class="aspect-[4/3] overflow-hidden bg-[#F5F5F5]">
-            <Image
-              src={ramonageImg}
-              alt="Conduit de cheminée en brique — ramonage certifié Martigues"
-              width={600}
-              height={450}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              loading="lazy"
-            />
+        <a href="/ramonage" class="group block overflow-hidden rounded-2xl border border-[#EEEEEE] hover:border-[#E65100]/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+          <div class="aspect-[3/2] overflow-hidden">
+            <Image src={artisanImg} alt="Artisan ramoneur sur un toit — ramonage certifié Martigues" width={600} height={400} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
-          <div class="p-7">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-9 h-9 rounded-lg bg-[#FFF3E0] flex items-center justify-center shrink-0">
-                <!-- Icône flamme -->
-                <svg class="w-5 h-5 text-[#E65100]" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C9.5 6 7 8 7 12a5 5 0 0010 0c0-4-2.5-6-5-10zm0 18a3 3 0 01-3-3c0-2 1.5-3.5 3-5 1.5 1.5 3 3 3 5a3 3 0 01-3 3z"/>
-                </svg>
-              </div>
-              <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100]">01 — Ramonage</p>
-            </div>
-            <h3 class="text-lg font-bold tracking-tight text-[#1A1A1A] mb-3">Ramonage Certifié</h3>
-            <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light mb-5">
-              Ramonage mécanique complet de votre conduit, cheminée, insert ou poêle. <strong class="font-medium text-[#1A1A1A]/75">Certificat officiel</strong> remis à l'issue — exigé par les assurances et le RSD 13.
-            </p>
-            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] group-hover:gap-3 transition-all duration-200">
-              Protocole de ramonage certifié RSD&nbsp;13
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
+          <div class="p-7 bg-white">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100] mb-3">01 — Ramonage</p>
+            <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Ramonage Certifié</h3>
+            <p class="text-sm text-[#1A1A1A]/50 leading-relaxed font-light">Ramonage mécanique complet — cheminée, insert, poêle. Certificat RSD 13 remis immédiatement.</p>
+            <p class="mt-5 text-sm font-bold text-[#E65100]">À partir de 75 € →</p>
           </div>
         </a>
 
-        <!-- Carte 2 — Débistrage -->
-        <a href="/debistrage" class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 hover:-translate-y-1 transition-all duration-300 block">
-          <!-- Photo service (remplaçable : src/assets/images/service-bistrage.jpg) -->
-          <figure class="aspect-[4/3] overflow-hidden bg-[#F5F5F5]">
-            <Image
-              src={bistrageImg}
-              alt="Dépôts de bistre dans un conduit de cheminée — débistrage professionnel Martigues"
-              width={600}
-              height={450}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              loading="lazy"
-            />
-            <figcaption class="sr-only">Débistrage professionnel à Martigues — élimination des dépôts de goudron et de bistre dans les conduits de cheminée. Traitement chimique et mécanique conforme RSD 13.</figcaption>
-          </figure>
-          <div class="p-7">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-9 h-9 rounded-lg bg-[#FFF3E0] flex items-center justify-center shrink-0">
-                <!-- Icône maison -->
-                <svg class="w-5 h-5 text-[#E65100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
-              </div>
-              <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100]">02 — Débistrage</p>
-            </div>
-            <h3 class="text-lg font-bold tracking-tight text-[#1A1A1A] mb-3">Débistrage</h3>
-            <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light mb-5">
-              Élimination des dépôts de goudron hautement inflammables. Traitement <strong class="font-medium text-[#1A1A1A]/75">chimique et mécanique</strong> pour rétablir la sécurité totale de votre installation.
-            </p>
-            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] group-hover:gap-3 transition-all duration-200">
-              Traitement anti-bistre — élimination du goudron
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
+        <a href="/debistrage" class="group block overflow-hidden rounded-2xl border border-[#EEEEEE] hover:border-[#E65100]/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+          <div class="aspect-[3/2] overflow-hidden">
+            <Image src={bistrageImg} alt="Dépôts de bistre dans un conduit — débistrage professionnel" width={600} height={400} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="p-7 bg-white">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100] mb-3">02 — Débistrage</p>
+            <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Traitement Bistre & Goudron</h3>
+            <p class="text-sm text-[#1A1A1A]/50 leading-relaxed font-light">Élimination des dépôts hautement inflammables par traitement chimique et mécanique.</p>
+            <p class="mt-5 text-sm font-bold text-[#E65100]">À partir de 150 € →</p>
           </div>
         </a>
 
-        <!-- Carte 3 — Contrôle Technique -->
-        <a href="/entretien-poele" class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:border-[#E65100]/20 hover:-translate-y-1 transition-all duration-300 block">
-          <!-- Photo service (remplaçable : src/assets/images/service-controle.jpg) -->
-          <figure class="aspect-[4/3] overflow-hidden bg-[#F5F5F5]">
-            <Image
-              src={controleImg}
-              alt="Contrôle technique et test de vacuité d'un conduit de cheminée à Martigues"
-              width={600}
-              height={450}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              loading="lazy"
-            />
-            <figcaption class="sr-only">Contrôle technique conduit cheminée Martigues — test de vacuité, vérification étanchéité tubage inox, tirage thermique. Artisan certifié RSD 13 Bouches-du-Rhône.</figcaption>
-          </figure>
-          <div class="p-7">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-9 h-9 rounded-lg bg-[#FFF3E0] flex items-center justify-center shrink-0">
-                <!-- Icône bouclier -->
-                <svg class="w-5 h-5 text-[#E65100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100]">03 — Diagnostic</p>
-            </div>
-            <h3 class="text-lg font-bold tracking-tight text-[#1A1A1A] mb-3">Contrôle Technique</h3>
-            <p class="text-sm text-[#1A1A1A]/55 leading-relaxed font-light mb-5">
-              Inspection complète : <strong class="font-medium text-[#1A1A1A]/75">vacuité</strong> (absence d'obstruction) et <strong class="font-medium text-[#1A1A1A]/75">étanchéité</strong> du conduit. Indispensable avant mise en service ou achat immobilier.
-            </p>
-            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] group-hover:gap-3 transition-all duration-200">
-              Contrôle vacuité conduit &amp; entretien corps de chauffe
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
+        <a href="/entretien-poele" class="group block overflow-hidden rounded-2xl border border-[#EEEEEE] hover:border-[#E65100]/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+          <div class="aspect-[3/2] overflow-hidden">
+            <Image src={controleImg} alt="Contrôle technique d'un conduit de cheminée" width={600} height={400} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="p-7 bg-white">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100] mb-3">03 — Diagnostic</p>
+            <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Contrôle Technique</h3>
+            <p class="text-sm text-[#1A1A1A]/50 leading-relaxed font-light">Inspection vacuité et étanchéité du conduit. Rapport illustré pour assurance et notaire.</p>
+            <p class="mt-5 text-sm font-bold text-[#E65100]">À partir de 60 € →</p>
           </div>
         </a>
 
@@ -300,295 +143,253 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       TARIFS — Grille 3 services
+       TARIFS — fond sombre, très visibles
   ═══════════════════════════════════════════════ -->
-  <section id="tarifs" class="py-24 px-6 md:px-10 bg-[#FAFAFA]">
+  <section id="tarifs" class="py-28 px-6 md:px-10 bg-[#111111]">
     <div class="max-w-6xl mx-auto">
-      <div class="mb-12 text-center">
-        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Transparence tarifaire</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A]">Nos Tarifs.</h2>
-        <p class="text-sm text-[#1A1A1A]/45 font-light mt-3 max-w-md mx-auto">
-          Certificat officiel inclus dans chaque prestation. Devis définitif confirmé avant intervention.
-        </p>
+      <div class="mb-16 text-center">
+        <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100] mb-4">Transparence tarifaire</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Nos Tarifs.</h2>
+        <p class="text-sm text-white/30 font-light mt-3">Certificat RSD 13 inclus dans chaque prestation.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
 
         <!-- Ramonage -->
-        <div class="bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 hover:border-[#E65100]/20 transition-all duration-300">
-          <div class="bg-[#FFF3E0] px-6 py-5 border-b border-[#EEEEEE]">
-            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100] mb-1">Ramonage certifié</p>
-            <p class="text-3xl font-extrabold text-[#1A1A1A]">75 <span class="text-lg font-semibold text-[#1A1A1A]/40">€</span></p>
-            <p class="text-xs text-[#1A1A1A]/45 font-light mt-0.5">à partir de — certificat inclus</p>
+        <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-[#E65100]/40 transition-all duration-300">
+          <div class="p-8 border-b border-white/10">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100] mb-4">Ramonage certifié</p>
+            <p class="text-5xl font-extrabold text-white leading-none">75 <span class="text-2xl font-semibold text-white/35">€</span></p>
+            <p class="text-xs text-white/30 mt-2">à partir de · certificat inclus</p>
           </div>
-          <div class="p-6">
+          <div class="p-8 space-y-4">
             {[
-              { label: 'Cheminée foyer ouvert',        prix: '75 €' },
-              { label: 'Insert bois',                  prix: '90 €' },
-              { label: 'Poêle à bois',                 prix: '90 €' },
-              { label: 'Poêle à granulés (conduit)',   prix: '110 €' },
-            ].map(({ label, prix }) => (
-              <div class="flex items-center justify-between py-2.5 border-b border-[#EEEEEE] last:border-0">
-                <span class="text-xs text-[#1A1A1A]/65 font-light">{label}</span>
-                <span class="text-xs font-bold text-[#1A1A1A]">{prix}</span>
+              ['Foyer ouvert', '75 €'],
+              ['Insert bois', '90 €'],
+              ['Poêle à bois', '90 €'],
+              ['Poêle à granulés', '110 €'],
+            ].map(([l, p]) => (
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-white/45 font-light">{l}</span>
+                <span class="text-sm font-bold text-white">{p}</span>
               </div>
             ))}
-            <a href="/ramonage" class="mt-5 flex items-center justify-center gap-2 w-full bg-[#FFF3E0] text-[#E65100] text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-[#FFE0B2] transition-colors duration-200">
-              Réserver mon ramonage certifié
+            <a href="/ramonage" class="mt-6 flex items-center justify-center w-full bg-[#E65100] text-white text-sm font-bold px-4 py-3 rounded-xl hover:bg-[#BF360C] transition-colors">
+              Réserver
             </a>
           </div>
         </div>
 
-        <!-- Débistrage -->
-        <div class="bg-white border border-[#E65100]/30 rounded-xl overflow-hidden relative hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div class="absolute top-3 right-3">
-            <span class="text-[10px] font-bold bg-[#E65100] text-white px-2.5 py-1 rounded-full uppercase tracking-wider">Urgence</span>
+        <!-- Débistrage (mise en avant) -->
+        <div class="bg-[#E65100] rounded-2xl overflow-hidden">
+          <div class="p-8 border-b border-white/20">
+            <div class="flex items-center justify-between mb-4">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-white/70">Débistrage</p>
+              <span class="text-[10px] font-bold bg-white text-[#E65100] px-2.5 py-1 rounded-full uppercase tracking-wide">Urgent</span>
+            </div>
+            <p class="text-5xl font-extrabold text-white leading-none">150 <span class="text-2xl font-semibold text-white/50">€</span></p>
+            <p class="text-xs text-white/55 mt-2">à partir de · traitement complet</p>
           </div>
-          <div class="bg-[#E65100] px-6 py-5">
-            <p class="text-[10px] font-semibold tracking-widest uppercase text-white/70 mb-1">Débistrage</p>
-            <p class="text-3xl font-extrabold text-white">150 <span class="text-lg font-semibold text-white/60">€</span></p>
-            <p class="text-xs text-white/60 font-light mt-0.5">à partir de — traitement complet</p>
-          </div>
-          <div class="p-6">
+          <div class="p-8 space-y-4">
             {[
-              { label: 'Traitement chimique + mécanique',   prix: 'dès 150 €' },
-              { label: 'Conduit très encrassé (2 passes)', prix: 'dès 195 €' },
-              { label: 'Diagnostic inclus',                 prix: '—' },
-              { label: 'Certificat remis à l\'issue',       prix: '—' },
-            ].map(({ label, prix }) => (
-              <div class="flex items-center justify-between py-2.5 border-b border-[#EEEEEE] last:border-0">
-                <span class="text-xs text-[#1A1A1A]/65 font-light">{label}</span>
-                <span class="text-xs font-bold text-[#1A1A1A]">{prix}</span>
+              ['Traitement chimique + mécanique', 'dès 150 €'],
+              ['Conduit très encrassé (2 passes)', 'dès 195 €'],
+              ['Diagnostic inclus', '✓'],
+              ['Certificat RSD 13 inclus', '✓'],
+            ].map(([l, p]) => (
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-white/65 font-light">{l}</span>
+                <span class="text-sm font-bold text-white">{p}</span>
               </div>
             ))}
-            <a href="/debistrage" class="mt-5 flex items-center justify-center gap-2 w-full bg-[#FFF3E0] text-[#E65100] text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-[#FFE0B2] transition-colors duration-200">
-              Débistrage — traitement chimique et mécanique
+            <a href="/debistrage" class="mt-6 flex items-center justify-center w-full bg-white text-[#E65100] text-sm font-bold px-4 py-3 rounded-xl hover:bg-white/92 transition-colors">
+              Réserver
             </a>
           </div>
         </div>
 
         <!-- Entretien poêle -->
-        <div class="bg-white border border-[#EEEEEE] rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 hover:border-[#E65100]/20 transition-all duration-300">
-          <div class="bg-[#FFF3E0] px-6 py-5 border-b border-[#EEEEEE]">
-            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#E65100] mb-1">Entretien poêle</p>
-            <p class="text-3xl font-extrabold text-[#1A1A1A]">90 <span class="text-lg font-semibold text-[#1A1A1A]/40">€</span></p>
-            <p class="text-xs text-[#1A1A1A]/45 font-light mt-0.5">à partir de — entretien complet</p>
+        <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-[#E65100]/40 transition-all duration-300">
+          <div class="p-8 border-b border-white/10">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100] mb-4">Entretien poêle</p>
+            <p class="text-5xl font-extrabold text-white leading-none">90 <span class="text-2xl font-semibold text-white/35">€</span></p>
+            <p class="text-xs text-white/30 mt-2">à partir de · entretien complet</p>
           </div>
-          <div class="p-6">
+          <div class="p-8 space-y-4">
             {[
-              { label: 'Poêle à bois (entretien complet)', prix: '90 €'  },
-              { label: 'Poêle à granulés (entretien complet)', prix: '120 €' },
-              { label: 'Ramonage conduit inclus',           prix: '✓'   },
-              { label: 'Certificat RSD 13 inclus',          prix: '✓'   },
-            ].map(({ label, prix }) => (
-              <div class="flex items-center justify-between py-2.5 border-b border-[#EEEEEE] last:border-0">
-                <span class="text-xs text-[#1A1A1A]/65 font-light">{label}</span>
-                <span class="text-xs font-bold text-[#1A1A1A]">{prix}</span>
+              ['Poêle à bois', '90 €'],
+              ['Poêle à granulés', '120 €'],
+              ['Ramonage conduit inclus', '✓'],
+              ['Certificat RSD 13 inclus', '✓'],
+            ].map(([l, p]) => (
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-white/45 font-light">{l}</span>
+                <span class="text-sm font-bold text-white">{p}</span>
               </div>
             ))}
-            <a href="/entretien-poele" class="mt-5 flex items-center justify-center gap-2 w-full bg-[#FFF3E0] text-[#E65100] text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-[#FFE0B2] transition-colors duration-200">
-              Entretien corps de chauffe — poêle bois et granulés
+            <a href="/entretien-poele" class="mt-6 flex items-center justify-center w-full bg-[#E65100] text-white text-sm font-bold px-4 py-3 rounded-xl hover:bg-[#BF360C] transition-colors">
+              Réserver
             </a>
           </div>
         </div>
 
       </div>
 
-      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <p class="text-center text-[11px] text-[#1A1A1A]/35 font-light">
-          Tarifs indicatifs — zone Martigues et Côte Bleue. Devis gratuit sous 24h. Modification possible après diagnostic.
-        </p>
-        <span class="hidden sm:block text-[#1A1A1A]/20">·</span>
-        <p class="inline-flex items-center gap-1.5 text-[11px] text-[#E65100]/70 font-medium">
-          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
-          Tarif transparent, sans frais de déplacement cachés sur 30 km
-        </p>
-      </div>
+      <p class="mt-10 text-center text-xs text-white/20 font-light">
+        Tarifs indicatifs — zone Martigues et Côte Bleue. Devis gratuit sous 24h. Modification possible après diagnostic.
+      </p>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SECTION ENGAGEMENT — Image latérale + puces
+       ENGAGEMENT — Image + texte
   ═══════════════════════════════════════════════ -->
-  <section id="engagement" class="py-24 px-6 md:px-10 bg-white border-t border-[#EEEEEE]">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  <section class="py-28 px-6 md:px-10 bg-white border-t border-[#EEEEEE]">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-        <div class="relative order-2 lg:order-1">
-          <figure>
-          <Image
-            src={artisanImg}
-            alt="Artisan ramoneur certifié en intervention à Martigues — ramonage mécanique conduit cheminée"
-            width={800}
-            height={600}
-            class="w-full rounded-xl object-cover aspect-[4/3] shadow-md"
-            loading="lazy"
-          />
-          <figcaption class="sr-only">Artisan ramoneur certifié Sud Ramonage à Martigues.</figcaption>
-          </figure>
-          <div class="absolute -bottom-4 -right-4 bg-[#E65100] text-white px-5 py-4 rounded-xl shadow-lg shadow-[#E65100]/20">
-            <p class="text-2xl font-extrabold leading-none">RSD 13</p>
-            <p class="text-[10px] font-medium tracking-widest uppercase text-white/70 mt-1">Conformité garantie</p>
-          </div>
+      <div class="relative order-2 lg:order-1">
+        <Image
+          src={interiorImg}
+          alt="Cheminée en brique dans un intérieur chaleureux — entretien annuel certifié"
+          width={800}
+          height={600}
+          class="w-full rounded-2xl object-cover aspect-[4/3]"
+          loading="lazy"
+        />
+        <div class="absolute -bottom-4 -right-4 bg-[#1A1A1A] text-white px-5 py-4 rounded-xl shadow-xl">
+          <p class="text-xl font-extrabold leading-none">RSD 13</p>
+          <p class="text-[10px] uppercase tracking-widest text-white/40 mt-1">Conformité garantie</p>
         </div>
-
-        <div class="order-1 lg:order-2">
-          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-5">Ce qui me distingue</p>
-          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-4">
-            Mon engagement<br />envers vous.
-          </h2>
-          <p class="text-base text-[#1A1A1A]/55 font-light leading-relaxed mb-8">
-            Artisan local basé à Martigues, j'interviens seul chez vous — avec soin, ponctualité et respect de votre foyer.
-          </p>
-          <ul class="space-y-4">
-            {[
-              { path: 'M5 13l4 4L19 7',    title: 'Travail propre garanti',    desc: 'Protection du sol et nettoyage complet après chaque intervention.' },
-              { path: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Certificat immédiat', desc: 'Document officiel remis sur place, valable pour votre assurance habitation.' },
-              { path: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title: 'Assuré RC Pro', desc: 'Couvert en responsabilité civile professionnelle pour toutes mes interventions.' },
-              { path: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Artisan de proximité', desc: 'Basé à Martigues, je connais le secteur et interviens rapidement.' },
-            ].map(({ path, title, desc }) => (
-              <li class="flex gap-4 items-start">
-                <div class="w-9 h-9 rounded-lg bg-[#FFF3E0] flex items-center justify-center shrink-0 mt-0.5">
-                  <svg class="w-4.5 h-4.5 text-[#E65100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={path} />
-                  </svg>
-                </div>
-                <div>
-                  <p class="text-sm font-semibold text-[#1A1A1A] mb-0.5">{title}</p>
-                  <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">{desc}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-
       </div>
+
+      <div class="order-1 lg:order-2">
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-6">
+          Un seul artisan.<br />Un travail fait bien.
+        </h2>
+        <p class="text-base text-[#1A1A1A]/50 font-light leading-relaxed mb-10">
+          Basé à Martigues, j'interviens seul chez vous — avec soin, ponctualité et respect de votre foyer.
+        </p>
+        <ul class="space-y-6">
+          {[
+            ['Travail propre garanti', 'Protection du sol et nettoyage complet après chaque intervention.'],
+            ['Certificat officiel immédiat', 'Document valide auprès de votre assurance habitation.'],
+            ['Assuré RC Pro', 'Couverture complète pour toutes mes interventions.'],
+            ['Artisan local', 'Basé à Martigues, je connais votre secteur.'],
+          ].map(([t, d]) => (
+            <li class="flex gap-4">
+              <div class="w-1.5 h-1.5 rounded-full bg-[#E65100] mt-2 shrink-0"></div>
+              <div>
+                <p class="text-sm font-semibold text-[#1A1A1A]">{t}</p>
+                <p class="text-sm text-[#1A1A1A]/40 font-light mt-0.5">{d}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       TÉMOIGNAGES CLIENTS
+       TÉMOIGNAGES
   ═══════════════════════════════════════════════ -->
-  <section class="py-24 px-6 md:px-10 bg-[#FAFAFA]">
+  <section class="py-28 px-6 md:px-10 bg-[#FAFAFA] border-t border-[#EEEEEE]">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-4">Ils nous font confiance</p>
+      <div class="mb-16">
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A]">Témoignages Clients.</h2>
-        <p class="text-sm text-[#1A1A1A]/45 font-light mt-3 max-w-md mx-auto">
-          Des particuliers et professionnels qui nous renouvellent leur confiance chaque année.
-        </p>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        <!-- Témoignage 1 -->
-        <div class="bg-white border border-[#EEEEEE] rounded-xl p-7 shadow-sm hover:shadow-md transition-shadow duration-200">
-          <div class="flex items-center gap-1 mb-4">
-            {[1,2,3,4,5].map(() => (
-              <svg class="w-4 h-4 text-[#E65100]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.033a1 1 0 00-1.175 0l-2.8 2.033c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            ))}
-          </div>
-          <blockquote class="text-sm text-[#1A1A1A]/70 font-light leading-relaxed mb-5 italic">
-            "Intervention rapide et soignée sur ma cheminée à Sausset-les-Pins. Jean-Charles a protégé tous mes meubles avant de commencer, et le certificat m'a été remis dans la foulée. Enfin un artisan qui respecte son engagement."
-          </blockquote>
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-[#E65100]/15 flex items-center justify-center shrink-0">
-              <span class="text-xs font-bold text-[#E65100]">JL</span>
+        {[
+          {
+            q: '"Intervention rapide et soignée sur ma cheminée à Sausset-les-Pins. Le certificat m\'a été remis dans la foulée. Enfin un artisan qui respecte son engagement."',
+            n: 'Jean-Luc M.',
+            l: 'Sausset-les-Pins · Foyer ouvert',
+          },
+          {
+            q: '"Mon poêle à granulés n\'avait pas été entretenu depuis 3 ans — tout démonté, nettoyé et vérifié. Je le recommande sans hésiter à mes voisins d\'Istres."',
+            n: 'Marie A.',
+            l: 'Istres · Poêle à granulés',
+          },
+          {
+            q: '"14 appartements gérés, tous les certificats remis en une seule tournée avec un rapport consolidé. Un vrai partenaire professionnel."',
+            n: 'Cabinet Immo Provence',
+            l: 'Aix-en-Provence · 14 lots gérés',
+          },
+        ].map(({ q, n, l }) => (
+          <div class="bg-white border border-[#EEEEEE] rounded-2xl p-8">
+            <div class="flex gap-0.5 mb-6">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-4 h-4 text-[#E65100]" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.033a1 1 0 00-1.175 0l-2.8 2.033c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              ))}
             </div>
-            <div>
-              <p class="text-xs font-semibold text-[#1A1A1A]">Jean-Luc M.</p>
-              <p class="text-[10px] text-[#1A1A1A]/40">Sausset-les-Pins · Foyer ouvert</p>
-            </div>
+            <blockquote class="text-sm text-[#1A1A1A]/65 font-light leading-relaxed mb-7 italic">{q}</blockquote>
+            <p class="text-xs font-semibold text-[#1A1A1A]">{n}</p>
+            <p class="text-[11px] text-[#1A1A1A]/30 mt-0.5">{l}</p>
           </div>
-        </div>
-
-        <!-- Témoignage 2 -->
-        <div class="bg-white border border-[#EEEEEE] rounded-xl p-7 shadow-sm hover:shadow-md transition-shadow duration-200">
-          <div class="flex items-center gap-1 mb-4">
-            {[1,2,3,4,5].map(() => (
-              <svg class="w-4 h-4 text-[#E65100]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.033a1 1 0 00-1.175 0l-2.8 2.033c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            ))}
-          </div>
-          <blockquote class="text-sm text-[#1A1A1A]/70 font-light leading-relaxed mb-5 italic">
-            "Mon poêle à granulés n'avait pas été entretenu depuis 3 ans — le technicien a tout démonté, nettoyé et vérifié. Il m'a expliqué chaque étape. Je le recommande à toutes mes voisines d'Istres sans hésiter."
-          </blockquote>
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-[#E65100]/15 flex items-center justify-center shrink-0">
-              <span class="text-xs font-bold text-[#E65100]">MA</span>
-            </div>
-            <div>
-              <p class="text-xs font-semibold text-[#1A1A1A]">Marie A.</p>
-              <p class="text-[10px] text-[#1A1A1A]/40">Istres · Poêle à granulés</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Témoignage 3 — B2B -->
-        <div class="bg-white border border-[#EEEEEE] rounded-xl p-7 shadow-sm hover:shadow-md transition-shadow duration-200">
-          <div class="flex items-center gap-1 mb-4">
-            {[1,2,3,4,5].map(() => (
-              <svg class="w-4 h-4 text-[#E65100]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.033a1 1 0 00-1.175 0l-2.8 2.033c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            ))}
-          </div>
-          <blockquote class="text-sm text-[#1A1A1A]/70 font-light leading-relaxed mb-5 italic">
-            "Nous gérons un parc de 14 appartements sur Aix-en-Provence. Sud Ramonage nous a fourni tous les certificats en une seule tournée, avec un rapport consolidé pour notre gestionnaire. Sérieux et réactif — un vrai partenaire professionnel."
-          </blockquote>
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-[#1A4B8F]/12 flex items-center justify-center shrink-0">
-              <svg class="w-4 h-4 text-[#1A4B8F]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"/></svg>
-            </div>
-            <div>
-              <p class="text-xs font-semibold text-[#1A1A1A]">Cabinet Immo Provence</p>
-              <p class="text-[10px] text-[#1A1A1A]/40">Aix-en-Provence · 14 lots gérés</p>
-            </div>
-          </div>
-        </div>
-
+        ))}
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       ZONE LOCALE
+       ZONE + CONTACT
   ═══════════════════════════════════════════════ -->
-  <section class="py-24 px-6 md:px-10">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        <div>
-          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-5">Zone d'intervention</p>
-          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-6">
-            Martigues, Côte Bleue<br />& Étang de Berre.
-          </h2>
-          <p class="text-sm text-[#1A1A1A]/55 font-light leading-relaxed mb-8">
-            Le <strong class="font-semibold text-[#1A1A1A]">RSD 13</strong> impose le ramonage annuel pour tout appareil à combustion. Intervention conforme, certificat reconnu par votre assureur.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            {[
-              { label: 'Martigues', slug: 'martigues' },
-              { label: 'Istres', slug: 'istres' },
-              { label: 'Fos-sur-Mer', slug: 'fos-sur-mer' },
-              { label: 'Port-de-Bouc', slug: 'port-de-bouc' },
-              { label: 'Miramas', slug: 'miramas' },
-              { label: 'Sausset-les-Pins', slug: 'sausset-les-pins' },
-              { label: 'Carry-le-Rouet', slug: 'carry-le-rouet' },
-              { label: 'Ensuès', slug: 'ensues-la-redonne' },
-            ].map(({ label, slug }) => (
-              <a href={`/villes/${slug}`} class="text-[11px] font-medium border border-[#EEEEEE] text-[#1A1A1A]/45 px-3 py-1.5 rounded-md hover:border-[#E65100]/40 hover:text-[#E65100] transition-colors duration-200">
-                {label}
-              </a>
-            ))}
-          </div>
+  <section class="py-28 px-6 md:px-10 border-t border-[#EEEEEE]">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-6">
+          Martigues, Côte Bleue<br />& Étang de Berre.
+        </h2>
+        <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed mb-8">
+          Basé à Martigues, j'interviens dans un rayon de 50 km — Côte Bleue, Étang de Berre, Pays d'Aix. Certificat conforme RSD 13 remis à l'issue de chaque visite.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-8">
+          {[
+            { label: 'Martigues', slug: 'martigues' },
+            { label: 'Istres', slug: 'istres' },
+            { label: 'Fos-sur-Mer', slug: 'fos-sur-mer' },
+            { label: 'Port-de-Bouc', slug: 'port-de-bouc' },
+            { label: 'Miramas', slug: 'miramas' },
+            { label: 'Sausset-les-Pins', slug: 'sausset-les-pins' },
+            { label: 'Carry-le-Rouet', slug: 'carry-le-rouet' },
+            { label: 'Ensuès', slug: 'ensues-la-redonne' },
+          ].map(({ label, slug }) => (
+            <a href={`/villes/${slug}`} class="text-[11px] font-medium border border-[#EEEEEE] text-[#1A1A1A]/45 px-3 py-1.5 rounded-md hover:border-[#E65100]/40 hover:text-[#E65100] transition-colors">
+              {label}
+            </a>
+          ))}
         </div>
-        <div class="space-y-5 text-[#1A1A1A]/65 text-sm font-light leading-relaxed">
-          <p>
-            Basé à Martigues, j'interviens sur toute la zone — Côte Bleue, Étang de Berre, Pays d'Aix et Marseille — dans un rayon de 50 km. Chaque intervention comprend le ramonage mécanique, le test de vacuité et la remise immédiate du certificat conforme au <strong class="font-semibold text-[#1A1A1A]">RSD 13</strong>.
-          </p>
-          <a href="/zones" class="inline-flex items-center gap-2 text-sm font-semibold text-[#E65100] hover:gap-3 transition-all duration-200">
-            Voir toutes les zones d'intervention
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </a>
+        <a href="/zones" class="inline-flex items-center gap-2 text-sm font-semibold text-[#E65100] hover:gap-3 transition-all duration-200">
+          Voir toutes les zones d'intervention
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="bg-[#111111] rounded-2xl p-10 text-white">
+        <h3 class="text-xl font-extrabold mb-2">Devis Gratuit Sous 24H.</h3>
+        <p class="text-sm text-white/35 font-light mb-8">Disponible du lundi au samedi, 8h–19h.</p>
+        <a
+          href="tel:+33664729600"
+          class="flex items-center justify-center gap-2 w-full bg-[#E65100] hover:bg-[#BF360C] text-white text-sm font-bold px-6 py-4 rounded-xl mb-3 transition-colors"
+        >
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          06 64 72 96 00
+        </a>
+        <a
+          href="mailto:contact@sud-ramonage.fr?subject=Demande%20de%20devis%20ramonage"
+          class="flex items-center justify-center gap-2 w-full bg-white/8 border border-white/15 text-white text-sm font-semibold px-6 py-4 rounded-xl hover:bg-white/15 transition-colors"
+        >
+          Par email
+        </a>
+        <div class="mt-8 pt-7 border-t border-white/10 flex items-center gap-3">
+          <svg class="w-4 h-4 text-white/25 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <p class="text-xs text-white/25">31 chemin des tamaris, 13500 Martigues</p>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -596,125 +397,41 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
        FAQ
   ═══════════════════════════════════════════════ -->
   <FAQ
-    title="Vos Questions sur le Ramonage à Martigues."
+    title="Vos Questions."
     items={[
       {
         q: "Le ramonage est-il vraiment obligatoire à Martigues ?",
-        a: "Oui. Le RSD 13 (Règlement Sanitaire Départemental des Bouches-du-Rhône) impose un ramonage annuel pour tout conduit de fumée actif — cheminée, insert, poêle à bois ou granulés. Sans certificat valide, votre assureur peut refuser toute indemnisation en cas de sinistre.",
+        a: "Oui. Le RSD 13 impose un ramonage annuel pour tout conduit de fumée actif — cheminée, insert, poêle à bois ou granulés. Sans certificat valide, votre assureur peut refuser toute indemnisation en cas de sinistre.",
       },
       {
         q: "Quel est le tarif d'un ramonage ?",
-        a: "À partir de 75 € pour une cheminée à foyer ouvert, 90 € pour un insert ou poêle à bois, 110 € pour un poêle à granulés. Certificat RSD 13 toujours inclus. Devis gratuit sous 24h pour les cas particuliers (conduit long, accès difficile).",
+        a: "À partir de 75 € pour une cheminée à foyer ouvert, 90 € pour un insert ou poêle à bois, 110 € pour un poêle à granulés. Certificat RSD 13 toujours inclus. Devis gratuit sous 24h.",
       },
       {
         q: "Qu'est-ce que le bistre et pourquoi est-ce dangereux ?",
-        a: "Le bistre est un dépôt de goudron qui se forme lors de combustion de bois humide ou à basse température. Hautement inflammable (il s'embrase à 200 °C), c'est la première cause d'incendie de conduit en France. Le ramonage classique ne l'élimine pas — un débistrage chimique et mécanique est nécessaire.",
+        a: "Le bistre est un dépôt de goudron formé lors de combustion incomplète. Hautement inflammable, c'est la première cause d'incendie de conduit en France. Le ramonage classique ne l'élimine pas — un débistrage chimique et mécanique est nécessaire.",
       },
       {
         q: "Locataire ou propriétaire : qui doit payer le ramonage ?",
-        a: "Le ramonage est une charge locative — il incombe au locataire en place. En cas de logement vacant ou lors d'un changement de locataire, c'est au propriétaire de s'en assurer. En copropriété, les colonnes communes sont à la charge du syndic.",
+        a: "Le ramonage est une charge locative — il incombe au locataire en place. En cas de logement vacant ou lors d'un changement de locataire, c'est au propriétaire de s'en assurer.",
       },
       {
         q: "Dans quel délai intervenez-vous ?",
-        a: "Devis gratuit sous 24h, intervention disponible sous 48 à 72h pour une demande standard. Intervention en urgence possible (refoulement de fumée, doute sur obstruction, intoxication suspectée) dans la journée sur Martigues et la Côte Bleue.",
+        a: "Devis gratuit sous 24h, intervention disponible sous 48 à 72h. Intervention en urgence possible dans la journée sur Martigues et la Côte Bleue.",
       },
     ]}
   />
 
   <!-- ═══════════════════════════════════════════════
-       CONTACT + CARTE
+       DERNIERS ARTICLES
   ═══════════════════════════════════════════════ -->
-  <section id="contact" class="py-24 px-6 md:px-10 bg-white border-t border-[#EEEEEE]">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-
-        <!-- Infos contact -->
-        <div>
-          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#E65100] mb-5">Prendre rendez-vous</p>
-          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-4">
-            Devis Gratuit Sous 24H.
-          </h2>
-          <p class="text-base text-[#1A1A1A]/55 font-light leading-relaxed mb-8">
-            Disponible du lundi au samedi. Intervention en urgence possible.
-          </p>
-          <div class="flex flex-col gap-4">
-            <ContactButton variant="phone" class="w-full sm:w-auto justify-center px-8 py-4 text-sm" />
-            <TrustBadge variant="card" />
-            <div class="flex items-center gap-3 text-sm text-[#1A1A1A]/50">
-              <svg class="w-4 h-4 text-[#E65100] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-              Certifié & Assuré — Certificat remis après chaque intervention
-            </div>
-            <EmailButton size="md" class="w-full sm:w-auto justify-center" />
-            <p class="text-sm text-[#1A1A1A]/35 flex items-center gap-2">
-              <svg class="w-4 h-4 shrink-0 text-[#1A1A1A]/25" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              31 chemin des tamaris, 13500 Martigues
-            </p>
-          </div>
-        </div>
-
-        <!-- Carte Google Maps statique -->
-        <div class="rounded-xl overflow-hidden border border-[#E65100]/20 shadow-sm">
-          <a
-            href="https://www.google.com/maps/search/31+chemin+des+tamaris+13500+Martigues"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block relative group"
-            aria-label="Voir sur Google Maps — 31 chemin des tamaris, Martigues"
-          >
-            <iframe
-              title="Localisation Sud Ramonage — Martigues"
-              src="https://maps.google.com/maps?q=31+chemin+des+tamaris+13500+Martigues&z=14&output=embed"
-              width="100%"
-              height="300"
-              style="border:0; display:block;"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-            <!-- Overlay au hover -->
-            <div class="absolute inset-0 bg-[#E65100]/0 group-hover:bg-[#E65100]/5 transition-colors duration-200 pointer-events-none"></div>
-          </a>
-          <div class="bg-white px-5 py-3 flex items-center gap-3 border-t border-[#EEEEEE]">
-            <svg class="w-4 h-4 text-[#E65100] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <div>
-              <p class="text-xs font-semibold text-[#1A1A1A]">SUD RAMONAGE</p>
-              <p class="text-[11px] text-[#1A1A1A]/45">31 chemin des tamaris, 13500 Martigues</p>
-            </div>
-            <a
-              href="https://www.google.com/maps/search/31+chemin+des+tamaris+13500+Martigues"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="ml-auto text-[11px] font-semibold text-[#E65100] hover:underline"
-            >
-              Ouvrir ↗
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       DERNIERS ARTICLES — pipeline contenu
-  ═══════════════════════════════════════════════ -->
-  <LatestArticles count={3} title="Derniers Conseils d'Experts" />
+  <LatestArticles count={3} title="Conseils d'Experts." />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'Sud Ramonage — Artisan Ramoneur Certifié à Martigues',
-    speakable: {
-      '@type': 'SpeakableSpecification',
-      cssSelector: ['h1', '.hero-desc', '[data-speakable]'],
-    },
     url: 'https://www.sud-ramonage.fr/',
   })} />
 
 </Layout>
-
