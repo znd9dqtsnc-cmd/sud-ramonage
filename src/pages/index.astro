@@ -54,7 +54,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
           06 64 72 96 00
         </a>
         <a
-          href="#tarifs"
+          href="#services"
           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white text-sm font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors duration-200"
         >
           Voir les tarifs
@@ -70,154 +70,93 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       PRESTATIONS
+       PRESTATIONS + TARIFS
   ═══════════════════════════════════════════════ -->
-  <section id="services" class="py-28 px-6 md:px-10">
+  <section id="services" class="py-28 px-6 md:px-10 bg-[#FAFAFA]">
     <div class="max-w-6xl mx-auto">
+
       <div class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A]">Nos Prestations.</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A]">Prestations & Tarifs.</h2>
         <p class="text-base text-[#1A1A1A]/40 font-light mt-3">
-          Chaque intervention se conclut par un certificat officiel remis sur place.
+          Certificat RSD 13 inclus dans chaque prestation. Devis gratuit sous 24h.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <a href="/ramonage" class="group block overflow-hidden rounded-2xl border border-[#EEEEEE] hover:border-[#E65100]/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+        <!-- Ramonage -->
+        <a href="/ramonage" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <div class="aspect-[3/2] overflow-hidden">
             <Image src={artisanImg} alt="Artisan ramoneur sur un toit — ramonage certifié Martigues" width={600} height={400} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
-          <div class="p-7 bg-white">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100] mb-3">01 — Ramonage</p>
+          <div class="p-7 flex flex-col flex-1">
+            <p class="text-[10px] font-semibold uppercase tracking-widest text-[#1A1A1A]/35 mb-3">Ramonage</p>
             <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Ramonage Certifié</h3>
-            <p class="text-sm text-[#1A1A1A]/50 leading-relaxed font-light">Ramonage mécanique complet — cheminée, insert, poêle. Certificat RSD 13 remis immédiatement.</p>
-            <p class="mt-5 text-sm font-bold text-[#E65100]">À partir de 75 € →</p>
+            <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">Ramonage mécanique complet — cheminée, insert, poêle à bois ou granulés.</p>
+            <div class="mt-6 pt-5 border-t border-[#F0F0F0] space-y-2.5">
+              {[['Foyer ouvert', '75 €'], ['Insert / Poêle à bois', '90 €'], ['Poêle à granulés', '110 €']].map(([l, p]) => (
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-[#1A1A1A]/45 font-light">{l}</span>
+                  <span class="text-xs font-semibold text-[#1A1A1A]">{p}</span>
+                </div>
+              ))}
+            </div>
+            <span class="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] group-hover:gap-2.5 transition-all duration-200">
+              En savoir plus <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </span>
           </div>
         </a>
 
-        <a href="/debistrage" class="group block overflow-hidden rounded-2xl border border-[#EEEEEE] hover:border-[#E65100]/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+        <!-- Débistrage -->
+        <a href="/debistrage" class="group flex flex-col bg-white rounded-2xl border border-[#F5E6DC] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <div class="aspect-[3/2] overflow-hidden">
             <Image src={bistrageImg} alt="Dépôts de bistre dans un conduit — débistrage professionnel" width={600} height={400} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
-          <div class="p-7 bg-white">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100] mb-3">02 — Débistrage</p>
+          <div class="p-7 flex flex-col flex-1">
+            <p class="text-[10px] font-semibold uppercase tracking-widest text-[#1A1A1A]/35 mb-3">Débistrage</p>
             <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Traitement Bistre & Goudron</h3>
-            <p class="text-sm text-[#1A1A1A]/50 leading-relaxed font-light">Élimination des dépôts hautement inflammables par traitement chimique et mécanique.</p>
-            <p class="mt-5 text-sm font-bold text-[#E65100]">À partir de 150 € →</p>
+            <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">Élimination des dépôts hautement inflammables — traitement chimique et mécanique.</p>
+            <div class="mt-6 pt-5 border-t border-[#F0F0F0] space-y-2.5">
+              {[['Traitement standard', 'dès 150 €'], ['Conduit très encrassé', 'dès 195 €'], ['Diagnostic inclus', '✓']].map(([l, p]) => (
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-[#1A1A1A]/45 font-light">{l}</span>
+                  <span class="text-xs font-semibold text-[#1A1A1A]">{p}</span>
+                </div>
+              ))}
+            </div>
+            <span class="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] group-hover:gap-2.5 transition-all duration-200">
+              En savoir plus <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </span>
           </div>
         </a>
 
-        <a href="/entretien-poele" class="group block overflow-hidden rounded-2xl border border-[#EEEEEE] hover:border-[#E65100]/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+        <!-- Diagnostic -->
+        <a href="/entretien-poele" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <div class="aspect-[3/2] overflow-hidden">
             <Image src={controleImg} alt="Contrôle technique d'un conduit de cheminée" width={600} height={400} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
-          <div class="p-7 bg-white">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100] mb-3">03 — Diagnostic</p>
+          <div class="p-7 flex flex-col flex-1">
+            <p class="text-[10px] font-semibold uppercase tracking-widest text-[#1A1A1A]/35 mb-3">Entretien & Diagnostic</p>
             <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Contrôle Technique</h3>
-            <p class="text-sm text-[#1A1A1A]/50 leading-relaxed font-light">Inspection vacuité et étanchéité du conduit. Rapport illustré pour assurance et notaire.</p>
-            <p class="mt-5 text-sm font-bold text-[#E65100]">À partir de 60 € →</p>
+            <p class="text-sm text-[#1A1A1A]/50 font-light leading-relaxed">Entretien poêle, inspection vacuité et étanchéité. Rapport illustré pour assurance et notaire.</p>
+            <div class="mt-6 pt-5 border-t border-[#F0F0F0] space-y-2.5">
+              {[['Entretien poêle à bois', '90 €'], ['Entretien poêle granulés', '120 €'], ['Diagnostic conduit', 'dès 60 €']].map(([l, p]) => (
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-[#1A1A1A]/45 font-light">{l}</span>
+                  <span class="text-xs font-semibold text-[#1A1A1A]">{p}</span>
+                </div>
+              ))}
+            </div>
+            <span class="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-[#E65100] group-hover:gap-2.5 transition-all duration-200">
+              En savoir plus <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </span>
           </div>
         </a>
 
       </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════════════════════════════════════
-       TARIFS — fond sombre, très visibles
-  ═══════════════════════════════════════════════ -->
-  <section id="tarifs" class="py-28 px-6 md:px-10 bg-[#111111]">
-    <div class="max-w-6xl mx-auto">
-      <div class="mb-16 text-center">
-        <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100] mb-4">Transparence tarifaire</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Nos Tarifs.</h2>
-        <p class="text-sm text-white/30 font-light mt-3">Certificat RSD 13 inclus dans chaque prestation.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-
-        <!-- Ramonage -->
-        <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-[#E65100]/40 transition-all duration-300">
-          <div class="p-8 border-b border-white/10">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100] mb-4">Ramonage certifié</p>
-            <p class="text-5xl font-extrabold text-white leading-none">75 <span class="text-2xl font-semibold text-white/35">€</span></p>
-            <p class="text-xs text-white/30 mt-2">à partir de · certificat inclus</p>
-          </div>
-          <div class="p-8 space-y-4">
-            {[
-              ['Foyer ouvert', '75 €'],
-              ['Insert bois', '90 €'],
-              ['Poêle à bois', '90 €'],
-              ['Poêle à granulés', '110 €'],
-            ].map(([l, p]) => (
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-white/45 font-light">{l}</span>
-                <span class="text-sm font-bold text-white">{p}</span>
-              </div>
-            ))}
-            <a href="/ramonage" class="mt-6 flex items-center justify-center w-full bg-[#E65100] text-white text-sm font-bold px-4 py-3 rounded-xl hover:bg-[#BF360C] transition-colors">
-              Réserver
-            </a>
-          </div>
-        </div>
-
-        <!-- Débistrage (mise en avant) -->
-        <div class="bg-[#E65100] rounded-2xl overflow-hidden">
-          <div class="p-8 border-b border-white/20">
-            <div class="flex items-center justify-between mb-4">
-              <p class="text-[10px] font-bold uppercase tracking-widest text-white/70">Débistrage</p>
-              <span class="text-[10px] font-bold bg-white text-[#E65100] px-2.5 py-1 rounded-full uppercase tracking-wide">Urgent</span>
-            </div>
-            <p class="text-5xl font-extrabold text-white leading-none">150 <span class="text-2xl font-semibold text-white/50">€</span></p>
-            <p class="text-xs text-white/55 mt-2">à partir de · traitement complet</p>
-          </div>
-          <div class="p-8 space-y-4">
-            {[
-              ['Traitement chimique + mécanique', 'dès 150 €'],
-              ['Conduit très encrassé (2 passes)', 'dès 195 €'],
-              ['Diagnostic inclus', '✓'],
-              ['Certificat RSD 13 inclus', '✓'],
-            ].map(([l, p]) => (
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-white/65 font-light">{l}</span>
-                <span class="text-sm font-bold text-white">{p}</span>
-              </div>
-            ))}
-            <a href="/debistrage" class="mt-6 flex items-center justify-center w-full bg-white text-[#E65100] text-sm font-bold px-4 py-3 rounded-xl hover:bg-white/92 transition-colors">
-              Réserver
-            </a>
-          </div>
-        </div>
-
-        <!-- Entretien poêle -->
-        <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-[#E65100]/40 transition-all duration-300">
-          <div class="p-8 border-b border-white/10">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100] mb-4">Entretien poêle</p>
-            <p class="text-5xl font-extrabold text-white leading-none">90 <span class="text-2xl font-semibold text-white/35">€</span></p>
-            <p class="text-xs text-white/30 mt-2">à partir de · entretien complet</p>
-          </div>
-          <div class="p-8 space-y-4">
-            {[
-              ['Poêle à bois', '90 €'],
-              ['Poêle à granulés', '120 €'],
-              ['Ramonage conduit inclus', '✓'],
-              ['Certificat RSD 13 inclus', '✓'],
-            ].map(([l, p]) => (
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-white/45 font-light">{l}</span>
-                <span class="text-sm font-bold text-white">{p}</span>
-              </div>
-            ))}
-            <a href="/entretien-poele" class="mt-6 flex items-center justify-center w-full bg-[#E65100] text-white text-sm font-bold px-4 py-3 rounded-xl hover:bg-[#BF360C] transition-colors">
-              Réserver
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <p class="mt-10 text-center text-xs text-white/20 font-light">
-        Tarifs indicatifs — zone Martigues et Côte Bleue. Devis gratuit sous 24h. Modification possible après diagnostic.
+      <p class="mt-10 text-xs text-[#1A1A1A]/25 font-light text-center">
+        Tarifs indicatifs — zone Martigues et Côte Bleue. Modification possible après diagnostic sur place.
       </p>
     </div>
   </section>
