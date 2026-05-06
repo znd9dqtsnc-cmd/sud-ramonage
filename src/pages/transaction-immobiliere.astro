@@ -35,10 +35,10 @@ const breadcrumbs = [
   <!-- HERO -->
   <section class="bg-white border-b border-[#EEEEEE] pt-28 pb-0">
     <div class="max-w-5xl mx-auto px-6 md:px-10 pb-16">
-      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-[#1A1A1A]/35 mb-8">
+      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-[#1A1A1A]/70 mb-8">
         <a href="/" class="hover:text-[#1A1A1A]/60 transition-colors">Accueil</a>
         <span>/</span>
-        <span class="text-[#1A1A1A]/50">Transaction Immobilière</span>
+        <span class="text-[#1A1A1A]/70">Transaction Immobilière</span>
       </nav>
 
       <div class="flex flex-wrap gap-2 mb-6">
@@ -77,7 +77,7 @@ const breadcrumbs = [
             <div class="bg-[#FFF3E0] border border-[#E8DDD4]/15 rounded-2xl p-4">
               <p class="text-lg font-extrabold text-[#C1440E] leading-none mb-1">{val}</p>
               <p class="text-[11px] font-semibold text-[#1A1A1A] mb-1">{label}</p>
-              <p class="text-[10px] text-[#1A1A1A]/45">{sub}</p>
+              <p class="text-[10px] text-[#1A1A1A]/65">{sub}</p>
             </div>
           ))}
         </div>
@@ -106,7 +106,7 @@ const breadcrumbs = [
       <!-- Trois profils -->
       <div>
         <h2 class="text-2xl font-bold mb-2 text-center">Trois parties protégées, un seul document</h2>
-        <p class="text-sm text-[#1A1A1A]/55 text-center mb-8">L'audit de fumisterie est utile à chaque acteur de la transaction.</p>
+        <p class="text-sm text-[#1A1A1A]/70 text-center mb-8">L'audit de fumisterie est utile à chaque acteur de la transaction.</p>
         <div class="grid md:grid-cols-3 gap-6">
           {[
             {
@@ -175,7 +175,7 @@ const breadcrumbs = [
                 <span class="text-[#C1440E] font-bold shrink-0">→</span>
                 <div>
                   <p class="text-sm font-semibold text-[#1A1A1A]">{label}</p>
-                  <p class="text-xs text-[#1A1A1A]/50 mt-0.5">{detail}</p>
+                  <p class="text-xs text-[#1A1A1A]/70 mt-0.5">{detail}</p>
                 </div>
               </div>
             ))}
@@ -187,7 +187,7 @@ const breadcrumbs = [
             <blockquote class="text-sm text-[#1A1A1A]/70 leading-relaxed mb-4 italic">
               "L'acheteur voulait retenir 8 000 € sur le prix pour les travaux de cheminée. Après l'audit qui montrait que tout était conforme, la négociation a été close. Le rapport a été versé au dossier du notaire."
             </blockquote>
-            <p class="text-xs text-[#1A1A1A]/45">Agent immobilier — Transaction 550 000 € · Marseille 7e</p>
+            <p class="text-xs text-[#1A1A1A]/65">Agent immobilier — Transaction 550 000 € · Marseille 7e</p>
           </div>
           <div class="bg-[#1A4B8F]/8 border border-[#1A4B8F]/15 rounded-2xl p-6">
             <p class="text-sm font-bold text-[#1A4B8F] mb-3">Ce que contient le dossier vendeur</p>
@@ -225,9 +225,9 @@ const breadcrumbs = [
         <h2 class="text-2xl font-bold mb-6">Tarifs</h2>
         <div class="grid md:grid-cols-3 gap-5">
           <div class="bg-white border border-[#EEEEEE] rounded-2xl p-6">
-            <p class="text-[11px] font-bold uppercase tracking-widest text-[#1A1A1A]/40 mb-3">Audit simple</p>
+            <p class="text-[11px] font-bold uppercase tracking-widest text-[#1A1A1A]/60 mb-3">Audit simple</p>
             <p class="text-3xl font-extrabold text-[#1A1A1A] mb-1">120 €</p>
-            <p class="text-xs text-[#1A1A1A]/50 mb-4">1 conduit · Rapport PDF · Certificat</p>
+            <p class="text-xs text-[#1A1A1A]/70 mb-4">1 conduit · Rapport PDF · Certificat</p>
             <ul class="space-y-2 text-xs text-[#1A1A1A]/65">
               <li class="flex gap-2"><span class="text-[#C1440E]">✓</span> Inspection visuelle complète</li>
               <li class="flex gap-2"><span class="text-[#C1440E]">✓</span> Contrôle de tirage</li>
@@ -241,7 +241,7 @@ const breadcrumbs = [
             </div>
             <p class="text-[11px] font-bold uppercase tracking-widest text-[#1A4B8F]/60 mb-3">Audit complet</p>
             <p class="text-3xl font-extrabold text-[#1A1A1A] mb-1">190 €</p>
-            <p class="text-xs text-[#1A1A1A]/50 mb-4">Multi-conduits · Caméra HD · Rapport assurance</p>
+            <p class="text-xs text-[#1A1A1A]/70 mb-4">Multi-conduits · Caméra HD · Rapport assurance</p>
             <ul class="space-y-2 text-xs text-[#1A1A1A]/65">
               <li class="flex gap-2"><span class="text-[#1A4B8F] font-bold">✓</span> Tous les conduits du bien</li>
               <li class="flex gap-2"><span class="text-[#1A4B8F] font-bold">✓</span> Inspection caméra HD</li>
@@ -273,7 +273,7 @@ const breadcrumbs = [
             { href: '/ramonage', label: 'Ramonage certifié RSD 13' },
             { href: '/valeur-verte', label: 'Valeur Verte & DPE' },
           ].map(({ href, label }) => (
-            <li><a href={href} class="text-xs text-[#1A1A1A]/50 border border-[#EEEEEE] rounded-lg px-3 py-1.5 hover:text-[#C1440E] hover:border-[#E8DDD4]/30 transition-colors">{label}</a></li>
+            <li><a href={href} class="text-xs text-[#1A1A1A]/70 border border-[#EEEEEE] rounded-lg px-3 py-1.5 hover:text-[#C1440E] hover:border-[#E8DDD4]/30 transition-colors">{label}</a></li>
           ))}
         </ul>
       </nav>

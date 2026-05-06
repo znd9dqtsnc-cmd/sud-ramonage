@@ -93,11 +93,11 @@ const isRealisations = pathname === '/realisations' || pathname.startsWith('/rea
 
 const navLink = (active: boolean) => active
   ? 'px-3 py-2 rounded-lg text-xs font-semibold text-[#C1440E] bg-[#FFF3E0] transition-all duration-150'
-  : 'px-3 py-2 rounded-lg text-xs font-medium text-[#1A1A1A]/55 hover:text-[#1A1A1A] hover:bg-[#F5F5F5] transition-all duration-150';
+  : 'px-3 py-2 rounded-lg text-xs font-medium text-[#1A1A1A]/70 hover:text-[#1A1A1A] hover:bg-[#F5F5F5] transition-all duration-150';
 
 const navBtn = (active: boolean) => active
   ? 'flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-semibold text-[#C1440E] bg-[#FFF3E0] transition-all duration-150'
-  : 'flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-[#1A1A1A]/55 hover:text-[#1A1A1A] hover:bg-[#F5F5F5] transition-all duration-150';
+  : 'flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-[#1A1A1A]/70 hover:text-[#1A1A1A] hover:bg-[#F5F5F5] transition-all duration-150';
 ---
 
 <!doctype html>
@@ -178,7 +178,7 @@ const navBtn = (active: boolean) => active
                         <li>
                           <a href={href} class="flex flex-col gap-0.5 px-3 py-2.5 rounded-lg hover:bg-[#FFF3E0] group/item transition-colors duration-150">
                             <span class="text-xs font-semibold text-[#1A1A1A] group-hover/item:text-[#C1440E] transition-colors flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-[#E8DDD4] shrink-0"></span>{label}</span>
-                            <span class="text-[10px] text-[#1A1A1A]/40 pl-2.5">{desc}</span>
+                            <span class="text-[10px] text-[#1A1A1A]/60 pl-2.5">{desc}</span>
                           </a>
                         </li>
                       ))}
@@ -205,7 +205,7 @@ const navBtn = (active: boolean) => active
                         <li>
                           <a href={href} class="flex flex-col gap-0.5 px-3 py-2.5 rounded-lg hover:bg-[#FFF3E0] group/item transition-colors duration-150">
                             <span class="text-xs font-semibold text-[#1A1A1A] group-hover/item:text-[#C1440E] transition-colors flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-[#E8DDD4] shrink-0"></span>{label}</span>
-                            <span class="text-[10px] text-[#1A1A1A]/40 pl-2.5">{desc}</span>
+                            <span class="text-[10px] text-[#1A1A1A]/60 pl-2.5">{desc}</span>
                           </a>
                         </li>
                       ))}
@@ -251,7 +251,7 @@ const navBtn = (active: boolean) => active
                       <li>
                         <a href={href} class="flex flex-col gap-0.5 px-4 py-3 rounded-lg hover:bg-[#EFF4FF] group/item transition-colors duration-150">
                           <span class="text-xs font-semibold text-[#1A1A1A] group-hover/item:text-[#1A4B8F] transition-colors flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#1A4B8F] shrink-0"></span>{label}</span>
-                          <span class="text-[11px] text-[#1A1A1A]/45 pl-3.5">{desc}</span>
+                          <span class="text-[11px] text-[#1A1A1A]/65 pl-3.5">{desc}</span>
                         </a>
                       </li>
                     ))}
@@ -273,7 +273,7 @@ const navBtn = (active: boolean) => active
                       <li>
                         <a href={href} class="flex flex-col gap-0.5 px-4 py-3 rounded-lg hover:bg-[#F0F4FF] group/item transition-colors duration-150">
                           <span class="text-xs font-semibold text-[#1A1A1A] group-hover/item:text-[#1A4B8F] transition-colors flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#1A4B8F] shrink-0"></span>{label}</span>
-                          <span class="text-[11px] text-[#1A1A1A]/45 pl-3.5">{desc}</span>
+                          <span class="text-[11px] text-[#1A1A1A]/65 pl-3.5">{desc}</span>
                         </a>
                       </li>
                     ))}
@@ -343,7 +343,7 @@ const navBtn = (active: boolean) => active
           </a>
 
           <!-- Contact DESKTOP -->
-          <a href="/contact" class="hidden lg:inline-flex items-center gap-2 text-xs font-medium text-[#1A1A1A]/55 hover:text-[#1A1A1A] px-3 py-2.5 rounded-lg hover:bg-[#F5F5F5] transition-all duration-150">
+          <a href="/contact" class="hidden lg:inline-flex items-center gap-2 text-xs font-medium text-[#1A1A1A]/70 hover:text-[#1A1A1A] px-3 py-2.5 rounded-lg hover:bg-[#F5F5F5] transition-all duration-150">
             Contact
           </a>
 
@@ -411,7 +411,7 @@ const navBtn = (active: boolean) => active
           <button
             id="mobile-close"
             type="button"
-            class="flex items-center justify-center w-9 h-9 rounded-lg text-[#1A1A1A]/50 hover:bg-[#F5F5F5] transition-colors duration-150"
+            class="flex items-center justify-center w-9 h-9 rounded-lg text-[#1A1A1A]/70 hover:bg-[#F5F5F5] transition-colors duration-150"
             aria-label="Fermer le menu"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -441,7 +441,7 @@ const navBtn = (active: boolean) => active
                 <svg class="w-4 h-4 text-[#C1440E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                 Particuliers
               </span>
-              <svg id="mobile-services-arrow" class="w-4 h-4 text-[#1A1A1A]/40 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              <svg id="mobile-services-arrow" class="w-4 h-4 text-[#1A1A1A]/60 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div id="mobile-services" class="hidden mt-1 ml-4 border-l-2 border-[#E8DDD4]/20 pl-3 space-y-3">
               <div>
@@ -479,7 +479,7 @@ const navBtn = (active: boolean) => active
                 <svg class="w-4 h-4 text-[#1A4B8F] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                 Espace Pro
               </span>
-              <svg id="mobile-pro-arrow" class="w-4 h-4 text-[#1A1A1A]/40 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              <svg id="mobile-pro-arrow" class="w-4 h-4 text-[#1A1A1A]/60 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <ul id="mobile-pro" class="hidden mt-1 ml-4 space-y-0.5 border-l-2 border-[#1A4B8F]/20 pl-3">
               {proMenu.map(({ href, label }) => (
@@ -495,7 +495,7 @@ const navBtn = (active: boolean) => active
                 <svg class="w-4 h-4 text-[#1A4B8F] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
                 Guide Expert
               </span>
-              <svg id="mobile-savoir-arrow" class="w-4 h-4 text-[#1A1A1A]/40 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              <svg id="mobile-savoir-arrow" class="w-4 h-4 text-[#1A1A1A]/60 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <ul id="mobile-savoir" class="hidden mt-1 ml-4 space-y-0.5 border-l-2 border-[#1A4B8F]/20 pl-3">
               {savoirMenu.map(({ href, label }) => (
@@ -520,7 +520,7 @@ const navBtn = (active: boolean) => active
                 </svg>
                 Zones d'intervention
               </span>
-              <svg id="mobile-zones-arrow" class="w-4 h-4 text-[#1A1A1A]/40 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg id="mobile-zones-arrow" class="w-4 h-4 text-[#1A1A1A]/60 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
@@ -631,10 +631,10 @@ const navBtn = (active: boolean) => active
               <p class="text-base font-extrabold tracking-tight text-[#1A1A1A]">Sud Ramonage</p>
               <div class="w-6 h-0.5 bg-[#E8DDD4]/40 mt-2 mb-4"></div>
             </div>
-            <p class="text-xs text-[#1A1A1A]/50 leading-relaxed max-w-xs font-light">
+            <p class="text-xs text-[#1A1A1A]/70 leading-relaxed max-w-xs font-light">
               L'art du ramonage transmis avec rigueur, au cœur de la Provence. Un seul artisan, une seule exigence : votre foyer sécurisé, votre assurance protégée — chaque année, sans compromis.
             </p>
-            <p class="text-xs text-[#1A1A1A]/35 leading-relaxed max-w-xs font-light">
+            <p class="text-xs text-[#1A1A1A]/70 leading-relaxed max-w-xs font-light">
               Certifié COSTIC · Assuré RC Pro · Certificat RSD 13 remis après chaque intervention. Martigues, Côte Bleue & Étang de Berre.
             </p>
             <a href="tel:+33664729600" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#C1440E] hover:text-[#C4B5AC] transition-colors duration-200">
@@ -646,7 +646,7 @@ const navBtn = (active: boolean) => active
           <!-- Colonne 2 : Services + Espace Pro + Savoir -->
           <div class="space-y-6">
             <div>
-              <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-3">Services</p>
+              <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/70 mb-3">Services</p>
               <nav aria-label="Services Sud Ramonage">
                 <ul class="space-y-2">
                   {[
@@ -659,7 +659,7 @@ const navBtn = (active: boolean) => active
                     { href: '/accessoires-toiture',label: 'Accessoires Toiture' },
                     { href: '/audit-conformite',   label: 'Diagnostic de Sécurité' },
                   ].map(({ href, label }) => (
-                    <li><a href={href} class="text-xs text-[#1A1A1A]/55 hover:text-[#C1440E] transition-colors duration-200">{label}</a></li>
+                    <li><a href={href} class="text-xs text-[#1A1A1A]/70 hover:text-[#C1440E] transition-colors duration-200">{label}</a></li>
                   ))}
                 </ul>
               </nav>
@@ -677,7 +677,7 @@ const navBtn = (active: boolean) => active
                   { href: '/conseils',                 label: 'Conseils d\'Experts' },
                   { href: '/realisations',             label: 'Réalisations' },
                 ].map(({ href, label }) => (
-                  <li><a href={href} class="text-xs text-[#1A1A1A]/55 hover:text-[#C1440E] transition-colors duration-200">{label}</a></li>
+                  <li><a href={href} class="text-xs text-[#1A1A1A]/70 hover:text-[#C1440E] transition-colors duration-200">{label}</a></li>
                 ))}
               </ul>
             </div>
@@ -685,12 +685,12 @@ const navBtn = (active: boolean) => active
 
           <!-- Colonne 3 : Interventions Pays d'Aix -->
           <div>
-            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-4">Interventions Pays d'Aix</p>
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/70 mb-4">Interventions Pays d'Aix</p>
             <nav aria-label="Ramonage Pays d'Aix — fumisterie de prestige">
               <ul class="space-y-2.5">
                 {villes.filter(v => ['aix-en-provence','luynes','puyricard','les-milles','venelles','eguilles','bouc-bel-air','cabries','calas'].includes(v.slug)).map(v => (
                   <li>
-                    <a href={`/villes/${v.slug}`} class="text-xs text-[#1A1A1A]/55 hover:text-[#C1440E] transition-colors duration-200">
+                    <a href={`/villes/${v.slug}`} class="text-xs text-[#1A1A1A]/70 hover:text-[#C1440E] transition-colors duration-200">
                       Ramonage {v.nom}
                       <span class="text-[10px] text-[#1A1A1A]/30 ml-1">({v.codePostal})</span>
                     </a>
@@ -705,12 +705,12 @@ const navBtn = (active: boolean) => active
 
           <!-- Colonne 4 : Interventions Étang de Berre -->
           <div>
-            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-4">Interventions Étang de Berre</p>
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/70 mb-4">Interventions Étang de Berre</p>
             <nav aria-label="Ramonage secteur Étang de Berre">
               <ul class="space-y-2.5">
                 {villes.filter(v => ['vitrolles','marignane','saint-victoret','gignac-la-nerthe','velaux','ventabren','coudoux','la-fare-les-oliviers','rognac','berre-letang'].includes(v.slug)).map(v => (
                   <li>
-                    <a href={`/villes/${v.slug}`} class="text-xs text-[#1A1A1A]/55 hover:text-[#C1440E] transition-colors duration-200">
+                    <a href={`/villes/${v.slug}`} class="text-xs text-[#1A1A1A]/70 hover:text-[#C1440E] transition-colors duration-200">
                       Ramonage {v.nom}
                       <span class="text-[10px] text-[#1A1A1A]/30 ml-1">({v.codePostal})</span>
                     </a>
@@ -731,10 +731,10 @@ const navBtn = (active: boolean) => active
           <!-- Ligne légale RC Pro + médiateur -->
           <div class="text-[10px] text-[#1A1A1A]/30 font-light leading-relaxed space-y-1">
             <p>
-              <strong class="font-medium text-[#1A1A1A]/40">RC Professionnelle</strong> souscrite auprès d'un assureur agréé — couverture France métropolitaine.
+              <strong class="font-medium text-[#1A1A1A]/60">RC Professionnelle</strong> souscrite auprès d'un assureur agréé — couverture France métropolitaine.
             </p>
             <p>
-              <strong class="font-medium text-[#1A1A1A]/40">Médiateur de la consommation</strong> :
+              <strong class="font-medium text-[#1A1A1A]/60">Médiateur de la consommation</strong> :
               CM2C — Centre de la Médiation de la Consommation de Conciliateurs de Justice —
               <a href="https://www.cm2c.net" target="_blank" rel="noopener noreferrer" class="hover:text-[#C1440E] transition-colors">www.cm2c.net</a>
             </p>

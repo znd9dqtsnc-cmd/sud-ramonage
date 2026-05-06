@@ -48,28 +48,28 @@ const pageSchema = {
   <!-- ═══ HERO RAPPORT ═══ -->
   <section class="pt-32 pb-12 px-6 md:px-10 bg-[#FAFAFA] border-b border-[#EEEEEE]">
     <div class="max-w-6xl mx-auto">
-      <nav class="flex items-center gap-2 text-xs text-[#1A1A1A]/35 mb-6" aria-label="Fil d'Ariane">
+      <nav class="flex items-center gap-2 text-xs text-[#1A1A1A]/70 mb-6" aria-label="Fil d'Ariane">
         <a href="/" class="hover:text-[#C1440E] transition-colors duration-200">Accueil</a>
         <span>/</span>
         <a href="/realisations" class="hover:text-[#C1440E] transition-colors duration-200">Réalisations</a>
         <span>/</span>
-        <span class="text-[#1A1A1A]/55 line-clamp-1">{r.titre}</span>
+        <span class="text-[#1A1A1A]/70 line-clamp-1">{r.titre}</span>
       </nav>
       <div class="max-w-3xl">
         <div class="flex flex-wrap items-center gap-3 mb-4">
           <span class={`inline-flex items-center px-2.5 py-1 rounded-md text-[10px] font-semibold ${cfg.color} ${cfg.bg} border ${cfg.border}`}>
             {cfg.label}
           </span>
-          <span class="text-xs text-[#1A1A1A]/35">Rapport Technique</span>
-          <span class="text-xs text-[#1A1A1A]/35">·</span>
-          <span class="text-xs text-[#1A1A1A]/35 font-mono">{r.ref}</span>
-          <span class="text-xs text-[#1A1A1A]/35">·</span>
-          <time datetime={r.date} class="text-xs text-[#1A1A1A]/35">{dateFormatted}</time>
+          <span class="text-xs text-[#1A1A1A]/70">Rapport Technique</span>
+          <span class="text-xs text-[#1A1A1A]/70">·</span>
+          <span class="text-xs text-[#1A1A1A]/70 font-mono">{r.ref}</span>
+          <span class="text-xs text-[#1A1A1A]/70">·</span>
+          <time datetime={r.date} class="text-xs text-[#1A1A1A]/70">{dateFormatted}</time>
         </div>
         <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-4">
           {r.titre}
         </h1>
-        <p class="text-base text-[#1A1A1A]/55 font-light leading-relaxed">
+        <p class="text-base text-[#1A1A1A]/70 font-light leading-relaxed">
           {r.excerpt}
         </p>
       </div>
@@ -96,7 +96,7 @@ const pageSchema = {
               { label: 'Certificat', val: r.certificat ? 'Remis sur place' : 'Non applicable' },
             ].map(({ label, val }) => (
               <div>
-                <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-1">{label}</p>
+                <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/70 mb-1">{label}</p>
                 <p class="text-sm font-medium text-[#1A1A1A]/75">{val}</p>
               </div>
             ))}
@@ -184,13 +184,13 @@ const pageSchema = {
 
         <!-- Navigation -->
         <div class="pt-6 border-t border-[#EEEEEE] flex items-center justify-between">
-          <a href="/realisations" class="inline-flex items-center gap-2 text-xs font-medium text-[#1A1A1A]/45 hover:text-[#C1440E] transition-colors duration-200">
+          <a href="/realisations" class="inline-flex items-center gap-2 text-xs font-medium text-[#1A1A1A]/65 hover:text-[#C1440E] transition-colors duration-200">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
             Toutes les interventions
           </a>
-          <a href={`/villes/${r.villeSlug}`} class="inline-flex items-center gap-2 text-xs font-medium text-[#1A1A1A]/45 hover:text-[#C1440E] transition-colors duration-200">
+          <a href={`/villes/${r.villeSlug}`} class="inline-flex items-center gap-2 text-xs font-medium text-[#1A1A1A]/65 hover:text-[#C1440E] transition-colors duration-200">
             Ramonage à {r.nomVille}
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -212,7 +212,7 @@ const pageSchema = {
               </svg>
             </div>
             <p class="text-sm font-bold text-[#1A1A1A] mb-1">Même intervention chez vous ?</p>
-            <p class="text-xs text-[#1A1A1A]/55 font-light mb-5 leading-relaxed">Devis gratuit, intervention rapide sur {r.nomVille} et toute la zone.</p>
+            <p class="text-xs text-[#1A1A1A]/70 font-light mb-5 leading-relaxed">Devis gratuit, intervention rapide sur {r.nomVille} et toute la zone.</p>
             <a
               href="tel:+33664729600"
               class="flex items-center justify-center gap-2 bg-[#E8DDD4] text-white text-sm font-bold px-5 py-3.5 rounded-lg hover:bg-[#C4B5AC] transition-colors duration-200 w-full"
@@ -237,7 +237,7 @@ const pageSchema = {
 
           <!-- Info ville -->
           <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-xl p-6 space-y-3">
-            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35 mb-3">Zone d'intervention</p>
+            <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/70 mb-3">Zone d'intervention</p>
             <a href={`/villes/${r.villeSlug}`} class="flex items-center gap-2 group">
               <svg class="w-4 h-4 text-[#C1440E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -246,7 +246,7 @@ const pageSchema = {
                 Ramonage à {r.nomVille}
               </span>
             </a>
-            <p class="text-xs text-[#1A1A1A]/40 font-light">{r.nomVille} — {r.codePostal} — {r.zone}</p>
+            <p class="text-xs text-[#1A1A1A]/60 font-light">{r.nomVille} — {r.codePostal} — {r.zone}</p>
           </div>
 
         </div>
