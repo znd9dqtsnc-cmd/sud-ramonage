@@ -45,16 +45,20 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
       <p class="text-base md:text-lg text-white/60 font-light max-w-xl mx-auto mb-10">
         Artisan certifié COSTIC — certificat RSD 13 remis à l'issue de chaque intervention.
       </p>
-      <div class="flex flex-col items-center gap-4">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
         <a
           href="tel:+33664729600"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#F39C12] hover:bg-[#D68910] text-[#1C1917] text-sm font-bold px-10 py-4 rounded-xl transition-colors duration-200"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#F39C12] hover:bg-[#D68910] text-[#1C1917] text-sm font-bold px-8 py-4 rounded-xl transition-colors duration-200"
+        >
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Réserver en ligne
+        </a>
+        <a
+          href="tel:+33664729600"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-white text-white text-sm font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors duration-200"
         >
           <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          Réserver mon ramonage
-        </a>
-        <a href="tel:+33664729600" class="text-sm text-white/70 hover:text-white transition-colors duration-200">
-          Ou appeler le <span class="font-semibold text-white">06 64 72 96 00</span>
+          06 64 72 96 00
         </a>
       </div>
     </div>
@@ -69,12 +73,12 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   <!-- ═══════════════════════════════════════════════
        PRESTATIONS + TARIFS
   ═══════════════════════════════════════════════ -->
-  <section id="services" class="py-16 md:py-28 px-6 md:px-10 bg-[#FFFFFF]">
+  <section id="services" class="py-10 md:py-24 px-6 md:px-10 bg-[#FFFFFF]">
     <div class="max-w-6xl mx-auto">
 
       <div class="mb-16">
         <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F39C12] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#F39C12] mr-2 mb-0.5"></span>Certifié COSTIC · RSD 13</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2C3E50]">Prestations & Tarifs.</h2>
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#2C3E50]">Prestations & Tarifs.</h2>
         <div class="w-10 h-0.5 bg-[#F39C12]/30 mt-4 mb-0"></div>
         <p class="text-base text-[#4B4B4B] font-light mt-4">
           Certificat RSD 13 inclus dans chaque prestation. Devis gratuit sous 24h.
@@ -85,8 +89,8 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
         <!-- Ramonage & Entretien -->
         <div class="relative pt-7">
-          <span class="absolute left-5 top-0 text-[4.5rem] font-black font-serif text-[#2C3E50]/10 leading-none select-none pointer-events-none z-10">01</span>
-          <a href="/ramonage" class="group flex flex-col bg-[#FFFFFF] rounded-2xl border border-[#E2E8F0] shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <span class="absolute left-5 top-0 text-[4.5rem] font-black font-serif text-[#2C3E50]/[0.08] leading-none select-none pointer-events-none z-10">01</span>
+          <a href="/ramonage" class="group flex flex-col bg-[#FFFFFF] rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             <div class="relative bg-[#2C3E50] px-7 pt-7 pb-5">
               <p class="text-[10px] font-bold uppercase tracking-widest text-white/60 mb-3">Ramonage & Entretien</p>
               <p class="text-3xl font-extrabold text-white">75 <span class="text-lg font-semibold">€</span></p>
@@ -103,8 +107,8 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
                   </div>
                 ))}
               </div>
-              <span class="mt-6 inline-flex items-center justify-center gap-2 bg-[#F39C12] hover:bg-[#D68910] text-[#1C1917] text-xs font-bold px-5 py-2.5 rounded-lg transition-colors duration-200">
-                Réserver ce service
+              <span class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#2C3E50] group-hover:gap-3 transition-all duration-200">
+                Voir le détail <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
               </span>
             </div>
           </a>
@@ -112,8 +116,8 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
         <!-- Inspection & Diagnostic -->
         <div class="relative pt-7">
-          <span class="absolute left-5 top-0 text-[4.5rem] font-black font-serif text-[#2C3E50]/10 leading-none select-none pointer-events-none z-10">02</span>
-          <a href="/inspection-camera" class="group flex flex-col bg-[#FFFFFF] rounded-2xl border border-[#E2E8F0] shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <span class="absolute left-5 top-0 text-[4.5rem] font-black font-serif text-[#2C3E50]/[0.08] leading-none select-none pointer-events-none z-10">02</span>
+          <a href="/inspection-camera" class="group flex flex-col bg-[#FFFFFF] rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             <div class="relative bg-[#2C3E50] px-7 pt-7 pb-5">
               <p class="text-[10px] font-bold uppercase tracking-widest text-white/60 mb-3">Inspection & Diagnostic</p>
               <p class="text-3xl font-extrabold text-white">60 <span class="text-lg font-semibold">€</span></p>
@@ -130,8 +134,8 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
                   </div>
                 ))}
               </div>
-              <span class="mt-6 inline-flex items-center justify-center gap-2 bg-[#F39C12] hover:bg-[#D68910] text-[#1C1917] text-xs font-bold px-5 py-2.5 rounded-lg transition-colors duration-200">
-                Réserver ce service
+              <span class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#2C3E50] group-hover:gap-3 transition-all duration-200">
+                Voir le détail <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
               </span>
             </div>
           </a>
@@ -139,8 +143,8 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
         <!-- Réhabilitation -->
         <div class="relative pt-7">
-          <span class="absolute left-5 top-0 text-[4.5rem] font-black font-serif text-[#2C3E50]/10 leading-none select-none pointer-events-none z-10">03</span>
-          <a href="/tubage" class="group flex flex-col bg-[#FFFFFF] rounded-2xl border border-[#E2E8F0] shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <span class="absolute left-5 top-0 text-[4.5rem] font-black font-serif text-[#2C3E50]/[0.08] leading-none select-none pointer-events-none z-10">03</span>
+          <a href="/tubage" class="group flex flex-col bg-[#FFFFFF] rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             <div class="relative bg-[#2C3E50] px-7 pt-7 pb-5">
               <p class="text-[10px] font-bold uppercase tracking-widest text-white/60 mb-3">Réhabilitation</p>
               <p class="text-3xl font-extrabold text-white">Sur devis</p>
@@ -157,8 +161,8 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
                   </div>
                 ))}
               </div>
-              <span class="mt-6 inline-flex items-center justify-center gap-2 bg-[#F39C12] hover:bg-[#D68910] text-[#1C1917] text-xs font-bold px-5 py-2.5 rounded-lg transition-colors duration-200">
-                Réserver ce service
+              <span class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#2C3E50] group-hover:gap-3 transition-all duration-200">
+                Voir le détail <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
               </span>
             </div>
           </a>
@@ -172,7 +176,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   <!-- ═══════════════════════════════════════════════
        ENGAGEMENT — Image + 4 mini-cards
   ═══════════════════════════════════════════════ -->
-  <section class="py-16 md:py-28 px-6 md:px-10 bg-[#F8F9FA] border-t border-[#E2E8F0]">
+  <section class="py-10 md:py-24 px-6 md:px-10 bg-[#F8F9FA] border-t border-[#E2E8F0]">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
       <div class="relative order-2 lg:order-1">
@@ -188,7 +192,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
       <div class="order-1 lg:order-2">
         <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F39C12] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#F39C12] mr-2 mb-0.5"></span>Notre engagement</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2C3E50] leading-tight mb-4">
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#2C3E50] leading-tight mb-4">
           Un seul artisan.<br />Un travail fait bien.
         </h2>
         <div class="w-10 h-0.5 bg-[#F39C12]/30 mb-6"></div>
@@ -222,11 +226,11 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   <!-- ═══════════════════════════════════════════════
        TÉMOIGNAGES
   ═══════════════════════════════════════════════ -->
-  <section class="py-16 md:py-28 px-6 md:px-10 bg-[#FFFFFF] border-t border-[#E2E8F0]">
+  <section class="py-10 md:py-24 px-6 md:px-10 bg-[#FFFFFF] border-t border-[#E2E8F0]">
     <div class="max-w-6xl mx-auto">
       <div class="mb-16">
         <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F39C12] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#F39C12] mr-2 mb-0.5"></span>Ils nous font confiance</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2C3E50]">Témoignages Clients.</h2>
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#2C3E50]">Témoignages Clients.</h2>
         <div class="w-10 h-0.5 bg-[#F39C12]/30 mt-4 mb-4"></div>
         <p class="text-base text-[#4B4B4B] font-light">Ils nous ont fait confiance sur Martigues et la Côte Bleue.</p>
       </div>
@@ -275,13 +279,13 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   <!-- ═══════════════════════════════════════════════
        ZONE + CONTACT
   ═══════════════════════════════════════════════ -->
-  <section class="py-16 md:py-28 px-6 md:px-10 border-t border-[#E2E8F0] bg-[#F8F9FA]">
+  <section class="py-10 md:py-24 px-6 md:px-10 border-t border-[#E2E8F0] bg-[#F8F9FA]">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
       <!-- Zone gauche -->
       <div>
         <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F39C12] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#F39C12] mr-2 mb-0.5"></span>Zone d'intervention</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2C3E50] leading-tight mb-4">
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#2C3E50] leading-tight mb-4">
           Martigues, Côte Bleue<br />& Étang de Berre.
         </h2>
         <div class="w-10 h-0.5 bg-[#F39C12]/30 mb-6"></div>
