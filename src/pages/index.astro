@@ -288,18 +288,18 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         <!-- Pastilles villes -->
         <div class="flex flex-wrap gap-2 mb-8">
           {[
-            { label: 'Martigues',       slug: 'martigues',        cls: 'bg-[#FEF3C7] border-[#F5E4A0] text-[#92400E]' },
-            { label: 'Istres',          slug: 'istres',           cls: 'bg-[#ECFDF5] border-[#A7F3D0] text-[#065F46]' },
-            { label: 'Fos-sur-Mer',    slug: 'fos-sur-mer',      cls: 'bg-[#EEF3FF] border-[#BFDBFE] text-[#1A4B8F]' },
-            { label: 'Port-de-Bouc',   slug: 'port-de-bouc',     cls: 'bg-[#FEF3C7] border-[#F5E4A0] text-[#92400E]' },
-            { label: 'Miramas',        slug: 'miramas',           cls: 'bg-[#ECFDF5] border-[#A7F3D0] text-[#065F46]' },
-            { label: 'Sausset',        slug: 'sausset-les-pins',  cls: 'bg-[#EEF3FF] border-[#BFDBFE] text-[#1A4B8F]' },
-            { label: 'Carry-le-Rouet', slug: 'carry-le-rouet',   cls: 'bg-[#FEF3C7] border-[#F5E4A0] text-[#92400E]' },
-            { label: 'Ensuès',         slug: 'ensues-la-redonne', cls: 'bg-[#ECFDF5] border-[#A7F3D0] text-[#065F46]' },
-          ].map(({ label, slug, cls }) => (
+            { label: 'Martigues',       slug: 'martigues' },
+            { label: 'Istres',          slug: 'istres' },
+            { label: 'Fos-sur-Mer',    slug: 'fos-sur-mer' },
+            { label: 'Port-de-Bouc',   slug: 'port-de-bouc' },
+            { label: 'Miramas',        slug: 'miramas' },
+            { label: 'Sausset',        slug: 'sausset-les-pins' },
+            { label: 'Carry-le-Rouet', slug: 'carry-le-rouet' },
+            { label: 'Ensuès',         slug: 'ensues-la-redonne' },
+          ].map(({ label, slug }) => (
             <a
               href={`/villes/${slug}`}
-              class={`inline-flex items-center gap-1.5 border text-xs font-semibold px-4 py-2 rounded-lg hover:shadow-md hover:opacity-80 transition-all duration-200 ${cls}`}
+              class="inline-flex items-center gap-1.5 bg-white border border-[#E0E0E0] text-[#1A1A1A]/55 text-xs font-semibold px-4 py-2 rounded-lg hover:border-[#E65100]/40 hover:text-[#E65100] hover:shadow-sm transition-all duration-200"
             >
               {label}
             </a>
@@ -315,11 +315,11 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
       <!-- Devis gratuit -->
       <div class="relative overflow-hidden rounded-2xl bg-white border border-[#EEEEEE] shadow-sm">
         <!-- Header coloré -->
-        <div class="relative bg-[#FFF3E0] px-8 pt-8 pb-6 overflow-hidden">
-          <span class="absolute right-4 top-0 text-[7rem] font-black text-[#E65100]/6 leading-none select-none">24h</span>
-          <p class="text-[10px] font-bold uppercase tracking-widest text-[#E65100]/60 mb-3 relative z-10">Prendre rendez-vous</p>
+        <div class="relative bg-[#EEF3FF] px-8 pt-8 pb-6 overflow-hidden">
+          <span class="absolute right-4 top-0 text-[7rem] font-black text-[#1A4B8F]/6 leading-none select-none">24h</span>
+          <p class="text-[10px] font-bold uppercase tracking-widest text-[#1A4B8F]/60 mb-3 relative z-10">Prendre rendez-vous</p>
           <p class="text-3xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight relative z-10">Devis Gratuit.</p>
-          <p class="text-sm text-[#E65100] font-semibold mt-1 relative z-10">Réponse assurée sous 24h</p>
+          <p class="text-sm text-[#1A4B8F] font-semibold mt-1 relative z-10">Réponse assurée sous 24h</p>
         </div>
 
         <div class="px-8 py-7">
@@ -327,7 +327,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
           <a
             href="mailto:contact@sud-ramonage.fr?subject=Demande%20de%20devis%20ramonage"
-            class="flex items-center justify-center w-full bg-[#FFF3E0] border border-[#E65100]/20 text-[#E65100] text-sm font-semibold px-6 py-4 rounded-xl hover:bg-[#FFE8CC] transition-colors duration-200"
+            class="flex items-center justify-center w-full bg-[#EEF3FF] border border-[#1A4B8F]/20 text-[#1A4B8F] text-sm font-semibold px-6 py-4 rounded-xl hover:bg-[#DBEAFE] transition-colors duration-200"
           >
             Écrire un message
           </a>
