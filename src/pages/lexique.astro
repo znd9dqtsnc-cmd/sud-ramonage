@@ -113,12 +113,12 @@ const lettres = [...new Set(termes.map(t => t.terme[0]))].sort();
       <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-[#1A1A1A]/35 mb-6">
         <a href="/" class="hover:text-[#1A1A1A]/60">Accueil</a><span>/</span><span class="text-[#1A1A1A]/50">Lexique de l'Expert</span>
       </nav>
-      <div class="inline-flex items-center gap-2 bg-[#FFF3E0] border border-[#E65100]/20 rounded-full px-3 py-1.5 text-[11px] text-[#E65100] font-semibold mb-5">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#E65100]"></span>
+      <div class="inline-flex items-center gap-2 bg-[#FFF3E0] border border-[#EA580C]/20 rounded-full px-3 py-1.5 text-[11px] text-[#EA580C] font-semibold mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#EA580C]"></span>
         Savoir & Transparence — COSTIC
       </div>
       <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-5 text-[#1A1A1A]">
-        Lexique de l'Expert<br /><span class="text-[#E65100]">Fumisterie & Ramonage</span>
+        Lexique de l'Expert<br /><span class="text-[#EA580C]">Fumisterie & Ramonage</span>
       </h1>
       <p class="text-base text-[#1A1A1A]/55 max-w-2xl leading-relaxed">
         {termes.length} termes techniques expliqués par un artisan certifié COSTIC. Du bistre au tubage, de la vermiculite au RSD 13 — le vocabulaire du métier en clair.
@@ -131,7 +131,7 @@ const lettres = [...new Set(termes.map(t => t.terme[0]))].sort();
     <div class="max-w-4xl mx-auto px-6 md:px-10 py-3">
       <div class="flex flex-wrap gap-1.5">
         {lettres.map(l => (
-          <a href={`#lettre-${l}`} class="w-7 h-7 flex items-center justify-center text-xs font-bold text-[#1A1A1A]/50 hover:text-[#E65100] hover:bg-[#FFF3E0] rounded-lg transition-colors">{l}</a>
+          <a href={`#lettre-${l}`} class="w-7 h-7 flex items-center justify-center text-xs font-bold text-[#1A1A1A]/50 hover:text-[#EA580C] hover:bg-[#FFF3E0] rounded-lg transition-colors">{l}</a>
         ))}
       </div>
     </div>
@@ -142,7 +142,7 @@ const lettres = [...new Set(termes.map(t => t.terme[0]))].sort();
       <dl class="space-y-0">
         {lettres.map(l => (
           <div id={`lettre-${l}`} class="mb-8">
-            <p class="text-2xl font-extrabold text-[#E65100] mb-4 pt-2 border-b border-[#EEEEEE] pb-2">{l}</p>
+            <p class="text-2xl font-extrabold text-[#EA580C] mb-4 pt-2 border-b border-[#EEEEEE] pb-2">{l}</p>
             <div class="space-y-5">
               {termes.filter(t => t.terme[0] === l).map(({ terme, def }) => (
                 <div class="flex gap-4">
@@ -160,7 +160,7 @@ const lettres = [...new Set(termes.map(t => t.terme[0]))].sort();
           <h2 class="text-xl font-extrabold tracking-tight text-[#1A1A1A] mb-2">Un terme vous préoccupe dans votre installation ?</h2>
           <p class="text-sm text-[#1A1A1A]/55 font-light">Je réponds à vos questions techniques et interviens dans tout le département. Diagnostic gratuit lors du ramonage annuel.</p>
         </div>
-        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#E65100] text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-[#BF360C] transition-colors shrink-0">06 64 72 96 00</a>
+        <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#EA580C] text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-[#C2410C] transition-colors shrink-0">06 64 72 96 00</a>
       </div>
 
       <nav aria-label="Liens thématiques" class="mt-10 pt-8 border-t border-[#EEEEEE]">
@@ -172,7 +172,7 @@ const lettres = [...new Set(termes.map(t => t.terme[0]))].sort();
             { href: '/ramonage', label: 'Ramonage certifié' },
             { href: '/debistrage', label: 'Débistrage — bistre et calcin' },
           ].map(({ href, label }) => (
-            <li><a href={href} class="text-xs text-[#1A1A1A]/50 border border-[#EEEEEE] rounded-lg px-3 py-1.5 hover:text-[#E65100] hover:border-[#E65100]/30 transition-colors">{label}</a></li>
+            <li><a href={href} class="text-xs text-[#1A1A1A]/50 border border-[#EEEEEE] rounded-lg px-3 py-1.5 hover:text-[#EA580C] hover:border-[#EA580C]/30 transition-colors">{label}</a></li>
           ))}
         </ul>
       </nav>
