@@ -61,7 +61,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #EA580C;
+  background-color: #B5694A;
   margin-top: 0.6rem;
   flex-shrink: 0;
 }
@@ -85,13 +85,13 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.6875rem;
   font-weight: 700;
-  color: #EA580C;
+  color: #B5694A;
   margin-top: 0.25rem;
   flex-shrink: 0;
 }
 
 .prose-serif blockquote {
-  border-left: 3px solid #EA580C;
+  border-left: 3px solid #B5694A;
   padding-left: 1.25rem;
   margin: 1.75rem 0;
   font-style: italic;
@@ -101,7 +101,7 @@
 
 .prose-serif .callout {
   background: #FFF3E0;
-  border-left: 4px solid #EA580C;
+  border-left: 4px solid #B5694A;
   border-radius: 0 0.75rem 0.75rem 0;
   padding: 1.25rem 1.5rem;
   margin: 2rem 0;
