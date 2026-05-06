@@ -66,16 +66,16 @@ const pageSchema = {
   <!-- ═══ HERO ═══ -->
   <section class="pt-32 pb-16 px-6 md:px-10 bg-[#F9F6F3] border-b border-[#EEEEEE]">
     <div class="max-w-6xl mx-auto">
-      <nav class="flex items-center gap-2 text-xs text-[#1A1A1A]/70 mb-8" aria-label="Fil d'Ariane">
-        <a href="/" class="hover:text-[#1A1A1A]/60 transition-colors duration-200">Accueil</a>
+      <nav class="flex items-center gap-2 text-xs text-[#1A1A1A]/85 mb-8" aria-label="Fil d'Ariane">
+        <a href="/" class="hover:text-[#1A1A1A]/80 transition-colors duration-200">Accueil</a>
         <span>/</span>
-        <span class="text-[#1A1A1A]/70">Zones d'intervention</span>
+        <span class="text-[#1A1A1A]/85">Zones d'intervention</span>
       </nav>
       <p class="text-[11px] font-semibold tracking-widest uppercase text-[#C4B5AC] mb-4">Rayon 50 km</p>
       <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-6">
         Nos Zones d'Intervention<br />dans les Bouches-du-Rhône.
       </h1>
-      <p class="text-base text-[#1A1A1A]/70 font-light max-w-2xl leading-relaxed mb-8">
+      <p class="text-base text-[#1A1A1A]/85 font-light max-w-2xl leading-relaxed mb-8">
         Sud Ramonage intervient dans <strong class="text-[#1A1A1A]">{villes.length} communes</strong> du département 13 — de Martigues à Marseille, d'Aix-en-Provence à Salon-de-Provence — dans un rayon de 50 km. Artisan certifié COSTIC, devis gratuit sous 24h.
       </p>
       <!-- Stats band -->
@@ -87,7 +87,7 @@ const pageSchema = {
         ].map(({ val, label }) => (
           <div>
             <p class="text-2xl font-extrabold text-[#C4B5AC]">{val}</p>
-            <p class="text-xs text-[#1A1A1A]/60 font-light mt-1">{label}</p>
+            <p class="text-xs text-[#1A1A1A]/80 font-light mt-1">{label}</p>
           </div>
         ))}
       </div>
@@ -112,7 +112,7 @@ const pageSchema = {
               >
                 <div>
                   <p class="text-sm font-semibold text-[#1A1A1A] group-hover:text-[#C4B5AC] transition-colors duration-200 leading-snug">{v.nom}</p>
-                  <p class="text-[10px] text-[#1A1A1A]/70 font-mono mt-0.5">{v.codePostal} · {v.tempsIntervention}</p>
+                  <p class="text-[10px] text-[#1A1A1A]/85 font-mono mt-0.5">{v.codePostal} · {v.tempsIntervention}</p>
                 </div>
                 <svg class="w-3.5 h-3.5 text-[#1A1A1A]/20 group-hover:text-[#C4B5AC] shrink-0 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -135,13 +135,13 @@ const pageSchema = {
             <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-5">
               Les Conduits Anciens des Immeubles Marseillais.
             </h2>
-            <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed mb-4">
+            <p class="text-base text-[#1A1A1A]/80 font-light leading-relaxed mb-4">
               Marseille est une ville à l'architecture exceptionnelle — et à l'architecture <em>complexe</em>. Les immeubles du XIXe et du début du XXe siècle concentrés dans les arrondissements centraux et nord (8e, 10e, 15e, 16e) présentent des configurations de conduits de fumée que l'on ne trouve nulle part ailleurs en France.
             </p>
-            <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed mb-4">
+            <p class="text-base text-[#1A1A1A]/80 font-light leading-relaxed mb-4">
               <strong class="text-[#1A1A1A]">Les souches de cheminée marseillaises</strong> sont caractérisées par leur hauteur — souvent 3 à 4 mètres au-dessus du toit — et par des sections généreuses qui créent un tirage thermique puissant, mais aussi des zones de dépôt importantes. Ces souches en maçonnerie, typiques de l'architecture haussmannienne adaptée au climat provençal, peuvent desservir jusqu'à 8 logements par colonne.
             </p>
-            <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed">
+            <p class="text-base text-[#1A1A1A]/80 font-light leading-relaxed">
               <strong class="text-[#1A1A1A]">Les shunts collectifs</strong>, très répandus dans les immeubles des années 1960-1970 du nord de Marseille, présentent une problématique spécifique : un seul conduit collectif regroupe les évacuations de plusieurs logements avec des clapets anti-retour dont la défaillance est fréquente. Mon inspection caméra permet de diagnostiquer ces shunts en totalité et de détecter les clapets bloqués avant qu'ils ne causent des intoxications au CO.
             </p>
           </div>
@@ -153,7 +153,7 @@ const pageSchema = {
             ].map(({ titre, desc }) => (
               <div class="bg-[#F9F6F3] border border-[#EEEEEE] rounded-xl p-5">
                 <p class="text-xs font-bold text-[#C4B5AC] mb-2">{titre}</p>
-                <p class="text-xs text-[#1A1A1A]/70 font-light leading-relaxed">{desc}</p>
+                <p class="text-xs text-[#1A1A1A]/85 font-light leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -172,7 +172,7 @@ const pageSchema = {
               ].map(({ num, txt }) => (
                 <div class="flex items-start gap-4">
                   <span class="text-[10px] font-bold text-[#C4B5AC] font-mono shrink-0 mt-0.5">{num}</span>
-                  <p class="text-sm text-[#1A1A1A]/60 font-light leading-relaxed">{txt}</p>
+                  <p class="text-sm text-[#1A1A1A]/80 font-light leading-relaxed">{txt}</p>
                 </div>
               ))}
             </div>
@@ -199,10 +199,10 @@ const pageSchema = {
           <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-5">
             Fumisterie de Prestige<br />en Pays d'Aix.
           </h2>
-          <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed mb-5">
+          <p class="text-base text-[#1A1A1A]/80 font-light leading-relaxed mb-5">
             Le pays d'Aix concentre un patrimoine immobilier exceptionnel : <strong class="text-[#1A1A1A]">bastides centenaires</strong>, mas provençaux en pierres de taille, résidences de standing contemporaines. Ces propriétés méritent une fumisterie à la hauteur de leur standing.
           </p>
-          <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed mb-5">
+          <p class="text-base text-[#1A1A1A]/80 font-light leading-relaxed mb-5">
             Mes interventions en Pays d'Aix incluent systématiquement un <strong class="text-[#1A1A1A]">diagnostic de sécurité conduits anciens</strong> : inspection caméra haute définition, relevé des fissures et déformations, test de vacuité, rapport écrit joint au certificat. Pour les cheminées de caractère, je n'interviens qu'après avoir établi un état complet du conduit.
           </p>
           <div class="grid grid-cols-2 gap-4 mt-6">
@@ -214,7 +214,7 @@ const pageSchema = {
             ].map(({ label, desc }) => (
               <div class="bg-[#FFF3E0] rounded-xl p-4">
                 <p class="text-xs font-bold text-[#C4B5AC] mb-1">{label}</p>
-                <p class="text-[11px] text-[#1A1A1A]/70 font-light leading-snug">{desc}</p>
+                <p class="text-[11px] text-[#1A1A1A]/85 font-light leading-snug">{desc}</p>
               </div>
             ))}
           </div>
@@ -225,7 +225,7 @@ const pageSchema = {
             <a href={`/villes/${v.slug}`} class="group flex items-center justify-between bg-[#F9F6F3] border border-[#EEEEEE] rounded-xl px-4 py-3 hover:border-[#E8DDD4]/30 hover:shadow-sm transition-all duration-200">
               <div>
                 <p class="text-sm font-semibold text-[#1A1A1A] group-hover:text-[#C4B5AC] transition-colors duration-200">{v.nom}</p>
-                <p class="text-[10px] text-[#1A1A1A]/70 font-mono">{v.codePostal} · {v.tempsIntervention}</p>
+                <p class="text-[10px] text-[#1A1A1A]/85 font-mono">{v.codePostal} · {v.tempsIntervention}</p>
               </div>
               <svg class="w-3.5 h-3.5 text-[#1A1A1A]/20 group-hover:text-[#C4B5AC] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -249,7 +249,7 @@ const pageSchema = {
           { href: '/inspection-camera', label: 'Inspection Caméra — dès 120€' },
           { href: '/normes', label: 'Normes NF DTU 24.1' },
         ].map(({ href, label }) => (
-          <a href={href} class="inline-flex items-center gap-2 bg-[#F9F6F3] border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E8DDD4]/30 hover:text-[#C4B5AC] transition-all duration-200">
+          <a href={href} class="inline-flex items-center gap-2 bg-[#F9F6F3] border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/80 hover:border-[#E8DDD4]/30 hover:text-[#C4B5AC] transition-all duration-200">
             <span class="w-1.5 h-1.5 rounded-full bg-[#E8DDD4]/40 shrink-0"></span>
             {label}
           </a>

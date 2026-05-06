@@ -87,8 +87,8 @@ const breadcrumbs = [
   <!-- Hero -->
   <section class="bg-[#F9F6F3] border-b border-[#EEEEEE] pt-28 pb-12">
     <div class="max-w-4xl mx-auto px-6 md:px-10">
-      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-[#1A1A1A]/70 mb-6">
-        <a href="/" class="hover:text-[#1A1A1A]/60">Accueil</a><span>/</span><span class="text-[#1A1A1A]/70">Sécurité & Santé</span>
+      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-[#1A1A1A]/85 mb-6">
+        <a href="/" class="hover:text-[#1A1A1A]/80">Accueil</a><span>/</span><span class="text-[#1A1A1A]/85">Sécurité & Santé</span>
       </nav>
       <div class="inline-flex items-center gap-2 bg-red-50 border border-red-200 text-red-600 text-[11px] font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
@@ -98,7 +98,7 @@ const breadcrumbs = [
         Sécurité & Santé :<br />
         <span class="text-red-600">Ce que les chiffres disent vraiment</span>
       </h1>
-      <p class="text-base text-[#1A1A1A]/70 max-w-2xl leading-relaxed">
+      <p class="text-base text-[#1A1A1A]/85 max-w-2xl leading-relaxed">
         70 000 feux de cheminée par an, 3 000 intoxications au CO, des PM2.5 qui pénètrent vos poumons — voici les données réelles sur les risques d'une installation mal entretenue, et comment les éliminer.
       </p>
     </div>
@@ -117,7 +117,7 @@ const breadcrumbs = [
           <div class="text-center p-5 rounded-2xl bg-[#F9F6F3] border border-[#EEEEEE]">
             <p class="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] mb-0.5">{val}</p>
             <p class="text-[10px] font-bold uppercase tracking-widest text-[#C4B5AC] mb-2">{unit}</p>
-            <p class="text-[11px] text-[#1A1A1A]/70 leading-tight mb-2">{label}</p>
+            <p class="text-[11px] text-[#1A1A1A]/85 leading-tight mb-2">{label}</p>
             <p class="text-[9px] text-[#1A1A1A]/30 font-medium">Source : {source}</p>
           </div>
         ))}
@@ -131,7 +131,7 @@ const breadcrumbs = [
       <div class="mb-10">
         <p class="text-[11px] font-semibold tracking-widest uppercase text-[#C4B5AC] mb-3">SDIS / CNPP — France</p>
         <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-3">Incendies de conduit & feux de cheminée</h2>
-        <p class="text-sm text-[#1A1A1A]/70 leading-relaxed max-w-2xl">Les feux de conduit représentent l'une des premières causes d'incendie domestique en France. La majorité résulte d'un défaut d'entretien annuel.</p>
+        <p class="text-sm text-[#1A1A1A]/85 leading-relaxed max-w-2xl">Les feux de conduit représentent l'une des premières causes d'incendie domestique en France. La majorité résulte d'un défaut d'entretien annuel.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6 mb-10">
@@ -142,8 +142,8 @@ const breadcrumbs = [
         ].map(({ chiffre, unite, label, source }) => (
           <div class="bg-[#F9F6F3] border border-[#EEEEEE] rounded-xl p-7">
             <p class="text-3xl md:text-4xl font-extrabold text-[#C4B5AC] leading-none mb-1">{chiffre}</p>
-            <p class="text-xs text-[#1A1A1A]/65 font-medium uppercase tracking-wider mb-3">{unite}</p>
-            <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">{label}</p>
+            <p class="text-xs text-[#1A1A1A]/80 font-medium uppercase tracking-wider mb-3">{unite}</p>
+            <p class="text-sm text-[#1A1A1A]/80 leading-relaxed mb-4">{label}</p>
             <p class="text-[10px] text-[#1A1A1A]/30 italic">{source}</p>
           </div>
         ))}
@@ -175,14 +175,14 @@ const breadcrumbs = [
                     {row.freq}
                   </span>
                 </td>
-                <td class="px-5 py-4 text-[#1A1A1A]/65 text-xs leading-relaxed">{row.mecanisme}</td>
-                <td class="px-5 py-4 text-[#1A1A1A]/65 text-xs leading-relaxed">{row.prevention}</td>
+                <td class="px-5 py-4 text-[#1A1A1A]/80 text-xs leading-relaxed">{row.mecanisme}</td>
+                <td class="px-5 py-4 text-[#1A1A1A]/80 text-xs leading-relaxed">{row.prevention}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <p class="text-[11px] text-[#1A1A1A]/70 mt-3">Sources : CNPP, rapports d'intervention SDIS France, Observatoire national du risque incendie.</p>
+      <p class="text-[11px] text-[#1A1A1A]/85 mt-3">Sources : CNPP, rapports d'intervention SDIS France, Observatoire national du risque incendie.</p>
     </div>
   </section>
 
@@ -196,10 +196,10 @@ const breadcrumbs = [
             Risque n°1 — Inodore & invisible
           </div>
           <h2 class="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] mb-5">Monoxyde de Carbone (CO)</h2>
-          <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
+          <p class="text-sm text-[#1A1A1A]/80 leading-relaxed mb-4">
             Le CO est produit par toute combustion incomplète. Un conduit obstrué, fissuré ou mal tirant empêche son évacuation — il se répand alors dans les pièces de vie, sans odeur, sans couleur, sans goût.
           </p>
-          <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-6">
+          <p class="text-sm text-[#1A1A1A]/80 leading-relaxed mb-6">
             Il se fixe sur l'hémoglobine à la place de l'oxygène (affinité 240× supérieure), provoquant une asphyxie progressive. Les symptômes ressemblent à une grippe et disparaissent à l'air libre — d'où le retard fréquent de prise en charge.
           </p>
 
@@ -210,7 +210,7 @@ const breadcrumbs = [
             ].map(({ chiffre, unite, source }) => (
               <div class="bg-[#F2EDE8] border border-[#EEEEEE] rounded-2xl p-5">
                 <p class="text-2xl font-extrabold text-[#C4B5AC] mb-0.5">{chiffre}</p>
-                <p class="text-[10px] font-bold uppercase tracking-widest text-[#1A1A1A]/65 mb-1">{unite}</p>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-[#1A1A1A]/80 mb-1">{unite}</p>
                 <p class="text-[10px] text-[#1A1A1A]/30 italic">{source}</p>
               </div>
             ))}
@@ -273,10 +273,10 @@ const breadcrumbs = [
             Particules fines — Risque chronique
           </div>
           <h2 class="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] mb-5">Particules Fines PM2.5</h2>
-          <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
+          <p class="text-sm text-[#1A1A1A]/80 leading-relaxed mb-4">
             Les PM2.5 (diamètre inférieur à 2,5 µm) pénètrent profondément dans les alvéoles pulmonaires, traversent la barrière alvéolo-capillaire et peuvent atteindre la circulation sanguine.
           </p>
-          <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-6">
+          <p class="text-sm text-[#1A1A1A]/80 leading-relaxed mb-6">
             Un foyer avec un conduit encrassé produit davantage de particules. La combustion incomplète multiplie les émissions de PM2.5 par <strong>3 à 8</strong> par rapport à une installation bien entretenue.
           </p>
           <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5">
@@ -304,7 +304,7 @@ const breadcrumbs = [
                   <span class={`text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0 self-start mt-0.5 ${niveau === 'Élevé' ? 'bg-red-100 text-red-700' : niveau === 'Moyen' ? 'bg-orange-100 text-orange-700' : 'bg-green-100 text-green-700'}`}>{niveau}</span>
                   <div>
                     <p class="font-medium text-[#1A1A1A]">{facteur}</p>
-                    <p class="text-[#1A1A1A]/70 mt-0.5">{impact}</p>
+                    <p class="text-[#1A1A1A]/85 mt-0.5">{impact}</p>
                   </div>
                 </div>
               ))}
@@ -312,7 +312,7 @@ const breadcrumbs = [
           </div>
           <div class="bg-[#1A4B8F]/8 border border-[#1A4B8F]/15 rounded-2xl p-5">
             <h3 class="font-semibold text-[#1A4B8F] mb-2 text-sm">Réduction par le ramonage</h3>
-            <p class="text-xs text-[#1A1A1A]/60 leading-relaxed">Selon l'ADEME, un ramonage annuel certifié réduit les émissions de PM2.5 d'un foyer de bois de 40 à 65 %. L'entretien complet (corps de chauffe + conduit) est la mesure la plus efficace pour améliorer la qualité de l'air intérieur.</p>
+            <p class="text-xs text-[#1A1A1A]/80 leading-relaxed">Selon l'ADEME, un ramonage annuel certifié réduit les émissions de PM2.5 d'un foyer de bois de 40 à 65 %. L'entretien complet (corps de chauffe + conduit) est la mesure la plus efficace pour améliorer la qualité de l'air intérieur.</p>
           </div>
         </div>
       </div>
@@ -338,7 +338,7 @@ const breadcrumbs = [
                 <div class="w-7 h-7 rounded-full bg-[#E8DDD4] text-white flex items-center justify-center text-xs font-bold shrink-0">{n}</div>
                 <div>
                   <p class="text-sm font-semibold text-[#1A1A1A]">{geste}</p>
-                  <p class="text-xs text-[#1A1A1A]/70 mt-0.5">{detail}</p>
+                  <p class="text-xs text-[#1A1A1A]/85 mt-0.5">{detail}</p>
                 </div>
               </div>
             ))}
@@ -347,7 +347,7 @@ const breadcrumbs = [
         <div class="border border-[#EEEEEE] rounded-2xl p-8">
           <p class="text-[10px] font-bold tracking-widest uppercase text-[#C4B5AC] mb-2">Prendre rendez-vous</p>
           <h2 class="text-xl font-bold text-[#1A1A1A] mb-2">Diagnostic sécurité<br />de votre installation</h2>
-          <p class="text-sm text-[#1A1A1A]/70 leading-relaxed mb-6">
+          <p class="text-sm text-[#1A1A1A]/85 leading-relaxed mb-6">
             Contrôle complet : état du conduit, mesure de tirage, test de vacuité, inspection caméra si nécessaire. Rapport remis le jour même. Certificat RSD 13 inclus.
           </p>
           <div class="space-y-3">
@@ -379,7 +379,7 @@ const breadcrumbs = [
               </svg>
             </summary>
             <div class="px-5 pb-5" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <p class="text-sm text-[#1A1A1A]/60 leading-relaxed" itemprop="text">{item.acceptedAnswer.text}</p>
+              <p class="text-sm text-[#1A1A1A]/80 leading-relaxed" itemprop="text">{item.acceptedAnswer.text}</p>
             </div>
           </details>
         ))}
@@ -390,7 +390,7 @@ const breadcrumbs = [
   <!-- Nav links -->
   <nav aria-label="Services associés" class="py-12 px-6 md:px-10 bg-[#F2EDE8] border-t border-[#EEEEEE]">
     <div class="max-w-5xl mx-auto">
-      <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/70 mb-5">Voir aussi</p>
+      <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/85 mb-5">Voir aussi</p>
       <div class="flex flex-wrap gap-3">
         {[
           { href: '/ramonage',             label: 'Ramonage certifié RSD 13' },
@@ -399,7 +399,7 @@ const breadcrumbs = [
           { href: '/normes-reglementation', label: 'Normes & Réglementation' },
           { href: '/valeur-verte',         label: 'Valeur Verte & DPE' },
         ].map(({ href, label }) => (
-          <a href={href} class="inline-flex items-center gap-2 bg-[#F9F6F3] border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/70 hover:border-[#E8DDD4]/40 hover:text-[#C4B5AC] transition-all">
+          <a href={href} class="inline-flex items-center gap-2 bg-[#F9F6F3] border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/85 hover:border-[#E8DDD4]/40 hover:text-[#C4B5AC] transition-all">
             <span class="w-1.5 h-1.5 rounded-full bg-[#E8DDD4] shrink-0"></span>
             {label}
           </a>

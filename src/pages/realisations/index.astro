@@ -38,16 +38,16 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
   <!-- ═══ HERO ═══ -->
   <section class="pt-32 pb-16 px-6 md:px-10 bg-[#F9F6F3] border-b border-[#EEEEEE]">
     <div class="max-w-6xl mx-auto">
-      <nav class="flex items-center gap-2 text-xs text-[#1A1A1A]/70 mb-8" aria-label="Fil d'Ariane">
-        <a href="/" class="hover:text-[#1A1A1A]/60 transition-colors duration-200">Accueil</a>
+      <nav class="flex items-center gap-2 text-xs text-[#1A1A1A]/85 mb-8" aria-label="Fil d'Ariane">
+        <a href="/" class="hover:text-[#1A1A1A]/80 transition-colors duration-200">Accueil</a>
         <span>/</span>
-        <span class="text-[#1A1A1A]/70">Réalisations</span>
+        <span class="text-[#1A1A1A]/85">Réalisations</span>
       </nav>
       <p class="text-[11px] font-semibold tracking-widest uppercase text-[#C4B5AC] mb-4">Journal d'Interventions</p>
       <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-5">
         Rapports Techniques d'Interventions.
       </h1>
-      <p class="text-base text-[#1A1A1A]/70 font-light max-w-xl leading-relaxed">
+      <p class="text-base text-[#1A1A1A]/85 font-light max-w-xl leading-relaxed">
         Chaque chantier documenté : constat initial, travaux réalisés, résultats mesurés. Des interventions réelles, pas des témoignages.
       </p>
       <!-- Stats -->
@@ -59,7 +59,7 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
         ].map(({ val, label }) => (
           <div>
             <p class="text-2xl font-extrabold text-[#C4B5AC]">{val}</p>
-            <p class="text-xs text-[#1A1A1A]/60 mt-0.5">{label}</p>
+            <p class="text-xs text-[#1A1A1A]/80 mt-0.5">{label}</p>
           </div>
         ))}
       </div>
@@ -70,7 +70,7 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
   <section class="sticky top-16 z-40 bg-[#F9F6F3] border-b border-[#EEEEEE] px-6 md:px-10 py-4">
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-wrap gap-2 items-center">
-        <span class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/70 mr-2">Filtrer :</span>
+        <span class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/85 mr-2">Filtrer :</span>
         {types.map(({ value, label }) => (
           <a
             href={value === 'all' ? '/realisations' : `/realisations?type=${value}`}
@@ -78,7 +78,7 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
             class:list={[
               value === 'all'
                 ? 'bg-[#E8DDD4] text-white border-[#E8DDD4]'
-                : 'bg-[#F9F6F3] text-[#1A1A1A]/70 border-[#EEEEEE] hover:border-[#E8DDD4]/40 hover:text-[#C4B5AC]',
+                : 'bg-[#F9F6F3] text-[#1A1A1A]/85 border-[#EEEEEE] hover:border-[#E8DDD4]/40 hover:text-[#C4B5AC]',
             ]}
           >
             {label}
@@ -120,7 +120,7 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
                 </h2>
 
                 <!-- Excerpt -->
-                <p class="text-xs text-[#1A1A1A]/70 font-light leading-relaxed mb-4 flex-1">
+                <p class="text-xs text-[#1A1A1A]/85 font-light leading-relaxed mb-4 flex-1">
                   {r.excerpt}
                 </p>
 
@@ -130,7 +130,7 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
                     <svg class="w-3.5 h-3.5 text-[#C4B5AC] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span class="text-[11px] font-medium text-[#1A1A1A]/70">{r.nomVille}</span>
+                    <span class="text-[11px] font-medium text-[#1A1A1A]/85">{r.nomVille}</span>
                   </div>
                   <div class="flex items-center gap-3">
                     <span class="text-[10px] text-[#1A1A1A]/30">{r.duree}</span>
@@ -156,7 +156,7 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
   <!-- ═══ MAILLAGE SERVICES ═══ -->
   <section class="py-12 px-6 md:px-10 bg-[#F2EDE8] border-t border-[#EEEEEE]">
     <div class="max-w-6xl mx-auto">
-      <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/70 mb-5">Nos services professionnels</p>
+      <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/85 mb-5">Nos services professionnels</p>
       <div class="flex flex-wrap gap-3">
         {[
           { href: '/ramonage', label: 'Ramonage Certifié' },
@@ -166,7 +166,7 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
         ].map(({ href, label }) => (
           <a
             href={href}
-            class="inline-flex items-center gap-2 bg-[#F9F6F3] border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E8DDD4]/30 hover:text-[#C4B5AC] transition-all duration-200"
+            class="inline-flex items-center gap-2 bg-[#F9F6F3] border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/80 hover:border-[#E8DDD4]/30 hover:text-[#C4B5AC] transition-all duration-200"
           >
             <span class="w-1.5 h-1.5 rounded-full bg-[#E8DDD4]/40 shrink-0"></span>
             {label}

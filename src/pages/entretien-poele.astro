@@ -81,7 +81,7 @@ const pageSchema = {
             'Poêle à granulés : nettoyage brûleur, contrôle ventilateur et sonde — même fréquence annuelle.',
             'Un poêle bien entretenu consomme jusqu\'à 30% moins de combustible.',
           ].map(point => (
-            <li class="flex items-start gap-2.5 text-sm text-[#1A1A1A]/75 font-light">
+            <li class="flex items-start gap-2.5 text-sm text-[#1A1A1A]/85 font-light">
               <span class="w-1.5 h-1.5 rounded-full bg-[#E8DDD4] mt-1.5 shrink-0"></span>
               {point}
             </li>
@@ -97,7 +97,7 @@ const pageSchema = {
             <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-5">
               Poêle à Bois vs Poêle à Granulés.
             </h2>
-            <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed mb-5">
+            <p class="text-base text-[#1A1A1A]/80 font-light leading-relaxed mb-5">
               Ces deux types d'appareils n'ont pas les mêmes contraintes d'entretien. Le poêle à bois génère davantage de suies, de <strong class="font-medium text-[#1A1A1A]/80">bistre</strong> et de <strong class="font-medium text-[#1A1A1A]/80">calcin</strong>, et nécessite un ramonage annuel rigoureux avec contrôle du <strong class="font-medium text-[#1A1A1A]/80">tirage thermique</strong>. Le poêle à granulés, bien que produisant moins de cendres, possède des composants électroniques, des ventilateurs et des sondes qui requièrent une maintenance spécifique.
             </p>
             <div class="grid grid-cols-2 gap-4">
@@ -108,7 +108,7 @@ const pageSchema = {
                 <div class="bg-[#F2EDE8] rounded-xl p-5">
                   <p class="text-xs font-bold text-[#1A1A1A] uppercase tracking-wider mb-3">{titre}</p>
                   {items.map(i => (
-                    <p class="text-xs text-[#1A1A1A]/70 font-light py-1 border-b border-[#EEEEEE] last:border-0">{i}</p>
+                    <p class="text-xs text-[#1A1A1A]/85 font-light py-1 border-b border-[#EEEEEE] last:border-0">{i}</p>
                   ))}
                 </div>
               ))}
@@ -132,7 +132,7 @@ const pageSchema = {
             <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">
               Quand Faire Entretenir Son Poêle ?
             </h2>
-            <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed">
+            <p class="text-base text-[#1A1A1A]/80 font-light leading-relaxed">
               L'idéal est de planifier l'entretien annuel avant la saison de chauffe — en septembre ou octobre. Cela garantit que votre appareil est en parfait état de fonctionnement pour l'hiver, et que vous disposez du certificat exigé par votre assureur.
             </p>
           </div>
@@ -154,7 +154,7 @@ const pageSchema = {
                 <svg class="w-4 h-4 text-[#C4B5AC] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span class="text-sm text-[#1A1A1A]/70 font-light">{item}</span>
+                <span class="text-sm text-[#1A1A1A]/85 font-light">{item}</span>
               </div>
             ))}
             <div class="pt-5">
@@ -187,7 +187,7 @@ const pageSchema = {
         <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-4">
           Bien Choisir Son Bois de Chauffage.
         </h2>
-        <p class="text-base text-[#1A1A1A]/60 font-light leading-relaxed max-w-2xl">
+        <p class="text-base text-[#1A1A1A]/80 font-light leading-relaxed max-w-2xl">
           Le combustible que vous brûlez est directement responsable de l'état de votre conduit. Un bois trop humide est la première cause de bistrage — et donc d'incendie de cheminée. Voici les règles essentielles à connaître.
         </p>
       </div>
@@ -210,7 +210,7 @@ const pageSchema = {
               'Mesurer avec un hygromètre (< 20 €)',
               'Label "bois bûche NF" = garantie qualité',
             ].map(p => (
-              <li class="flex items-start gap-2 text-xs text-[#1A1A1A]/60 font-light">
+              <li class="flex items-start gap-2 text-xs text-[#1A1A1A]/80 font-light">
                 <span class="w-1 h-1 rounded-full bg-[#E8DDD4] mt-1.5 shrink-0"></span>
                 {p}
               </li>
@@ -233,7 +233,7 @@ const pageSchema = {
               { e: 'Charme', d: 'Excellent rendement, braises durables' },
               { e: 'Frêne', d: 'Bonne densité, séchage plus rapide' },
             ].map(({ e, d }) => (
-              <li class="flex gap-2 text-xs text-[#1A1A1A]/60 font-light">
+              <li class="flex gap-2 text-xs text-[#1A1A1A]/80 font-light">
                 <span class="font-semibold text-[#1A1A1A]/80 shrink-0">{e}</span>
                 <span>— {d}</span>
               </li>
@@ -256,7 +256,7 @@ const pageSchema = {
               { e: 'Palettes', d: 'Souvent traitées, taux d\'humidité inconnu' },
               { e: 'Bois vert ou fraîchement coupé', d: 'Combustion incomplète → bistre systématique' },
             ].map(({ e, d }) => (
-              <li class="flex gap-2 text-xs text-[#1A1A1A]/60 font-light">
+              <li class="flex gap-2 text-xs text-[#1A1A1A]/80 font-light">
                 <span class="font-semibold text-amber-700 shrink-0">{e}</span>
                 <span>— {d}</span>
               </li>
@@ -270,9 +270,9 @@ const pageSchema = {
       <div class="bg-[#F2EDE8] border border-[#EEEEEE] rounded-xl p-6 md:p-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
-            <p class="text-xs font-semibold text-[#1A1A1A]/60 uppercase tracking-widest mb-3">Impact direct sur le ramonage</p>
+            <p class="text-xs font-semibold text-[#1A1A1A]/80 uppercase tracking-widest mb-3">Impact direct sur le ramonage</p>
             <h3 class="text-xl font-extrabold text-[#1A1A1A] mb-4">Bois humide = Bistre = Ramonage plus fréquent</h3>
-            <p class="text-sm text-[#1A1A1A]/70 font-light leading-relaxed">
+            <p class="text-sm text-[#1A1A1A]/85 font-light leading-relaxed">
               Un bois trop humide brûle à basse température, créant une condensation de goudron dans le conduit. Un seul hiver de mauvaise combustion peut transformer un ramonage simple en débistrage complet — une intervention 2 à 3× plus longue et plus coûteuse.
             </p>
           </div>
@@ -287,7 +287,7 @@ const pageSchema = {
                   <span class={`w-2 h-2 rounded-full shrink-0 ${ok ? 'bg-green-500' : 'bg-amber-500'}`}></span>
                   <p class="text-xs font-semibold text-[#1A1A1A]">{label}</p>
                 </div>
-                <p class="text-[11px] text-[#1A1A1A]/70 font-light pl-4">{detail}</p>
+                <p class="text-[11px] text-[#1A1A1A]/85 font-light pl-4">{detail}</p>
               </div>
             ))}
           </div>
@@ -313,18 +313,18 @@ const pageSchema = {
               { label: 'Certificat RSD 13',                     prix: 'inclus' },
             ].map(({ label, prix }, i) => (
               <div class={`flex items-center justify-between px-6 py-3.5 ${i % 2 === 0 ? 'bg-[#F9F6F3]' : 'bg-[#F2EDE8]'}`}>
-                <span class="text-sm text-[#1A1A1A]/65 font-light">{label}</span>
+                <span class="text-sm text-[#1A1A1A]/80 font-light">{label}</span>
                 <span class="text-sm font-bold text-[#1A1A1A]">{prix}</span>
               </div>
             ))}
           </div>
-          <p class="text-[11px] text-[#1A1A1A]/60 font-light mt-4">
+          <p class="text-[11px] text-[#1A1A1A]/80 font-light mt-4">
             Tarifs indicatifs — zone Martigues et Côte Bleue. Devis gratuit sous 24h.
           </p>
         </div>
 
         <div class="bg-[#FFF3E0] rounded-xl p-7 border border-[#E8DDD4]/10">
-          <p class="text-xs font-semibold text-[#1A1A1A]/60 uppercase tracking-widest mb-5">Inclus dans l'entretien annuel</p>
+          <p class="text-xs font-semibold text-[#1A1A1A]/80 uppercase tracking-widest mb-5">Inclus dans l'entretien annuel</p>
           {[
             'Ramonage mécanique complet du conduit',
             'Nettoyage du foyer et du cendrier',
@@ -337,7 +337,7 @@ const pageSchema = {
               <svg class="w-4 h-4 text-[#C4B5AC] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span class="text-sm text-[#1A1A1A]/65 font-light">{item}</span>
+              <span class="text-sm text-[#1A1A1A]/80 font-light">{item}</span>
             </div>
           ))}
         </div>
@@ -349,7 +349,7 @@ const pageSchema = {
   <!-- ═══ MAILLAGE SILO ═══ -->
   <section class="py-12 px-6 md:px-10 bg-[#F2EDE8]">
     <div class="max-w-6xl mx-auto">
-      <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/70 mb-4">Services associés & zones d'intervention</p>
+      <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/85 mb-4">Services associés & zones d'intervention</p>
       <div class="flex flex-wrap gap-3">
         {[
           { href: '/ramonage',                  label: 'Ramonage Certifié' },
@@ -357,7 +357,7 @@ const pageSchema = {
           { href: '/villes/sausset-les-pins',    label: 'Entretien Poêle Sausset-les-Pins' },
           { href: '/villes/carry-le-rouet',      label: 'Entretien Poêle Carry-le-Rouet' },
         ].map(({ href, label }) => (
-          <a href={href} class="inline-flex items-center gap-2 bg-[#F9F6F3] border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E8DDD4]/30 hover:text-[#C4B5AC] transition-all duration-200">
+          <a href={href} class="inline-flex items-center gap-2 bg-[#F9F6F3] border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/80 hover:border-[#E8DDD4]/30 hover:text-[#C4B5AC] transition-all duration-200">
             <span class="w-1.5 h-1.5 rounded-full bg-[#E8DDD4] shrink-0"></span>
             {label}
           </a>
@@ -394,7 +394,7 @@ const pageSchema = {
     <div class="max-w-4xl mx-auto border border-[#EEEEEE] rounded-2xl p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
       <div>
         <h2 class="text-xl font-extrabold tracking-tight text-[#1A1A1A] mb-2">Entretien Annuel Avant l'Hiver</h2>
-        <p class="text-sm text-[#1A1A1A]/70 font-light">Disponible dès septembre pour préparer la saison de chauffe.</p>
+        <p class="text-sm text-[#1A1A1A]/85 font-light">Disponible dès septembre pour préparer la saison de chauffe.</p>
       </div>
       <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
         <ContactButton variant="phone" class="px-6 py-3 text-sm" />
