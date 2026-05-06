@@ -39,7 +39,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
     <div class="relative z-10 px-6 max-w-3xl mx-auto">
       <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-white/40 mb-6">Martigues · Bouches-du-Rhône</p>
-      <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05] mb-6">
+      <h1 class="text-[clamp(3rem,8vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05] mb-6 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
         L'expertise du conduit.<br />La sécurité de votre foyer.
       </h1>
       <p class="text-base md:text-lg text-white/60 font-light max-w-xl mx-auto mb-10">
@@ -76,7 +76,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F39C12] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#F39C12] mr-2 mb-0.5"></span>Certifié COSTIC · RSD 13</p>
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2C3E50]">Prestations & Tarifs.</h2>
         <div class="w-10 h-0.5 bg-[#F39C12]/30 mt-4 mb-0"></div>
-        <p class="text-base text-[#1A1A1A]/80 font-light mt-4">
+        <p class="text-base text-[#4B4B4B] font-light mt-4">
           Certificat RSD 13 inclus dans chaque prestation. Devis gratuit sous 24h.
         </p>
       </div>
@@ -85,7 +85,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
         <!-- Ramonage & Entretien -->
         <div class="relative pt-7">
-          <span class="absolute left-5 top-0 text-[4.5rem] font-black text-[#2C3E50]/20 leading-none select-none pointer-events-none z-10">01</span>
+          <span class="absolute left-5 top-0 text-[4.5rem] font-black font-serif text-[#2C3E50]/10 leading-none select-none pointer-events-none z-10">01</span>
           <a href="/ramonage" class="group flex flex-col bg-[#FFFFFF] rounded-2xl border border-[#E2E8F0] shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <div class="relative bg-[#2C3E50] px-7 pt-7 pb-5">
               <p class="text-[10px] font-bold uppercase tracking-widest text-white/60 mb-3">Ramonage & Entretien</p>
@@ -93,12 +93,12 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
               <p class="text-[11px] text-white/50 font-light">Tarif foyer ouvert</p>
             </div>
             <div class="p-7 flex flex-col flex-1">
-              <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Ramonage, Débistrage & Entretien Poêle</h3>
-              <p class="text-sm text-[#1A1A1A]/85 font-light leading-relaxed">Nettoyage mécanique du conduit, traitement du bistre et maintenance complète de votre appareil. Certificat RSD 13 inclus.</p>
+              <h3 class="text-lg font-bold text-[#2C3E50] mb-2">Ramonage, Débistrage & Entretien Poêle</h3>
+              <p class="text-sm text-[#4B4B4B] font-light leading-relaxed">Nettoyage mécanique du conduit, traitement du bistre et maintenance complète de votre appareil. Certificat RSD 13 inclus.</p>
               <div class="mt-5 pt-5 border-t border-[#E2E8F0] space-y-2.5">
                 {[['Ramonage foyer ouvert', '75 €'], ['Insert / Poêle à bois', '90 €'], ['Débistrage conduit', 'dès 150 €'], ['Entretien poêle granulés', '120 €']].map(([l, p]) => (
                   <div class="flex items-center justify-between">
-                    <span class="text-xs text-[#1A1A1A]/80 font-light">{l}</span>
+                    <span class="text-xs text-[#4B4B4B] font-light">{l}</span>
                     <span class="text-xs font-semibold text-[#1A1A1A]">{p}</span>
                   </div>
                 ))}
@@ -112,7 +112,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
         <!-- Inspection & Diagnostic -->
         <div class="relative pt-7">
-          <span class="absolute left-5 top-0 text-[4.5rem] font-black text-[#2C3E50]/20 leading-none select-none pointer-events-none z-10">02</span>
+          <span class="absolute left-5 top-0 text-[4.5rem] font-black font-serif text-[#2C3E50]/10 leading-none select-none pointer-events-none z-10">02</span>
           <a href="/inspection-camera" class="group flex flex-col bg-[#FFFFFF] rounded-2xl border border-[#E2E8F0] shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <div class="relative bg-[#2C3E50] px-7 pt-7 pb-5">
               <p class="text-[10px] font-bold uppercase tracking-widest text-white/60 mb-3">Inspection & Diagnostic</p>
@@ -120,12 +120,12 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
               <p class="text-[11px] text-white/50 font-light">Diagnostic conduit</p>
             </div>
             <div class="p-7 flex flex-col flex-1">
-              <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Caméra, Vacuité & Audit de Sécurité</h3>
-              <p class="text-sm text-[#1A1A1A]/85 font-light leading-relaxed">Inspection vidéo HD du conduit, contrôle de vacuité et rapport certifié — pour votre assurance, un notaire ou une vente.</p>
+              <h3 class="text-lg font-bold text-[#2C3E50] mb-2">Caméra, Vacuité & Audit de Sécurité</h3>
+              <p class="text-sm text-[#4B4B4B] font-light leading-relaxed">Inspection vidéo HD du conduit, contrôle de vacuité et rapport certifié — pour votre assurance, un notaire ou une vente.</p>
               <div class="mt-5 pt-5 border-t border-[#E2E8F0] space-y-2.5">
                 {[['Inspection caméra HD', 'dès 60 €'], ['Contrôle de vacuité', 'dès 60 €'], ['Diagnostic de sécurité', 'sur devis'], ['Rapport illustré inclus', '✓']].map(([l, p]) => (
                   <div class="flex items-center justify-between">
-                    <span class="text-xs text-[#1A1A1A]/80 font-light">{l}</span>
+                    <span class="text-xs text-[#4B4B4B] font-light">{l}</span>
                     <span class={`text-xs font-semibold ${p === '✓' ? 'text-[#F39C12]' : 'text-[#1A1A1A]'}`}>{p}</span>
                   </div>
                 ))}
@@ -139,7 +139,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
         <!-- Réhabilitation -->
         <div class="relative pt-7">
-          <span class="absolute left-5 top-0 text-[4.5rem] font-black text-[#2C3E50]/20 leading-none select-none pointer-events-none z-10">03</span>
+          <span class="absolute left-5 top-0 text-[4.5rem] font-black font-serif text-[#2C3E50]/10 leading-none select-none pointer-events-none z-10">03</span>
           <a href="/tubage" class="group flex flex-col bg-[#FFFFFF] rounded-2xl border border-[#E2E8F0] shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <div class="relative bg-[#2C3E50] px-7 pt-7 pb-5">
               <p class="text-[10px] font-bold uppercase tracking-widest text-white/60 mb-3">Réhabilitation</p>
@@ -147,12 +147,12 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
               <p class="text-[11px] text-white/50 font-light">Étude gratuite</p>
             </div>
             <div class="p-7 flex flex-col flex-1">
-              <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Tubage, Pose de Conduit & Accessoires</h3>
-              <p class="text-sm text-[#1A1A1A]/85 font-light leading-relaxed">Mise aux normes DTU 24.1, installation neuve et équipements toiture — pour sécuriser et pérenniser votre installation.</p>
+              <h3 class="text-lg font-bold text-[#2C3E50] mb-2">Tubage, Pose de Conduit & Accessoires</h3>
+              <p class="text-sm text-[#4B4B4B] font-light leading-relaxed">Mise aux normes DTU 24.1, installation neuve et équipements toiture — pour sécuriser et pérenniser votre installation.</p>
               <div class="mt-5 pt-5 border-t border-[#E2E8F0] space-y-2.5">
                 {[['Tubage rigide & flexible', 'sur devis'], ['Pose conduit métallique', 'sur devis'], ['Chapeaux anti-refoulement', 'sur devis'], ['Étude technique gratuite', '✓']].map(([l, p]) => (
                   <div class="flex items-center justify-between">
-                    <span class="text-xs text-[#1A1A1A]/80 font-light">{l}</span>
+                    <span class="text-xs text-[#4B4B4B] font-light">{l}</span>
                     <span class={`text-xs font-semibold ${p === '✓' ? 'text-[#F39C12]' : 'text-[#1A1A1A]'}`}>{p}</span>
                   </div>
                 ))}
@@ -192,7 +192,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
           Un seul artisan.<br />Un travail fait bien.
         </h2>
         <div class="w-10 h-0.5 bg-[#F39C12]/30 mb-6"></div>
-        <p class="text-base text-[#1A1A1A]/85 font-light leading-relaxed mb-8">
+        <p class="text-base text-[#4B4B4B] font-light leading-relaxed mb-8">
           Basé à Martigues, j'interviens seul chez vous — avec soin, ponctualité et respect de votre foyer.
         </p>
         <div class="space-y-3">
@@ -208,7 +208,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
                 <span class="text-3xl font-black text-[#2C3E50]/30 leading-none shrink-0 w-8 text-right">{String(i + 1)}</span>
                 <div>
                   <p class="text-sm font-bold text-[#1A1A1A]">{t}</p>
-                  <p class="text-xs text-[#1A1A1A]/80 font-light mt-1 leading-relaxed">{d}</p>
+                  <p class="text-xs text-[#4B4B4B] font-light mt-1 leading-relaxed">{d}</p>
                 </div>
               </div>
             </div>
@@ -228,7 +228,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F39C12] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#F39C12] mr-2 mb-0.5"></span>Ils nous font confiance</p>
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2C3E50]">Témoignages Clients.</h2>
         <div class="w-10 h-0.5 bg-[#F39C12]/30 mt-4 mb-4"></div>
-        <p class="text-base text-[#1A1A1A]/80 font-light">Ils nous ont fait confiance sur Martigues et la Côte Bleue.</p>
+        <p class="text-base text-[#4B4B4B] font-light">Ils nous ont fait confiance sur Martigues et la Côte Bleue.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
@@ -251,7 +251,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             </div>
 
             <!-- Citation -->
-            <blockquote class="text-base text-[#1A1A1A]/85 font-light leading-relaxed italic flex-1 mb-8">
+            <blockquote class="text-base text-[#4B4B4B] font-light leading-relaxed italic flex-1 mb-8">
               {q}
             </blockquote>
 
@@ -285,7 +285,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
           Martigues, Côte Bleue<br />& Étang de Berre.
         </h2>
         <div class="w-10 h-0.5 bg-[#F39C12]/30 mb-6"></div>
-        <p class="text-sm text-[#1A1A1A]/85 font-light leading-relaxed mb-8">
+        <p class="text-sm text-[#4B4B4B] font-light leading-relaxed mb-8">
           Basé à Martigues, j'interviens dans un rayon de 50 km — Côte Bleue, Étang de Berre, Pays d'Aix. Certificat conforme RSD 13 remis à l'issue de chaque visite.
         </p>
 
@@ -327,7 +327,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         </div>
 
         <div class="px-8 py-7">
-          <p class="text-xs text-[#1A1A1A]/80 font-light mb-7 leading-relaxed">Lundi au samedi, 8h–19h. Intervention disponible sous 48h sur Martigues et la Côte Bleue.</p>
+          <p class="text-xs text-[#4B4B4B] font-light mb-7 leading-relaxed">Lundi au samedi, 8h–19h. Intervention disponible sous 48h sur Martigues et la Côte Bleue.</p>
           <a
             href="mailto:contact@sud-ramonage.fr?subject=Demande%20de%20devis%20ramonage"
             class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#F39C12] hover:gap-2.5 transition-all duration-200"
