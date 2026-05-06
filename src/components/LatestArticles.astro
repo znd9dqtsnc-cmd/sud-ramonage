@@ -64,12 +64,12 @@ const allArticles = collectionArticles.length >= count
   : [...collectionArticles, ...staticArticles].slice(0, count);
 
 const categoryStyles: Record<string, string> = {
-  'Réglementation': 'bg-[#EBF5FB] text-[#2C3E50]',
-  'Technique':      'bg-[#FEF9E7] text-[#7D6608]',
-  'Diagnostic':     'bg-[#FEF5E7] text-[#9A5E1A]',
-  'Sécurité':       'bg-[#FDEDEC] text-[#922B21]',
-  'Actualité':      'bg-[#EAF2FF] text-[#1A5276]',
-  'Conseil':        'bg-[#F4F6F7] text-[#2C3E50]',
+  'Réglementation': 'bg-[#EBF2FA] text-[#2C3E50]',
+  'Technique':      'bg-[#EBF2FA] text-[#2C3E50]',
+  'Diagnostic':     'bg-[#EBF2FA] text-[#2C3E50]',
+  'Sécurité':       'bg-[#2C3E50] text-white',
+  'Actualité':      'bg-[#EBF2FA] text-[#2C3E50]',
+  'Conseil':        'bg-[#EBF2FA] text-[#2C3E50]',
 };
 
 
@@ -97,7 +97,7 @@ const categoryStyles: Record<string, string> = {
       {allArticles.map(article => (
         <a
           href={article.href}
-          class="group bg-[#FFFFFF] border border-[#EEEEEE] rounded-xl p-6 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
+          class="group bg-[#FFFFFF] border border-[#E2E8F0] rounded-xl p-6 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
         >
           <div class="flex items-center gap-2 mb-4">
             <span
@@ -118,7 +118,7 @@ const categoryStyles: Record<string, string> = {
 
           <div class="flex flex-wrap gap-1.5 mb-4">
             {article.tags.map(tag => (
-              <span class="text-[10px] font-medium border border-[#E0E0E0] text-[#666666] px-2 py-0.5 rounded">
+              <span class="text-[10px] font-medium border border-[#E2E8F0] text-[#2C3E50]/60 px-2 py-0.5 rounded">
                 {tag}
               </span>
             ))}
