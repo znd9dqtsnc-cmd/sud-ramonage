@@ -43,7 +43,7 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
         <span>/</span>
         <span class="text-[#1A1A1A]/50">Réalisations</span>
       </nav>
-      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#B5694A] mb-4">Journal d'Interventions</p>
+      <p class="text-[11px] font-semibold tracking-widest uppercase text-[#9E8A7E] mb-4">Journal d'Interventions</p>
       <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#1A1A1A] leading-tight mb-5">
         Rapports Techniques d'Interventions.
       </h1>
@@ -58,7 +58,7 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
           { val: realisations.filter(r => r.certificat).length.toString(), label: 'Certificats remis' },
         ].map(({ val, label }) => (
           <div>
-            <p class="text-2xl font-extrabold text-[#B5694A]">{val}</p>
+            <p class="text-2xl font-extrabold text-[#9E8A7E]">{val}</p>
             <p class="text-xs text-[#1A1A1A]/40 mt-0.5">{label}</p>
           </div>
         ))}
@@ -77,8 +77,8 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold border transition-colors duration-150"
             class:list={[
               value === 'all'
-                ? 'bg-[#B5694A] text-white border-[#B5694A]'
-                : 'bg-white text-[#1A1A1A]/55 border-[#EEEEEE] hover:border-[#B5694A]/40 hover:text-[#B5694A]',
+                ? 'bg-[#E8DDD4] text-white border-[#E8DDD4]'
+                : 'bg-white text-[#1A1A1A]/55 border-[#EEEEEE] hover:border-[#E8DDD4]/40 hover:text-[#9E8A7E]',
             ]}
           >
             {label}
@@ -98,7 +98,7 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
           return (
             <a
               href={`/realisations/${r.slug}`}
-              class="group bg-white border border-[#EEEEEE] rounded-2xl overflow-hidden hover:border-[#B5694A]/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col"
+              class="group bg-white border border-[#EEEEEE] rounded-2xl overflow-hidden hover:border-[#E8DDD4]/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col"
             >
               <!-- Stripe couleur type -->
               <div class={`h-1 w-full ${cfg.bg.replace('bg-', 'bg-')} border-b ${cfg.border}`} style={`background-color: ${r.type === 'ramonage' ? '#FFF3E0' : ''}`}>
@@ -115,7 +115,7 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
                 </div>
 
                 <!-- Titre -->
-                <h2 class="text-sm font-bold text-[#1A1A1A] leading-snug mb-3 group-hover:text-[#B5694A] transition-colors duration-200">
+                <h2 class="text-sm font-bold text-[#1A1A1A] leading-snug mb-3 group-hover:text-[#9E8A7E] transition-colors duration-200">
                   {r.titre}
                 </h2>
 
@@ -127,7 +127,7 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
                 <!-- Meta -->
                 <div class="flex items-center justify-between pt-4 border-t border-[#EEEEEE]">
                   <div class="flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5 text-[#B5694A] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-3.5 h-3.5 text-[#9E8A7E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     <span class="text-[11px] font-medium text-[#1A1A1A]/55">{r.nomVille}</span>
@@ -139,7 +139,7 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
                 </div>
 
                 <!-- CTA -->
-                <div class="flex items-center gap-1.5 mt-4 text-[11px] font-semibold text-[#B5694A] group-hover:gap-2.5 transition-all duration-200">
+                <div class="flex items-center gap-1.5 mt-4 text-[11px] font-semibold text-[#9E8A7E] group-hover:gap-2.5 transition-all duration-200">
                   Voir le rapport
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -166,9 +166,9 @@ const types: { value: TypeIntervention | 'all'; label: string }[] = [
         ].map(({ href, label }) => (
           <a
             href={href}
-            class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#B5694A]/30 hover:text-[#B5694A] transition-all duration-200"
+            class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E8DDD4]/30 hover:text-[#9E8A7E] transition-all duration-200"
           >
-            <span class="w-1.5 h-1.5 rounded-full bg-[#B5694A]/40 shrink-0"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E8DDD4]/40 shrink-0"></span>
             {label}
           </a>
         ))}

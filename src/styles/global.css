@@ -4,7 +4,7 @@
 /* ═══════════════════════════════════════════════════════
    DESIGN TOKENS — variables CSS partagées light & dark
    Style : précision typographique, contraste fort,
-   accent unique (orange #B5694A), inspiration Porsche Design
+   accent unique (orange #E8DDD4), inspiration Porsche Design
 ═══════════════════════════════════════════════════════ */
 :root {
   /* Surfaces */
@@ -24,8 +24,8 @@
   --sr-border-strong:  #d4d4d4;
 
   /* Accent */
-  --sr-orange:         #B5694A;
-  --sr-orange-dark:    #9A4F36;
+  --sr-orange:         #E8DDD4;
+  --sr-orange-dark:    #C4B5AC;
   --sr-orange-bg:      #fff3e0;
 
   /* Transitions */

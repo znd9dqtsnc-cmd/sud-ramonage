@@ -66,7 +66,7 @@ const speakableSchema = {
         <span class="text-white/60">Ramonage Certifié</span>
       </nav>
       <div class="flex items-center gap-3 mb-5">
-        <span class="bg-[#B5694A] text-white text-sm font-extrabold px-4 py-2 rounded-xl">à partir de 75 €</span>
+        <span class="bg-[#E8DDD4] text-white text-sm font-extrabold px-4 py-2 rounded-xl">à partir de 75 €</span>
         <span class="text-white/50 text-xs">certificat RSD 13 inclus</span>
       </div>
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
@@ -84,8 +84,8 @@ const speakableSchema = {
     <div class="max-w-6xl mx-auto">
 
       <!-- TL;DR — Résumé pour IA et lecteurs pressés -->
-      <div class="border-l-4 border-[#B5694A] bg-[#FFF3E0] rounded-r-xl p-6 mb-14" role="note" aria-label="Résumé de la page">
-        <p class="text-[10px] font-bold tracking-widest uppercase text-[#B5694A] mb-3">TL;DR — L'essentiel en 30 secondes</p>
+      <div class="border-l-4 border-[#E8DDD4] bg-[#FFF3E0] rounded-r-xl p-6 mb-14" role="note" aria-label="Résumé de la page">
+        <p class="text-[10px] font-bold tracking-widest uppercase text-[#9E8A7E] mb-3">TL;DR — L'essentiel en 30 secondes</p>
         <ul class="space-y-2">
           {[
             'Ramonage mécanique obligatoire 1×/an (RSD 13) — hérisson rotatif + aspiration suies + test vacuité + certificat NF DTU 24.1.',
@@ -95,7 +95,7 @@ const speakableSchema = {
             'Certificat RSD 13 conforme NF DTU 24.1 remis immédiatement — valable pour votre assureur.',
           ].map(point => (
             <li class="flex items-start gap-2.5 text-sm text-[#1A1A1A]/75 font-light">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#B5694A] mt-1.5 shrink-0"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#E8DDD4] mt-1.5 shrink-0"></span>
               {point}
             </li>
           ))}
@@ -147,7 +147,7 @@ const speakableSchema = {
                 { n: '05', t: 'Remise du certificat', d: 'Document officiel remis sur place, immédiatement après intervention.' },
               ].map(({ n, t, d }) => (
                 <li class="flex gap-4">
-                  <span class="text-[11px] font-bold text-[#B5694A] mt-0.5 shrink-0">{n}</span>
+                  <span class="text-[11px] font-bold text-[#9E8A7E] mt-0.5 shrink-0">{n}</span>
                   <div>
                     <p class="text-sm font-semibold text-[#1A1A1A]">{t}</p>
                     <p class="text-sm text-[#1A1A1A]/50 font-light">{d}</p>
@@ -169,8 +169,8 @@ const speakableSchema = {
               'Certificat officiel de ramonage (RSD 13)',
               'Conseils personnalisés sur l\'entretien',
             ].map((item) => (
-              <div class="flex items-center gap-3 py-2.5 border-b border-[#B5694A]/10 last:border-0">
-                <svg class="w-4 h-4 text-[#B5694A] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="flex items-center gap-3 py-2.5 border-b border-[#E8DDD4]/10 last:border-0">
+                <svg class="w-4 h-4 text-[#9E8A7E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span class="text-sm text-[#1A1A1A]/70 font-light">{item}</span>
@@ -213,7 +213,7 @@ const speakableSchema = {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
         <div>
-          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#B5694A] mb-4">Tarifs</p>
+          <p class="text-[11px] font-semibold tracking-widest uppercase text-[#9E8A7E] mb-4">Tarifs</p>
           <h2 class="text-2xl font-extrabold tracking-tight text-[#1A1A1A] mb-6">Ce que coûte un ramonage.</h2>
           <div class="bg-white border border-[#EEEEEE] rounded-xl overflow-hidden">
             {[
@@ -245,7 +245,7 @@ const speakableSchema = {
             'Conseils personnalisés sur votre installation',
           ].map(item => (
             <div class="flex items-center gap-3 py-2.5 border-b border-[#EEEEEE] last:border-0">
-              <svg class="w-4 h-4 text-[#B5694A] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#9E8A7E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
               <span class="text-sm text-[#1A1A1A]/60 font-light">{item}</span>
@@ -302,8 +302,8 @@ const speakableSchema = {
           { href: '/villes/chateauneuf-les-martigues',label: 'Ramonage Châteauneuf' },
           { href: '/villes/gignac-la-nerthe',         label: 'Ramonage Gignac-la-Nerthe' },
         ].map(({ href, label }) => (
-          <a href={href} class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#B5694A]/30 hover:text-[#B5694A] transition-all duration-200">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#B5694A] shrink-0"></span>
+          <a href={href} class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E8DDD4]/30 hover:text-[#9E8A7E] transition-all duration-200">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E8DDD4] shrink-0"></span>
             {label}
           </a>
         ))}

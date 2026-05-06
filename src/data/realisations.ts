@@ -24,7 +24,7 @@ export interface Realisation {
 }
 
 export const typeConfig: Record<TypeIntervention, { label: string; color: string; bg: string; border: string }> = {
-  'ramonage':       { label: 'Ramonage',         color: 'text-[#B5694A]', bg: 'bg-[#FFF3E0]', border: 'border-[#B5694A]' },
+  'ramonage':       { label: 'Ramonage',         color: 'text-[#E8DDD4]', bg: 'bg-[#FFF3E0]', border: 'border-[#E8DDD4]' },
   'debistrage':     { label: 'Débistrage',        color: 'text-amber-700', bg: 'bg-amber-50',  border: 'border-amber-500' },
   'entretien-poele':{ label: 'Entretien Poêle',   color: 'text-emerald-700', bg: 'bg-emerald-50', border: 'border-emerald-500' },
   'securite':       { label: 'Mise en Sécurité',  color: 'text-red-700',   bg: 'bg-red-50',    border: 'border-red-500' },
