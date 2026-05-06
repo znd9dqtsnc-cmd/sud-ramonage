@@ -200,9 +200,9 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             { t: 'Artisan local, sous 48h',     d: 'Basé à Martigues, je connais votre secteur et interviens rapidement.' },
           ].map(({ t, d }, i) => (
             <div class="relative bg-white border border-[#EEEEEE] rounded-xl px-6 py-5 overflow-hidden">
-              <div class="absolute top-0 left-0 w-[3px] h-full bg-[#B45309]/60 rounded-l-xl"></div>
+              <div class="absolute top-0 left-0 w-[3px] h-full bg-[#FEF3C7] rounded-l-xl"></div>
               <div class="flex items-center gap-4">
-                <span class="text-3xl font-black text-[#B45309]/40 leading-none shrink-0 w-8 text-right">{String(i + 1)}</span>
+                <span class="text-3xl font-black text-[#B45309] leading-none shrink-0 w-8 text-right">{String(i + 1)}</span>
                 <div>
                   <p class="text-sm font-bold text-[#1A1A1A]">{t}</p>
                   <p class="text-xs text-[#1A1A1A]/40 font-light mt-1 leading-relaxed">{d}</p>
