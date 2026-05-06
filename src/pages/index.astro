@@ -88,9 +88,9 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
         <!-- Ramonage & Entretien — ocre jaune -->
         <a href="/ramonage" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div class="relative bg-[#FEF3C7] px-7 pt-7 pb-5 overflow-hidden">
-            <span class="absolute right-4 top-2 text-[5rem] font-black text-[#B45309]/8 leading-none select-none">01</span>
-            <p class="text-[10px] font-bold uppercase tracking-widest text-[#B45309]/60 mb-3 relative z-10">Ramonage & Entretien</p>
+          <div class="relative bg-[#FDE68A] px-7 pt-7 pb-5 overflow-hidden">
+            <span class="absolute right-4 top-2 text-[5rem] font-black text-[#B45309]/15 leading-none select-none">01</span>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#B45309]/70 mb-3 relative z-10">Ramonage & Entretien</p>
             <p class="text-3xl font-extrabold text-[#B45309] relative z-10">75 <span class="text-lg font-semibold">€</span></p>
             <p class="text-[11px] text-[#1A1A1A]/40 font-light relative z-10">Tarif foyer ouvert</p>
           </div>
@@ -113,9 +113,9 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
         <!-- Inspection & Diagnostic — vert -->
         <a href="/inspection-camera" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div class="relative bg-[#ECFDF5] px-7 pt-7 pb-5 overflow-hidden">
-            <span class="absolute right-4 top-2 text-[5rem] font-black text-[#065F46]/8 leading-none select-none">02</span>
-            <p class="text-[10px] font-bold uppercase tracking-widest text-[#065F46]/60 mb-3 relative z-10">Inspection & Diagnostic</p>
+          <div class="relative bg-[#A7F3D0] px-7 pt-7 pb-5 overflow-hidden">
+            <span class="absolute right-4 top-2 text-[5rem] font-black text-[#065F46]/15 leading-none select-none">02</span>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#065F46]/70 mb-3 relative z-10">Inspection & Diagnostic</p>
             <p class="text-3xl font-extrabold text-[#065F46] relative z-10">60 <span class="text-lg font-semibold">€</span></p>
             <p class="text-[11px] text-[#1A1A1A]/40 font-light relative z-10">Diagnostic conduit</p>
           </div>
@@ -138,10 +138,10 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
         <!-- Réhabilitation — bleu -->
         <a href="/tubage" class="group flex flex-col bg-white rounded-2xl border border-[#EEEEEE] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div class="relative bg-[#EEF3FF] px-7 pt-7 pb-5 overflow-hidden">
-            <span class="absolute right-4 top-2 text-[5rem] font-black text-[#1A4B8F]/8 leading-none select-none">03</span>
-            <p class="text-[10px] font-bold uppercase tracking-widest text-[#1A4B8F]/60 mb-3 relative z-10">Réhabilitation</p>
-            <p class="text-3xl font-extrabold text-[#1A4B8F] relative z-10">Sur devis</p>
+          <div class="relative bg-[#BFDBFE] px-7 pt-7 pb-5 overflow-hidden">
+            <span class="absolute right-4 top-2 text-[5rem] font-black text-[#1E40AF]/15 leading-none select-none">03</span>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#1E40AF]/70 mb-3 relative z-10">Réhabilitation</p>
+            <p class="text-3xl font-extrabold text-[#1E40AF] relative z-10">Sur devis</p>
             <p class="text-[11px] text-[#1A1A1A]/40 font-light relative z-10">Étude gratuite</p>
           </div>
           <div class="p-7 flex flex-col flex-1">
@@ -200,9 +200,9 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             { t: 'Artisan local, sous 48h',     d: 'Basé à Martigues, je connais votre secteur et interviens rapidement.' },
           ].map(({ t, d }, i) => (
             <div class="relative bg-white border border-[#EEEEEE] rounded-xl px-6 py-5 overflow-hidden">
-              <div class="absolute top-0 left-0 w-[3px] h-full bg-[#FEF3C7] rounded-l-xl"></div>
+              <div class="absolute top-0 left-0 w-[3px] h-full bg-[#FDE68A] rounded-l-xl"></div>
               <div class="flex items-center gap-4">
-                <span class="text-3xl font-black text-[#F8E6BA] leading-none shrink-0 w-8 text-right">{String(i + 1)}</span>
+                <span class="text-3xl font-black text-[#FCD34D] leading-none shrink-0 w-8 text-right">{String(i + 1)}</span>
                 <div>
                   <p class="text-sm font-bold text-[#1A1A1A]">{t}</p>
                   <p class="text-xs text-[#1A1A1A]/40 font-light mt-1 leading-relaxed">{d}</p>
@@ -316,10 +316,10 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
       <!-- Devis gratuit -->
       <div class="relative overflow-hidden rounded-2xl bg-white border border-[#EEEEEE] shadow-sm">
         <!-- Header coloré -->
-        <div class="relative bg-[#EEF3FF] px-8 pt-8 pb-6 overflow-hidden">
-          <span class="absolute right-4 top-0 text-[7rem] font-black text-[#1A4B8F]/6 leading-none select-none">24h</span>
-          <p class="text-[10px] font-bold uppercase tracking-widest text-[#1A4B8F]/60 mb-3 relative z-10">Prendre rendez-vous</p>
-          <p class="text-3xl font-extrabold tracking-tight text-[#1A4B8F] leading-tight relative z-10">Devis Gratuit.</p>
+        <div class="relative bg-[#BFDBFE] px-8 pt-8 pb-6 overflow-hidden">
+          <span class="absolute right-4 top-0 text-[7rem] font-black text-[#1E40AF]/10 leading-none select-none">24h</span>
+          <p class="text-[10px] font-bold uppercase tracking-widest text-[#1E40AF]/70 mb-3 relative z-10">Prendre rendez-vous</p>
+          <p class="text-3xl font-extrabold tracking-tight text-[#1E40AF] leading-tight relative z-10">Devis Gratuit.</p>
           <p class="text-sm text-[#1A1A1A]/40 font-light mt-1 relative z-10">Réponse assurée sous 24h</p>
         </div>
 
