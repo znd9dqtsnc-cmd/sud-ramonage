@@ -4,7 +4,7 @@ import FAQ from '../components/FAQ.astro';
 import LatestArticles from '../components/LatestArticles.astro';
 import { Image, getImage } from 'astro:assets';
 
-import heroImg     from '../assets/images/ramonage-toiture.jpg';
+import heroImg     from '../assets/images/hero-poele.jpg';
 import artisanImg  from '../assets/images/artisan-toiture.jpg';
 import bistrageImg from '../assets/images/service-bistrage.jpg';
 import controleImg from '../assets/images/service-controle.jpg';
@@ -27,7 +27,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
     <div class="absolute inset-0">
       <Image
         src={heroImg}
-        alt="Artisans ramoneurs en intervention sur un toit — Sud Ramonage Martigues"
+        alt="Poêle à bois design avec bûches — Sud Ramonage Martigues"
         width={1920}
         height={1080}
         class="w-full h-full object-cover"
@@ -38,17 +38,20 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
     </div>
 
     <div class="relative z-10 px-6 max-w-3xl mx-auto">
-      <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-white/40 mb-6">Martigues · Bouches-du-Rhône</p>
+      <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-white/75 mb-6">Martigues · Bouches-du-Rhône</p>
       <h1 class="text-[clamp(3rem,8vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05] mb-6 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
-        L'expertise du conduit.<br />La sécurité de votre foyer.
+        Ramonage et Diagnostic.
       </h1>
-      <p class="text-base md:text-lg text-white/60 font-light max-w-xl mx-auto mb-10">
-        Artisan certifié COSTIC — certificat RSD 13 remis à l'issue de chaque intervention.
+      <p class="text-sm md:text-base text-white/80 font-semibold max-w-xl mx-auto mb-2">
+        Artisan certifié COSTIC · Martigues & Côte Bleue
+      </p>
+      <p class="text-sm md:text-base text-white/65 font-light max-w-xl mx-auto mb-10">
+        Certificat de ramonage réglementaire pour votre assurance habitation.
       </p>
       <div class="flex items-center justify-center">
         <a
           href="#services"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-[#2C3E50] text-white text-sm font-bold px-8 py-4 rounded-xl hover:bg-[#2C3E50]/20 transition-colors duration-200"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2C3E50] hover:bg-[#1A2A3A] text-white text-sm font-bold px-8 py-4 rounded-xl transition-colors duration-200"
         >
           Découvrir nos services
         </a>
@@ -69,7 +72,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
     <div class="max-w-6xl mx-auto">
 
       <div class="mb-16">
-        <p class="text-[11px] font-bold tracking-widest uppercase text-[#2C3E50] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#2C3E50] mr-2 mb-0.5"></span>Certifié COSTIC · RSD 13</p>
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F39C12] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#F39C12] mr-2 mb-0.5"></span>Certifié COSTIC · RSD 13</p>
         <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#2C3E50]">Prestations & Tarifs.</h2>
         <div class="w-10 h-0.5 bg-[#F39C12]/30 mt-4 mb-0"></div>
         <p class="text-base text-[#4B4B4B] font-light mt-4">
@@ -177,7 +180,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
       </div>
 
       <div class="order-1 lg:order-2">
-        <p class="text-[11px] font-bold tracking-widest uppercase text-[#2C3E50] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#2C3E50] mr-2 mb-0.5"></span>Notre engagement</p>
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F39C12] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#F39C12] mr-2 mb-0.5"></span>Notre engagement</p>
         <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#2C3E50] leading-tight mb-4">
           Un seul artisan.<br />Un travail fait bien.
         </h2>
@@ -193,7 +196,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             { t: 'Artisan local, sous 48h',     d: 'Basé à Martigues, je connais votre secteur et interviens rapidement.' },
           ].map(({ t, d }, i) => (
             <div class="relative bg-[#FFFFFF] border border-[#E2E8F0] rounded-xl px-6 py-5 overflow-hidden">
-              <div class="absolute top-0 left-0 w-[3px] h-full bg-[#2C3E50] rounded-l-xl"></div>
+              <div class="absolute top-0 left-0 w-[3px] h-full bg-[#F39C12] rounded-l-xl"></div>
               <div class="flex items-center gap-4">
                 <span class="text-3xl font-black text-[#2C3E50]/30 leading-none shrink-0 w-8 text-right">{String(i + 1)}</span>
                 <div>
@@ -215,7 +218,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   <section class="py-10 md:py-24 px-6 md:px-10 bg-[#FFFFFF] border-t border-[#E2E8F0]">
     <div class="max-w-6xl mx-auto">
       <div class="mb-16">
-        <p class="text-[11px] font-bold tracking-widest uppercase text-[#2C3E50] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#2C3E50] mr-2 mb-0.5"></span>Ils nous font confiance</p>
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F39C12] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#F39C12] mr-2 mb-0.5"></span>Ils nous font confiance</p>
         <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#2C3E50]">Témoignages Clients.</h2>
         <div class="w-10 h-0.5 bg-[#F39C12]/30 mt-4 mb-4"></div>
         <p class="text-base text-[#4B4B4B] font-light">Ils nous ont fait confiance sur Martigues et la Côte Bleue.</p>
@@ -270,7 +273,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
 
       <!-- Zone gauche -->
       <div>
-        <p class="text-[11px] font-bold tracking-widest uppercase text-[#2C3E50] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#2C3E50] mr-2 mb-0.5"></span>Zone d'intervention</p>
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-[#F39C12] mb-5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#F39C12] mr-2 mb-0.5"></span>Zone d'intervention</p>
         <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#2C3E50] leading-tight mb-4">
           Martigues, Côte Bleue<br />& Étang de Berre.
         </h2>
