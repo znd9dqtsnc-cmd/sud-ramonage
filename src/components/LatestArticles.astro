@@ -72,14 +72,6 @@ const categoryStyles: Record<string, string> = {
   'Conseil':        'bg-[#FDF6F0] text-[#E65100]',
 };
 
-const categoryBorder: Record<string, string> = {
-  'Réglementation': 'border-l-[3px] border-l-[#1A4B8F]/40',
-  'Technique':      'border-l-[3px] border-l-[#B45309]/40',
-  'Diagnostic':     'border-l-[3px] border-l-[#C2410C]/40',
-  'Sécurité':       'border-l-[3px] border-l-[#B91C1C]/40',
-  'Actualité':      'border-l-[3px] border-l-[#065F46]/40',
-  'Conseil':        'border-l-[3px] border-l-[#E65100]/40',
-};
 
 ---
 
@@ -103,7 +95,7 @@ const categoryBorder: Record<string, string> = {
       {allArticles.map(article => (
         <a
           href={article.href}
-          class={`group bg-white border border-[#EEEEEE] rounded-xl p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col ${categoryBorder[article.category] ?? 'border-l-[3px] border-l-[#E65100]/30'}`}
+          class="group bg-white border border-[#EEEEEE] rounded-xl p-6 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
         >
           <div class="flex items-center gap-2 mb-4">
             <span
