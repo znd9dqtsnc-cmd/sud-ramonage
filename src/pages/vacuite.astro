@@ -21,7 +21,7 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Test de Vacuité', 
   breadcrumbs={breadcrumbs}
   pageSchema={serviceSchema}
 >
-  <section class="bg-white border-b border-[#EEEEEE] pt-28 pb-12">
+  <section class="bg-[#F9F6F3] border-b border-[#EEEEEE] pt-28 pb-12">
     <div class="max-w-4xl mx-auto px-6 md:px-10">
       <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-[#1A1A1A]/70 mb-6">
         <a href="/" class="hover:text-[#1A1A1A]/60">Accueil</a><span>/</span><span class="text-[#1A1A1A]/70">Test de Vacuité</span>
@@ -64,7 +64,7 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Test de Vacuité', 
         </p>
       </div>
 
-      <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-2xl p-8">
+      <div class="bg-[#F2EDE8] border border-[#EEEEEE] rounded-2xl p-8">
         <h2 class="text-lg font-bold text-[#1A1A1A] mb-5">Obstructions les plus fréquentes</h2>
         <div class="grid md:grid-cols-2 gap-4">
           {[
@@ -73,7 +73,7 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Test de Vacuité', 
             { titre: 'Bistre et calcin consolidés', detail: 'Accumulation extrême qui réduit la section fonctionnelle. Requiert un débistrage avant toute utilisation.', risque: 'moyen' },
             { titre: 'Corps étrangers divers', detail: 'Outils oubliés lors de travaux, tuile tombée, briques... Surtout dans les vieilles maisons de village du Pays d\'Aix.', risque: 'variable' },
           ].map(({ titre, detail, risque }) => (
-            <div class="p-4 bg-white rounded-xl border border-[#EEEEEE]">
+            <div class="p-4 bg-[#F9F6F3] rounded-xl border border-[#EEEEEE]">
               <div class="flex items-center gap-2 mb-2">
                 <p class="text-sm font-semibold text-[#1A1A1A]">{titre}</p>
                 <span class={`text-[10px] px-1.5 py-0.5 rounded font-mono ${risque === 'élevé' ? 'bg-red-100 text-red-600' : risque === 'moyen' ? 'bg-amber-100 text-amber-600' : 'bg-[#F5F5F5] text-[#1A1A1A]/65'}`}>{risque}</span>

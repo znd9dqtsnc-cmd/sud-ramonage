@@ -30,7 +30,7 @@ const breadcrumbs = [
 >
 
   <!-- HERO -->
-  <section class="bg-white border-b border-[#EEEEEE] pt-28 pb-12">
+  <section class="bg-[#F9F6F3] border-b border-[#EEEEEE] pt-28 pb-12">
     <div class="max-w-4xl mx-auto px-6 md:px-10">
       <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-[#1A1A1A]/70 mb-6">
         <a href="/" class="hover:text-[#1A1A1A]/60">Accueil</a><span>/</span><span class="text-[#1A1A1A]/70">Audit de Conformité</span>
@@ -75,7 +75,7 @@ const breadcrumbs = [
 
         <div class="grid md:grid-cols-2 gap-6">
           <!-- Test 1 : Vacuité caméra -->
-          <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-2xl p-6">
+          <div class="bg-[#F2EDE8] border border-[#EEEEEE] rounded-2xl p-6">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-10 h-10 rounded-xl bg-[#FFF3E0] flex items-center justify-center shrink-0">
                 <svg class="w-5 h-5 text-[#C4B5AC]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
@@ -97,7 +97,7 @@ const breadcrumbs = [
           </div>
 
           <!-- Test 2 : Étanchéité fumigène -->
-          <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-2xl p-6">
+          <div class="bg-[#F2EDE8] border border-[#EEEEEE] rounded-2xl p-6">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-10 h-10 rounded-xl bg-[#FFF3E0] flex items-center justify-center shrink-0">
                 <svg class="w-5 h-5 text-[#C4B5AC]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
@@ -121,7 +121,7 @@ const breadcrumbs = [
       </div>
 
       <!-- Le rapport -->
-      <div class="bg-white border border-[#EEEEEE] rounded-2xl p-8">
+      <div class="bg-[#F9F6F3] border border-[#EEEEEE] rounded-2xl p-8">
         <div class="flex items-start gap-4 mb-6">
           <div class="w-12 h-12 rounded-xl bg-green-50 border border-green-200 flex items-center justify-center shrink-0">
             <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -140,7 +140,7 @@ const breadcrumbs = [
             { label: 'Signature de l\'artisan', detail: 'Certifié COSTIC, Qualibat 6521' },
             { label: 'Valeur probante', detail: 'Accepté par les assurances, notaires, agences' },
           ].map(({ label, detail }) => (
-            <div class="flex items-start gap-3 p-3 bg-[#FAFAFA] rounded-xl">
+            <div class="flex items-start gap-3 p-3 bg-[#F2EDE8] rounded-xl">
               <svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
               <div>
                 <p class="text-xs font-semibold text-[#1A1A1A]">{label}</p>
@@ -172,7 +172,7 @@ const breadcrumbs = [
               desc: 'Odeur de fumée, retour de gaz, conduit ancien ou jamais inspecté — l\'audit donne une réponse certifiée sur l\'état réel de l\'installation.',
             },
           ].map(({ icon, title, desc }) => (
-            <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-xl p-5">
+            <div class="bg-[#F2EDE8] border border-[#EEEEEE] rounded-xl p-5">
               <div class="w-9 h-9 rounded-lg bg-[#FFF3E0] flex items-center justify-center mb-3">
                 <svg class="w-4.5 h-4.5 text-[#C4B5AC]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icon}/></svg>
               </div>
@@ -184,7 +184,7 @@ const breadcrumbs = [
       </div>
 
       <!-- Tarif -->
-      <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-2xl p-6 flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between">
+      <div class="bg-[#F2EDE8] border border-[#EEEEEE] rounded-2xl p-6 flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between">
         <div>
           <p class="text-[10px] font-bold uppercase tracking-widest text-[#1A1A1A]/70 mb-1">Tarif</p>
           <p class="text-3xl font-extrabold text-[#1A1A1A]">à partir de 180 €</p>

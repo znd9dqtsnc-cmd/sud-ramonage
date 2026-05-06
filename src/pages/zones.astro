@@ -64,7 +64,7 @@ const pageSchema = {
 >
 
   <!-- ═══ HERO ═══ -->
-  <section class="pt-32 pb-16 px-6 md:px-10 bg-white border-b border-[#EEEEEE]">
+  <section class="pt-32 pb-16 px-6 md:px-10 bg-[#F9F6F3] border-b border-[#EEEEEE]">
     <div class="max-w-6xl mx-auto">
       <nav class="flex items-center gap-2 text-xs text-[#1A1A1A]/70 mb-8" aria-label="Fil d'Ariane">
         <a href="/" class="hover:text-[#1A1A1A]/60 transition-colors duration-200">Accueil</a>
@@ -108,7 +108,7 @@ const pageSchema = {
             {villesZone.map(v => (
               <a
                 href={`/villes/${v.slug}`}
-                class="group bg-white border border-[#EEEEEE] rounded-xl px-4 py-3.5 hover:border-[#E8DDD4]/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-between"
+                class="group bg-[#F9F6F3] border border-[#EEEEEE] rounded-xl px-4 py-3.5 hover:border-[#E8DDD4]/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-between"
               >
                 <div>
                   <p class="text-sm font-semibold text-[#1A1A1A] group-hover:text-[#C4B5AC] transition-colors duration-200 leading-snug">{v.nom}</p>
@@ -126,7 +126,7 @@ const pageSchema = {
   </section>
 
   <!-- ═══ SECTION MARSEILLE SPÉCIALE ═══ -->
-  <section class="py-20 px-6 md:px-10 bg-[#FAFAFA]">
+  <section class="py-20 px-6 md:px-10 bg-[#F2EDE8]">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         <div class="lg:col-span-7 space-y-6">
@@ -151,7 +151,7 @@ const pageSchema = {
               { titre: 'Shunts collectifs', desc: 'Conduits partagés des années 60-70, clapets anti-retour à vérifier impérativement.' },
               { titre: 'Conduits modifiés', desc: 'Rénovations successives créant des configurations hybrides imprévisibles.' },
             ].map(({ titre, desc }) => (
-              <div class="bg-white border border-[#EEEEEE] rounded-xl p-5">
+              <div class="bg-[#F9F6F3] border border-[#EEEEEE] rounded-xl p-5">
                 <p class="text-xs font-bold text-[#C4B5AC] mb-2">{titre}</p>
                 <p class="text-xs text-[#1A1A1A]/70 font-light leading-relaxed">{desc}</p>
               </div>
@@ -159,7 +159,7 @@ const pageSchema = {
           </div>
         </div>
         <aside class="lg:col-span-5">
-          <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-2xl p-8 space-y-5">
+          <div class="bg-[#F2EDE8] border border-[#EEEEEE] rounded-2xl p-8 space-y-5">
             <p class="text-[11px] font-semibold tracking-widest uppercase text-[#C4B5AC]">Marseille — Protocole d'intervention</p>
             <h3 class="text-lg font-bold text-[#1A1A1A]">Chaque immeuble marseillais est unique.</h3>
             <div class="space-y-4">
@@ -222,7 +222,7 @@ const pageSchema = {
         <div class="space-y-3">
           <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/30 mb-4">Communes Pays d'Aix couvertes</p>
           {villes.filter(v => ['aix-en-provence','luynes','puyricard','les-milles','venelles','eguilles','bouc-bel-air','cabries','calas','gardanne','meyreuil','rousset','simiane-collongue','ventabren','saint-cannat','lambesc'].includes(v.slug)).map(v => (
-            <a href={`/villes/${v.slug}`} class="group flex items-center justify-between bg-white border border-[#EEEEEE] rounded-xl px-4 py-3 hover:border-[#E8DDD4]/30 hover:shadow-sm transition-all duration-200">
+            <a href={`/villes/${v.slug}`} class="group flex items-center justify-between bg-[#F9F6F3] border border-[#EEEEEE] rounded-xl px-4 py-3 hover:border-[#E8DDD4]/30 hover:shadow-sm transition-all duration-200">
               <div>
                 <p class="text-sm font-semibold text-[#1A1A1A] group-hover:text-[#C4B5AC] transition-colors duration-200">{v.nom}</p>
                 <p class="text-[10px] text-[#1A1A1A]/70 font-mono">{v.codePostal} · {v.tempsIntervention}</p>
@@ -249,7 +249,7 @@ const pageSchema = {
           { href: '/inspection-camera', label: 'Inspection Caméra — dès 120€' },
           { href: '/normes', label: 'Normes NF DTU 24.1' },
         ].map(({ href, label }) => (
-          <a href={href} class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E8DDD4]/30 hover:text-[#C4B5AC] transition-all duration-200">
+          <a href={href} class="inline-flex items-center gap-2 bg-[#F9F6F3] border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/65 hover:border-[#E8DDD4]/30 hover:text-[#C4B5AC] transition-all duration-200">
             <span class="w-1.5 h-1.5 rounded-full bg-[#E8DDD4]/40 shrink-0"></span>
             {label}
           </a>

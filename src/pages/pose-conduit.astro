@@ -27,7 +27,7 @@ const breadcrumbs = [
 >
 
   <!-- HERO -->
-  <section class="bg-white border-b border-[#EEEEEE] pt-28 pb-12">
+  <section class="bg-[#F9F6F3] border-b border-[#EEEEEE] pt-28 pb-12">
     <div class="max-w-4xl mx-auto px-6 md:px-10">
       <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-[#1A1A1A]/70 mb-6">
         <a href="/" class="hover:text-[#1A1A1A]/60">Accueil</a><span>/</span><span class="text-[#1A1A1A]/70">Pose de Conduit</span>
@@ -65,7 +65,7 @@ const breadcrumbs = [
             { titre: 'Parcours introuvable', desc: 'Dans certaines maisons anciennes, le tracé du conduit est inconnu ou inaccessible — il faut créer un nouveau passage.' },
             { titre: 'Absence de conduit', desc: 'Installation d\'un poêle ou d\'un insert dans une pièce sans conduit existant — création complète nécessaire.' },
           ].map(({ titre, desc }) => (
-            <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-xl p-5">
+            <div class="bg-[#F2EDE8] border border-[#EEEEEE] rounded-xl p-5">
               <div class="flex items-start gap-3">
                 <div class="w-2 h-2 rounded-full bg-[#E8DDD4] shrink-0 mt-1.5"></div>
                 <div>
@@ -81,7 +81,7 @@ const breadcrumbs = [
       <!-- Ce que comprend la pose -->
       <div>
         <h2 class="text-2xl font-bold mb-5">Ce que comprend la pose d'un conduit neuf</h2>
-        <div class="bg-white border border-[#EEEEEE] rounded-2xl p-6 space-y-4">
+        <div class="bg-[#F9F6F3] border border-[#EEEEEE] rounded-2xl p-6 space-y-4">
           {[
             { etape: '1', titre: 'Diagnostic préalable', detail: 'Inspection caméra et/ou sondage pour évaluer l\'état du conduit existant et déterminer le meilleur tracé pour le nouveau conduit.' },
             { etape: '2', titre: 'Choix de la solution', detail: 'Conduit inox modulaire (le plus fréquent), conduit double paroi isolé ou conduit maçonné selon la configuration du bâtiment et l\'appareil raccordé.' },
@@ -89,7 +89,7 @@ const breadcrumbs = [
             { etape: '4', titre: 'Test d\'étanchéité', detail: 'Test fumigène obligatoire après pose pour valider l\'étanchéité de l\'ensemble avant raccordement de l\'appareil.' },
             { etape: '5', titre: 'Rapport et certificat', detail: 'Remise d\'un rapport d\'intervention avec photos, références des matériaux posés et certificat de conformité NF DTU 24.1.' },
           ].map(({ etape, titre, detail }) => (
-            <div class="flex gap-4 p-4 bg-[#FAFAFA] rounded-xl">
+            <div class="flex gap-4 p-4 bg-[#F2EDE8] rounded-xl">
               <div class="w-7 h-7 rounded-full bg-[#E8DDD4] text-white text-xs font-bold flex items-center justify-center shrink-0">{etape}</div>
               <div>
                 <p class="text-sm font-bold text-[#1A1A1A] mb-1">{titre}</p>

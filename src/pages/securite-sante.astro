@@ -85,7 +85,7 @@ const breadcrumbs = [
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- Hero -->
-  <section class="bg-white border-b border-[#EEEEEE] pt-28 pb-12">
+  <section class="bg-[#F9F6F3] border-b border-[#EEEEEE] pt-28 pb-12">
     <div class="max-w-4xl mx-auto px-6 md:px-10">
       <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-[#1A1A1A]/70 mb-6">
         <a href="/" class="hover:text-[#1A1A1A]/60">Accueil</a><span>/</span><span class="text-[#1A1A1A]/70">Sécurité & Santé</span>
@@ -105,7 +105,7 @@ const breadcrumbs = [
   </section>
 
   <!-- Stats choc -->
-  <section class="bg-[#FAFAFA] border-b border-[#EEEEEE] py-10 px-6 md:px-10">
+  <section class="bg-[#F2EDE8] border-b border-[#EEEEEE] py-10 px-6 md:px-10">
     <div class="max-w-5xl mx-auto">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
@@ -114,7 +114,7 @@ const breadcrumbs = [
           { val: '≈ 80 %', unit: 'évitables', label: 'Des feux de conduit évitables par ramonage annuel', source: 'CNPP / SDIS 13' },
           { val: '40–65 %', unit: 'réduction', label: 'De PM2.5 après ramonage certifié COSTIC', source: 'ADEME' },
         ].map(({ val, unit, label, source }) => (
-          <div class="text-center p-5 rounded-2xl bg-white border border-[#EEEEEE]">
+          <div class="text-center p-5 rounded-2xl bg-[#F9F6F3] border border-[#EEEEEE]">
             <p class="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] mb-0.5">{val}</p>
             <p class="text-[10px] font-bold uppercase tracking-widest text-[#C4B5AC] mb-2">{unit}</p>
             <p class="text-[11px] text-[#1A1A1A]/70 leading-tight mb-2">{label}</p>
@@ -140,7 +140,7 @@ const breadcrumbs = [
           { chiffre: '~\u00a08\u00a0000\u00a0€', unite: 'coût moyen', label: 'Montant moyen d\'un sinistre lié à un feu de conduit (dégâts structure, fumée, eau d\'extinction)', source: 'Source : CNPP — Centre National de Prévention et de Protection' },
           { chiffre: '~\u00a080\u00a0%', unite: 'évitables', label: 'Des feux de cheminée auraient pu être évités par un ramonage annuel conforme, selon les enquêtes SDIS', source: 'Source : rapports d\'intervention SDIS 13 / CNPP' },
         ].map(({ chiffre, unite, label, source }) => (
-          <div class="bg-white border border-[#EEEEEE] rounded-xl p-7">
+          <div class="bg-[#F9F6F3] border border-[#EEEEEE] rounded-xl p-7">
             <p class="text-3xl md:text-4xl font-extrabold text-[#C4B5AC] leading-none mb-1">{chiffre}</p>
             <p class="text-xs text-[#1A1A1A]/65 font-medium uppercase tracking-wider mb-3">{unite}</p>
             <p class="text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">{label}</p>
@@ -150,7 +150,7 @@ const breadcrumbs = [
       </div>
 
       <div class="overflow-x-auto rounded-xl border border-[#EEEEEE]">
-        <table class="w-full text-sm border-collapse bg-white">
+        <table class="w-full text-sm border-collapse bg-[#F9F6F3]">
           <thead>
             <tr class="bg-[#FFF8F0] border-b border-[#E8DDD4]/15">
               <th class="text-left px-5 py-4 text-xs font-semibold text-[#C4B5AC] tracking-wider">Cause de l'incendie de conduit</th>
@@ -167,7 +167,7 @@ const breadcrumbs = [
               { cause: 'Fissure ou joint dégradé', freq: '~8 % des cas', mecanisme: 'Fuite de monoxyde de carbone dans les parois ou combles — indétectable sans caméra', prevention: 'Inspection caméra HD — diagnostic conduit complet' },
               { cause: 'Dépassement insuffisant en toiture', freq: '~2 % des sinistres', mecanisme: 'Tirage inversé par vent dominant — refoulement de fumées en pièce de vie', prevention: 'Contrôle réglementaire hauteur conduit — NF DTU 24.1 art. 6.4.1' },
             ].map((row, i) => (
-              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-[#FAFAFA]'}>
+              <tr class={i % 2 === 0 ? 'bg-[#F9F6F3]' : 'bg-[#F2EDE8]'}>
                 <td class="px-5 py-4 font-medium text-[#1A1A1A]">{row.cause}</td>
                 <td class="px-5 py-4">
                   <span class="inline-flex items-center gap-1.5 text-[#C4B5AC] font-semibold text-xs">
@@ -187,7 +187,7 @@ const breadcrumbs = [
   </section>
 
   <!-- Monoxyde de carbone -->
-  <section class="py-16 px-6 md:px-10 bg-[#FAFAFA] border-b border-[#EEEEEE]">
+  <section class="py-16 px-6 md:px-10 bg-[#F2EDE8] border-b border-[#EEEEEE]">
     <div class="max-w-5xl mx-auto">
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div>
@@ -208,7 +208,7 @@ const breadcrumbs = [
               { chiffre: '~\u00a03\u00a0000', unite: 'accidents/an', source: 'Santé Publique France' },
               { chiffre: '~\u00a0300', unite: 'décès/an', source: 'Santé Publique France / InVS' },
             ].map(({ chiffre, unite, source }) => (
-              <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-2xl p-5">
+              <div class="bg-[#F2EDE8] border border-[#EEEEEE] rounded-2xl p-5">
                 <p class="text-2xl font-extrabold text-[#C4B5AC] mb-0.5">{chiffre}</p>
                 <p class="text-[10px] font-bold uppercase tracking-widest text-[#1A1A1A]/65 mb-1">{unite}</p>
                 <p class="text-[10px] text-[#1A1A1A]/30 italic">{source}</p>
@@ -256,7 +256,7 @@ const breadcrumbs = [
             <p class="text-sm text-red-700/80 mb-4">Quittez immédiatement les lieux. N'allumez rien. Laissez la porte ouverte.</p>
             <div class="flex gap-3">
               <a href="tel:15" class="inline-flex items-center gap-1.5 bg-red-600 text-white font-bold text-sm px-4 py-2.5 rounded-xl hover:bg-red-700 transition-colors">15 — SAMU</a>
-              <a href="tel:18" class="inline-flex items-center gap-1.5 bg-white border border-red-200 text-red-700 font-bold text-sm px-4 py-2.5 rounded-xl hover:bg-red-50 transition-colors">18 — Pompiers</a>
+              <a href="tel:18" class="inline-flex items-center gap-1.5 bg-[#F9F6F3] border border-red-200 text-red-700 font-bold text-sm px-4 py-2.5 rounded-xl hover:bg-red-50 transition-colors">18 — Pompiers</a>
             </div>
           </div>
         </div>
@@ -291,7 +291,7 @@ const breadcrumbs = [
         </div>
 
         <div class="space-y-4">
-          <div class="bg-white border border-[#EEEEEE] rounded-2xl p-6">
+          <div class="bg-[#F9F6F3] border border-[#EEEEEE] rounded-2xl p-6">
             <h3 class="font-bold text-[#1A1A1A] mb-4 text-sm">Facteurs aggravants PM2.5</h3>
             <div class="space-y-3">
               {[
@@ -320,7 +320,7 @@ const breadcrumbs = [
   </section>
 
   <!-- Prévention -->
-  <section class="py-16 px-6 md:px-10 bg-[#FAFAFA] border-b border-[#EEEEEE]">
+  <section class="py-16 px-6 md:px-10 bg-[#F2EDE8] border-b border-[#EEEEEE]">
     <div class="max-w-5xl mx-auto">
       <div class="grid md:grid-cols-2 gap-10 items-center">
         <div>
@@ -334,7 +334,7 @@ const breadcrumbs = [
               { n: '4', geste: 'Détecteur de CO normé EN 50291', detail: 'Obligatoire avec détecteur certifié. Placez-le à 1,5 m de hauteur, proche de la chambre.' },
               { n: '5', geste: 'Inspection caméra tous les 3-5 ans', detail: 'Pour détecter fissures et dépôts invisibles dans les conduits anciens.' },
             ].map(({ n, geste, detail }) => (
-              <div class="flex gap-4 bg-white border border-[#EEEEEE] rounded-xl p-4">
+              <div class="flex gap-4 bg-[#F9F6F3] border border-[#EEEEEE] rounded-xl p-4">
                 <div class="w-7 h-7 rounded-full bg-[#E8DDD4] text-white flex items-center justify-center text-xs font-bold shrink-0">{n}</div>
                 <div>
                   <p class="text-sm font-semibold text-[#1A1A1A]">{geste}</p>
@@ -355,7 +355,7 @@ const breadcrumbs = [
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               06 64 72 96 00
             </a>
-            <a href="/ramonage" class="flex items-center justify-center gap-2 bg-[#FAFAFA] text-[#1A1A1A] text-sm font-semibold px-6 py-3.5 rounded-xl hover:border-[#E8DDD4]/30 border border-[#EEEEEE] transition-colors">
+            <a href="/ramonage" class="flex items-center justify-center gap-2 bg-[#F2EDE8] text-[#1A1A1A] text-sm font-semibold px-6 py-3.5 rounded-xl hover:border-[#E8DDD4]/30 border border-[#EEEEEE] transition-colors">
               Voir nos prestations →
             </a>
           </div>
@@ -371,7 +371,7 @@ const breadcrumbs = [
       <h2 class="text-2xl font-extrabold text-[#1A1A1A] mb-8 text-center">Incendies, CO & santé — Réponses directes</h2>
       <div class="space-y-3" itemscope itemtype="https://schema.org/FAQPage">
         {faqSchema.mainEntity.map(item => (
-          <details class="group bg-white border border-[#EEEEEE] rounded-xl overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <details class="group bg-[#F9F6F3] border border-[#EEEEEE] rounded-xl overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
             <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer select-none list-none" itemprop="name">
               <span class="text-sm font-semibold text-[#1A1A1A]">{item.name}</span>
               <svg class="w-4 h-4 shrink-0 text-[#C4B5AC] transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -388,7 +388,7 @@ const breadcrumbs = [
   </section>
 
   <!-- Nav links -->
-  <nav aria-label="Services associés" class="py-12 px-6 md:px-10 bg-[#FAFAFA] border-t border-[#EEEEEE]">
+  <nav aria-label="Services associés" class="py-12 px-6 md:px-10 bg-[#F2EDE8] border-t border-[#EEEEEE]">
     <div class="max-w-5xl mx-auto">
       <p class="text-[10px] font-semibold tracking-widest uppercase text-[#1A1A1A]/70 mb-5">Voir aussi</p>
       <div class="flex flex-wrap gap-3">
@@ -399,7 +399,7 @@ const breadcrumbs = [
           { href: '/normes-reglementation', label: 'Normes & Réglementation' },
           { href: '/valeur-verte',         label: 'Valeur Verte & DPE' },
         ].map(({ href, label }) => (
-          <a href={href} class="inline-flex items-center gap-2 bg-white border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/70 hover:border-[#E8DDD4]/40 hover:text-[#C4B5AC] transition-all">
+          <a href={href} class="inline-flex items-center gap-2 bg-[#F9F6F3] border border-[#EEEEEE] rounded-lg px-4 py-2.5 text-xs font-medium text-[#1A1A1A]/70 hover:border-[#E8DDD4]/40 hover:text-[#C4B5AC] transition-all">
             <span class="w-1.5 h-1.5 rounded-full bg-[#E8DDD4] shrink-0"></span>
             {label}
           </a>

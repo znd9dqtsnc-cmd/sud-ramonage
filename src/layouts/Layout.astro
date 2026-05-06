@@ -130,12 +130,12 @@ const navBtn = (active: boolean) => active
       pageSchema={pageSchema}
     />
   </head>
-  <body class="bg-white text-[#1A1A1A] font-sans antialiased">
+  <body class="bg-[#F9F6F3] text-[#1A1A1A] font-sans antialiased">
 
     <!-- ═══════════════════════════════════════════
          HEADER
     ═══════════════════════════════════════════ -->
-    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#EEEEEE] transition-shadow duration-300">
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-[#F9F6F3]/95 backdrop-blur-sm border-b border-[#EEEEEE] transition-shadow duration-300">
       <div class="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between gap-6">
 
         <!-- ── Logo ── -->
@@ -169,7 +169,7 @@ const navBtn = (active: boolean) => active
                 <svg class="w-3 h-3 group-hover/services:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
               </button>
               <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover/services:opacity-100 group-hover/services:visible transition-all duration-200 pointer-events-none group-hover/services:pointer-events-auto z-50">
-                <div class="bg-white border border-[#EEEEEE] rounded-2xl shadow-2xl shadow-black/10 p-5 w-[700px] grid grid-cols-3 gap-6">
+                <div class="bg-[#F9F6F3] border border-[#EEEEEE] rounded-2xl shadow-2xl shadow-black/10 p-5 w-[700px] grid grid-cols-3 gap-6">
                   <!-- Col 1 : Ramonage & Entretien + Réhabilitation -->
                   <div>
                     <p class="text-[9px] font-bold tracking-widest uppercase text-[#1A1A1A]/30 mb-3">Ramonage & Entretien</p>
@@ -217,18 +217,18 @@ const navBtn = (active: boolean) => active
                       <p class="text-[9px] font-bold tracking-widest uppercase text-white/50 mb-2">Par générateur</p>
                       <p class="text-sm font-bold leading-snug mb-4">Type de Générateur</p>
                       <div class="flex flex-wrap gap-1.5">
-                        <a href="/foyers-ouverts" class="bg-white/15 hover:bg-white/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Cheminée</a>
-                        <a href="/foyers-ouverts" class="bg-white/15 hover:bg-white/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Foyer ouvert</a>
-                        <a href="/inserts" class="bg-white/15 hover:bg-white/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Insert</a>
-                        <a href="/poeles-bois" class="bg-white/15 hover:bg-white/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Poêle à bois</a>
-                        <a href="/poeles-granules" class="bg-white/15 hover:bg-white/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Poêle à granulés</a>
-                        <a href="/chaudieres" class="bg-white/15 hover:bg-white/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Chaudière gaz</a>
-                        <a href="/chaudieres" class="bg-white/15 hover:bg-white/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Chaudière fioul</a>
-                        <a href="/chaudieres" class="bg-white/15 hover:bg-white/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Chaudière bois</a>
+                        <a href="/foyers-ouverts" class="bg-[#F9F6F3]/15 hover:bg-[#F9F6F3]/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Cheminée</a>
+                        <a href="/foyers-ouverts" class="bg-[#F9F6F3]/15 hover:bg-[#F9F6F3]/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Foyer ouvert</a>
+                        <a href="/inserts" class="bg-[#F9F6F3]/15 hover:bg-[#F9F6F3]/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Insert</a>
+                        <a href="/poeles-bois" class="bg-[#F9F6F3]/15 hover:bg-[#F9F6F3]/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Poêle à bois</a>
+                        <a href="/poeles-granules" class="bg-[#F9F6F3]/15 hover:bg-[#F9F6F3]/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Poêle à granulés</a>
+                        <a href="/chaudieres" class="bg-[#F9F6F3]/15 hover:bg-[#F9F6F3]/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Chaudière gaz</a>
+                        <a href="/chaudieres" class="bg-[#F9F6F3]/15 hover:bg-[#F9F6F3]/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Chaudière fioul</a>
+                        <a href="/chaudieres" class="bg-[#F9F6F3]/15 hover:bg-[#F9F6F3]/30 text-white text-[10px] font-medium px-2.5 py-1 rounded-full transition-colors whitespace-nowrap">Chaudière bois</a>
                       </div>
                     </div>
                     <div class="mt-5">
-                      <a href="/particuliers" class="inline-flex w-full items-center justify-center gap-2 bg-white text-[#C4B5AC] text-xs font-bold px-3 py-2.5 rounded-lg hover:bg-white/90 transition-colors">
+                      <a href="/particuliers" class="inline-flex w-full items-center justify-center gap-2 bg-[#F9F6F3] text-[#C4B5AC] text-xs font-bold px-3 py-2.5 rounded-lg hover:bg-[#F9F6F3]/90 transition-colors">
                         Toutes nos Prestations
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                       </a>
@@ -245,7 +245,7 @@ const navBtn = (active: boolean) => active
                 <svg class="w-3 h-3 group-hover/pro:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
               </button>
               <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover/pro:opacity-100 group-hover/pro:visible transition-all duration-200 pointer-events-none group-hover/pro:pointer-events-auto z-50">
-                <div class="bg-white border border-[#EEEEEE] rounded-xl shadow-xl shadow-black/8 p-2 w-64">
+                <div class="bg-[#F9F6F3] border border-[#EEEEEE] rounded-xl shadow-xl shadow-black/8 p-2 w-64">
                   <ul>
                     {proMenu.map(({ href, label, desc }) => (
                       <li>
@@ -267,7 +267,7 @@ const navBtn = (active: boolean) => active
                 <svg class="w-3 h-3 group-hover/savoir:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
               </button>
               <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover/savoir:opacity-100 group-hover/savoir:visible transition-all duration-200 pointer-events-none group-hover/savoir:pointer-events-auto z-50">
-                <div class="bg-white border border-[#EEEEEE] rounded-xl shadow-xl shadow-black/8 p-2 w-64">
+                <div class="bg-[#F9F6F3] border border-[#EEEEEE] rounded-xl shadow-xl shadow-black/8 p-2 w-64">
                   <ul>
                     {savoirMenu.map(({ href, label, desc }) => (
                       <li>
@@ -289,7 +289,7 @@ const navBtn = (active: boolean) => active
                 <svg class="w-3 h-3 group-hover/zones:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
               </button>
               <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover/zones:opacity-100 group-hover/zones:visible transition-all duration-200 pointer-events-none group-hover/zones:pointer-events-auto z-50">
-                <div class="bg-white border border-[#EEEEEE] rounded-xl shadow-xl shadow-black/8 p-4 w-72">
+                <div class="bg-[#F9F6F3] border border-[#EEEEEE] rounded-xl shadow-xl shadow-black/8 p-4 w-72">
                   <ul class="space-y-4">
                     {zonesGroupes.map(({ label, villes: vs }) => (
                       <li>
@@ -394,7 +394,7 @@ const navBtn = (active: boolean) => active
 
       <!-- Panneau latéral -->
       <nav
-        class="absolute top-0 right-0 h-full w-80 max-w-full bg-white shadow-2xl flex flex-col translate-x-full transition-transform duration-300 ease-in-out"
+        class="absolute top-0 right-0 h-full w-80 max-w-full bg-[#F9F6F3] shadow-2xl flex flex-col translate-x-full transition-transform duration-300 ease-in-out"
         id="mobile-panel"
         aria-label="Menu mobile"
       >
@@ -546,7 +546,7 @@ const navBtn = (active: boolean) => active
         </div>
 
         <!-- CTA bas du panneau -->
-        <div class="px-6 py-5 border-t border-[#EEEEEE] bg-[#FAFAFA] shrink-0 space-y-3">
+        <div class="px-6 py-5 border-t border-[#EEEEEE] bg-[#F2EDE8] shrink-0 space-y-3">
           <a
             href="tel:+33664729600"
             class="flex items-center justify-center gap-2 w-full bg-[#E8DDD4] text-white text-sm font-bold px-5 py-3.5 rounded-xl hover:bg-[#C4B5AC] transition-colors duration-200"
@@ -620,7 +620,7 @@ const navBtn = (active: boolean) => active
     <!-- ═══════════════════════════════════════════
          FOOTER
     ═══════════════════════════════════════════ -->
-    <footer id="site-footer" class="border-t-2 border-[#E8DDD4]/15 mt-24 bg-white">
+    <footer id="site-footer" class="border-t-2 border-[#E8DDD4]/15 mt-24 bg-[#F9F6F3]">
       <div class="max-w-6xl mx-auto px-6 md:px-10 py-16">
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">

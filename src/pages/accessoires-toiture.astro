@@ -19,7 +19,7 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Accessoires Toiture
   breadcrumbs={breadcrumbs}
   pageSchema={serviceSchema}
 >
-  <section class="bg-white border-b border-[#EEEEEE] pt-28 pb-12">
+  <section class="bg-[#F9F6F3] border-b border-[#EEEEEE] pt-28 pb-12">
     <div class="max-w-4xl mx-auto px-6 md:px-10">
       <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-[#1A1A1A]/70 mb-6">
         <a href="/" class="hover:text-[#1A1A1A]/60">Accueil</a><span>/</span><span class="text-[#1A1A1A]/70">Accessoires Toiture</span>
@@ -50,7 +50,7 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Accessoires Toiture
             { titre: 'Manchette anti-refoulement', detail: 'Bague à orientation variable qui s\'adapte au vent dominant. Efficace sur les toitures exposées au mistral de secteur NW.' },
             { titre: 'Rehausse de souche', detail: 'Élévation du conduit lorsque le dépassement en toiture est insuffisant (NF DTU 24.1 (minimum 40 cm au-dessus du faîtage)).' },
           ].map(({ titre, detail, recommande }) => (
-            <div class={`rounded-xl p-5 border ${recommande ? 'bg-[#FFF3E0] border-[#E8DDD4]/30' : 'bg-[#FAFAFA] border-[#EEEEEE]'}`}>
+            <div class={`rounded-xl p-5 border ${recommande ? 'bg-[#FFF3E0] border-[#E8DDD4]/30' : 'bg-[#F2EDE8] border-[#EEEEEE]'}`}>
               <div class="flex items-center gap-2 mb-2">
                 <p class="text-sm font-semibold text-[#1A1A1A]">{titre}</p>
                 {recommande && <span class="text-[10px] bg-[#E8DDD4] text-white px-1.5 py-0.5 rounded font-medium">Recommandé Provence</span>}
