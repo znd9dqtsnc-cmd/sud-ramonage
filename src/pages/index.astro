@@ -197,12 +197,12 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         </p>
         <div class="space-y-3">
           {[
-            { t: 'Chantier propre garanti',     d: 'Protection du sol et nettoyage complet après chaque intervention, sans trace.',  bg: 'bg-[#FEF3C7] border-[#F5E4A0]' },
-            { t: 'Certificat RSD 13 immédiat',  d: 'Document officiel remis sur place, valide auprès de votre assurance.',           bg: 'bg-[#ECFDF5] border-[#A7F3D0]' },
-            { t: 'Assuré RC Pro',               d: 'Couverture complète pour toutes mes interventions.',                             bg: 'bg-[#EEF3FF] border-[#BFDBFE]' },
-            { t: 'Artisan local, sous 48h',     d: 'Basé à Martigues, je connais votre secteur et interviens rapidement.',           bg: 'bg-[#FEF3C7] border-[#F5E4A0]' },
-          ].map(({ t, d, bg }, i) => (
-            <div class={`relative border rounded-xl px-6 py-5 overflow-hidden ${bg}`}>
+            { t: 'Chantier propre garanti',     d: 'Protection du sol et nettoyage complet après chaque intervention, sans trace.' },
+            { t: 'Certificat RSD 13 immédiat',  d: 'Document officiel remis sur place, valide auprès de votre assurance.' },
+            { t: 'Assuré RC Pro',               d: 'Couverture complète pour toutes mes interventions.' },
+            { t: 'Artisan local, sous 48h',     d: 'Basé à Martigues, je connais votre secteur et interviens rapidement.' },
+          ].map(({ t, d }, i) => (
+            <div class="relative bg-white border border-[#EEEEEE] rounded-xl px-6 py-5 overflow-hidden">
               <div class="absolute top-0 left-0 w-[3px] h-full bg-[#E65100]/25 rounded-l-xl"></div>
               <div class="flex items-center gap-4">
                 <span class="text-3xl font-black text-[#E65100]/20 leading-none shrink-0 w-8 text-right">{String(i + 1)}</span>
@@ -231,23 +231,13 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
-          {
-            q: '"Intervention rapide et soignée sur ma cheminée à Sausset-les-Pins. Le certificat m\'a été remis dans la foulée. Enfin un artisan qui respecte son engagement."',
-            n: 'Jean-Luc M.', l: 'Sausset-les-Pins · Foyer ouvert',
-            bg: 'bg-[#FEF3C7] border-[#F5E4A0]',
-          },
-          {
-            q: '"Mon poêle à granulés n\'avait pas été entretenu depuis 3 ans — tout démonté, nettoyé et vérifié. Je le recommande sans hésiter à mes voisins d\'Istres."',
-            n: 'Marie A.', l: 'Istres · Poêle à granulés',
-            bg: 'bg-[#ECFDF5] border-[#A7F3D0]',
-          },
-          {
-            q: '"14 appartements gérés, tous les certificats remis en une seule tournée avec un rapport consolidé. Un vrai partenaire professionnel."',
-            n: 'Cabinet Immo Provence', l: 'Aix-en-Provence · 14 lots gérés',
-            bg: 'bg-[#EEF3FF] border-[#BFDBFE]',
-          },
-        ].map(({ q, n, l, bg }) => (
-          <div class={`border rounded-2xl p-8 ${bg}`}>
+          { q: '"Intervention rapide et soignée sur ma cheminée à Sausset-les-Pins. Le certificat m\'a été remis dans la foulée. Enfin un artisan qui respecte son engagement."', n: 'Jean-Luc M.', l: 'Sausset-les-Pins · Foyer ouvert' },
+          { q: '"Mon poêle à granulés n\'avait pas été entretenu depuis 3 ans — tout démonté, nettoyé et vérifié. Je le recommande sans hésiter à mes voisins d\'Istres."', n: 'Marie A.', l: 'Istres · Poêle à granulés' },
+          { q: '"14 appartements gérés, tous les certificats remis en une seule tournée avec un rapport consolidé. Un vrai partenaire professionnel."', n: 'Cabinet Immo Provence', l: 'Aix-en-Provence · 14 lots gérés' },
+        ].map(({ q, n, l }) => (
+          <div class="bg-white border border-[#EEEEEE] rounded-2xl overflow-hidden">
+            <div class="h-1 w-full bg-gradient-to-r from-[#E65100]/50 via-[#E65100]/20 to-transparent"></div>
+            <div class="p-8">
             <div class="flex gap-0.5 mb-6">
               {[1,2,3,4,5].map(() => (
                 <svg class="w-4 h-4 text-[#E65100]/70" fill="currentColor" viewBox="0 0 20 20">
@@ -258,6 +248,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
             <blockquote class="text-sm text-[#1A1A1A]/65 font-light leading-relaxed mb-7 italic">{q}</blockquote>
             <p class="text-xs font-semibold text-[#1A1A1A]">{n}</p>
             <p class="text-[11px] text-[#1A1A1A]/30 mt-0.5">{l}</p>
+            </div>
           </div>
         ))}
       </div>
