@@ -27,12 +27,12 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Poêles à Granulé
       <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-[#1A1A1A]/35 mb-6">
         <a href="/" class="hover:text-[#1A1A1A]/60">Accueil</a><span>/</span><span class="text-[#1A1A1A]/50">Poêles à Granulés</span>
       </nav>
-      <div class="inline-flex items-center gap-2 bg-[#FFF3E0] border border-[#E8DDD4]/20 rounded-full px-3 py-1.5 text-[11px] text-[#9E8A7E] font-semibold mb-5">
+      <div class="inline-flex items-center gap-2 bg-[#FFF3E0] border border-[#E8DDD4]/20 rounded-full px-3 py-1.5 text-[11px] text-[#C1440E] font-semibold mb-5">
         <span class="w-1.5 h-1.5 rounded-full bg-[#E8DDD4]"></span>
         Entretien annuel + ramonage obligatoire — RSD 13
       </div>
       <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-5">
-        Entretien Poêle à Granulés<br /><span class="text-[#9E8A7E]">Pellets & Biomasse</span>
+        Entretien Poêle à Granulés<br /><span class="text-[#C1440E]">Pellets & Biomasse</span>
       </h1>
       <p class="text-base text-[#1A1A1A]/55 max-w-2xl leading-relaxed mb-8">
         Le poêle à granulés est l'appareil le plus technique à entretenir. Brûleur, vis sans fin, ventilateur, sonde lambda, électronique de pilotage — chaque composant doit être nettoyé et contrôlé. Sans entretien annuel, les pannes en pleine saison de chauffe sont inévitables.
@@ -73,7 +73,7 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Poêles à Granulé
             { n: '8', t: 'Test de fonctionnement', d: 'Cycle d\'allumage et vérification de tous les paramètres avant remise en service.' },
           ].map(({ n, t, d }) => (
             <div class="bg-[#FAFAFA] border border-[#EEEEEE] rounded-xl p-5 flex gap-3">
-              <span class="w-6 h-6 rounded-full bg-[#E8DDD4]/10 text-[#9E8A7E] text-xs font-bold flex items-center justify-center shrink-0">{n}</span>
+              <span class="w-6 h-6 rounded-full bg-[#E8DDD4]/10 text-[#C1440E] text-xs font-bold flex items-center justify-center shrink-0">{n}</span>
               <div>
                 <p class="text-sm font-semibold text-[#1A1A1A] mb-1">{t}</p>
                 <p class="text-xs text-[#1A1A1A]/55 leading-relaxed">{d}</p>
@@ -118,7 +118,7 @@ const breadcrumbs = [{ name: 'Accueil', url: '/' }, { name: 'Poêles à Granulé
             { href: '/inspection-camera', label: 'Inspection caméra conduit' },
             { href: '/ramonage', label: 'Ramonage certifié RSD 13' },
           ].map(({ href, label }) => (
-            <li><a href={href} class="text-xs text-[#1A1A1A]/50 border border-[#EEEEEE] rounded-lg px-3 py-1.5 hover:text-[#9E8A7E] hover:border-[#E8DDD4]/30 transition-colors">{label}</a></li>
+            <li><a href={href} class="text-xs text-[#1A1A1A]/50 border border-[#EEEEEE] rounded-lg px-3 py-1.5 hover:text-[#C1440E] hover:border-[#E8DDD4]/30 transition-colors">{label}</a></li>
           ))}
         </ul>
       </nav>
