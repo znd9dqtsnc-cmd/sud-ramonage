@@ -375,7 +375,7 @@ const navBtn = (active: boolean) => active
           <button
             id="burger-btn"
             type="button"
-            class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg text-[#1A1A1A] hover:bg-[#F5F5F5] transition-colors duration-150"
+            class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg text-[#1A1A1A] hover:bg-[#F5F5F5] transition-colors duration-150 touch-manipulation"
             aria-label="Ouvrir le menu"
             aria-controls="mobile-menu"
             aria-expanded="false"
@@ -422,7 +422,7 @@ const navBtn = (active: boolean) => active
           <button
             id="mobile-close"
             type="button"
-            class="flex items-center justify-center w-9 h-9 rounded-lg text-[#1A1A1A]/85 hover:bg-[#F5F5F5] transition-colors duration-150"
+            class="flex items-center justify-center w-9 h-9 rounded-lg text-[#1A1A1A]/85 hover:bg-[#F5F5F5] transition-colors duration-150 touch-manipulation"
             aria-label="Fermer le menu"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -728,83 +728,85 @@ const navBtn = (active: boolean) => active
          SCRIPTS — Menu mobile
     ═══════════════════════════════════════════ -->
     <script>
-      const burgerBtn   = document.getElementById('burger-btn');
-      const mobileMenu  = document.getElementById('mobile-menu');
-      const mobilePanel = document.getElementById('mobile-panel');
-      const mobileOverlay = document.getElementById('mobile-overlay');
-      const closeBtn    = document.getElementById('mobile-close');
-      const iconOpen    = document.getElementById('burger-icon-open');
-      const iconClose   = document.getElementById('burger-icon-close');
+      function initMobileMenu() {
+        const burgerBtn    = document.getElementById('burger-btn');
+        const mobileMenu   = document.getElementById('mobile-menu');
+        const mobilePanel  = document.getElementById('mobile-panel');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const closeBtn     = document.getElementById('mobile-close');
+        const iconOpen     = document.getElementById('burger-icon-open');
+        const iconClose    = document.getElementById('burger-icon-close');
 
-      function openMenu() {
-        mobileMenu?.classList.remove('hidden');
-        mobileMenu?.setAttribute('aria-hidden', 'false');
-        burgerBtn?.setAttribute('aria-expanded', 'true');
-        setTimeout(() => mobilePanel?.classList.remove('translate-x-full'), 10);
-        iconOpen?.classList.add('hidden');
-        iconClose?.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      }
+        if (!burgerBtn) return; // guard : éléments absents (page non-mobile)
 
-      function closeMenu() {
-        mobilePanel?.classList.add('translate-x-full');
-        burgerBtn?.setAttribute('aria-expanded', 'false');
-        iconOpen?.classList.remove('hidden');
-        iconClose?.classList.add('hidden');
-        document.body.style.overflow = '';
-        setTimeout(() => {
-          mobileMenu?.classList.add('hidden');
-          mobileMenu?.setAttribute('aria-hidden', 'true');
-        }, 300);
-      }
+        function openMenu() {
+          mobileMenu?.classList.remove('hidden');
+          mobileMenu?.setAttribute('aria-hidden', 'false');
+          burgerBtn?.setAttribute('aria-expanded', 'true');
+          setTimeout(() => mobilePanel?.classList.remove('translate-x-full'), 10);
+          iconOpen?.classList.add('hidden');
+          iconClose?.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        }
 
-      burgerBtn?.addEventListener('click', openMenu);
-      closeBtn?.addEventListener('click', closeMenu);
-      mobileOverlay?.addEventListener('click', closeMenu);
+        function closeMenu() {
+          mobilePanel?.classList.add('translate-x-full');
+          burgerBtn?.setAttribute('aria-expanded', 'false');
+          iconOpen?.classList.remove('hidden');
+          iconClose?.classList.add('hidden');
+          document.body.style.overflow = '';
+          setTimeout(() => {
+            mobileMenu?.classList.add('hidden');
+            mobileMenu?.setAttribute('aria-hidden', 'true');
+          }, 300);
+        }
 
-      // Fermer avec Escape
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeMenu();
-      });
+        burgerBtn.addEventListener('click', openMenu);
+        closeBtn?.addEventListener('click', closeMenu);
+        mobileOverlay?.addEventListener('click', closeMenu);
 
-      // Accordéons mobile
-      function setupAccordion(btnId: string, panelId: string, arrowId: string) {
-        const btn   = document.getElementById(btnId);
-        const panel = document.getElementById(panelId);
-        const arrow = document.getElementById(arrowId);
-        btn?.addEventListener('click', () => {
-          const isOpen = btn.getAttribute('aria-expanded') === 'true';
-          btn.setAttribute('aria-expanded', String(!isOpen));
-          panel?.classList.toggle('hidden', isOpen);
-          arrow?.classList.toggle('rotate-180', !isOpen);
+        // Fermer avec Escape
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeMenu();
         });
-      }
 
-      setupAccordion('mobile-services-btn', 'mobile-services', 'mobile-services-arrow');
-      setupAccordion('mobile-pro-btn',      'mobile-pro',      'mobile-pro-arrow');
-      setupAccordion('mobile-savoir-btn',   'mobile-savoir',   'mobile-savoir-arrow');
-      setupAccordion('mobile-zones-btn',    'mobile-zones',    'mobile-zones-arrow');
+        // Accordéons mobile
+        function setupAccordion(btnId: string, panelId: string, arrowId: string) {
+          const btn   = document.getElementById(btnId);
+          const panel = document.getElementById(panelId);
+          const arrow = document.getElementById(arrowId);
+          if (!btn) return;
+          btn.addEventListener('click', () => {
+            const isOpen = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!isOpen));
+            panel?.classList.toggle('hidden', isOpen);
+            arrow?.classList.toggle('rotate-180', !isOpen);
+          });
+        }
 
-      // Header : opacité pleine sur hero, glassmorphism + ombre sous hero
-      const header = document.getElementById('site-header');
-      const hero = document.querySelector('section');
-      function updateHeader() {
-        const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
-        if (heroBottom > 0) {
-          header?.classList.remove('header-glass', 'header-scrolled');
-        } else {
-          header?.classList.add('header-glass');
-          if (window.scrollY > 8) {
-            header?.classList.add('header-scrolled');
+        setupAccordion('mobile-services-btn', 'mobile-services', 'mobile-services-arrow');
+        setupAccordion('mobile-pro-btn',      'mobile-pro',      'mobile-pro-arrow');
+        setupAccordion('mobile-savoir-btn',   'mobile-savoir',   'mobile-savoir-arrow');
+        setupAccordion('mobile-zones-btn',    'mobile-zones',    'mobile-zones-arrow');
+
+        // Header : glassmorphism + ombre sous hero
+        const header = document.getElementById('site-header');
+        const hero   = document.querySelector('section');
+        function updateHeader() {
+          const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
+          if (heroBottom > 0) {
+            header?.classList.remove('header-glass', 'header-scrolled');
           } else {
-            header?.classList.remove('header-scrolled');
+            header?.classList.add('header-glass');
+            header?.classList.toggle('header-scrolled', window.scrollY > 8);
           }
         }
+        window.addEventListener('scroll', updateHeader, { passive: true });
+        updateHeader();
       }
-      window.addEventListener('scroll', updateHeader, { passive: true });
-      updateHeader();
 
-
+      // Exécuté à chaque navigation (View Transitions) ET au premier chargement
+      document.addEventListener('astro:page-load', initMobileMenu);
     </script>
 
     <!-- ═══════════════════════════════════════════
