@@ -854,7 +854,7 @@ const navBtn = (active: boolean) => active
     <!-- ═══════════════════════════════════════════
          STICKY CALL BUTTON — Mobile uniquement
     ═══════════════════════════════════════════ -->
-    <div id="sticky-call-btn" class="lg:hidden fixed bottom-0 left-0 right-0 z-[55] flex items-center gap-3 bg-white/[0.92] backdrop-blur-[12px] border-t border-[#E2E8F0] px-4 py-3 shadow-lg">
+    <div id="sticky-call-btn" class="lg:hidden fixed bottom-0 left-0 right-0 z-[55] flex items-center gap-3 bg-white/[0.92] backdrop-blur-[12px] border-t border-[#E2E8F0] px-4 py-3 shadow-lg transition-transform duration-300">
       <a
         href="tel:+33664729600"
         class="w-12 h-12 rounded-full bg-[#2C3E50] flex items-center justify-center shrink-0 shadow-sm active:scale-95 transition-transform touch-manipulation"
@@ -900,6 +900,26 @@ const navBtn = (active: boolean) => active
       scrollTopBtn?.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+
+      // Sticky bar — masquage auto après 4s, réapparition au scroll/touch
+      const stickyBar = document.getElementById('sticky-call-btn');
+      let stickyTimer: ReturnType<typeof setTimeout> | null = null;
+
+      function showStickyBar() {
+        stickyBar?.classList.remove('translate-y-full');
+        if (stickyTimer) clearTimeout(stickyTimer);
+        stickyTimer = setTimeout(() => {
+          stickyBar?.classList.add('translate-y-full');
+        }, 4000);
+      }
+
+      window.addEventListener('scroll', showStickyBar, { passive: true });
+      window.addEventListener('touchstart', showStickyBar, { passive: true });
+
+      // Premier masquage après 4s au chargement
+      stickyTimer = setTimeout(() => {
+        stickyBar?.classList.add('translate-y-full');
+      }, 4000);
     </script>
 
   </body>
