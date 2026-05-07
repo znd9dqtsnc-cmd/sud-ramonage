@@ -1,0 +1,483 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import ramonageImg   from '../assets/images/service-ramonage.jpg';
+import bistrageImg   from '../assets/images/service-bistrage.jpg';
+import poeleImg      from '../assets/images/hero-poele.jpg';
+import chaudiereImg  from '../assets/images/artisan-intervention.jpg';
+import toitureImg    from '../assets/images/artisan-toiture.jpg';
+
+const siteUrl = 'https://www.sud-ramonage.fr';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${siteUrl}/services#service`,
+  name: 'Services de ramonage et entretien — Sud Ramonage Martigues',
+  description: 'Ramonage, débistrage, entretien poêle, chaudière — artisan certifié COSTIC à Martigues. Certificat RSD 13 remis sur place.',
+  provider: { '@type': 'HomeAndConstructionBusiness', '@id': `${siteUrl}/#business` },
+};
+
+const checks = [
+  'Certificat RSD 13 remis sur place',
+  'Artisan certifié COSTIC',
+  'Assurance RC Pro',
+  'Intervention propre & soignée',
+];
+
+const tarifs = [
+  {
+    id: 'ramonage',
+    label: 'Ramonage Bois',
+    prix: '75',
+    unite: '€',
+    desc: 'Foyer ouvert — à partir de',
+    href: '/ramonage',
+    items: [
+      { l: 'Ramonage foyer ouvert', p: '75 €' },
+      { l: 'Insert / Poêle à bois', p: '90 €' },
+      { l: 'Bûche de ramonage', p: '25 €' },
+      { l: 'Test de vacuité inclus', p: '✓' },
+      { l: 'Certificat RSD 13', p: '✓' },
+    ],
+  },
+  {
+    id: 'granules',
+    label: 'Poêle à Granulés',
+    prix: '120',
+    unite: '€',
+    desc: 'Entretien complet',
+    href: '/entretien-poele',
+    items: [
+      { l: 'Nettoyage brûleur & brasero', p: '✓' },
+      { l: 'Contrôle capteurs & joints', p: '✓' },
+      { l: 'Ramonage conduit inclus', p: '✓' },
+      { l: 'Rapport d\'état fourni', p: '✓' },
+      { l: 'Certificat RSD 13', p: '✓' },
+    ],
+  },
+  {
+    id: 'chaudieres',
+    label: 'Chaudières',
+    prix: 'Sur devis',
+    unite: '',
+    desc: 'Gaz & Fioul',
+    href: '/chaudieres',
+    items: [
+      { l: 'Ramonage conduit fumée', p: '✓' },
+      { l: 'Nettoyage corps de chauffe', p: '✓' },
+      { l: 'Test de combustion', p: '✓' },
+      { l: 'Vérification joints & tirage', p: '✓' },
+      { l: 'Rapport certifié', p: '✓' },
+    ],
+  },
+  {
+    id: 'debistrage',
+    label: 'Débistrage',
+    prix: '150',
+    unite: '€',
+    desc: 'Traitement chimique — dès',
+    href: '/debistrage',
+    items: [
+      { l: 'Diagnostic bistre inclus', p: '✓' },
+      { l: 'Traitement chimique', p: '✓' },
+      { l: 'Ramonage mécanique', p: '✓' },
+      { l: 'Contrôle post-traitement', p: '✓' },
+      { l: 'Certificat RSD 13', p: '✓' },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Services — Ramonage, Débistrage & Entretien | Sud Ramonage Martigues"
+  description="Tous nos services : ramonage cheminée, débistrage, entretien poêle à granulés, chaudières gaz & fioul. Artisan certifié COSTIC à Martigues. Certificat RSD 13 immédiat."
+  canonical={`${siteUrl}/services`}
+  breadcrumbs={[
+    { name: 'Accueil', url: '/' },
+    { name: 'Nos Services', url: '/services' },
+  ]}
+  pageSchema={pageSchema}
+>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="pt-28 pb-14 px-6 md:px-10 bg-[#F2EFE9]">
+    <div class="max-w-4xl mx-auto">
+      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-[11px] text-[#1A1A1A]/50 mb-6">
+        <a href="/" class="hover:text-[#F39C12] transition-colors">Accueil</a>
+        <span>/</span>
+        <span>Nos Services</span>
+      </nav>
+      <p class="text-[11px] font-bold uppercase tracking-widest text-[#F39C12] mb-4">Artisan certifié COSTIC · Martigues</p>
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-[#2C3E50] leading-tight mb-5">
+        L'expertise Sud Ramonage<br class="hidden md:block"/>au service de votre sécurité.
+      </h1>
+      <p class="text-base text-[#4B4B4B] font-light leading-relaxed mb-8 max-w-2xl">
+        Ramonage, débistrage, entretien de poêle, chaudières — chaque appareil à combustion a ses spécificités. Je vous apporte l'expertise adaptée, avec un certificat RSD 13 remis sur place à chaque intervention.
+      </p>
+
+      <!-- Quick-links pilules -->
+      <div class="flex flex-wrap gap-2">
+        {[
+          { href: '#ramonage',  label: 'Ramonage Bois' },
+          { href: '#debistrage', label: 'Débistrage' },
+          { href: '#poeles',    label: 'Entretien Poêle' },
+          { href: '#chaudieres', label: 'Chaudières' },
+          { href: '#tarifs',    label: 'Tarifs' },
+        ].map(({ href, label }) => (
+          <a
+            href={href}
+            class="inline-flex items-center gap-1.5 bg-[#E5E0D5] hover:bg-[#2C3E50] hover:text-white text-[#2C3E50] text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200"
+          >
+            {label}
+          </a>
+        ))}
+        <a
+          href="tel:+33664729600"
+          class="inline-flex items-center gap-1.5 bg-[#F39C12] hover:bg-[#D68910] text-white text-xs font-bold px-4 py-2 rounded-full transition-colors duration-200"
+        >
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Prendre RDV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TARIFS ═══ -->
+  <div class="w-4/5 mx-auto h-px bg-[#E5E0D5]" aria-hidden="true"></div>
+  <section id="tarifs" class="py-12 md:py-16 px-6 md:px-10 bg-[#F2EFE9] scroll-mt-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-10">
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2C3E50] mb-3">Tarifs Transparents.</h2>
+        <div class="w-10 h-0.5 bg-[#F39C12] mb-3"></div>
+        <p class="text-base text-[#4B4B4B] font-light">Certificat RSD 13 inclus dans chaque prestation. Devis gratuit sous 24h.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {tarifs.map(({ id, label, prix, unite, desc, href, items }) => (
+          <div class="bg-[#FFFFFF] rounded-2xl border border-[#E5E0D5] overflow-hidden flex flex-col">
+            <div class="bg-[#2C3E50] px-6 pt-6 pb-5 relative overflow-hidden">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-white/50 mb-2">{label}</p>
+              <p class="text-3xl font-extrabold text-white leading-none">
+                {prix}<span class="text-base font-semibold ml-0.5">{unite}</span>
+              </p>
+              <p class="text-[11px] text-white/40 font-light mt-1">{desc}</p>
+            </div>
+            <div class="px-6 py-5 flex flex-col flex-1">
+              <ul class="space-y-2.5 flex-1">
+                {items.map(({ l, p }) => (
+                  <li class="flex items-center justify-between gap-2">
+                    <span class="text-xs text-[#4B4B4B] font-light">{l}</span>
+                    {p === '✓' ? (
+                      <span class="w-5 h-5 rounded-full bg-[#C8DFC9] flex items-center justify-center shrink-0">
+                        <svg class="w-3 h-3 text-[#2D6A4F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                        </svg>
+                      </span>
+                    ) : (
+                      <span class="text-xs font-semibold text-[#2C3E50] shrink-0">{p}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={href}
+                class="mt-6 flex items-center justify-center gap-2 bg-[#F39C12] hover:bg-[#D68910] text-white text-xs font-bold px-4 py-3 rounded-xl transition-colors duration-200"
+              >
+                Réserver ce service
+                <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BADGES CONFIANCE ═══ -->
+  <div class="bg-[#2C3E50] py-4 px-6 md:px-10">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+      {[
+        { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', txt: 'Certifié COSTIC' },
+        { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', txt: 'Certificat RSD 13 immédiat' },
+        { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z', txt: 'Martigues & Côte Bleue' },
+        { icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z', txt: 'Propreté garantie' },
+        { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', txt: 'Réponse sous 24h' },
+      ].map(({ icon, txt }) => (
+        <div class="flex items-center gap-2 text-xs text-white/70">
+          <svg class="w-4 h-4 text-[#F39C12] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d={icon}/>
+          </svg>
+          {txt}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- ═══ RAMONAGE ═══ -->
+  <div class="w-4/5 mx-auto h-px bg-[#E5E0D5]" aria-hidden="true"></div>
+  <section id="ramonage" class="py-14 md:py-20 px-6 md:px-10 bg-[#F2EFE9] scroll-mt-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-widest text-[#F39C12] mb-3">Ramonage Bois</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2C3E50] leading-tight mb-4">
+            Foyers ouverts, inserts<br />& poêles à bois.
+          </h2>
+          <div class="w-10 h-0.5 bg-[#F39C12] mb-6"></div>
+          <p class="text-base text-[#4B4B4B] font-light leading-relaxed mb-6">
+            Le ramonage mécanique est l'intervention de base, obligatoire une fois par an minimum selon le RSD 13. Je nettoie le conduit de bas en haut avec une hérisson adaptée au diamètre de votre installation, puis je teste la vacuité du conduit.
+          </p>
+          <ul class="space-y-3 mb-8">
+            {[
+              'Nettoyage mécanique du conduit (hérisson)',
+              'Test de vacuité et de tirage',
+              'Contrôle visuel de l\'état du conduit',
+              'Ramassage et évacuation des suies',
+              'Certificat RSD 13 remis sur place',
+            ].map(item => (
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-[#C8DFC9] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-3 h-3 text-[#2D6A4F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </span>
+                <span class="text-sm text-[#4B4B4B] font-light leading-snug">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <!-- Conseil artisan -->
+          <div class="bg-[#E5E0D5] rounded-xl px-5 py-4 mb-6">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#2C3E50]/60 mb-1">Le conseil de l'artisan</p>
+            <p class="text-sm text-[#2C3E50] font-light leading-relaxed">
+              Un foyer ouvert accumule plus de suies qu'un insert fermé. Si vous brûlez plus de 2 stères par saison, deux ramonages annuels sont recommandés.
+            </p>
+          </div>
+          <div class="flex gap-3 flex-wrap">
+            <a href="/ramonage" class="inline-flex items-center gap-2 bg-[#2C3E50] hover:bg-[#1A2A3A] text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors">
+              En savoir plus
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#F39C12] hover:bg-[#D68910] text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors">
+              Réserver — dès 75 €
+            </a>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-lg">
+          <Image src={ramonageImg} alt="Ramonage cheminée — Sud Ramonage Martigues" width={700} height={500} class="w-full h-72 md:h-96 object-cover" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DÉBISTRAGE ═══ -->
+  <div class="w-4/5 mx-auto h-px bg-[#E5E0D5]" aria-hidden="true"></div>
+  <section id="debistrage" class="py-14 md:py-20 px-6 md:px-10 bg-[#F2EFE9] scroll-mt-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="rounded-2xl overflow-hidden shadow-lg order-last lg:order-first">
+          <Image src={bistrageImg} alt="Débistrage conduit — Sud Ramonage Martigues" width={700} height={500} class="w-full h-72 md:h-96 object-cover" loading="lazy"/>
+        </div>
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-widest text-[#F39C12] mb-3">Débistrage</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2C3E50] leading-tight mb-4">
+            Quand le ramonage<br />ne suffit plus.
+          </h2>
+          <div class="w-10 h-0.5 bg-[#F39C12] mb-6"></div>
+          <p class="text-base text-[#4B4B4B] font-light leading-relaxed mb-6">
+            Le bistre est un dépôt goudronné hautement inflammable formé par la combustion de bois humide ou insuffisamment sec. Il ne s'enlève pas mécaniquement — il nécessite un traitement chimique spécifique suivi d'un ramonage mécanique approfondi.
+          </p>
+          <ul class="space-y-3 mb-8">
+            {[
+              'Diagnostic préalable du taux de bistre',
+              'Application du produit chimique débistreur',
+              'Temps de pose et chauffe contrôlés',
+              'Ramonage mécanique approfondi',
+              'Contrôle de vacuité post-traitement',
+              'Certificat RSD 13 + rapport d\'intervention',
+            ].map(item => (
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-[#C8DFC9] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-3 h-3 text-[#2D6A4F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </span>
+                <span class="text-sm text-[#4B4B4B] font-light leading-snug">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="bg-[#E5E0D5] rounded-xl px-5 py-4 mb-6">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#2C3E50]/60 mb-1">Le conseil de l'artisan</p>
+            <p class="text-sm text-[#2C3E50] font-light leading-relaxed">
+              Le bistre est la première cause d'incendie de conduit en France. Si votre conduit n'a pas été ramoné depuis 2 ans ou que vous brûlez du bois vert, un diagnostic s'impose avant la saison de chauffe.
+            </p>
+          </div>
+          <div class="flex gap-3 flex-wrap">
+            <a href="/debistrage" class="inline-flex items-center gap-2 bg-[#2C3E50] hover:bg-[#1A2A3A] text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors">
+              En savoir plus
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#F39C12] hover:bg-[#D68910] text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors">
+              Réserver — dès 150 €
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ENTRETIEN POÊLES ═══ -->
+  <div class="w-4/5 mx-auto h-px bg-[#E5E0D5]" aria-hidden="true"></div>
+  <section id="poeles" class="py-14 md:py-20 px-6 md:px-10 bg-[#F2EFE9] scroll-mt-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-widest text-[#F39C12] mb-3">Entretien Poêle à Granulés</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2C3E50] leading-tight mb-4">
+            Une maintenance complète,<br />pas juste un ramonage.
+          </h2>
+          <div class="w-10 h-0.5 bg-[#F39C12] mb-6"></div>
+          <p class="text-base text-[#4B4B4B] font-light leading-relaxed mb-6">
+            Un poêle à granulés est un appareil électronique complexe. Son entretien va bien au-delà du simple ramonage du conduit : nettoyage du brûleur, du brasero, des capteurs, contrôle des joints d'étanchéité — chaque composant a son rôle dans la sécurité et les performances.
+          </p>
+          <ul class="space-y-3 mb-8">
+            {[
+              'Nettoyage complet du brûleur et du brasero',
+              'Contrôle et dépoussiérage des capteurs',
+              'Vérification des joints d\'étanchéité',
+              'Ramonage du conduit d\'évacuation',
+              'Test de fonctionnement et réglage',
+              'Rapport d\'état + certificat RSD 13',
+            ].map(item => (
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-[#C8DFC9] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-3 h-3 text-[#2D6A4F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </span>
+                <span class="text-sm text-[#4B4B4B] font-light leading-snug">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="bg-[#E5E0D5] rounded-xl px-5 py-4 mb-6">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#2C3E50]/60 mb-1">Le conseil de l'artisan</p>
+            <p class="text-sm text-[#2C3E50] font-light leading-relaxed">
+              Contrairement à un poêle à bois, un poêle à granulés doit être entretenu en fin de saison (pas uniquement avant). Cela évite la corrosion des pièces et garantit un allumage fiable à l'automne suivant.
+            </p>
+          </div>
+          <div class="flex gap-3 flex-wrap">
+            <a href="/entretien-poele" class="inline-flex items-center gap-2 bg-[#2C3E50] hover:bg-[#1A2A3A] text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors">
+              En savoir plus
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#F39C12] hover:bg-[#D68910] text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors">
+              Réserver — 120 €
+            </a>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-lg">
+          <Image src={poeleImg} alt="Entretien poêle à granulés — Sud Ramonage Martigues" width={700} height={500} class="w-full h-72 md:h-96 object-cover" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CHAUDIÈRES ═══ -->
+  <div class="w-4/5 mx-auto h-px bg-[#E5E0D5]" aria-hidden="true"></div>
+  <section id="chaudieres" class="py-14 md:py-20 px-6 md:px-10 bg-[#F2EFE9] scroll-mt-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="rounded-2xl overflow-hidden shadow-lg order-last lg:order-first">
+          <Image src={chaudiereImg} alt="Entretien chaudière gaz fioul — Sud Ramonage Martigues" width={700} height={500} class="w-full h-72 md:h-96 object-cover" loading="lazy"/>
+        </div>
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-widest text-[#F39C12] mb-3">Chaudières</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2C3E50] leading-tight mb-4">
+            Gaz & Fioul —<br />deux spécialités distinctes.
+          </h2>
+          <div class="w-10 h-0.5 bg-[#F39C12] mb-6"></div>
+          <p class="text-base text-[#4B4B4B] font-light leading-relaxed mb-4">
+            Le ramonage d'une chaudière ne se limite pas au conduit de fumée. Il comprend le nettoyage du corps de chauffe et un test de combustion pour garantir la sécurité de votre installation.
+          </p>
+
+          <!-- 2 badges Gaz / Fioul -->
+          <div class="grid grid-cols-2 gap-3 mb-6">
+            <div class="bg-[#FFFFFF] rounded-xl border border-[#E5E0D5] px-4 py-3">
+              <p class="text-xs font-bold text-[#2C3E50] mb-2 flex items-center gap-1.5">
+                <span class="inline-block w-2 h-2 rounded-full bg-[#3498DB]"></span>Chaudière Gaz
+              </p>
+              <ul class="space-y-1.5">
+                {['Ramonage conduit fumée', 'Nettoyage corps de chauffe', 'Test de combustion CO', 'Vérification brûleur'].map(i => (
+                  <li class="flex items-center gap-1.5 text-[11px] text-[#4B4B4B] font-light">
+                    <svg class="w-3 h-3 text-[#2D6A4F] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    {i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="bg-[#FFFFFF] rounded-xl border border-[#E5E0D5] px-4 py-3">
+              <p class="text-xs font-bold text-[#2C3E50] mb-2 flex items-center gap-1.5">
+                <span class="inline-block w-2 h-2 rounded-full bg-[#F39C12]"></span>Chaudière Fioul
+              </p>
+              <ul class="space-y-1.5">
+                {['Ramonage conduit + caisson', 'Nettoyage gicleur & électrode', 'Contrôle pression & joints', 'Vérification tirage'].map(i => (
+                  <li class="flex items-center gap-1.5 text-[11px] text-[#4B4B4B] font-light">
+                    <svg class="w-3 h-3 text-[#2D6A4F] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    {i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-[#E5E0D5] rounded-xl px-5 py-4 mb-6">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-[#2C3E50]/60 mb-1">Le conseil de l'artisan</p>
+            <p class="text-sm text-[#2C3E50] font-light leading-relaxed">
+              Une chaudière fioul nécessite un ramonage annuel obligatoire avec contrôle des rendements. Pour le gaz, le ramonage est imposé mais l'entretien annuel (incluant le brûleur) est fortement conseillé pour éviter les pannes en hiver.
+            </p>
+          </div>
+          <div class="flex gap-3 flex-wrap">
+            <a href="/chaudieres" class="inline-flex items-center gap-2 bg-[#2C3E50] hover:bg-[#1A2A3A] text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors">
+              En savoir plus
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+33664729600" class="inline-flex items-center gap-2 bg-[#F39C12] hover:bg-[#D68910] text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors">
+              Demander un devis
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA FINAL ═══ -->
+  <div class="w-4/5 mx-auto h-px bg-[#E5E0D5]" aria-hidden="true"></div>
+  <section class="py-14 px-6 md:px-10 bg-[#2C3E50]">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-[10px] font-bold uppercase tracking-widest text-white/50 mb-3">Un seul artisan, une seule exigence</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
+        Un doute ? Appelez directement.
+      </h2>
+      <p class="text-base text-white/60 font-light mb-8">
+        Devis gratuit sous 24h — Intervention sous 48h sur Martigues et la Côte Bleue.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a
+          href="tel:+33664729600"
+          class="inline-flex items-center justify-center gap-2 bg-[#F39C12] hover:bg-[#D68910] text-white text-sm font-bold px-6 py-3.5 rounded-xl transition-colors"
+        >
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          06 64 72 96 00
+        </a>
+        <a
+          href="mailto:contact@sud-ramonage.fr?subject=Demande%20de%20devis"
+          class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-6 py-3.5 rounded-xl transition-colors border border-white/20"
+        >
+          Écrire un message
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
