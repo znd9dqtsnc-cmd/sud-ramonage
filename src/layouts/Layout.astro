@@ -915,19 +915,21 @@ const navBtn = (active: boolean) => active
 
       function handleStickyBar() {
         if (stickyDismissed) return;
-        if (window.scrollY <= 5) {
+        if (window.scrollY <= 50) {
           // Position de base : toujours visible, solide, annule le timer
           if (stickyTimer) { clearTimeout(stickyTimer); stickyTimer = null; }
           stickyBar?.classList.remove('translate-y-full', 'sticky-glass');
           stickyBar?.classList.add('bg-white');
         } else {
-          // En scroll : glassmorphism + timer de disparition
+          // En scroll : glassmorphism + montrer la barre
           stickyBar?.classList.add('sticky-glass');
-          stickyBar?.classList.remove('bg-white');
-          stickyBar?.classList.remove('translate-y-full');
+          stickyBar?.classList.remove('bg-white', 'translate-y-full');
           if (stickyTimer) clearTimeout(stickyTimer);
+          // Ne cacher que si on est toujours loin du haut à l'expiration
           stickyTimer = setTimeout(() => {
-            stickyBar?.classList.add('translate-y-full');
+            if (window.scrollY > 50) {
+              stickyBar?.classList.add('translate-y-full');
+            }
           }, 2500);
         }
       }
