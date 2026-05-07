@@ -134,12 +134,12 @@ const navBtn = (active: boolean) => active
         box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03), 0 2px 4px -1px rgba(0,0,0,0.02);
       }
       .header-glass {
-        background-color: rgba(242,239,233,0.95);
+        background-color: rgba(255,255,255,0.92);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
       }
       .sticky-glass {
-        background-color: rgba(242,239,233,0.95);
+        background-color: rgba(255,255,255,0.92);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
       }
@@ -150,7 +150,7 @@ const navBtn = (active: boolean) => active
     <!-- ═══════════════════════════════════════════
          HEADER
     ═══════════════════════════════════════════ -->
-    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-[#F2EFE9] transition-all duration-300">
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300">
       <div class="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between gap-6">
 
         <!-- ── Logo ── -->
@@ -810,7 +810,7 @@ const navBtn = (active: boolean) => active
     <!-- ═══════════════════════════════════════════
          STICKY CALL BUTTON — Mobile uniquement
     ═══════════════════════════════════════════ -->
-    <div id="sticky-call-btn" class="lg:hidden fixed bottom-0 left-0 right-0 z-[55] grid grid-cols-[auto_1fr_auto] items-center gap-3 bg-[#F2EFE9] border-t border-[#E2E8F0] px-4 py-3 shadow-lg transition-transform duration-700 ease-in-out">
+    <div id="sticky-call-btn" class="lg:hidden fixed bottom-0 left-0 right-0 z-[55] grid grid-cols-[auto_1fr_auto] items-center gap-3 bg-white border-t border-[#E2E8F0] px-4 py-3 shadow-lg transition-transform duration-700 ease-in-out">
       <!-- Gauche : bouton téléphone -->
       <div class="flex justify-start">
         <a
@@ -897,11 +897,11 @@ const navBtn = (active: boolean) => active
           stickyHasScrolled = false;
           if (stickyTimer) { clearTimeout(stickyTimer); stickyTimer = null; }
           stickyBar?.classList.remove('translate-y-full', 'sticky-glass');
-          stickyBar?.classList.add('bg-[#F2EFE9]');
+          stickyBar?.classList.add('bg-white');
         } else {
           // Glassmorphism dès qu'on scrolle
           stickyBar?.classList.add('sticky-glass');
-          stickyBar?.classList.remove('bg-[#F2EFE9]', 'translate-y-full');
+          stickyBar?.classList.remove('bg-white', 'translate-y-full');
           // Timer de disparition seulement après un vrai scroll (> 200px)
           if (y > 200) stickyHasScrolled = true;
           if (stickyHasScrolled) {
