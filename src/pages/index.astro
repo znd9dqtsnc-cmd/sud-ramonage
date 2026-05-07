@@ -38,25 +38,25 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
       <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/70"></div>
     </div>
 
-    <div class="relative z-10 px-6 max-w-3xl mx-auto pb-10 lg:pb-0">
-      <p class="inline-flex justify-center items-start gap-2 text-sm text-white font-light mb-8 tracking-wide leading-snug">
-        <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+    <div class="relative z-10 px-6 max-w-3xl mx-auto pb-10 lg:pb-0 flex flex-col items-center text-center gap-6">
+      <p class="inline-flex justify-center items-start gap-1 text-sm text-white font-light tracking-wide leading-snug">
+        <svg class="w-3.5 h-3.5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
         <span>Intervention dans un rayon<br/>de 50 km autour de Martigues</span>
       </p>
-      <h1 class="text-[clamp(3rem,8vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05] mb-2 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
+      <h1 class="text-[clamp(3rem,8vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05] [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
         Ramonage et Diagnostic<span class="text-white">.</span>
       </h1>
-      <p class="text-[clamp(3rem,8vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05] mb-6 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
+      <p class="text-[clamp(3rem,8vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05] [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
         La sécurité de votre foyer<span class="text-white">.</span>
       </p>
-      <p class="text-sm font-light tracking-wide text-white/80 mb-6 text-center">
+      <p class="text-sm font-light tracking-wide text-white">
         Ramoneur fumiste certifié COSTIC
       </p>
       <!-- Trust pills -->
-      <div class="flex flex-wrap justify-center gap-2 mb-4">
-        {['Certificat réglementaire', 'Assurance professionnelle'].map(label => (
-          <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#2D6A4F] bg-white border border-[#E5E0D5] px-3 py-1 rounded-full">
-            <svg class="w-2.5 h-2.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <div class="flex flex-wrap justify-center gap-2">
+        {['Certificat de ramonage réglementaire', 'Responsabilité civile professionnelle'].map(label => (
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#1A1A1A] bg-white border border-[#E5E0D5] px-3 py-1 rounded-full">
+            <svg class="w-2.5 h-2.5 shrink-0 text-[#2D6A4F]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
             </svg>
             {label}
