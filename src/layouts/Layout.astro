@@ -851,7 +851,7 @@ const navBtn = (active: boolean) => active
       const coDismiss = document.getElementById('co-dismiss');
 
       function initCOBanner() {
-        const stored  = localStorage.getItem('co-dismissed-until');
+        const stored  = sessionStorage.getItem('co-dismissed-until');
         const expires = stored ? parseInt(stored, 10) : 0;
         if (Date.now() < expires) return;
         setTimeout(() => coBanner?.classList.remove('translate-y-full'), 4000);
@@ -859,7 +859,7 @@ const navBtn = (active: boolean) => active
 
       coDismiss?.addEventListener('click', () => {
         coBanner?.classList.add('translate-y-full');
-        localStorage.setItem('co-dismissed-until', String(Date.now() + 7 * 24 * 60 * 60 * 1000));
+        sessionStorage.setItem('co-dismissed-until', String(Date.now() + 7 * 24 * 60 * 60 * 1000));
       });
 
       initCOBanner();
@@ -929,21 +929,19 @@ const navBtn = (active: boolean) => active
       const stickyDismiss = document.getElementById('sticky-dismiss');
       let stickyTimer: ReturnType<typeof setTimeout> | null = null;
 
-      // Si déjà fermé dans les 24h, on ne montre pas
-      const dismissedUntil = localStorage.getItem('sticky-dismissed-until');
-      if (dismissedUntil && Date.now() < parseInt(dismissedUntil)) {
+      // Si déjà fermé dans cette session, on ne montre pas
+      if (sessionStorage.getItem('sticky-dismissed')) {
         stickyBar?.classList.add('translate-y-full');
       }
 
       stickyDismiss?.addEventListener('click', () => {
         stickyBar?.classList.add('translate-y-full');
-        localStorage.setItem('sticky-dismissed-until', String(Date.now() + 24 * 60 * 60 * 1000));
+        sessionStorage.setItem('sticky-dismissed', '1');
         if (stickyTimer) clearTimeout(stickyTimer);
       });
 
       function showStickyBar() {
-        const dismissed = localStorage.getItem('sticky-dismissed-until');
-        if (dismissed && Date.now() < parseInt(dismissed)) return;
+        if (sessionStorage.getItem('sticky-dismissed')) return;
         stickyBar?.classList.remove('translate-y-full');
         if (stickyTimer) clearTimeout(stickyTimer);
         stickyTimer = setTimeout(() => {
