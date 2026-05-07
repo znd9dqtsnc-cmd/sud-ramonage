@@ -915,7 +915,7 @@ const navBtn = (active: boolean) => active
 
       function handleStickyBar() {
         if (stickyDismissed) return;
-        if (window.scrollY === 0) {
+        if (window.scrollY <= 5) {
           // Position de base : toujours visible, solide, annule le timer
           if (stickyTimer) { clearTimeout(stickyTimer); stickyTimer = null; }
           stickyBar?.classList.remove('translate-y-full', 'sticky-glass');
