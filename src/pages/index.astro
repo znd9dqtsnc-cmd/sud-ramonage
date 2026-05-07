@@ -24,50 +24,62 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   <!-- ═══════════════════════════════════════════════
        HERO
   ═══════════════════════════════════════════════ -->
-  <section class="relative h-screen min-h-[640px] flex flex-col items-center justify-center text-center overflow-hidden">
-    <div class="absolute inset-0">
-      <Image
-        src={heroImg}
-        alt="Poêle à bois design avec bûches — Sud Ramonage Martigues"
-        width={1920}
-        height={1080}
-        class="w-full h-full object-cover"
-        loading="eager"
-        fetchpriority="high"
-      />
-      <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/70"></div>
-    </div>
+  <section class="min-h-screen flex flex-col items-center justify-center bg-[#F2EFE9] px-4 pt-24 pb-10">
 
-    <div class="relative z-10 px-6 max-w-3xl mx-auto pb-10 lg:pb-0">
-      <p class="text-[11px] font-light uppercase tracking-[0.3em] text-white mb-6">Martigues · Bouches-du-Rhône</p>
-      <h1 class="text-[clamp(3rem,8vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05] mb-2 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
-        Ramonage et Diagnostic<span class="text-white">.</span>
-      </h1>
-      <p class="text-[clamp(3rem,8vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05] mb-8 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
-        La sécurité de votre foyer<span class="text-white">.</span>
-      </p>
-      <p class="text-sm text-white font-light max-w-xl mx-auto mb-6 tracking-wide">
-        Artisan local · Ramoneur fumiste certifié COSTIC · Intervention dans un rayon de 30 km autour de Martigues
-      </p>
-      <!-- Trust pills -->
-      <div class="flex flex-wrap justify-center gap-2 mb-4">
-        {['Certifié RSD 13', 'Assuré RC Pro', 'Propreté Garantie'].map(label => (
-          <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#2D6A4F] bg-white border border-[#E5E0D5] px-3 py-1 rounded-full">
-            <svg class="w-2.5 h-2.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-            </svg>
-            {label}
-          </span>
-        ))}
+    <!-- Card flottante -->
+    <div
+      class="relative w-full max-w-6xl overflow-hidden rounded-[32px] text-center"
+      style="border: 1px solid #FFFFFF; box-shadow: 0 0 0 1px #E5E0D5, 0 20px 25px -5px rgba(0,0,0,0.05);"
+    >
+      <!-- Image + overlay Bleu Nuit -->
+      <div class="absolute inset-0">
+        <Image
+          src={heroImg}
+          alt="Poêle à bois design avec bûches — Sud Ramonage Martigues"
+          width={1920}
+          height={1080}
+          class="w-full h-full object-cover"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-[#2C3E50]/25 via-[#2C3E50]/55 to-[#2C3E50]/88"></div>
       </div>
-      <!-- Localisation discrète -->
-      <p class="text-[12px] text-white/70 font-light tracking-wide">
-        <svg class="w-3 h-3 inline-block mr-1 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        Intervention rapide sur Martigues, Sausset-les-Pins et la Côte Bleue
-      </p>
+
+      <!-- Contenu -->
+      <div class="relative z-10 py-24 px-6 max-w-3xl mx-auto">
+        <p class="text-[11px] font-light uppercase tracking-[0.3em] text-white/70 mb-6">Martigues · Bouches-du-Rhône</p>
+        <h1 class="text-[clamp(2.5rem,7vw,4.5rem)] font-extrabold tracking-tight text-white leading-[1.05] mb-2 [text-shadow:0_2px_16px_rgba(0,0,0,0.4)]">
+          Ramonage et Diagnostic<span class="text-white">.</span>
+        </h1>
+        <p class="text-[clamp(2.5rem,7vw,4.5rem)] font-extrabold tracking-tight text-white leading-[1.05] mb-8 [text-shadow:0_2px_16px_rgba(0,0,0,0.4)]">
+          La sécurité de votre foyer<span class="text-white">.</span>
+        </p>
+        <p class="text-sm text-white/80 font-light max-w-xl mx-auto mb-8 tracking-wide leading-relaxed">
+          Artisan local · Ramoneur fumiste certifié COSTIC · Intervention dans un rayon de 30 km autour de Martigues
+        </p>
+
+        <!-- Trust pills -->
+        <div class="flex flex-wrap justify-center gap-2 mb-4">
+          {['Certifié RSD 13', 'Assuré RC Pro', 'Propreté Garantie'].map(label => (
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#2D6A4F] bg-white border border-[#E5E0D5] px-3 py-1 rounded-full">
+              <svg class="w-2.5 h-2.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+              {label}
+            </span>
+          ))}
+        </div>
+
+        <!-- Localisation -->
+        <p class="text-[12px] text-white/50 font-light tracking-wide">
+          <svg class="w-3 h-3 inline-block mr-1 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Intervention rapide sur Martigues, Sausset-les-Pins et la Côte Bleue
+        </p>
+      </div>
     </div>
 
-    <a href="#services" class="absolute bottom-24 lg:bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/70 hover:text-white transition-colors duration-200" aria-label="Voir nos tarifs">
+    <!-- Flèche de scroll -->
+    <a href="#services" class="mt-8 animate-bounce text-[#2C3E50]/40 hover:text-[#2C3E50]/70 transition-colors duration-200" aria-label="Voir nos tarifs">
       <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
       </svg>
