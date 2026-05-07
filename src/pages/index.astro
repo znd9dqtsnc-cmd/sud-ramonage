@@ -210,15 +210,19 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
         </p>
         <div class="space-y-3">
           {[
-            { t: 'Chantier propre garanti',     d: 'Protection du sol et nettoyage complet après chaque intervention, sans trace.' },
-            { t: 'Certificat RSD 13 immédiat',  d: 'Document officiel remis sur place, valide auprès de votre assurance.' },
-            { t: 'Assuré RC Pro',               d: 'Couverture complète pour toutes mes interventions.' },
-            { t: 'Artisan local, sous 48h',     d: 'Basé à Martigues, je connais votre secteur et interviens rapidement.' },
-          ].map(({ t, d }, i) => (
+            { t: 'Chantier propre garanti',     d: 'Protection du sol et nettoyage complet après chaque intervention, sans trace.',      icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z' },
+            { t: 'Certificat RSD 13 immédiat',  d: 'Document officiel remis sur place, valide auprès de votre assurance.',              icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+            { t: 'Assuré RC Pro',               d: 'Couverture complète pour toutes mes interventions.',                                 icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+            { t: 'Artisan local, sous 48h',     d: 'Basé à Martigues, je connais votre secteur et interviens rapidement.',              icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z' },
+          ].map(({ t, d, icon }) => (
             <div class="relative bg-[#FFFFFF] border border-[#E2E8F0] rounded-xl px-6 py-5 overflow-hidden">
               <div class="absolute top-0 left-0 w-[3px] h-full bg-[#F39C12] rounded-l-xl"></div>
               <div class="flex items-center gap-4">
-                <span class="text-3xl font-black text-[#2C3E50]/30 leading-none shrink-0 w-8 text-right">{String(i + 1)}</span>
+                <span class="w-9 h-9 rounded-lg bg-[#2C3E50]/8 flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5 text-[#2C3E50]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d={icon}/>
+                  </svg>
+                </span>
                 <div>
                   <p class="text-sm font-bold text-[#1A1A1A]">{t}</p>
                   <p class="text-sm text-[#4B4B4B] font-light mt-1 leading-[1.6]">{d}</p>
