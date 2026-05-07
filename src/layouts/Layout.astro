@@ -129,13 +129,18 @@ const navBtn = (active: boolean) => active
       breadcrumbs={breadcrumbs}
       pageSchema={pageSchema}
     />
+    <style>
+      .header-scrolled {
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03), 0 2px 4px -1px rgba(0,0,0,0.02);
+      }
+    </style>
   </head>
   <body class="bg-[#F2EFE9] text-[#4B4B4B] font-sans antialiased">
 
     <!-- ═══════════════════════════════════════════
          HEADER
     ═══════════════════════════════════════════ -->
-    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-[#F2EFE9]/95 backdrop-blur-[10px] transition-shadow duration-300">
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-[#F2EFE9] transition-shadow duration-300">
       <div class="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between gap-6">
 
         <!-- ── Logo ── -->
@@ -616,7 +621,8 @@ const navBtn = (active: boolean) => active
     <!-- ═══════════════════════════════════════════
          FOOTER
     ═══════════════════════════════════════════ -->
-    <footer id="site-footer" class="border-t-2 border-white mt-24 bg-[#EAE7E1]">
+    <div class="w-4/5 mx-auto h-px bg-white/80" aria-hidden="true"></div>
+    <footer id="site-footer" class="bg-[#F2EFE9]">
       <div class="max-w-6xl mx-auto px-6 md:px-10 py-16">
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
@@ -820,9 +826,9 @@ const navBtn = (active: boolean) => active
       const header = document.getElementById('site-header');
       window.addEventListener('scroll', () => {
         if (window.scrollY > 8) {
-          header?.classList.add('shadow-sm');
+          header?.classList.add('header-scrolled');
         } else {
-          header?.classList.remove('shadow-sm');
+          header?.classList.remove('header-scrolled');
         }
       }, { passive: true });
 
