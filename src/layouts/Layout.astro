@@ -138,6 +138,11 @@ const navBtn = (active: boolean) => active
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
       }
+      .sticky-glass {
+        background-color: rgba(255,255,255,0.82);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
     </style>
   </head>
   <body class="bg-[#F2EFE9] text-[#4B4B4B] font-sans antialiased">
@@ -799,12 +804,23 @@ const navBtn = (active: boolean) => active
       window.addEventListener('scroll', updateHeader, { passive: true });
       updateHeader();
 
+      // Sticky bar — opacité réduite au scroll, pleine en position initiale
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+          stickyBar?.classList.add('sticky-glass');
+          stickyBar?.classList.remove('bg-white');
+        } else {
+          stickyBar?.classList.remove('sticky-glass');
+          stickyBar?.classList.add('bg-white');
+        }
+      }, { passive: true });
+
     </script>
 
     <!-- ═══════════════════════════════════════════
          STICKY CALL BUTTON — Mobile uniquement
     ═══════════════════════════════════════════ -->
-    <div id="sticky-call-btn" class="lg:hidden fixed bottom-0 left-0 right-0 z-[55] flex items-center gap-3 bg-white/[0.92] backdrop-blur-[12px] border-t border-[#E2E8F0] px-4 py-3 shadow-lg transition-transform duration-700 ease-in-out">
+    <div id="sticky-call-btn" class="lg:hidden fixed bottom-0 left-0 right-0 z-[55] flex items-center gap-3 bg-white border-t border-[#E2E8F0] px-4 py-3 shadow-lg transition-transform duration-700 ease-in-out">
       <a
         href="tel:+33664729600"
         class="w-12 h-12 rounded-full bg-[#2C3E50] flex items-center justify-center shrink-0 shadow-sm active:scale-95 transition-transform touch-manipulation"
