@@ -886,6 +886,15 @@ const navBtn = (active: boolean) => active
         <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
         Réserver en ligne
       </a>
+      <button
+        id="sticky-dismiss"
+        aria-label="Fermer"
+        class="shrink-0 w-7 h-7 flex items-center justify-center text-[#1A1A1A]/30 hover:text-[#1A1A1A]/60 transition-colors duration-150 touch-manipulation"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
     </div>
 
     <!-- ═══════════════════════════════════════════
@@ -915,11 +924,26 @@ const navBtn = (active: boolean) => active
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-      // Sticky bar — masquage auto après 4s, réapparition au scroll/touch
+      // Sticky bar — masquage auto + dismiss 24h
       const stickyBar = document.getElementById('sticky-call-btn');
+      const stickyDismiss = document.getElementById('sticky-dismiss');
       let stickyTimer: ReturnType<typeof setTimeout> | null = null;
 
+      // Si déjà fermé dans les 24h, on ne montre pas
+      const dismissedUntil = localStorage.getItem('sticky-dismissed-until');
+      if (dismissedUntil && Date.now() < parseInt(dismissedUntil)) {
+        stickyBar?.classList.add('translate-y-full');
+      }
+
+      stickyDismiss?.addEventListener('click', () => {
+        stickyBar?.classList.add('translate-y-full');
+        localStorage.setItem('sticky-dismissed-until', String(Date.now() + 24 * 60 * 60 * 1000));
+        if (stickyTimer) clearTimeout(stickyTimer);
+      });
+
       function showStickyBar() {
+        const dismissed = localStorage.getItem('sticky-dismissed-until');
+        if (dismissed && Date.now() < parseInt(dismissed)) return;
         stickyBar?.classList.remove('translate-y-full');
         if (stickyTimer) clearTimeout(stickyTimer);
         stickyTimer = setTimeout(() => {
