@@ -351,6 +351,26 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
           >
             Écrire un message <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </a>
+
+          <div class="mt-7 pt-6 border-t border-[#E5E0D5]">
+            <ul class="flex flex-col sm:flex-row flex-wrap gap-x-6 gap-y-2.5">
+              {[
+                'Devis gratuit sous 24h',
+                'Intervention propre & soignée',
+                'Certificat RSD 13 inclus',
+                'Un doute ? Appelez sans engagement',
+              ].map(arg => (
+                <li class="flex items-center gap-2 text-sm text-[#4B4B4B] font-light">
+                  <span class="w-4 h-4 rounded-full bg-[#D1FAE5] flex items-center justify-center shrink-0">
+                    <svg class="w-2.5 h-2.5 text-[#065F46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  {arg}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
