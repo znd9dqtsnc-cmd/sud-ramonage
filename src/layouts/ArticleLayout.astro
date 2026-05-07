@@ -88,11 +88,8 @@ const schemas = howToSchema
       </nav>
       <div class="max-w-3xl">
         <div class="flex items-center gap-3 mb-4">
-          <span class="text-[11px] font-semibold bg-[#F2EFE9] text-[#2C3E50] px-2.5 py-1 rounded-full">{category}</span>
-          <span class="inline-flex items-center gap-1 text-[11px] font-semibold bg-[#D1FAE5] text-[#065F46] px-2.5 py-1 rounded-full">
-            <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"/></svg>
-            {readTime} de lecture
-          </span>
+          <span class="text-[10px] font-semibold tracking-widest uppercase text-white bg-[#E8DDD4] px-2.5 py-1 rounded-md">{category}</span>
+          <span class="text-[11px] text-[#F39C12] font-semibold">{readTime} de lecture</span>
           <span class="text-xs text-[#1A1A1A]/85">·</span>
           <time datetime={datePublished} class="text-xs text-[#1A1A1A]/85">
             {new Date(datePublished).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
