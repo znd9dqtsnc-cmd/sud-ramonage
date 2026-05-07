@@ -4,11 +4,12 @@ import FAQ from '../components/FAQ.astro';
 import LatestArticles from '../components/LatestArticles.astro';
 import { Image, getImage } from 'astro:assets';
 
-import heroImg     from '../assets/images/hero-poele.jpg';
-import artisanImg  from '../assets/images/artisan-toiture.jpg';
-import bistrageImg from '../assets/images/service-bistrage.jpg';
-import controleImg from '../assets/images/service-controle.jpg';
-import interiorImg from '../assets/images/hero-poele.jpg';
+import heroImg       from '../assets/images/hero-poele.jpg';
+import artisanImg    from '../assets/images/artisan-toiture.jpg';
+import bistrageImg   from '../assets/images/service-bistrage.jpg';
+import controleImg   from '../assets/images/service-controle.jpg';
+import interiorImg   from '../assets/images/hero-poele.jpg';
+import finChantierImg from '../assets/images/cheminee-interieur.jpg';
 
 const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, format: 'webp' });
 ---
@@ -359,6 +360,25 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
   ═══════════════════════════════════════════════ -->
   <div class="w-4/5 mx-auto h-px bg-white/80" aria-hidden="true"></div>
   <LatestArticles count={3} title="Conseils d'Experts." />
+
+  <!-- ═══════════════════════════════════════════════
+       FIN DE CHANTIER — Bannière photo
+  ═══════════════════════════════════════════════ -->
+  <div class="w-4/5 mx-auto h-px bg-white/80" aria-hidden="true"></div>
+  <div class="relative h-64 md:h-80 overflow-hidden">
+    <Image
+      src={finChantierImg}
+      alt="Cheminée intérieure après intervention — Sud Ramonage Martigues"
+      width={1920}
+      height={600}
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+    <div class="absolute bottom-8 left-0 right-0 text-center">
+      <p class="text-white text-sm font-light tracking-[0.2em] uppercase">Chaque foyer, traité avec soin.</p>
+    </div>
+  </div>
 
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
