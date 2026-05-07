@@ -804,16 +804,6 @@ const navBtn = (active: boolean) => active
       window.addEventListener('scroll', updateHeader, { passive: true });
       updateHeader();
 
-      // Sticky bar — opacité réduite au scroll, pleine en position initiale
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 0) {
-          stickyBar?.classList.add('sticky-glass');
-          stickyBar?.classList.remove('bg-white');
-        } else {
-          stickyBar?.classList.remove('sticky-glass');
-          stickyBar?.classList.add('bg-white');
-        }
-      }, { passive: true });
 
     </script>
 
@@ -896,6 +886,18 @@ const navBtn = (active: boolean) => active
           stickyBar?.classList.add('translate-y-full');
         }, 2500);
       }
+
+      // Opacité sticky bar — glassmorphism au scroll, solide en haut
+      function updateStickyOpacity() {
+        if (window.scrollY > 0) {
+          stickyBar?.classList.add('sticky-glass');
+          stickyBar?.classList.remove('bg-white');
+        } else {
+          stickyBar?.classList.remove('sticky-glass');
+          stickyBar?.classList.add('bg-white');
+        }
+      }
+      window.addEventListener('scroll', updateStickyOpacity, { passive: true });
 
       window.addEventListener('scroll', showStickyBar, { passive: true });
       window.addEventListener('touchstart', showStickyBar, { passive: true });
