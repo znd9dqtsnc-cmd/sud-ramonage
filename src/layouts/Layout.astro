@@ -925,17 +925,17 @@ const navBtn = (active: boolean) => active
         stickyTimer = setTimeout(() => {
           stickyBar?.classList.add('opacity-0');
           setTimeout(() => stickyBar?.classList.add('translate-y-full'), 700);
-        }, 4000);
+        }, 2500);
       }
 
       window.addEventListener('scroll', showStickyBar, { passive: true });
       window.addEventListener('touchstart', showStickyBar, { passive: true });
 
-      // Premier masquage après 4s au chargement
+      // Premier masquage après 2.5s au chargement
       stickyTimer = setTimeout(() => {
         stickyBar?.classList.add('opacity-0');
         setTimeout(() => stickyBar?.classList.add('translate-y-full'), 700);
-      }, 4000);
+      }, 2500);
     </script>
 
   </body>
