@@ -133,6 +133,11 @@ const navBtn = (active: boolean) => active
       .header-scrolled {
         box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03), 0 2px 4px -1px rgba(0,0,0,0.02);
       }
+      .header-glass {
+        background-color: rgba(255,255,255,0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
     </style>
   </head>
   <body class="bg-[#F2EFE9] text-[#4B4B4B] font-sans antialiased">
@@ -140,7 +145,7 @@ const navBtn = (active: boolean) => active
     <!-- ═══════════════════════════════════════════
          HEADER
     ═══════════════════════════════════════════ -->
-    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white/[0.92] backdrop-blur-[12px] transition-shadow duration-300">
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300">
       <div class="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between gap-6">
 
         <!-- ── Logo ── -->
@@ -822,15 +827,24 @@ const navBtn = (active: boolean) => active
       setupAccordion('mobile-savoir-btn',   'mobile-savoir',   'mobile-savoir-arrow');
       setupAccordion('mobile-zones-btn',    'mobile-zones',    'mobile-zones-arrow');
 
-      // Ombre header au scroll
+      // Header : opacité pleine sur hero, glassmorphism + ombre sous hero
       const header = document.getElementById('site-header');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 8) {
-          header?.classList.add('header-scrolled');
+      const hero = document.querySelector('section');
+      function updateHeader() {
+        const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
+        if (heroBottom > 0) {
+          header?.classList.remove('header-glass', 'header-scrolled');
         } else {
-          header?.classList.remove('header-scrolled');
+          header?.classList.add('header-glass');
+          if (window.scrollY > 8) {
+            header?.classList.add('header-scrolled');
+          } else {
+            header?.classList.remove('header-scrolled');
+          }
         }
-      }, { passive: true });
+      }
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
 
       // Widget Urgence Monoxyde de Carbone
       const coBanner  = document.getElementById('co-banner');
