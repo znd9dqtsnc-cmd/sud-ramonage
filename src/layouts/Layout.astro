@@ -913,34 +913,25 @@ const navBtn = (active: boolean) => active
         if (stickyTimer) clearTimeout(stickyTimer);
       });
 
-      function showStickyBar() {
+      function handleStickyBar() {
         if (stickyDismissed) return;
-        stickyBar?.classList.remove('translate-y-full');
-        if (stickyTimer) clearTimeout(stickyTimer);
-        stickyTimer = setTimeout(() => {
-          stickyBar?.classList.add('translate-y-full');
-        }, 2500);
-      }
-
-      // Opacité sticky bar — glassmorphism au scroll, solide en haut
-      function updateStickyOpacity() {
-        if (window.scrollY > 0) {
+        if (window.scrollY === 0) {
+          // Position de base : toujours visible, solide, annule le timer
+          if (stickyTimer) { clearTimeout(stickyTimer); stickyTimer = null; }
+          stickyBar?.classList.remove('translate-y-full', 'sticky-glass');
+          stickyBar?.classList.add('bg-white');
+        } else {
+          // En scroll : glassmorphism + timer de disparition
           stickyBar?.classList.add('sticky-glass');
           stickyBar?.classList.remove('bg-white');
-        } else {
-          stickyBar?.classList.remove('sticky-glass');
-          stickyBar?.classList.add('bg-white');
+          stickyBar?.classList.remove('translate-y-full');
+          if (stickyTimer) clearTimeout(stickyTimer);
+          stickyTimer = setTimeout(() => {
+            stickyBar?.classList.add('translate-y-full');
+          }, 2500);
         }
       }
-      window.addEventListener('scroll', updateStickyOpacity, { passive: true });
-
-      window.addEventListener('scroll', showStickyBar, { passive: true });
-      window.addEventListener('touchstart', showStickyBar, { passive: true });
-
-      // Premier masquage après 2.5s au chargement
-      stickyTimer = setTimeout(() => {
-        stickyBar?.classList.add('translate-y-full');
-      }, 2500);
+      window.addEventListener('scroll', handleStickyBar, { passive: true });
     </script>
 
   </body>
