@@ -860,24 +860,20 @@ const navBtn = (active: boolean) => active
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-      // Sticky bar — masquage auto + dismiss 24h
+      // Sticky bar — masquage auto + dismiss (réinitialisé au refresh)
       const stickyBar = document.getElementById('sticky-call-btn');
       const stickyDismiss = document.getElementById('sticky-dismiss');
       let stickyTimer: ReturnType<typeof setTimeout> | null = null;
-
-      // Si déjà fermé dans cette session, on ne montre pas
-      if (sessionStorage.getItem('sticky-dismissed')) {
-        stickyBar?.classList.add('translate-y-full');
-      }
+      let stickyDismissed = false;
 
       stickyDismiss?.addEventListener('click', () => {
+        stickyDismissed = true;
         stickyBar?.classList.add('translate-y-full');
-        sessionStorage.setItem('sticky-dismissed', '1');
         if (stickyTimer) clearTimeout(stickyTimer);
       });
 
       function showStickyBar() {
-        if (sessionStorage.getItem('sticky-dismissed')) return;
+        if (stickyDismissed) return;
         stickyBar?.classList.remove('translate-y-full');
         if (stickyTimer) clearTimeout(stickyTimer);
         stickyTimer = setTimeout(() => {
