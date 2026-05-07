@@ -38,21 +38,38 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
       <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/70"></div>
     </div>
 
-    <div class="relative z-10 px-6 max-w-3xl mx-auto pb-10 lg:pb-0 flex flex-col items-center text-center gap-6">
-      <p class="text-sm text-white font-light tracking-wide leading-snug text-center">
-        <svg class="w-3.5 h-3.5 inline-block align-middle mr-1.5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>50 km autour de Martigues
+    <div class="relative z-10 px-6 max-w-2xl mx-auto pb-10 lg:pb-0 flex flex-col items-center text-center gap-5">
+
+      <!-- Surtitre -->
+      <p class="text-[12px] font-semibold uppercase tracking-[0.25em] text-white/70">
+        Votre foyer en toute sécurité
       </p>
-      <div class="[text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
-        <h1 class="text-[clamp(3rem,8vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05]">
-          Ramonage et Diagnostic<span class="text-white">.</span>
-        </h1>
-        <p class="text-[clamp(3rem,8vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05]">
-          La sécurité de votre foyer<span class="text-white">.</span>
-        </p>
+
+      <!-- H1 -->
+      <h1 class="text-[clamp(2rem,6vw,3.5rem)] font-bold tracking-tight text-white leading-[1.1] [text-shadow:0_2px_16px_rgba(0,0,0,0.5)]">
+        Ramonage Artisanal<br class="hidden sm:block"/> &amp; Expertise Conduit
+      </h1>
+
+      <!-- Sous-titre -->
+      <p class="text-base text-white/80 font-light leading-relaxed max-w-md">
+        Un travail propre, certifié et sans poussière pour votre confort cet hiver.
+      </p>
+
+      <!-- Bloc localisation -->
+      <div class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm text-white font-light">
+        <svg class="w-3.5 h-3.5 shrink-0 text-[#F39C12]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        50 km autour de Martigues
       </div>
-      <p class="text-sm font-light tracking-wide text-white">
-        Ramoneur fumiste certifié COSTIC
-      </p>
+
+      <!-- CTA -->
+      <a
+        href="tel:+33664729600"
+        class="inline-flex items-center gap-2 bg-[#F39C12] hover:bg-[#D68910] text-white text-sm font-bold px-7 py-3.5 rounded-xl transition-colors duration-200 shadow-lg"
+      >
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Devis Gratuit
+      </a>
+
       <!-- Trust pills -->
       <div class="flex flex-wrap justify-center gap-2">
         {['Certificat de ramonage réglementaire', 'Responsabilité civile professionnelle'].map(label => (
@@ -64,6 +81,7 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
           </span>
         ))}
       </div>
+
     </div>
 
     <a href="#services" class="absolute bottom-24 lg:bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/70 hover:text-white transition-colors duration-200" aria-label="Voir nos tarifs">
