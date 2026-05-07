@@ -906,6 +906,7 @@ const navBtn = (active: boolean) => active
       const stickyDismiss = document.getElementById('sticky-dismiss');
       let stickyTimer: ReturnType<typeof setTimeout> | null = null;
       let stickyDismissed = false;
+      let stickyHasScrolled = false; // true seulement après scroll significatif (> 200px)
 
       stickyDismiss?.addEventListener('click', () => {
         stickyDismissed = true;
@@ -915,22 +916,26 @@ const navBtn = (active: boolean) => active
 
       function handleStickyBar() {
         if (stickyDismissed) return;
-        if (window.scrollY <= 50) {
-          // Position de base : toujours visible, solide, annule le timer
+        const y = window.scrollY;
+
+        if (y <= 50) {
+          // Position de base : toujours visible, reset
+          stickyHasScrolled = false;
           if (stickyTimer) { clearTimeout(stickyTimer); stickyTimer = null; }
           stickyBar?.classList.remove('translate-y-full', 'sticky-glass');
           stickyBar?.classList.add('bg-white');
         } else {
-          // En scroll : glassmorphism + montrer la barre
+          // Glassmorphism dès qu'on scrolle
           stickyBar?.classList.add('sticky-glass');
           stickyBar?.classList.remove('bg-white', 'translate-y-full');
-          if (stickyTimer) clearTimeout(stickyTimer);
-          // Ne cacher que si on est toujours loin du haut à l'expiration
-          stickyTimer = setTimeout(() => {
-            if (window.scrollY > 50) {
-              stickyBar?.classList.add('translate-y-full');
-            }
-          }, 2500);
+          // Timer de disparition seulement après un vrai scroll (> 200px)
+          if (y > 200) stickyHasScrolled = true;
+          if (stickyHasScrolled) {
+            if (stickyTimer) clearTimeout(stickyTimer);
+            stickyTimer = setTimeout(() => {
+              if (window.scrollY > 50) stickyBar?.classList.add('translate-y-full');
+            }, 2500);
+          }
         }
       }
       window.addEventListener('scroll', handleStickyBar, { passive: true });
