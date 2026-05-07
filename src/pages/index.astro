@@ -39,15 +39,22 @@ const optimizedHero = await getImage({ src: heroImg, width: 1920, height: 1080, 
     </div>
 
     <div class="relative z-10 px-6 max-w-3xl mx-auto pb-10 lg:pb-0">
+      <p class="inline-flex items-center gap-1.5 text-[11px] font-light tracking-wide text-white mb-6">
+        <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Intervention dans un rayon de 50 km autour de Martigues
+      </p>
       <h1 class="text-[clamp(3rem,8vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05] mb-2 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
         Ramonage et Diagnostic<span class="text-white">.</span>
       </h1>
       <p class="text-[clamp(3rem,8vw,5rem)] font-extrabold tracking-tight text-white leading-[1.05] mb-8 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
         La sécurité de votre foyer<span class="text-white">.</span>
       </p>
+      <p class="text-sm text-white font-light max-w-xl mx-auto mb-6 tracking-wide">
+        Artisan local · Ramoneur fumiste certifié COSTIC · Intervention dans un rayon de 30 km autour de Martigues
+      </p>
       <!-- Trust pills -->
       <div class="flex flex-wrap justify-center gap-2 mb-4">
-        {['Artisan local', 'Ramoneur fumiste', 'Certifié COSTIC'].map(label => (
+        {['Certifié RSD 13', 'Assuré RC Pro', 'Propreté Garantie'].map(label => (
           <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#2D6A4F] bg-white border border-[#E5E0D5] px-3 py-1 rounded-full">
             <svg class="w-2.5 h-2.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
