@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import {articles} from '../../data/company.js';
+---
+<BaseLayout title="Conseils ramonage et sécurité | SUD RAMONAGE" description="Conseils sur le ramonage, les poêles, le bistre, les conduits et les diagnostics."><section class="page-hero"><div class="shell"><p class="eyebrow">CONSEILS & BLOG</p><h1>Comprendre pour mieux entretenir</h1><p>Des repères utiles sur vos conduits, appareils et diagnostics.</p></div></section><section class="section cream"><div class="shell article-grid">{articles.map(a=><a class="article-card" href={`/conseils/${a.slug}/`}><span>{a.category}</span><h2>{a.title}</h2><p>{a.excerpt}</p><b>Lire l’article →</b></a>)}</div></section></BaseLayout>

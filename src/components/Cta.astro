@@ -1,0 +1,5 @@
+---
+import { company } from '../data/company.js';
+const {dark=false, title='Un besoin de ramonage ou de diagnostic ?', text='Parlons de votre installation et de la prestation la plus adaptée.'}=Astro.props;
+---
+<section class:list={['cta-band', {dark}]}><div class="shell"><div><p class="eyebrow">SUD RAMONAGE</p><h2>{title}</h2><p>{text}</p></div><div class="cta-actions"><a class="button gold" href={company.phoneHref}>Appeler</a><a class="button outline" href="/contact/">Demander un devis</a></div></div></section>
